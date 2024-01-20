@@ -44,6 +44,7 @@ const SignUpStackNavigator = () => {
         <Stack.Screen name="Terms" component={Terms} screenOptions={{
           headerShown: false
           }} />
+      
     </Stack.Navigator>
   );
 };

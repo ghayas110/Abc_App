@@ -3,9 +3,9 @@ import React from 'react'
 
 const MainSignUp = () => {
   return (
-    <View>
-      <Text>MainSignUp</Text>
-    </View>
+    
+    <></>
+
   )
 }
 

@@ -7,7 +7,7 @@ import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemL
 import BottomTabNavigator from "./TabNavigator";
 import Otp from '../screens/Otp';
 import SignUp from '../screens/SignUp';
-import SplashScreen from '../screens/SplashScreen';
+import SplashScreen from '../screens/SplashScreen/SplashScreen';
 import CustomDrawer from './DrawerNavigation';
 import SignOut from '../screens/SignOut';
 
@@ -17,6 +17,8 @@ import ChangePassword from '../screens/ChangePassword';
 import EditProfileScreen from '../screens/EditProfileScreen';
 import LoginScreen from '../screens/LoginScreen';
 import { SignUpStackNavigator } from './StackNavigator';
+import LandingPage from '../screens/LandingScreen/LandingPage';
+import LandingPage2 from '../screens/LandingScreen/LandingPage2';
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -52,7 +54,8 @@ const MainStackNavigator = () => {
       
         <AuthStack.Screen name="NewPassword" component={NewPassword}/>
    
-        
+            <AuthStack.Screen name="Landing" component={LandingPage} />
+            <AuthStack.Screen name="Landing2" component={LandingPage2} />
   
       <AuthStack.Screen name="OtpS">
       {(props) => <Otp {...props} onLogin={() => setIsLoggedIn(true)}/>}
