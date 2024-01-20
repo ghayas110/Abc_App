@@ -24,47 +24,36 @@ const MainStackNavigator = () => {
   const Drawer = createDrawerNavigator();
 
   return (
-  
-    <NavigationContainer>
-    {isLoggedIn ? (
-      <Drawer.Navigator  screenOptions={{
-        headerShown: false
-        }} drawerContent={props => <CustomDrawer {...props} />}>
-      <Drawer.Screen name="Home" component={BottomTabNavigator} />
-        <Drawer.Screen name="SignOut" >
-        {(props) => <SignOut {...props} onLogin={() => setIsLoggedIn(false)}/>}
-        </Drawer.Screen>
-        <Drawer.Screen name='ChangePassword' component={ChangePassword}/>
-        <Drawer.Screen name='EditProfile' component={EditProfileScreen}/>
-      </Drawer.Navigator>
-    ) : (
-      <AuthStack.Navigator screenOptions={{
-        headerShown: false
-        }}>
-        <AuthStack.Screen name="Splash">
-        {(props) => <SplashScreen />}
-        
-        </AuthStack.Screen>
 
-        <AuthStack.Screen name="Login" component={LoginScreen}/>
-        <AuthStack.Screen name="ForgotPassScreen" component={ForgotPassScreen}/>
-     
-      
-        <AuthStack.Screen name="NewPassword" component={NewPassword}/>
-   
-        
-  
-      <AuthStack.Screen name="OtpS">
-      {(props) => <Otp {...props} onLogin={() => setIsLoggedIn(true)}/>}
-      
-      </AuthStack.Screen>
-      <AuthStack.Screen name="SignUp" component={SignUpStackNavigator}/>
-    
-    </AuthStack.Navigator>
-    )}
-   
+    <NavigationContainer>
+      {isLoggedIn ? (
+
+        <Drawer.Navigator screenOptions={{ headerShown: false }} 
+          drawerContent={props => <CustomDrawer {...props} />}>
+          <Drawer.Screen name="Home" component={BottomTabNavigator} />
+          <Drawer.Screen name="SignOut" >
+            {(props) => <SignOut {...props} onLogin={() => setIsLoggedIn(false)} />}
+          </Drawer.Screen>
+          <Drawer.Screen name='ChangePassword' component={ChangePassword} />
+          <Drawer.Screen name='EditProfile' component={EditProfileScreen} />
+        </Drawer.Navigator>
+      ) : (
+        <AuthStack.Navigator screenOptions={{
+          headerShown: false
+        }}>
+          <AuthStack.Screen name="Splash">
+            {(props) => <SplashScreen />}
+          </AuthStack.Screen>
+          <AuthStack.Screen name="Login" component={LoginScreen} />
+          <AuthStack.Screen name="ForgotPassScreen" component={ForgotPassScreen} />
+          <AuthStack.Screen name="NewPassword" component={NewPassword} />
+          <AuthStack.Screen name="OtpS">
+            {(props) => <Otp {...props} onLogin={() => setIsLoggedIn(true)} />}
+          </AuthStack.Screen>
+          <AuthStack.Screen name="SignUp" component={SignUpStackNavigator} />
+        </AuthStack.Navigator>
+      )}
     </NavigationContainer>
- 
   );
 };
 export default MainStackNavigator
