@@ -17,6 +17,7 @@ import ChangePassword from '../screens/ChangePassword';
 import EditProfileScreen from '../screens/EditProfileScreen';
 import LoginScreen from '../screens/LoginScreen';
 import { SignUpStackNavigator } from './StackNavigator';
+import DetailOne from '../screens/verify-personal/DetailOne';
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -51,6 +52,8 @@ const MainStackNavigator = () => {
             {(props) => <Otp {...props} onLogin={() => setIsLoggedIn(true)} />}
           </AuthStack.Screen>
           <AuthStack.Screen name="SignUp" component={SignUpStackNavigator} />
+          <AuthStack.Screen name="DetailOne" component={DetailOne} />
+
         </AuthStack.Navigator>
       )}
     </NavigationContainer>

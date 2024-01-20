@@ -14,7 +14,8 @@ const SimpleInput = ({
     label,
     value,
     type,
-    placeholder
+    placeholder,
+    onChangeText
 }) => {
     return (
         <>
@@ -34,13 +35,14 @@ const SimpleInput = ({
                     type={type}
                     value={value}
                     placeholderTextColor={placeholderTextColor}
+                    onChangeText={() => onChangeText()}
                 />
             </View>
         </>
     )
 }
 
-const OtpInput = () => {
+const OtpInput = ({onChangeText}) => {
     return (
         <>
             <View style={{
@@ -55,26 +57,32 @@ const OtpInput = () => {
                 <TextInput
                     style={styles.otpInput}
                     type={"number"}
+                    onChangeText={() => onChangeText()}
                 />
                 <TextInput
                     style={styles.otpInput}
                     type={"number"}
+                    onChangeText={() => onChangeText()}
                 />
                 <TextInput
                     style={styles.otpInput}
                     type={"number"}
+                    onChangeText={() => onChangeText()}
                 />
                 <TextInput
                     style={styles.otpInput}
                     type={"number"}
+                    onChangeText={() => onChangeText()}
                 />
                 <TextInput
                     style={styles.otpInput}
                     type={"number"}
+                    onChangeText={() => onChangeText()}
                 />
                 <TextInput
                     style={styles.otpInput}
                     type={"number"}
+                    onChangeText={() => onChangeText()}
                 />
             </View>
         </>
@@ -84,6 +92,7 @@ const OtpInput = () => {
 const CheckBoxInput = ({
     text,
     color,
+    onValueChange
 }) => {
     return (
         <>
@@ -96,6 +105,7 @@ const CheckBoxInput = ({
             }}>
                 <Checkbox.Android
                     color={color}
+                    onValueChange={() => onValueChange()}
                 />
                 <Text>{text}</Text>
             </View>

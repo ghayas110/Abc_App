@@ -4,11 +4,11 @@ import { useNavigation } from '@react-navigation/native';
 
 const SplashScreen = () => {
   const navigation =useNavigation()
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     navigation.navigate('SignUp')
-  //   }, 1000); // Navigate to Home screen after 10 seconds
-  // }, [navigation]);
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('DetailOne')
+    }, 1000); // Navigate to Home screen after 10 seconds
+  }, [navigation]);
   return (
     <View>
       <Text>SplashScreen</Text>

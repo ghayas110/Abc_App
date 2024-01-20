@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View,TouchableOpacity,Dimensions  } from 'react-native'
+import { Button, StyleSheet, Text, View,TouchableOpacity,Dimensions  } from 'react-native'
 const { width, height } = Dimensions.get('window');
 
-function RequestButton({text}) {
+function RequestButton({text,onPress}) {
     return (
         <>
             <View style={styles.btnContainer}>
-                <TouchableOpacity style={styles.btnStyleReq}>
+                <TouchableOpacity style={styles.btnStyleReq} onPress={() => { onPress() }}>
                     <Text style={styles.textBtnReq}>{text}</Text>
                 </TouchableOpacity>
             </View>
@@ -13,11 +13,11 @@ function RequestButton({text}) {
     )
 }
 
-function OutlineButton({text}) {
+function OutlineButton({text,onPress}) {
     return (
         <>
             <View style={styles.btnContainer}>
-                <TouchableOpacity style={styles.btnStyleOutline}>
+                <TouchableOpacity style={styles.btnStyleOutline} onPress={() => { onPress() }}>
                     <Text style={styles.textBtnOutline}>{text}</Text>
                 </TouchableOpacity>
             </View>
@@ -25,11 +25,11 @@ function OutlineButton({text}) {
     )
 }
 
-function CancelButton({text}) {
+function CancelButton({text,onPress}) {
     return (
         <>
             <View style={styles.btnContainer}>
-                <TouchableOpacity style={styles.btnStyleCancel}>
+                <TouchableOpacity style={styles.btnStyleCancel} onPress={() => { onPress() }}>
                     <Text style={styles.textBtnCancel}>{text}</Text>
                 </TouchableOpacity>
             </View>

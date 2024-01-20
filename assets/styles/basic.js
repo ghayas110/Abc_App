@@ -9,18 +9,27 @@ const styles = StyleSheet.create({
     },
     main_heading: {
         fontSize: 25,
-        color: "#00a200"
+        color: "#00a200",
+        textTransform: "capitalize"
     },
     sub_heading: {
         fontSize: 18,
-        color: "#00a200"
+        color: "#00a200",
+        textTransform: "capitalize"
     },
     basic_button: {
         backgroundColor: "#00a200"
     },
     basic_button_text: {
         color: "white",
+        textTransform: "capitalize",
         textAlign: "center"
+    },
+    simple_txt: {
+        fontSize: 18,
+        fontWeight: "600",
+        textAlign: "center",
+        color: "#808080",
     },
 
     // HEADINGS COLORS =================================
