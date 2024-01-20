@@ -22,11 +22,10 @@ const MainStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
       headerShown: false
-      }}>
+    }}>
       <Stack.Screen name="Home" component={HomeScreen} screenOptions={{
         headerShown: false
-        }} />
-  
+      }} />
     </Stack.Navigator>
   );
 };
@@ -34,19 +33,18 @@ const SignUpStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
       headerShown: false
-      }}>
+    }}>
       <Stack.Screen name="SignUpMain" component={MainSignUp} screenOptions={{
         headerShown: false
-        }} />
+      }} />
       <Stack.Screen name="SignUpScreen" component={SignUp} screenOptions={{
         headerShown: false
-        }} />
-        <Stack.Screen name="Terms" component={Terms} screenOptions={{
-          headerShown: false
-          }} />
-      
+      }} />
+      <Stack.Screen name="Terms" component={Terms} screenOptions={{
+        headerShown: false
+      }} />
     </Stack.Navigator>
   );
 };
 
-export { MainStackNavigator,SignUpStackNavigator };
+export { MainStackNavigator, SignUpStackNavigator };

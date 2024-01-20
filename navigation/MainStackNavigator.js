@@ -17,57 +17,52 @@ import ChangePassword from '../screens/ChangePassword';
 import EditProfileScreen from '../screens/EditProfileScreen';
 import LoginScreen from '../screens/LoginScreen';
 import { SignUpStackNavigator } from './StackNavigator';
+<<<<<<< HEAD
 import LandingPage from '../screens/LandingScreen/LandingPage';
 import LandingPage2 from '../screens/LandingScreen/LandingPage2';
+=======
+import DetailOne from '../screens/verify-personal/DetailOne';
+>>>>>>> 8e15f57ae2e57e2b8126d24986bf36b16ba61476
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
   const Drawer = createDrawerNavigator();
 
-  return (
-  
+  return (    
     <NavigationContainer>
-    {isLoggedIn ? (
-      <Drawer.Navigator  screenOptions={{
-        headerShown: false
-        }} drawerContent={props => <CustomDrawer {...props} />}>
-      <Drawer.Screen name="Home" component={BottomTabNavigator} />
-        <Drawer.Screen name="SignOut" >
-        {(props) => <SignOut {...props} onLogin={() => setIsLoggedIn(false)}/>}
-        </Drawer.Screen>
-        <Drawer.Screen name='ChangePassword' component={ChangePassword}/>
-        <Drawer.Screen name='EditProfile' component={EditProfileScreen}/>
-      </Drawer.Navigator>
-    ) : (
-      <AuthStack.Navigator screenOptions={{
-        headerShown: false
-        }}>
-        <AuthStack.Screen name="Splash">
-        {(props) => <SplashScreen />}
-        
-        </AuthStack.Screen>
+      {isLoggedIn ? (
 
-        <AuthStack.Screen name="Login" component={LoginScreen}/>
-        <AuthStack.Screen name="ForgotPassScreen" component={ForgotPassScreen}/>
-     
-      
-        <AuthStack.Screen name="NewPassword" component={NewPassword}/>
-   
-            <AuthStack.Screen name="Landing" component={LandingPage} />
-            <AuthStack.Screen name="Landing2" component={LandingPage2} />
-  
-      <AuthStack.Screen name="OtpS">
-      {(props) => <Otp {...props} onLogin={() => setIsLoggedIn(true)}/>}
-      
-      </AuthStack.Screen>
-      <AuthStack.Screen name="SignUp" component={SignUpStackNavigator}/>
-    
-    </AuthStack.Navigator>
-    )}
-   
+        <Drawer.Navigator screenOptions={{ headerShown: false }} 
+          drawerContent={props => <CustomDrawer {...props} />}>
+          <Drawer.Screen name="Home" component={BottomTabNavigator} />
+          <Drawer.Screen name="SignOut" >
+            {(props) => <SignOut {...props} onLogin={() => setIsLoggedIn(false)} />}
+          </Drawer.Screen>
+          <Drawer.Screen name='ChangePassword' component={ChangePassword} />
+          <Drawer.Screen name='EditProfile' component={EditProfileScreen} />
+        </Drawer.Navigator>
+      ) : (
+        <AuthStack.Navigator screenOptions={{
+          headerShown: false
+        }}>
+          <AuthStack.Screen name="Splash">
+            {(props) => <SplashScreen />}
+          </AuthStack.Screen>
+          <AuthStack.Screen name="Login" component={LoginScreen} />
+          <AuthStack.Screen name="ForgotPassScreen" component={ForgotPassScreen} />
+          <AuthStack.Screen name="NewPassword" component={NewPassword} />
+          <AuthStack.Screen name="OtpS">
+              <AuthStack.Screen name="Landing" component={LandingPage} />
+              <AuthStack.Screen name="Landing2" component={LandingPage2} />
+            {(props) => <Otp {...props} onLogin={() => setIsLoggedIn(true)} />}
+          </AuthStack.Screen>
+          <AuthStack.Screen name="SignUp" component={SignUpStackNavigator} />
+          <AuthStack.Screen name="DetailOne" component={DetailOne} />
+
+        </AuthStack.Navigator>
+      )}
     </NavigationContainer>
- 
   );
 };
 export default MainStackNavigator
