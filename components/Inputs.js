@@ -14,8 +14,7 @@ const SimpleInput = ({
     label,
     value,
     type,
-    placeholder,
-    onChangeText
+    placeholder
 }) => {
     return (
         <>
@@ -35,14 +34,13 @@ const SimpleInput = ({
                     type={type}
                     value={value}
                     placeholderTextColor={placeholderTextColor}
-                    onChangeText={() => onChangeText()}
                 />
             </View>
         </>
     )
 }
 
-const OtpInput = ({onChangeText}) => {
+const OtpInput = () => {
     return (
         <>
             <View style={{
@@ -57,32 +55,26 @@ const OtpInput = ({onChangeText}) => {
                 <TextInput
                     style={styles.otpInput}
                     type={"number"}
-                    onChangeText={() => onChangeText()}
                 />
                 <TextInput
                     style={styles.otpInput}
                     type={"number"}
-                    onChangeText={() => onChangeText()}
                 />
                 <TextInput
                     style={styles.otpInput}
                     type={"number"}
-                    onChangeText={() => onChangeText()}
                 />
                 <TextInput
                     style={styles.otpInput}
                     type={"number"}
-                    onChangeText={() => onChangeText()}
                 />
                 <TextInput
                     style={styles.otpInput}
                     type={"number"}
-                    onChangeText={() => onChangeText()}
                 />
                 <TextInput
                     style={styles.otpInput}
                     type={"number"}
-                    onChangeText={() => onChangeText()}
                 />
             </View>
         </>
@@ -92,7 +84,6 @@ const OtpInput = ({onChangeText}) => {
 const CheckBoxInput = ({
     text,
     color,
-    onValueChange
 }) => {
     return (
         <>
@@ -105,7 +96,6 @@ const CheckBoxInput = ({
             }}>
                 <Checkbox.Android
                     color={color}
-                    onValueChange={() => onValueChange()}
                 />
                 <Text>{text}</Text>
             </View>

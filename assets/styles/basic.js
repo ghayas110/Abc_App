@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
     main_heading: {
         fontSize: 25,
         color: "#00a200",
-        textTransform: "capitalize"
+        textTransform: "capitalize",
+        fontWeight: "600"
     },
     sub_heading: {
         fontSize: 18,
