@@ -4,11 +4,6 @@ import { useNavigation } from '@react-navigation/native';
 
 const SplashScreen = () => {
   const navigation =useNavigation()
-
-  // const style = {
-  //   color: "red",
-  //   fontSize: 25
-  // }
   // useEffect(() => {
   //   setTimeout(() => {
   //     navigation.navigate('SignUp')
