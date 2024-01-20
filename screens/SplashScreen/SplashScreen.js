@@ -34,7 +34,8 @@ const SplashScreen = () => {
         isSplashScreen ?
           <View style={styles.Container}>
             <Animated.View style={{ ...styles.Logos, opacity: fadeAnim }}>
-              <Image source={SplashLogos2} style={styles.image1} />
+              <Image source={SplashLogos} style={styles.image1} />
+              <Text style={{fontSize:16, color:"white" , fontFamily:"Poppins"}}>Powered By Ssssco</Text>
             </Animated.View>
           </View>
           : <View style={styles.Container}>
@@ -59,11 +60,12 @@ const styles = StyleSheet.create({
   Logos: {
     marginLeft: 5,
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
+    flexDirection:"column",
   },
   image1: {
-    // width: 200,
-    // height: 200,
+    width: 100,
+    height: 100,
     resizeMode: 'contain',
   },
 

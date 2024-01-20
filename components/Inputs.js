@@ -25,7 +25,7 @@ const SimpleInput = ({
                 marginTop: 10
             }}>
                 <Text style={{
-                    fontSize: 25,
+                    fontSize: 12,
                     color: "#808080"
                 }}>{label}</Text>
                 <TextInput

@@ -48,6 +48,9 @@ const styles = StyleSheet.create({
     },
     // GREEN BUTTON =========================
     btnStyleReq: {
+        height:50,
+        textAlign:"center",
+        justifyContent:"center",
         backgroundColor: "#00a200",
         paddingTop : 10,
         paddingBottom: 10,
@@ -57,6 +60,8 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         color: "white",
         textAlign: "center",
+        fontSize:16,
+        fontFamily:"Poppins"
     },
     // OUT-LINE BUTTON =========================
     btnStyleOutline: {

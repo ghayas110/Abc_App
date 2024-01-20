@@ -20,6 +20,13 @@ import { SignUpStackNavigator } from './StackNavigator';
 import LandingPage from '../screens/LandingScreen/LandingPage';
 import LandingPage2 from '../screens/LandingScreen/LandingPage2';
 import DetailOne from '../screens/verify-personal/DetailOne';
+import CreateUserName from '../screens/CreateAccount/CreateUserName';
+import CreateSecureWord from '../screens/CreateAccount/CreateSecureWord'
+import CreatePassword from '../screens/CreateAccount/CreatePassword';
+import BioActivation from '../screens/CreateAccount/BioActivation';
+import HowSearch from '../screens/CreateAccount/HowSearch';
+import PersonalDetails from '../screens/CreateAccount/PersonalDetails';
+import Successfully from '../screens/CreateAccount/Successfully';
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -46,12 +53,20 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="Splash">
             {(props) => <SplashScreen />}
           </AuthStack.Screen>
+          <AuthStack.Screen name="Landing" component={LandingPage} />
+          <AuthStack.Screen name="Landing2" component={LandingPage2} />
+            <AuthStack.Screen name="CreateUserName" component={CreateUserName} />
+            <AuthStack.Screen name="CreateSecureWord" component={CreateSecureWord} />
+            <AuthStack.Screen name="CreatePassword" component={CreatePassword} />
+            <AuthStack.Screen name="BioActivation" component={BioActivation} />
+            <AuthStack.Screen name="HowSearch" component={HowSearch} />
+            <AuthStack.Screen name="PersonalDetails" component={PersonalDetails} />
+            <AuthStack.Screen name="Successfully" component={Successfully} />
           <AuthStack.Screen name="Login" component={LoginScreen} />
           <AuthStack.Screen name="ForgotPassScreen" component={ForgotPassScreen} />
           <AuthStack.Screen name="NewPassword" component={NewPassword} />
+
           <AuthStack.Screen name="OtpS">
-              <AuthStack.Screen name="Landing" component={LandingPage} />
-              <AuthStack.Screen name="Landing2" component={LandingPage2} />
             {(props) => <Otp {...props} onLogin={() => setIsLoggedIn(true)} />}
           </AuthStack.Screen>
           <AuthStack.Screen name="SignUp" component={SignUpStackNavigator} />
