@@ -17,12 +17,9 @@ import ChangePassword from '../screens/ChangePassword';
 import EditProfileScreen from '../screens/EditProfileScreen';
 import LoginScreen from '../screens/LoginScreen';
 import { SignUpStackNavigator } from './StackNavigator';
-<<<<<<< HEAD
 import LandingPage from '../screens/LandingScreen/LandingPage';
 import LandingPage2 from '../screens/LandingScreen/LandingPage2';
-=======
 import DetailOne from '../screens/verify-personal/DetailOne';
->>>>>>> 8e15f57ae2e57e2b8126d24986bf36b16ba61476
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
