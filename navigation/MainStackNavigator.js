@@ -61,7 +61,6 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="DetailThree" component={DetailThree} />
           <AuthStack.Screen name="ReviewDetails" component={ReviewDetails} />
           <AuthStack.Screen name="VerifyingDetails" component={VerifyingDetails} />
-
         </AuthStack.Navigator>
       )}
     </NavigationContainer>
