@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions, TextInput } from 'react-native'
-import { Checkbox } from 'react-native-paper';
+import Checkbox from 'react-native-check-box';
 import DropDownPicker from 'react-native-dropdown-picker';
-
 
 const { width, height } = Dimensions.get('window');
 
@@ -91,6 +90,7 @@ const CheckBoxInput = ({
     status,
     others
 }) => {
+    const [isChecked, setIsChecked] = useState(false)
     return (
         <>
             <View style={{
@@ -100,10 +100,11 @@ const CheckBoxInput = ({
                 marginTop: 10,
                 padding: 0,
             }}>
-                <Checkbox.Android 
-                    status={status}  
-                    uncheckedColor={color}
-                    color={color}
+                <Checkbox
+                    isChecked={isChecked}
+                    status={isChecked}
+                    onClick={() => setIsChecked(!isChecked)}
+                    checkBoxColor={color}
                 />
                 <Text>{text}</Text>
             </View>
@@ -119,17 +120,17 @@ const List = ({
     items,
     value
 }) => {
-    const [isOpen,setOpen] = useState(false)
-    const [currentValue,setCurrentValue] = useState()
+    const [isOpen, setOpen] = useState(false)
+    const [currentValue, setCurrentValue] = useState()
 
 
     return (
         <>
             <View style={{
-                 paddingLeft: 15,
-                 paddingRight: 15,
-                 width: width,
-                 marginTop: 15
+                paddingLeft: 15,
+                paddingRight: 15,
+                width: width,
+                marginTop: 15
             }}>
                 <Text style={textStyle}>{label}</Text>
                 <DropDownPicker
@@ -139,7 +140,7 @@ const List = ({
                     value={currentValue}
                     setOpen={() => setOpen(!isOpen)}
                     open={isOpen}
-                    style={{ 
+                    style={{
                         zIndex: 1000,
                         borderTopWidth: 0,
                         borderLeftWidth: 0,
@@ -159,4 +160,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export { SimpleInput, OtpInput, CheckBoxInput,List }
+export { SimpleInput, OtpInput, CheckBoxInput, List }

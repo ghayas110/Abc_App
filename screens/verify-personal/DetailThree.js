@@ -20,6 +20,7 @@ const DetailThree = () => {
                 ...style.basic_container,
                 height: height,
                 position: "relative",
+                backgroundColor: "white"
             }}>
                 <View style={{
                     marginTop: 20,
@@ -65,12 +66,11 @@ const DetailThree = () => {
                     paddingLeft: 30,
                     paddingRight: 30
                 }}>
-                    <Text style={{ ...style.main_heading, fontSize: 20 }}>What would you be using for?</Text>
                     <Text style={{ ...style.gray_color_f, marginTop: 10, fontSize: 19 }}>I plan to use Rize for...</Text>
-                    <CheckBoxInput text={"Daily spending"} status={"unchecked"} color={"#00a200"} />
-                    <CheckBoxInput text={"Saving"} status={"checked"} color={"#00a200"} />
-                    <CheckBoxInput text={"Financing"} status={"unchecked"} color={"#00a200"} />
-                    <CheckBoxInput text={"Other"} status={"checked"} others={true} color={"#00a200"} />
+                    <CheckBoxInput text={"Daily spending"} color={"#00a200"}/>
+                    <CheckBoxInput text={"Saving"}  color={"#00a200"}/>
+                    <CheckBoxInput text={"Financing"} color={"#00a200"} />
+                    <CheckBoxInput text={"Other"} color={"#00a200"} />
                 </View>
                 <RequestButton text={"Next"} onPress={() => nextPage()}
                     btnStyle={{ position: "absolute", bottom: 50 }}
