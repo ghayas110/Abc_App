@@ -108,4 +108,5 @@ const DetailOne = () => {
     )
 }
 
+
 export default DetailOne

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions, TextInput } from 'react-native'
 import { Checkbox } from 'react-native-paper';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -116,8 +116,11 @@ const List = ({
     label,
     textStyle,
     placeholder,
-    items
+    items,
+    value
 }) => {
+    const [isOpen,setOpen] = useState(false)
+    const [currentValue,setCurrentValue] = useState()
 
 
     return (
@@ -130,9 +133,19 @@ const List = ({
             }}>
                 <Text style={textStyle}>{label}</Text>
                 <DropDownPicker
-                placeholder={placeholder}
-                items={items}
-                defaultValue={defaultValue}
+                    placeholder={placeholder}
+                    items={items}
+                    defaultValue={defaultValue}
+                    value={currentValue}
+                    setOpen={() => setOpen(!isOpen)}
+                    open={isOpen}
+                    style={{ 
+                        zIndex: 1000,
+                        borderTopWidth: 0,
+                        borderLeftWidth: 0,
+                        borderRightWidth: 0
+                    }}
+                    setValue={(val) => setCurrentValue(val)}
                 />
             </View>
         </>

@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { Image, StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'react-native'
+import { Image, StyleSheet, Text, View, Dimensions,ScrollView, TouchableOpacity } from 'react-native'
 import style from "../../assets/styles/basic"
 import { CheckBoxInput, List, SimpleInput } from '../../components/Inputs';
 import { RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
 import Modal from 'react-native-modal';
-import { ScrollView } from 'react-native-gesture-handler';
 
 const ReviewDetails = () => {
     const { width, height } = Dimensions.get('window');
