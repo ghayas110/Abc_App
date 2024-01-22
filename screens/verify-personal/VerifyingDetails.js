@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'rea
 import style from "../../assets/styles/basic"
 import { useNavigation } from '@react-navigation/native';
 import { RequestButton } from '../../components/Buttons';
+import ActivationSteps from '../../components/steps/ActivationSteps';
 
 
 const VerifyingDetails = () => {
@@ -38,15 +39,17 @@ const VerifyingDetails = () => {
                         ...style.Green_color_h,
                         marginTop: 20,
                         fontSize: 25,
-                        fontWeight: "600",
-                    }}>We’re verifying  your details</Text>
+                        fontFamily: "Poppins-Bold"
+                    }}>We’re verifying  your {'\n'} details</Text>
                     <Text style={{
                         marginTop: 15,
-                        fontSize: 18,
-                        padding: 0
-                    }}>While that’s happening, let’s create {'\n'} your account</Text>
+                        fontSize: 15,
+                        padding: 0,
+                        fontFamily: "Poppins-Regular",
+                        ...style.gray_color_h
+                    }}>While that’s happening, let’s create  your  {'\n'} account</Text>
 
-                    <View style={{
+                    {/* <View style={{
                         display: "flex",
                         justifyContent: "space-around",
                         flexDirection: "row",
@@ -58,7 +61,7 @@ const VerifyingDetails = () => {
                         }}>
                             <Image source={require('./images/checkbox.png')} />
                             <Image style={{position:"relative",top: -15,left: 45}} source={require('./images/line.png')} />
-                            <Text style={{fontWeight: "600",textAlign: "center"}}>Sign up & ID {'\n'} verification</Text>
+                            <Text style={{color: "black",fontFamily: "Poppins-Regular",textAlign: "center",fontSize: 12}}>Sign up & ID {'\n'} verification</Text>
                         </View>
                         <View style={{
                             display: "flex",
@@ -66,7 +69,7 @@ const VerifyingDetails = () => {
                         }}>
                             <Image source={require('./images/checkbox.png')} />
                             <Image style={{position:"relative",top: -15,left: 45}} source={require('./images/line.png')} />
-                            <Text style={{fontWeight: "600",textAlign: "center"}}>Personal {'\n'} details</Text>
+                            <Text style={{color: "black",fontFamily: "Poppins-Regular",textAlign: "center",fontSize: 12}}>Personal {'\n'} details</Text>
                         </View>
                         <View style={{
                             display: "flex",
@@ -74,7 +77,7 @@ const VerifyingDetails = () => {
                         }}>
                             <Image source={require('./images/setting-blue-color.png')} />
                             <Image style={{position:"relative",top: -15,left: 45}} source={require('./images/line.png')} />
-                            <Text style={{fontWeight: "600",textAlign: "center"}}>Create {'\n'} an accounts</Text>
+                            <Text style={{color: "black",fontFamily: "Poppins-Regular",textAlign: "center",fontSize: 12}}>Create {'\n'} an accounts</Text>
                         </View>
                         <View style={{
                             display: "flex",
@@ -82,9 +85,20 @@ const VerifyingDetails = () => {
                             justifyContent:"center"
                         }}>
                             <Image source={require('./images/Wallet.png')} />
-                            <Text style={{fontWeight: "600",textAlign: "center"}}>Top up {'\n'} account</Text>
+                            <Text style={{color: "gray",fontFamily: "Poppins-Regular",textAlign: "center",fontSize: 12}}>Top up {'\n'} account</Text>
                         </View>
-                    </View>
+                    </View> */}
+                    <ActivationSteps 
+                        verticalLineImage={require('./images/line.png')}
+                        image_a={require('./images/checkbox.png')}
+                        text_a={`Sign up & ID ${'\n'} verification`}
+                        image_b={require('./images/checkbox.png')}
+                        text_b={`Personal ${'\n'} details`}
+                        image_c={require('./images/setting-blue-color.png')}
+                        text_c={`Create ${'\n'} an accounts`}
+                        image_d={require('./images/Wallet.png')}
+                        text_d={`Top up ${'\n'} account`}
+                    />
                     <RequestButton text={"Create my account"} onPress={() => nextPage()}
                         btnStyle={{ position: "absolute", bottom: 50 }}
                     />

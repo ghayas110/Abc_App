@@ -4,6 +4,7 @@ import style from "../../assets/styles/basic"
 import { CheckBoxInput, List, SimpleInput } from '../../components/Inputs';
 import { RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
+import Steps from '../../components/Steps';
 
 
 
@@ -22,42 +23,12 @@ const DetailThree = () => {
                 position: "relative",
                 backgroundColor: "white"
             }}>
-                <View style={{
-                    marginTop: 20,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    position: "relative",
-                }}>
-                    <Image style={{
-                        position: "absolute",
-                        left: width * 0.10
-                    }}
-                        source={require('./images/Icons.png')}
-                    />
-                    {/* STEPS =========================== */}
-                    <View style={{
-                        width: width * 0.5,
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center"
-                    }}>
-
-                        <Image
-                            source={require('./images/Profile.png')}
-                        />
-                        <View>
-                            <Text style={{ ...style.simple_txt, marginBottom: 5 }}>Step 3 of 4</Text>
-                            <Image
-                                source={require('./images/steps.png')}
-                            />
-                        </View>
-                        <Image
-                            source={require('./images/Setting.png')}
-                        />
-                    </View>
-                </View>
+               <Steps
+                    backtoPageName={"DetailTwo"}
+                    backtoPage={true}
+                    totalSteps={"4"}
+                    activeStep={"3"}
+                />
 
                 {/* INPUT BOX ============================= */}
                 <View style={{
@@ -66,11 +37,12 @@ const DetailThree = () => {
                     paddingLeft: 30,
                     paddingRight: 30
                 }}>
-                    <Text style={{ ...style.gray_color_f, marginTop: 10, fontSize: 19 }}>I plan to use Rize for...</Text>
-                    <CheckBoxInput text={"Daily spending"} color={"#00a200"}/>
-                    <CheckBoxInput text={"Saving"}  color={"#00a200"}/>
-                    <CheckBoxInput text={"Financing"} color={"#00a200"} />
-                    <CheckBoxInput text={"Other"} color={"#00a200"} />
+                    <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25,fontFamily: "Poppins-Bold" }}>What would you be {'\n'} using Smart star for?</Text>
+                    <Text style={{ ...style.gray_color_f, marginTop: 10, fontSize: 19,fontFamily: "Poppins-Regular" }}>I plan to use Smart star for...</Text>
+                    <CheckBoxInput textStyle={{color: "black",fontSize: 20,marginLeft: 10}} text={"Daily spending"} color={"#00a200"}/>
+                    <CheckBoxInput textStyle={{color: "black",fontSize: 20,marginLeft: 10}} text={"Saving"}  color={"#00a200"}/>
+                    <CheckBoxInput textStyle={{color: "black",fontSize: 20,marginLeft: 10}} text={"Financing"} color={"#00a200"} />
+                    <CheckBoxInput textStyle={{color: "black",fontSize: 20,marginLeft: 10}} text={"Other"} color={"#00a200"} />
                 </View>
                 <RequestButton text={"Next"} onPress={() => nextPage()}
                     btnStyle={{ position: "absolute", bottom: 50 }}

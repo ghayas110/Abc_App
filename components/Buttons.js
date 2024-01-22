@@ -6,7 +6,7 @@ function RequestButton({text,onPress,btnStyle}) {
         <>
             <View style={{...styles.btnContainer,...btnStyle}}>
                 <TouchableOpacity style={styles.btnStyleReq} onPress={() => { onPress() }}>
-                    <Text style={styles.textBtnReq}>{text}</Text>
+                    <Text style={{...styles.textBtnReq,fontFamily: "Poppins-Regular"}}>{text}</Text>
                 </TouchableOpacity>
             </View>
         </>
@@ -18,7 +18,7 @@ function OutlineButton({text,onPress}) {
         <>
             <View style={styles.btnContainer}>
                 <TouchableOpacity style={styles.btnStyleOutline} onPress={() => { onPress() }}>
-                    <Text style={styles.textBtnOutline}>{text}</Text>
+                    <Text style={{...styles.textBtnOutline, fontFamily: "Poppins-Regular"}}>{text}</Text>
                 </TouchableOpacity>
             </View>
         </>
@@ -30,7 +30,7 @@ function CancelButton({text,onPress}) {
         <>
             <View style={styles.btnContainer}>
                 <TouchableOpacity style={styles.btnStyleCancel} onPress={() => { onPress() }}>
-                    <Text style={styles.textBtnCancel}>{text}</Text>
+                    <Text style={{...styles.textBtnCancel,fontFamily: "Poppins-Regular"}}>{text}</Text>
                 </TouchableOpacity>
             </View>
         </>

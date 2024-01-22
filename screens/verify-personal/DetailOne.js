@@ -4,6 +4,7 @@ import style from "../../assets/styles/basic"
 import { List, SimpleInput } from '../../components/Inputs';
 import { RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
+import Steps from '../../components/Steps';
 
 
 
@@ -24,45 +25,24 @@ const DetailOne = () => {
                 position: "relative",
                 backgroundColor: "white"
             }}>
-                <View style={{
-                    marginTop: 20,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center"
-                }}>
-                    {/* STEPS =========================== */}
-                    <View style={{
-                        width: width * 0.5,
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "space-between",
-                        alignItems: "center"
-                    }}>
-                        <Image
-                            source={require('./images/Profile.png')}
-                        />
-                        <View>
-                            <Text style={{ ...style.simple_txt, marginBottom: 5 }}>Step 1 of 4</Text>
-                            <Image
-                                source={require('./images/steps.png')}
-                            />
-                        </View>
-                        <Image
-                            source={require('./images/Setting.png')}
-                        />
-                    </View>
-                </View>
+                <Steps
+                    backtoPageName={"DetailOne"}
+                    backtoPage={false}
+                    totalSteps={"4"}
+                    activeStep={"1"}
+                />
                 {/* INPUT BOX ============================= */}
                 <View style={{
                     ...style.basic_container,
                     marginTop: 30,
                 }}>
-                    <Text style={{ ...style.main_heading, textAlign: "center", paddingLeft: 10, fontSize: 20 }}>Just a few more details from you</Text>
+                    <Text style={{ ...style.main_heading, textAlign: "left", paddingLeft: 10, fontSize: 25, fontFamily: "Poppins-Bold" }}>Just a few more {'\n'} details from you</Text>
                     <SimpleInput
                         inputstyle={{
-                            fontSize: 20,
+                            fontSize: 15,
                             borderBottomWidth: 1,
                             borderBottomColor: '#808080',
+                            fontFamily: "Poppins-Regular"
                         }}
                         placeholderTextColor="#808080"
                         label={"Email"}
@@ -75,7 +55,8 @@ const DetailOne = () => {
                     marginTop: 30,
                 }}>
                     <List
-                        textStyle={{ ...style.main_heading, textAlign: "left", fontSize: 20, marginBottom: 10 }}
+                        textStyle={{ ...style.main_heading, textAlign: "left", fontSize: 18, marginBottom: 10 }}
+                        dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
                         label={"Marital status"}
                         placeholder={"Select Marital status"}
                         items={[
@@ -90,7 +71,8 @@ const DetailOne = () => {
                     marginTop: 30,
                 }}>
                     <List
-                        textStyle={{ ...style.main_heading, textAlign: "left", fontSize: 20, marginBottom: 10 }}
+                        textStyle={{ ...style.main_heading, textAlign: "left", fontSize: 18, marginBottom: 10 }}
+                        dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
                         label={"Marital Ethnicity"}
                         placeholder={"Select Ethnicity"}
                         items={[

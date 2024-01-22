@@ -27,11 +27,12 @@ const SimpleInput = ({
                 ...viewStyle
             }}>
                 <Text style={{
-                    fontSize: 20,
-                    color: "#808080"
+                    fontSize: 17,
+                    color: "#808080",
+                    fontFamily: "Poppins-Regular"
                 }}>{label}</Text>
                 <TextInput
-                    style={inputstyle}
+                    style={{...inputstyle}}
                     placeholder={placeholder}
                     type={type}
                     value={value}
@@ -56,27 +57,27 @@ const OtpInput = () => {
                 justifyContent: 'space-around'
             }}>
                 <TextInput
-                    style={styles.otpInput}
+                    style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
                     type={"number"}
                 />
                 <TextInput
-                    style={styles.otpInput}
+                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
                     type={"number"}
                 />
                 <TextInput
-                    style={styles.otpInput}
+                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
                     type={"number"}
                 />
                 <TextInput
-                    style={styles.otpInput}
+                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
                     type={"number"}
                 />
                 <TextInput
-                    style={styles.otpInput}
+                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
                     type={"number"}
                 />
                 <TextInput
-                    style={styles.otpInput}
+                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
                     type={"number"}
                 />
             </View>
@@ -86,6 +87,7 @@ const OtpInput = () => {
 
 const CheckBoxInput = ({
     text,
+    textStyle,
     color,
     status,
     others
@@ -106,7 +108,7 @@ const CheckBoxInput = ({
                     onClick={() => setIsChecked(!isChecked)}
                     checkBoxColor={color}
                 />
-                <Text>{text}</Text>
+                <Text style={{ ...textStyle, fontFamily: "Poppins-Regular" }}>{text}</Text>
             </View>
         </>
     )
@@ -116,6 +118,7 @@ const List = ({
     defaultValue,
     label,
     textStyle,
+    dropDownStyle,
     placeholder,
     items,
     value
@@ -132,7 +135,7 @@ const List = ({
                 width: width,
                 marginTop: 15
             }}>
-                <Text style={textStyle}>{label}</Text>
+                <Text style={{ ...textStyle, fontFamily: "Poppins-Regular" }}>{label}</Text>
                 <DropDownPicker
                     placeholder={placeholder}
                     items={items}
@@ -140,11 +143,14 @@ const List = ({
                     value={currentValue}
                     setOpen={() => setOpen(!isOpen)}
                     open={isOpen}
+                    textStyle={dropDownStyle}
                     style={{
                         zIndex: 1000,
                         borderTopWidth: 0,
                         borderLeftWidth: 0,
-                        borderRightWidth: 0
+                        borderRightWidth: 0,
+                        fontFamily: "Poppins-Regular",
+                        // color: "red"
                     }}
                     setValue={(val) => setCurrentValue(val)}
                 />
