@@ -1,15 +1,12 @@
 import { Button, StyleSheet, Text, View,TouchableOpacity,Dimensions  } from 'react-native'
 const { width, height } = Dimensions.get('window');
 
-function RequestButton({ text, onPress, disabled, style }) {
+function RequestButton({text,onPress,btnStyle}) {
     return (
         <>
-            <View style={styles.btnContainer}>
-                <TouchableOpacity style={styles.btnStyleReq}
-                    onPress={() => {onPress()}}
-                    disabled={disabled}
-                    >
-                    <Text style={styles.textBtnReq}>{text}</Text>
+            <View style={{...styles.btnContainer,...btnStyle}}>
+                <TouchableOpacity style={styles.btnStyleReq} onPress={() => { onPress() }}>
+                    <Text style={{...styles.textBtnReq,fontFamily: "Poppins-Regular"}}>{text}</Text>
                 </TouchableOpacity>
             </View>
         </>
@@ -21,7 +18,7 @@ function OutlineButton({text,onPress}) {
         <>
             <View style={styles.btnContainer}>
                 <TouchableOpacity style={styles.btnStyleOutline} onPress={() => { onPress() }}>
-                    <Text style={styles.textBtnOutline}>{text}</Text>
+                    <Text style={{...styles.textBtnOutline, fontFamily: "Poppins-Regular"}}>{text}</Text>
                 </TouchableOpacity>
             </View>
         </>
@@ -33,7 +30,7 @@ function CancelButton({text,onPress}) {
         <>
             <View style={styles.btnContainer}>
                 <TouchableOpacity style={styles.btnStyleCancel} onPress={() => { onPress() }}>
-                    <Text style={styles.textBtnCancel}>{text}</Text>
+                    <Text style={{...styles.textBtnCancel,fontFamily: "Poppins-Regular"}}>{text}</Text>
                 </TouchableOpacity>
             </View>
         </>
@@ -51,9 +48,6 @@ const styles = StyleSheet.create({
     },
     // GREEN BUTTON =========================
     btnStyleReq: {
-        height:50,
-        textAlign:"center",
-        justifyContent:"center",
         backgroundColor: "#00a200",
         paddingTop : 10,
         paddingBottom: 10,
@@ -63,14 +57,9 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         color: "white",
         textAlign: "center",
-        fontSize:16,
-        fontFamily:"Poppins"
     },
     // OUT-LINE BUTTON =========================
     btnStyleOutline: {
-        height: 50,
-        textAlign: "center",
-        justifyContent: "center",
         backgroundColor: "#ffff",
         borderWidth: 2,
         borderColor: "#00A200",
@@ -79,7 +68,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     textBtnOutline: {
-        
         fontWeight: "600",
         color: "#00A200",
         textAlign: "center",
@@ -95,12 +83,6 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         color: "#007aff",
         textAlign: "center",
-    },
-    enabledBtn: {
-        backgroundColor: '00A200',
-    },
-    disabledBtn: {
-        backgroundColor: '#CCCCCC',
     },
 
 });

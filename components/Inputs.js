@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions, TextInput } from 'react-native'
-import { Checkbox } from 'react-native-paper';
+import Checkbox from 'react-native-check-box';
 import DropDownPicker from 'react-native-dropdown-picker';
-
 
 const { width, height } = Dimensions.get('window');
 
@@ -13,8 +12,10 @@ const SimpleInput = ({
     inputstyle,
     label,
     value,
+    defaultValue,
     type,
-    placeholder
+    placeholder,
+    viewStyle
 }) => {
     return (
         <>
@@ -22,18 +23,20 @@ const SimpleInput = ({
                 paddingLeft: 15,
                 paddingRight: 15,
                 width: width,
-                marginTop: 10
+                marginTop: 10,
+                ...viewStyle
             }}>
                 <Text style={{
-                    fontSize: 12,
+                    fontSize: 17,
                     color: "#808080",
-                    fontWeight:"700"
+                    fontFamily: "Poppins-Regular"
                 }}>{label}</Text>
                 <TextInput
-                    style={inputstyle}
+                    style={{...inputstyle}}
                     placeholder={placeholder}
                     type={type}
                     value={value}
+                    defaultValue={defaultValue}
                     placeholderTextColor={placeholderTextColor}
                 />
             </View>
@@ -54,27 +57,27 @@ const OtpInput = () => {
                 justifyContent: 'space-around'
             }}>
                 <TextInput
-                    style={styles.otpInput}
+                    style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
                     type={"number"}
                 />
                 <TextInput
-                    style={styles.otpInput}
+                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
                     type={"number"}
                 />
                 <TextInput
-                    style={styles.otpInput}
+                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
                     type={"number"}
                 />
                 <TextInput
-                    style={styles.otpInput}
+                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
                     type={"number"}
                 />
                 <TextInput
-                    style={styles.otpInput}
+                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
                     type={"number"}
                 />
                 <TextInput
-                    style={styles.otpInput}
+                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
                     type={"number"}
                 />
             </View>
@@ -84,21 +87,27 @@ const OtpInput = () => {
 
 const CheckBoxInput = ({
     text,
+    textStyle,
     color,
+    status,
+    others
 }) => {
+    const [isChecked, setIsChecked] = useState(false)
     return (
         <>
             <View style={{
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
-                justifyContent: "center",
-                marginTop: 10
+                marginTop: 10,
+                padding: 0,
             }}>
-                <Checkbox.Android
-                    color={color}
+                <Checkbox
+                    isChecked={isChecked}
+                    status={isChecked}
+                    checkBoxColor={color}
                 />
-                <Text>{text}</Text>
+                <Text style={{ ...textStyle, fontFamily: "Poppins-Regular" }}>{text}</Text>
             </View>
         </>
     )
@@ -106,25 +115,43 @@ const CheckBoxInput = ({
 
 const List = ({
     defaultValue,
-    label
+    label,
+    textStyle,
+    dropDownStyle,
+    placeholder,
+    items,
+    value
 }) => {
+    const [isOpen, setOpen] = useState(false)
+    const [currentValue, setCurrentValue] = useState()
 
 
     return (
         <>
             <View style={{
-                 paddingLeft: 15,
-                 paddingRight: 15,
-                 width: width,
-                 marginTop: 15
+                paddingLeft: 15,
+                paddingRight: 15,
+                width: width,
+                marginTop: 15
             }}>
-                <Text style={{marginBottom: 10}}>{label}</Text>
+                <Text style={{ ...textStyle, fontFamily: "Poppins-Regular" }}>{label}</Text>
                 <DropDownPicker
-                   items={[
-                    { label: 'Option 1', value: 'option1' },
-                    { label: 'Option 2', value: 'option2' },
-                    { label: 'Option 3', value: 'option3' },
-                  ]}
+                    placeholder={placeholder}
+                    items={items}
+                    defaultValue={defaultValue}
+                    value={currentValue}
+                    setOpen={() => setOpen(!isOpen)}
+                    open={isOpen}
+                    textStyle={dropDownStyle}
+                    style={{
+                        zIndex: 1000,
+                        borderTopWidth: 0,
+                        borderLeftWidth: 0,
+                        borderRightWidth: 0,
+                        fontFamily: "Poppins-Regular",
+                        // color: "red"
+                    }}
+                    setValue={(val) => setCurrentValue(val)}
                 />
             </View>
         </>
@@ -138,4 +165,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export { SimpleInput, OtpInput, CheckBoxInput,List }
+export { SimpleInput, OtpInput, CheckBoxInput, List }

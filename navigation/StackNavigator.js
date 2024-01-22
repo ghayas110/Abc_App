@@ -3,11 +3,11 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
-import Otp from "../screens/Otp";
-import Terms from "../screens/Terms";
+import Otp from "../screens/SignUp/Otp";
+import Terms from "../screens/SignUp/Terms";
 import StepsIndicator from "../components/StepsIndicator";
-import SignUp from "../screens/SignUp";
-import MainSignUp from "../screens/MainSignUp";
+import SignUp from "../screens/SignUp/SignUp";
+import MainSignUp from "../screens/SignUp/MainSignUp";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {

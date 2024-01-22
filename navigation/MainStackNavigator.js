@@ -5,8 +5,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer';
 import BottomTabNavigator from "./TabNavigator";
-import Otp from '../screens/Otp';
-import SignUp from '../screens/SignUp';
+import Otp from '../screens/SignUp/Otp';
+import SignUp from '../screens/SignUp/SignUp';
+// import SplashScreen from '../screens/SplashScreen';
+// import Otp from '../screens/Otp';
+// import SignUp from '../screens/SignUp';
 import SplashScreen from '../screens/SplashScreen/SplashScreen';
 import CustomDrawer from './DrawerNavigation';
 import SignOut from '../screens/SignOut';
@@ -17,9 +20,13 @@ import ChangePassword from '../screens/ChangePassword';
 import EditProfileScreen from '../screens/EditProfileScreen';
 import LoginScreen from '../screens/LoginScreen';
 import { SignUpStackNavigator } from './StackNavigator';
+import DetailOne from '../screens/verify-personal/DetailOne';
+import DetailTwo from '../screens/verify-personal/DetailTwo';
+import DetailThree from '../screens/verify-personal/DetailThree';
+import ReviewDetails from '../screens/verify-personal/ReviewDetails';
+import VerifyingDetails from '../screens/verify-personal/VerifyingDetails';
 import LandingPage from '../screens/LandingScreen/LandingPage';
 import LandingPage2 from '../screens/LandingScreen/LandingPage2';
-import DetailOne from '../screens/verify-personal/DetailOne';
 import CreateUserName from '../screens/CreateAccount/CreateUserName';
 import CreateSecureWord from '../screens/CreateAccount/CreateSecureWord'
 import CreatePassword from '../screens/CreateAccount/CreatePassword';
@@ -27,6 +34,7 @@ import BioActivation from '../screens/CreateAccount/BioActivation';
 import HowSearch from '../screens/CreateAccount/HowSearch';
 import PersonalDetails from '../screens/CreateAccount/PersonalDetails';
 import Successfully from '../screens/CreateAccount/Successfully';
+import MainSignUp from '../screens/SignUp/MainSignUp';
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -53,6 +61,9 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="Splash">
             {(props) => <SplashScreen />}
           </AuthStack.Screen>
+          <AuthStack.Screen name="Login" component={LoginScreen} />
+          <AuthStack.Screen name="ForgotPassScreen" component={ForgotPassScreen} />
+          <AuthStack.Screen name="NewPassword" component={NewPassword} />
           <AuthStack.Screen name="Landing" component={LandingPage} />
           <AuthStack.Screen name="Landing2" component={LandingPage2} />
             <AuthStack.Screen name="CreateUserName" component={CreateUserName} />
@@ -62,16 +73,20 @@ const MainStackNavigator = () => {
             <AuthStack.Screen name="HowSearch" component={HowSearch} />
             <AuthStack.Screen name="PersonalDetails" component={PersonalDetails} />
             <AuthStack.Screen name="Successfully" component={Successfully} />
-          <AuthStack.Screen name="Login" component={LoginScreen} />
-          <AuthStack.Screen name="ForgotPassScreen" component={ForgotPassScreen} />
-          <AuthStack.Screen name="NewPassword" component={NewPassword} />
+  
 
           <AuthStack.Screen name="OtpS">
             {(props) => <Otp {...props} onLogin={() => setIsLoggedIn(true)} />}
           </AuthStack.Screen>
-          <AuthStack.Screen name="SignUp" component={SignUpStackNavigator} />
+          <AuthStack.Screen name="SignUpMain" component={MainSignUp} screenOptions={{
+            headerShown: false
+          }} />
+          <AuthStack.Screen name="SignUp" component={SignUp} />
           <AuthStack.Screen name="DetailOne" component={DetailOne} />
-
+          <AuthStack.Screen name="DetailTwo" component={DetailTwo} />
+          <AuthStack.Screen name="DetailThree" component={DetailThree} />
+          <AuthStack.Screen name="ReviewDetails" component={ReviewDetails} />
+          <AuthStack.Screen name="VerifyingDetails" component={VerifyingDetails} />
         </AuthStack.Navigator>
       )}
     </NavigationContainer>

@@ -1,19 +1,21 @@
+
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { useNavigation } from '@react-navigation/native'
 
-const Otp = ({onPress}) => {
-  const navigation = useNavigation()
+
+
+const ButtonInput = ({onPress}) => {
   return (
     <View>
+
     <TouchableOpacity onPress={onPress}>
-    <Text>Otp</Text>
+
+    <Text>ButtonInput</Text>
     </TouchableOpacity>
-    
     </View>
   )
 }
 
-export default Otp
+export default ButtonInput
 
 const styles = StyleSheet.create({})

@@ -11,7 +11,7 @@ const LandingPage = () => {
 
     
     const handleNavigation = () => {
-        navigation.navigate('Landing2');
+        navigation.navigate('SignUp');
     };
 
     return (
