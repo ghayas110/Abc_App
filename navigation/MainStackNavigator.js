@@ -5,8 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer';
 import BottomTabNavigator from "./TabNavigator";
-import Otp from '../screens/Otp';
-import SignUp from '../screens/SignUp';
+import Otp from '../screens/SignUp/Otp';
+import SignUp from '../screens/SignUp/SignUp';
 import SplashScreen from '../screens/SplashScreen';
 import CustomDrawer from './DrawerNavigation';
 import SignOut from '../screens/SignOut';

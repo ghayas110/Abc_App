@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native'
+
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+
+
 
 const ButtonInput = ({onPress}) => {
   return (
     <View>
-    <TouchableOpacity >
+
+    <TouchableOpacity onPress={onPress}>
+
     <Text>ButtonInput</Text>
     </TouchableOpacity>
     </View>
