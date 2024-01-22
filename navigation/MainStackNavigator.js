@@ -37,6 +37,7 @@ import Successfully from '../screens/CreateAccount/Successfully';
 import TopUp from '../screens/TopUp/TopUp';
 import TopUpFaq from '../screens/TopUp/TopUpFaq';
 import MainSignUp from '../screens/SignUp/MainSignUp';
+import { useNavigation } from '@react-navigation/native'
 
 
 
@@ -46,7 +47,7 @@ const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
   const Drawer = createDrawerNavigator();
-
+  
   return (
     <NavigationContainer>
       {isLoggedIn ? (

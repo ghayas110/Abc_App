@@ -8,7 +8,6 @@ const SplashScreen = () => {
   const [fadeAnim] = useState(new Animated.Value(0));
   const [isSplashScreen, setSplashScreen] = useState(false)
   const navigation = useNavigation()
-  
   useEffect(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
@@ -19,7 +18,7 @@ const SplashScreen = () => {
     setTimeout(() =>{
       setSplashScreen(true);
       setTimeout(() => {
-        navigation.navigate('Landing')
+        navigation.navigate('TopUp')
       }, 1000)
     }, 5000)
 
