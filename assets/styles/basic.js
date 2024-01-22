@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     //Border Color =================
     gray_border_Color: { borderColor: "#808080" },
     ligth_gray_border_Color: { borderColor: "#CCCCCC" },
+    green_border_Color: { borderColor: "#00a200" },
 
 
 });

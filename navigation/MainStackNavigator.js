@@ -44,6 +44,13 @@ import { useNavigation } from '@react-navigation/native'
 
 
 
+import StartLogin from '../screens/RegisterNewDevice/StartLogin';
+import StartLoginStep2 from '../screens/RegisterNewDevice/StartLoginStep2';
+import StartLoginStep3 from '../screens/RegisterNewDevice/StartLoginStep3';
+import StartLoginStep4 from '../screens/RegisterNewDevice/StartLoginStep4';
+import StartLoginStep5 from '../screens/RegisterNewDevice/StartLoginStep5';
+import StartLoginStep6 from '../screens/RegisterNewDevice/StartLoginStep6';
+import UpdateTermAndCondition from '../screens/RegisterNewDevice/UpdateTermAndCondition';
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -75,16 +82,26 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="NewPassword" component={NewPassword} />
           <AuthStack.Screen name="Landing" component={LandingPage} />
           <AuthStack.Screen name="Landing2" component={LandingPage2} />
-          <AuthStack.Screen name="CreateUserName" component={CreateUserName} />
-          <AuthStack.Screen name="CreateSecureWord" component={CreateSecureWord} />
-          <AuthStack.Screen name="CreatePassword" component={CreatePassword} />
-          <AuthStack.Screen name="BioActivation" component={BioActivation} />
-          <AuthStack.Screen name="HowSearch" component={HowSearch} />
-          <AuthStack.Screen name="PersonalDetails" component={PersonalDetails} />
-          <AuthStack.Screen name="Successfully" component={Successfully} />
-          <AuthStack.Screen name="TopUp" component={TopUp} />
-          <AuthStack.Screen name="TopUpFaq" component={TopUpFaq} />
-          <AuthStack.Screen name="Mailing" component={MailingAddress} />
+            <AuthStack.Screen name="CreateUserName" component={CreateUserName} />
+            <AuthStack.Screen name="CreateSecureWord" component={CreateSecureWord} />
+            <AuthStack.Screen name="CreatePassword" component={CreatePassword} />
+            <AuthStack.Screen name="BioActivation" component={BioActivation} />
+            <AuthStack.Screen name="HowSearch" component={HowSearch} />
+            <AuthStack.Screen name="PersonalDetails" component={PersonalDetails} />
+            <AuthStack.Screen name="Successfully" component={Successfully} />
+            <AuthStack.Screen name="StartLogin" component={StartLogin} />
+            <AuthStack.Screen name="StartLoginStep2" component={StartLoginStep2} />
+            <AuthStack.Screen name="StartLoginStep3" component={StartLoginStep3} />
+            <AuthStack.Screen name="StartLoginStep4" component={StartLoginStep4} />
+            <AuthStack.Screen name="StartLoginStep5" component={StartLoginStep5} />
+            <AuthStack.Screen name="StartLoginStep6" component={StartLoginStep6} />
+            <AuthStack.Screen name="TopUp" component={TopUp} />
+            <AuthStack.Screen name="TopUpFaq" component={TopUpFaq} />
+            <AuthStack.Screen name="Mailing" component={MailingAddress} />
+            {/* <AuthStack.Screen name="UpdateTermAndCondition" component={UpdateTermAndCondition} /> */}
+            <AuthStack.Screen name="UpdateTermAndCondition">
+              {(props) => <UpdateTermAndCondition {...props} onLogin={() => setIsLoggedIn(true)} />}
+            </AuthStack.Screen>
 
           
           <AuthStack.Screen name="OtpS">

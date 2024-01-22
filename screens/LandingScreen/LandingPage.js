@@ -13,6 +13,10 @@ const LandingPage = () => {
     const handleNavigation = () => {
         navigation.navigate('SignUpMain');
     };
+    
+    const Login = () =>{
+        navigation.navigate('StartLogin');
+    }
 
     return (
         <View style={{backgroundColor:"white" ,  flex:1,}}>
@@ -23,7 +27,7 @@ const LandingPage = () => {
             </View>
             <View style={styles.btnContainer}>
                 <View style={styles.btnLogin}>
-                    <OutlineButton text="Login"/>
+                    <OutlineButton text="Login" onPress={Login}/>
                 </View>
                 <TouchableOpacity style={styles.btnLogin2}>
                     <RequestButton

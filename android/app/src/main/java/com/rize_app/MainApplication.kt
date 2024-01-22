@@ -1,4 +1,4 @@
-package com.rize_app
+package com.Rize_App
 
 import android.app.Application
 import com.facebook.react.PackageList
