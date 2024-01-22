@@ -1,16 +1,14 @@
-import { StyleSheet, Text, View, Image, Animated, Easing } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
 
 const TopUp = () => {
   return (
-    <>
-        <Text style={{fontSize:16, color:"black" , fontFamily:"Poppins"}}>Taha</Text>
-    </>
+    <View>
+      <Text>TopUp</Text>
+    </View>
   )
 }
 
 export default TopUp
 
-const styles = StyleSheet.create({
-  
-})
+const styles = StyleSheet.create({})

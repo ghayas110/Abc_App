@@ -52,7 +52,7 @@ const BioActivation = () => {
             </View>
             <View style={styles.headerText}>
                 <Text style={{ fontSize: 16, fontWeight: "700", ...ThemeSty.gray_color_f , ...ThemeSty.Font_family }}>
-                    Log in to Rize securely with facial / fingerprint recognition
+                    Log in to Ssssco securely with facial / fingerprint recognition
                 </Text>
             </View>
             <View style={{...styles.Notify , ...ThemeSty.bg_light_green_color}}>

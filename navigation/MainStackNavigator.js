@@ -37,6 +37,8 @@ import Successfully from '../screens/CreateAccount/Successfully';
 import TopUp from '../screens/TopUp/TopUp';
 import TopUpFaq from '../screens/TopUp/TopUpFaq';
 import MainSignUp from '../screens/SignUp/MainSignUp';
+import MailingAddress from '../screens/TopUp/MailingAddress';
+import CardOrder from '../screens/TopUp/CardOrder';
 
 
 
@@ -81,6 +83,7 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="Successfully" component={Successfully} />
           <AuthStack.Screen name="TopUp" component={TopUp} />
           <AuthStack.Screen name="TopUpFaq" component={TopUpFaq} />
+          <AuthStack.Screen name="Mailing" component={MailingAddress} />
 
           
           <AuthStack.Screen name="OtpS">
@@ -89,12 +92,17 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="SignUpMain" component={MainSignUp} screenOptions={{
             headerShown: false
           }} />
+          
+          <AuthStack.Screen name="CardOrder">
+          {(props) => <CardOrder {...props} onLogin={() => setIsLoggedIn(true)} />}
+        </AuthStack.Screen>
           <AuthStack.Screen name="SignUp" component={SignUp} />
           <AuthStack.Screen name="DetailOne" component={DetailOne} />
           <AuthStack.Screen name="DetailTwo" component={DetailTwo} />
           <AuthStack.Screen name="DetailThree" component={DetailThree} />
           <AuthStack.Screen name="ReviewDetails" component={ReviewDetails} />
           <AuthStack.Screen name="VerifyingDetails" component={VerifyingDetails} />
+          
         </AuthStack.Navigator>
       )}
     </NavigationContainer>
