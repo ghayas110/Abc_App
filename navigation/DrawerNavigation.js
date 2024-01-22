@@ -17,7 +17,6 @@ function CustomDrawer(props) {  const count = useSelector((state) => state.auth.
 
   return (
     <DrawerContentScrollView {...props}>
- 
       <View style={{marginTop:-10, flex: 1, backgroundColor: 'orange', padding: 25 }}>
       <Icons.AntDesign name="user" size={70} />
         <View style={{paddingTop:15}}>
@@ -30,7 +29,6 @@ function CustomDrawer(props) {  const count = useSelector((state) => state.auth.
       </View>
       <View style={{ flex: 3, backgroundColor: 'white' }}>
         <DrawerItemList {...props} />
-       
       </View>
     </DrawerContentScrollView>
   );
