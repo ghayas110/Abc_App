@@ -10,7 +10,7 @@ const VerifyingDetails = () => {
     const { width, height } = Dimensions.get('window');
     const navigation = useNavigation()
     const nextPage = async () => {
-        navigation.navigate('ReviewDetails')
+        navigation.navigate('CreateUserName')
     }
 
     return (
