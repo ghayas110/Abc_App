@@ -77,7 +77,9 @@ const SignUp = () => {
                   )
                   case 6:
                     return(
-             <AllowNIC onPress={()=>setCurrentPosition(currentPosition+0.2)}/>
+            //  <AllowNIC onPress={()=>setCurrentPosition(currentPosition+0.2)}/>
+            <AllowNIC onPress={()=>setCurrentPosition(currentPosition+1.4)}/>
+
                     )
                     case 6.2:
                       return(
@@ -95,10 +97,7 @@ const SignUp = () => {
                             return(
                               <VerifyCNIC2 onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))}/>
                               )
-                              case 6.8:
-                                return(
-                                  <VerifyCNIC2 onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))}/>
-                                  )
+                            
                                   case 7:
                                     return(
                                       <AllowSelfie onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))}/>

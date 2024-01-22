@@ -27,7 +27,7 @@ const Successfully = () => {
     const navigation = useNavigation()
 
     const ForWordnavigation = () => {
-        navigation.navigate('Successfully')
+        navigation.navigate('TopUp')
     }
 
     return (
