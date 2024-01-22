@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { SimpleInput } from '../../components/Inputs'
 import { RequestButton } from '../../components/Buttons'
 import ProgressBar from 'react-native-progress/Bar';
+import ThemeSty from '../../assets/styles/basic'
 
 const CreateSecureWord = () => {
     const navigation = useNavigation()
@@ -14,6 +15,9 @@ const CreateSecureWord = () => {
     const ForWordnavigation = () =>{
         navigation.navigate('CreatePassword')
     }
+    const handleBackNavigation = () => {
+        navigation.navigate('CreateUserName');
+    };
     useEffect(() => {
         const interval = setInterval(() => {
             if (progress < 1) {
@@ -25,10 +29,14 @@ const CreateSecureWord = () => {
     }, [progress]);
 
     return (
-        <>
+        <>  
             <View style={styles.container}>
                 <View style={styles.Progress}>
-                    <View></View>
+                    
+                        <View style={styles.BackArrow}>
+                            <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} onPress={handleBackNavigation} />
+                        </View>
+                    
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
                         <Icons.AntDesign name='setting' style={{ fontSize: 24, marginRight: 5, color: "#0038A4" }} />
                         <View>
@@ -42,25 +50,25 @@ const CreateSecureWord = () => {
                 <View style={{
                     padding: 5, marginTop: 25,
                 }}>
-                    <Text style={{ fontSize: 28, color: "#00A200", fontWeight: "700" , fontFamily:"Poppins"}}>Create your Secure Word</Text>
+                    <Text style={{ fontSize: 28, ...ThemeSty.Green_color_f, fontWeight: "700" , ...ThemeSty.Font_family}}>Create your Secure Word</Text>
                 </View>
                 
-                <View style={styles.inputContainer}>
-                    <SimpleInput placeholder={'Enter Your Secure Word'} inputstyle={{ fontSize: 20, color: "#808080", fontWeight: "600", fontFamily:"Poppins" }} />
+                <View style={{ ...styles.inputContainer, ...ThemeSty.gray_border_Color }}>
+                    <SimpleInput placeholder={'Enter Your Secure Word'} inputstyle={{ fontSize: 20, ...ThemeSty.gray_color_f, fontWeight: "600", ...ThemeSty.Font_family }} />
                 </View>
                 <View style={styles.ListContainer}>
                     <View style={styles.Instruction}>
                         <Icons.AntDesign name='check' style={styles.CheckIcon} />
-                        <Text style={styles.textInstruct}>Must not be the same as username</Text>
+                        <Text style={{...styles.textInstruct , ...ThemeSty.gray_color_f , ...ThemeSty.Font_family }}>Must not be the same as username</Text>
                     </View>
 
                     <View style={styles.Instruction}>
                         <Icons.AntDesign name='check' style={styles.CheckIcon} />
-                        <Text style={styles.textInstruct}>Must be between 5 - 15 characters</Text>
+                        <Text style={{ ...styles.textInstruct, ...ThemeSty.gray_color_f, ...ThemeSty.Font_family }}>Must be between 5 - 15 characters</Text>
                     </View>
                     <View style={styles.Instruction}>
                         <Icons.AntDesign name='check' style={styles.CheckIcon} />
-                        <Text style={styles.textInstruct}>Only letters and numbers allowed</Text>
+                        <Text style={{ ...styles.textInstruct, ...ThemeSty.gray_color_f, ...ThemeSty.Font_family }}>Only letters and numbers allowed</Text>
                     </View>
                  
                 </View>
@@ -88,6 +96,7 @@ const styles = StyleSheet.create({
     Progress: {
         justifyContent: 'center',
         flexDirection: "row",
+        alignItems:"center",
         marginTop:5,
     },
     TopHeader: {
@@ -98,7 +107,7 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
         borderBottomWidth: 2,
-        borderColor: "#00A200",
+        // borderColor: "#00A200",
         marginTop: 10,
     },
     Instruction: {
@@ -121,9 +130,19 @@ const styles = StyleSheet.create({
     textInstruct: {
         marginLeft: 3,
         fontSize: 14,
-        color: "#808080",
-        fontFamily: 'Poppins',
+        // color: "#808080",
+        // fontFamily: 'Poppins',
         fontWeight: "500"
-    }
+    },
+    BackArrow: {
+        // width: "100%",
+        // padding: 10,
+    },
+    BackArrowIcon: {
+        color: "#00A200",
+        fontSize: 16,
+        position:'relative',
+        right:80,
+    },
 
 })

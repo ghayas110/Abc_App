@@ -43,13 +43,27 @@ const styles = StyleSheet.create({
     bg_blue_color: { backgroundColor: "#309fed", },
     bg_gray_color: { backgroundColor: "#808080" },
     bg_green_color: { backgroundColor: "#00a200" },
-    bg_orenge_color: { backgroundColor: "#ff5800" },
+    bg_orenge_color: { backgroundColor: "#ff5800" }, 
+    bg_light_green_color: { backgroundColor: "#DCF2FC" },
 
     // FONTS COLORS =================================
     blue_color_f: { color: "#309fed", },
     gray_color_f: { color: "#808080" },
     Green_color_f: { color: "#00a200" },
-    orenge_color_f: { color: "#ff5800" },
+    orenge_color_f: { color: "#ff5800" }, 
+    Light_gray_color_f: { color: "#CCCCCC" },
+    black_color_f: { color: "#333333" }, 
+
+    //icon Color==========
+    orenge_color_Icon: { color: "#0038A4" },  
+    //Font Family ====================
+    Font_family: { fontFamily:"Poppins"},
+
+    //Border Color =================
+    gray_border_Color: { borderColor: "#808080" },
+    ligth_gray_border_Color: { borderColor: "#CCCCCC" },
+
+
 });
 
 export default styles;

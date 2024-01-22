@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     flexDirection:"column",
   },
   image1: {
-    width: 100,
+    width: 200,
     height: 100,
     resizeMode: 'contain',
   },

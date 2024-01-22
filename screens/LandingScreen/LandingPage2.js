@@ -10,6 +10,8 @@ import { RequestButton } from '../../components/Buttons';
 import Fonts from '../../assets/styles/basic'
 import Swiper from 'react-native-swiper';
 import Modal from 'react-native-modal';
+import ThemeSty from '../../assets/styles/basic'
+
 
 const LandingPage2 = () => {
     const navigation = useNavigation()
@@ -71,13 +73,13 @@ const LandingPage2 = () => {
                             <Image source={LandingLogo} style={styles.image1} />
                         </View>
                         <View style={styles.HeadContainer}>
-                            <Text style={styles.HeaderText} >Manage your money on the go</Text>
+                            <Text style={{ ...styles.HeaderText, ...ThemeSty.Green_color_h }} >Manage your money on the go</Text>
                         </View>
                         <View style={styles.SliderList}>
                             {listItems.map((item, index) => (
                                 <View key={index} style={styles.listItem}>
-                                    <Text style={{ fontSize: 16, marginRight: 8, }}>{'\u2022'}</Text>
-                                    <Text style={{ fontSize: 16 , fontFamily:"Poppins" , fontWeight: '500',}}>{item}</Text>
+                                    <Text style={{ fontSize: 20, marginRight: 8, fontWeight: '500', ...ThemeSty.gray_color_f }}>{'\u2022'}</Text>
+                                    <Text style={{ fontSize: 20, ...ThemeSty.Font_family, fontWeight: '500', ...ThemeSty.gray_color_f }}>{item}</Text>
                                 </View>
                             ))}
                         </View>
@@ -87,13 +89,13 @@ const LandingPage2 = () => {
                             <Image source={LandingLogo2} style={styles.image1} />
                         </View>
                         <View style={styles.HeadContainer}>
-                            <Text style={styles.HeaderText} >Achieve Your Financial Goals</Text>
+                            <Text style={{ ...styles.HeaderText, ...ThemeSty.Green_color_h }} >Achieve Your Financial Goals</Text>
                         </View>
                         <View style={styles.SliderList}>
                             {listItems2.map((item, index) => (
                                 <View key={index} style={styles.listItem}>
-                                    <Text style={{ fontSize: 16, marginRight: 8, }}>{'\u2022'}</Text>
-                                    <Text style={{ fontSize: 16, fontFamily: "Poppins", fontWeight: '500', }}>{item}</Text>
+                                    <Text style={{ fontSize: 20, marginRight: 8, fontWeight: '500', ...ThemeSty.gray_color_f }}>{'\u2022'}</Text>
+                                    <Text style={{ fontSize: 20, ...ThemeSty.Font_family, fontWeight: '500', ...ThemeSty.gray_color_f }}>{item}</Text>
                                 </View>
                             ))}
                         </View>
@@ -103,13 +105,13 @@ const LandingPage2 = () => {
                             <Image source={LandingLogo3} style={styles.image1} />
                         </View>
                         <View style={styles.HeadContainer}>
-                            <Text style={styles.HeaderText} >Exciting deals just for you</Text>
+                            <Text style={{ ...styles.HeaderText, ...ThemeSty.Green_color_h }} >Exciting deals just for you</Text>
                         </View>
                         <View style={styles.SliderList}>
                             {listItems3.map((item, index) => (
                                 <View key={index} style={styles.listItem}>
-                                    <Text style={{ fontSize: 16, marginRight: 8, }}>{'\u2022'}</Text>
-                                    <Text style={{ fontSize: 16, fontFamily: "Poppins", fontWeight: '500', }}>{item}</Text>
+                                    <Text style={{ fontSize: 20, marginRight: 8, fontWeight: '500', ...ThemeSty.gray_color_f }}>{'\u2022'}</Text>
+                                    <Text style={{ fontSize: 20, ...ThemeSty.Font_family, fontWeight: '500', ...ThemeSty.gray_color_f }}>{item}</Text>
                                 </View>
                             ))}
                         </View>
@@ -120,13 +122,13 @@ const LandingPage2 = () => {
                             <Image source={LandingLogo4} style={styles.image1} />
                         </View>
                         <View style={styles.HeadContainer}>
-                            <Text style={styles.HeaderText} >Financing whenever you need it.</Text>
+                            <Text style={{ ...styles.HeaderText, ...ThemeSty.Green_color_h }} >Financing whenever you need it.</Text>
                         </View>
                         <View style={styles.SliderList}>
                             {listItems4.map((item, index) => (
                                 <View key={index} style={styles.listItem}>
-                                    <Text style={{ fontSize: 16, marginRight: 8, }}>{'\u2022'}</Text>
-                                    <Text style={{ fontSize: 16, fontFamily: "Poppins", fontWeight: '500', }}>{item}</Text>
+                                    <Text style={{ fontSize: 20, marginRight: 8, fontWeight: '500', ...ThemeSty.gray_color_f }}>{'\u2022'}</Text>
+                                    <Text style={{ fontSize: 20, ...ThemeSty.Font_family, fontWeight: '500', ...ThemeSty.gray_color_f }}>{item}</Text>
                                 </View>
                             ))}
                         </View>
@@ -141,7 +143,7 @@ const LandingPage2 = () => {
                 <TouchableOpacity style={styles.btnLogin} onPress={toggleBottomSheet}>
 
                     <Icon.AntDesign name="infocirlceo" style={styles.Icon} />
-                    <Text style={styles.Texte}>am i eligible?</Text>
+                    <Text style={{...styles.Texte , ...ThemeSty.Font_family, ...ThemeSty.Green_color_f}}>am i eligible?</Text>
                 </TouchableOpacity>
                 <View style={styles.btnLogin2}>
                     <TouchableOpacity >
@@ -156,18 +158,18 @@ const LandingPage2 = () => {
                     <View style={{ flex: 1, justifyContent: 'flex-end' }}>
                         <View style={{ backgroundColor: 'white', padding: 24, borderTopRightRadius: 20, borderTopLeftRadius: 20, }}>
                             <View>
-                                <Text style={{ fontSize: 28, fontWeight: '700', color: "#00A200", fontFamily: 'Poppins' }} >Yes, I'm eligible!</Text>
+                                <Text style={{ fontSize: 28, fontWeight: '700', ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }} >Yes, I'm eligible!</Text>
                             </View>
                             <View style={styles.SliderList}>
                                 {Modallistem.map((item, index) => (
                                     <View key={index} style={styles.listItem}>
                                         <Text style={{ fontSize: 16, marginRight: 8, }}>{'\u2022'}</Text>
-                                        <Text style={{ fontSize: 16, fontFamily: "Poppins", fontWeight: '500', }}>{item}</Text>
+                                        <Text style={{ fontSize: 16, ...ThemeSty.Font_family, fontWeight: '500', }}>{item}</Text>
                                     </View>
                                 ))}
                             </View>
-                            <View style={{ padding: 20, backgroundColor: "#DCF2FC" }}>
-                                <Text style={{ color: "#006400", fontSize: 14, fontFamily: "Poppins", fontWeight: '500', }}><Text>Note:</Text>You are a US person if you are either a US citizen, a US resident or a Green Card holder.</Text>
+                            <View style={{ padding: 20, ...ThemeSty.bg_light_green_color }}>
+                                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}><Text>Note:</Text>You are a US person if you are either a US citizen, a US resident or a Green Card holder.</Text>
                             </View>
                         </View>
                     </View>
@@ -213,8 +215,8 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     Texte: {
-        color: '#00A200',
-        fontFamily: 'Poppins',
+        // color: {...ThemeSty.Green_color_f},
+        // fontFamily: 'Poppins',
         fontWeight: '700',
         fontSize: 16,
         textAlign: "center",
@@ -222,7 +224,8 @@ const styles = StyleSheet.create({
 
     },
     HeaderText: {
-        color: '#00A200',
+        // color: '#00A200',
+        // color:{...ThemeSty.Green_color_h},
         fontFamily: 'Poppins',
         fontWeight: '700',
         fontSize: 28,
@@ -268,7 +271,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: 'italic',
         fontWeight: '500',
-        fontFamily: "Poppins"
+        fontFamily: { ...ThemeSty.Font_family}
     },
     BackArrow: {
         width: "100%",

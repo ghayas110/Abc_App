@@ -26,7 +26,8 @@ const SimpleInput = ({
             }}>
                 <Text style={{
                     fontSize: 12,
-                    color: "#808080"
+                    color: "#808080",
+                    fontWeight:"700"
                 }}>{label}</Text>
                 <TextInput
                     style={inputstyle}

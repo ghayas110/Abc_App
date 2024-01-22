@@ -6,6 +6,7 @@ import { SimpleInput } from '../../components/Inputs'
 import ProgressBar from 'react-native-progress/Bar';
 import Biomatric from '../../assets/CreateAccoutImages/Illustration.png'
 import { RequestButton, OutlineButton } from '../../components/Buttons'
+import ThemeSty from "../../assets/styles/basic"
 
 const BioActivation = () => {
     const [progress, setProgress] = useState(0);
@@ -18,7 +19,7 @@ const BioActivation = () => {
         }, 1000);
 
         return () => clearInterval(interval);
-    }, [progress]);
+    }, []);
 
     const navigation = useNavigation()
 
@@ -45,21 +46,21 @@ const BioActivation = () => {
                 </View>
             </View>
             <View style={styles.headerText}>
-                <Text style={{ color: "#00A200", fontSize: 28, fontWeight: "700", fontFamily: "Poppins" }}>
+                <Text style={{  fontSize: 28, fontWeight: "700",  ...ThemeSty.Font_family , ...ThemeSty.Green_color_f }}>
                     Activate biometric login
                 </Text>
             </View>
             <View style={styles.headerText}>
-                <Text style={{ color: "#808080", fontSize: 16, fontWeight: "700", fontFamily: "Poppins" }}>
+                <Text style={{ fontSize: 16, fontWeight: "700", ...ThemeSty.gray_color_f , ...ThemeSty.Font_family }}>
                     Log in to Rize securely with facial / fingerprint recognition
                 </Text>
             </View>
-            <View style={styles.Notify}>
-                <Text style={{ color: "#00A200", fontSize: 14, fontWeight: "700", fontFamily: "Poppins" }}>
+            <View style={{...styles.Notify , ...ThemeSty.bg_light_green_color}}>
+                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, fontWeight: "700", ...ThemeSty.Font_family }}>
                     You can change this later in Settings.
                 </Text>
             </View>
-            <View style={{}}>
+            <View >
                 <View style={styles.btn1}>
                     <OutlineButton text={'Activation  later'} />
                 </View>
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
     },
     Notify: {
         padding: 20,
-        backgroundColor: "#DCF2FC",
+        // backgroundColor: "#DCF2FC",
     },
     btn2: {
         alignItems: "center"

@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { SimpleInput, CheckBoxInput, List } from '../../components/Inputs'
 import ProgressBar from 'react-native-progress/Bar';
 import Biomatric from '../../assets/CreateAccoutImages/Illustration.png'
+import ThemeSty from '../../assets/styles/basic'
 import { RequestButton, OutlineButton } from '../../components/Buttons'
 
 const PersonalDetails = () => {
@@ -27,11 +28,17 @@ const PersonalDetails = () => {
   const ForWordnavigation = () => {
     navigation.navigate('Successfully')
   }
+  const handleBackNavigation = () => {
+    navigation.navigate('CreateSecureWord');
+  };
+
 
   return (
     <View style={styles.container}>
       <View style={styles.Progress}>
-        <View></View>
+        <View style={styles.BackArrow}>
+          <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} onPress={handleBackNavigation} />
+        </View>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Icons.AntDesign name='setting' style={{ fontSize: 24, marginRight: 5, color: "#0038A4" }} />
           <View>
@@ -43,33 +50,33 @@ const PersonalDetails = () => {
         <View></View>
       </View>
       <View>
-        <Text style={{ color: "#00A200", fontSize: 28, fontWeight: "700", fontFamily: "Poppins" }}>Where do we send you nice things?</Text>
+        <Text style={{...ThemeSty.Green_color_f, fontSize: 28, fontWeight: "700", ...ThemeSty.Font_family, marginTop:30 }}>Where do we send you nice things?</Text>
       </View>
       <View style={{flexDirection:"row" , alignItems:"center"}}>
-        <CheckBoxInput style={{ color: "#00A200" }} />
-        <Text style={{ color: "#333333", fontSize: 16, fontFamily: "Poppins", marginLeft:7, fontWeight: '500',
+        <CheckBoxInput style={{ ...ThemeSty.gray_color_f }} />
+        <Text style={{ ...ThemeSty.gray_color_f, fontSize: 16, ...ThemeSty.Font_family, marginLeft:7, fontWeight: '500',
          }}>Same as registered address</Text>
       </View>
         
         <View>
-        <Text style={{ color:"#333333", marginLeft: 5, fontSize:16 , fontWeight: '700',fontFamily:"Poppins"}}>Mailing address</Text>
+        <Text style={{ ...ThemeSty.black_color_f, marginLeft: 5, fontSize:16 , fontWeight: '700',...ThemeSty.Font_family}}>Mailing address</Text>
         </View>
       
       <ScrollView>
-        <View style={{borderBottomWidth:1, borderBlockColor:"#CCCCCC"}}>
-          <SimpleInput label={'Address'} placeholder={'Enter Address'} inputstyle={{color:"#CCCCCC" , fontWeight: '500' , fontSize:16,fontFamily:"Poppins"}} />
+        <View style={{borderBottomWidth:1, ...ThemeSty.ligth_gray_border_Color}}>
+          <SimpleInput label={'Address'} placeholder={'Enter Address'} inputstyle={{...ThemeSty.Light_gray_color_f ,...ThemeSty.Font_family , fontWeight: '500' , fontSize:16,}} />
         </View>
-        <View style={{ borderBottomWidth: 1, borderBlockColor: "#CCCCCC" }}>
-          <SimpleInput label={'Address (Line Two)'} placeholder={'Enter Address'} inputstyle={{ color: "#CCCCCC", fontWeight: '500', fontSize: 16, fontFamily: "Poppins" }} />
+        <View style={{ borderBottomWidth: 1, ...ThemeSty.ligth_gray_border_Color }}>
+          <SimpleInput label={'Address (Line Two)'} placeholder={'Enter Address'} inputstyle={{ ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family, fontWeight: '500', fontSize: 16, }} />
         </View>
-        <View style={{ borderBottomWidth: 1, borderBlockColor: "#CCCCCC" }}>
-          <SimpleInput label={'Postal Code'} placeholder={'Enter Your Postal Code'} inputstyle={{ color: "#CCCCCC", fontWeight: '500', fontSize: 16, fontFamily: "Poppins" }} />
+        <View style={{ borderBottomWidth: 1, ...ThemeSty.ligth_gray_border_Color }}>
+          <SimpleInput label={'Postal Code'} placeholder={'Enter Your Postal Code'} inputstyle={{ ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family, fontWeight: '500', fontSize: 16, }} />
         </View>
-        <View style={{ borderBottomWidth: 1, borderBlockColor: "#CCCCCC" }}>
-          <SimpleInput label={'City'} placeholder={'Enter Your City'} inputstyle={{ color: "#CCCCCC", fontWeight: '500', fontSize: 16, fontFamily: "Poppins" }} />
+        <View style={{ borderBottomWidth: 1, ...ThemeSty.ligth_gray_border_Color }}>
+          <SimpleInput label={'City'} placeholder={'Enter Your City'} inputstyle={{ ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family, fontWeight: '500', fontSize: 16,}} />
         </View>
-        <View style={{ borderBottomWidth: 1, borderBlockColor: "#CCCCCC" }}>
-          <SimpleInput label={'State'} placeholder={'Enter your State '} inputstyle={{ color: "#CCCCCC", fontWeight: '500', fontSize: 16, fontFamily: "Poppins" }} />
+        <View style={{ borderBottomWidth: 1, ...ThemeSty.ligth_gray_border_Color }}>
+          <SimpleInput label={'State'} placeholder={'Enter your State '} inputstyle={{ ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family, fontWeight: '500', fontSize: 16, }} />
         </View>
       </ScrollView>
 
@@ -95,6 +102,7 @@ const styles = StyleSheet.create({
   Progress: {
     justifyContent: 'center',
     flexDirection: "row",
+    alignItems:"center"
   },
 
   headerText: {
@@ -109,6 +117,16 @@ const styles = StyleSheet.create({
   },
   btn1: {
     alignItems: "center"
-  }
+  },
+  BackArrow: {
+    // width: "100%",
+    // padding: 10,
+  },
+  BackArrowIcon: {
+    color: "#00A200",
+    fontSize: 16,
+    position: 'relative',
+    right: 80,
+  },
 
 })

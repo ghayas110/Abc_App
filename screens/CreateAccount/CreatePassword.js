@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { SimpleInput } from '../../components/Inputs'
 import { RequestButton } from '../../components/Buttons'
 import ProgressBar from 'react-native-progress/Bar';
+import ThemeSty from '../../assets/styles/basic'
 
 
 const CreatePassword = () => {
@@ -24,11 +25,17 @@ const CreatePassword = () => {
         return () => clearInterval(interval);
     }, [progress]);
 
+    const handleBackNavigation = () => {
+        navigation.navigate('CreateSecureWord');
+    };
+
     return (
         <>
             <View style={styles.container}>
                 <View style={styles.Progress}>
-                    <View></View>
+                    <View style={styles.BackArrow}>
+                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} onPress={handleBackNavigation} />
+                    </View>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
                         <Icons.AntDesign name='setting' style={{ fontSize: 24, marginRight: 5, color: "#0038A4" }} />
                         <View>
@@ -42,7 +49,7 @@ const CreatePassword = () => {
                 <View style={{
                     padding: 5, marginTop: 35,
                 }}>
-                    <Text style={{ fontSize: 28, color: "#00A200", fontWeight: "700" }}>Create your Password</Text>
+                    <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f,...ThemeSty.Font_family }}>Create your Password</Text>
                 </View>
 
                 <View style={styles.InputContainer}>
@@ -51,7 +58,7 @@ const CreatePassword = () => {
                             placeholder={'Enter Your Password'}
                             type={'password'}
                             name="password"
-                            inputstyle={{ fontSize: 20, color: "#808080", fontWeight: "600", fontFamily: "Poppins" }}
+                            inputstyle={{ fontSize: 20, fontWeight: "600", ...ThemeSty.Light_gray_color_f , ...ThemeSty.Font_family  }}
                         />
                         <Icons.Entypo name="eye-with-line" style={styles.hideapassword} />
                     </View>
@@ -61,35 +68,35 @@ const CreatePassword = () => {
                         <SimpleInput
                             type={'password'}
                             placeholder={'Confirm Your Password'}
-                            inputstyle={{ fontSize: 20, color: "#808080", fontWeight: "600", fontFamily: "Poppins" }} />
+                            inputstyle={{ fontSize: 20, fontWeight: "600", ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family }} />
                         <Icons.Entypo name="eye-with-line" style={styles.hideapassword} />
                     </View>
                 </View>
                 <View style={styles.ListContainer}>
                     <View style={styles.Instruction}>
                         <Icons.AntDesign name='check' style={styles.CheckIcon} />
-                        <Text style={styles.textInstruct}>Must not be the same as username or secure word </Text>
+                        <Text style={{...styles.textInstruct , ...ThemeSty.Font_family ,...ThemeSty.gray_color_f}}>Must not be the same as username or secure word </Text>
                     </View>
 
                     <View style={styles.Instruction}>
                         <Icons.AntDesign name='check' style={styles.CheckIcon} />
-                        <Text style={styles.textInstruct}>Must be between 8 and 20 characters</Text>
+                        <Text style={{ ...styles.textInstruct, ...ThemeSty.Font_family, ...ThemeSty.gray_color_f }}>Must be between 8 and 20 characters</Text>
                     </View>
                     <View style={styles.Instruction}>
                         <Icons.AntDesign name='check' style={styles.CheckIcon} />
-                        <Text style={styles.textInstruct}>Must contain a lowercase letter</Text>
+                        <Text style={{ ...styles.textInstruct, ...ThemeSty.Font_family, ...ThemeSty.gray_color_f }}>Must contain a lowercase letter</Text>
                     </View>
                     <View style={styles.Instruction}>
                         <Icons.AntDesign name='check' style={styles.CheckIcon} />
-                        <Text style={styles.textInstruct}>Must contain an uppercase letter</Text>
+                        <Text style={{ ...styles.textInstruct, ...ThemeSty.Font_family, ...ThemeSty.gray_color_f }}>Must contain an uppercase letter</Text>
                     </View>
                     <View style={styles.Instruction}>
                         <Icons.AntDesign name='check' style={styles.CheckIcon} />
-                        <Text style={styles.textInstruct}>Must contain a number</Text>
+                        <Text style={{ ...styles.textInstruct, ...ThemeSty.Font_family, ...ThemeSty.gray_color_f }}>Must contain a number</Text>
                     </View>
                     <View style={styles.Instruction}>
                         <Icons.AntDesign name='check' style={styles.CheckIcon} />
-                        <Text style={styles.textInstruct}>Must contain one of the following special character:{`! @ # $ ^ & _ + = ( ) <>`}</Text>
+                        <Text style={{ ...styles.textInstruct, ...ThemeSty.Font_family, ...ThemeSty.gray_color_f }}>Must contain one of the following special character:{`! @ # $ ^ & _ + = ( ) <>`}</Text>
                     </View>
 
                 </View>
@@ -120,12 +127,13 @@ const styles = StyleSheet.create({
             justifyContent: 'center',
             flexDirection: "row",
             marginTop: 5,
+            alignItems:"center"
         },
     TopHeader: {
         marginTop: 5,
         justifyContent: 'space-evently',
         flexDirection: 'row',
-        alignContent: 'center',
+        alignItems: 'center',
     },
 
     InputContainer: {
@@ -137,7 +145,7 @@ const styles = StyleSheet.create({
     hideapassword: {
         color: "#00A200",
         fontSize: 16,
-        alignItems: "end",
+        // alignItems: "end",
         position: "absolute",
         top: 60,
         right: 0,
@@ -166,6 +174,16 @@ const styles = StyleSheet.create({
         color: "#808080",
         fontFamily: 'Poppins',
         fontWeight: "500",
+    },
+    BackArrow: {
+        // width: "100%",
+        // padding: 10,
+    },
+    BackArrowIcon: {
+        color: "#00A200",
+        fontSize: 16,
+        position: 'relative',
+        right: 80,
     },
 
 })

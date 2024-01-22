@@ -6,6 +6,7 @@ import { SimpleInput, CheckBoxInput, List } from '../../components/Inputs'
 import ProgressBar from 'react-native-progress/Bar';
 import Biomatric from '../../assets/CreateAccoutImages/SuccessFully.png'
 import CheckSucess from '../../assets/CreateAccoutImages/ProgressBarCom.png'
+import ThemeSty from '../../assets/styles/basic'
 import { RequestButton, OutlineButton } from '../../components/Buttons'
 
 const Successfully = () => {
@@ -36,7 +37,7 @@ const Successfully = () => {
                 <Image source={Biomatric} />
            </View>
             <View>
-                <Text style={{ color: "#00A200", fontSize: 28, fontWeight: "700", fontFamily: "Poppins", marginTop:50 }}>Where do we send you nice things?</Text>
+                <Text style={{ ...ThemeSty.Green_color_f, ...ThemeSty.Font_family , fontSize: 28, fontWeight: "700", marginTop:50 }}>Where do we send you nice things?</Text>
             </View>
             <View style={{ flexDirection: "row", alignItems: "center" , marginTop: 25,
             }}>

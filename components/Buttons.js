@@ -1,11 +1,14 @@
 import { Button, StyleSheet, Text, View,TouchableOpacity,Dimensions  } from 'react-native'
 const { width, height } = Dimensions.get('window');
 
-function RequestButton({text,onPress}) {
+function RequestButton({ text, onPress, disabled, style }) {
     return (
         <>
             <View style={styles.btnContainer}>
-                <TouchableOpacity style={styles.btnStyleReq} onPress={() => { onPress() }}>
+                <TouchableOpacity style={styles.btnStyleReq}
+                    onPress={() => {onPress()}}
+                    disabled={disabled}
+                    >
                     <Text style={styles.textBtnReq}>{text}</Text>
                 </TouchableOpacity>
             </View>
@@ -65,6 +68,9 @@ const styles = StyleSheet.create({
     },
     // OUT-LINE BUTTON =========================
     btnStyleOutline: {
+        height: 50,
+        textAlign: "center",
+        justifyContent: "center",
         backgroundColor: "#ffff",
         borderWidth: 2,
         borderColor: "#00A200",
@@ -73,6 +79,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     textBtnOutline: {
+        
         fontWeight: "600",
         color: "#00A200",
         textAlign: "center",
@@ -88,6 +95,12 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         color: "#007aff",
         textAlign: "center",
+    },
+    enabledBtn: {
+        backgroundColor: '00A200',
+    },
+    disabledBtn: {
+        backgroundColor: '#CCCCCC',
     },
 
 });

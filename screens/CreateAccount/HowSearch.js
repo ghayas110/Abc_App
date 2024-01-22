@@ -6,6 +6,7 @@ import { SimpleInput } from '../../components/Inputs'
 import ProgressBar from 'react-native-progress/Bar';
 import Biomatric from '../../assets/CreateAccoutImages/Illustration.png'
 import { RequestButton, OutlineButton } from '../../components/Buttons'
+import ThemeSty from '../../assets/styles/basic'
 
 const HowSearch = () => {
     const [progress, setProgress] = useState(0);
@@ -43,38 +44,38 @@ const HowSearch = () => {
                 <View></View>
             </View>            
             <View>
-                <Text style={{ color: "#00A200", fontSize: 28, fontWeight: "700", fontFamily: "Poppins" }}>How should we reach you? </Text>
+                <Text style={{  fontSize: 28, fontWeight: "700", ...ThemeSty.Font_family ,...ThemeSty.Green_color_f }}>How should we reach you? </Text>
             </View>
             <View>
-                <Text style={{ color: "#808080", fontSize: 14, fontFamily: "Poppins" }}>We’re always excited to announce our new products and offers. Let us know how you’d like to be updated </Text>
+                <Text style={{ ...ThemeSty.gray_color_f, fontSize: 14, ...ThemeSty.Font_family }}>We’re always excited to announce our new products and offers. Let us know how you’d like to be updated </Text>
             </View>
             
             <View style={styles.Switches}>
                 <View style={{flexDirection:"row", alignItems:"center", justifyContent:"space-between"}}>
                     <View style={{flexDirection:"row", alignItems:"center",}}>
-                        <Icons.MaterialCommunityIcons name="email-minus-outline" style={{ fontSize: 16, color:"#00A200" }} />
-                        <Text style={{ marginLeft: 10, fontSize: 16, color: "#00A200" }}>email</Text>
+                        <Icons.MaterialCommunityIcons name="email-minus-outline" style={{ fontSize: 16, ...ThemeSty.Green_color_f }} />
+                        <Text style={{ marginLeft: 10, fontSize: 16, ...ThemeSty.Green_color_f ,  ...ThemeSty.Font_family }}>email</Text>
                     </View>
                     <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={isEnabled ? '#00A200' : '#00A200'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch} style={{alignItems:"flex-end"}} value={isEnabled} />
                 </View>
                 <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                     <View style={{ flexDirection: "row", alignItems: "center", }}>
-                        <Icons.MaterialCommunityIcons name="phone" style={{ fontSize: 16, color: "#00A200" }} />
-                        <Text style={{ marginLeft: 10, fontSize: 16, color: "#00A200" }}>Phone</Text>
+                        <Icons.MaterialCommunityIcons name="phone" style={{ fontSize: 16, ...ThemeSty.Green_color_f }} />
+                        <Text style={{ marginLeft: 10, fontSize: 16, ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>Phone</Text>
                     </View>
                     <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={isEnabled ? '#00A200' : '#00A200'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch} style={{ alignItems: "flex-end" }} value={isEnabled} />
                 </View>
                 <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                     <View style={{ flexDirection: "row", alignItems: "center", }}>
-                        <Icons.AntDesign name="message1" style={{ fontSize: 16, color: "#00A200" }} />
-                        <Text style={{ marginLeft: 10, fontSize: 16, color: "#00A200" }}>Text massages</Text>
+                        <Icons.AntDesign name="message1" style={{ fontSize: 16, ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }} />
+                        <Text style={{ marginLeft: 10, fontSize: 16, ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>Text massages</Text>
                     </View>
                     <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={isEnabled ? '#00A200' : '#00A200'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch} style={{ alignItems: "flex-end" }} value={isEnabled} />
                 </View>
             </View>
             
-            <View style={styles.Notify}>
-                <Text style={{ color: "#00A200", fontSize: 14, fontWeight: "700", fontFamily: "poppins" }}>
+            <View style={{...styles.Notify , ...ThemeSty.bg_light_green_color}}>
+                <Text style={{ fontSize: 14, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>
                     Normal communications (non-marketing related) will be email by default. By tapping “Confirm”, I agree that Al Rajhi Bank may process my personal data to promote the Bank’s products and services.
                 </Text>
             </View>
