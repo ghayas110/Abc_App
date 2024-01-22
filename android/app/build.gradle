@@ -103,6 +103,10 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+     packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+    }
 }
 project.ext.vectoricons = [
     iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf','Ionicons.ttf','Entypo.ttf','FoundationI.ttf','AntDesign.ttf','FontAwesome6.ttf','MaterialCommunityIcons.ttf','FontAwesome5.ttf' ] // Specify font files

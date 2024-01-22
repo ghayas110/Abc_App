@@ -112,7 +112,7 @@ const Terms = ({onPress}) => {
       status={ checked ? 'checked' : 'unchecked' }
       onPress={() => setChecked(!checked)}
     />
-        <Text style={styles.text3}>I have read and accepted ALL the documents above. I understand this account is protected by PIDM up to RM 250,000 for each depositor and I have received a copy of the PIDM brochure.</Text>
+        <Text style={styles.text3}>I have read and accepted ALL the documents above. I understand this account is protected by PIDM up to AED 250,000 for each depositor and I have received a copy of the PIDM brochure.</Text>
       </View>
     </View>
     
