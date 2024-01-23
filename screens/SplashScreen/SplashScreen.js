@@ -18,7 +18,7 @@ const SplashScreen = () => {
     setTimeout(() =>{
       setSplashScreen(true);
       setTimeout(() => {
-        navigation.navigate('SignUp')
+        navigation.navigate('Landing')
       }, 1000)
     }, 5000)
 

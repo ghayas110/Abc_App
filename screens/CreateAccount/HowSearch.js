@@ -54,7 +54,7 @@ const HowSearch = () => {
                 <View style={{flexDirection:"row", alignItems:"center", justifyContent:"space-between"}}>
                     <View style={{flexDirection:"row", alignItems:"center",}}>
                         <Icons.MaterialCommunityIcons name="email-minus-outline" style={{ fontSize: 16, ...ThemeSty.Green_color_f }} />
-                        <Text style={{ marginLeft: 10, fontSize: 16, ...ThemeSty.Green_color_f ,  ...ThemeSty.Font_family }}>email</Text>
+                        <Text style={{ marginLeft: 10, fontSize: 16, ...ThemeSty.Green_color_f ,  ...ThemeSty.Font_family }}>Email</Text>
                     </View>
                     <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={isEnabled ? '#00A200' : '#00A200'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch} style={{alignItems:"flex-end"}} value={isEnabled} />
                 </View>

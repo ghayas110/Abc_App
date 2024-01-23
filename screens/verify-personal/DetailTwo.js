@@ -4,7 +4,7 @@ import style from "../../assets/styles/basic"
 import { List, SimpleInput } from '../../components/Inputs';
 import { RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
-import Steps from '../../components/Steps';
+import Steps from '../../components/steps/Steps';
 
 
 
@@ -24,10 +24,13 @@ const DetailTwo = () => {
             }}>
 
                 <Steps
-                backtoPageName={"DetailOne"}
-                    backtoPage={true}
-                    totalSteps={"4"}
-                    activeStep={"2"}
+                   backtoPage={true}
+                   totalSteps={"4"}
+                   activeStep={"2"}
+                   backIcon={require('./images/Icons.png')}
+                   leftIcon={require('./images/Profile.png')}
+                   rightIcon={require('./images/Setting.png')}
+                   ProgressBarIcon={require('./images/steps.png')}
                 />
 
                 {/* INPUT BOX ============================= */}

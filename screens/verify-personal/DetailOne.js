@@ -4,7 +4,7 @@ import style from "../../assets/styles/basic"
 import { List, SimpleInput } from '../../components/Inputs';
 import { RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
-import Steps from '../../components/Steps';
+import Steps from '../../components/steps/Steps';
 
 
 
@@ -26,10 +26,13 @@ const DetailOne = () => {
                 backgroundColor: "white"
             }}>
                 <Steps
-                    backtoPageName={"DetailOne"}
                     backtoPage={false}
                     totalSteps={"4"}
                     activeStep={"1"}
+                    backIcon={require('./images/Icons.png')}
+                    leftIcon={require('./images/Profile.png')}
+                    rightIcon={require('./images/Setting.png')}
+                    ProgressBarIcon={require('./images/steps.png')}
                 />
                 {/* INPUT BOX ============================= */}
                 <View style={{
