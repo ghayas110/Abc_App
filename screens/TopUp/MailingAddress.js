@@ -18,13 +18,13 @@ const MailingAddress = ({ onPress }) => {
     <View style={styles.container}>
       <View style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'space-around', height: "60%" }}>
         <View>
-          <Text style={{ fontSize: 24, fontWeight: '900', color: 'green', marginBottom: 15 }}>Confirm your mailing address</Text>
+          <Text style={{ fontSize: 24, fontWeight: '900', color: 'green', marginBottom: 15,color:'black' }}>Confirm your mailing address</Text>
           <View>
             <View style={styles.acordion}>
               <Text style={styles.text2}> Please confirm your mailing address </Text>
             </View>
             <View style={styles.acordion}>
-              <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15 }}> Shipping to </Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15,color:'black' }}> Shipping to </Text>
             </View>
             <View style={{ flexDirection: 'row', paddingVertical: 15 }}>
           
@@ -35,7 +35,7 @@ const MailingAddress = ({ onPress }) => {
                 onPress={() => setCheckedd(!checkedd)}
               />
               <View>
-              <Text style={{fontWeight: 'bold', fontSize: 17}}>
+              <Text style={{fontWeight: 'bold', fontSize: 17,color:'black'}}>
               Residential address
               </Text>
               <Text style={styles.text2}>
@@ -49,7 +49,7 @@ const MailingAddress = ({ onPress }) => {
                 onPress={() => setCheckeddd(!checkeddd)}
               />
               <View>
-              <Text style={{fontWeight: 'bold', fontSize: 17}}>
+              <Text style={{fontWeight: 'bold', fontSize: 17,color:'black'}}>
               Mailing address              </Text>
               <Text style={styles.text2}>
               62, Jalan Camar 5, Residensi 28, 47810, Petaling Jaya, Selangor              </Text>
@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "500",
     lineHeight: 20,
+    color:'black'
   },
   bottomView: {
     width: '100%',

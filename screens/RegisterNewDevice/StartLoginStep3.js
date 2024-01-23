@@ -63,10 +63,10 @@ const StartLoginStep3 = ({ disabled }) => {
                     <SimpleInput
                         label={'Password'}
                         placeholder={'Enter Password'}
-                        placeholderTextColor={{ ...ThemeSty.black_color_f }}
+                        placeholderTextColor={ "black" }
                         type={'password'}
-                       
-                        inputstyle={{ fontSize: 20, fontWeight: "600", ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family }}
+                       pass={true}
+                        inputstyle={{ fontSize: 20, fontWeight: "600", color:'black', ...ThemeSty.Font_family }}
                     />
                     
                 </View>

@@ -66,7 +66,8 @@ const TopUp = () => {
         },
         listNodeHeadingDate: {
             fontFamily: 'Poppins-Medium',
-            fontSize: 13
+            fontSize: 13,
+            color:'#808080'
         },
         CalenderSelect: {
             padding: 20,
