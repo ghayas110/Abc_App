@@ -93,7 +93,6 @@ const styless = StyleSheet.create({
         paddingTop: 80,
         padding: 30,
         height: height * 0.9,
-
         justifyContent: 'space-between'
     },
     text2: {
