@@ -64,7 +64,7 @@ const ReviewDetails = () => {
                                     <Image
                                         source={require('./images/uparrow.png')}
                                     />
-                                    <Text style={{ marginLeft: 20, fontSize: 15, fontWeight: "600", color: "#000", fontFamily: "Poppins-Bold" }}>Personal</Text>
+                                    <Text style={{ marginLeft: 20, fontSize: 15, fontWeight: "600", ...style.black_color_f, fontFamily: "Poppins-Bold" }}>Personal</Text>
                                 </View>
                                 <TouchableOpacity onPress={toggleBottomSheet}>
                                     <Image
@@ -136,7 +136,7 @@ const ReviewDetails = () => {
                                     <Image
                                         source={require('./images/uparrow.png')}
                                     />
-                                    <Text style={{ marginLeft: 20, fontSize: 15, fontWeight: "600", color: "#000", fontFamily: "Poppins-Bold" }}>Account</Text>
+                                    <Text style={{ marginLeft: 20, fontSize: 15, fontWeight: "600", ...style.black_color_h, fontFamily: "Poppins-Bold" }}>Account</Text>
                                 </View>
                                 <TouchableOpacity onPress={toggleBottomSheet}>
                                     <Image

@@ -51,6 +51,7 @@ import StartLoginStep4 from '../screens/RegisterNewDevice/StartLoginStep4';
 import StartLoginStep5 from '../screens/RegisterNewDevice/StartLoginStep5';
 import StartLoginStep6 from '../screens/RegisterNewDevice/StartLoginStep6';
 import UpdateTermAndCondition from '../screens/RegisterNewDevice/UpdateTermAndCondition';
+import History from '../screens/transaction-history/History';
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -74,6 +75,8 @@ const MainStackNavigator = () => {
         <AuthStack.Navigator screenOptions={{
           headerShown: false
         }}>
+          <AuthStack.Screen name="History" component={History} />
+          {/* <AuthStack.Screen name="DetailThree" component={DetailThree} /> */}
           <AuthStack.Screen name="Splash">
             {(props) => <SplashScreen />}
           </AuthStack.Screen>
@@ -117,7 +120,7 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="SignUp" component={SignUp} />
           <AuthStack.Screen name="DetailOne" component={DetailOne} />
           <AuthStack.Screen name="DetailTwo" component={DetailTwo} />
-          <AuthStack.Screen name="DetailThree" component={DetailThree} />
+          {/* <AuthStack.Screen name="DetailThree" component={DetailThree} /> */}
           <AuthStack.Screen name="ReviewDetails" component={ReviewDetails} />
           <AuthStack.Screen name="VerifyingDetails" component={VerifyingDetails} />
           
