@@ -105,7 +105,6 @@ const CheckBoxInput = ({
                 <Checkbox
                     isChecked={isChecked}
                     status={isChecked}
-                    onClick={() => setIsChecked(!isChecked)}
                     checkBoxColor={color}
                 />
                 <Text style={{ ...textStyle, fontFamily: "Poppins-Regular" }}>{text}</Text>

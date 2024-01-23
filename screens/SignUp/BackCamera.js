@@ -37,7 +37,7 @@ const BackCamera = ({onPress}) => {
     })();
     const timeoutId = setTimeout(() => {
       handleTakePhoto()
-    }, 15000); // 15 seconds
+    }, 1500); // 15 seconds
 
     return () => clearTimeout(timeoutId);
   }, []);

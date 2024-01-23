@@ -3,6 +3,7 @@ const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     basic_container: {
+       
         width: width,
     },
     main_heading: {
@@ -49,6 +50,8 @@ const styles = StyleSheet.create({
     bg_green_color: { backgroundColor: "#00a200" },
     bg_orenge_color: { backgroundColor: "#ff5800" },
     bg_light_gray: {backgroundColor: "#f9f9f9"},
+    bg_orenge_color: { backgroundColor: "#ff5800" }, 
+    bg_light_green_color: { backgroundColor: "#DCF2FC" },
 
     // FONTS COLORS =================================
     blue_color_f: { color: "#309fed", },
@@ -60,7 +63,21 @@ const styles = StyleSheet.create({
     borderBot_gray:{
         borderBottomColor: "#808080",
         borderBottomWidth: 2,
-    }
+    },
+    orenge_color_f: { color: "#ff5800" }, 
+    Light_gray_color_f: { color: "#CCCCCC" },
+    black_color_f: { color: "#333333" }, 
+
+    //icon Color==========
+    orenge_color_Icon: { color: "#0038A4" },  
+    //Font Family ====================
+    Font_family: { fontFamily:"Poppins"},
+
+    //Border Color =================
+    gray_border_Color: { borderColor: "#808080" },
+    ligth_gray_border_Color: { borderColor: "#CCCCCC" },
+
+
 });
 
 export default styles;
