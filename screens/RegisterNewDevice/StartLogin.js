@@ -111,7 +111,6 @@ const StartLogin = ({ disabled }) => {
                             <View style={{ alignItems: "center" }}>
                                 <RequestButton text='Cancel' />
                             </View>
-
                         </View>
                     </View>
                 </Modal>
