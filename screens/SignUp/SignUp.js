@@ -21,6 +21,7 @@ import AllowSelfie from './AllowSelfie';
 import SelfieCamera from './SelfieCamera';
 import CheckingThings from './CheckingThings';
 import { useNavigation } from '@react-navigation/native';
+import Steps from '../../components/steps/Steps';
 const labels = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
 const customStyles = {
     stepIndicatorSize: 25,
@@ -117,15 +118,18 @@ const SignUp = () => {
 
   return (
     <ScrollView style={{backgroundColor:'white'}}>
-    {console.log(currentPosition)}
+ 
+     {/*
     {!isDecimal(currentPosition) ?
-    <View style={{display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'row',paddingTop:10}}>
+  
+   <View style={{display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'row',paddingTop:10}}>
     <View style={{display:'flex',alignItems:'center',justifyContent:'flex-end',height:30}}>
     
    <Image source={require('../../assets/SignUp/docsIcon.png')}/>
     </View>
    
-    <View style={{display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column'}}>
+
+   <View style={{display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column'}}>
    
     <Text>
     {currentPosition+1} of 8
@@ -133,12 +137,27 @@ const SignUp = () => {
 
     <Progress.Bar progress={parseFloat(`0.${currentPosition+1}`)} width={100} />
     </View>
+
   <View style={{display:'flex',alignItems:'center',justifyContent:'flex-end'}}>
   <Icons.AntDesign name="user" size={20} />
   </View>
-    </View>:null}
+    </View>
  
+    :null}
+     */}
+     {!isDecimal(currentPosition) ?
+     <Steps
+     backtoPage={false}
+     totalSteps={"8"}
+     activeStep={`${currentPosition+1}`}
+     leftIcon={require('../../assets/SignUp/docsIcon.png')}
+     rightIcon={require('../../assets/SignUp/Profile.png')}
+     ProgressBarIcon={require('../../assets/SignUp/steps.png')}
+ />
+ :null}
       {renderStep()}
+     
+    
     </ScrollView>
   )
 }

@@ -45,7 +45,8 @@ const DetailOne = () => {
                             fontSize: 15,
                             borderBottomWidth: 1,
                             borderBottomColor: '#808080',
-                            fontFamily: "Poppins-Regular"
+                            fontFamily: "Poppins-Regular",
+                            color:'black'
                         }}
                         placeholderTextColor="#808080"
                         label={"Email"}

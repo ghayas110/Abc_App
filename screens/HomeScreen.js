@@ -60,7 +60,7 @@ const HomeScreen = ({ disabled }) => {
           
           <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} />
         </View>
-        <View style={{ flexDirection: "row", marginTop: 10, }}>
+        <View style={{ flexDirection: "row", marginTop: 10, justifyContent:'space-evenly',alignItems:'center' }}>
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
             <View style={{ borderWidth: 1, ...ThemeSty.gray_border_Color, padding: 25, borderRadius: 20, justifyContent: "center", alignItems: 'center' }}>
               <Image source={HomeDuet} style={{ resizeMode: "contain" , width:25, height:30}} />

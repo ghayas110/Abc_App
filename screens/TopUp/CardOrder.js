@@ -117,7 +117,7 @@ const toggleBottomSheet = () => {
                 source={require('../../assets/SignUp/ordercard.png')} // replace with your image path
                 />
                 <View style={{padding:5}}>
-                <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>Your Rize account is ready!</Text>
+                <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>Your SSSCO account is ready!</Text>
                 <Text style={styles.text2}>Your card will reach to your doorstep within next 7 working days </Text>
                 </View>
                 </View>

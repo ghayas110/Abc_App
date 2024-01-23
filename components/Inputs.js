@@ -34,6 +34,7 @@ const SimpleInput = ({
                 <TextInput
                     style={{...inputstyle}}
                     placeholder={placeholder}
+                    
                     type={type}
                     value={value}
                     defaultValue={defaultValue}
@@ -92,7 +93,10 @@ const CheckBoxInput = ({
     status,
     others
 }) => {
-    const [isChecked, setIsChecked] = useState(false)
+    const [isChecked, setChecked] = useState(false);
+    const handleCheckBoxClick = () => {
+        setChecked(!isChecked);
+    };
     return (
         <>
             <View style={{
@@ -104,7 +108,7 @@ const CheckBoxInput = ({
             }}>
                 <Checkbox
                     isChecked={isChecked}
-                    status={isChecked}
+                    onClick={handleCheckBoxClick}  // or use onChange
                     checkBoxColor={color}
                 />
                 <Text style={{ ...textStyle, fontFamily: "Poppins-Regular" }}>{text}</Text>

@@ -62,7 +62,7 @@ const BioActivation = () => {
             </View>
             <View >
                 <View style={styles.btn1}>
-                    <OutlineButton text={'Activation  later'} />
+                    <OutlineButton text={'Activation later'} onPress={ForWordnavigation}/>
                 </View>
                 <View style={styles.btn2}>
                     <RequestButton text={'Enable'} onPress={ForWordnavigation} />

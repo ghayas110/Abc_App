@@ -58,7 +58,7 @@ const CreatePassword = () => {
                             placeholder={'Enter Your Password'}
                             type={'password'}
                             name="password"
-                            inputstyle={{ fontSize: 20, fontWeight: "600", ...ThemeSty.Light_gray_color_f , ...ThemeSty.Font_family  }}
+                            inputstyle={{ fontSize: 20, fontWeight: "600",color: "black" , ...ThemeSty.Font_family  }}
                         />
                         <Icons.Entypo name="eye-with-line" style={styles.hideapassword} />
                     </View>
@@ -68,7 +68,7 @@ const CreatePassword = () => {
                         <SimpleInput
                             type={'password'}
                             placeholder={'Confirm Your Password'}
-                            inputstyle={{ fontSize: 20, fontWeight: "600", ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family }} />
+                            inputstyle={{ fontSize: 20, fontWeight: "600",color: "black" , ...ThemeSty.Font_family  }}/>
                         <Icons.Entypo name="eye-with-line" style={styles.hideapassword} />
                     </View>
                 </View>

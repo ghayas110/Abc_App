@@ -49,14 +49,19 @@ const StartLogin = ({ disabled }) => {
                     <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>Welcome back. Great to see you!</Text>
                 </View>
                 <View style={styles.inputContainer}>
-                    <SimpleInput
-                        label={'username'}
-                        placeholder={'Enter Username'}
-                        placeholderTextColor={{ ...ThemeSty.black_color_f }}
-                        type={'text'}
-                        value={''}
-                        inputstyle={{ fontSize: 20, fontWeight: "600", ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family }}
-                    />
+                <SimpleInput
+                inputstyle={{
+                    fontSize: 15,
+                    borderBottomWidth: 1,
+                    borderBottomColor: '#808080',
+                    fontFamily: "Poppins-Regular",
+                    color:'black'
+                }}
+                placeholderTextColor="#808080"
+              
+                type={'Enter User Name'}
+                placeholder={'Enter User Name'}
+            />
                 </View>
                 <View style={styles.ForgotPassword}>
                     <Text style={{...ThemeSty.Green_color_f ,...ThemeSty.Font_family, fontWeight:"700" , fontSize:16}}>Forgot username?</Text>
