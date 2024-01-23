@@ -7,6 +7,7 @@ import { MainStackNavigator } from "./StackNavigator";
 import AccountScreen from "../screens/AccountScreen";
 import TransferScreen from "../screens/TransferScreen";
 import MoreScreen from "../screens/MoreScreen";
+import styles from "../assets/styles/basic";
 
 const Tab = createBottomTabNavigator();
 
@@ -27,13 +28,13 @@ const BottomTabNavigator = () => {
       <Tab.Screen name="Home" component={MainStackNavigator} options={{
         tabBarIcon: ({ color, size }) => (
           // <SvgXml xml={PendingIcons} color={color} />
-          <Icon name="people-outline" color={color} size={size} />),
+          <Icon name="home" color={color} size={size} />),
       }} />
 
       <Tab.Screen name="Account" component={AccountScreen} options={{
         tabBarIcon: ({ color, size }) => (
 
-          <Icon name="people-outline" color={color} size={size} />
+          <Icon name="wallet" color={color} size={size} />
         ),
       }} />
       <Tab.Screen name="Transfer" component={TransferScreen} options={{

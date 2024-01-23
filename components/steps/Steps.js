@@ -1,21 +1,25 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'react-native'
-import style from "../assets/styles/basic"
+import style from "../../assets/styles/basic"
 import { useNavigation } from '@react-navigation/native';
 
 
 
 const Steps = ({
-    backtoPage,
+    // backtoPageName
     totalSteps,
     activeStep,
-    backtoPageName
+    backtoPage,
+    backIcon,
+    leftIcon,
+    rightIcon,
+    ProgressBarIcon,
 }) => {
     const { width, height } = Dimensions.get('window');
     const navigation = useNavigation()
-    const back = async () => {
-        navigation.navigate(backtoPageName)
-    }
+    const goBack = () => {
+        navigation.goBack();
+    };
     return (
         <>
 
@@ -28,18 +32,17 @@ const Steps = ({
             }}>
 
                 {backtoPage ?
-                    <TouchableOpacity onPress={back}
+                    <TouchableOpacity onPress={goBack}
                         style={{
                             position: "absolute",
                             left: width * 0.10
                         }}
                     >
-                        <Image source={require('../screens/verify-personal/images/Icons.png')} />
+                        <Image source={backIcon} />
                     </TouchableOpacity>
                     : null
                 }
 
-                {/* STEPS =========================== */}
                 <View style={{
                     width: width * 0.5,
                     display: "flex",
@@ -49,16 +52,16 @@ const Steps = ({
                 }}>
 
                     <Image
-                        source={require('../screens/verify-personal/images/Profile.png')}
+                        source={leftIcon}
                     />
                     <View>
                         <Text style={{ ...style.simple_txt, marginBottom: 5, fontFamily: "Poppins-Regular" }}>Step {activeStep} of {totalSteps}</Text>
                         <Image
-                            source={require('../screens/verify-personal/images/steps.png')}
+                            source={ProgressBarIcon}
                         />
                     </View>
                     <Image
-                        source={require('../screens/verify-personal/images/Setting.png')}
+                        source={rightIcon}
                     />
                 </View>
             </View>

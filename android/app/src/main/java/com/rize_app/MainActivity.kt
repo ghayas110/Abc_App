@@ -1,4 +1,4 @@
-package com.rize_app
+package com.Rize_App
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

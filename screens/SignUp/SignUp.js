@@ -20,6 +20,7 @@ import VerifyCNIC2 from './VerifyCNIC2';
 import AllowSelfie from './AllowSelfie';
 import SelfieCamera from './SelfieCamera';
 import CheckingThings from './CheckingThings';
+import { useNavigation } from '@react-navigation/native';
 const labels = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
 const customStyles = {
     stepIndicatorSize: 25,
@@ -37,6 +38,7 @@ const SignUp = () => {
   const [currentPosition, setCurrentPosition] = useState(0);
   const [otp, setOtp] = useState('');
   const [acceptedTerms, setAcceptedTerms] = useState(false);
+  const navigation =useNavigation()
   const isDecimal = (number) => Number.isFinite(number) && number % 1 !== 0;
   const renderStep = () => {
     switch (currentPosition) {
@@ -75,7 +77,9 @@ const SignUp = () => {
                   )
                   case 6:
                     return(
-             <AllowNIC onPress={()=>setCurrentPosition(currentPosition+0.2)}/>
+            //  <AllowNIC onPress={()=>setCurrentPosition(currentPosition+0.2)}/>
+            <AllowNIC onPress={()=>setCurrentPosition(currentPosition+0.2)}/>
+
                     )
                     case 6.2:
                       return(
@@ -93,10 +97,7 @@ const SignUp = () => {
                             return(
                               <VerifyCNIC2 onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))}/>
                               )
-                              case 6.8:
-                                return(
-                                  <VerifyCNIC2 onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))}/>
-                                  )
+                            
                                   case 7:
                                     return(
                                       <AllowSelfie onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))}/>
@@ -107,7 +108,7 @@ const SignUp = () => {
                                           ) 
                                           case 7.4:
                                             return(
-                                              <CheckingThings onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))}/>
+                                              <CheckingThings onPress={() => navigation.navigate('DetailOne')}/>
                                               )
       default:
         return null;

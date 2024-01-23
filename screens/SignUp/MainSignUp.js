@@ -1,49 +1,75 @@
-import { StyleSheet, Text, View,Image } from 'react-native'
-import React from 'react'
-import ButtonInput from '../../components/ButtonInput'
-import { useNavigation } from '@react-navigation/native'
+import React, { useState } from 'react'
+import { Image, StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'react-native'
+import style from "../../assets/styles/basic"
+import { useNavigation } from '@react-navigation/native';
+import { RequestButton } from '../../components/Buttons';
+import ActivationSteps from '../../components/steps/ActivationSteps';
 
 
 const MainSignUp = () => {
+    const { width, height } = Dimensions.get('window');
     const navigation = useNavigation()
-  return (
-   
-    <View style={styles.container}>
-    {/* You can replace this with your own illustration */}
-   <View style ={{display:'flex',alignItems:'center',flexDirection:'column',justifyContent:'space-around',height:"40%"}}>
-   <Image
-   style={styles.mapicon}
+    const nextPage = async () => {
+        navigation.navigate('CreateUserName')
+    }
+
+    return (
+        <>
+            <View style={{
+                ...style.basic_container,
+                height: height,
+                backgroundColor: "white",
+            }}>
+                <View style={{
+                    ...style.basic_container,
+                    height: height,
+                    paddingRight: 20,
+                    paddingLeft: 20,
+                    position: "relative"
+                }}>
+                    <View style={{
+                        marginTop: 80,
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center"
+                    }}>
+                        <Image 
    source={require('../../assets/SignUp/signupimage1.png')} // replace with your image path
-   />
-   
-   <Text style={{ fontSize: 24, fontWeight: 'bold' }}>Great! You’re one step closer</Text>
-   <Text style={{textAlign:'center'}}>This won’t take long. Please have your MyKad ready</Text>
-   </View>
-   
-    <View style={styles.bottomView}>
-    <ButtonInput onPress={()=>navigation.navigate('SignUpScreen')}/>
-    </View>
-      </View>
-      
-  
-  )
+ />
+                    </View>
+                    <Text style={{
+                        ...style.Green_color_h,
+                        marginTop: 20,
+                        fontSize: 25,
+                        fontFamily: "Poppins-Bold"
+                    }}>Great! You’re one step closer to your new SSSCO account. </Text>
+                    <Text style={{
+                        marginTop: 15,
+                        fontSize: 15,
+                        padding: 0,
+                        fontFamily: "Poppins-Regular",
+                        ...style.gray_color_h
+                    }}>This won’t take long. Please have your MyKad ready</Text>
+                    <ActivationSteps
+                    verticalLineImage={require('../../assets/SignUp/line.png')}
+                    image_a={require('../../assets/SignUp/paper.png')}
+                    text_a={`Sign up & ID ${'\n'} verification`}
+                    image_b={require('../../assets/SignUp/user.png')}
+                    text_b={`Personal ${'\n'} details`}
+                    image_c={require('../../assets/SignUp/setings.png')}
+                    text_c={`Create ${'\n'} an accounts`}
+                    image_d={require('../../assets/SignUp/wallet.png')}
+                    text_d={`Top up ${'\n'} account`}
+                />
+               
+                
+                    <RequestButton text={"Sign Up Now"} onPress={() => navigation.navigate('SignUp')}
+                        btnStyle={{ position: "absolute", bottom: 50 }}
+                    />
+                </View>
+            </View>
+        </>
+    )
 }
 
 export default MainSignUp
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding:20
-      },
-      bottomView: {
-        width: '100%',
-        height: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'absolute',
-        bottom: 0,
-      },
-})
