@@ -3,6 +3,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { Dimensions, Text, View, TouchableOpacity, Image } from 'react-native'
 import Header from './components/Header'
 import style from "../../assets/styles/basic"
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Tab = createMaterialTopTabNavigator();
 const { width, height } = Dimensions.get('window');
@@ -48,15 +49,15 @@ const History = () => {
 const SavingAccount = () => {
     return (
         <>
-            <View style={{
+            <SafeAreaView style={{
                 backgroundColor: "white",
-                height: height
+                height: height,
             }}>
 
                 <View style={{
                     display: "flex",
                     flexDirection: "row",
-                    padding: 15
+                    padding: 15,
                 }}>
                     <View style={{
                         display: "flex",
@@ -66,9 +67,9 @@ const SavingAccount = () => {
                         padding: 10,
                         borderRadius: 10,
                         ...style.green_out_line,
-                        flex: 0.3
+                        flex: 0.4
                     }}>
-                        <Text>Latest first</Text>
+                        <Text style={{ fontSize: 17, ...style.Green_color_h, ...style.Font_family }}>Latest first</Text>
                         <TouchableOpacity>
                             <Image source={require('../../assets/TransactionHistoryImages/Swap.png')} />
                         </TouchableOpacity>
@@ -84,13 +85,79 @@ const SavingAccount = () => {
                         flex: 0.3,
                         marginLeft: 20
                     }}>
-                        <Text style={{fontSize: 20,...style.Green_color_h,...style.Font_family_Regular}}>Filter</Text>
+                        <Text style={{ fontSize: 17, ...style.Green_color_h, ...style.Font_family }}>Filter</Text>
                         <TouchableOpacity>
                             <Image source={require('../../assets/TransactionHistoryImages/filter-lines.png')} />
                         </TouchableOpacity>
                     </View>
                 </View>
-            </View>
+                <View style={{
+                    paddingLeft: 15,
+                    marginTop: 40
+                }}>
+                    <Text style={{ ...style.black_color_h, ...style.Font_family_Bold, fontSize: 17 }}>Feb 2024</Text>
+                    <TouchableOpacity>
+                        <View style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            width: width,
+                        }}>
+                            <Text numberOfLines={1} style={{marginRight: 30,...style.black_color_f,...style.Font_family,fontSize: 15}}>Trip to Kyoto - Single Transfer</Text>
+                            <Text numberOfLines={1} style={{marginRight: 30,...style.gray_color_h,...style.Font_family,fontSize: 15}}>-RM 800.00</Text>
+                        </View>
+                        <Text style={{marginTop: 12,...style.Font_family_Bold,fontSize: 16,...style.gray_color_h}}>5 FEB 2022</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            width: width,
+                            marginTop: 20
+                        }}>
+                            <Text numberOfLines={1} style={{marginRight: 30,...style.black_color_f,...style.Font_family,fontSize: 15}}>DuitNow Transfer to Account -  Rize</Text>
+                            <Text numberOfLines={2} style={{marginRight: 30,...style.gray_color_h,...style.Font_family,fontSize: 15}}>+RM 3,650.00</Text>
+                        </View>
+                        <Text style={{marginTop: 12,...style.Font_family_Bold,fontSize: 16,...style.gray_color_h}}>3 FEB 2022</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            width: width,
+                            marginTop: 20
+                        }}>
+                            <Text numberOfLines={1} style={{marginRight: 30,...style.black_color_f,...style.Font_family,fontSize: 15}}>DuitNow Transfer to ID - ADLI AHMAD</Text>
+                            <Text numberOfLines={2} style={{marginRight: 30,...style.gray_color_h,...style.Font_family,fontSize: 15}}>-RM 10.80</Text>
+                        </View>
+                        <Text style={{marginTop: 12,...style.Font_family_Bold,fontSize: 16,...style.gray_color_h}}>3 FEB 2022</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            width: width,
+                            marginTop: 20
+                        }}>
+                            <Text numberOfLines={1} style={{marginRight: 30,...style.black_color_f,...style.Font_family,fontSize: 15}}>DuitNow Transfer to Account - TENAGA NASIONAL</Text>
+                            <Text numberOfLines={2} style={{marginRight: 30,...style.gray_color_h,...style.Font_family,fontSize: 15}}>-RM 35.20</Text>
+                        </View>
+                        <Text style={{marginTop: 12,...style.Font_family_Bold,fontSize: 16,...style.gray_color_h}}>1 FEB 2022</Text>
+                    </TouchableOpacity>
+
+                    <View style={{
+                         borderBottomColor: 'black',
+                         marginVertical: 10,
+                         width: width
+                    }} />
+                </View>
+            </SafeAreaView>
         </>
     )
 }

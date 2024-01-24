@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     //icon Color==========
     orenge_color_Icon: { color: "#0038A4" },  
     //Font Family ====================
-    Font_family_Regular: { fontFamily:"Poppins-Regular"},
+    Font_family: { fontFamily:"Poppins-Regular"},
     Font_family_Bold: { fontFamily:"Poppins-Bold"},
 
     //Border Color =================
