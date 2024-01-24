@@ -74,7 +74,6 @@ const MainStackNavigator = () => {
           </Drawer.Screen>
           <Drawer.Screen name='ChangePassword' component={ChangePassword} />
           <Drawer.Screen name='EditProfile' component={EditProfileScreen} />
-          <AuthStack.Screen name="History" component={History} />
         </Drawer.Navigator>
       ) : (
         <AuthStack.Navigator screenOptions={{

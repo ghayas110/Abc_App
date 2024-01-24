@@ -9,6 +9,7 @@ import Terms from "../screens/SignUp/Terms";
 import StepsIndicator from "../components/StepsIndicator";
 import SignUp from "../screens/SignUp/SignUp";
 import MainSignUp from "../screens/SignUp/MainSignUp";
+import History from "../screens/transaction-history/History";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -28,6 +29,9 @@ const MainStackNavigator = () => {
         headerShown: false
       }} />
       <Stack.Screen name="Statements" component={StatementScreen} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="TransactionHistory" component={History} screenOptions={{
         headerShown: false
       }} />
     </Stack.Navigator>

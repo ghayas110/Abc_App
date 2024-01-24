@@ -73,7 +73,7 @@ const HomeScreen = ({ disabled }) => {
             </View>
             <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow QR Code</Text>
           </View>
-          <TouchableOpacity onPress={() => navigation.navigate('History')}>
+          <TouchableOpacity onPress={() => navigation.navigate('TransactionHistory')}>
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
             <View style={styles.boxes}>
               <Image source={Transfer} style={styles.boxImage} />
@@ -82,12 +82,14 @@ const HomeScreen = ({ disabled }) => {
               </View>
               </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Statements')} style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
-            <View style={{ borderWidth: 1, ...ThemeSty.gray_border_Color, padding: 25, borderRadius: 20, justifyContent: "center", alignItems: 'center' }}>
-              <Image source={Statement} style={{ resizeMode: "contain", width: 25, height: 30 }} />
+
+            <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
+              <View style={styles.boxes}>
+                <Image source={Statement} style={styles.boxImage} />
+              </View>
+              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Latest Statements</Text>
             </View>
-            <Text style={{
-              fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5
-            }}>Latest Statements</Text>
+            
           </TouchableOpacity>
 
 

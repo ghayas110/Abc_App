@@ -10,7 +10,7 @@ const Header = ({
     const { width, height } = Dimensions.get('window');
     const navigation = useNavigation()
     const goBack = () => {
-        navigation.goBack();
+        navigation.goBack("Home");
     };
   return (
     <>

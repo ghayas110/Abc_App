@@ -92,7 +92,7 @@ const SavingPots = () => {
                             <Text style={{ fontSize: 20, fontWeight: '700', ...Theme.black_color_f, ...Theme.Font_family }} >Filter By</Text>
                         </View>
                         <View style={{flexDirection:"row", alignItems:"center" ,  }}>
-                            {/* <RadioButtonCheck  /> */}
+                            <CheckBoxInput />
                             <Text style={{   marginLeft:10, fontSize:16 , fontWeight:'500', ...Theme.Font_family , ...Theme.black_color_f }}>All transactions</Text>
                         </View>
                         <View style={{ flexDirection: "row", alignItems: "center", }}>
