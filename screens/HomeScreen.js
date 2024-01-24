@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView,TouchableOpacity } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import Icons from '../components/Icons'
 import { useNavigation } from '@react-navigation/native'
@@ -60,7 +60,7 @@ const HomeScreen = ({ disabled }) => {
 
           <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} />
         </View>
-        <View style={{ flexDirection: "row", marginTop: 10, alignItems: "center", justifyContent: "center" }}>
+        <View style={{ flexDirection: "row", marginTop: 10, justifyContent: 'space-evenly', alignItems: 'center' }}>
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
             <View style={styles.boxes}>
               <Image source={HomeDuet} style={styles.boxImage} />
@@ -73,20 +73,22 @@ const HomeScreen = ({ disabled }) => {
             </View>
             <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow QR Code</Text>
           </View>
+          <TouchableOpacity onPress={() => navigation.navigate('History')}>
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
             <View style={styles.boxes}>
               <Image source={Transfer} style={styles.boxImage} />
             </View>
-            <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Transaction History</Text>
-          </View>
-          <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
-            <View style={styles.boxes}>
-              <Image source={Statement} style={styles.boxImage} />
+              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Transaction History</Text>
+              </View>
+              </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Statements')} style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
+            <View style={{ borderWidth: 1, ...ThemeSty.gray_border_Color, padding: 25, borderRadius: 20, justifyContent: "center", alignItems: 'center' }}>
+              <Image source={Statement} style={{ resizeMode: "contain", width: 25, height: 30 }} />
             </View>
             <Text style={{
               fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5
             }}>Latest Statements</Text>
-          </View>
+          </TouchableOpacity>
 
 
 
@@ -294,8 +296,8 @@ const styles = StyleSheet.create({
 
     elevation: 1,
   },
-  boxImage:{
-    resizeMode: "contain", 
+  boxImage: {
+    resizeMode: "contain",
   }
 
 })

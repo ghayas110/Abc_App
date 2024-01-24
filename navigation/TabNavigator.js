@@ -40,7 +40,7 @@ const BottomTabNavigator = () => {
       <Tab.Screen name="Transfer" component={TransferScreen} options={{
         tabBarIcon: ({ color, size }) => (
 
-          <Icon name="people-outline" color={color} size={size} />
+          <Icon name="play" color={color} size={size} />
         ),
       }} />
       <Tab.Screen name="More" component={MoreScreen} options={{

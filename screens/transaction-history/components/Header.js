@@ -33,7 +33,8 @@ const Header = ({
             }
             <Text style={{
                 fontFamily: "Poppins-Bold",
-                fontSize: 20
+                fontSize: 20,
+                color: "black"
             }}>{title}</Text>
         </View>
     </>

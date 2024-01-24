@@ -54,7 +54,7 @@ const CreateSecureWord = () => {
                 </View>
                 
                 <View style={{ ...styles.inputContainer, ...ThemeSty.gray_border_Color }}>
-                    <SimpleInput placeholder={'Enter Your Secure Word'} inputstyle={{ fontSize: 20, ...ThemeSty.gray_color_f, fontWeight: "600", ...ThemeSty.Font_family }} />
+                    <SimpleInput placeholder={'Enter Your Secure Word'} inputstyle={{ fontSize: 20, color:'black', fontWeight: "600", ...ThemeSty.Font_family }} />
                 </View>
                 <View style={styles.ListContainer}>
                     <View style={styles.Instruction}>

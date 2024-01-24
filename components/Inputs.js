@@ -15,7 +15,8 @@ const SimpleInput = ({
     defaultValue,
     type,
     placeholder,
-    viewStyle
+    viewStyle,
+    pass
 }) => {
     return (
         <>
@@ -35,9 +36,10 @@ const SimpleInput = ({
                     style={{ ...inputstyle }}
                     placeholder={placeholder}
                     type={type}
+                    secureTextEntry={pass}
                     value={value}
                     defaultValue={defaultValue}
-                    placeholderTextColor={placeholderTextColor}
+                    placeholderTextColor={"black"}
                 />
             </View>
         </>

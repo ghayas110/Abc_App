@@ -39,7 +39,7 @@ const StartLoginStep6 = ({ disabled }) => {
                 </View>
                 <View style={{ padding: 5, marginTop: 25, }}>
                     <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>
-                        Congratulations! Your Rize account is now registered on this device
+                        Congratulations! Your SSSSCO account is now registered on this device
                     </Text>
                 </View>
             </View>

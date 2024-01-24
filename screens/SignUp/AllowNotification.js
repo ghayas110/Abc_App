@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View,Dimensions,Button,Image, KeyboardAvoidingView } from 'react-native'
 import React from 'react'
-
+import style from '../../assets/styles/basic';
 import FormInput from '../../components/FormInput';
 import notifee from '@notifee/react-native';
 const windowWidth = Dimensions.get('window').width;
@@ -19,7 +19,7 @@ const AllowNotification = ({onPress}) => {
     source={require('../../assets/SignUp/notification.png')} // replace with your image path
     />
     <View style={{padding:17}}>
-    <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>Receive push notifications</Text>
+    <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Receive push notifications</Text>
     <Text style={styles.text2}>Get instant updates on your spending, rewards, and activity with Rize</Text>
     </View>
     </View>
@@ -53,10 +53,9 @@ const styles = StyleSheet.create({
        justifyContent:'space-between'
       },
       text2:{
-        fontSize: 16,
-        fontWeight:"500",
-        
-        lineHeight:20,
+        fontSize: 17,        
+        color: "#808080",
+        fontFamily: "Poppins-Regular"
       },
       bottomView: {
         width: '100%',

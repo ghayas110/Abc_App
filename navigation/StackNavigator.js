@@ -3,6 +3,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
+import StatementScreen from "../screens/Statement/StatementList";
 import Otp from "../screens/SignUp/Otp";
 import Terms from "../screens/SignUp/Terms";
 import StepsIndicator from "../components/StepsIndicator";
@@ -24,6 +25,9 @@ const MainStackNavigator = () => {
       headerShown: false
     }}>
       <Stack.Screen name="Home" component={HomeScreen} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="Statements" component={StatementScreen} screenOptions={{
         headerShown: false
       }} />
     </Stack.Navigator>

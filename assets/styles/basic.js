@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     Green_color_h: { color: "#00a200" },
     orenge_color_h: { color: "#ff5800" },
     black_color_h: {color: "#000"},
+    red_color_h: {color: "red"},
 
     // BG COLORS =================================
     bg_blue_color: { backgroundColor: "#309fed", },

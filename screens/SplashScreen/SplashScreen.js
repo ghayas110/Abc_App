@@ -21,9 +21,6 @@ const SplashScreen = () => {
         navigation.navigate('Landing')
       }, 1000)
     }, 5000)
-
-    
-    
   }, []);
 
 
@@ -34,7 +31,7 @@ const SplashScreen = () => {
           <View style={styles.Container}>
             <Animated.View style={{ ...styles.Logos, opacity: fadeAnim }}>
               <Image source={SplashLogos} style={styles.image1} />
-              <Text style={{fontSize:16, color:"white" , fontFamily:"Poppins"}}>Powered By SSSSCO</Text>
+              <Text style={{fontSize:16, color:"white" , fontFamily:"Poppins"}}>Powered By Ssssco</Text>
             </Animated.View>
           </View>
           : <View style={styles.Container}>

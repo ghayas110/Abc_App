@@ -40,13 +40,13 @@ const toggleBottomSheet = () => {
               <Text style={styles.text2}> Please confirm your mailing address </Text>
             </View>
             <View style={styles.acordion}>
-              <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15 }}> Shipping to </Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15,color:'black' }}> Shipping to </Text>
               <Text style={styles.text2}>
               Razak Bin Osman
               </Text>
             </View>
           <View>
-                        <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15 }}> Selected debit card </Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15,color:'black' }}> Selected debit card </Text>
 
           </View>
             <View style={{ display: 'flex', flexDirection: 'row' }}>
@@ -61,7 +61,7 @@ const toggleBottomSheet = () => {
                 onPress={() => setCheckeddd(!checkeddd)}
               />
               <View>
-              <Text style={{fontWeight: 'bold', fontSize: 17}}>
+              <Text style={{fontWeight: 'bold', fontSize: 17,color:'black'}}>
               Residential address              </Text>
               <Text style={styles.text2}>
               62, Jalan Camar 5, Residensi 28, 47810, Petaling Jaya, Selangor              </Text>
@@ -117,7 +117,7 @@ const toggleBottomSheet = () => {
                 source={require('../../assets/SignUp/ordercard.png')} // replace with your image path
                 />
                 <View style={{padding:5}}>
-                <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>Your Rize account is ready!</Text>
+                <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15,color:'black'}}>Your SSSCO account is ready!</Text>
                 <Text style={styles.text2}>Your card will reach to your doorstep within next 7 working days </Text>
                 </View>
                 </View>
@@ -152,6 +152,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "500",
     lineHeight: 20,
+    color:'black'
   },
   bottomView: {
     width: '100%',

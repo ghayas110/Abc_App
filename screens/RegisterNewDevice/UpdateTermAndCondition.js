@@ -64,7 +64,7 @@ const UpdateTermAndCondition = ({ onLogin}) => {
                     <View style={{  flexDirection: "row", alignItems: "center", padding: 15, marginTop: 5 }}>
                         <CheckBoxInput name="text-document" textStyle={{ ...ThemeSty.Light_gray_color_f, fontSize: 16 }} />
                         <Text style={{
-                            ...ThemeSty.Light_gray_color_f, fontSize: 16, marginLeft: 5,
+                            color:'black', fontSize: 16, marginLeft: 5,
                         }}>I have read and accepted ALL the updated documents above.</Text>
                     </View>
                     

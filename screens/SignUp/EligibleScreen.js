@@ -1,19 +1,18 @@
-import { StyleSheet, Text, View, Dimensions, Button, Image, KeyboardAvoidingView,TouchableOpacity } from 'react-native'
-import React,{useState} from 'react'
-import FormInput from '../../components/FormInput';
-import notifee from '@notifee/react-native';
-import { RadioButton } from 'react-native-paper'; // Import RadioButton from react-native-paper
-import Modal from 'react-native-modal';
+
+import React, { useState } from 'react'
+import { Image, StyleSheet, Text, View, Dimensions,TouchableOpacity,Button } from 'react-native'
 import style from "../../assets/styles/basic"
+import { CheckBoxInput, List, SimpleInput } from '../../components/Inputs';
+import { OutlineButton, RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
-
-const EligibleScreen = ({ onPress }) => {
+import Modal from 'react-native-modal';
+import { RadioButton } from 'react-native-paper';
+const { width, height } = Dimensions.get('window');
+const EligibleScreen = ({onPress}) => {
   const [checked, setChecked] = React.useState(false);
   const [checkedd, setCheckedd] = React.useState(false);
   const [checkeddd, setCheckeddd] = React.useState(false);
+  const navigation = useNavigation()
   const styless = {
     bottomSheetContainer: {
         backgroundColor: 'white',
@@ -25,24 +24,41 @@ const EligibleScreen = ({ onPress }) => {
     },
 };
 const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
-const navigation =useNavigation()
+
 const toggleBottomSheet = () => {
     setBottomSheetVisible(!isBottomSheetVisible);
 };
   return (
     <>
-    <View style={styles.container}>
-    <View style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'space-around', height: "60%" }}>
-    <View>
-    <Text style={{ fontSize: 24, fontWeight: '900', color: 'green', marginBottom: 15 }}>Confirm your mailing address</Text>
-    <View>
-    <View style={styles.acordion}>
-              <Text style={styles.text2}> Please confirm your mailing address </Text>
-              </View>
+
+    <View style={{
+        ...style.basic_container,
+        height: height*0.75,
+        position: "relative",
+        backgroundColor: "white"
+    }}>
+    
+
+        {/* INPUT BOX ============================= */}
+        <View style={{
+            ...style.basic_container,
+            marginTop: 20,
+            paddingLeft: 30,
+            
+            paddingRight: 30
+        }}>
+            <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Yes, I’m eligible!</Text>
             <View style={styles.acordion}>
-              <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15 }}> Shipping to </Text>
+            <Text style={styles.text2}>{'\u2022'}</Text>
+            <Text style={styles.text2}> I’m 18 years old and above </Text>
+            </View>
+            <View style={styles.acordion1}>
+            <Text style={styles.text2}>{'\u2022'}</Text>
+            <Text style={styles.text2}> I have an existing online banking account with another bank in Malaysia </Text>
+            </View>
+            <View style={styles.acordion3}>
               </View>
-              <View style={{ flexDirection: 'row', paddingVertical: 15 }}>
+              <View style={{ flexDirection: 'row' }}>
               <RadioButton
                 status={checked ? 'checked' : 'unchecked'}
                 onPress={() => setChecked(!checked)}
@@ -60,8 +76,9 @@ const toggleBottomSheet = () => {
             I‘m NOT a US person
             </Text>
             </View>
-            <View style={{ flexDirection: 'row', paddingVertical: 15 }}>
+            <View style={{ flexDirection: 'row' }}>
             <RadioButton
+            style={{  borderColor: "#006400"}}
             status={checkeddd ? 'checked' : 'unchecked'}
             onPress={() => setCheckeddd(!checkeddd)}
             />
@@ -69,106 +86,134 @@ const toggleBottomSheet = () => {
             I don't pay income tax in any other country besides Dubai
             </Text>
             </View>
-            </View>
-            <View style={{ width: "100%", backgroundColor: '#DCF2FC', padding: 20 }}>
-            <Text>Note: You are a US person if you are either a US citizen, a US resident or a Green Card holder.</Text>
-            </View>
-            </View>
-            </View>
-            
-            <View>
-            <View >
-            <Button
-            title="No I am not Eligible"
-            color="green"
-            onPress={toggleBottomSheet}
-            />
-            </View>
-            <View style={{marginTop:15}}>
-            <Button
-            
-            title="Yes I am Eligible"
-            color="green"
-            onPress={onPress}
-            />
-            </View>
-            </View>
-            </View>
-            <View >
-            <Modal
-                isVisible={isBottomSheetVisible}
-                style={{ margin: 0 }}
-                onBackdropPress={toggleBottomSheet}
-            >
-                <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-                    <View style={{
-                        ...styless.bottomSheetContainer,
-                    }}>
-                        <View style={{
-                            ...style.basic_container,
-                            display: "flex",
-                            justifyContent: "flex-end",
-                            flexDirection: "row",
-                            alignItems: "center"
-                        }}>
-                            <TouchableOpacity onPress={toggleBottomSheet}
-                                style={{
-                                    ...style.bg_light_gray,
-                                    padding: 15,
-                                    marginRight: 30,
-                                    borderRadius: 40,
-                                }}>
-                                <Image
-                                    source={require('../../assets/SignUp/cross.png')}
-                                />
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.containers}>
-                        <View style ={{display:'flex',alignItems:'center',flexDirection:'column',justifyContent:'space-around',height:"60%"}}>
-                      
-                        <View style={{padding:5}}>
-                        <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>Sorry! You don't meet our eligibility criteria</Text>
-                        <Text style={styles.text2}>When our platform opens up to a wider group of customers, how should we contact you? </Text>
-                        </View>
-                        </View>
+            <View style={{ width: "100%", backgroundColor: '#DCF2CC', padding: 20,marginTop:15 }}>
+                         <Text
+                         style={{
+                          fontSize: 14,
                     
-                    <View>
-                    <Button
-                    title="i'll exit now"
-                    color="green"
-                    onPress={()=>navigation.navigate('Landing')}
-                    />
-                    </View>
-                    </View>
-                    </View>
-                </View>
-            </Modal>
-        </View>
-            </>
+                          color: "#006400",
+                          fontFamily: "Poppins-Regular"
+                      }}
+                         >Note: You are a US person if you are either a US citizen, a US resident or a Green Card holder.</Text>
+                         </View>
+            </View>
+      
+    </View>
+   
+    <OutlineButton text="I'm not eligible" onPress={toggleBottomSheet} />
+    <View style={{ padding: 10, alignItems: "center" }}>
+    <RequestButton text={"I am eligible"} onPress={onPress}
+  
+/>
+  </View>
+  <View >
+  <Modal
+      isVisible={isBottomSheetVisible}
+      style={{ margin: 0 }}
+      onBackdropPress={toggleBottomSheet}
+  >
+      <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+          <View style={{
+              ...styless.bottomSheetContainer,
+          }}>
+              <View style={{
+                  ...style.basic_container,
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  flexDirection: "row",
+                  alignItems: "center"
+              }}>
+                  <TouchableOpacity onPress={toggleBottomSheet}
+                      style={{
+                          ...style.bg_light_gray,
+                          padding: 15,
+                          marginRight: 30,
+                          borderRadius: 40,
+                      }}>
+                      <Image
+                          source={require('../../assets/SignUp/cross.png')}
+                      />
+                  </TouchableOpacity>
+              </View>
+              <View style={styles.containers}>
+              <View style ={{display:'flex',alignItems:'center',flexDirection:'column',justifyContent:'space-around',height:"60%"}}>
+            
+              <View style={{padding:5}}>
+              <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>Sorry! You don't meet our eligibility criteria</Text>
+              <Text style={styles.text2}>When our platform opens up to a wider group of customers, how should we contact you? </Text>
+              </View>
+              </View>
+          
+          <View>
+          <Button
+          title="i'll exit now"
+          color="green"
+          onPress={()=>navigation.navigate('Landing')}
+          />
+          </View>
+          </View>
+          </View>
+      </View>
+  </Modal>
+</View>
+</>
   )
 }
 
-export default EligibleScreen;
+export default EligibleScreen
 
 const styles = StyleSheet.create({
+  acordion: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    width:width*0.65,
+    height:50,
+    borderBottomColor: 'whitesmoke',
+
+  },
+  acordion3: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    width:width*0.65,
+    height:10,
+    borderBottomColor: 'whitesmoke',
+
+  },
+  acordion1: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    width:width*0.8,
+    height:50,
+    borderBottomColor: 'whitesmoke',
+
+  },
   container: {
     flex: 1,
     paddingTop: 80,
     padding: 30,
-    height: windowHeight * 0.9,
+    height: height * 0.9,
     justifyContent: 'space-between'
   },
   containers: {
     flex: 1,
     paddingTop: 20,
     padding: 30,
-    height: windowHeight * 0.9,
+    height: height * 0.9,
     justifyContent: 'space-between'
   },
   text2: {
-    fontSize: 16,
-    fontWeight: "500",
-    lineHeight: 20,
+    fontSize: 17,        
+    color: "#808080",
+    fontFamily: "Poppins-Regular"
   },
   bottomView: {
     width: '100%',

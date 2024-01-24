@@ -75,14 +75,20 @@ const CreateUserName = ({ disabled }) => {
                     <Text style={{ fontSize: 16, fontWeight: "500", ...ThemeSty.gray_color_f, ...ThemeSty.Font_family }}>Your username is not case sensitive</Text>
                 </View>
                 <View style={styles.inputContainer}>
+                  
                     <SimpleInput
-                        placeholder={'Enter User Name'}
-                        placeholderTextColor={{ ...ThemeSty.black_color_f }}
-                        type={'text'}
-                        value={''}
-                        onChangeText={handleInputChange}
-                        inputstyle={{ fontSize: 20, fontWeight: "600", ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family }}
-                    />
+                    inputstyle={{
+                        fontSize: 15,
+                        borderBottomWidth: 1,
+                        borderBottomColor: '#808080',
+                        fontFamily: "Poppins-Regular",
+                        color:'black'
+                    }}
+                    placeholderTextColor="#808080"
+                  
+                    type={'Enter User Name'}
+                    placeholder={'Enter User Name'}
+                />
                 </View>
                 <View style={styles.ListContainer}>
                     <View style={styles.Instruction}>

@@ -56,9 +56,10 @@ const CreatePassword = () => {
                     <View style={{ flexDirection: "row" }}>
                         <SimpleInput
                             placeholder={'Enter Your Password'}
+                            placeholderTextColor={"black"}
                             type={'password'}
                             name="password"
-                            inputstyle={{ fontSize: 20, fontWeight: "600", ...ThemeSty.Light_gray_color_f , ...ThemeSty.Font_family  }}
+                            inputstyle={{ fontSize: 20, fontWeight: "600",color: "black" , ...ThemeSty.Font_family  }}
                         />
                         <Icons.Entypo name="eye-with-line" style={styles.hideapassword} />
                     </View>
@@ -67,8 +68,9 @@ const CreatePassword = () => {
                     <View style={{ flexDirection: "row" }}>
                         <SimpleInput
                             type={'password'}
+                            placeholderTextColor={"black"}
                             placeholder={'Confirm Your Password'}
-                            inputstyle={{ fontSize: 20, fontWeight: "600", ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family }} />
+                            inputstyle={{ fontSize: 20, fontWeight: "600",color: "black" , ...ThemeSty.Font_family  }}/>
                         <Icons.Entypo name="eye-with-line" style={styles.hideapassword} />
                     </View>
                 </View>

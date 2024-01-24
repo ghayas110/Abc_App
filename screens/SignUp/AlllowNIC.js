@@ -34,34 +34,41 @@ const AlloeNIC = ({onPress}) => {
     <Text style={styles.text2}> Remove the IC cover, if you have one </Text>
     </View>
     <View style={styles.acordion}>
-    <Text >{'\u2022'}</Text>
+    <Text style={styles.text2}>{'\u2022'}</Text>
     <Text style={styles.text2}> Remove the IC cover, if you have one </Text>
     </View>
     <View style={styles.acordion}>
-    <Text >{'\u2022'}</Text>
+    <Text style={styles.text2}>{'\u2022'}</Text>
     <Text style={styles.text2}> Find a suitable surface (avoid digital </Text>
     </View>
     <View style={styles.acordion}>
-    <Text >{'\u2022'}</Text>
+    <Text style={styles.text2}>{'\u2022'}</Text>
     <Text style={styles.text2}> screens/bright or dark surfaces) </Text>
     </View>
     <View style={styles.acordion}>
-    <Text >{'\u2022'}</Text>
+    <Text style={styles.text2}>{'\u2022'}</Text>
     <Text style={styles.text2}> Align your MyKad until all 4 black/white lines appear </Text>
     </View>
     </View>
 
 <View style={styles.container2}>
 <View >
-<Image source={require('../../assets/SignUp/cnicfront.png')}/>
+<Image source={require('../../assets/SignUp/cnicfront.png')} style={{resizeMode:'contain',height:windowHeight*0.15}}/>
 </View>
 <View style={styles.cardView}>
-<Image source={require('../../assets/SignUp/cnicback.png')}/>
+<Image source={require('../../assets/SignUp/cnicback.png')} style={{resizeMode:'contain',height:windowHeight*0.15}}/>
 
 </View>
 </View>
-<View style={{width:"100%",backgroundColor:'#DCF2FC',padding:20}}>
-<Text>Note: Unclear images may prevent account opening..</Text>
+<View style={{ width: "100%", backgroundColor: '#DCF2CC', padding: 20,marginVertical:15 }}>
+<Text
+style={{
+ fontSize: 14,
+
+ color: "#006400",
+ fontFamily: "Poppins-Regular"
+}}
+>Note: You are a US person if you are either a US citizen, a US resident or a Green Card holder.</Text>
 </View>
 <View>
 <Button
@@ -85,6 +92,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
  
     
+      },
+         text2:{
+        fontSize: 17,        
+        color: "#808080",
+        fontFamily: "Poppins-Regular"
       },
     container: {
         flex: 1,
@@ -123,6 +135,12 @@ const styles = StyleSheet.create({
         padding:3,
        
         lineHeight:22,
+      },
+      text2:{
+        fontSize: 14,  
+           
+        color: "#808080",
+        fontFamily: "Poppins-Regular"
       },
       bottomView: {
         width: '100%',

@@ -52,31 +52,31 @@ const PersonalDetails = () => {
       <View>
         <Text style={{...ThemeSty.Green_color_f, fontSize: 28, fontWeight: "700", ...ThemeSty.Font_family, marginTop:30 }}>Where do we send you nice things?</Text>
       </View>
-      <View style={{flexDirection:"row" , alignItems:"center"}}>
+      <View style={{flexDirection:"row" , alignItems:"center",padding:5}}>
         <CheckBoxInput style={{ ...ThemeSty.gray_color_f }} />
         <Text style={{ ...ThemeSty.gray_color_f, fontSize: 16, ...ThemeSty.Font_family, marginLeft:7, fontWeight: '500',
          }}>Same as registered address</Text>
       </View>
         
         <View>
-        <Text style={{ ...ThemeSty.black_color_f, marginLeft: 5, fontSize:16 , fontWeight: '700',...ThemeSty.Font_family}}>Mailing address</Text>
+        <Text style={{ ...ThemeSty.black_color_f,paddingVertical:10, marginLeft: 5, fontSize:16 , fontWeight: '700',...ThemeSty.Font_family}}>Mailing address</Text>
         </View>
       
       <ScrollView>
         <View style={{borderBottomWidth:1, ...ThemeSty.ligth_gray_border_Color}}>
-          <SimpleInput label={'Address'} placeholder={'Enter Address'} inputstyle={{...ThemeSty.Light_gray_color_f ,...ThemeSty.Font_family , fontWeight: '500' , fontSize:16,}} />
+          <SimpleInput label={'Address'} placeholder={'Enter Address'} inputstyle={{color:"black" ,...ThemeSty.Font_family , fontWeight: '500' , fontSize:16,}} />
         </View>
         <View style={{ borderBottomWidth: 1, ...ThemeSty.ligth_gray_border_Color }}>
-          <SimpleInput label={'Address (Line Two)'} placeholder={'Enter Address'} inputstyle={{ ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family, fontWeight: '500', fontSize: 16, }} />
+          <SimpleInput label={'Address (Line Two)'} placeholder={'Enter Address'} inputstyle={{ color:"black", ...ThemeSty.Font_family, fontWeight: '500', fontSize: 16, }} />
         </View>
         <View style={{ borderBottomWidth: 1, ...ThemeSty.ligth_gray_border_Color }}>
-          <SimpleInput label={'Postal Code'} placeholder={'Enter Your Postal Code'} inputstyle={{ ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family, fontWeight: '500', fontSize: 16, }} />
+          <SimpleInput label={'Postal Code'} placeholder={'Enter Your Postal Code'} inputstyle={{ color:"black", ...ThemeSty.Font_family, fontWeight: '500', fontSize: 16, }} />
         </View>
         <View style={{ borderBottomWidth: 1, ...ThemeSty.ligth_gray_border_Color }}>
-          <SimpleInput label={'City'} placeholder={'Enter Your City'} inputstyle={{ ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family, fontWeight: '500', fontSize: 16,}} />
+          <SimpleInput label={'City'} placeholder={'Enter Your City'} inputstyle={{ color:"black", ...ThemeSty.Font_family, fontWeight: '500', fontSize: 16,}} />
         </View>
         <View style={{ borderBottomWidth: 1, ...ThemeSty.ligth_gray_border_Color }}>
-          <SimpleInput label={'State'} placeholder={'Enter your State '} inputstyle={{ ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family, fontWeight: '500', fontSize: 16, }} />
+          <SimpleInput label={'State'} placeholder={'Enter your State '} inputstyle={{ color:"black", ...ThemeSty.Font_family, fontWeight: '500', fontSize: 16, }} />
         </View>
       </ScrollView>
 

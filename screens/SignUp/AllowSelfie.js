@@ -45,10 +45,9 @@ const styles = StyleSheet.create({
        justifyContent:'space-between'
       },
       text2:{
-        fontSize: 16,
-        fontWeight:"500",
-        
-        lineHeight:20,
+        fontSize: 17,        
+        color: "#808080",
+        fontFamily: "Poppins-Regular"
       },
       bottomView: {
         width: '100%',
