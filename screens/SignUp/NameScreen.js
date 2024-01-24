@@ -13,7 +13,7 @@ const NameScreen = ({onPress}) => {
     <View style={styles.container}>
 <View>
 <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>What would you like us to call you?</Text>
-<Text style={styles.text2}>This name is only for the app, not applicable for your Rize card or official documents</Text>
+<Text style={styles.text2}>This name is only for the app, not applicable for your SSSCO card or official documents</Text>
 <FormInput
 placeholder={'Enter Prefered Name'}
 placeholderColor={'grey'}

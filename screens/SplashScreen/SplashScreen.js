@@ -8,7 +8,6 @@ const SplashScreen = () => {
   const [fadeAnim] = useState(new Animated.Value(0));
   const [isSplashScreen, setSplashScreen] = useState(false)
   const navigation = useNavigation()
-  
   useEffect(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
@@ -35,7 +34,7 @@ const SplashScreen = () => {
           <View style={styles.Container}>
             <Animated.View style={{ ...styles.Logos, opacity: fadeAnim }}>
               <Image source={SplashLogos} style={styles.image1} />
-              <Text style={{fontSize:16, color:"white" , fontFamily:"Poppins"}}>Powered By Ssssco</Text>
+              <Text style={{fontSize:16, color:"white" , fontFamily:"Poppins"}}>Powered By SSSSCO</Text>
             </Animated.View>
           </View>
           : <View style={styles.Container}>

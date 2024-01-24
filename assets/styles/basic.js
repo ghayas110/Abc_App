@@ -3,7 +3,6 @@ const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     basic_container: {
-       
         width: width,
     },
     main_heading: {
@@ -76,6 +75,7 @@ const styles = StyleSheet.create({
     //Border Color =================
     gray_border_Color: { borderColor: "#808080" },
     ligth_gray_border_Color: { borderColor: "#CCCCCC" },
+    green_border_Color: { borderColor: "#00a200" },
 
 
 });

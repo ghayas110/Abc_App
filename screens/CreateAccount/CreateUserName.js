@@ -11,16 +11,15 @@ import ProgressBar from 'react-native-progress/Bar';
 const CreateUserName = ({ disabled }) => {
     const [progress, setProgress] = useState(0);
     const [inputValue, setInputValue] = useState('');
-    const [isValid, setIsValid] = useState(false); // Added validation state
+    const [isValid, setIsValid] = useState(false); // Added validation 
 
     const handleInputChange = (text) => {
         setInputValue(text);
         validateUsername(text); // Validate the entered username
     };
-    // console.log(inputValue , '2')
+
 
     const validateUsername = (username) => {
-        // Add your validation logic here based on the specified criteria
         const isUsernameValid =
             /^[a-zA-Z]+$/.test(username) && // At least 1 letter (A-Z/a-z)
             /^\S*$/.test(username) && // Must not contain space
@@ -30,11 +29,15 @@ const CreateUserName = ({ disabled }) => {
             /^[a-zA-Z0-9]+$/.test(username); // Must not contain any special character
 
         setIsValid(isUsernameValid);
+        console.log(isValid, 'isValid')
     };
-    const navigation = useNavigation()
+
+    const navigation = useNavigation();
+
     const ForWordnavigation = () => {
         navigation.navigate('CreateSecureWord');
     };
+
     useEffect(() => {
         const interval = setInterval(() => {
             if (progress < 1) {
@@ -75,7 +78,8 @@ const CreateUserName = ({ disabled }) => {
                     <SimpleInput
                         placeholder={'Enter User Name'}
                         placeholderTextColor={{ ...ThemeSty.black_color_f }}
-                        // value={inputValue}
+                        type={'text'}
+                        value={''}
                         onChangeText={handleInputChange}
                         inputstyle={{ fontSize: 20, fontWeight: "600", ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family }}
                     />
@@ -109,7 +113,7 @@ const CreateUserName = ({ disabled }) => {
             </View> */}
             </View>
             <View style={{ alignItems: "center", marginBottom: 20, }}>
-                <RequestButton text='Next' onPress={ForWordnavigation} disabled={!isValid}  />
+                <RequestButton text='Next' onPress={ForWordnavigation}  />
             </View>
         </>
 

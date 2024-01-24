@@ -1,11 +1,26 @@
 import { StyleSheet, Text, View,Dimensions,Button, KeyboardAvoidingView,Image } from 'react-native'
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import FormInput from '../../components/FormInput';
+import { Camera } from 'react-native-vision-camera';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const AlloeNIC = ({onPress}) => {
- 
+  const [cameraPermission, setCameraPermission] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const status = await Camera.getCameraPermissionStatus();
+      setCameraPermission(status);
+    })();
+
+  }, []);
+
+  const requestPermission = async () => {
+    const status = await Camera.requestCameraPermission()
+    setCameraPermission(status);
+    onPress()
+  };
   return (
     <KeyboardAvoidingView 
       behavior={Platform.OS === "ios" ? "padding" : "height"} 
@@ -52,7 +67,7 @@ const AlloeNIC = ({onPress}) => {
 <Button
 title="Continue"
 color="green"
-onPress={onPress}
+onPress={requestPermission}
 />
 </View>
 </View>
