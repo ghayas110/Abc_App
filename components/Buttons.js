@@ -1,6 +1,7 @@
 import { Button, StyleSheet, Text, View, TouchableOpacity, Dimensions, Image } from 'react-native'
 import react, {useState} from 'react'
 import ImageFiler from '../assets/HomeScreenImages/FilterIcon.png'
+// import { RadioButton } from 'react-native-paper';
 const { width, height } = Dimensions.get('window');
 
 function RequestButton({ text, onPress, btnStyle }) {
@@ -50,24 +51,16 @@ const FilterButton = ({ onPress, text }) => {
     );
 };
 
-const RadioButton = () => {
-    const [checked, setChecked] = React.useState('first');
+// const RadioButtonCheck = () => {
+//     const [value, setValue] = React.useState('first');
+ 
 
-    return (
-        <View>
-            <RadioButton
-                value="first"
-                status={checked === 'first' ? 'checked' : 'unchecked'}
-                onPress={() => setChecked('first')}
-            />
-            <RadioButton
-                value="second"
-                status={checked === 'second' ? 'checked' : 'unchecked'}
-                onPress={() => setChecked('second')}
-            />
-        </View>
-    );
-};
+//     return (
+//         <View>
+//             <RadioButton value="first" />
+//         </View>
+//     );
+// };
 
 
 
@@ -161,4 +154,4 @@ const styles = StyleSheet.create({
 });
 
 
-export { RequestButton, OutlineButton, CancelButton, FilterButton, RadioButton }
+export { RequestButton, OutlineButton, CancelButton, FilterButton,  }
