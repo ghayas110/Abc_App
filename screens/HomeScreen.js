@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import Icons from '../components/Icons'
 import { useNavigation } from '@react-navigation/native'
@@ -53,39 +53,42 @@ const HomeScreen = ({ disabled }) => {
             fontSize: 12, ...ThemeSty.Green_color_f
           }} />
         </View>
-        <Text style={{ fontSize: 24, fontWeight: "700", ...ThemeSty.black_color_f, ...ThemeSty.Font_family ,textAlign:"center" }}>
+        <Text style={{ fontSize: 24, fontWeight: "700", ...ThemeSty.black_color_f, ...ThemeSty.Font_family, textAlign: "center" }}>
           AED 10,000.00
         </Text>
         <View style={{ padding: 5, marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-          
+
           <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} />
         </View>
-        <View style={{ flexDirection: "row", marginTop: 10, }}>
+        <View style={{ flexDirection: "row", marginTop: 10, justifyContent: 'space-evenly', alignItems: 'center' }}>
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
-            <View style={{ borderWidth: 1, ...ThemeSty.gray_border_Color, padding: 25, borderRadius: 20, justifyContent: "center", alignItems: 'center' }}>
-              <Image source={HomeDuet} style={{ resizeMode: "contain" , width:25, height:30}} />
+            <View style={styles.boxes}>
+              <Image source={HomeDuet} style={styles.boxImage} />
             </View>
             <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow  Transfer</Text>
           </View>
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
-            <View style={{ borderWidth: 1, ...ThemeSty.gray_border_Color, padding: 25, borderRadius: 20, justifyContent: "center", alignItems: 'center' }}>
-              <Image source={DuetQr} style={{ resizeMode: "contain", width: 25, height: 30 }} />
+            <View style={styles.boxes}>
+              <Image source={DuetQr} style={styles.boxImage} />
             </View>
             <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow QR Code</Text>
           </View>
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
-            <View style={{ borderWidth: 1, ...ThemeSty.gray_border_Color, padding: 25, borderRadius: 20, justifyContent: "center", alignItems: 'center' }}>
-              <Image source={Transfer} style={{ resizeMode: "contain", width: 25, height: 30 }} />
+            <View style={styles.boxes}>
+              <Image source={Transfer} style={styles.boxImage} />
             </View>
-            <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Transaction History</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('History')}>
+              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Transaction History</Text>
+            </TouchableOpacity>
           </View>
-          <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
+          <TouchableOpacity onPress={() => navigation.navigate('Statements')} style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
             <View style={{ borderWidth: 1, ...ThemeSty.gray_border_Color, padding: 25, borderRadius: 20, justifyContent: "center", alignItems: 'center' }}>
               <Image source={Statement} style={{ resizeMode: "contain", width: 25, height: 30 }} />
             </View>
-            <Text style={{ fontSize: 12, ...ThemeSty.black_color_f , fontWeight: "500", marginTop:5
-             }}>Latest Statements</Text>
-          </View>
+            <Text style={{
+              fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5
+            }}>Latest Statements</Text>
+          </TouchableOpacity>
 
 
 
@@ -230,7 +233,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  containerMenu:{
+  containerMenu: {
     paddingTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
@@ -249,13 +252,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 2,
     elevation: 3,
-    marginTop:5
+    marginTop: 5
   },
   image: {
     resizeMode: 'contain',
-    width:40,
-    height:50
-    
+    width: 40,
+    height: 50
+
   },
   textContainer: {
     width: 220,
@@ -277,5 +280,24 @@ const styles = StyleSheet.create({
     fontSize: 24,
     ...ThemeSty.Green_color_f,
   },
+  boxes: {
+    borderWidth: 1,
+    ...ThemeSty.ligth_gray_border_Color,
+    padding: 25, borderRadius: 20,
+    justifyContent: "center",
+    alignItems: 'center',
+    shadowColor: "#FFFFFF",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.18,
+    shadowRadius: 1.00,
+
+    elevation: 1,
+  },
+  boxImage: {
+    resizeMode: "contain",
+  }
 
 })

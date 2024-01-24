@@ -4,6 +4,7 @@ import { Dimensions, Text, View, TouchableOpacity, Image, StyleSheet, SafeAreaVi
 import Header from './components/Header'
 import style from "../../assets/styles/basic"
 import SavingAccount from "../transaction-history/SavingsAccount"
+import SavingPots from './components/SavingPots';
 
 const Tab = createMaterialTopTabNavigator();
 const { width, height } = Dimensions.get('window');
@@ -38,7 +39,7 @@ const History = () => {
                         },
                     }}>
                     <Tab.Screen name="Saving Account" component={SavingAccount} />
-                    <Tab.Screen name="Saving Pot" component={SavingPot} />
+                    <Tab.Screen name="Saving Pot" component={SavingPots} />
                 </Tab.Navigator>
             </View>
 
@@ -47,17 +48,6 @@ const History = () => {
 }
 
 
-
-const SavingPot = () => {
-    return (
-        <>
-            <View style={{
-                backgroundColor: "white",
-                height: height
-            }}><Text>One</Text></View>
-        </>
-    )
-}
 
 const styless = StyleSheet.create({
     textOne: {

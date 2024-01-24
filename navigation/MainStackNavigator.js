@@ -53,6 +53,7 @@ import StartLoginStep6 from '../screens/RegisterNewDevice/StartLoginStep6';
 import UpdateTermAndCondition from '../screens/RegisterNewDevice/UpdateTermAndCondition';
 import History from '../screens/transaction-history/History';
 import PendingTran from '../screens/transaction-history/PendingTran';
+import HomeScreen from '../screens/HomeScreen';
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -71,13 +72,12 @@ const MainStackNavigator = () => {
           </Drawer.Screen>
           <Drawer.Screen name='ChangePassword' component={ChangePassword} />
           <Drawer.Screen name='EditProfile' component={EditProfileScreen} />
+          <AuthStack.Screen name="History" component={History} />
         </Drawer.Navigator>
       ) : (
         <AuthStack.Navigator screenOptions={{
           headerShown: false
         }}>
-          <AuthStack.Screen name="History" component={History} />
-          {/* <AuthStack.Screen name="DetailThree" component={DetailThree} /> */}
           <AuthStack.Screen name="Splash">
             {(props) => <SplashScreen />}
           </AuthStack.Screen>
