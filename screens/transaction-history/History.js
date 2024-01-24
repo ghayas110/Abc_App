@@ -1,8 +1,8 @@
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { Dimensions, Text, View } from 'react-native'
+import { Dimensions, Text, View, TouchableOpacity, Image } from 'react-native'
 import Header from './components/Header'
+import style from "../../assets/styles/basic"
 
 const Tab = createMaterialTopTabNavigator();
 const { width, height } = Dimensions.get('window');
@@ -33,8 +33,8 @@ const History = () => {
                         },
                         indicatorStyle: {
                             borderBottomWidth: 50,
-                            borderBottomColor: 'green', 
-                          },
+                            borderBottomColor: 'green',
+                        },
                     }}>
                     <Tab.Screen name="Saving Account" component={SavingAccount} />
                     <Tab.Screen name="Saving Pot" component={SavingPot} />
@@ -51,7 +51,46 @@ const SavingAccount = () => {
             <View style={{
                 backgroundColor: "white",
                 height: height
-            }}><Text>One</Text></View>
+            }}>
+
+                <View style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    padding: 15
+                }}>
+                    <View style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "space-around",
+                        padding: 10,
+                        borderRadius: 10,
+                        ...style.green_out_line,
+                        flex: 0.3
+                    }}>
+                        <Text>Latest first</Text>
+                        <TouchableOpacity>
+                            <Image source={require('../../assets/TransactionHistoryImages/Swap.png')} />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "space-around",
+                        padding: 10,
+                        borderRadius: 10,
+                        ...style.green_out_line,
+                        flex: 0.3,
+                        marginLeft: 20
+                    }}>
+                        <Text>Latest first</Text>
+                        <TouchableOpacity>
+                            <Image source={require('../../assets/TransactionHistoryImages/Swap.png')} />
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </View>
         </>
     )
 }

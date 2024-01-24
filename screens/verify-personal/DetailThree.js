@@ -32,7 +32,6 @@ const DetailThree = () => {
                     rightIcon={require('./images/Setting.png')}
                     ProgressBarIcon={require('./images/steps.png')}
                 />
-
                 {/* INPUT BOX ============================= */}
                 <View style={{
                     ...style.basic_container,

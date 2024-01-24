@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     gray_color_h: { color: "#808080" },
     Green_color_h: { color: "#00a200" },
     orenge_color_h: { color: "#ff5800" },
+    black_color_h: {color: "#000"},
 
     // BG COLORS =================================
     bg_blue_color: { backgroundColor: "#309fed", },
@@ -77,7 +78,10 @@ const styles = StyleSheet.create({
     ligth_gray_border_Color: { borderColor: "#CCCCCC" },
     green_border_Color: { borderColor: "#00a200" },
 
-
+    green_out_line: {
+        borderWidth: 2,
+        borderColor: "#00a200"
+    }
 });
 
 export default styles;

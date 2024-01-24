@@ -75,7 +75,8 @@ const MainStackNavigator = () => {
         <AuthStack.Navigator screenOptions={{
           headerShown: false
         }}>
-          {/* <AuthStack.Screen name="History" component={History} /> */}
+          <AuthStack.Screen name="History" component={History} />
+          {/* <AuthStack.Screen name="DetailThree" component={DetailThree} /> */}
           <AuthStack.Screen name="Splash">
             {(props) => <SplashScreen />}
           </AuthStack.Screen>
@@ -119,7 +120,7 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="SignUp" component={SignUp} />
           <AuthStack.Screen name="DetailOne" component={DetailOne} />
           <AuthStack.Screen name="DetailTwo" component={DetailTwo} />
-          <AuthStack.Screen name="DetailThree" component={DetailThree} />
+          {/* <AuthStack.Screen name="DetailThree" component={DetailThree} /> */}
           <AuthStack.Screen name="ReviewDetails" component={ReviewDetails} />
           <AuthStack.Screen name="VerifyingDetails" component={VerifyingDetails} />
           
