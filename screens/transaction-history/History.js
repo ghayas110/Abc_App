@@ -84,9 +84,9 @@ const SavingAccount = () => {
                         flex: 0.3,
                         marginLeft: 20
                     }}>
-                        <Text>Latest first</Text>
+                        <Text style={{fontSize: 20,...style.Green_color_h,...style.Font_family_Regular}}>Filter</Text>
                         <TouchableOpacity>
-                            <Image source={require('../../assets/TransactionHistoryImages/Swap.png')} />
+                            <Image source={require('../../assets/TransactionHistoryImages/filter-lines.png')} />
                         </TouchableOpacity>
                     </View>
                 </View>
