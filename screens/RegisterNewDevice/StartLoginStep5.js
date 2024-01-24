@@ -79,7 +79,7 @@ const navigation =useNavigation()
     <View style={styles.container}>
     <View>
     <Text 
-    style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}
+    style={{ ...style.main_headings, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}
     >Enter your One-Time Password (OTP)</Text>
     <Text style={styles.text2}>We have sent your one time password to ‘+96XXXXX1234’</Text>
 
@@ -89,6 +89,7 @@ const navigation =useNavigation()
             key={index}
             ref={(ref) => (inputRefs.current[index] = ref)}
             style={styles.input}
+            keyboardType='numeric'
             maxLength={1}
             value={digit}
             placeholderTextColor='white'

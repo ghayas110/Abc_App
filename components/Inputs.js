@@ -39,7 +39,7 @@ const SimpleInput = ({
                     secureTextEntry={pass}
                     value={value}
                     defaultValue={defaultValue}
-                    placeholderTextColor={"black"}
+                    placeholderTextColor={placeholderTextColor}
                 />
             </View>
         </>
@@ -104,7 +104,7 @@ const CheckBoxInput = ({
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
-                marginTop: 10,
+             
                 padding: 0,
             }}>
                 <Checkbox

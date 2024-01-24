@@ -32,7 +32,7 @@ onPress={onPress}
 
 <View style={{paddingVertical:20}}>
 <Button
-title="Continue"
+title="Yes Let's continue"
 color="green"
 onPress={onPress}
 />
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         alignItems:'center',justifyContent:'space-between',
         flexDirection:'column',
         width:windowWidth*0.8,
-        backgroundColor:'whitesmoke',
+
         padding:20
           },
       cardText:{

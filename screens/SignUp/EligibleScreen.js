@@ -47,7 +47,7 @@ const toggleBottomSheet = () => {
             
             paddingRight: 30
         }}>
-            <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Yes, I’m eligible!</Text>
+            <Text style={{ ...style.main_headings, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Yes, I’m eligible!</Text>
             <View style={styles.acordion}>
             <Text style={styles.text2}>{'\u2022'}</Text>
             <Text style={styles.text2}> I’m 18 years old and above </Text>
@@ -64,7 +64,7 @@ const toggleBottomSheet = () => {
                 onPress={() => setChecked(!checked)}
               />
               <Text style={styles.text2}>
-                I’m a Dubai citizen with a CNIC, living in Dubai
+                I’m a UAE citizen with a CNIC, living in UAE
               </Text>
             </View>
             <View style={{ display: 'flex', flexDirection: 'row' }}>
@@ -73,7 +73,7 @@ const toggleBottomSheet = () => {
             onPress={() => setCheckedd(!checkedd)}
             />
             <Text style={styles.text2}>
-            I‘m NOT a US person
+            I‘m<Text style={{fontWeight:'bold',color:'black'}}> NOT</Text>  a US person
             </Text>
             </View>
             <View style={{ flexDirection: 'row' }}>
@@ -83,10 +83,10 @@ const toggleBottomSheet = () => {
             onPress={() => setCheckeddd(!checkeddd)}
             />
             <Text style={styles.text2}>
-            I don't pay income tax in any other country besides Dubai
+            I don't pay income tax in any other country besides UAE
             </Text>
             </View>
-            <View style={{ width: "100%", backgroundColor: '#DCF2CC', padding: 20,marginTop:15 }}>
+            <View style={{ width: "100%", backgroundColor: '#DCF2FC', padding: 20,marginTop:15 }}>
                          <Text
                          style={{
                           fontSize: 14,
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    borderBottomWidth: 1,
+   
     width:width*0.65,
     height:50,
     borderBottomColor: 'whitesmoke',
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    borderBottomWidth: 1,
+ 
     width:width*0.65,
     height:10,
     borderBottomColor: 'whitesmoke',
@@ -212,8 +212,9 @@ const styles = StyleSheet.create({
   },
   text2: {
     fontSize: 17,        
-    color: "#808080",
-    fontFamily: "Poppins-Regular"
+    color: "#333333",
+    fontFamily: "Poppins-Regular",
+   
   },
   bottomView: {
     width: '100%',

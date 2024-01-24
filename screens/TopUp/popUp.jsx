@@ -100,6 +100,7 @@ const styless = StyleSheet.create({
         fontWeight: "500",
         textAlign: 'center',
         lineHeight: 20,
+        color:'black'
     },
     bottomView: {
         width: '100%',

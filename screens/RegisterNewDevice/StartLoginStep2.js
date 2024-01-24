@@ -46,7 +46,6 @@ const StartLoginStep2 = ({ disabled }) => {
                 <View style={{
                     padding: 5, marginTop: 25,
                 }}>
-                    <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>Welcome back. Great to see you!</Text>
                 </View>
                 <View style={{flexDirection:"row" , alignItems:"center"}}>
                    <Text style={{...ThemeSty.black_color_f , fontSize:24, ...ThemeSty.Font_family , fontWeight:'700'}}>Hi</Text>

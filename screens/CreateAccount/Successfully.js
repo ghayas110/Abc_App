@@ -37,7 +37,7 @@ const Successfully = () => {
                 <Image source={Biomatric} />
            </View>
             <View>
-                <Text style={{ ...ThemeSty.Green_color_f, ...ThemeSty.Font_family , fontSize: 28, fontWeight: "700", marginTop:50 }}>Where do we send you nice things?</Text>
+                <Text style={{ ...ThemeSty.Green_color_f, ...ThemeSty.Font_family , fontSize: 28, fontWeight: "700", marginTop:50 }}>Your Account has been Created</Text>
             </View>
             <View style={{ flexDirection: "row", alignItems: "center" , marginTop: 25,
             }}>
@@ -47,7 +47,7 @@ const Successfully = () => {
         </View>
             <View style={{marginBottom:15}} >
                 <View style={styles.btn2}>
-                    <RequestButton text={'Confirm'} onPress={ForWordnavigation} />
+                    <RequestButton text={'Top Up Your Account'} onPress={ForWordnavigation} />
                 </View>
             </View>
         </>

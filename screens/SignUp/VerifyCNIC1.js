@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         alignItems:'center',justifyContent:'space-between',
         flexDirection:'column',
         width:windowWidth*0.8,
-        backgroundColor:'whitesmoke',
+   
         padding:20
           },
       cardText:{
@@ -90,7 +90,10 @@ const styles = StyleSheet.create({
       text2:{
         fontSize: 17,        
         color: "#808080",
-        fontFamily: "Poppins-Regular"
+        fontFamily: "Poppins-Regular",
+        textAlign:'center',
+        color:'black',
+        fontWeight:"600"
       },
       bottomView: {
         width: '100%',

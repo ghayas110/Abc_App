@@ -20,7 +20,7 @@ const CheckingThings = ({onPress}) => {
 
 <View>
 <Button
-title="Continue"
+title="Let's Continue"
 color="green"
 onPress={onPress}
 />
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop:80,
         padding:30,
-        height:windowHeight*0.9,
+        height:windowHeight,
         
        justifyContent:'space-between'
       },

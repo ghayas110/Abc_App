@@ -8,6 +8,7 @@ import AccountScreen from "../screens/AccountScreen";
 import TransferScreen from "../screens/TransferScreen";
 import MoreScreen from "../screens/MoreScreen";
 import styles from "../assets/styles/basic";
+import { Image } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,30 +26,34 @@ const BottomTabNavigator = () => {
         showIcon: true
       }}>
 
+     
       <Tab.Screen name="Home" component={MainStackNavigator} options={{
         tabBarIcon: ({ color, size }) => (
-          // <SvgXml xml={PendingIcons} color={color} />
-          <Icon name="home" color={color} size={size} />),
-      }} />
-
+          <Image source={require('../assets/CreateAccoutImages/home.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
+          
+          ),
+        }}/>
+   
       <Tab.Screen name="Account" component={AccountScreen} options={{
         tabBarIcon: ({ color, size }) => (
-
-          <Icon name="wallet" color={color} size={size} />
-        ),
-      }} />
-      <Tab.Screen name="Transfer" component={TransferScreen} options={{
+          <Image source={require('../assets/CreateAccoutImages/account.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
+          
+          ),
+        }}/>
+  
+      <Tab.Screen  name="Transfer" component={TransferScreen} options={{
         tabBarIcon: ({ color, size }) => (
-
-          <Icon name="play" color={color} size={size} />
-        ),
-      }} />
-      <Tab.Screen name="More" component={MoreScreen} options={{
-        tabBarIcon: ({ color, size }) => (
-
-          <Icon name="people-outline" color={color} size={size} />
-        ),
-      }} />
+          <Image source={require('../assets/CreateAccoutImages/transfer.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
+          
+          ),
+        }}/>
+        <Tab.Screen   name="More" component={MoreScreen} options={{
+          tabBarIcon: ({ color, size }) => (
+            <Image source={require('../assets/CreateAccoutImages/more.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
+            
+            ),
+          }}/>
+   
     </Tab.Navigator>
   );
 };

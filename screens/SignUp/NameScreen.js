@@ -4,6 +4,7 @@ import FormInput from '../../components/FormInput';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 import style from '../../assets/styles/basic';
+import { RequestButton } from '../../components/Buttons';
 const NameScreen = ({onPress}) => {
  
   return (
@@ -24,10 +25,11 @@ charecter={"10 characters remaining"}
 </View>
 <View>
 <Button
-title="Continue"
+title="Confirm"
 color="green"
 onPress={onPress}
 />
+
 </View>
     </View>
     </KeyboardAvoidingView>
@@ -40,7 +42,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding:20,
-        height:windowHeight*0.9,
+        height:windowHeight*0.95,
        justifyContent:'space-between'
       },
       text2:{

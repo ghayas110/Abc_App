@@ -28,7 +28,7 @@ keyboardType={'numeric'}
 
 <View>
 <Button
-title="Continue"
+title="Confirm"
 color="green"
 onPress={onPress}
 />
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding:20,
-        height:windowHeight*0.9,
+        height:windowHeight*0.95,
         
        justifyContent:'space-between'
       },

@@ -11,6 +11,12 @@ const styles = StyleSheet.create({
         textTransform: "capitalize",
         fontWeight: "600"
     },
+    main_headings: {
+        fontSize: 25,
+        color: "#00a200",
+    
+        fontWeight: "600"
+    },
     sub_heading: {
         fontSize: 18,
         color: "#00a200",
@@ -58,6 +64,7 @@ const styles = StyleSheet.create({
     blue_color_f: { color: "#309fed", },
     gray_color_f: { color: "#808080" },
     Green_color_f: { color: "#00a200" },
+    Green_color_primary:{color:"#006400"},
     orenge_color_f: { color: "#ff5800" },
 
     // BORDERS ========================

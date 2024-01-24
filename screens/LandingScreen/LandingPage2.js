@@ -46,7 +46,7 @@ const LandingPage2 = () => {
     ];
     const Modallistem = [
         'I’m 18 years old and above',
-        'I’m a Malaysian citizen with a MyKad, living in Malaysia',
+        'I’m a Arab citizen with a CNIC, living in Malaysia',
         'I have an existing online banking account with another bank in Malaysia',
         'I’m NOT a US person ',
         'I dont pay income tax in any other country besides Malaysia',

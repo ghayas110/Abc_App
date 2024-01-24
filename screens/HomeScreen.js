@@ -66,21 +66,21 @@ const HomeScreen = ({ disabled }) => {
               <View style={styles.boxes}>
                 <Image source={HomeDuet} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow  Transfer</Text>
+              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5,textAlign:'center' }}>DuitNow  Transfer</Text>
             </View>
           </TouchableOpacity>
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
             <View style={styles.boxes}>
               <Image source={DuetQr} style={styles.boxImage} />
             </View>
-            <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow QR Code</Text>
+            <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5,textAlign:'center' }}>DuitNow QR</Text>
           </View>
           <TouchableOpacity onPress={() => navigation.navigate('TransactionHistory')}>
             <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={Transfer} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Transaction History</Text>
+              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5,textAlign:'center' }}>Transaction History</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Statements')} style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
@@ -89,7 +89,7 @@ const HomeScreen = ({ disabled }) => {
               <View style={styles.boxes}>
                 <Image source={Statement} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Latest Statements</Text>
+              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5,textAlign:'center' }}>Latest Statements</Text>
             </View>
 
           </TouchableOpacity>

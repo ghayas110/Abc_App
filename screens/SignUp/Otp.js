@@ -85,6 +85,7 @@ const Otp = ({ onPress,route }) => {
             style={styles.input}
             maxLength={1}
             value={digit}
+            keyboardType='numeric'
             placeholderTextColor='white'
             onChangeText={(value) => handleInputChange(index, value)}
             onKeyPress={({ nativeEvent }) => {
@@ -98,7 +99,7 @@ const Otp = ({ onPress,route }) => {
       </View>
       <View>
       <Button
-title="Continue"
+title="Next"
 color="green"
 style={{borderRadius:50,borderWidth:1}}
 onPress={onPress}
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding:20,
-    height:windowHeight*0.9,
+    height:windowHeight*0.95,
     
    justifyContent:'space-between'
   },
