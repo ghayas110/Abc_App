@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, ScrollView,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import Icons from '../components/Icons'
 import { useNavigation } from '@react-navigation/native'
@@ -61,12 +61,14 @@ const HomeScreen = ({ disabled }) => {
           <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} />
         </View>
         <View style={{ flexDirection: "row", marginTop: 10, justifyContent: 'space-evenly', alignItems: 'center' }}>
-          <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
-            <View style={styles.boxes}>
-              <Image source={HomeDuet} style={styles.boxImage} />
+          <TouchableOpacity onPress={toggleBottomSheet}>
+            <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
+              <View style={styles.boxes}>
+                <Image source={HomeDuet} style={styles.boxImage} />
+              </View>
+              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow  Transfer</Text>
             </View>
-            <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow  Transfer</Text>
-          </View>
+          </TouchableOpacity>
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
             <View style={styles.boxes}>
               <Image source={DuetQr} style={styles.boxImage} />
@@ -74,13 +76,13 @@ const HomeScreen = ({ disabled }) => {
             <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow QR Code</Text>
           </View>
           <TouchableOpacity onPress={() => navigation.navigate('TransactionHistory')}>
-          <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
-            <View style={styles.boxes}>
-              <Image source={Transfer} style={styles.boxImage} />
-            </View>
-              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Transaction History</Text>
+            <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
+              <View style={styles.boxes}>
+                <Image source={Transfer} style={styles.boxImage} />
               </View>
-              </TouchableOpacity>
+              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Transaction History</Text>
+            </View>
+          </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Statements')} style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
 
             <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
@@ -89,7 +91,7 @@ const HomeScreen = ({ disabled }) => {
               </View>
               <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Latest Statements</Text>
             </View>
-            
+
           </TouchableOpacity>
 
 
