@@ -33,7 +33,7 @@ const SimpleInput = ({
                     fontFamily: "Poppins-Regular"
                 }}>{label}</Text>
                 <TextInput
-                    style={{...inputstyle}}
+                    style={{ ...inputstyle }}
                     placeholder={placeholder}
                     type={type}
                     secureTextEntry={pass}
@@ -59,27 +59,27 @@ const OtpInput = () => {
                 justifyContent: 'space-around'
             }}>
                 <TextInput
-                    style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
+                    style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
                 />
                 <TextInput
-                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
+                    style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
                 />
                 <TextInput
-                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
+                    style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
                 />
                 <TextInput
-                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
+                    style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
                 />
                 <TextInput
-                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
+                    style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
                 />
                 <TextInput
-                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
+                    style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
                 />
             </View>
