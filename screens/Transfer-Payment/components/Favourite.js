@@ -23,47 +23,76 @@ const Favourite = () => {
 
   const Flatlist = [
     {
-      name: 'Agrobank (Bank Pertanian Malaysia Saudia) ',
-      type: 'Agrobank (Bank Pertanian Malaysia Saudia) ',
-      bank:"sss",
-      number:"sss",
-      icon: <Icons.Feather name='edit-3
-' /> 
+      name: 'Adli Ahmad ',
+      type: 'Casa Account',
+      bank:"Saudi Bank",
+      number:"•••••••••5431",
+      icon: <Icons.AntDesign name='edit' style={styles.penicon} /> 
     },
     {
-      name: 'Alliance Bank (M) Saudia',
+      name: 'Adli Ahmad ',
+      type: 'Casa Account',
+      bank: "Saudi Bank",
+      number: "•••••••••5431",
+      icon: <Icons.AntDesign name='edit' style={styles.penicon} />
     },
     {
-      name: 'AmBank (M) Saudia',
+      name: 'Adli Ahmad ',
+      type: 'Casa Account',
+      bank: "Saudi Bank",
+      number: "•••••••••5431",
+      icon: <Icons.AntDesign name='edit' style={styles.penicon} />
     },
     {
-      name: 'BNP Paribas Saudia',
+      name: 'Adli Ahmad ',
+      type: 'Casa Account',
+      bank:"Saudi Bank",
+      number:"•••••••••5431",
+      icon: <Icons.AntDesign name='edit' style={styles.penicon} /> 
     },
     {
-      name: 'Bank Islam (M) Saudia',
+      name: 'Adli Ahmad ',
+      type: 'Casa Account',
+      bank: "Saudi Bank",
+      number: "•••••••••5431",
+      icon: <Icons.AntDesign name='edit' style={styles.penicon} />
     },
     {
-      name: 'Bank Kerjasama Rakyat (M) Saudia',
+      name: 'Adli Ahmad ',
+      type: 'Casa Account',
+      bank: "Saudi Bank",
+      number: "•••••••••5431",
+      icon: <Icons.AntDesign name='edit' style={styles.penicon} />
     },
     {
-      name: 'Bank Muamalat (M) Saudia',
+      name: 'Adli Ahmad ',
+      type: 'Casa Account',
+      bank: "Saudi Bank",
+      number: "•••••••••5431",
+      icon: <Icons.AntDesign name='edit' style={styles.penicon} />
     },
     {
-      name: 'Bank Simpanan Nasional Saudia',
+      name: 'Adli Ahmad ',
+      type: 'Casa Account',
+      bank: "Saudi Bank",
+      number: "•••••••••5431",
+      icon: <Icons.AntDesign name='edit' style={styles.penicon} />
     },
     {
-      name: 'Bank of America (M) Saudia',
+      name: 'Adli Ahmad ',
+      type: 'Casa Account',
+      bank: "Saudi Bank",
+      number: "•••••••••5431",
+      icon: <Icons.AntDesign name='edit' style={styles.penicon} />
     },
     {
-      name: 'Bank of China (M) Saudia',
+      name: 'Adli Ahmad ',
+      type: 'Casa Account',
+      bank: "Saudi Bank",
+      number: "•••••••••5431",
+      icon: <Icons.AntDesign name='edit' style={styles.penicon} />
     },
-    {
-      name: 'China Construction Bank (M) Saudia',
-    },
-    {
-      name: 'Citi Bank',
-    },
-
+   
   ];
 
 
@@ -74,13 +103,13 @@ const Favourite = () => {
         <View style={styles.flatlistrow}>
           <View style={styles.namerow}>
             <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.tyle}>{item.name}</Text>
+            <Text style={styles.type}>{item.type}</Text>
           </View>
           <View style={styles.bankrow}>
-            <Text style={styles.Bank}>{item.name}</Text>
-            <Text style={styles.number}>{item.name}</Text>
+            <Text style={styles.Bank}>{item.bank}</Text>
+            <Text style={styles.number}>{item.number}</Text>
           </View>
-          <Text style={styles.listIcon}>{item.name}</Text>
+          <Text style={styles.listIcon}>{item.icon}</Text>
         </View>
 
       </View>
@@ -150,18 +179,48 @@ const styles = StyleSheet.create({
     padding: 0.5,
     marginTop: 15,
   },
-
+  penicon:{
+    fontSize:24,
+    ...Theme.Green_color_f
+  },
+  namerow:{
+    flexDirection:"column",
+    alignItems:"center"
+  },
+  bankrow:{
+    flexDirection:"column",
+    alignItems: "center",
+    marginLeft:100
+  },
   icon2: {
     fontSize: 16,
     ...Theme.Green_color_f
   },
   name: {
     fontSize: 16,
-    marginLeft: 10,
+    // marginLeft: 10,
     ...Theme.black_color_f,
     ...Theme.Font_family,
-    fontWeight: "500"
+    fontWeight: "700"
   },
+  Bank:{
+    fontSize: 16,
+    // marginLeft: 10,
+    ...Theme.black_color_f,
+    ...Theme.Font_family,
+    fontWeight: "700"
+  },
+   type:{
+    fontSize:14,
+    ...Theme.Light_gray_color_f,
+    ...Theme.Font_family
+   },
+
+   number:{
+     fontSize: 14,
+     ...Theme.Light_gray_color_f,
+     ...Theme.Font_family
+   },
   text: {
     fontSize: 16,
     marginLeft: 10,

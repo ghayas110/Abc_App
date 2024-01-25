@@ -4,24 +4,24 @@ import ImageFiler from '../assets/HomeScreenImages/FilterIcon.png'
 // import { RadioButton } from 'react-native-paper';
 const { width, height } = Dimensions.get('window');
 
-function RequestButton({ text, onPress, btnStyle }) {
+function RequestButton({ text, onPress, btnStyle, buttonsty, textbtnsty }) {
     return (
         <>
             <View style={{ ...styles.btnContainer, ...btnStyle }}>
-                <TouchableOpacity style={styles.btnStyleReq} onPress={() => { onPress() }}>
-                    <Text style={{ ...styles.textBtnReq, fontFamily: "Poppins-Regular" }}>{text}</Text>
+                <TouchableOpacity style={{...styles.btnStyleReq ,  ...buttonsty}} onPress={() => { onPress() }}>
+                    <Text style={{ ...styles.textBtnReq, fontFamily: "Poppins-Regular", ...textbtnsty }}>{text}</Text>
                 </TouchableOpacity>
             </View>
         </>
     )
 }
 
-function OutlineButton({ text, onPress }) {
+function OutlineButton({ text, onPress, textoutbtnsty, outbuttonsty }) {
     return (
         <>
             <View style={styles.btnContainer}>
-                <TouchableOpacity style={styles.btnStyleOutline} onPress={() => { onPress() }}>
-                    <Text style={{ ...styles.textBtnOutline, fontFamily: "Poppins-Regular" }}>{text}</Text>
+                <TouchableOpacity style={{ ...styles.btnStyleOutline, ...outbuttonsty }} onPress={() => { onPress() }}>
+                    <Text style={{ ...styles.textBtnOutline, fontFamily: "Poppins-Regular", ...textoutbtnsty }}>{text}</Text>
                 </TouchableOpacity>
             </View>
         </>
