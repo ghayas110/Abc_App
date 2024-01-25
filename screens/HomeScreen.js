@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Linking } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import Icons from '../components/Icons'
 import { useNavigation } from '@react-navigation/native'
@@ -152,14 +152,14 @@ const HomeScreen = ({ disabled }) => {
               <View>
                 <Text style={{ fontSize: 28, fontWeight: '700', ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }} >How can we help?</Text>
               </View>
-              <View style={{ padding: 15 }}>
-                <Text style={{ ...ThemeSty.gray_color_f, ...ThemeSty.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
+              <View style={{paddingVertical:10 }}>
+                <Text style={{ ...ThemeSty.gray_color_f, ...ThemeSty.Font_family, fontSize: 16 }}>Please reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
                   Alternatively you may email us at:
-                  Rize-cs@alrajhibank.com.my
+                  Bank@SSSCO.com.my
                   We’ll get this sorted!</Text>
               </View>
               <View style={{ padding: 20, ...ThemeSty.bg_light_green_color }}>
-                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>Customer Support: +6016 299 5333 (fraud support line 24/7) or email to us at:  Rize-fraud@alrajhibank.com.my.</Text>
+                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>Customer Support: +6016 299 5333 (fraud support line 24/7) or email to us at: Bank@SSSCO.com.my.</Text>
               </View>
               <View style={{ padding: 10, alignItems: "center" }}>
                 <OutlineButton text='Report Fraud' onPress={toggleBottomSheet2} />
@@ -179,10 +179,10 @@ const HomeScreen = ({ disabled }) => {
           <View style={{ flex: 1, justifyContent: 'flex-end' }}>
             <View style={{ backgroundColor: 'transparent', padding: 24, borderTopRightRadius: 20, borderTopLeftRadius: 20, }}>
               <View style={{ padding: 10, alignItems: "center" }}>
-                <OutlineButton text='call +165464661' />
+              <OutlineButton onPress={() => Linking.openURL(`tel:${'+73365596220'}`)} text='call +7336 559 6220' />
               </View>
               <View style={{ alignItems: "center" }}>
-                <RequestButton text='Cancel' />
+                <RequestButton text='Cancel'onPress={toggleBottomSheet2} />
               </View>
 
             </View>
