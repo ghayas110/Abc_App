@@ -5,7 +5,8 @@ import { MainStackNavigator } from "./StackNavigator";
 
 
 import AccountScreen from "../screens/AccountScreen";
-import TransferScreen from "../screens/TransferScreen";
+import TransferScreen from "../screens/Transfer-Payment/Transfer";
+
 import MoreScreen from "../screens/MoreScreen";
 import styles from "../assets/styles/basic";
 
