@@ -9,7 +9,7 @@ import TransferScreen from "../screens/TransferScreen";
 import MoreScreen from "../screens/MoreScreen";
 import styles from "../assets/styles/basic";
 import { Image } from "react-native";
-
+import AccountImage from "../assets/svg/account.svg"
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
@@ -18,7 +18,7 @@ const BottomTabNavigator = () => {
   return (
     <Tab.Navigator
       tabBarOptions={{
-        activeTintColor: 'tomato',
+        activeTintColor: 'green',
         inactiveTintColor: 'gray',
       }}
       screenOptions={{

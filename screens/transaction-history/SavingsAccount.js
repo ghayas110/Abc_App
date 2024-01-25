@@ -140,7 +140,7 @@ const SavingsAccount = () => {
                                 flexDirection: "row",
                                 width: width,
                             }}>
-                                <Text style={styless.textOne}>DuitNow Transfer to Account -  Rize</Text>
+                                <Text style={styless.textOne}>DuitNow Transfer to Account -  SSSCO</Text>
                                 <Text style={{ ...styless.textTwo, ...style.Green_color_h }}>+RM 3,650.00</Text>
                             </View>
                             <Text style={styless.bottomDate}>3 FEB 2022</Text>
