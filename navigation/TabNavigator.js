@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/dist/Ionicons';
-import { MainStackNavigator } from "./StackNavigator";
-
-
+import { MainStackNavigator, MoreNavigator } from "./StackNavigator";
 import AccountScreen from "../screens/AccountScreen";
 import TransferScreen from "../screens/Transfer-Payment/Transfer";
-
-import MoreScreen from "../screens/MoreScreen";
 import styles from "../assets/styles/basic";
 import { Image } from "react-native";
+import SettingServices from "../screens/Transfer-Payment/SettingServices";
 
 const Tab = createBottomTabNavigator();
-
 const BottomTabNavigator = () => {
-
-
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -54,7 +48,7 @@ const BottomTabNavigator = () => {
             
             ),
           }}/>
-        <Tab.Screen   name="More" component={MoreScreen} options={{
+        <Tab.Screen   name="More" component={SettingServices} options={{
           tabBarIcon: ({ color, size,focused }) => (
             <Image source={!focused ? require('../assets/tabicons/More.png') : require('../assets/tabicons/MoreOutline.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
             

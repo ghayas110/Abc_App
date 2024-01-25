@@ -40,12 +40,7 @@ import TopUpFaq from '../screens/TopUp/TopUpFaq';
 import MainSignUp from '../screens/SignUp/MainSignUp';
 import MailingAddress from '../screens/TopUp/MailingAddress';
 import CardOrder from '../screens/TopUp/CardOrder';
-
 import { useNavigation } from '@react-navigation/native'
-
-
-
-
 import StartLogin from '../screens/RegisterNewDevice/StartLogin';
 import StartLoginStep2 from '../screens/RegisterNewDevice/StartLoginStep2';
 import StartLoginStep3 from '../screens/RegisterNewDevice/StartLoginStep3';
@@ -53,9 +48,6 @@ import StartLoginStep4 from '../screens/RegisterNewDevice/StartLoginStep4';
 import StartLoginStep5 from '../screens/RegisterNewDevice/StartLoginStep5';
 import StartLoginStep6 from '../screens/RegisterNewDevice/StartLoginStep6';
 import UpdateTermAndCondition from '../screens/RegisterNewDevice/UpdateTermAndCondition';
-import History from '../screens/transaction-history/History';
-import PendingTran from '../screens/transaction-history/PendingTran';
-import HomeScreen from '../screens/HomeScreen';
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -103,7 +95,6 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="TopUp" component={TopUp} />
           <AuthStack.Screen name="TopUpFaq" component={TopUpFaq} />
           <AuthStack.Screen name="Mailing" component={MailingAddress} />
-          <AuthStack.Screen name="PendingTran" component={PendingTran} />
 
           {/* <AuthStack.Screen name="UpdateTermAndCondition" component={UpdateTermAndCondition} /> */}
           <AuthStack.Screen name="UpdateTermAndCondition">
