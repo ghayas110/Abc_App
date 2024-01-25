@@ -85,8 +85,8 @@ const StartLoginStep3 = ({ disabled }) => {
                             <View>
                                 <Text style={{ fontSize: 28, fontWeight: '700', ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }} >How can we help?</Text>
                             </View>
-                            <View style={{ padding: 15 }}>
-                                <Text style={{ ...ThemeSty.gray_color_f, ...ThemeSty.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
+                            <View style={{ paddingVertical: 10 }}>
+                                <Text style={{ ...ThemeSty.gray_color_f, ...ThemeSty.Font_family, fontSize: 16 }}>Please reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
                                     Alternatively you may email us at:
                                     Bank@SSSCO.com
                                     We’ll get this sorted!</Text>

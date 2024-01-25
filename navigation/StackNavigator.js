@@ -14,6 +14,7 @@ import TransferTO from "../screens/Transfer-Payment/TransferTo";
 import RecipientBank from "../screens/Transfer-Payment/RecipientBank";
 import AccountType from "../screens/Transfer-Payment/AccountType";
 import PendingTran from "../screens/transaction-history/PendingTran";
+import Transfer from "../screens/Transfer-Payment/Transfer";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -43,15 +44,9 @@ const MainStackNavigator = () => {
       <Stack.Screen name="TransactionHistory" component={History} screenOptions={{
         headerShown: false
       }} />
-      <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
+      {/* <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
         headerShown: false
-      }} />
-      <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
-        headerShown: false
-      }} />
-      <Stack.Screen name="AccountType" component={AccountType} screenOptions={{
-        headerShown: false
-      }} />
+      }} /> */}
      
       <Stack.Screen name="PendingTran" component={PendingTran} screenOptions={{
         headerShown: false
@@ -76,6 +71,29 @@ const MoreNavigator = () => {
     </Stack.Navigator>
   );
 };
+const TransferNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerShown: false
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      <Stack.Screen name="Transfer" component={TransferTO} screenOptions={{
+        headerShown: false
+
+      }} />
+        <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="AccountType" component={AccountType} screenOptions={{
+        headerShown: false
+      }} />
+    </Stack.Navigator>
+  );
+};
 const SignUpStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
@@ -94,4 +112,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator };
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator,TransferNavigator };

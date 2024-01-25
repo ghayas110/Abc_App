@@ -44,7 +44,7 @@ const HomeScreen = ({ disabled }) => {
       Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
     },
     {
-      name: 'MyKad',
+      name: 'CNIC',
       Icon: <Icons.AntDesign name="contacts" />,
       Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
     },

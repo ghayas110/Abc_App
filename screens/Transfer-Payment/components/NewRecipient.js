@@ -89,7 +89,7 @@ const NewRecipient = () => {
                     </Text>
                 </View>
                 <View style={{alignSelf:"center" }}>
-                    <RequestButton text={'Continue'} />
+                    <RequestButton text={'Continue'} onPress={()=>console.log('pending')}/>
                 </View>
             </View>
         </>
