@@ -4,7 +4,7 @@ import Icons from '../components/Icons'
 import { useNavigation } from '@react-navigation/native'
 import { SimpleInput } from '../components/Inputs'
 import { RequestButton, OutlineButton } from '../components/Buttons'
-import CardInage from '../assets/HomeScreenImages/RyseCard.png'
+import CardInage from '../assets/HomeScreenImages/bankCard.png'
 import HomeDuet from '../assets/HomeScreenImages/duit-now-01.png'
 import DuetQr from '../assets/HomeScreenImages/DuitNowQR1.png'
 import Transfer from '../assets/HomeScreenImages/Icons.png'
@@ -13,13 +13,11 @@ import Market from '../assets/HomeScreenImages/market.png'
 import Modal from 'react-native-modal';
 import Header from '../components/header/header'
 import ThemeSty from '../assets/styles/basic'
-import ProgressBar from 'react-native-progress/Bar';
-
 
 const HomeScreen = ({ disabled }) => {
   const [progress, setProgress] = useState(0);
   const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
-  const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false)
+  const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false);
 
   const toggleBottomSheet = () => {
     setBottomSheetVisible(!isBottomSheetVisible);
@@ -34,19 +32,38 @@ const HomeScreen = ({ disabled }) => {
     navigation.navigate('StartLoginStep2');
   };
 
-
   const data2 = [
     {
-      name: 'Bank Account', Icon: <Icons.MaterialCommunityIcons name="bank-outline" />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />},
-    { name: 'Mobile Number', Icon: <Icons.AntDesign name="contacts" />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" /> },
-    { name: 'MyKad', Icon: <Icons.AntDesign name="contacts" />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" /> },
-    { name: 'MyPolis/MyTentera', Icon: <Icons.AntDesign name="contacts" />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" /> },
-    { name: 'Business Registration Number', Icon: <Icons.AntDesign name="contacts" />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" /> },
-    { name: 'Passport Number', Icon: <Icons.AntDesign name="contacts" />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" /> },
+      name: 'Bank Account',
+      Icon: <Icons.MaterialCommunityIcons name="bank-outline" />,
+      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
+    },
+    {
+      name: 'Mobile Number',
+      Icon: <Icons.AntDesign name="contacts" />,
+      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
+    },
+    {
+      name: 'MyKad',
+      Icon: <Icons.AntDesign name="contacts" />,
+      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
+    },
+    {
+      name: 'MyPolis/MyTentera',
+      Icon: <Icons.AntDesign name="contacts" />,
+      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
+    },
+    {
+      name: 'Business Registration Number',
+      Icon: <Icons.AntDesign name="contacts" />,
+      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
+    },
+    {
+      name: 'Passport Number',
+      Icon: <Icons.AntDesign name="contacts" />,
+      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
+    },
   ];
-
-
-
 
   return (
     <>
@@ -54,62 +71,106 @@ const HomeScreen = ({ disabled }) => {
         <View style={styles.Progress}>
           <Header />
         </View>
-        <View style={{ padding: 5, marginTop: 25, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-          <Text style={{ fontSize: 12, fontWeight: "500", ...ThemeSty.gray_color_f, ...ThemeSty.Font_family }}>
+        <View
+          style={{
+            padding: 5,
+            marginTop: 25,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Text
+            style={{
+              fontSize: 12,
+              fontWeight: '500',
+              ...ThemeSty.gray_color_f,
+              ...ThemeSty.Font_family,
+            }}>
             Spending balance
           </Text>
 
-          <Icons.AntDesign name="infocirlceo" style={{
-            marginLeft: 5,
-            fontSize: 12, ...ThemeSty.Green_color_f
-          }} />
+          <Icons.AntDesign
+            name="infocirlceo"
+            style={{
+              marginLeft: 5,
+              fontSize: 12,
+              ...ThemeSty.Green_color_f,
+            }}
+          />
         </View>
-        <Text style={{ fontSize: 24, fontWeight: "700", ...ThemeSty.black_color_f, ...ThemeSty.Font_family, textAlign: "center" }}>
+        <Text
+          style={{
+            fontSize: 24,
+            fontWeight: '700',
+            ...ThemeSty.black_color_f,
+            ...ThemeSty.Font_family,
+            textAlign: 'center',
+          }}>
           AED 10,000.00
         </Text>
-        <View style={{ padding: 5, marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-
-          <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} />
+        <View
+          style={{
+            padding: 5,
+            marginTop: 5,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Image
+            source={CardInage}
+            style={{width: 300, height: 300, resizeMode: 'contain'}}
+          />
         </View>
         <View style={{ flexDirection: "row", marginTop: 10, justifyContent: 'space-evenly', alignItems: 'center' }}>
-          <TouchableOpacity onPress={toggleBottomSheet}>
+          <TouchableOpacity>
             <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={HomeDuet} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5,textAlign:'center' }}>DuitNow  Transfer</Text>
+              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow  Transfer</Text>
             </View>
           </TouchableOpacity>
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
             <View style={styles.boxes}>
               <Image source={DuetQr} style={styles.boxImage} />
             </View>
-            <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5,textAlign:'center' }}>DuitNow QR</Text>
+            <Text
+              style={{
+                fontSize: 12,
+                ...ThemeSty.black_color_f,
+                fontWeight: '500',
+                marginTop: 5,
+                textAlign: 'center',
+              }}>
+              DuitNow QR
+            </Text>
           </View>
           <TouchableOpacity onPress={() => navigation.navigate('TransactionHistory')}>
             <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={Transfer} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5,textAlign:'center' }}>Transaction History</Text>
+              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Transaction History</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Statements')} style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
-
             <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={Statement} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5,textAlign:'center' }}>Latest Statements</Text>
+              <Text
+                style={{
+                  fontSize: 12,
+                  ...ThemeSty.black_color_f,
+                  fontWeight: '500',
+                  marginTop: 5,
+                  textAlign: 'center',
+                }}>
+                Latest Statements
+              </Text>
             </View>
-
           </TouchableOpacity>
-
-
-
-
         </View>
-
 
         <View style={styles.containerMenu}>
           <View style={styles.card}>
@@ -117,11 +178,12 @@ const HomeScreen = ({ disabled }) => {
             <View style={styles.textContainer}>
               <Text style={styles.title}>Marketplace</Text>
               <Text style={styles.description}>
-                Financial products that let you be more by doing more for others.
+                Financial products that let you be more by doing more for
+                others.
               </Text>
             </View>
             <Icons.MaterialIcons
-              name='arrow-forward-ios'
+              name="arrow-forward-ios"
               style={styles.arrowIcon}
             />
           </View>
@@ -130,11 +192,12 @@ const HomeScreen = ({ disabled }) => {
             <View style={styles.textContainer}>
               <Text style={styles.title}>Marketplace</Text>
               <Text style={styles.description}>
-                Financial products that let you be more by doing more for others.
+                Financial products that let you be more by doing more for
+                others.
               </Text>
             </View>
             <Icons.MaterialIcons
-              name='arrow-forward-ios'
+              name="arrow-forward-ios"
               style={styles.arrowIcon}
             />
           </View>
@@ -143,11 +206,12 @@ const HomeScreen = ({ disabled }) => {
             <View style={styles.textContainer}>
               <Text style={styles.title}>Marketplace</Text>
               <Text style={styles.description}>
-                Financial products that let you be more by doing more for others.
+                Financial products that let you be more by doing more for
+                others.
               </Text>
             </View>
             <Icons.MaterialIcons
-              name='arrow-forward-ios'
+              name="arrow-forward-ios"
               style={styles.arrowIcon}
             />
           </View>
@@ -155,13 +219,26 @@ const HomeScreen = ({ disabled }) => {
 
         <Modal
           isVisible={isBottomSheetVisible}
-          style={{ margin: 0 }}
-          onBackdropPress={toggleBottomSheet}
-        >
-          <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-            <View style={{ backgroundColor: 'white', padding: 24, borderTopRightRadius: 20, borderTopLeftRadius: 20, }}>
+          style={{margin: 0}}
+          onBackdropPress={toggleBottomSheet}>
+          <View style={{flex: 1, justifyContent: 'flex-end'}}>
+            <View
+              style={{
+                backgroundColor: 'white',
+                padding: 24,
+                borderTopRightRadius: 20,
+                borderTopLeftRadius: 20,
+              }}>
               <View>
-                <Text style={{ fontSize: 28, fontWeight: '700', ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }} >Select your transfer type</Text>
+                <Text
+                  style={{
+                    fontSize: 28,
+                    fontWeight: '700',
+                    ...ThemeSty.Green_color_f,
+                    ...ThemeSty.Font_family,
+                  }}>
+                  Select your transfer type
+                </Text>
               </View>
               <View style={styles.tableContainer}>
                 {data2.map(item => (
@@ -169,72 +246,71 @@ const HomeScreen = ({ disabled }) => {
                     <View key={item.id} style={styles.tableRow}>
                       <Text style={styles.cell}>{item.Icon}</Text>
                       <Text style={styles.cell}>{item.name}</Text>
-                      <Text style={{ ...styles.cell, ...ThemeSty.Green_color_f }}>{item.Icon2}</Text>
+                      <Text style={{...styles.cell, ...ThemeSty.Green_color_f}}>
+                        {item.Icon2}
+                      </Text>
                     </View>
-                    
                   </>
                 ))}
               </View>
-              
-            
             </View>
           </View>
         </Modal>
         <Modal
           isVisible={isBottomSheetVisible2}
-          style={{ margin: 0 }}
-          onBackdropPress={toggleBottomSheet2}
-        >
-          <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-            <View style={{ backgroundColor: 'transparent', padding: 24, borderTopRightRadius: 20, borderTopLeftRadius: 20, }}>
-              <View style={{ padding: 10, alignItems: "center" }}>
-                <OutlineButton text='call +165464661' />
+          style={{margin: 0}}
+          onBackdropPress={toggleBottomSheet2}>
+          <View style={{flex: 1, justifyContent: 'flex-end'}}>
+            <View
+              style={{
+                backgroundColor: 'transparent',
+                padding: 24,
+                borderTopRightRadius: 20,
+                borderTopLeftRadius: 20,
+              }}>
+              <View style={{padding: 10, alignItems: 'center'}}>
+                <OutlineButton text="call +165464661" />
               </View>
-              <View style={{ alignItems: "center" }}>
-                <RequestButton text='Cancel' />
+              <View style={{alignItems: 'center'}}>
+                <RequestButton text="Cancel" />
               </View>
-
             </View>
           </View>
         </Modal>
       </ScrollView>
     </>
+  );
+};
 
-  )
-}
-
-export default HomeScreen
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor:"#FFFFFF",
+    backgroundColor: '#FFFFFF',
     // justifyContent: "Space-evently",
-
   },
-
 
   Image: {
     width: 180,
-    height: 50
+    height: 50,
   },
   inputContainer: {
     borderBottomWidth: 2,
-    borderColor: "#00A200",
+    borderColor: '#00A200',
     marginTop: 10,
   },
 
-
   CheckIcon: {
     fontSize: 14,
-    color: "#808080",
+    color: '#808080',
     fontFamily: 'Poppins',
-    fontWeight: "500"
+    fontWeight: '500',
   },
 
   BackArrowIcon: {
-    color: "#00A200",
+    color: '#00A200',
     fontSize: 16,
     position: 'relative',
     right: 50,
@@ -243,9 +319,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
     paddingLeft: 5,
     paddingRight: 5,
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   containerMenu: {
     paddingTop: 10,
@@ -262,17 +338,16 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     backgroundColor: '#fff', // Replace with your desired background color
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.2,
     shadowRadius: 2,
     elevation: 3,
-    marginTop: 5
+    marginTop: 5,
   },
   image: {
     resizeMode: 'contain',
     width: 40,
-    height: 50
-
+    height: 50,
   },
   textContainer: {
     width: 220,
@@ -297,55 +372,52 @@ const styles = StyleSheet.create({
   boxes: {
     borderWidth: 1,
     ...ThemeSty.ligth_gray_border_Color,
-    padding: 25, borderRadius: 20,
-    justifyContent: "center",
+    padding: 25,
+    borderRadius: 20,
+    justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: "#FFFFFF",
+    shadowColor: '#FFFFFF',
     shadowOffset: {
       width: 0,
       height: 1,
     },
     shadowOpacity: 0.18,
-    shadowRadius: 1.00,
+    shadowRadius: 1.0,
 
     elevation: 1,
   },
   boxImage: {
-    resizeMode: "contain",
+    resizeMode: 'contain',
   },
-    tableContainer: {        
-        padding: 10,
-        margin:0
-    },
-    tableRow: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        padding:15,
-        alignItems: 'center',
-        
-    },
-    headerCell: {
-        flex: 1,
-        fontWeight: '700',
-        fontSize: 16,
-        ...ThemeSty.Font_family,
-        ...ThemeSty.black_color_h
-
-
-    },
-    cell: {
-        flex: 1,
-        fontWeight: "500",
-        ...ThemeSty.Font_family,
-        fontSize: 14,
-        ...ThemeSty.black_color_h
-    },
-    cell2: {
-        flex: 1,
-        fontWeight: "500",
-        ...ThemeSty.Font_family,
-        fontSize: 14,
-        ...ThemeSty.Light_gray_color_f,
-    },
-
-})
+  tableContainer: {
+    padding: 10,
+    margin: 0,
+  },
+  tableRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 15,
+    alignItems: 'center',
+  },
+  headerCell: {
+    flex: 1,
+    fontWeight: '700',
+    fontSize: 16,
+    ...ThemeSty.Font_family,
+    ...ThemeSty.black_color_h,
+  },
+  cell: {
+    flex: 1,
+    fontWeight: '500',
+    ...ThemeSty.Font_family,
+    fontSize: 14,
+    ...ThemeSty.black_color_h,
+  },
+  cell2: {
+    flex: 1,
+    fontWeight: '500',
+    ...ThemeSty.Font_family,
+    fontSize: 14,
+    ...ThemeSty.Light_gray_color_f,
+  },
+});

@@ -13,6 +13,7 @@ import History from "../screens/transaction-history/History";
 import TransferTO from "../screens/Transfer-Payment/TransferTo";
 import RecipientBank from "../screens/Transfer-Payment/RecipientBank";
 import AccountType from "../screens/Transfer-Payment/AccountType";
+import PendingTran from "../screens/transaction-history/PendingTran";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -27,7 +28,12 @@ const MainStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
       headerShown: false
-    }}>
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
       <Stack.Screen name="Home" component={HomeScreen} screenOptions={{
         headerShown: false
       }} />
@@ -47,6 +53,26 @@ const MainStackNavigator = () => {
         headerShown: false
       }} />
      
+      <Stack.Screen name="PendingTran" component={PendingTran} screenOptions={{
+        headerShown: false
+      }} />
+    </Stack.Navigator>
+  );
+};
+
+const MoreNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerShown: false
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      {/* <Stack.Screen name="Home" component={m} screenOptions={{
+        headerShown: false
+      }} /> */}
     </Stack.Navigator>
   );
 };
@@ -68,4 +94,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator };
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator };
