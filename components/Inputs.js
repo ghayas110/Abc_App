@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions, TextInput } from 'react-native'
 import Checkbox from 'react-native-check-box';
 import DropDownPicker from 'react-native-dropdown-picker';
+import Theme from '../assets/styles/basic'
+import Icons from './Icons';
 
 const { width, height } = Dimensions.get('window');
 
@@ -163,11 +165,63 @@ const List = ({
     )
 }
 
+
+const SearchInput = ({placeholder , label, type}) => {
+    const [searchText, setSearchText] = useState('');
+
+    const handleSearchChange = (text) => {
+        setSearchText(text);
+    };
+
+    return (
+        <View style={styles.container}>
+            <TextInput
+                style={styles.input}
+                placeholder={placeholder}
+                placeholderTextColor="#CCCCCC"
+                placeholderStyle={{ fontSize:24}}
+                value={searchText}
+                onChangeText={handleSearchChange}
+                type={type}
+            />
+            <Icons.AntDesign name="search1" size={20} color="gray" style={styles.icon} />
+        </View>
+    );
+};
+
 const styles = StyleSheet.create({
     otpInput: {
         borderBottomWidth: 1,
         borderBottomColor: '#808080',
     },
+    container: {
+        flexDirection: 'row', // Horizontal layout
+        alignItems: 'center', // Center items vertically
+        paddingHorizontal: 10,
+        marginTop: 10,
+        padding: 10,
+        borderBottomWidth:0.5,
+        borderBlockColor: "#CCCCCC"
+    },
+    icon: {
+        marginRight: 10,
+        color:"#00a200"
+    },
+    input: {
+        flex: 1, // Take up all available space
+        height: 40,
+        // borderColor: 'gray',
+        // borderWidth: 1,
+        borderRadius: 5,
+        paddingHorizontal: 10,
+    },
+    inputPlaceholder:{
+        fontSize: 16,
+        fontWeight:"600",
+        ...Theme.Font_family
+        
+        
+    }
 });
 
-export { SimpleInput, OtpInput, CheckBoxInput, List }
+export { SimpleInput, OtpInput, CheckBoxInput, List, SearchInput }
