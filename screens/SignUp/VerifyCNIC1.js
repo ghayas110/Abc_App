@@ -32,7 +32,7 @@ onPress={onPress}
 
 <View style={{paddingVertical:20}}>
 <Button
-title="Continue"
+title="Yes Let's continue"
 color="green"
 onPress={onPress}
 />

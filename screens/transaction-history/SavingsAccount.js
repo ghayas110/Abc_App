@@ -129,8 +129,8 @@ const SavingsAccount = () => {
                                 flexDirection: "row",
                                 width: width,
                             }}>
-                                <Text style={styless.textOne}>DuitNow Transfer to Account -  Rize</Text>
-                                <Text style={{ ...styless.textTwo }}>-RM 800.00</Text>
+                                <Text style={styless.textOne}>DuitNow Transfer to Account -  SSSCO</Text>
+                                <Text style={{ ...styless.textTwo }}>-AED 800.00</Text>
                             </View>
                             <Text style={styless.bottomDate}>5 FEB 2022</Text>
                         </TouchableOpacity>
@@ -140,8 +140,8 @@ const SavingsAccount = () => {
                                 flexDirection: "row",
                                 width: width,
                             }}>
-                                <Text style={styless.textOne}>DuitNow Transfer to Account -  Rize</Text>
-                                <Text style={{ ...styless.textTwo, ...style.Green_color_h }}>+RM 3,650.00</Text>
+                                <Text style={styless.textOne}>DuitNow Transfer to Account -  SSSCO</Text>
+                                <Text style={{ ...styless.textTwo, ...style.Green_color_h }}>+AED 3,650.00</Text>
                             </View>
                             <Text style={styless.bottomDate}>3 FEB 2022</Text>
                         </TouchableOpacity>
@@ -152,7 +152,7 @@ const SavingsAccount = () => {
                                 width: width,
                             }}>
                                 <Text style={styless.textOne}>DuitNow Transfer to ID - ADLI AHMAD</Text>
-                                <Text style={{ ...styless.textTwo, ...style.red_color_h }}>-RM 10.80</Text>
+                                <Text style={{ ...styless.textTwo, ...style.red_color_h }}>-AED 10.80</Text>
                             </View>
                             <Text style={styless.bottomDate}>3 FEB 2022</Text>
                         </TouchableOpacity>
@@ -163,7 +163,7 @@ const SavingsAccount = () => {
                                 width: width,
                             }}>
                                 <Text style={styless.textOne}>DuitNow Transfer to Account - TENAGA NASIONAL</Text>
-                                <Text style={{ ...styless.textTwo, ...style.red_color_h }}>-RM 35.20</Text>
+                                <Text style={{ ...styless.textTwo, ...style.red_color_h }}>-AED 35.20</Text>
                             </View>
                             <Text style={styless.bottomDate}>1 FEB 2022</Text>
                         </TouchableOpacity>
@@ -182,7 +182,7 @@ const SavingsAccount = () => {
                                 width: width,
                             }}>
                                 <Text style={styless.textOne}>Profit Earned</Text>
-                                <Text style={{ ...styless.textTwo, ...style.Green_color_h }}>+RM 10.51</Text>
+                                <Text style={{ ...styless.textTwo, ...style.Green_color_h }}>+AED 10.51</Text>
                             </View>
                             <Text style={styless.bottomDate}>31 JAN 2022</Text>
                         </TouchableOpacity>
@@ -193,7 +193,7 @@ const SavingsAccount = () => {
                                 width: width,
                             }}>
                                 <Text style={styless.textOne}>DuitNow QR - BRYAN LIM</Text>
-                                <Text style={{ ...styless.textTwo, ...style.red_color_h }}>+RM 10.51</Text>
+                                <Text style={{ ...styless.textTwo, ...style.red_color_h }}>+AED 10.51</Text>
                             </View>
                             <Text style={styless.bottomDate}>27 JAN 2022</Text>
                         </TouchableOpacity>

@@ -10,6 +10,9 @@ import StepsIndicator from "../components/StepsIndicator";
 import SignUp from "../screens/SignUp/SignUp";
 import MainSignUp from "../screens/SignUp/MainSignUp";
 import History from "../screens/transaction-history/History";
+import TransferTO from "../screens/Transfer-Payment/TransferTo";
+import RecipientBank from "../screens/Transfer-Payment/RecipientBank";
+import AccountType from "../screens/Transfer-Payment/AccountType";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -34,6 +37,16 @@ const MainStackNavigator = () => {
       <Stack.Screen name="TransactionHistory" component={History} screenOptions={{
         headerShown: false
       }} />
+      <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="AccountType" component={AccountType} screenOptions={{
+        headerShown: false
+      }} />
+     
     </Stack.Navigator>
   );
 };
