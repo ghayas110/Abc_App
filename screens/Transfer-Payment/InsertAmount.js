@@ -175,6 +175,7 @@ const styles = StyleSheet.create({
         margin: 0,
     },
     inputamount: {
+        color:"black",
         padding: 5,
         borderWidth: 0.5,
 

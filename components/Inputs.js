@@ -241,8 +241,7 @@ const styles = StyleSheet.create({
     input: {
         flex: 1, // Take up all available space
         height: 40,
-        // borderColor: 'gray',
-        // borderWidth: 1,
+        ...Theme.gray_color_h,
         borderRadius: 5,
         paddingHorizontal: 10,
     },

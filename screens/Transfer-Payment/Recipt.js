@@ -1,9 +1,11 @@
-import { StyleSheet, Text, View, FlatList, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, FlatList, ScrollView, Image } from 'react-native'
 import Theme from '../../assets/styles/basic'
 import { useNavigation } from '@react-navigation/native'
 import Icons from '../../components/Icons'
+import Logos from '../../assets/TransferPayment/SssscoLandingLgo-01.png'
 import { SimpleInput, ExampleInput, CheckBoxInput } from '../../components/Inputs'
-import { RequestButton } from '../../components/Buttons'
+import { RequestButton } from '../../components/Buttons';
+import ZigzagView from "react-native-zigzag-view"
 import React from 'react'
 import Header from './components/Header'
 
@@ -13,27 +15,49 @@ const Review = () => {
     const Navigate = () => {
         navigation.navigate('DigitalSecure')
     }
+    const back = () => {
+        navigation.navigate('DeutNowSent')
+    }
     const Flatlist = [
         {
-            name: 'Recipient reference',
-            value:"Happy Birthday",
-            key:"1"
+            name: 'Transfer from',
+            value: "Rize Savings Account-i \n 700007123456789",
+            key: "1"
 
         },
         {
-            name: 'Other payment details',
-            value: "Hermès Bag",
+            name: 'Business \n message ID',
+            value: "21023299281",
             key: "2"
+        },
+        {
+            name: 'Recipient reference',
+            value: "Hermès Bag",
+            key: "3"
+        },
+        {
+            name: 'Other payment \n details',
+            value: "Happy Birthday",
+            key: "3"
         },
         {
             name: 'Date & time',
             value: "3 Dec 2021, 02:45 PM",
             key: "3"
         },
-        
+
 
     ];
 
+
+    const data = [
+        {
+            name: 'Recipient ID',
+            value: "12345678",
+            key: "1"
+
+        },
+    ];
 
     const renderItem = ({ item }) => (
         <>
@@ -55,62 +79,53 @@ const Review = () => {
 
     return (
         <View style={styles.container}>
-            <Header
-                backtoPage={true}
-                title={'Review Transaction'}
-                backIcon={require('../../assets/TransactionHistoryImages/ArrowLeft.png')}
-            />
-            <ScrollView>
 
+            <View style={styles.header}>
+                <Icons.Entypo name="chevron-thin-left" style={styles.headericon} onPress={back} />
+                <Image source={Logos} style={styles.Images} />
+                <Icons.Entypo name="upload" style={styles.headericon} />
+            </View>
+
+            <ScrollView>
                 <View style={styles.subheaderstyle}>
                     <Text style={styles.accountName}>Hussien Lee</Text>
                     <Text style={styles.accountDetaik}>Al Saudi Bank Saudi / Saudi by Al Saudi - •••••••••••5431
                         Savings Account-i</Text>
-                </View>
+                    <FlatList
+                        data={data}
+                        renderItem={renderItem}
+                        keyExtractor={item => item.id}
 
-                <FlatList
-                    data={Flatlist}
-                    renderItem={renderItem}
-                    keyExtractor={item => item.id}
+                    />
 
-                />
-
-                <View style={styles.Amountss}>
-                    <Text style={styles.headType}>Transfer amount</Text>
-                    <Text style={styles.price}>AED 3,400.00</Text>
-                </View>
-        
-                <View style={styles.transder}>
-                    <View>
-                        <Text style={styles.headinput}>Transfer from <Icons.MaterialCommunityIcons name="information-outline" style={{ ...Theme.Green_color_f }} /></Text>
-                    </View>
-                    <View style={styles.savingAccountcheckbox}>
-                        <View>
-                            <Text style={styles.transfertext}>Rize Savings Account-i</Text>
-                            <Text style={styles.transferNum}>700007123456789</Text>
-                        </View>
-                        <View style={{ alignItems: "flex-end" }}>
-                            <Text style={styles.transferCheck}>
-                                <CheckBoxInput style={styles.checkedbox} />
-                            </Text>
-                            <Text style={styles.transferNum}>AED 80,000.00</Text>
+                    <View style={styles.successtag}>
+                        <View style={styles.sucesstxt}>
+                            <Text style={styles.Suctext}>Successful</Text>
+                            <Icons.Ionicons name="shield-checkmark-outline" style={{ marginLeft: 5, }} />
                         </View>
                     </View>
-                    <View>
-                        <Text style={styles.tranferInstruc}>
-                            I have read and agreed to the  DuitNow Transfer Terms and Conditions.
-                        </Text>
-                    </View>
-                    <View style={{flexDirection:"row", alignItems:"center" , padding:10,}}>
-                        <CheckBoxInput style={{ ...Theme.Green_color_h }} color={'green'} /> 
-                        <Text style={{...Theme.black_color_f , ...Theme.Font_family ,marginLeft:5}}>
-                               I have read and agreed to the  <Text style={{...Theme.Green_color_f}}>DuitNow Transfer Terms and Conditions.</Text> 
-                        </Text>
+
+
+                </View>
+                <View style={styles.FlatlistCon} >
+                    <FlatList
+                        data={Flatlist}
+                        renderItem={renderItem}
+                        keyExtractor={item => item.id}
+
+                    />
+                    <View style={styles.Amountss}>
+                        <Text style={styles.headType}>Transfer amount</Text>
+                        <Text style={styles.price}>AED 3,400.00</Text>
                     </View>
                     <View style={{ alignItems: "center" }}>
                         <RequestButton text={'Continue'} onPress={Navigate} />
                     </View>
                 </View>
+
+
+
+
 
             </ScrollView>
 
@@ -123,16 +138,54 @@ export default Review
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#FFFFFF",
+        // backgroundColor:"#CCC",
         paddingTop: 10,
         paddingBottom: 10,
+    },
+    header: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: 10,
+        paddingLeft: 20,
+        paddingRight: 20,
+
+    },
+    Images: {
+        width: 150,
+        height: 50,
+        resizeMode: "center",
+    },
+    successtag: {
+        padding: 10,
+    },
+    Suctext: {
+        ...Theme.White_color_h,
+        ...Theme.Font_family,
+        fontSize: 12
+    },
+    sucesstxt: {
+        flexDirection: "row",
+        alignItems: "center",
+        ...Theme.bg_green_color,
+        width: 100,
+        padding: 5,
+        ...Theme.White_color_h,
+        ...Theme.Font_family,
+        borderRadius: 5,
+    },
+    headericon: {
+        ...Theme.Green_color_f,
+        fontSize: 24,
+        // ...Theme.White_color_h
+
     },
     flatlistrow: {
         flex: 1,
         flexDirection: "row",
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingLeft:10,
+        paddingLeft: 10,
         paddingRight: 10,
         padding: 5,
         marginTop: 15,
@@ -144,29 +197,29 @@ const styles = StyleSheet.create({
         ...Theme.Font_family,
         fontWeight: "700"
     },
-    nameValue:{
+    nameValue: {
         fontSize: 14,
         marginLeft: 10,
         ...Theme.black_color_f,
         ...Theme.Font_family,
-        fontWeight:"500"
+        fontWeight: "500"
     },
-    tranferInstruc:{
+    tranferInstruc: {
         ...Theme.Light_gray_color_f,
         fontSize: 12,
-        padding:5
-        
+        padding: 5
+
     },
-    headType:{
-        fontSize:16,
+    headType: {
+        fontSize: 16,
         ...Theme.Light_gray_color_f,
         ...Theme.Font_family
     },
     subheaderstyle: {
         flex: 1,
-        padding: 15,
-        marginTop: 10,
-        borderBottomWidth: 0.5
+        backgroundColor: "#FFFFFF",
+        paddingLeft: 15,
+        paddingRight: 15,
     },
     accountName: {
         fontSize: 24,
@@ -202,7 +255,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         marginTop: 35
     },
-  
+
     headinput: {
         fontSize: 16,
         fontWeight: "700",
@@ -241,21 +294,28 @@ const styles = StyleSheet.create({
         ...Theme.gray_color_f,
         ...Theme.Font_family
     },
-    Amountss:{
-        justifyContent:"center",
+    Amountss: {
+        justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
         padding: 20
     },
-    price:{
+    price: {
         ...Theme.black_color_f,
         ...Theme.Font_family,
         fontSize: 24,
         fontWeight: "700",
-        
+
     },
-    tranferInstruc2:{
-        flexDirection:"row"
+    tranferInstruc2: {
+        flexDirection: "row"
+    },
+    FlatlistCon: {
+        backgroundColor: "#FFFFFF",
+        bordeTop: 'none',
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15,
+
     }
 
 })
