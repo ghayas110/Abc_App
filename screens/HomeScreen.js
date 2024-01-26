@@ -130,6 +130,8 @@ const HomeScreen = ({ disabled }) => {
               <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow  Transfer</Text>
             </View>
           </TouchableOpacity>
+          <TouchableOpacity onPress={()=>navigation.navigate('AllowQR')}>
+        
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
             <View style={styles.boxes}>
               <Image source={DuetQr} style={styles.boxImage} />
@@ -145,6 +147,7 @@ const HomeScreen = ({ disabled }) => {
               DuitNow QR
             </Text>
           </View>
+          </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('TransactionHistory')}>
             <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
