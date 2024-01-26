@@ -27,7 +27,14 @@ import DuetitNowOnWay from "../screens/Transfer-Payment/DuetitNowOnWay";
 import DuetNowSent from "../screens/Transfer-Payment/DuetNowSent";
 import SendAmount from "../screens/QRPayments/InsertAmount";
 import Recipt from "../screens/Transfer-Payment/Recipt";
-
+import Transfer from "../screens/Transfer-Payment/Transfer";
+import CardMangementOne from "../screens/card/CardMangementOne";
+import ChangePin from "../screens/card/ChangePin";
+import SpendLimit from "../screens/card/components/SpendLimit";
+import CardPreferences from "../screens/card/CardPreferences";
+import SettingServices from "../screens/Transfer-Payment/SettingServices";
+import PayTransfer from "../screens/Transfer-Payment/PayTransfer";
+import ManageDuitNowQR from "../screens/Settings/ManageDuitNowQR";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -57,12 +64,6 @@ const MainStackNavigator = () => {
       <Stack.Screen name="TransactionHistory" component={History} screenOptions={{
         headerShown: false
       }} />
-
-      {/* yahan sy  */}
-      <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
-        headerShown: false
-      }} /> 
-     
       <Stack.Screen name="PendingTran" component={PendingTran} screenOptions={{
         headerShown: false
       }} />
@@ -105,6 +106,13 @@ const MainStackNavigator = () => {
       <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{
         headerShown: false
       }} />
+      <Stack.Screen name='CardMangementOne' component={CardMangementOne} />
+      <Stack.Screen name='ChangePin' component={ChangePin} />
+      <Stack.Screen name='SpendLimit' component={SpendLimit} />
+      <Stack.Screen name='CardPreferences' component={CardPreferences} />
+      <Stack.Screen name='SettingServices' component={SettingServices} />
+      <Stack.Screen name='PayTransfer' component={PayTransfer} />
+      <Stack.Screen name='ManageDuitNowQR' component={ManageDuitNowQR} />
     </Stack.Navigator>
   );
 };
@@ -119,9 +127,7 @@ const MoreNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      {/* <Stack.Screen name="Home" component={m} screenOptions={{
-        headerShown: false
-      }} /> */}
+   
     </Stack.Navigator>
   );
 };
