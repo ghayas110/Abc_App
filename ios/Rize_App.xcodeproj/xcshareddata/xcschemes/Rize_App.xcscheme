@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Rize_App.app"
-               BlueprintName = "Rize_App"
-               ReferencedContainer = "container:Rize_App.xcodeproj">
+               BuildableName = "SmartBank.app"
+               BlueprintName = "SmartBank"
+               ReferencedContainer = "container:SmartBank.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "Rize_AppTests.xctest"
-               BlueprintName = "Rize_AppTests"
-               ReferencedContainer = "container:Rize_App.xcodeproj">
+               BuildableName = "SmartBankTests.xctest"
+               BlueprintName = "SmartBankTests"
+               ReferencedContainer = "container:SmartBank.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Rize_App.app"
-            BlueprintName = "Rize_App"
-            ReferencedContainer = "container:Rize_App.xcodeproj">
+            BuildableName = "SmartBank.app"
+            BlueprintName = "SmartBank"
+            ReferencedContainer = "container:SmartBank.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Rize_App.app"
-            BlueprintName = "Rize_App"
-            ReferencedContainer = "container:Rize_App.xcodeproj">
+            BuildableName = "SmartBank.app"
+            BlueprintName = "SmartBank"
+            ReferencedContainer = "container:SmartBank.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
