@@ -74,9 +74,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.Rize_App"
+    namespace "com.SmartBank"
     defaultConfig {
-        applicationId "com.Rize_App"
+        applicationId "com.SmartBank"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

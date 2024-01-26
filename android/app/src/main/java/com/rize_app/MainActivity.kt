@@ -1,4 +1,4 @@
-package com.Rize_App
+package com.SmartBank
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
