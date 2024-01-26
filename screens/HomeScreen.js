@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View, Image, ScrollView,TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import Icons from '../components/Icons'
 import { useNavigation } from '@react-navigation/native'
 import { SimpleInput } from '../components/Inputs'
 import { RequestButton, OutlineButton } from '../components/Buttons'
-import CardInage from '../assets/HomeScreenImages/RyseCard.png'
+import CardInage from '../assets/HomeScreenImages/bankCard.png'
 import HomeDuet from '../assets/HomeScreenImages/duit-now-01.png'
 import DuetQr from '../assets/HomeScreenImages/DuitNowQR1.png'
 import Transfer from '../assets/HomeScreenImages/Icons.png'
@@ -13,8 +13,6 @@ import Market from '../assets/HomeScreenImages/market.png'
 import Modal from 'react-native-modal';
 import Header from '../components/header/header'
 import ThemeSty from '../assets/styles/basic'
-import ProgressBar from 'react-native-progress/Bar';
-
 
 const HomeScreen = ({ disabled }) => {
   const [progress, setProgress] = useState(0);
@@ -61,12 +59,14 @@ const HomeScreen = ({ disabled }) => {
           <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} />
         </View>
         <View style={{ flexDirection: "row", marginTop: 10, justifyContent: 'space-evenly', alignItems: 'center' }}>
-          <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
-            <View style={styles.boxes}>
-              <Image source={HomeDuet} style={styles.boxImage} />
+          <TouchableOpacity>
+            <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
+              <View style={styles.boxes}>
+                <Image source={HomeDuet} style={styles.boxImage} />
+              </View>
+              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow  Transfer</Text>
             </View>
-            <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow  Transfer</Text>
-          </View>
+          </TouchableOpacity>
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
             <View style={styles.boxes}>
               <Image source={DuetQr} style={styles.boxImage} />
@@ -74,29 +74,22 @@ const HomeScreen = ({ disabled }) => {
             <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow QR Code</Text>
           </View>
           <TouchableOpacity onPress={() => navigation.navigate('TransactionHistory')}>
-          <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
-            <View style={styles.boxes}>
-              <Image source={Transfer} style={styles.boxImage} />
-            </View>
-              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Transaction History</Text>
+            <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
+              <View style={styles.boxes}>
+                <Image source={Transfer} style={styles.boxImage} />
               </View>
-              </TouchableOpacity>
+              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Transaction History</Text>
+            </View>
+          </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('Statements')} style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
-
             <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={Statement} style={styles.boxImage} />
               </View>
               <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Latest Statements</Text>
             </View>
-            
           </TouchableOpacity>
-
-
-
-
         </View>
-
 
         <View style={styles.containerMenu}>
           <View style={styles.card}>

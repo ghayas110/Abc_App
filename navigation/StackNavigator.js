@@ -10,6 +10,7 @@ import StepsIndicator from "../components/StepsIndicator";
 import SignUp from "../screens/SignUp/SignUp";
 import MainSignUp from "../screens/SignUp/MainSignUp";
 import History from "../screens/transaction-history/History";
+import PendingTran from "../screens/transaction-history/PendingTran";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -24,7 +25,12 @@ const MainStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
       headerShown: false
-    }}>
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
       <Stack.Screen name="Home" component={HomeScreen} screenOptions={{
         headerShown: false
       }} />
@@ -34,6 +40,26 @@ const MainStackNavigator = () => {
       <Stack.Screen name="TransactionHistory" component={History} screenOptions={{
         headerShown: false
       }} />
+      <Stack.Screen name="PendingTran" component={PendingTran} screenOptions={{
+        headerShown: false
+      }} />
+    </Stack.Navigator>
+  );
+};
+
+const MoreNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerShown: false
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      {/* <Stack.Screen name="Home" component={m} screenOptions={{
+        headerShown: false
+      }} /> */}
     </Stack.Navigator>
   );
 };
@@ -55,4 +81,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator };
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator };
