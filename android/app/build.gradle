@@ -74,9 +74,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.SmartBank"
+    namespace "com.SmartDigitalBank"
     defaultConfig {
-        applicationId "com.SmartBank"
+        applicationId "com.SmartDigitalBank"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -9,20 +9,20 @@ const SplashScreen = () => {
   const [fadeAnim] = useState(new Animated.Value(0));
   const [isSplashScreen, setSplashScreen] = useState(false)
   const navigation = useNavigation()
-  useEffect(() => {
+   useEffect(() => {
 
   
    
-    try {
-      // play the file tone.mp3
-      SoundPlayer.playSoundFile('tone', 'mp3')
-      // or play from url
-      // SoundPlayer.playUrl('https://example.com/music.mp3')
-  } catch (e) {
-      console.log(`cannot play the sound file`, e)
-  }
-    
-}, []);
+      try {
+        // play the file tone.mp3
+        SoundPlayer.playSoundFile('tone', 'mp3')
+        // or play from url
+        // SoundPlayer.playUrl('https://example.com/music.mp3')
+    } catch (e) {
+        console.log(`cannot play the sound file`, e)
+    }
+      
+  }, []);
   useEffect(() => {
 
     Animated.timing(fadeAnim, {
