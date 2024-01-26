@@ -70,12 +70,7 @@ const MainStackNavigator = () => {
           </Drawer.Screen>
           <Drawer.Screen name='ChangePassword' component={ChangePassword} />
           <Drawer.Screen name='EditProfile' component={EditProfileScreen} />
-          <Drawer.Screen name='CardMangementOne' component={CardMangementOne} />
-          <Drawer.Screen name='ChangePin' component={ChangePin} />
-          <Drawer.Screen name='CardMangementOne' component={CardMangementOne} />
-          <Drawer.Screen name='ChangePin' component={ChangePin} />
-          <Drawer.Screen name='SpendLimit' component={SpendLimit} />
-          <Drawer.Screen name='CardPreferences' component={CardPreferences} />
+     
         </Drawer.Navigator>
       ) : (
         <AuthStack.Navigator screenOptions={{

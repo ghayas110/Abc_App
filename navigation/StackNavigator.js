@@ -29,6 +29,10 @@ import SendAmount from "../screens/QRPayments/InsertAmount";
 import Recipt from "../screens/Transfer-Payment/Recipt";
 
 import Transfer from "../screens/Transfer-Payment/Transfer";
+import CardMangementOne from "../screens/card/CardMangementOne";
+import ChangePin from "../screens/card/ChangePin";
+import SpendLimit from "../screens/card/components/SpendLimit";
+import CardPreferences from "../screens/card/CardPreferences";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -59,10 +63,7 @@ const MainStackNavigator = () => {
         headerShown: false
       }} />
 
-      {/* yahan sy  */}
-      <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
-        headerShown: false
-      }} /> */}
+
      
       <Stack.Screen name="PendingTran" component={PendingTran} screenOptions={{
         headerShown: false
@@ -106,6 +107,10 @@ const MainStackNavigator = () => {
       <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{
         headerShown: false
       }} />
+      <Stack.Screen name='CardMangementOne' component={CardMangementOne} />
+      <Stack.Screen name='ChangePin' component={ChangePin} />
+      <Stack.Screen name='SpendLimit' component={SpendLimit} />
+      <Stack.Screen name='CardPreferences' component={CardPreferences} />
     </Stack.Navigator>
   );
 };
@@ -120,9 +125,7 @@ const MoreNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      {/* <Stack.Screen name="Home" component={m} screenOptions={{
-        headerShown: false
-      }} /> */}
+   
     </Stack.Navigator>
   );
 };
