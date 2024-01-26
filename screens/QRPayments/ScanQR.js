@@ -2,30 +2,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Camera, useCameraDevices, useCodeScanner } from 'react-native-vision-camera';
 import { View, StyleSheet, Button, Dimensions, Text } from 'react-native';
 import ButtonInput from '../../components/ButtonInput';
+import { useNavigation } from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 const ScanQR = ({onPress,onCodeScanned}) => {
+  const navigation = useNavigation()
   const devices = useCameraDevices('back');
   const device = devices[0];
   const camera = useRef(null);
 
-  const handleTakePhoto = async () => {
-    if (camera.current) {
-      const photo = await camera.current.takePhoto({
-        qualityPrioritization: 'speed',
-        flash: 'off',
-        enableShutterSound: false,
-      });
-   console.log(photo)
-   if(photo){
-    if (typeof onPress === 'function') {
-      onPress();
-    }
-   }
-    }
-  };
+
   const [cameraPermission, setCameraPermission] = useState(null);
 
   useEffect(() => {
@@ -44,7 +32,8 @@ const ScanQR = ({onPress,onCodeScanned}) => {
   const codeScanner = useCodeScanner({
     codeTypes: ['qr', 'ean-13'],
     onCodeScanned: (codes) => {
-      console.log(`Scanned ${codes.length} codes!`)
+      console.log(`Scanned ${codes} codes!`)
+      navigation.navigate('SendAmount')
     }
   })
   return (

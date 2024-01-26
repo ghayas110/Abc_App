@@ -25,6 +25,7 @@ import Review from "../screens/Transfer-Payment/Review";
 import DigitalSecure from "../screens/Transfer-Payment/DigitalSecure";
 import DuetitNowOnWay from "../screens/Transfer-Payment/DuetitNowOnWay";
 import DuetNowSent from "../screens/Transfer-Payment/DuetNowSent";
+import SendAmount from "../screens/QRPayments/InsertAmount";
 
 const Stack = createStackNavigator();
 
@@ -101,6 +102,9 @@ const MainStackNavigator = () => {
         headerShown: false
       }} />
       <Stack.Screen name="DuetNowSent" component={DuetNowSent} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{
         headerShown: false
       }} />
     </Stack.Navigator>
