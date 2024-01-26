@@ -344,14 +344,14 @@ const TopUp = () => {
                             <View>
                                 <Text style={{ fontSize: 28, fontWeight: '700', ...style.Green_color_f, ...style.Font_family }} >How can we help?</Text>
                             </View>
-                            <View style={{ padding: 15 }}>
-                                <Text style={{ ...style.gray_color_f, ...style.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1820 54 3469 (local) or +7336 559 6220 (overseas).
+                            <View style={{ paddingVertical:10}}>
+                                <Text style={{ ...style.gray_color_f, ...style.Font_family, fontSize: 16 }}>Please reach out to our 24 hours Customer Support team 1820 54 3469 (local) or +7336 559 6220 (overseas).
                                     Alternatively you may email us at:
-                                    SmartStar-cs@SmartStar.com.
+                                    Bank@SmartStar.com.
                                     We’ll get this sorted!</Text>
                             </View>
                             <View style={{ padding: 20, ...style.bg_light_green_color }}>
-                                <Text style={{ ...style.Green_color_f, fontSize: 14, ...style.Font_family, fontWeight: '500', }}>Customer Support: +7336 559 6220 (fraud support line 24/7) or email to us at:  SmartStar-fraud@SmartStar.com</Text>
+                                <Text style={{ ...style.Green_color_f, fontSize: 14, ...style.Font_family, fontWeight: '500', }}>Customer Support: +7336 559 6220 (fraud support line 24/7) or email to us at: Bank@SmartStar.com</Text>
                             </View>
                             <View style={{ padding: 10, alignItems: "center" }}>
                                 <OutlineButton text='Report Fraud' onPress={toggleBottomSheet2} />

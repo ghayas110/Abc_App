@@ -31,7 +31,7 @@ const Transfer = () => {
         },
         { name: 'Mobile Number', Icon: <Icons.AntDesign name="contacts" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} /> },
         {
-            name: 'MyKad', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} /> },
+            name: 'CNIC', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} /> },
         { name: 'MyPolis/MyTentera', Icon: <Icons.MaterialIcons name="local-police" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} /> },
         { name: 'Business Registration Number', Icon: <Icons.MaterialIcons name="business-center" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} /> },
         { name: 'Passport Number', Icon: <Icons.MaterialCommunityIcons name="passport" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} /> },
@@ -39,21 +39,21 @@ const Transfer = () => {
     ];
     const data = [
         {
-            name: 'My Umrah - Profit Earned',
+            name: 'DuitNow Transfer',
             Image: <Image source={DuetImg} style={styles.inmages} />,
             key: "1",
             Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={toggleBottomSheet} style={styles.IConfor} />
 
         },
         {
-            name: 'My Umrah - Profit Earned',
+            name: 'DuitNow QR',
             Image: <Image source={QrDuetImg} style={styles.inmages} />,
             key: "1",
             Forward: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.IConfor} />
 
         },
         {
-            name: 'My Umrah - Profit Earned',
+            name: 'Transfer to another SSSCO account',
             Image: <Image source={DuetImg} style={styles.inmages} />,
             key: "1",
             Forward: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.IConfor} />

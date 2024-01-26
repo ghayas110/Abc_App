@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/dist/Ionicons';
-import { MainStackNavigator, MoreNavigator } from "./StackNavigator";
+import { MainStackNavigator, MoreNavigator, TransferNavigator } from "./StackNavigator";
 import AccountScreen from "../screens/AccountScreen";
 import TransferScreen from "../screens/Transfer-Payment/Transfer";
 import styles from "../assets/styles/basic";
@@ -36,7 +36,7 @@ const BottomTabNavigator = () => {
           ),
         }}/>
   
-      <Tab.Screen  name="Transfer" component={TransferScreen} options={{
+      <Tab.Screen  name="Transfer" component={TransferNavigator} options={{
         tabBarIcon: ({ color, size,focused }) => (
           <Image source={!focused ? require('../assets/tabicons/transfer.png') : require('../assets/tabicons/TransferOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
           

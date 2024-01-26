@@ -32,7 +32,7 @@ const PendingTran = () => {
                             width: width,
                         }}>
                             <Text style={styless.textOne}>MyDebit Purchase - Adidas</Text>
-                            <Text style={{ ...styless.textTwo }}>-RM 78.450</Text>
+                            <Text style={{ ...styless.textTwo }}>-AED 78.450</Text>
                         </View>
                         <Text style={styless.bottomDate}>5 FEB 2022</Text>
                     </TouchableOpacity>
@@ -44,7 +44,7 @@ const PendingTran = () => {
                             width: width,
                         }}>
                             <Text style={styless.textOne}>MyDebit Purchase - GRAB</Text>
-                            <Text style={{ ...styless.textTwo }}>-RM 13.50</Text>
+                            <Text style={{ ...styless.textTwo }}>-AED 13.50</Text>
                         </View>
                         <Text style={styless.bottomDate}>5 FEB 2022</Text>
                     </TouchableOpacity>
@@ -56,7 +56,7 @@ const PendingTran = () => {
                             width: width,
                         }}>
                             <Text style={styless.textOne}>MyDebit Purchase - Nike</Text>
-                            <Text style={{ ...styless.textTwo }}>-RM 75.00</Text>
+                            <Text style={{ ...styless.textTwo }}>-AED 75.00</Text>
                         </View>
                         <Text style={styless.bottomDate}>4 FEB 2022</Text>
                     </TouchableOpacity>
