@@ -21,15 +21,10 @@ const StartLogin = ({ disabled }) => {
     const toggleBottomSheet2 = () => {
         setBottomSheetVisible2(!isBottomSheetVisible2);
     };
- 
     const navigation = useNavigation();
-
     const ForWordnavigation = () => {
         navigation.navigate('StartLoginStep2');
     };
-
-
-
 
     return (
         <>

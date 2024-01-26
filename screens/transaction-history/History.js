@@ -30,7 +30,6 @@ const History = () => {
                             marginTop: 30
                         },
                         tabStyle: {
-                            backgroundColor: "white",
                             elevation: 0
                         },
                         indicatorStyle: {
