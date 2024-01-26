@@ -34,8 +34,8 @@ const CardMangementOne = () => {
         </TouchableOpacity>
 
         <Tab.Navigator
-          tabBarOptions={{
-            labelStyle: {
+          screenOptions={{
+            tabBarLabelStyle: {
               fontSize: 16,
               fontWeight: "900",
               textTransform: "capitalize",
@@ -45,7 +45,7 @@ const CardMangementOne = () => {
             tabStyle: {
               elevation: 0
             },
-            indicatorStyle: {
+            tabBarIndicatorStyle: {
               borderBottomWidth: 2,
               borderBottomColor: 'green',
             },

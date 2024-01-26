@@ -42,7 +42,7 @@ const LinkDuitNow = () => {
                         ...style.Font_family_Bold,
                         ...style.Green_color_h,
                         fontSize: 30
-                    }}>Link Rize with {'\n'} DuitNow?</Text>
+                    }}>Link SSSSCO with {'\n'} DuitNow?</Text>
                     <Text style={{
                         ...style.gray_color_h,
                         ...style.Font_family,

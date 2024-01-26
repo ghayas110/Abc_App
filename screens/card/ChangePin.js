@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Image, SafeAreaView, Text, TouchableOpacity, View, FlatList, ScrollView, Switch, TextInput } from 'react-native'
+import { Image, SafeAreaView, Text, TouchableOpacity, View, ToastAndroid, FlatList, ScrollView, Switch, TextInput } from 'react-native'
 import style from "../../assets/styles/basic"
 import { useNavigation } from '@react-navigation/native'
 import { OtpInput, SimpleInput } from '../../components/Inputs'
@@ -13,7 +13,13 @@ const ChangePin = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
   const goBack = () => {
-    navigation.goBack("Home");
+    ToastAndroid.show(
+      'Your Pin has been changed',
+      ToastAndroid.SHORT,
+    );
+    setTimeout(() => {
+      navigation.goBack("Home");
+    }, 2000);
   };
   // navigation.goBack("HomeScreen");
   const togglePasswordVisibility = () => {
@@ -48,7 +54,7 @@ const ChangePin = () => {
           </TouchableOpacity>
         </View>
         <View style={{ flex: 1 }}>
-          <Text style={{ ...style.Green_color_h, ...style.Font_family_Bold, fontSize: 32 }}>Create your card PIN</Text>
+          <Text style={{ ...style.Green_color_h, ...style.Font_family_Bold, fontSize: 25 }}>Create your card PIN</Text>
           <Text style={{ ...style.gray_color_h, ...style.Font_family, fontSize: 20, marginTop: 15 }}>Create a 6-digit PIN for your card</Text>
         </View>
         <View style={{
@@ -64,7 +70,8 @@ const ChangePin = () => {
             borderBottomWidth: 1,
             borderBottomColor: '#808080',
             flex: 1,
-            ...style.Font_family
+            ...style.Font_family,
+            ...style.black_color_h
           }}
             placeholder="Create your card PIN"
             secureTextEntry={!isPasswordVisible}
@@ -84,7 +91,6 @@ const ChangePin = () => {
           </TouchableOpacity>
         </View>
         <View style={{
-          flex: 5,
           marginTop: 20
         }}>
           <View style={{
@@ -182,7 +188,7 @@ const ChangePin = () => {
                         padding: 20,
                         lineHeight: 20,
                         color: "#006400"
-                      }}>App passcode refers to a 6-digit passcode that you have set for the Rize app.</Text>
+                      }}>App passcode refers to a 6-digit passcode that you have set for the bank@ssssco.com app.</Text>
                     </View>
                     <Text style={{
                       ...style.Font_family_Bold,
