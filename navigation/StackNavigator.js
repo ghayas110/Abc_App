@@ -20,6 +20,12 @@ import AllowBiometric from "../screens/QRPayments/AllowBiometric";
 import OtpQR from "../screens/QRPayments/OtpQR";
 import QRAccountSuccess from "../screens/QRPayments/QRAccountSuccess";
 import QRScan from "../screens/QRPayments/QRScan";
+import InsertAmount from "../screens/Transfer-Payment/InsertAmount";
+import Review from "../screens/Transfer-Payment/Review";
+import DigitalSecure from "../screens/Transfer-Payment/DigitalSecure";
+import DuetitNowOnWay from "../screens/Transfer-Payment/DuetitNowOnWay";
+import DuetNowSent from "../screens/Transfer-Payment/DuetNowSent";
+
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -49,6 +55,8 @@ const MainStackNavigator = () => {
       <Stack.Screen name="TransactionHistory" component={History} screenOptions={{
         headerShown: false
       }} />
+
+      {/* yahan sy  */}
       <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
         headerShown: false
       }} />
@@ -78,6 +86,21 @@ const MainStackNavigator = () => {
         headerShown: false
       }} />
       <Stack.Screen name="QRScan" component={QRScan} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="InsertAmount" component={InsertAmount} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="Review" component={Review} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="DigitalSecure" component={DigitalSecure} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="DuetitNowOnWay" component={DuetitNowOnWay} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="DuetNowSent" component={DuetNowSent} screenOptions={{
         headerShown: false
       }} />
     </Stack.Navigator>
