@@ -23,8 +23,8 @@ const SimpleInput = ({
     return (
         <>
             <View style={{
-                paddingLeft: 15,
-                paddingRight: 15,
+                paddingLeft: 5,
+                paddingRight: 5,
                 width: width,
                 marginTop: 10,
                 ...viewStyle
@@ -189,6 +189,29 @@ const SearchInput = ({placeholder , label, type}) => {
     );
 };
 
+
+const ExampleInput = ({ placeholder, label, type }) => {
+    const [searchText, setSearchText] = useState('');
+
+    const handleSearchChange = (text) => {
+        setSearchText(text);
+    };
+
+    return (
+        <View style={styles.Examcontainer}>
+            <TextInput
+                style={styles.input}
+                placeholder={placeholder}
+                placeholderTextColor="#CCCCCC"
+                placeholderStyle={{ fontSize: 24 }}
+                value={searchText}
+                onChangeText={handleSearchChange}
+                type={type}
+            />
+        </View>
+    );
+};
+
 const styles = StyleSheet.create({
     otpInput: {
         borderBottomWidth: 1,
@@ -203,6 +226,14 @@ const styles = StyleSheet.create({
         borderBottomWidth:0.5,
         borderBlockColor: "#CCCCCC"
     },
+    Examcontainer:{
+        flexDirection: 'row', // Horizontal layout
+        alignItems: 'center', // Center items vertically
+        paddingLeft: 10,
+        paddingRight: 10,
+        borderBottomWidth: 0.5,
+        borderBlockColor: "#CCCCCC"
+    },
     icon: {
         marginRight: 10,
         color:"#00a200"
@@ -210,8 +241,7 @@ const styles = StyleSheet.create({
     input: {
         flex: 1, // Take up all available space
         height: 40,
-        // borderColor: 'gray',
-        // borderWidth: 1,
+        ...Theme.gray_color_h,
         borderRadius: 5,
         paddingHorizontal: 10,
     },
@@ -224,4 +254,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export { SimpleInput, OtpInput, CheckBoxInput, List, SearchInput }
+export { SimpleInput, OtpInput, CheckBoxInput, List, SearchInput, ExampleInput }

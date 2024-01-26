@@ -222,7 +222,7 @@ const Terms = ({ onPress }) => {
           onPress={toggleBottomSheet}
         />
         <RequestButton text={'Confirm'} onPress={onPress} />
-        </View>
+      </View>
       <Modal
         isVisible={isBottomSheetVisible}
         style={{ margin: 0 }}

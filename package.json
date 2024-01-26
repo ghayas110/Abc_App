@@ -21,6 +21,7 @@
     "@react-navigation/stack": "^6.3.20",
     "@reduxjs/toolkit": "^2.0.1",
     "axios": "^1.6.5",
+    "deprecated-react-native-prop-types": "^5.0.0",
     "link": "^2.1.0",
     "react": "^18.2.0",
     "react-native": "^0.73.2",
@@ -54,6 +55,8 @@
     "react-native-vector-icons": "^10.0.3",
     "react-native-vision-camera": "^3.8.2",
     "react-native-worklets-core": "^0.2.4",
+    "react-native-zigzag-lines": "^0.2.0",
+    "react-native-zigzag-view": "^0.2.0",
     "react-redux": "^9.0.4",
     "redux": "^5.0.1",
     "socket.io-client": "^4.7.2"

@@ -26,6 +26,10 @@ const NewRecipient = () => {
         navigation.navigate('AccountType')
 
     }
+    const insertAmount = () => {
+        navigation.navigate('InsertAmount')
+
+    }
 
     const Flatlist = [
         {
@@ -73,23 +77,23 @@ const NewRecipient = () => {
                     
                 </View>
                 
-                <View style={{marginTop:15}}>
+                <View style={{marginTop:10 , flex:1 , borderBottomWidth:0.5}}>
                     <SimpleInput
                         label="Account number"
                         type="number"
                         placeholder={"Enter account number"}
                         placeholderTextColor={{...Theme.Light_gray_color_f}}
-                        styles={styles.Input}
+                        inputstyle={styles.Input}
 
                     />
                 </View>
                 <View style={{ ...styles.Notify, ...Theme.bg_light_green_color }}>
-                    <Text style={{ ...Theme.Green_color_f, fontSize: 14, fontWeight: "700", ...Theme.Font_family }}>
+                    <Text style={{ ...Theme.Green_color_f, fontSize: 14, fontWeight: "500", ...Theme.Font_family }}>
                         FRAUD ALERT: Beware of phishing scams. Never click on links in unsolicited SMS and WhatsApp messages, emails or social media posts. DO NOT reveal your banking security information such as your PIN to unknown callers or personnel.
                     </Text>
                 </View>
-                <View style={{alignSelf:"center" }}>
-                    <RequestButton text={'Continue'} onPress={()=>console.log('pending')}/>
+                <View style={{alignSelf:"center" ,flex:1}}>
+                    <RequestButton text={'Continue'} onPress={insertAmount} />
                 </View>
             </View>
         </>
@@ -113,7 +117,9 @@ const styles = StyleSheet.create({
         marginTop:15,
     },
     Notify: {
-        padding: 20,
+        flex:1,
+        padding: 15,
+        marginTop:1,
         // backgroundColor: "#DCF2FC",
     },
 

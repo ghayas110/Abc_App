@@ -14,7 +14,20 @@ import TransferTO from "../screens/Transfer-Payment/TransferTo";
 import RecipientBank from "../screens/Transfer-Payment/RecipientBank";
 import AccountType from "../screens/Transfer-Payment/AccountType";
 import PendingTran from "../screens/transaction-history/PendingTran";
-import Transfer from "../screens/Transfer-Payment/Transfer";
+import AllowQR from "../screens/QRPayments/AllowQR";
+import SetUpQR from "../screens/QRPayments/SetUpQR";
+import AllowBiometric from "../screens/QRPayments/AllowBiometric";
+import OtpQR from "../screens/QRPayments/OtpQR";
+import QRAccountSuccess from "../screens/QRPayments/QRAccountSuccess";
+import QRScan from "../screens/QRPayments/QRScan";
+import InsertAmount from "../screens/Transfer-Payment/InsertAmount";
+import Review from "../screens/Transfer-Payment/Review";
+import DigitalSecure from "../screens/Transfer-Payment/DigitalSecure";
+import DuetitNowOnWay from "../screens/Transfer-Payment/DuetitNowOnWay";
+import DuetNowSent from "../screens/Transfer-Payment/DuetNowSent";
+import SendAmount from "../screens/QRPayments/InsertAmount";
+import Recipt from "../screens/Transfer-Payment/Recipt";
+
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -44,11 +57,52 @@ const MainStackNavigator = () => {
       <Stack.Screen name="TransactionHistory" component={History} screenOptions={{
         headerShown: false
       }} />
-      {/* <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
+
+      {/* yahan sy  */}
+      <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
         headerShown: false
-      }} /> */}
+      }} /> 
      
       <Stack.Screen name="PendingTran" component={PendingTran} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="AllowQR" component={AllowQR} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="SetupQR" component={SetUpQR} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="AllowBiometric" component={AllowBiometric} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="OtpQR" component={OtpQR} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="QRAccountSuccess" component={QRAccountSuccess} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="QRScan" component={QRScan} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="InsertAmount" component={InsertAmount} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="Review" component={Review} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="DigitalSecure" component={DigitalSecure} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="DuetitNowOnWay" component={DuetitNowOnWay} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="DuetNowSent" component={DuetNowSent} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="Recipt" component={Recipt} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{
         headerShown: false
       }} />
     </Stack.Navigator>
