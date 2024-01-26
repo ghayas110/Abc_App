@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
+    "reverse": "adb reverse tcp:8081 tcp:8081",
     "test": "jest"
   },
   "dependencies": {
@@ -43,6 +44,7 @@
     "react-native-radio-buttons": "^1.0.0",
     "react-native-ratings": "^8.1.0",
     "react-native-reanimated": "^3.6.1",
+    "react-native-rename": "^3.2.14",
     "react-native-safe-area-context": "^4.8.2",
     "react-native-screens": "^3.29.0",
     "react-native-star-rating-widget": "^1.7.3",
