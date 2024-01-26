@@ -16,7 +16,7 @@ const VerifyCNIC1 = ({onPress}) => {
 
 <View style={styles.container2}>
 <View >
-<Image source={require('../../assets/SignUp/cnicfront.png')}/>
+<Image source={require('../../assets/SignUp/cnicfront.png')} style={{resizeMode:'contain',height:windowHeight*0.15}}/>
 </View>
 
 </View>
@@ -32,7 +32,7 @@ onPress={onPress}
 
 <View style={{paddingVertical:20}}>
 <Button
-title="Continue"
+title="Yes Let's continue"
 color="green"
 onPress={onPress}
 />
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         alignItems:'center',justifyContent:'space-between',
         flexDirection:'column',
         width:windowWidth*0.8,
-        backgroundColor:'whitesmoke',
+   
         padding:20
           },
       cardText:{
@@ -88,11 +88,12 @@ const styles = StyleSheet.create({
         padding:10
       },
       text2:{
-        fontSize: 16,
-        fontWeight:"600",
-        padding:3,
-       
-        lineHeight:30,
+        fontSize: 17,        
+        color: "#808080",
+        fontFamily: "Poppins-Regular",
+        textAlign:'center',
+        color:'black',
+        fontWeight:"600"
       },
       bottomView: {
         width: '100%',

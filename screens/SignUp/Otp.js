@@ -4,6 +4,7 @@ import { View, TextInput, Button, StyleSheet, Text, TouchableOpacity, Alert, Dim
 import ButtonInput from '../../components/ButtonInput';
 import { useDispatch } from 'react-redux';
 import { loginSuccess } from '../../redux/reducers/authReducer';
+import style from '../../assets/styles/basic';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
@@ -71,7 +72,9 @@ const Otp = ({ onPress,route }) => {
   >
     <View style={styles.container}>
     <View>
-    <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>Enter your One-Time Password (OTP)</Text>
+    <Text 
+    style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}
+    >Enter your One-Time Password (OTP)</Text>
     <Text style={styles.text2}>We have sent your one time password to ‘+96XXXXX1234’</Text>
 
       <View style={styles.inputContainer}>
@@ -82,6 +85,7 @@ const Otp = ({ onPress,route }) => {
             style={styles.input}
             maxLength={1}
             value={digit}
+            keyboardType='numeric'
             placeholderTextColor='white'
             onChangeText={(value) => handleInputChange(index, value)}
             onKeyPress={({ nativeEvent }) => {
@@ -95,8 +99,9 @@ const Otp = ({ onPress,route }) => {
       </View>
       <View>
       <Button
-title="Continue"
+title="Next"
 color="green"
+style={{borderRadius:50,borderWidth:1}}
 onPress={onPress}
 />
 </View>
@@ -110,9 +115,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding:20,
-    height:windowHeight*0.9,
+    height:windowHeight*0.95,
     
    justifyContent:'space-between'
+  },
+  text2:{
+    fontSize: 17,        
+    color: "#808080",
+    fontFamily: "Poppins-Regular"
   },
   title: {
     fontSize: 24,

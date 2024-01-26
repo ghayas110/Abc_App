@@ -1,4 +1,4 @@
-package com.rize_app
+package com.SmartBank
 
 import android.app.Application
 import com.facebook.react.PackageList

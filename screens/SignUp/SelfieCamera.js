@@ -65,11 +65,11 @@ const SelfieCamera = ({onPress}) => {
           <View style={styles.overlayRight} />
           <View style={styles.scanArea} />
           <View >
-          <Text style={styles.textStyle}> Scan Identity Card (BACK):</Text>
+          <Text style={styles.textStyle}> Instructions</Text>
           <Text style={styles.textStyle3}>{'\u2022'}</Text>
-          <Text style={styles.textStyle1}>Place inside the frame until all 4 edges are aligned and it will capture automatically.</Text>
+          <Text style={styles.textStyle1}>Align your face inside the frame and look straight into the camera.</Text>
           <Text style={styles.textStyle4} >{'\u2022'}</Text>
-          <Text style={styles.textStyle2}>Ensure there’s no glare covering important details</Text>
+          <Text style={styles.textStyle2}>Your face must be evenly stand out from the background</Text>
         </View>
         </View>
       ) : (
@@ -91,8 +91,8 @@ const overlayStyle = {
   position: 'absolute',
   backgroundColor: 'grey',
   opacity: 0.7,
-  borderRadius: 15, // Adjust the border radius as needed
 };
+
 
 const styles = StyleSheet.create({
  

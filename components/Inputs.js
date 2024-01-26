@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions, TextInput } from 'react-native'
 import Checkbox from 'react-native-check-box';
 import DropDownPicker from 'react-native-dropdown-picker';
+import Theme from '../assets/styles/basic'
+import Icons from './Icons';
 
 const { width, height } = Dimensions.get('window');
 
@@ -15,13 +17,14 @@ const SimpleInput = ({
     defaultValue,
     type,
     placeholder,
-    viewStyle
+    viewStyle,
+    pass
 }) => {
     return (
         <>
             <View style={{
-                paddingLeft: 15,
-                paddingRight: 15,
+                paddingLeft: 5,
+                paddingRight: 5,
                 width: width,
                 marginTop: 10,
                 ...viewStyle
@@ -32,12 +35,13 @@ const SimpleInput = ({
                     fontFamily: "Poppins-Regular"
                 }}>{label}</Text>
                 <TextInput
-                    style={{...inputstyle}}
+                    style={{ ...inputstyle }}
                     placeholder={placeholder}
                     type={type}
+                    secureTextEntry={pass}
                     value={value}
                     defaultValue={defaultValue}
-                    placeholderTextColor={placeholderTextColor}
+                    placeholderTextColor={"grey"}
                 />
             </View>
         </>
@@ -57,28 +61,34 @@ const OtpInput = () => {
                 justifyContent: 'space-around'
             }}>
                 <TextInput
-                    style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
+                    style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
+                    maxLength={1}
                 />
                 <TextInput
-                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
+                    style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
+                    maxLength={1}
                 />
                 <TextInput
-                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
+                    style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
+                    maxLength={1}
                 />
                 <TextInput
-                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
+                    style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
+                    maxLength={1}
                 />
                 <TextInput
-                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
+                    style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
+                    maxLength={1}
                 />
                 <TextInput
-                     style={{...styles.otpInput,fontFamily: "Poppins-Regular"}}
+                    style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
+                    maxLength={1}
                 />
             </View>
         </>
@@ -92,20 +102,22 @@ const CheckBoxInput = ({
     status,
     others
 }) => {
-    const [isChecked, setIsChecked] = useState(false)
+    const [isChecked, setChecked] = useState(false);
+    const handleCheckBoxClick = () => {
+        setChecked(!isChecked);
+    };
     return (
         <>
             <View style={{
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
-                marginTop: 10,
+             
                 padding: 0,
             }}>
                 <Checkbox
                     isChecked={isChecked}
-                    status={isChecked}
-                    onClick={() => setIsChecked(!isChecked)}
+                    onClick={handleCheckBoxClick}  // or use onChange
                     checkBoxColor={color}
                 />
                 <Text style={{ ...textStyle, fontFamily: "Poppins-Regular" }}>{text}</Text>
@@ -159,11 +171,93 @@ const List = ({
     )
 }
 
+
+const SearchInput = ({placeholder , label, type}) => {
+    const [searchText, setSearchText] = useState('');
+
+    const handleSearchChange = (text) => {
+        setSearchText(text);
+    };
+
+    return (
+        <View style={styles.container}>
+            <TextInput
+                style={styles.input}
+                placeholder={placeholder}
+                placeholderTextColor="#CCCCCC"
+                placeholderStyle={{ fontSize:24}}
+                value={searchText}
+                onChangeText={handleSearchChange}
+                type={type}
+            />
+            <Icons.AntDesign name="search1" size={20} color="gray" style={styles.icon} />
+        </View>
+    );
+};
+
+
+const ExampleInput = ({ placeholder, label, type }) => {
+    const [searchText, setSearchText] = useState('');
+
+    const handleSearchChange = (text) => {
+        setSearchText(text);
+    };
+
+    return (
+        <View style={styles.Examcontainer}>
+            <TextInput
+                style={styles.input}
+                placeholder={placeholder}
+                placeholderTextColor="#CCCCCC"
+                placeholderStyle={{ fontSize: 24 }}
+                value={searchText}
+                onChangeText={handleSearchChange}
+                type={type}
+            />
+        </View>
+    );
+};
+
 const styles = StyleSheet.create({
     otpInput: {
         borderBottomWidth: 1,
         borderBottomColor: '#808080',
     },
+    container: {
+        flexDirection: 'row', // Horizontal layout
+        alignItems: 'center', // Center items vertically
+        paddingHorizontal: 10,
+        marginTop: 10,
+        padding: 10,
+        borderBottomWidth:0.5,
+        borderBlockColor: "#CCCCCC"
+    },
+    Examcontainer:{
+        flexDirection: 'row', // Horizontal layout
+        alignItems: 'center', // Center items vertically
+        paddingLeft: 10,
+        paddingRight: 10,
+        borderBottomWidth: 0.5,
+        borderBlockColor: "#CCCCCC"
+    },
+    icon: {
+        marginRight: 10,
+        color:"#00a200"
+    },
+    input: {
+        flex: 1, // Take up all available space
+        height: 40,
+        ...Theme.gray_color_h,
+        borderRadius: 5,
+        paddingHorizontal: 10,
+    },
+    inputPlaceholder:{
+        fontSize: 16,
+        fontWeight:"600",
+        ...Theme.Font_family
+        
+        
+    }
 });
 
-export { SimpleInput, OtpInput, CheckBoxInput, List }
+export { SimpleInput, OtpInput, CheckBoxInput, List, SearchInput, ExampleInput }

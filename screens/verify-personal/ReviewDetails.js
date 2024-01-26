@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Image, StyleSheet, Text, View, Dimensions,ScrollView, TouchableOpacity } from 'react-native'
+import { Image, StyleSheet, Text, View, Dimensions, ScrollView, TouchableOpacity } from 'react-native'
 import style from "../../assets/styles/basic"
 import { CheckBoxInput, List, SimpleInput } from '../../components/Inputs';
 import { RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
 import Modal from 'react-native-modal';
-import Steps from '../../components/Steps';
+import Steps from '../../components/steps/Steps';
 
 const ReviewDetails = () => {
     const { width, height } = Dimensions.get('window');
@@ -36,10 +36,13 @@ const ReviewDetails = () => {
                 backgroundColor: "white"
             }}>
                 <Steps
-                    backtoPageName={"DetailThree"}
                     backtoPage={true}
                     totalSteps={"4"}
                     activeStep={"4"}
+                    backIcon={require('./images/Icons.png')}
+                    leftIcon={require('./images/Profile.png')}
+                    rightIcon={require('./images/Setting.png')}
+                    ProgressBarIcon={require('./images/steps.png')}
                 />
 
                 {/* INPUT BOX ============================= */}
@@ -50,7 +53,7 @@ const ReviewDetails = () => {
                         paddingLeft: 30,
                         paddingRight: 30
                     }}>
-                        <Text style={{ ...style.main_heading, fontSize: 25,fontFamily: "Poppins-Bold" }}>Review your details</Text>
+                        <Text style={{ ...style.main_heading, fontSize: 25, fontFamily: "Poppins-Bold" }}>Review your details</Text>
                         <View style={{ marginTop: 20 }}>
                             <View style={{
                                 ...style.flex_space_between,
@@ -61,7 +64,7 @@ const ReviewDetails = () => {
                                     <Image
                                         source={require('./images/uparrow.png')}
                                     />
-                                    <Text style={{ marginLeft: 20, fontSize: 15, fontWeight: "600", color: "#000",fontFamily: "Poppins-Bold" }}>Personal</Text>
+                                    <Text style={{ marginLeft: 20, fontSize: 15, fontWeight: "600", ...style.black_color_f, fontFamily: "Poppins-Bold" }}>Personal</Text>
                                 </View>
                                 <TouchableOpacity onPress={toggleBottomSheet}>
                                     <Image
@@ -70,16 +73,16 @@ const ReviewDetails = () => {
                                 </TouchableOpacity>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500",fontFamily: "Poppins-Regular",...style.gray_color_h }}>Email</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15,...style.gray_color_h,fontFamily: "Poppins-Bold" }}>razak@gmail.com</Text>
+                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Email</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>razak@gmail.com</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500",fontFamily: "Poppins-Regular",...style.gray_color_h }}>Marital status</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15,...style.gray_color_h,fontFamily: "Poppins-Bold" }}>Single</Text>
+                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Marital status</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Single</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500",fontFamily: "Poppins-Regular",...style.gray_color_h }}>Ethnicity</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15,...style.gray_color_h,fontFamily: "Poppins-Bold" }}>Malay</Text>
+                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Ethnicity</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Arab</Text>
                             </View>
                         </View>
 
@@ -93,7 +96,7 @@ const ReviewDetails = () => {
                                     <Image
                                         source={require('./images/uparrow.png')}
                                     />
-                                    <Text style={{ marginLeft: 20, fontSize: 15, fontWeight: "600", color: "#000",fontFamily: "Poppins-Bold" }}>Employment details</Text>
+                                    <Text style={{ marginLeft: 20, fontSize: 15, fontWeight: "600", color: "#000", fontFamily: "Poppins-Bold" }}>Employment details</Text>
                                 </View>
                                 <TouchableOpacity onPress={toggleBottomSheet}>
                                     <Image
@@ -102,24 +105,24 @@ const ReviewDetails = () => {
                                 </TouchableOpacity>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500",fontFamily: "Poppins-Regular",...style.gray_color_h }}>Employment type</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15,...style.gray_color_h,fontFamily: "Poppins-Bold" }}>Full time</Text>
+                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Employment type</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Full time</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500",fontFamily: "Poppins-Regular",...style.gray_color_h }}>Name of employer</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15,...style.gray_color_h,fontFamily: "Poppins-Bold" }}>Oliver Wyman</Text>
+                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Name of employer</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Oliver Wyman</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500",fontFamily: "Poppins-Regular",...style.gray_color_h }}>Occupation</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15,...style.gray_color_h,fontFamily: "Poppins-Bold" }}>Consultant</Text>
+                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Occupation</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Consultant</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500",fontFamily: "Poppins-Regular",...style.gray_color_h }}>Sector</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15,...style.gray_color_h,fontFamily: "Poppins-Bold" }}>Financial services</Text>
+                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Sector</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Financial services</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500",fontFamily: "Poppins-Regular",...style.gray_color_h }}>Annual income bracket</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15,...style.gray_color_h,fontFamily: "Poppins-Bold" }}>RM 72,000 to RM 88,000</Text>
+                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Annual income bracket</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>RM 72,000 to RM 88,000</Text>
                             </View>
                         </View>
 
@@ -133,7 +136,7 @@ const ReviewDetails = () => {
                                     <Image
                                         source={require('./images/uparrow.png')}
                                     />
-                                    <Text style={{marginLeft: 20, fontSize: 15, fontWeight: "600", color: "#000",fontFamily: "Poppins-Bold"}}>Account</Text>
+                                    <Text style={{ marginLeft: 20, fontSize: 15, fontWeight: "600", ...style.black_color_h, fontFamily: "Poppins-Bold" }}>Account</Text>
                                 </View>
                                 <TouchableOpacity onPress={toggleBottomSheet}>
                                     <Image
@@ -142,13 +145,13 @@ const ReviewDetails = () => {
                                 </TouchableOpacity>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500",fontFamily: "Poppins-Regular",...style.gray_color_h }}>Account purpose</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15,...style.gray_color_h,fontFamily: "Poppins-Bold" }}>Saving</Text>
+                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Account purpose</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, ...style.gray_color_h, fontFamily: "Poppins-Bold" }}>Saving</Text>
                             </View>
                         </View>
                     </View>
                 </ScrollView>
-                <RequestButton text={"Next"} onPress={() => nextPage()}
+                <RequestButton text={"Submit"} onPress={() => nextPage()}
                     btnStyle={{ position: "absolute", bottom: 50 }}
                 />
 
@@ -206,7 +209,7 @@ const ReviewDetails = () => {
                                     />
                                     <List
                                         textStyle={{ ...style.main_heading, textAlign: "left", fontSize: 20, marginBottom: 10 }}
-                                        dropDownStyle={{fontFamily: "Poppins-Bold",...style.gray_color_f}}
+                                        dropDownStyle={{ fontFamily: "Poppins-Bold", ...style.gray_color_f }}
                                         label={"Marital status"}
                                         placeholder={"Select Marital status"}
                                         defaultValue={"Single"}
@@ -219,10 +222,10 @@ const ReviewDetails = () => {
 
                                     <List
                                         textStyle={{ ...style.main_heading, textAlign: "left", fontSize: 20, marginBottom: 10 }}
-                                        dropDownStyle={{fontFamily: "Poppins-Bold",...style.gray_color_f}}
+                                        dropDownStyle={{ fontFamily: "Poppins-Bold", ...style.gray_color_f }}
                                         label={"Ethnicity"}
-                                        placeholder={"Select Malay"}
-                                        defaultValue={"Malay"}
+                                        placeholder={"Select Arab"}
+                                        defaultValue={"Arab"}
                                         items={[
                                             { label: 'Option 1', value: 'option1' },
                                             { label: 'Option 2', value: 'option2' },
