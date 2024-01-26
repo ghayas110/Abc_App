@@ -28,7 +28,6 @@ const BottomTabNavigator = () => {
 
       <Tab.Screen name="Home" component={MainStackNavigator} options={{
         tabBarIcon: ({ color, size }) => (
-          // <SvgXml xml={PendingIcons} color={color} />
           <Icon name="home" color={color} size={size} />),
       }} />
 

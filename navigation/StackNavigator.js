@@ -18,6 +18,7 @@ import Review from "../screens/Transfer-Payment/Review";
 import DigitalSecure from "../screens/Transfer-Payment/DigitalSecure";
 import DuetitNowOnWay from "../screens/Transfer-Payment/DuetitNowOnWay";
 import DuetNowSent from "../screens/Transfer-Payment/DuetNowSent";
+import Recipt from "../screens/Transfer-Payment/Recipt";
 
 const Stack = createStackNavigator();
 
@@ -67,6 +68,9 @@ const MainStackNavigator = () => {
         headerShown: false
       }} />
       <Stack.Screen name="DuetNowSent" component={DuetNowSent} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="Recipt" component={Recipt} screenOptions={{
         headerShown: false
       }} />
      {/* yaha tak */}
