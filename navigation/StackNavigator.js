@@ -27,6 +27,8 @@ import DuetitNowOnWay from "../screens/Transfer-Payment/DuetitNowOnWay";
 import DuetNowSent from "../screens/Transfer-Payment/DuetNowSent";
 import SendAmount from "../screens/QRPayments/InsertAmount";
 import Recipt from "../screens/Transfer-Payment/Recipt";
+import SavingPots from "../screens/SavingsPot/SavingPots";
+import PickCategoryCard from "../screens/SavingsPot/PickCategoryCard";
 
 const Stack = createStackNavigator();
 
@@ -111,6 +113,9 @@ const MainStackNavigator = () => {
       <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{
         headerShown: false
       }} />
+      <Stack.Screen name="SavingPots" component={SavingPots} />
+      <Stack.Screen name="PickCategoryCard" component={PickCategoryCard     } />
+
     </Stack.Navigator>
   );
 };
