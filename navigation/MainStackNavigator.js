@@ -48,6 +48,10 @@ import StartLoginStep4 from '../screens/RegisterNewDevice/StartLoginStep4';
 import StartLoginStep5 from '../screens/RegisterNewDevice/StartLoginStep5';
 import StartLoginStep6 from '../screens/RegisterNewDevice/StartLoginStep6';
 import UpdateTermAndCondition from '../screens/RegisterNewDevice/UpdateTermAndCondition';
+import CardMangementOne from '../screens/card/CardMangementOne';
+import ChangePin from '../screens/card/ChangePin';
+import SpendLimit from '../screens/card/components/SpendLimit';
+import CardPreferences from '../screens/card/CardPreferences';
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -66,6 +70,12 @@ const MainStackNavigator = () => {
           </Drawer.Screen>
           <Drawer.Screen name='ChangePassword' component={ChangePassword} />
           <Drawer.Screen name='EditProfile' component={EditProfileScreen} />
+          <Drawer.Screen name='CardMangementOne' component={CardMangementOne} />
+          <Drawer.Screen name='ChangePin' component={ChangePin} />
+          <Drawer.Screen name='CardMangementOne' component={CardMangementOne} />
+          <Drawer.Screen name='ChangePin' component={ChangePin} />
+          <Drawer.Screen name='SpendLimit' component={SpendLimit} />
+          <Drawer.Screen name='CardPreferences' component={CardPreferences} />
         </Drawer.Navigator>
       ) : (
         <AuthStack.Navigator screenOptions={{

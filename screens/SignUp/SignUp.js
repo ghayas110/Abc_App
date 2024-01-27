@@ -80,7 +80,7 @@ const SignUp = () => {
         return (
           //  <AllowNIC onPress={()=>setCurrentPosition(currentPosition+0.2)}/>
           // 0.2
-          <AllowNIC onPress={() => setCurrentPosition(currentPosition + 1.4)} />
+          <AllowNIC onPress={() => setCurrentPosition(currentPosition + 0.2)} />
 
         )
       case 6.2:

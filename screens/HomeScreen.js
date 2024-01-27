@@ -54,10 +54,11 @@ const HomeScreen = ({ disabled }) => {
         <Text style={{ fontSize: 24, fontWeight: "700", ...ThemeSty.black_color_f, ...ThemeSty.Font_family, textAlign: "center" }}>
           AED 10,000.00
         </Text>
-        <View style={{ padding: 5, marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-
-          <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} />
-        </View>
+        <TouchableOpacity onPress={() => navigation.navigate('CardMangementOne')}>
+          <View style={{ padding: 5, marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+            <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} />
+          </View>
+        </TouchableOpacity>
         <View style={{ flexDirection: "row", marginTop: 10, justifyContent: 'space-evenly', alignItems: 'center' }}>
           <TouchableOpacity>
             <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
