@@ -2,24 +2,20 @@ import 'react-native-gesture-handler';
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
-
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer';
+import { SignUpStackNavigator } from './StackNavigator';
+import { useNavigation } from '@react-navigation/native'
 import BottomTabNavigator from "./TabNavigator";
 import Otp from '../screens/SignUp/Otp';
 import SignUp from '../screens/SignUp/SignUp';
-// import SplashScreen from '../screens/SplashScreen';
-// import Otp from '../screens/Otp';
-// import SignUp from '../screens/SignUp';
 import SplashScreen from '../screens/SplashScreen/SplashScreen';
 import CustomDrawer from './DrawerNavigation';
 import SignOut from '../screens/SignOut';
-
 import ForgotPassScreen from '../screens/ForgotPassScreen';
 import NewPassword from '../screens/NewPassword';
 import ChangePassword from '../screens/ChangePassword';
 import EditProfileScreen from '../screens/EditProfileScreen';
 import LoginScreen from '../screens/LoginScreen';
-import { SignUpStackNavigator } from './StackNavigator';
 import DetailOne from '../screens/verify-personal/DetailOne';
 import DetailTwo from '../screens/verify-personal/DetailTwo';
 import DetailThree from '../screens/verify-personal/DetailThree';
@@ -35,12 +31,10 @@ import HowSearch from '../screens/CreateAccount/HowSearch';
 import PersonalDetails from '../screens/CreateAccount/PersonalDetails';
 import Successfully from '../screens/CreateAccount/Successfully';
 import TopUp from '../screens/TopUp/TopUp';
-// import StatementList from '../screens/Statement/StatementList';
 import TopUpFaq from '../screens/TopUp/TopUpFaq';
 import MainSignUp from '../screens/SignUp/MainSignUp';
 import MailingAddress from '../screens/TopUp/MailingAddress';
 import CardOrder from '../screens/TopUp/CardOrder';
-import { useNavigation } from '@react-navigation/native'
 import StartLogin from '../screens/RegisterNewDevice/StartLogin';
 import StartLoginStep2 from '../screens/RegisterNewDevice/StartLoginStep2';
 import StartLoginStep3 from '../screens/RegisterNewDevice/StartLoginStep3';
@@ -48,10 +42,7 @@ import StartLoginStep4 from '../screens/RegisterNewDevice/StartLoginStep4';
 import StartLoginStep5 from '../screens/RegisterNewDevice/StartLoginStep5';
 import StartLoginStep6 from '../screens/RegisterNewDevice/StartLoginStep6';
 import UpdateTermAndCondition from '../screens/RegisterNewDevice/UpdateTermAndCondition';
-import CardMangementOne from '../screens/card/CardMangementOne';
-import ChangePin from '../screens/card/ChangePin';
-import SpendLimit from '../screens/card/components/SpendLimit';
-import CardPreferences from '../screens/card/CardPreferences';
+
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -70,17 +61,12 @@ const MainStackNavigator = () => {
           </Drawer.Screen>
           <Drawer.Screen name='ChangePassword' component={ChangePassword} />
           <Drawer.Screen name='EditProfile' component={EditProfileScreen} />
-          <Drawer.Screen name='CardMangementOne' component={CardMangementOne} />
-          <Drawer.Screen name='ChangePin' component={ChangePin} />
-          <Drawer.Screen name='CardMangementOne' component={CardMangementOne} />
-          <Drawer.Screen name='ChangePin' component={ChangePin} />
-          <Drawer.Screen name='SpendLimit' component={SpendLimit} />
-          <Drawer.Screen name='CardPreferences' component={CardPreferences} />
         </Drawer.Navigator>
       ) : (
         <AuthStack.Navigator screenOptions={{
           headerShown: false
         }}>
+         
           <AuthStack.Screen name="Splash">
             {(props) => <SplashScreen />}
           </AuthStack.Screen>

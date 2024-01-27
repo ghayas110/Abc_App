@@ -20,7 +20,7 @@ const AllowNotification = ({onPress}) => {
     />
     <View style={{padding:17}}>
     <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Receive push notifications</Text>
-    <Text style={styles.text2}>Get instant updates on your spending, rewards, and activity with Rize</Text>
+    <Text style={styles.text2}>Get instant updates on your spending, rewards, and activity with SSSSCO</Text>
     </View>
     </View>
 

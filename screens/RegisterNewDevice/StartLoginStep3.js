@@ -88,11 +88,11 @@ const StartLoginStep3 = ({ disabled }) => {
                             <View style={{ padding: 15 }}>
                                 <Text style={{ ...ThemeSty.gray_color_f, ...ThemeSty.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
                                     Alternatively you may email us at:
-                                    Rize-cs@alrajhibank.com.my
+                                    bank@ssssco.com
                                     We’ll get this sorted!</Text>
                             </View>
                             <View style={{ padding: 20, ...ThemeSty.bg_light_green_color }}>
-                                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>Customer Support: +6016 299 5333 (fraud support line 24/7) or email to us at:  Rize-fraud@alrajhibank.com.my.</Text>
+                                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>Customer Support: +6016 299 5333 (fraud support line 24/7) or email to us at:  bank@ssssco.com</Text>
                             </View>
                             <View style={{ padding: 10, alignItems: "center" }}>
                                 <OutlineButton text='Report Fraud' onPress={toggleBottomSheet2} />

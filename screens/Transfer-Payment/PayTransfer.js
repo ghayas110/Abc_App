@@ -8,7 +8,7 @@ const PayTransfer = () => {
         {
             id: '1',
             imageLeft: require('../../assets/transferPaymentImages/duitNow.png'),
-            text: 'Manage DuitNow ID',
+            text: 'DuitNow ID',
             imageRight: require('../../assets/transferPaymentImages/right.png'),
         },
         {

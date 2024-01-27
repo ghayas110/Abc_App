@@ -65,7 +65,7 @@ const StartLoginStep4 = ({ disabled }) => {
             </View>
             <View style={{ padding: 16 }}>
                 <View style={{ padding: 20, ...ThemeSty.bg_light_green_color, }}>
-                    <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>You may only link your Rize account to one device at any given time. Tap ‘Confirm’ to de-register your previous device.</Text>
+                    <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>You may only link your Bank account to one device at any given time. Tap ‘Confirm’ to de-register your previous device.</Text>
                 </View>
             </View>
             <View style={{ alignItems: "center", marginBottom: 20, }}>
