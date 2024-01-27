@@ -2,13 +2,15 @@ import React from 'react'
 import { Image, SafeAreaView, Text, TouchableOpacity, View, FlatList, ScrollView } from 'react-native'
 import style from "../../assets/styles/basic"
 import Header from './components/Header';
+import { useNavigation } from '@react-navigation/native';
 
 const PayTransfer = () => {
+    const navigation = useNavigation()
     const dataOne = [
         {
             id: '1',
             imageLeft: require('../../assets/transferPaymentImages/duitNow.png'),
-            text: 'DuitNow ID',
+            text: 'Manage DuitNow ID',
             imageRight: require('../../assets/transferPaymentImages/right.png'),
         },
         {
@@ -26,7 +28,7 @@ const PayTransfer = () => {
     ];
 
     const renderItemOne = ({ item }) => (
-        <TouchableOpacity onPress={() => handleItemClick(item)}>
+        <TouchableOpacity onPress={() => handleItemClick(item.text)}>
             <View style={{
                 flex: 1,
                 flexDirection: "row",
@@ -48,7 +50,9 @@ const PayTransfer = () => {
     );
 
     const handleItemClick = (text) => {
-        // navigation.navigate('DuitNowSuccess')
+        if(text == "Manage DuitNow QR"){
+            navigation.navigate('ManageDuitNowQR')
+        }
     }
     return (
         <>

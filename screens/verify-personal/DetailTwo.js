@@ -40,7 +40,7 @@ const DetailTwo = () => {
                 }}>
                     <Text style={{ ...style.main_heading, textAlign: "left", paddingLeft: 10, fontSize: 25, fontFamily: "Poppins-Bold" }}>What do you do for a  {'\n'} living?</Text>
                     <List
-                        textStyle={{ ...style.main_heading, textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
+                        textStyle={{ color:'#808080', textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
                         dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
                         label={"Employment type"}
                         placeholder={"Select Employment type"}
@@ -73,8 +73,8 @@ const DetailTwo = () => {
                     marginTop: 5,
                 }}>
                     <List
-                        textStyle={{ ...style.main_heading, textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
-                        dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
+                    textStyle={{ color:'#808080', textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
+                    dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
                         label={"Occupation"}
                         placeholder={"Select Occupation"}
                         items={[
@@ -89,8 +89,8 @@ const DetailTwo = () => {
                     marginTop: 5,
                 }}>
                     <List
-                        textStyle={{ ...style.main_heading, textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
-                        dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
+                    textStyle={{ color:'#808080', textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
+                    dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
                         label={"Employment sector"}
                         placeholder={"Select Employment sector"}
                         items={[
@@ -105,8 +105,8 @@ const DetailTwo = () => {
                     marginTop: 5,
                 }}>
                     <List
-                        textStyle={{ ...style.main_heading, textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
-                        dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
+                    textStyle={{ color:'#808080', textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
+                    dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
                         label={"Annual income bracket"}
                         placeholder={"Select Annual income bracket"}
                         items={[
@@ -116,7 +116,7 @@ const DetailTwo = () => {
                         ]}
                     />
                 </View>
-                <RequestButton text={"Next"} onPress={() => nextPage()}
+                <RequestButton text={"Confirm"} onPress={() => nextPage()}
                     btnStyle={{ marginTop: 30 }}
                 />
             </View>

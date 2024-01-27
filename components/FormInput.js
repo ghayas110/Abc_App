@@ -56,7 +56,7 @@ import {
       borderBottomWidth: 1, // This adds a bottom border
       borderBottomColor: 'green', // This sets the bottom border color to black
       paddingHorizontal: 5,
-      marginBottom: 20,
+      marginBottom: 10,
       width:300
       
     },

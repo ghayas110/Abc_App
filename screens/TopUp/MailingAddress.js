@@ -16,6 +16,7 @@ const MailingAddress = ({ onPress }) => {
 
   return (
     <View style={styles.container}>
+    
       <View style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'space-around', height: "60%" }}>
         <View>
           <Text style={{ fontSize: 24, fontWeight: '900', color: 'green', marginBottom: 15,color:'black' }}>Confirm your mailing address</Text>
@@ -29,8 +30,9 @@ const MailingAddress = ({ onPress }) => {
             <View style={{ flexDirection: 'row', paddingVertical: 15 }}>
           
             </View>
-            <View style={{ display: 'flex', flexDirection: 'row' }}>
+            <View style={{ display: 'flex', flexDirection: 'row',flexWrap:'wrap',padding:10 }}>
               <RadioButton
+              color={"green"}
                 status={checkedd ? 'checked' : 'unchecked'}
                 onPress={() => setCheckedd(!checkedd)}
               />
@@ -39,12 +41,13 @@ const MailingAddress = ({ onPress }) => {
               Residential address
               </Text>
               <Text style={styles.text2}>
-              3/22 Jalan Cecawi, Petaling Jaya, Selangor
+              3/22 Jalan Cecawi, Petaling 
               </Text>
               </View>
             </View>
             <View style={{ flexDirection: 'row', paddingVertical: 15 }}>
               <RadioButton
+              color={"green"}
                 status={checkeddd ? 'checked' : 'unchecked'}
                 onPress={() => setCheckeddd(!checkeddd)}
               />
@@ -85,7 +88,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "500",
     lineHeight: 20,
-    color:'black'
+    color:'black',
+    
   },
   bottomView: {
     width: '100%',

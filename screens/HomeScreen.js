@@ -17,7 +17,7 @@ import ThemeSty from '../assets/styles/basic'
 const HomeScreen = ({ disabled }) => {
   const [progress, setProgress] = useState(0);
   const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
-  const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false)
+  const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false);
 
   const toggleBottomSheet = () => {
     setBottomSheetVisible(!isBottomSheetVisible);
@@ -32,8 +32,38 @@ const HomeScreen = ({ disabled }) => {
     navigation.navigate('StartLoginStep2');
   };
 
-
-
+  const data2 = [
+    {
+      name: 'Bank Account',
+      Icon: <Icons.MaterialCommunityIcons name="bank-outline" />,
+      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
+    },
+    {
+      name: 'Mobile Number',
+      Icon: <Icons.AntDesign name="contacts" />,
+      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
+    },
+    {
+      name: 'CNIC',
+      Icon: <Icons.AntDesign name="contacts" />,
+      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
+    },
+    {
+      name: 'MyPolis/MyTentera',
+      Icon: <Icons.AntDesign name="contacts" />,
+      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
+    },
+    {
+      name: 'Business Registration Number',
+      Icon: <Icons.AntDesign name="contacts" />,
+      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
+    },
+    {
+      name: 'Passport Number',
+      Icon: <Icons.AntDesign name="contacts" />,
+      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
+    },
+  ];
 
   return (
     <>
@@ -41,17 +71,41 @@ const HomeScreen = ({ disabled }) => {
         <View style={styles.Progress}>
           <Header />
         </View>
-        <View style={{ padding: 5, marginTop: 25, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-          <Text style={{ fontSize: 12, fontWeight: "500", ...ThemeSty.gray_color_f, ...ThemeSty.Font_family }}>
+        <View
+          style={{
+            padding: 5,
+            marginTop: 25,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Text
+            style={{
+              fontSize: 12,
+              fontWeight: '500',
+              ...ThemeSty.gray_color_f,
+              ...ThemeSty.Font_family,
+            }}>
             Spending balance
           </Text>
 
-          <Icons.AntDesign name="infocirlceo" style={{
-            marginLeft: 5,
-            fontSize: 12, ...ThemeSty.Green_color_f
-          }} />
+          <Icons.AntDesign
+            name="infocirlceo"
+            style={{
+              marginLeft: 5,
+              fontSize: 12,
+              ...ThemeSty.Green_color_f,
+            }}
+          />
         </View>
-        <Text style={{ fontSize: 24, fontWeight: "700", ...ThemeSty.black_color_f, ...ThemeSty.Font_family, textAlign: "center" }}>
+        <Text
+          style={{
+            fontSize: 24,
+            fontWeight: '700',
+            ...ThemeSty.black_color_f,
+            ...ThemeSty.Font_family,
+            textAlign: 'center',
+          }}>
           AED 10,000.00
         </Text>
         <TouchableOpacity onPress={() => navigation.navigate('CardMangementOne')}>
@@ -68,12 +122,24 @@ const HomeScreen = ({ disabled }) => {
               <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow  Transfer</Text>
             </View>
           </TouchableOpacity>
+          <TouchableOpacity onPress={()=>navigation.navigate('AllowQR')}>
+        
           <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
             <View style={styles.boxes}>
               <Image source={DuetQr} style={styles.boxImage} />
             </View>
-            <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow QR Code</Text>
+            <Text
+              style={{
+                fontSize: 12,
+                ...ThemeSty.black_color_f,
+                fontWeight: '500',
+                marginTop: 5,
+                textAlign: 'center',
+              }}>
+              DuitNow QR
+            </Text>
           </View>
+          </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('TransactionHistory')}>
             <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
@@ -87,7 +153,16 @@ const HomeScreen = ({ disabled }) => {
               <View style={styles.boxes}>
                 <Image source={Statement} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...ThemeSty.black_color_f, fontWeight: "500", marginTop: 5 }}>Latest Statements</Text>
+              <Text
+                style={{
+                  fontSize: 12,
+                  ...ThemeSty.black_color_f,
+                  fontWeight: '500',
+                  marginTop: 5,
+                  textAlign: 'center',
+                }}>
+                Latest Statements
+              </Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -98,11 +173,12 @@ const HomeScreen = ({ disabled }) => {
             <View style={styles.textContainer}>
               <Text style={styles.title}>Marketplace</Text>
               <Text style={styles.description}>
-                Financial products that let you be more by doing more for others.
+                Financial products that let you be more by doing more for
+                others.
               </Text>
             </View>
             <Icons.MaterialIcons
-              name='arrow-forward-ios'
+              name="arrow-forward-ios"
               style={styles.arrowIcon}
             />
           </View>
@@ -111,11 +187,12 @@ const HomeScreen = ({ disabled }) => {
             <View style={styles.textContainer}>
               <Text style={styles.title}>Marketplace</Text>
               <Text style={styles.description}>
-                Financial products that let you be more by doing more for others.
+                Financial products that let you be more by doing more for
+                others.
               </Text>
             </View>
             <Icons.MaterialIcons
-              name='arrow-forward-ios'
+              name="arrow-forward-ios"
               style={styles.arrowIcon}
             />
           </View>
@@ -124,11 +201,12 @@ const HomeScreen = ({ disabled }) => {
             <View style={styles.textContainer}>
               <Text style={styles.title}>Marketplace</Text>
               <Text style={styles.description}>
-                Financial products that let you be more by doing more for others.
+                Financial products that let you be more by doing more for
+                others.
               </Text>
             </View>
             <Icons.MaterialIcons
-              name='arrow-forward-ios'
+              name="arrow-forward-ios"
               style={styles.arrowIcon}
             />
           </View>
@@ -136,13 +214,26 @@ const HomeScreen = ({ disabled }) => {
 
         <Modal
           isVisible={isBottomSheetVisible}
-          style={{ margin: 0 }}
-          onBackdropPress={toggleBottomSheet}
-        >
-          <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-            <View style={{ backgroundColor: 'white', padding: 24, borderTopRightRadius: 20, borderTopLeftRadius: 20, }}>
+          style={{margin: 0}}
+          onBackdropPress={toggleBottomSheet}>
+          <View style={{flex: 1, justifyContent: 'flex-end'}}>
+            <View
+              style={{
+                backgroundColor: 'white',
+                padding: 24,
+                borderTopRightRadius: 20,
+                borderTopLeftRadius: 20,
+              }}>
               <View>
-                <Text style={{ fontSize: 28, fontWeight: '700', ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }} >How can we help?</Text>
+                <Text
+                  style={{
+                    fontSize: 28,
+                    fontWeight: '700',
+                    ...ThemeSty.Green_color_f,
+                    ...ThemeSty.Font_family,
+                  }}>
+                  Select your transfer type
+                </Text>
               </View>
               <View style={{ padding: 15 }}>
                 <Text style={{ ...ThemeSty.gray_color_f, ...ThemeSty.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
@@ -165,58 +256,59 @@ const HomeScreen = ({ disabled }) => {
         </Modal>
         <Modal
           isVisible={isBottomSheetVisible2}
-          style={{ margin: 0 }}
-          onBackdropPress={toggleBottomSheet2}
-        >
-          <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-            <View style={{ backgroundColor: 'transparent', padding: 24, borderTopRightRadius: 20, borderTopLeftRadius: 20, }}>
-              <View style={{ padding: 10, alignItems: "center" }}>
-                <OutlineButton text='call +165464661' />
+          style={{margin: 0}}
+          onBackdropPress={toggleBottomSheet2}>
+          <View style={{flex: 1, justifyContent: 'flex-end'}}>
+            <View
+              style={{
+                backgroundColor: 'transparent',
+                padding: 24,
+                borderTopRightRadius: 20,
+                borderTopLeftRadius: 20,
+              }}>
+              <View style={{padding: 10, alignItems: 'center'}}>
+                <OutlineButton text="call +165464661" />
               </View>
-              <View style={{ alignItems: "center" }}>
-                <RequestButton text='Cancel' />
+              <View style={{alignItems: 'center'}}>
+                <RequestButton text="Cancel" />
               </View>
-
             </View>
           </View>
         </Modal>
       </ScrollView>
     </>
+  );
+};
 
-  )
-}
-
-export default HomeScreen
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    backgroundColor: '#FFFFFF',
     // justifyContent: "Space-evently",
-
   },
-
 
   Image: {
     width: 180,
-    height: 50
+    height: 50,
   },
   inputContainer: {
     borderBottomWidth: 2,
-    borderColor: "#00A200",
+    borderColor: '#00A200',
     marginTop: 10,
   },
 
-
   CheckIcon: {
     fontSize: 14,
-    color: "#808080",
+    color: '#808080',
     fontFamily: 'Poppins',
-    fontWeight: "500"
+    fontWeight: '500',
   },
 
   BackArrowIcon: {
-    color: "#00A200",
+    color: '#00A200',
     fontSize: 16,
     position: 'relative',
     right: 50,
@@ -225,9 +317,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
     paddingLeft: 5,
     paddingRight: 5,
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   containerMenu: {
     paddingTop: 10,
@@ -244,17 +336,16 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     backgroundColor: '#fff', // Replace with your desired background color
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.2,
     shadowRadius: 2,
     elevation: 3,
-    marginTop: 5
+    marginTop: 5,
   },
   image: {
     resizeMode: 'contain',
     width: 40,
-    height: 50
-
+    height: 50,
   },
   textContainer: {
     width: 220,
@@ -279,21 +370,52 @@ const styles = StyleSheet.create({
   boxes: {
     borderWidth: 1,
     ...ThemeSty.ligth_gray_border_Color,
-    padding: 25, borderRadius: 20,
-    justifyContent: "center",
+    padding: 25,
+    borderRadius: 20,
+    justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: "#FFFFFF",
+    shadowColor: '#FFFFFF',
     shadowOffset: {
       width: 0,
       height: 1,
     },
     shadowOpacity: 0.18,
-    shadowRadius: 1.00,
+    shadowRadius: 1.0,
 
     elevation: 1,
   },
   boxImage: {
-    resizeMode: "contain",
-  }
-
-})
+    resizeMode: 'contain',
+  },
+  tableContainer: {
+    padding: 10,
+    margin: 0,
+  },
+  tableRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 15,
+    alignItems: 'center',
+  },
+  headerCell: {
+    flex: 1,
+    fontWeight: '700',
+    fontSize: 16,
+    ...ThemeSty.Font_family,
+    ...ThemeSty.black_color_h,
+  },
+  cell: {
+    flex: 1,
+    fontWeight: '500',
+    ...ThemeSty.Font_family,
+    fontSize: 14,
+    ...ThemeSty.black_color_h,
+  },
+  cell2: {
+    flex: 1,
+    fontWeight: '500',
+    ...ThemeSty.Font_family,
+    fontSize: 14,
+    ...ThemeSty.Light_gray_color_f,
+  },
+});

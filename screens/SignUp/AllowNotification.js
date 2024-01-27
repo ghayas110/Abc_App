@@ -20,13 +20,13 @@ const AllowNotification = ({onPress}) => {
     />
     <View style={{padding:17}}>
     <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Receive push notifications</Text>
-    <Text style={styles.text2}>Get instant updates on your spending, rewards, and activity with SSSSCO</Text>
+    <Text style={styles.text2}>Get instant updates on your spending, rewards, and activity with SSSCO</Text>
     </View>
     </View>
 
 <View>
 <Button
-title="Continue"
+title="Let's Continue"
 color="green"
 onPress={() => {
   onDisplayNotification();
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop:80,
         padding:30,
-        height:windowHeight*0.9,
+        height:windowHeight*0.95,
         
        justifyContent:'space-between'
       },

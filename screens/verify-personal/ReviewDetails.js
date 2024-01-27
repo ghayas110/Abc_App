@@ -74,15 +74,15 @@ const ReviewDetails = () => {
                             </View>
                             <View style={{ marginTop: 20 }}>
                                 <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Email</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, ...style.gray_color_h, fontFamily: "Poppins-Bold" }}>razak@gmail.com</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>razak@gmail.com</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
                                 <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Marital status</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, ...style.gray_color_h, fontFamily: "Poppins-Bold" }}>Single</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Single</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
                                 <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Ethnicity</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, ...style.gray_color_h, fontFamily: "Poppins-Bold" }}>Malay</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Arab</Text>
                             </View>
                         </View>
 
@@ -106,23 +106,23 @@ const ReviewDetails = () => {
                             </View>
                             <View style={{ marginTop: 20 }}>
                                 <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Employment type</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, ...style.gray_color_h, fontFamily: "Poppins-Bold" }}>Full time</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Full time</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
                                 <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Name of employer</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, ...style.gray_color_h, fontFamily: "Poppins-Bold" }}>Oliver Wyman</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Oliver Wyman</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
                                 <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Occupation</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, ...style.gray_color_h, fontFamily: "Poppins-Bold" }}>Consultant</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Consultant</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
                                 <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Sector</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, ...style.gray_color_h, fontFamily: "Poppins-Bold" }}>Financial services</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Financial services</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
                                 <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Annual income bracket</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, ...style.gray_color_h, fontFamily: "Poppins-Bold" }}>RM 72,000 to RM 88,000</Text>
+                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>RM 72,000 to RM 88,000</Text>
                             </View>
                         </View>
 
@@ -151,7 +151,7 @@ const ReviewDetails = () => {
                         </View>
                     </View>
                 </ScrollView>
-                <RequestButton text={"Next"} onPress={() => nextPage()}
+                <RequestButton text={"Submit"} onPress={() => nextPage()}
                     btnStyle={{ position: "absolute", bottom: 50 }}
                 />
 
@@ -224,8 +224,8 @@ const ReviewDetails = () => {
                                         textStyle={{ ...style.main_heading, textAlign: "left", fontSize: 20, marginBottom: 10 }}
                                         dropDownStyle={{ fontFamily: "Poppins-Bold", ...style.gray_color_f }}
                                         label={"Ethnicity"}
-                                        placeholder={"Select Malay"}
-                                        defaultValue={"Malay"}
+                                        placeholder={"Select Arab"}
+                                        defaultValue={"Arab"}
                                         items={[
                                             { label: 'Option 1', value: 'option1' },
                                             { label: 'Option 2', value: 'option2' },

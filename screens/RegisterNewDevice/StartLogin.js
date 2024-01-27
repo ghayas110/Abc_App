@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View , Image } from 'react-native'
+import { StyleSheet, Text, View , Image, Linking } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import Icons from '../../components/Icons'
 import { useNavigation } from '@react-navigation/native'
@@ -39,23 +39,18 @@ const StartLogin = ({ disabled }) => {
                     <View></View>
                 </View>
                 <View style={{
-                    padding: 5, marginTop: 25,
+                     marginTop: 25,
                 }}>
                     <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>Welcome back. Great to see you!</Text>
                 </View>
                 <View style={styles.inputContainer}>
                 <SimpleInput
-                inputstyle={{
-                    fontSize: 15,
-                    borderBottomWidth: 1,
-                    borderBottomColor: '#808080',
-                    fontFamily: "Poppins-Regular",
-                    color:'black'
-                }}
-                placeholderTextColor="#808080"
-              
-                type={'Enter User Name'}
-                placeholder={'Enter User Name'}
+                label={'Username'}
+                placeholder={'Enter Username'}
+                placeholderTextColor={ "grey" }
+             
+          
+                inputstyle={{ fontSize: 20, fontWeight: "600", color:'black', ...ThemeSty.Font_family }}
             />
                 </View>
                 <View style={styles.ForgotPassword}>
@@ -74,14 +69,14 @@ const StartLogin = ({ disabled }) => {
                             <View>
                                 <Text style={{ fontSize: 28, fontWeight: '700', ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }} >How can we help?</Text>
                             </View>
-                            <View style={{padding:15}}>
-                                <Text style={{ ...ThemeSty.gray_color_f, ...ThemeSty.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
+                            <View style={{paddingVertical:10}}>
+                                <Text style={{ ...ThemeSty.gray_color_f, ...ThemeSty.Font_family, fontSize: 16 }}>Please reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +96 299 6610 (overseas).
                                     Alternatively you may email us at:
-                                    bank@ssssco.com-cs@alrajhibank.com.my
+                                    Bank@SSSCO.com
                                     We’ll get this sorted!</Text>
                             </View>
                             <View style={{ padding: 20, ...ThemeSty.bg_light_green_color }}>
-                                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>Customer Support: +6016 299 5333 (fraud support line 24/7) or email to us at:  bank@ssssco.com-fraud@alrajhibank.com.my.</Text>
+                                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>Customer Support: +6016 299 5333 (fraud support line 24/7) or email to us at: Bank@SSSCO.com</Text>
                             </View>
                             <View style={{padding:10, alignItems:"center"}}>
                                 <OutlineButton text='Report Fraud' onPress={toggleBottomSheet2} />
@@ -101,10 +96,10 @@ const StartLogin = ({ disabled }) => {
                     <View style={{ flex: 1, justifyContent: 'flex-end' }}>
                         <View style={{ backgroundColor: 'transparent', padding: 24, borderTopRightRadius: 20, borderTopLeftRadius: 20, }}>
                             <View style={{ padding: 10, alignItems: "center" }}>
-                                <OutlineButton text='call +165464661' />
+                            <OutlineButton onPress={() => Linking.openURL(`tel:${'+73365596220'}`)} text='call +7336 559 6220' />
                             </View>
                             <View style={{ alignItems: "center" }}>
-                                <RequestButton text='Cancel' />
+                                <RequestButton text='Cancel'  onPress={toggleBottomSheet2}/>
                             </View>
                         </View>
                     </View>
@@ -139,7 +134,7 @@ const styles = StyleSheet.create({
        height:50
     },
     inputContainer: {
-        borderBottomWidth: 2,
+        borderBottomWidth: 1,
         borderColor: "#00A200",
         marginTop: 10,
     },

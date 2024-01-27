@@ -27,8 +27,8 @@ const ActivationSteps = ({
                     alignItems: "center",
                 }}>
                     <Image source={image_a} />
-                    <Image style={{ position: "relative", top: -15, left: 45 }} source={verticalLineImage} />
-                    <Text style={{ color: "black", fontFamily: "Poppins-Regular", textAlign: "center", fontSize: 12 }}>{text_a}</Text>
+                    <Image style={{ position: "relative", top: -10, left: 45 }} source={verticalLineImage} />
+                    <Text style={{ color: "black", fontFamily: "Poppins-Regular", textAlign: "center", fontSize: 12,marginTop:5 }}>{text_a}</Text>
                 </View>
                 <View style={{
                     display: "flex",

@@ -4,7 +4,6 @@ import Icons from '../../components/Icons'
 import { useNavigation } from '@react-navigation/native'
 import { OtpInput, SimpleInput , CheckBoxInput } from '../../components/Inputs'
 import { RequestButton, OutlineButton } from '../../components/Buttons'
-// import Logo from '../../assets/LandingScreen/RizeLandingLgo-01.png'
 import Modal from 'react-native-modal';
 import ThemeSty from '../../assets/styles/basic'
 import ProgressBar from 'react-native-progress/Bar';

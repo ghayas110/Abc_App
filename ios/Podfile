@@ -25,7 +25,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'Rize_App' do
+target 'SmartBank' do
   config = use_native_modules!
 
   use_react_native!(
@@ -39,7 +39,7 @@ target 'Rize_App' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'Rize_AppTests' do
+  target 'SmartBankTests' do
     inherit! :complete
     # Pods for testing
   end

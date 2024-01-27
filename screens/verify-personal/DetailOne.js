@@ -51,7 +51,7 @@ const DetailOne = () => {
                         placeholderTextColor="#808080"
                         label={"Email"}
                         type={"email"}
-                        placeholder={"Email"}
+                        placeholder={"Enter Email"}
                     />
                 </View>
                 <View style={{
@@ -86,7 +86,7 @@ const DetailOne = () => {
                         ]}
                     />
                 </View>
-                <RequestButton text={"Next"} onPress={() => nextPage()}
+                <RequestButton text={"Confirm"} onPress={() => nextPage()}
                     btnStyle={{ position: "absolute", bottom: 50 }}
                 />
             </View>

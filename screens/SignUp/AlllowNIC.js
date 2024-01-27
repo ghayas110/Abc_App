@@ -30,24 +30,18 @@ const AlloeNIC = ({onPress}) => {
     <View>
     <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>Scan your CNIC</Text>
     <View style={styles.acordion}>
-    <Text >{'\u2022'}</Text>
-    <Text style={styles.text2}> Remove the IC cover, if you have one </Text>
-    </View>
-    <View style={styles.acordion}>
     <Text style={styles.text2}>{'\u2022'}</Text>
     <Text style={styles.text2}> Remove the IC cover, if you have one </Text>
     </View>
+ 
     <View style={styles.acordion}>
     <Text style={styles.text2}>{'\u2022'}</Text>
-    <Text style={styles.text2}> Find a suitable surface (avoid digital </Text>
+    <Text style={styles.text2}> Find a suitable surface (avoid digital screens/bright or dark surfaces) </Text>
     </View>
+
     <View style={styles.acordion}>
     <Text style={styles.text2}>{'\u2022'}</Text>
-    <Text style={styles.text2}> screens/bright or dark surfaces) </Text>
-    </View>
-    <View style={styles.acordion}>
-    <Text style={styles.text2}>{'\u2022'}</Text>
-    <Text style={styles.text2}> Align your MyKad until all 4 black/white lines appear </Text>
+    <Text style={styles.text2}> Align your CNIC until all 4 black/white lines appear </Text>
     </View>
     </View>
 
@@ -60,7 +54,7 @@ const AlloeNIC = ({onPress}) => {
 
 </View>
 </View>
-<View style={{ width: "100%", backgroundColor: '#DCF2CC', padding: 20,marginVertical:15 }}>
+<View style={{ width: "100%", backgroundColor: '#DCF2FC', padding: 20,marginVertical:15 }}>
 <Text
 style={{
  fontSize: 14,
@@ -68,7 +62,7 @@ style={{
  color: "#006400",
  fontFamily: "Poppins-Regular"
 }}
->Note: You are a US person if you are either a US citizen, a US resident or a Green Card holder.</Text>
+>Note: Unclear Image prevent account opening.</Text>
 </View>
 <View>
 <Button

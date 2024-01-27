@@ -6,6 +6,7 @@ import { SimpleInput } from '../../components/Inputs'
 import { RequestButton } from '../../components/Buttons'
 import ProgressBar from 'react-native-progress/Bar';
 import ThemeSty from '../../assets/styles/basic'
+import Steps from '../../components/steps/Steps'
 
 
 const CreatePassword = () => {
@@ -32,20 +33,15 @@ const CreatePassword = () => {
     return (
         <>
             <View style={styles.container}>
-                <View style={styles.Progress}>
-                    <View style={styles.BackArrow}>
-                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} onPress={handleBackNavigation} />
-                    </View>
-                    <View style={{ flexDirection: "row", alignItems: "center" }}>
-                        <Icons.AntDesign name='setting' style={{ fontSize: 24, marginRight: 5, color: "#0038A4" }} />
-                        <View>
-                            <Text>step 3 to 6 </Text>
-                            <ProgressBar progress={progress} width={80} />
-                        </View>
-                        <Icons.Entypo name='wallet' style={{ fontSize: 24, marginLeft: 5, }} />
-                    </View>
-                    <View></View>
-                </View>
+            <Steps
+            backtoPage={false}
+            totalSteps={'6'}
+            activeStep={'3'}
+            backIcon={require('../../assets/CreateAccoutImages/back.png')}
+            leftIcon={require('../../assets/CreateAccoutImages/settings.png')}
+            rightIcon={require('../../assets/CreateAccoutImages/profile.png')}
+            ProgressBarIcon={require('../../assets/CreateAccoutImages/progress.png')}
+          />
                 <View style={{
                     padding: 5, marginTop: 35,
                 }}>
@@ -55,23 +51,24 @@ const CreatePassword = () => {
                 <View style={styles.InputContainer}>
                     <View style={{ flexDirection: "row" }}>
                         <SimpleInput
-                            placeholder={'Enter Your Password'}
-                            placeholderTextColor={"black"}
+                            placeholder={'Enter New Password'}
+                            placeholderTextColor={"grey"}
                             type={'password'}
                             name="password"
                             inputstyle={{ fontSize: 20, fontWeight: "600",color: "black" , ...ThemeSty.Font_family  }}
+                            pass={true}
                         />
-                        <Icons.Entypo name="eye-with-line" style={styles.hideapassword} />
                     </View>
                 </View>
                 <View style={styles.InputContainer}>
                     <View style={{ flexDirection: "row" }}>
                         <SimpleInput
                             type={'password'}
-                            placeholderTextColor={"black"}
-                            placeholder={'Confirm Your Password'}
-                            inputstyle={{ fontSize: 20, fontWeight: "600",color: "black" , ...ThemeSty.Font_family  }}/>
-                        <Icons.Entypo name="eye-with-line" style={styles.hideapassword} />
+                            placeholderTextColor={"grey"}
+                            placeholder={'Confirm New Password'}
+                            inputstyle={{ fontSize: 20, fontWeight: "600",color: "black" , ...ThemeSty.Font_family  }}
+                            pass={true}
+                            />
                     </View>
                 </View>
                 <View style={styles.ListContainer}>

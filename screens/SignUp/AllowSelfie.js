@@ -23,7 +23,7 @@ const AllowSelfie = ({onPress}) => {
 
 <View>
 <Button
-title="Continue"
+title="Take Sefie"
 color="green"
 onPress={onPress}
 />

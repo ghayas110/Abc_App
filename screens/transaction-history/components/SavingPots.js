@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View , Button} from 'react-native'
-import React, {useState} from 'react'
+import { StyleSheet, Text, View, Button } from 'react-native'
+import React, { useState } from 'react'
 import Theme from '../../../assets/styles/basic'
 import { ScrollView } from 'react-native-gesture-handler';
 import Modal from 'react-native-modal';
 // import { RadioButtonCheck } from 'react-native-paper';
-import { FilterButton, RequestButton    } from '../../../components/Buttons';
+import { FilterButton, RequestButton } from '../../../components/Buttons';
 import { CheckBoxInput } from '../../../components/Inputs';
 
 const SavingPots = () => {
@@ -24,7 +24,7 @@ const SavingPots = () => {
         { name: 'My Umrah - Profit Earned', price: '+AED10485', date: "Feb 2022" },
     ];
     return (
-        <ScrollView style={{padding:5, backgroundColor:"#FFFFFF"}}>
+        <ScrollView style={{ padding: 5, backgroundColor: "#FFFFFF" }}>
             <View style={styles.filterbtn}>
                 <FilterButton text={'Filter'} onPress={toggleBottomSheet} />
             </View>
@@ -91,30 +91,30 @@ const SavingPots = () => {
                         <View>
                             <Text style={{ fontSize: 20, fontWeight: '700', ...Theme.black_color_f, ...Theme.Font_family }} >Filter By</Text>
                         </View>
-                        <View style={{flexDirection:"row", alignItems:"center" ,  }}>
+                        <View style={{ flexDirection: "row", alignItems: "center", }}>
                             <CheckBoxInput />
-                            <Text style={{   marginLeft:10, fontSize:16 , fontWeight:'500', ...Theme.Font_family , ...Theme.black_color_f }}>All transactions</Text>
+                            <Text style={{ marginLeft: 10, fontSize: 16, fontWeight: '500', ...Theme.Font_family, ...Theme.black_color_f }}>All transactions</Text>
                         </View>
                         <View style={{ flexDirection: "row", alignItems: "center", }}>
                             <CheckBoxInput />
                             <Text style={{ marginLeft: 10, fontSize: 16, fontWeight: '500', ...Theme.Font_family, ...Theme.black_color_f }}>All transactions</Text>
                         </View>
-                        <View style={{flexDirection:"row", alignItems:"center" ,  }}>
-                            <CheckBoxInput  />
-                            <Text style={{   marginLeft:10, fontSize:16 , fontWeight:'500', ...Theme.Font_family , ...Theme.black_color_f }}>All transactions</Text>
+                        <View style={{ flexDirection: "row", alignItems: "center", }}>
+                            <CheckBoxInput />
+                            <Text style={{ marginLeft: 10, fontSize: 16, fontWeight: '500', ...Theme.Font_family, ...Theme.black_color_f }}>All transactions</Text>
                         </View>
                         <View style={{ flexDirection: "row", alignItems: "center", }}>
                             <CheckBoxInput />
                             <Text style={{ marginLeft: 10, fontSize: 16, fontWeight: '500', ...Theme.Font_family, ...Theme.black_color_f }}>All transactions</Text>
                         </View>
-                      
+
                         <View>
-                            <Text style={{ ...Theme.gray_color_f ,...Theme.Font_family ,...styles.textcheck }}>Restore to default</Text>
+                            <Text style={{ ...Theme.gray_color_f, ...Theme.Font_family, ...styles.textcheck }}>Restore to default</Text>
                         </View>
-                        <View style={{ alignItems: "center",  }}>
-                            <RequestButton text='Apply' />
+                        <View style={{ alignItems: "center", }}>
+                            <RequestButton text='Apply' onPress={toggleBottomSheet} />
                         </View>
-                     
+
 
                     </View>
                 </View>
@@ -130,13 +130,13 @@ const styles = StyleSheet.create({
         borderBottomWidth: 0.5,
         ...Theme.ligth_gray_border_Color,
         padding: 10,
-        margin:0,
-        marginRight:-45
+        margin: 0,
+        marginRight: -45
     },
     tableRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        margin:0
+        margin: 0
     },
     headerCell: {
         flex: 1,
@@ -168,11 +168,11 @@ const styles = StyleSheet.create({
         fontSize: 12,
         ...Theme.Light_gray_color_f
     },
-    filterbtn:{
+    filterbtn: {
         paddingLeft: 7,
-        marginTop:10
+        marginTop: 10
     },
-    textcheck:{
-      textAlign:"center"  
+    textcheck: {
+        textAlign: "center"
     }
 });

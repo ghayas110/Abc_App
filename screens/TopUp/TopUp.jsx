@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView,Dimensions } from 'react-native'
 import BackBtn from '../../assets/TopUp/TopUpBack.png'
 import TopUpCopy from '../../assets/TopUp/TopUpCopy.png'
 import Description1 from '../../assets/TopUp/TopUpProfile.png'
 import Description2 from '../../assets/TopUp/TopUpDuitNow.png'
 import Description3 from '../../assets/TopUp/TopUpDoller.png'
 import { useNavigation } from "@react-navigation/native";
-
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const TopUp = () => {
   const navigation =useNavigation()
@@ -15,6 +16,7 @@ const TopUp = () => {
     container: {
       flex: 1,
       padding: 20,
+      height:windowHeight,
       backgroundColor: 'white'
     },
     TopNavigator: {
@@ -74,18 +76,16 @@ const TopUp = () => {
     },
     DescriptionBox:{
       flexDirection:'row',
-      flexWrap:'wrap',
-      paddingTop:20,
-      // height:80,
-      alignItems:'flex-start'
+
     },
     TextAreaPara2: {
       fontSize: 16,
       color: '#006400',
       fontFamily: "Poppins-Medium",
+      lineHeight:30,paddingTop:10
     },
     DescriptionImage:{
-      marginTop:5,
+      marginTop:10,
       marginRight:10
     }
   })
@@ -103,7 +103,7 @@ const TopUp = () => {
         </View>
         <View style={styles.TextArea}>
           <Text style={styles.TextAreaHeading}>Let's Go!{"\n"}Top up your account</Text>
-          <Text style={styles.TextAreaPara}>Deposit into your new account within 30{"\n"}days to get started</Text>
+          <Text style={styles.TextAreaPara}>Deposit into your new account within 30 days to get started</Text>
         </View>
 
 

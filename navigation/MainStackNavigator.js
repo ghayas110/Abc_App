@@ -55,7 +55,7 @@ const MainStackNavigator = () => {
 
         <Drawer.Navigator screenOptions={{ headerShown: false }}
           drawerContent={props => <CustomDrawer {...props} />}>
-          <Drawer.Screen name="Home" component={BottomTabNavigator} />
+          <Drawer.Screen name="HomeScreen" component={BottomTabNavigator} />
           <Drawer.Screen name="SignOut" >
             {(props) => <SignOut {...props} onLogin={() => setIsLoggedIn(false)} />}
           </Drawer.Screen>

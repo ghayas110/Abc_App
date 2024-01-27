@@ -46,7 +46,7 @@ const DetailThree = () => {
                     <CheckBoxInput textStyle={{color: "black", fontSize: 17, marginLeft: 10 }} text={"Financing"} color={"#00a200"} />
                     <CheckBoxInput textStyle={{color: "black", fontSize: 17, marginLeft: 10 }} text={"Other"} color={"#00a200"} />
                 </View>
-                <RequestButton text={"Next"} onPress={() => nextPage()}
+                <RequestButton text={"Confirm"} onPress={() => nextPage()}
                     btnStyle={{ position: "absolute", bottom: 50 }}
                 />
             </View>
