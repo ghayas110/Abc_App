@@ -24,7 +24,7 @@ const Steps = ({
         <>
 
             <View style={{
-                marginTop: 20,
+                marginTop: 10,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",

@@ -58,12 +58,12 @@ const toggleBottomSheet = () => {
             </View>
             <View style={styles.acordion3}>
               </View>
-              <View style={{ flexDirection: 'row' }}>
+              <View style={{ flexDirection: 'row', paddingRight:10 }}>
               <RadioButton
                 status={checked ? 'checked' : 'unchecked'}
                 onPress={() => setChecked(!checked)}
               />
-              <Text style={styles.text2}>
+              <Text style={styles.text4}>
                 I’m a UAE citizen with a CNIC, living in UAE
               </Text>
             </View>
@@ -72,7 +72,7 @@ const toggleBottomSheet = () => {
             status={checkedd ? 'checked' : 'unchecked'}
             onPress={() => setCheckedd(!checkedd)}
             />
-            <Text style={styles.text2}>
+            <Text style={styles.text4}>
             I‘m<Text style={{fontWeight:'bold',color:'black'}}> NOT</Text>  a US person
             </Text>
             </View>
@@ -82,7 +82,7 @@ const toggleBottomSheet = () => {
             status={checkeddd ? 'checked' : 'unchecked'}
             onPress={() => setCheckeddd(!checkeddd)}
             />
-            <Text style={styles.text2}>
+            <Text style={styles.text4}>
             I don't pay income tax in any other country besides UAE
             </Text>
             </View>
@@ -212,6 +212,12 @@ const styles = StyleSheet.create({
   },
   text2: {
     fontSize: 17,        
+    color: "#333333",
+    fontFamily: "Poppins-Regular",
+   
+  },
+  text4: {
+    fontSize: 15,        
     color: "#333333",
     fontFamily: "Poppins-Regular",
    
