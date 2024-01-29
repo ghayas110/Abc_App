@@ -29,6 +29,17 @@ import SendAmount from "../screens/QRPayments/InsertAmount";
 import Recipt from "../screens/Transfer-Payment/Recipt";
 import SavingPots from "../screens/SavingsPot/SavingPots";
 import PickCategoryCard from "../screens/SavingsPot/PickCategoryCard";
+import CreateSavingPots from "../screens/SavingsPot/CreateSavingPots";
+import Contribution from "../screens/SavingsPot/Contribution";
+import ReviewDetails from "../screens/SavingsPot/ReviewDetails";
+import SuccessfullyCreated from "../screens/SavingsPot/SuccessfullyCreated";
+import AddFundsHome from "../screens/SavingsPot/AddFundsHome";
+import AddFunds from "../screens/SavingsPot/AddFunds";
+import AddFundReviewDetails from "../screens/SavingsPot/AddFundReviewDetails";
+import FundSuccessFullyCreated from "../screens/SavingsPot/FundSuccessFullyCreated";
+import WithdrawFund from "../screens/SavingsPot/WithdrawFund";
+import WithdrawFundReview from '../screens/SavingsPot/WithdrawFundReview'
+import WithdrawSuccessfully from "../screens/SavingsPot/WithdrawSuccessfully"
 
 const Stack = createStackNavigator();
 
@@ -114,7 +125,19 @@ const MainStackNavigator = () => {
         headerShown: false
       }} />
       <Stack.Screen name="SavingPots" component={SavingPots} />
-      <Stack.Screen name="PickCategoryCard" component={PickCategoryCard     } />
+      <Stack.Screen name="PickCategoryCard" component={PickCategoryCard} />
+      <Stack.Screen name="CreateSavingPots" component={CreateSavingPots} />
+      <Stack.Screen name="Contribution" component={Contribution} />
+      <Stack.Screen name="ReviewDetails" component={ReviewDetails} />
+      <Stack.Screen name="SuccessfullyCreated" component={SuccessfullyCreated} />
+      <Stack.Screen name="AddFundsHome" component={AddFundsHome} />
+      <Stack.Screen name="AddFunds" component={AddFunds} />
+      <Stack.Screen name="AddFundReviewDetails" component={AddFundReviewDetails} />
+      <Stack.Screen name="FundSuccessFullyCreated" component={FundSuccessFullyCreated} />
+      <Stack.Screen name="WithdrawFund" component={WithdrawFund} />
+      <Stack.Screen name="WithdrawFundReview" component={WithdrawFundReview} />
+      <Stack.Screen name="WithdrawSuccessfully" component={WithdrawSuccessfully} />
+
 
     </Stack.Navigator>
   );
