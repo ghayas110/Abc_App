@@ -8,6 +8,7 @@ import TransferScreen from "../screens/Transfer-Payment/Transfer";
 import styles from "../assets/styles/basic";
 import { Image } from "react-native";
 import SettingServices from "../screens/Transfer-Payment/SettingServices";
+import Finance from "../screens/Finance/Finance";
 
 const Tab = createBottomTabNavigator();
 const BottomTabNavigator = () => {
@@ -43,7 +44,7 @@ const BottomTabNavigator = () => {
           
           ),
         }}/>
-      <Tab.Screen name="Finance" component={FinanceScreen} options={{
+      <Tab.Screen name="Finance" component={Finance} options={{
           tabBarIcon: ({ color, size,focused }) => (
             <Image source={!focused ? require('../assets/tabicons/finance.png') : require('../assets/tabicons/FinanceOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
             
