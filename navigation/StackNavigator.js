@@ -27,6 +27,19 @@ import DuetitNowOnWay from "../screens/Transfer-Payment/DuetitNowOnWay";
 import DuetNowSent from "../screens/Transfer-Payment/DuetNowSent";
 import SendAmount from "../screens/QRPayments/InsertAmount";
 import Recipt from "../screens/Transfer-Payment/Recipt";
+import SavingPots from "../screens/SavingsPot/SavingPots";
+import PickCategoryCard from "../screens/SavingsPot/PickCategoryCard";
+import CreateSavingPots from "../screens/SavingsPot/CreateSavingPots";
+import Contribution from "../screens/SavingsPot/Contribution";
+import ReviewDetails from "../screens/SavingsPot/ReviewDetails";
+import SuccessfullyCreated from "../screens/SavingsPot/SuccessfullyCreated";
+import AddFundsHome from "../screens/SavingsPot/AddFundsHome";
+import AddFunds from "../screens/SavingsPot/AddFunds";
+import AddFundReviewDetails from "../screens/SavingsPot/AddFundReviewDetails";
+import FundSuccessFullyCreated from "../screens/SavingsPot/FundSuccessFullyCreated";
+import WithdrawFund from "../screens/SavingsPot/WithdrawFund";
+import WithdrawFundReview from '../screens/SavingsPot/WithdrawFundReview'
+import WithdrawSuccessfully from "../screens/SavingsPot/WithdrawSuccessfully"
 
 import Transfer from "../screens/Transfer-Payment/Transfer";
 import CardMangementOne from "../screens/card/CardMangementOne";
@@ -36,6 +49,9 @@ import CardPreferences from "../screens/card/CardPreferences";
 import SettingServices from "../screens/Transfer-Payment/SettingServices";
 import PayTransfer from "../screens/Transfer-Payment/PayTransfer";
 import ManageDuitNowQR from "../screens/Settings/ManageDuitNowQR";
+
+import Accounts from "../screens/AccountCenter/Accounts";
+
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -114,6 +130,21 @@ const MainStackNavigator = () => {
       <Stack.Screen name='SettingServices' component={SettingServices} />
       <Stack.Screen name='PayTransfer' component={PayTransfer} />
       <Stack.Screen name='ManageDuitNowQR' component={ManageDuitNowQR} />
+      <Stack.Screen name="SavingPots" component={SavingPots} />
+      <Stack.Screen name="PickCategoryCard" component={PickCategoryCard} />
+      <Stack.Screen name="CreateSavingPots" component={CreateSavingPots} />
+      <Stack.Screen name="Contribution" component={Contribution} />
+      <Stack.Screen name="ReviewDetails" component={ReviewDetails} />
+      <Stack.Screen name="SuccessfullyCreated" component={SuccessfullyCreated} />
+      <Stack.Screen name="AddFundsHome" component={AddFundsHome} />
+      <Stack.Screen name="AddFunds" component={AddFunds} />
+      <Stack.Screen name="AddFundReviewDetails" component={AddFundReviewDetails} />
+      <Stack.Screen name="FundSuccessFullyCreated" component={FundSuccessFullyCreated} />
+      <Stack.Screen name="WithdrawFund" component={WithdrawFund} />
+      <Stack.Screen name="WithdrawFundReview" component={WithdrawFundReview} />
+      <Stack.Screen name="WithdrawSuccessfully" component={WithdrawSuccessfully} />
+
+
     </Stack.Navigator>
   );
 };
@@ -132,6 +163,31 @@ const MoreNavigator = () => {
     </Stack.Navigator>
   );
 };
+
+
+const AccountNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerShown: false
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      <Stack.Screen name="Accounts" component={Accounts} screenOptions={{
+        headerShown: false
+      }} />
+
+
+    </Stack.Navigator>
+  );
+};
+
+
+
+
+
 const TransferNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
@@ -142,7 +198,11 @@ const TransferNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="Transfer" component={TransferTO} screenOptions={{
+      <Stack.Screen name="Transfer" component={Transfer} screenOptions={{
+        headerShown: false
+
+      }} />
+      <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
         headerShown: false
 
       }} />
@@ -173,4 +233,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator,TransferNavigator };
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator };

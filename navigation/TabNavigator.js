@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/dist/Ionicons';
-import { MainStackNavigator, MoreNavigator, TransferNavigator } from "./StackNavigator";
-import AccountScreen from "../screens/AccountScreen";
+import { MainStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator } from "./StackNavigator";
+// import AccountScreen from "../screens/AccountScreen";
+import FinanceScreen from "../screens/FinanceScreen";
 import TransferScreen from "../screens/Transfer-Payment/Transfer";
 import styles from "../assets/styles/basic";
 import { Image } from "react-native";
@@ -29,7 +30,7 @@ const BottomTabNavigator = () => {
           ),
         }}/>
    
-      <Tab.Screen name="Account" component={AccountScreen} options={{
+      <Tab.Screen name="Account" component={AccountNavigator} options={{
         tabBarIcon: ({ color, size,focused }) => (
           <Image source={!focused ? require('../assets/tabicons/account.png') : require('../assets/tabicons/WalletOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
           
@@ -42,7 +43,7 @@ const BottomTabNavigator = () => {
           
           ),
         }}/>
-        <Tab.Screen  name="Finance" component={TransferScreen} options={{
+      <Tab.Screen name="Finance" component={FinanceScreen} options={{
           tabBarIcon: ({ color, size,focused }) => (
             <Image source={!focused ? require('../assets/tabicons/finance.png') : require('../assets/tabicons/FinanceOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
             

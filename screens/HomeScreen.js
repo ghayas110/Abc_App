@@ -28,8 +28,8 @@ const HomeScreen = ({ disabled }) => {
 
   const navigation = useNavigation();
 
-  const ForWordnavigation = () => {
-    navigation.navigate('StartLoginStep2');
+  const goSavingpots = () => {
+    navigation.navigate('SavingPots');
   };
 
   const data2 = [
@@ -168,7 +168,7 @@ const HomeScreen = ({ disabled }) => {
         </View>
 
         <View style={styles.containerMenu}>
-          <View style={styles.card}>
+          <TouchableOpacity style={styles.card} onPress={goSavingpots}>
             <Image source={Market} style={styles.image} />
             <View style={styles.textContainer}>
               <Text style={styles.title}>Marketplace</Text>
@@ -181,7 +181,7 @@ const HomeScreen = ({ disabled }) => {
               name="arrow-forward-ios"
               style={styles.arrowIcon}
             />
-          </View>
+          </TouchableOpacity>
           <View style={styles.card}>
             <Image source={Market} style={styles.image} />
             <View style={styles.textContainer}>
