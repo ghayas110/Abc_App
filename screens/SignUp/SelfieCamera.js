@@ -69,7 +69,7 @@ const SelfieCamera = ({onPress}) => {
           <Text style={styles.textStyle3}>{'\u2022'}</Text>
           <Text style={styles.textStyle1}>Align your face inside the frame and look straight into the camera.</Text>
           <Text style={styles.textStyle4} >{'\u2022'}</Text>
-          <Text style={styles.textStyle2}>Your face must be evenly lit and stand out from the background</Text>
+          <Text style={styles.textStyle2}>Your face must be evenly stand out from the background</Text>
         </View>
         </View>
       ) : (
@@ -91,8 +91,8 @@ const overlayStyle = {
   position: 'absolute',
   backgroundColor: 'grey',
   opacity: 0.7,
-  borderRadius: 15, // Adjust the border radius as needed
 };
+
 
 const styles = StyleSheet.create({
  

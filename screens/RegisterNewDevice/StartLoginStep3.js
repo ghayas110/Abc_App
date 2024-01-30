@@ -63,14 +63,15 @@ const StartLoginStep3 = ({ disabled }) => {
                     <SimpleInput
                         label={'Password'}
                         placeholder={'Enter Password'}
-                        placeholderTextColor={{ ...ThemeSty.black_color_f }}
-                        type={'text'}
-                        value={''}
-                        inputstyle={{ fontSize: 20, fontWeight: "600", ...ThemeSty.Light_gray_color_f, ...ThemeSty.Font_family }}
+                        placeholderTextColor={ "grey" }
+                        type={'password'}
+                       pass={true}
+                        inputstyle={{ fontSize: 20, fontWeight: "600", color:'black', ...ThemeSty.Font_family }}
                     />
+                    
                 </View>
                 <View style={styles.ForgotPassword}>
-                    <Text style={{ ...ThemeSty.Green_color_f, ...ThemeSty.Font_family, fontWeight: "700", fontSize: 16 }}>Forgot username?</Text>
+                    <Text style={{ ...ThemeSty.Green_color_f, ...ThemeSty.Font_family, fontWeight: "700", fontSize: 16 }}>Forgot Password?</Text>
                     <Text style={{ ...ThemeSty.Green_color_f, ...ThemeSty.Font_family, fontWeight: "700", fontSize: 16 }} onPress={toggleBottomSheet}>Help</Text>
                 </View>
 
@@ -87,7 +88,7 @@ const StartLoginStep3 = ({ disabled }) => {
                             <View style={{ padding: 15 }}>
                                 <Text style={{ ...ThemeSty.gray_color_f, ...ThemeSty.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
                                     Alternatively you may email us at:
-                                    Rize-cs@alrajhibank.com.my
+                                    SSSCO.com
                                     We’ll get this sorted!</Text>
                             </View>
                             <View style={{ padding: 20, ...ThemeSty.bg_light_green_color }}>
@@ -111,10 +112,10 @@ const StartLoginStep3 = ({ disabled }) => {
                     <View style={{ flex: 1, justifyContent: 'flex-end' }}>
                         <View style={{ backgroundColor: 'transparent', padding: 24, borderTopRightRadius: 20, borderTopLeftRadius: 20, }}>
                             <View style={{ padding: 10, alignItems: "center" }}>
-                                <OutlineButton text='call +165464661' />
+                            <OutlineButton onPress={() => Linking.openURL(`tel:${'+73365596220'}`)} text='call +7336 559 6220' />
                             </View>
                             <View style={{ alignItems: "center" }}>
-                                <RequestButton text='Cancel' />
+                                <RequestButton text='Cancel' onPress={toggleBottomSheet2}/>
                             </View>
 
                         </View>

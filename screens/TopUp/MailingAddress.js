@@ -16,40 +16,43 @@ const MailingAddress = ({ onPress }) => {
 
   return (
     <View style={styles.container}>
+    
       <View style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'space-around', height: "60%" }}>
         <View>
-          <Text style={{ fontSize: 24, fontWeight: '900', color: 'green', marginBottom: 15 }}>Confirm your mailing address</Text>
+          <Text style={{ fontSize: 24, fontWeight: '900', color: 'green', marginBottom: 15,color:'black' }}>Confirm your mailing address</Text>
           <View>
             <View style={styles.acordion}>
               <Text style={styles.text2}> Please confirm your mailing address </Text>
             </View>
             <View style={styles.acordion}>
-              <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15 }}> Shipping to </Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15,color:'black' }}> Shipping to </Text>
             </View>
             <View style={{ flexDirection: 'row', paddingVertical: 15 }}>
           
             </View>
-            <View style={{ display: 'flex', flexDirection: 'row' }}>
+            <View style={{ display: 'flex', flexDirection: 'row',flexWrap:'wrap',padding:10 }}>
               <RadioButton
+              color={"green"}
                 status={checkedd ? 'checked' : 'unchecked'}
                 onPress={() => setCheckedd(!checkedd)}
               />
               <View>
-              <Text style={{fontWeight: 'bold', fontSize: 17}}>
+              <Text style={{fontWeight: 'bold', fontSize: 17,color:'black'}}>
               Residential address
               </Text>
               <Text style={styles.text2}>
-              3/22 Jalan Cecawi, Petaling Jaya, Selangor
+              3/22 Jalan Cecawi, Petaling 
               </Text>
               </View>
             </View>
             <View style={{ flexDirection: 'row', paddingVertical: 15 }}>
               <RadioButton
+              color={"green"}
                 status={checkeddd ? 'checked' : 'unchecked'}
                 onPress={() => setCheckeddd(!checkeddd)}
               />
               <View>
-              <Text style={{fontWeight: 'bold', fontSize: 17}}>
+              <Text style={{fontWeight: 'bold', fontSize: 17,color:'black'}}>
               Mailing address              </Text>
               <Text style={styles.text2}>
               62, Jalan Camar 5, Residensi 28, 47810, Petaling Jaya, Selangor              </Text>
@@ -85,6 +88,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "500",
     lineHeight: 20,
+    color:'black',
+    
   },
   bottomView: {
     width: '100%',

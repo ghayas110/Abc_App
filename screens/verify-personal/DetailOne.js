@@ -4,7 +4,7 @@ import style from "../../assets/styles/basic"
 import { List, SimpleInput } from '../../components/Inputs';
 import { RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
-import Steps from '../../components/Steps';
+import Steps from '../../components/steps/Steps';
 
 
 
@@ -26,10 +26,13 @@ const DetailOne = () => {
                 backgroundColor: "white"
             }}>
                 <Steps
-                    backtoPageName={"DetailOne"}
                     backtoPage={false}
                     totalSteps={"4"}
                     activeStep={"1"}
+                    backIcon={require('./images/Icons.png')}
+                    leftIcon={require('./images/Profile.png')}
+                    rightIcon={require('./images/Setting.png')}
+                    ProgressBarIcon={require('./images/steps.png')}
                 />
                 {/* INPUT BOX ============================= */}
                 <View style={{
@@ -42,12 +45,13 @@ const DetailOne = () => {
                             fontSize: 15,
                             borderBottomWidth: 1,
                             borderBottomColor: '#808080',
-                            fontFamily: "Poppins-Regular"
+                            fontFamily: "Poppins-Regular",
+                            color:'black'
                         }}
                         placeholderTextColor="#808080"
                         label={"Email"}
                         type={"email"}
-                        placeholder={"Email"}
+                        placeholder={"Enter Email"}
                     />
                 </View>
                 <View style={{
@@ -82,7 +86,7 @@ const DetailOne = () => {
                         ]}
                     />
                 </View>
-                <RequestButton text={"Next"} onPress={() => nextPage()}
+                <RequestButton text={"Confirm"} onPress={() => nextPage()}
                     btnStyle={{ position: "absolute", bottom: 50 }}
                 />
             </View>

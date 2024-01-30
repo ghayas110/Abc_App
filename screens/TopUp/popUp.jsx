@@ -93,7 +93,6 @@ const styless = StyleSheet.create({
         paddingTop: 80,
         padding: 30,
         height: height * 0.9,
-
         justifyContent: 'space-between'
     },
     text2: {
@@ -101,6 +100,7 @@ const styless = StyleSheet.create({
         fontWeight: "500",
         textAlign: 'center',
         lineHeight: 20,
+        color:'black'
     },
     bottomView: {
         width: '100%',

@@ -42,14 +42,14 @@ const MainSignUp = () => {
                         marginTop: 20,
                         fontSize: 25,
                         fontFamily: "Poppins-Bold"
-                    }}>Great! You’re one step closer to your new SSSCO account. </Text>
+                    }}>Great! You’re one step closer. </Text>
                     <Text style={{
                         marginTop: 15,
                         fontSize: 15,
                         padding: 0,
                         fontFamily: "Poppins-Regular",
                         ...style.gray_color_h
-                    }}>This won’t take long. Please have your MyKad ready</Text>
+                    }}>This won’t take long. Please have your CNIC ready</Text>
                     <ActivationSteps
                     verticalLineImage={require('../../assets/SignUp/line.png')}
                     image_a={require('../../assets/SignUp/paper.png')}

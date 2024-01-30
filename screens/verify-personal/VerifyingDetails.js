@@ -48,46 +48,6 @@ const VerifyingDetails = () => {
                         fontFamily: "Poppins-Regular",
                         ...style.gray_color_h
                     }}>While that’s happening, let’s create  your  {'\n'} account</Text>
-
-                    {/* <View style={{
-                        display: "flex",
-                        justifyContent: "space-around",
-                        flexDirection: "row",
-                        marginTop: 30
-                    }}>
-                        <View style={{
-                            display: "flex",
-                            alignItems: "center",
-                        }}>
-                            <Image source={require('./images/checkbox.png')} />
-                            <Image style={{position:"relative",top: -15,left: 45}} source={require('./images/line.png')} />
-                            <Text style={{color: "black",fontFamily: "Poppins-Regular",textAlign: "center",fontSize: 12}}>Sign up & ID {'\n'} verification</Text>
-                        </View>
-                        <View style={{
-                            display: "flex",
-                            alignItems: "center",
-                        }}>
-                            <Image source={require('./images/checkbox.png')} />
-                            <Image style={{position:"relative",top: -15,left: 45}} source={require('./images/line.png')} />
-                            <Text style={{color: "black",fontFamily: "Poppins-Regular",textAlign: "center",fontSize: 12}}>Personal {'\n'} details</Text>
-                        </View>
-                        <View style={{
-                            display: "flex",
-                            alignItems: "center",
-                        }}>
-                            <Image source={require('./images/setting-blue-color.png')} />
-                            <Image style={{position:"relative",top: -15,left: 45}} source={require('./images/line.png')} />
-                            <Text style={{color: "black",fontFamily: "Poppins-Regular",textAlign: "center",fontSize: 12}}>Create {'\n'} an accounts</Text>
-                        </View>
-                        <View style={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent:"center"
-                        }}>
-                            <Image source={require('./images/Wallet.png')} />
-                            <Text style={{color: "gray",fontFamily: "Poppins-Regular",textAlign: "center",fontSize: 12}}>Top up {'\n'} account</Text>
-                        </View>
-                    </View> */}
                     <ActivationSteps 
                         verticalLineImage={require('./images/line.png')}
                         image_a={require('./images/checkbox.png')}

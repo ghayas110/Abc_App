@@ -1,126 +1,176 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
-import React, { useState, useEffect } from 'react'
-import Icons from '../../components/Icons'
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useState, useRef } from 'react';
+import { View, TextInput, Button, StyleSheet, Text, TouchableOpacity, Alert, Dimensions, KeyboardAvoidingView } from 'react-native';
+import ButtonInput from '../../components/ButtonInput';
+import { useDispatch } from 'react-redux';
+import { loginSuccess } from '../../redux/reducers/authReducer';
 import { useNavigation } from '@react-navigation/native'
-import { OtpInput, SimpleInput } from '../../components/Inputs'
-import { RequestButton, OutlineButton } from '../../components/Buttons'
-import Logo from '../../assets/LandingScreen/SssscoLandingLgo-01.png'
-import Modal from 'react-native-modal';
-import ThemeSty from '../../assets/styles/basic'
-import ProgressBar from 'react-native-progress/Bar';
+import style from '../../assets/styles/basic';
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
+const StartLoginStep5 = ({ onPress,route }) => {
+  const [otp, setOtp] = useState(['', '', '', '']);
+  const dispatch=useDispatch()
+const navigation =useNavigation()
+  const [email, setEmail] = useState(route?.params?.bodys?.email);
+  const [user_type, setuser_type] = useState(route?.params?.bodys?.user_type)
+  const inputRefs = useRef(Array(4).fill(0).map((_, i) => i));
+  console.log(route?.params?.bodys?.user_type,"sss")
+  
+  const ForWordnavigation = () => {
+    navigation.navigate('StartLoginStep6');
+};
 
-const StartLoginStep5 = ({ disabled }) => {
-    const [progress, setProgress] = useState(0);
-    const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
-    const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false)
+  const handleInputChange = (index, value) => {
+    const newOtp = [...otp];
+    newOtp[index] = value;
 
-    const toggleBottomSheet = () => {
-        setBottomSheetVisible(!isBottomSheetVisible);
-    };
-    const toggleBottomSheet2 = () => {
-        setBottomSheetVisible2(!isBottomSheetVisible2);
-    };
-
-    const navigation = useNavigation();
-
-    const ForWordnavigation = () => {
-        navigation.navigate('StartLoginStep6');
-    };
-
-
-
-
-    return (
-        <>
-            <View style={styles.container}>
-                <View style={styles.Progress}>
-                    <View style={styles.BackArrow}>
-                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} />
-                    </View>
-                    <View style={{ flexDirection: "row", alignItems: "center" }}>
-                        <Image source={Logo} style={styles.Image} />
-                    </View>
-                    <View></View>
-                </View>
-                <View style={{ padding: 5, marginTop: 25, }}>
-                    <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>
-                        Enter your One-Time Password (OTP)
-                    </Text>
-                </View>
-                <View style={{ padding: 5, marginTop: 15, }}>
-                    <Text style={{ fontSize: 16, fontWeight: "500", ...ThemeSty.gray_color_f, ...ThemeSty.Font_family }}>
-                        We have sent your one time password to ‘+60XXXXX1234’
-                    </Text>
-                </View>
-                <OtpInput />
-
-            </View>
-            <View style={{ padding: 5, marginTop: 15, alignItems:"center" }}>
-                <Text style={{ fontSize: 16, fontWeight: "500", ...ThemeSty.gray_color_f, ...ThemeSty.Font_family }}>
-                    Your one time password expires in
-                </Text>
-                <Text style={{ fontSize: 16, fontWeight: "500", ...ThemeSty.orenge_color_f, ...ThemeSty.Font_family }}>
-                  01:42
-                </Text>
-            </View>
-            <View style={{ alignItems: "center", marginBottom: 20, }}>
-                <RequestButton text='Confirm' onPress={ForWordnavigation} />
-            </View>
-        </>
-
-    )
-}
-
-export default StartLoginStep5
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 24,
-        justifyContent: "Space-evently",
-        // justifyContent:"center",
-        alignItems: "center",
-
-    },
-    Progress: {
-        justifyContent: 'center',
-        alignItems: "center",
-        flexDirection: "row",
-        marginTop: 5,
-    },
-
-    Image: {
-        width: 180,
-        height: 50
-    },
-    inputContainer: {
-        borderBottomWidth: 2,
-        borderColor: "#00A200",
-        marginTop: 10,
-    },
-
-
-    CheckIcon: {
-        fontSize: 14,
-        color: "#808080",
-        fontFamily: 'Poppins',
-        fontWeight: "500"
-    },
-
-    BackArrowIcon: {
-        color: "#00A200",
-        fontSize: 16,
-        position: 'relative',
-        right: 50,
-    },
-    ForgotPassword: {
-        marginTop: 10,
-        paddingLeft: 5,
-        paddingRight: 5,
-        alignItems: "center",
-        flexDirection: "row",
-        justifyContent: "space-between",
+    // Move to the next input if a digit is entered
+    if (value !== '') {
+      const nextIndex = index + 1;
+      if (nextIndex < 4) {
+        inputRefs.current[nextIndex].focus();
+      }
     }
 
-})
+    setOtp(newOtp);
+  };
+
+  const handleBackspace = (index) => {
+    const newOtp = [...otp];
+
+    // Move to the previous input on backspace
+    if (index > 0) {
+      const prevIndex = index - 1;
+      inputRefs.current[prevIndex].focus();
+    }
+
+    newOtp[index] = '';
+
+    setOtp(newOtp);
+  };
+
+  const handleSubmit = async({route}) => {
+
+    const enteredOtp = otp.join('');
+    console.log('Entered OTP:',parseInt(enteredOtp) );
+   
+    try {
+      if (otp) {
+
+    
+      } else {
+      Alert.alert('An error occurred while processing your request.')
+      }
+
+    }catch (error) {
+        console.log('An error occurred while processing your request.');
+      }
+
+   
+  };
+
+  return (
+    <KeyboardAvoidingView 
+    behavior={Platform.OS === "ios" ? "padding" : "height"} 
+    style={styles.container}
+  >
+    <View style={styles.container}>
+    <View>
+    <Text 
+    style={{ ...style.main_headings, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}
+    >Enter your One-Time Password (OTP)</Text>
+    <Text style={styles.text2}>We have sent your one time password to ‘+96XXXXX1234’</Text>
+
+      <View style={styles.inputContainer}>
+        {otp.map((digit, index) => (
+          <TextInput
+            key={index}
+            ref={(ref) => (inputRefs.current[index] = ref)}
+            style={styles.input}
+            keyboardType='numeric'
+            maxLength={1}
+            value={digit}
+            placeholderTextColor='white'
+            onChangeText={(value) => handleInputChange(index, value)}
+            onKeyPress={({ nativeEvent }) => {
+              if (nativeEvent.key === 'Backspace') {
+                handleBackspace(index);
+              }
+            }}
+          />
+        ))}
+      </View>
+      </View>
+      <View>
+      <Button
+title="Continue"
+color="green"
+style={{borderRadius:50,borderWidth:1}}
+onPress={()=>ForWordnavigation()}
+/>
+</View>
+      
+    </View>
+    </KeyboardAvoidingView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding:20,
+    height:windowHeight*0.9,
+    
+   justifyContent:'space-between'
+  },
+  text2:{
+    fontSize: 17,        
+    color: "#808080",
+    fontFamily: "Poppins-Regular"
+  },
+  title: {
+    fontSize: 24,
+    color: 'orange',
+    marginBottom: 20,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: 'orange',
+    marginBottom: 20,
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    
+    marginVertical: 60,
+    alignItems:'center',
+    justifyContent:"center",
+    display:'flex',
+    width:'100%'
+  },
+  input: {
+    height: 40,
+    width: 40,
+    borderBottomWidth: 1, // This adds a bottom border
+    borderBottomColor: 'green', // This sets the bottom border color to black
+    margin: 5,
+    textAlign: 'center',
+    color: 'green',
+  },
+  button: {
+    backgroundColor: 'green',
+    padding: 10,
+    borderRadius: 5,
+    width: '100%',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+  },
+});
+
+export default StartLoginStep5;
+
+

@@ -7,6 +7,7 @@ import ProgressBar from 'react-native-progress/Bar';
 import Biomatric from '../../assets/CreateAccoutImages/Illustration.png'
 import { RequestButton, OutlineButton } from '../../components/Buttons'
 import ThemeSty from "../../assets/styles/basic"
+import Steps from '../../components/steps/Steps'
 
 const BioActivation = () => {
     const [progress, setProgress] = useState(0);
@@ -28,18 +29,15 @@ const BioActivation = () => {
     }
     return (
         <View style={styles.container}>
-            <View style={styles.Progress}>
-                <View></View>
-                <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <Icons.AntDesign name='setting' style={{ fontSize: 24, marginRight: 5, color: "#0038A4" }} />
-                    <View>
-                        <Text>step 4 to 6 </Text>
-                        <ProgressBar progress={progress} width={80} />
-                    </View>
-                    <Icons.Entypo name='wallet' style={{ fontSize: 24, marginLeft: 5, }} />
-                </View>
-                <View></View>
-            </View>
+        <Steps
+        backtoPage={false}
+        totalSteps={'6'}
+        activeStep={'4'}
+        backIcon={require('../../assets/CreateAccoutImages/back.png')}
+        leftIcon={require('../../assets/CreateAccoutImages/settings.png')}
+        rightIcon={require('../../assets/CreateAccoutImages/profile.png')}
+        ProgressBarIcon={require('../../assets/CreateAccoutImages/progress.png')}
+      />
             <View style={styles.Image}>
                 <View>
                     <Image source={Biomatric} />
@@ -62,7 +60,7 @@ const BioActivation = () => {
             </View>
             <View >
                 <View style={styles.btn1}>
-                    <OutlineButton text={'Activation  later'} />
+                    <OutlineButton text={'Activation later'} onPress={ForWordnavigation}/>
                 </View>
                 <View style={styles.btn2}>
                     <RequestButton text={'Enable'} onPress={ForWordnavigation} />

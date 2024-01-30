@@ -47,7 +47,7 @@ const StartLoginStep4 = ({ disabled }) => {
                     <Image source={LoginImage} />
                 </View>
                 <View style={{ padding: 5, marginTop: 25, }}>
-                    <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>
+                    <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family,lineHeight:34 }}>
                         Switching devices? Please confirm
                     </Text>
                 </View>
@@ -65,7 +65,7 @@ const StartLoginStep4 = ({ disabled }) => {
             </View>
             <View style={{ padding: 16 }}>
                 <View style={{ padding: 20, ...ThemeSty.bg_light_green_color, }}>
-                    <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>You may only link your Rize account to one device at any given time. Tap ‘Confirm’ to de-register your previous device.</Text>
+                    <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>You may only link your SSSCO account to one device at any given time. Tap ‘Confirm’ to de-register your previous device.</Text>
                 </View>
             </View>
             <View style={{ alignItems: "center", marginBottom: 20, }}>

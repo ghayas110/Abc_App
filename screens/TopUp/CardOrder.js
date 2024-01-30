@@ -5,6 +5,7 @@ import notifee from '@notifee/react-native';
 import { RadioButton } from 'react-native-paper'; // Import RadioButton from react-native-paper
 import Modal from 'react-native-modal';
 import style from "../../assets/styles/basic"
+import { useNavigation } from '@react-navigation/native';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
@@ -29,24 +30,30 @@ const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
 const toggleBottomSheet = () => {
     setBottomSheetVisible(!isBottomSheetVisible);
 };
+const navigation =useNavigation()
   return (
     <>
+    <TouchableOpacity onPress={()=>navigation.goBack()} style={{padding:20,  backgroundColor:'white',}}>
+    <Image source={require('../../assets/CreateAccoutImages/back.png')} style={{resizeMode: 'contain',borderRadius:30}}/>
+    </TouchableOpacity>
     <View style={styles.container}>
+    
+    
       <View style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'space-around', height: "60%" }}>
         <View>
           <Text style={{ fontSize: 24, fontWeight: '900', color: 'green', marginBottom: 15 }}>Your order summary</Text>
           <View>
-            <View style={styles.acordion}>
+            <View style={styles.acordions}>
               <Text style={styles.text2}> Please confirm your mailing address </Text>
             </View>
             <View style={styles.acordion}>
-              <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15 }}> Shipping to </Text>
+              <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15,color:'black' }}> Shipping to </Text>
               <Text style={styles.text2}>
               Razak Bin Osman
               </Text>
             </View>
           <View>
-                        <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15 }}> Selected debit card </Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 17, paddingTop: 15,color:'black' }}> Selected debit card </Text>
 
           </View>
             <View style={{ display: 'flex', flexDirection: 'row' }}>
@@ -56,15 +63,12 @@ const toggleBottomSheet = () => {
               </View>
             </View>
             <View style={{ flexDirection: 'row', paddingVertical: 15 }}>
-              <RadioButton
-                status={checkeddd ? 'checked' : 'unchecked'}
-                onPress={() => setCheckeddd(!checkeddd)}
-              />
+            
               <View>
-              <Text style={{fontWeight: 'bold', fontSize: 17}}>
+              <Text style={{fontWeight: 'bold', fontSize: 17,color:'black'}}>
               Residential address              </Text>
               <Text style={styles.text2}>
-              62, Jalan Camar 5, Residensi 28, 47810, Petaling Jaya, Selangor              </Text>
+              62, Jalan Camar 5, Residensi 28, 47810, Sharja UAE            </Text>
               </View>
             </View>
           </View>
@@ -116,8 +120,8 @@ const toggleBottomSheet = () => {
                 style={styles.mapicon}
                 source={require('../../assets/SignUp/ordercard.png')} // replace with your image path
                 />
-                <View style={{padding:5}}>
-                <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>Your Rize account is ready!</Text>
+                <View style={{paddingTop:45}}>
+                <Text style={{ fontSize: 24, fontWeight: '900', color: 'green',lineHeight:30 }}>You have successfully placed your card order</Text>
                 <Text style={styles.text2}>Your card will reach to your doorstep within next 7 working days </Text>
                 </View>
                 </View>
@@ -144,14 +148,26 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 80,
+    backgroundColor:'white',
     padding: 30,
     height: windowHeight * 0.9,
     justifyContent: 'space-between'
   },
+  acordions: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    height: 40,
+    borderBottomColor: 'whitesmoke',
+  },
   text2: {
     fontSize: 16,
     fontWeight: "500",
-    lineHeight: 20,
+    lineHeight: 30,
+    color:'grey',
+    marginTop:10
   },
   bottomView: {
     width: '100%',

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View,Dimensions,Button, KeyboardAvoidingView } from 'react-native'
 import React from 'react'
 import FormInput from '../../components/FormInput';
+import style from '../../assets/styles/basic';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const NameScreen = ({onPress}) => {
@@ -12,9 +13,10 @@ const NameScreen = ({onPress}) => {
     >
     <View style={styles.container}>
     <View>
-    <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>What is your mobile number?</Text>
+    
+    <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>What is your mobile number?</Text>
     <View style={{flexDirection: 'row', alignItems: 'center',justifyContent:'center'}}>
-<Text>+96</Text>
+<Text style={styles.text2}>+96</Text>
 <FormInput
 placeholder={'Enter Phone No'}
 placeholderColor={'grey'}
@@ -26,7 +28,7 @@ keyboardType={'numeric'}
 
 <View>
 <Button
-title="Continue"
+title="Confirm"
 color="green"
 onPress={onPress}
 />
@@ -42,15 +44,14 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding:20,
-        height:windowHeight*0.9,
+        height:windowHeight*0.95,
         
        justifyContent:'space-between'
       },
       text2:{
-        fontSize: 16,
-        fontWeight:"500",
-        
-        lineHeight:20,
+        fontSize: 17,        
+        color: "#808080",
+        fontFamily: "Poppins-Regular"
       },
       bottomView: {
         width: '100%',

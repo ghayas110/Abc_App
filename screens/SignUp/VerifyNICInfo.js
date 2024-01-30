@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding:20,
-        height:windowHeight*0.9,
+        height:windowHeight,
         
        justifyContent:'space-between'
       },
@@ -79,6 +79,8 @@ const styles = StyleSheet.create({
       },
       text2:{
         fontSize: 16,
+        color: "#808080",
+        fontFamily: "Poppins-Regular",
         fontWeight:"500",
         padding:15,
         textAlign:'center',

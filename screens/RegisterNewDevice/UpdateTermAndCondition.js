@@ -4,7 +4,6 @@ import Icons from '../../components/Icons'
 import { useNavigation } from '@react-navigation/native'
 import { OtpInput, SimpleInput , CheckBoxInput } from '../../components/Inputs'
 import { RequestButton, OutlineButton } from '../../components/Buttons'
-// import Logo from '../../assets/LandingScreen/RizeLandingLgo-01.png'
 import Modal from 'react-native-modal';
 import ThemeSty from '../../assets/styles/basic'
 import ProgressBar from 'react-native-progress/Bar';
@@ -64,7 +63,7 @@ const UpdateTermAndCondition = ({ onLogin}) => {
                     <View style={{  flexDirection: "row", alignItems: "center", padding: 15, marginTop: 5 }}>
                         <CheckBoxInput name="text-document" textStyle={{ ...ThemeSty.Light_gray_color_f, fontSize: 16 }} />
                         <Text style={{
-                            ...ThemeSty.Light_gray_color_f, fontSize: 16, marginLeft: 5,
+                            color:'black', fontSize: 16, marginLeft: 5,
                         }}>I have read and accepted ALL the updated documents above.</Text>
                     </View>
                     

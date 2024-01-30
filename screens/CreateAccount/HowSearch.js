@@ -7,11 +7,16 @@ import ProgressBar from 'react-native-progress/Bar';
 import Biomatric from '../../assets/CreateAccoutImages/Illustration.png'
 import { RequestButton, OutlineButton } from '../../components/Buttons'
 import ThemeSty from '../../assets/styles/basic'
+import Steps from '../../components/steps/Steps'
 
 const HowSearch = () => {
     const [progress, setProgress] = useState(0);
     const [isEnabled, setIsEnabled] = useState(false);
+    const [isEnabled1, setIsEnabled1] = useState(false);
+    const [isEnabled2, setIsEnabled2] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+    const toggleSwitch1 = () => setIsEnabled1(previousState => !previousState);
+    const toggleSwitch2 = () => setIsEnabled2(previousState => !previousState);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -31,18 +36,15 @@ const HowSearch = () => {
     
     return (
         <View style={styles.container}>
-            <View style={styles.Progress}>
-                <View></View>
-                <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <Icons.AntDesign name='setting' style={{ fontSize: 24, marginRight: 5, color: "#0038A4" }} />
-                    <View>
-                        <Text>step 5 to 6 </Text>
-                        <ProgressBar progress={progress} width={80} />
-                    </View>
-                    <Icons.Entypo name='wallet' style={{ fontSize: 24, marginLeft: 5, }} />
-                </View>
-                <View></View>
-            </View>            
+        <Steps
+        backtoPage={false}
+        totalSteps={'6'}
+        activeStep={'5'}
+        backIcon={require('../../assets/CreateAccoutImages/back.png')}
+        leftIcon={require('../../assets/CreateAccoutImages/settings.png')}
+        rightIcon={require('../../assets/CreateAccoutImages/profile.png')}
+        ProgressBarIcon={require('../../assets/CreateAccoutImages/progress.png')}
+      />          
             <View>
                 <Text style={{  fontSize: 28, fontWeight: "700", ...ThemeSty.Font_family ,...ThemeSty.Green_color_f }}>How should we reach you? </Text>
             </View>
@@ -54,29 +56,29 @@ const HowSearch = () => {
                 <View style={{flexDirection:"row", alignItems:"center", justifyContent:"space-between"}}>
                     <View style={{flexDirection:"row", alignItems:"center",}}>
                         <Icons.MaterialCommunityIcons name="email-minus-outline" style={{ fontSize: 16, ...ThemeSty.Green_color_f }} />
-                        <Text style={{ marginLeft: 10, fontSize: 16, ...ThemeSty.Green_color_f ,  ...ThemeSty.Font_family }}>email</Text>
+                        <Text style={{ marginLeft: 10, fontSize: 16, color:"black" ,  ...ThemeSty.Font_family }}>Email</Text>
                     </View>
-                    <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={isEnabled ? '#00A200' : '#00A200'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch} style={{alignItems:"flex-end"}} value={isEnabled} />
+                    <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={'white'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch} style={{alignItems:"flex-end"}} value={isEnabled} />
                 </View>
                 <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                     <View style={{ flexDirection: "row", alignItems: "center", }}>
                         <Icons.MaterialCommunityIcons name="phone" style={{ fontSize: 16, ...ThemeSty.Green_color_f }} />
-                        <Text style={{ marginLeft: 10, fontSize: 16, ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>Phone</Text>
+                        <Text style={{ marginLeft: 10, fontSize: 16, color:"black", ...ThemeSty.Font_family }}>Phone</Text>
                     </View>
-                    <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={isEnabled ? '#00A200' : '#00A200'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch} style={{ alignItems: "flex-end" }} value={isEnabled} />
+                    <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={'white'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch1} style={{ alignItems: "flex-end" }} value={isEnabled1} />
                 </View>
                 <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                     <View style={{ flexDirection: "row", alignItems: "center", }}>
                         <Icons.AntDesign name="message1" style={{ fontSize: 16, ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }} />
-                        <Text style={{ marginLeft: 10, fontSize: 16, ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>Text massages</Text>
+                        <Text style={{ marginLeft: 10, fontSize: 16, color:"black", ...ThemeSty.Font_family }}>Text messages</Text>
                     </View>
-                    <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={isEnabled ? '#00A200' : '#00A200'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch} style={{ alignItems: "flex-end" }} value={isEnabled} />
+                    <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={'white'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch2} style={{ alignItems: "flex-end" }} value={isEnabled2} />
                 </View>
             </View>
             
             <View style={{...styles.Notify , ...ThemeSty.bg_light_green_color}}>
-                <Text style={{ fontSize: 14, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>
-                    Normal communications (non-marketing related) will be email by default. By tapping “Confirm”, I agree that Al Rajhi Bank may process my personal data to promote the Bank’s products and services.
+                <Text style={{ fontSize: 14, fontWeight: "700", ...ThemeSty.Green_color_primary, ...ThemeSty.Font_family,lineHeight:30 }}>
+                    Normal communications (non-marketing related) will be email by default. By tapping “Confirm”, I agree that SSSCO may process my personal data to promote the Bank’s products and services.
                 </Text>
             </View>
             <View >

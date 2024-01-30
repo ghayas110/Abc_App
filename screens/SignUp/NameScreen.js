@@ -3,6 +3,8 @@ import React from 'react'
 import FormInput from '../../components/FormInput';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+import style from '../../assets/styles/basic';
+import { RequestButton } from '../../components/Buttons';
 const NameScreen = ({onPress}) => {
  
   return (
@@ -12,7 +14,8 @@ const NameScreen = ({onPress}) => {
   >
     <View style={styles.container}>
 <View>
-<Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>What would you like us to call you?</Text>
+
+<Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>What would you like us to call you?</Text>
 <Text style={styles.text2}>This name is only for the app, not applicable for your SSSCO card or official documents</Text>
 <FormInput
 placeholder={'Enter Prefered Name'}
@@ -22,10 +25,11 @@ charecter={"10 characters remaining"}
 </View>
 <View>
 <Button
-title="Continue"
+title="Confirm"
 color="green"
 onPress={onPress}
 />
+
 </View>
     </View>
     </KeyboardAvoidingView>
@@ -38,7 +42,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding:20,
-        height:windowHeight*0.9,
+        height:windowHeight*0.95,
        justifyContent:'space-between'
       },
       text2:{

@@ -74,11 +74,7 @@ const BackCamera = ({onPress}) => {
         </View>
       ) : (
         <View style={styles.buttonContainer}>
-          <Button
-            title="Allow camera access"
-            onPress={requestPermission}
-            color="#f194ff"
-          />
+       
         </View>
       )}
     </View>
