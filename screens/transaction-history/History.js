@@ -21,8 +21,8 @@ const History = () => {
                     backIcon={require('../../assets/TransactionHistoryImages/ArrowLeft.png')}
                 />
                 <Tab.Navigator
-                    tabBarOptions={{
-                        labelStyle: {
+                    screenOptions={{
+                        tabBarLabelStyle: {
                             fontSize: 16,
                             fontWeight: "900",
                             textTransform: "capitalize",
@@ -30,10 +30,9 @@ const History = () => {
                             marginTop: 30
                         },
                         tabStyle: {
-                            backgroundColor: "white",
                             elevation: 0
                         },
-                        indicatorStyle: {
+                        tabBarIndicatorStyle: {
                             borderBottomWidth: 50,
                             borderBottomColor: 'green',
                         },

@@ -41,6 +41,14 @@ import WithdrawFund from "../screens/SavingsPot/WithdrawFund";
 import WithdrawFundReview from '../screens/SavingsPot/WithdrawFundReview'
 import WithdrawSuccessfully from "../screens/SavingsPot/WithdrawSuccessfully"
 
+import Transfer from "../screens/Transfer-Payment/Transfer";
+import CardMangementOne from "../screens/card/CardMangementOne";
+import ChangePin from "../screens/card/ChangePin";
+import SpendLimit from "../screens/card/components/SpendLimit";
+import CardPreferences from "../screens/card/CardPreferences";
+import SettingServices from "../screens/Transfer-Payment/SettingServices";
+import PayTransfer from "../screens/Transfer-Payment/PayTransfer";
+import ManageDuitNowQR from "../screens/Settings/ManageDuitNowQR";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -70,18 +78,6 @@ const MainStackNavigator = () => {
       <Stack.Screen name="TransactionHistory" component={History} screenOptions={{
         headerShown: false
       }} />
-
-      {/* yahan sy  */}
-      <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
-        headerShown: false
-      }} />
-      <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
-        headerShown: false
-      }} />
-      <Stack.Screen name="AccountType" component={AccountType} screenOptions={{
-        headerShown: false
-      }} />
-     
       <Stack.Screen name="PendingTran" component={PendingTran} screenOptions={{
         headerShown: false
       }} />
@@ -139,6 +135,13 @@ const MainStackNavigator = () => {
       <Stack.Screen name="WithdrawSuccessfully" component={WithdrawSuccessfully} />
 
 
+      <Stack.Screen name='CardMangementOne' component={CardMangementOne} />
+      <Stack.Screen name='ChangePin' component={ChangePin} />
+      <Stack.Screen name='SpendLimit' component={SpendLimit} />
+      <Stack.Screen name='CardPreferences' component={CardPreferences} />
+      <Stack.Screen name='SettingServices' component={SettingServices} />
+      <Stack.Screen name='PayTransfer' component={PayTransfer} />
+      <Stack.Screen name='ManageDuitNowQR' component={ManageDuitNowQR} />
     </Stack.Navigator>
   );
 };
@@ -153,9 +156,30 @@ const MoreNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      {/* <Stack.Screen name="Home" component={m} screenOptions={{
+   
+    </Stack.Navigator>
+  );
+};
+const TransferNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerShown: false
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      <Stack.Screen name="Transfer" component={TransferTO} screenOptions={{
         headerShown: false
-      }} /> */}
+
+      }} />
+        <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="AccountType" component={AccountType} screenOptions={{
+        headerShown: false
+      }} />
     </Stack.Navigator>
   );
 };
@@ -177,4 +201,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator };
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator,TransferNavigator };

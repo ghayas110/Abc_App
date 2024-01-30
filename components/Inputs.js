@@ -41,7 +41,7 @@ const SimpleInput = ({
                     secureTextEntry={pass}
                     value={value}
                     defaultValue={defaultValue}
-                    placeholderTextColor={placeholderTextColor}
+                    placeholderTextColor={"grey"}
                 />
             </View>
         </>
@@ -63,26 +63,32 @@ const OtpInput = () => {
                 <TextInput
                     style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
+                    maxLength={1}
                 />
                 <TextInput
                     style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
+                    maxLength={1}
                 />
                 <TextInput
                     style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
+                    maxLength={1}
                 />
                 <TextInput
                     style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
+                    maxLength={1}
                 />
                 <TextInput
                     style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
+                    maxLength={1}
                 />
                 <TextInput
                     style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
                     type={"number"}
+                    maxLength={1}
                 />
             </View>
         </>

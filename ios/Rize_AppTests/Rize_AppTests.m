@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface Rize_AppTests : XCTestCase
+@interface SmartBankTests : XCTestCase
 
 @end
 
-@implementation Rize_AppTests
+@implementation SmartBankTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {

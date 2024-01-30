@@ -44,7 +44,7 @@ const HomeScreen = ({ disabled }) => {
       Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
     },
     {
-      name: 'MyKad',
+      name: 'CNIC',
       Icon: <Icons.AntDesign name="contacts" />,
       Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
     },
@@ -108,19 +108,11 @@ const HomeScreen = ({ disabled }) => {
           }}>
           AED 10,000.00
         </Text>
-        <View
-          style={{
-            padding: 5,
-            marginTop: 5,
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <Image
-            source={CardInage}
-            style={{width: 300, height: 300, resizeMode: 'contain'}}
-          />
-        </View>
+        <TouchableOpacity onPress={() => navigation.navigate('CardMangementOne')}>
+          <View style={{ padding: 5, marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+            <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} />
+          </View>
+        </TouchableOpacity>
         <View style={{ flexDirection: "row", marginTop: 10, justifyContent: 'space-evenly', alignItems: 'center' }}>
           <TouchableOpacity>
             <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
@@ -243,19 +235,22 @@ const HomeScreen = ({ disabled }) => {
                   Select your transfer type
                 </Text>
               </View>
-              <View style={styles.tableContainer}>
-                {data2.map(item => (
-                  <>
-                    <View key={item.id} style={styles.tableRow}>
-                      <Text style={styles.cell}>{item.Icon}</Text>
-                      <Text style={styles.cell}>{item.name}</Text>
-                      <Text style={{...styles.cell, ...ThemeSty.Green_color_f}}>
-                        {item.Icon2}
-                      </Text>
-                    </View>
-                  </>
-                ))}
+              <View style={{ padding: 15 }}>
+                <Text style={{ ...ThemeSty.gray_color_f, ...ThemeSty.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
+                  Alternatively you may email us at:
+                  bank@ssssco.com
+                  We’ll get this sorted!</Text>
               </View>
+              <View style={{ padding: 20, ...ThemeSty.bg_light_green_color }}>
+                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>Customer Support: +6016 299 5333 (fraud support line 24/7) or email to us at:  bank@ssssco.com</Text>
+              </View>
+              <View style={{ padding: 10, alignItems: "center" }}>
+                <OutlineButton text='Report Fraud' onPress={toggleBottomSheet2} />
+              </View>
+              <View style={{ alignItems: "center" }}>
+                <RequestButton text='Give us call' onPress={toggleBottomSheet2} />
+              </View>
+
             </View>
           </View>
         </Modal>

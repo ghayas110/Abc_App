@@ -57,9 +57,7 @@ const QRAccountSuccess = () => {
                         ...style.gray_color_h
                     }}>12132242535</Text>
                     </View>
-                    <OutlineButton text={"Back to Home"} onPress={() => navigation.navigate('Home')}
-                    btnStyle={{ position: "absolute", bottom: 100 }}
-                />
+                
                     <RequestButton text={"Make QR Payments"} onPress={() => navigation.navigate('QRScan')}
                         btnStyle={{ position: "absolute", bottom: 50 }}
                     />

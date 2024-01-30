@@ -1,20 +1,20 @@
-import React, {useState} from 'react';
-import {Image, StyleSheet, Text, View, Dimensions, Linking} from 'react-native';
+import React, { useState } from 'react';
+import { Image, StyleSheet, Text, View, Dimensions, Linking } from 'react-native';
 import style from '../../assets/styles/basic';
-import {CheckBoxInput, List, SimpleInput} from '../../components/Inputs';
-import {OutlineButton, RequestButton} from '../../components/Buttons';
-import {useNavigation} from '@react-navigation/native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { CheckBoxInput, List, SimpleInput } from '../../components/Inputs';
+import { OutlineButton, RequestButton } from '../../components/Buttons';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icons from '../../components/Icons';
 import Collapsible from 'react-native-collapsible';
-import {Checkbox} from 'react-native-paper';
+import { Checkbox } from 'react-native-paper';
 import Modal from 'react-native-modal';
 import ThemeSty from '../../assets/styles/basic';
-const {width, height} = Dimensions.get('window');
-const Terms = ({onPress}) => {
+const { width, height } = Dimensions.get('window');
+const Terms = ({ onPress }) => {
   const navigation = useNavigation();
 
-  const Accordion = ({title, children}) => {
+  const Accordion = ({ title, children }) => {
     const [isCollapsed, setIsCollapsed] = useState(true);
 
     return (
@@ -26,10 +26,10 @@ const Terms = ({onPress}) => {
               source={require('../../assets/SignUp/docgreen.png')} // replace with your image path
             />
             <Text style={styles.text3}>{title}</Text>
-            <Icons.AntDesign name={'down'} style={{color: 'black'}} />
+            <Icons.AntDesign name={'down'} style={{ color: 'black' }} />
           </View>
         </TouchableOpacity>
-        <Collapsible collapsed={isCollapsed} style={{paddingHorizontal: 5}}>
+        <Collapsible collapsed={isCollapsed} style={{ paddingHorizontal: 5 }}>
           {children}
         </Collapsible>
       </View>
@@ -75,6 +75,7 @@ const Terms = ({onPress}) => {
             style={{
               fontSize: 17,
               padding: 20,
+              paddingTop: 10,
               color: '#808080',
               fontFamily: 'Poppins-Regular',
             }}>
@@ -194,14 +195,14 @@ const Terms = ({onPress}) => {
               </View>
             </Accordion>
           </View>
-          <View style={{flexDirection: 'row', width: width * 0.9, padding: 5}}>
-          <View  style={{marginTop:-5}}>
-          <Checkbox
-         
-          status={checked ? 'checked' : 'unchecked'}
-          onPress={() => setChecked(!checked)}
-          />
-          </View>
+          <View style={{ flexDirection: 'row', width: width * 0.9, padding: 5 }}>
+            <View style={{ marginTop: -5 }}>
+              <Checkbox
+
+                status={checked ? 'checked' : 'unchecked'}
+                onPress={() => setChecked(!checked)}
+              />
+            </View>
             <Text
               style={{
                 fontSize: 14,
@@ -221,13 +222,13 @@ const Terms = ({onPress}) => {
           text="Contact Customer Support"
           onPress={toggleBottomSheet}
         />
-        <RequestButton text={'Confirm'} onPress={onPress} />
+        <RequestButton btnStyle={{paddingBottom:20}} text={'Confirm'} onPress={onPress} />
       </View>
       <Modal
         isVisible={isBottomSheetVisible}
-        style={{margin: 0}}
+        style={{ margin: 0 }}
         onBackdropPress={toggleBottomSheet}>
-        <View style={{flex: 1, justifyContent: 'flex-end'}}>
+        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
           <View
             style={{
               backgroundColor: 'white',
@@ -246,19 +247,19 @@ const Terms = ({onPress}) => {
                 How can we help?
               </Text>
             </View>
-            <View style={{padding: 15}}>
+            <View style={{ paddingVertical: 10 }}>
               <Text
                 style={{
                   ...ThemeSty.gray_color_f,
                   ...ThemeSty.Font_family,
                   fontSize: 16,
                 }}>
-                lease reach out to our 24 hours Customer Support team 1800 81
+                Please reach out to our 24 hours Customer Support team 1800 81
                 9149 (local) or +8423242345325 (overseas). Alternatively you may
-                email us at: ssssco.com We’ll get this sorted!
+                email us at: Bank@ssssco.com We’ll get this sorted!
               </Text>
             </View>
-            <View style={{padding: 20, ...ThemeSty.bg_light_green_color}}>
+            <View style={{ padding: 20, ...ThemeSty.bg_light_green_color }}>
               <Text
                 style={{
                   ...ThemeSty.Green_color_f,
@@ -270,10 +271,10 @@ const Terms = ({onPress}) => {
                 email to us at:ssssco.com
               </Text>
             </View>
-            <View style={{padding: 10, alignItems: 'center'}}>
+            <View style={{ padding: 10, alignItems: 'center' }}>
               <OutlineButton text="Report Fraud" onPress={toggleBottomSheet2} />
             </View>
-            <View style={{alignItems: 'center'}}>
+            <View style={{ alignItems: 'center' }}>
               <RequestButton text="Give us call" onPress={toggleBottomSheet2} />
             </View>
           </View>
@@ -281,9 +282,9 @@ const Terms = ({onPress}) => {
       </Modal>
       <Modal
         isVisible={isBottomSheetVisible2}
-        style={{margin: 0}}
+        style={{ margin: 0 }}
         onBackdropPress={toggleBottomSheet2}>
-        <View style={{flex: 1, justifyContent: 'flex-end'}}>
+        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
           <View
             style={{
               backgroundColor: 'transparent',
@@ -291,13 +292,13 @@ const Terms = ({onPress}) => {
               borderTopRightRadius: 20,
               borderTopLeftRadius: 20,
             }}>
-            <View style={{padding: 10, alignItems: 'center'}}>
+            <View style={{ padding: 10, alignItems: 'center' }}>
               <OutlineButton
                 onPress={() => Linking.openURL(`tel:${'+73365596220'}`)}
                 text="call +7336 559 6220"
               />
             </View>
-            <View style={{alignItems: 'center'}}>
+            <View style={{ alignItems: 'center' }}>
               <RequestButton text="Cancel" onPress={toggleBottomSheet2} />
             </View>
           </View>
