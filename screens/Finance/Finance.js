@@ -1,8 +1,9 @@
-import { Dimensions, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Header from '../Transfer-Payment/components/Header'
 import Theme from '../../assets/styles/basic'
 import style from "../../assets/styles/basic"
+import Icons from '../../components/Icons'
 const Finance = () => {
   const { width, height } = Dimensions.get('window');
 
@@ -26,10 +27,9 @@ const Finance = () => {
     <View style={styles.AccountBalance}>
                 <View style={styles.accountCardHeader}>
                     <View>
-                          <Text>Deposit Account</Text>
-                          <Text>View all  <Icons.MaterialIcons name="arrow-forward-ios" /></Text>
+                         <Image source={require('../../assets/Finance/finance1.png')}/>
                     </View>
-                      <Text><Icons.MaterialCommunityIcons name="link" /></Text>
+                    
                 </View>
 
             </View>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   balanceCard:{
       height:90,
       borderRadius:15,
-      borderWidth:0.5,
+  
       padding:15,
       backgroundColor: "#E6E6E6",
       ...Theme.ligth_gray_border_Color,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
       elevation: 4
   },
   accountCardHeader:{
-      borderBottomWidth:0.5,
+     
   },
   balanceText:{
       fontSize: 14,
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
 
   AccountBalance:{
-      height: 90,
+     display:'flex',alignItems:'center',justifyContent:'center',
       borderRadius: 15,
       borderWidth: 0.5,
       // padding: 15,
