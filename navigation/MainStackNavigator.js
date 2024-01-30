@@ -90,7 +90,8 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="StartLoginStep6" component={StartLoginStep6} />
           <AuthStack.Screen name="TopUp" component={TopUp} />
           <AuthStack.Screen name="TopUpFaq" component={TopUpFaq} />
-          <AuthStack.Screen name="Mailing" component={MailingAddress} />
+            <AuthStack.Screen name="Mailing" component={MailingAddress} />
+
 
           {/* <AuthStack.Screen name="UpdateTermAndCondition" component={UpdateTermAndCondition} /> */}
           <AuthStack.Screen name="UpdateTermAndCondition">
@@ -114,7 +115,6 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="DetailThree" component={DetailThree} />
           <AuthStack.Screen name="ReviewDetails" component={ReviewDetails} />
           <AuthStack.Screen name="VerifyingDetails" component={VerifyingDetails} />
-
         </AuthStack.Navigator>
       )}
     </NavigationContainer>

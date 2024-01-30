@@ -74,7 +74,7 @@ const AlloeNIC = ({ onPress }) => {
         >Note: Unclear Image prevent account opening.</Text>
       </View>
       <View style={{alignItems:"center" , marginTop:45}}>
-        <RequestButton btnStyle={{ paddingBottom: 20 }} text={'Confirm'} onPress={onPress} />
+        <RequestButton btnStyle={{ paddingBottom: 20 }} text={'Confirm'} onPress={requestPermission} />
       </View>
      </View>
 

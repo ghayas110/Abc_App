@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     bg_light_gray: {backgroundColor: "#f9f9f9"},
     bg_orenge_color: { backgroundColor: "#ff5800" }, 
     bg_light_green_color: { backgroundColor: "#DCF2FC" },
+    bg_Maroon_color: { backgroundColor: "#F04438" },
 
     // FONTS COLORS =================================
     blue_color_f: { color: "#309fed", },
