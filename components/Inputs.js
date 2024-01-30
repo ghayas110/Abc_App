@@ -235,7 +235,7 @@ const SearchInput = ({placeholder , label, type}) => {
 };
 
 
-const ExampleInput = ({ placeholder, label, type, InStyle, keyboardType }) => {
+const ExampleInput = ({ placeholder, label, type, InStyle, keyboardType , value }) => {
     const [searchText, setSearchText] = useState('');
 
     const handleSearchChange = (text) => {
@@ -249,7 +249,7 @@ const ExampleInput = ({ placeholder, label, type, InStyle, keyboardType }) => {
                 placeholder={placeholder}
                 placeholderTextColor="#CCCCCC"
                 placeholderStyle={styles.placeholderstyle}
-                value={searchText}
+                value={value}
                 onChangeText={handleSearchChange}
                 type={type}
                 keyboardType={keyboardType}

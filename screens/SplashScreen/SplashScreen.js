@@ -3,12 +3,28 @@ import React, { useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import SplashLogos from '../../assets/SplashImages/GroupSplash.png'
 import SplashLogos2 from '../../assets/SplashImages/GroupSplash2_.png'
+import SoundPlayer from 'react-native-sound-player'
 
 const SplashScreen = () => {
   const [fadeAnim] = useState(new Animated.Value(0));
   const [isSplashScreen, setSplashScreen] = useState(false)
   const navigation = useNavigation()
   useEffect(() => {
+
+  
+   
+    try {
+      // play the file tone.mp3
+      SoundPlayer.playSoundFile('tone', 'mp3')
+      // or play from url
+      // SoundPlayer.playUrl('https://example.com/music.mp3')
+  } catch (e) {
+      console.log(`cannot play the sound file`, e)
+  }
+    
+}, []);
+  useEffect(() => {
+
     Animated.timing(fadeAnim, {
       toValue: 1,
       duration: 1000, // Adjust the duration as needed
@@ -16,12 +32,23 @@ const SplashScreen = () => {
       useNativeDriver: true,
     }).start();
     setTimeout(() =>{
+      try {
+        // play the file tone.mp3
+        SoundPlayer.playSoundFile('tone', 'mp3')
+        // or play from url
+        // SoundPlayer.playUrl('https://example.com/music.mp3')
+    } catch (e) {
+        console.log(`cannot play the sound file`, e)
+    }
       setSplashScreen(true);
       setTimeout(() => {
         navigation.navigate('Landing')
       }, 1000)
     }, 5000)
   }, []);
+
+
+ 
 
 
   return (

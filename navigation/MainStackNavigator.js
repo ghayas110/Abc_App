@@ -42,7 +42,7 @@ import StartLoginStep4 from '../screens/RegisterNewDevice/StartLoginStep4';
 import StartLoginStep5 from '../screens/RegisterNewDevice/StartLoginStep5';
 import StartLoginStep6 from '../screens/RegisterNewDevice/StartLoginStep6';
 import UpdateTermAndCondition from '../screens/RegisterNewDevice/UpdateTermAndCondition';
-import SavingPots from '../screens/SavingsPot/SavingPots';
+// import SavingPots from '../screens/SavingsPot/SavingPots';
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);

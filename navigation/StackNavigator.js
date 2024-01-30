@@ -49,6 +49,9 @@ import CardPreferences from "../screens/card/CardPreferences";
 import SettingServices from "../screens/Transfer-Payment/SettingServices";
 import PayTransfer from "../screens/Transfer-Payment/PayTransfer";
 import ManageDuitNowQR from "../screens/Settings/ManageDuitNowQR";
+
+import Accounts from "../screens/AccountCenter/Accounts";
+
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -120,6 +123,13 @@ const MainStackNavigator = () => {
       <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{
         headerShown: false
       }} />
+      <Stack.Screen name='CardMangementOne' component={CardMangementOne} />
+      <Stack.Screen name='ChangePin' component={ChangePin} />
+      <Stack.Screen name='SpendLimit' component={SpendLimit} />
+      <Stack.Screen name='CardPreferences' component={CardPreferences} />
+      <Stack.Screen name='SettingServices' component={SettingServices} />
+      <Stack.Screen name='PayTransfer' component={PayTransfer} />
+      <Stack.Screen name='ManageDuitNowQR' component={ManageDuitNowQR} />
       <Stack.Screen name="SavingPots" component={SavingPots} />
       <Stack.Screen name="PickCategoryCard" component={PickCategoryCard} />
       <Stack.Screen name="CreateSavingPots" component={CreateSavingPots} />
@@ -135,13 +145,6 @@ const MainStackNavigator = () => {
       <Stack.Screen name="WithdrawSuccessfully" component={WithdrawSuccessfully} />
 
 
-      <Stack.Screen name='CardMangementOne' component={CardMangementOne} />
-      <Stack.Screen name='ChangePin' component={ChangePin} />
-      <Stack.Screen name='SpendLimit' component={SpendLimit} />
-      <Stack.Screen name='CardPreferences' component={CardPreferences} />
-      <Stack.Screen name='SettingServices' component={SettingServices} />
-      <Stack.Screen name='PayTransfer' component={PayTransfer} />
-      <Stack.Screen name='ManageDuitNowQR' component={ManageDuitNowQR} />
     </Stack.Navigator>
   );
 };
@@ -160,6 +163,31 @@ const MoreNavigator = () => {
     </Stack.Navigator>
   );
 };
+
+
+const AccountNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerShown: false
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      <Stack.Screen name="Accounts" component={Accounts} screenOptions={{
+        headerShown: false
+      }} />
+
+
+    </Stack.Navigator>
+  );
+};
+
+
+
+
+
 const TransferNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
@@ -170,7 +198,11 @@ const TransferNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="Transfer" component={TransferTO} screenOptions={{
+      <Stack.Screen name="Transfer" component={Transfer} screenOptions={{
+        headerShown: false
+
+      }} />
+      <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
         headerShown: false
 
       }} />
@@ -201,4 +233,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator,TransferNavigator };
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator };
