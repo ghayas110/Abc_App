@@ -51,6 +51,7 @@ import PayTransfer from "../screens/Transfer-Payment/PayTransfer";
 import ManageDuitNowQR from "../screens/Settings/ManageDuitNowQR";
 
 import Accounts from "../screens/AccountCenter/Accounts";
+import Finance from "../screens/Finance/Finance";
 
 const Stack = createStackNavigator();
 
@@ -165,7 +166,7 @@ const MoreNavigator = () => {
 };
 
 
-const AccountNavigator = () => {
+const FinanceNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
       headerShown: false
@@ -175,7 +176,7 @@ const AccountNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="Accounts" component={Accounts} screenOptions={{
+      <Stack.Screen name="FinanceScreen" component={Finance} screenOptions={{
         headerShown: false
       }} />
 
@@ -187,6 +188,34 @@ const AccountNavigator = () => {
 
 
 
+
+const AccountNavigator= () => {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerShown: false
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      <Stack.Screen name="Transfer" component={Transfer} screenOptions={{
+        headerShown: false
+
+      }} />
+      <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
+        headerShown: false
+
+      }} />
+        <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="AccountType" component={AccountType} screenOptions={{
+        headerShown: false
+      }} />
+    </Stack.Navigator>
+  );
+};
 
 const TransferNavigator = () => {
   return (
@@ -233,4 +262,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator };
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator,FinanceNavigator };
