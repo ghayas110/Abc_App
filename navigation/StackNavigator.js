@@ -50,6 +50,9 @@ import ManageDuitNowQR from "../screens/Settings/ManageDuitNowQR";
 
 import Accounts from "../screens/AccountCenter/Accounts";
 import AccountDeposit from "../screens/AccountCenter/AccountDeposit";
+import Finance from "../screens/Finance/Finance";
+import ApplyFinance from "../screens/Finance/ApplyFinance";
+import ApplyPF from "../screens/Finance/ApplyPF";
 
 const Stack = createStackNavigator();
 
@@ -200,7 +203,12 @@ const FinanceNavigator = () => {
         headerShown: false
       }} />
    
-
+   <Stack.Screen name="ApplyFinance" component={ApplyFinance} screenOptions={{
+        headerShown: false
+      }} />
+        <Stack.Screen name="ApplyPF" component={ApplyPF} screenOptions={{
+        headerShown: false
+      }} />
     </Stack.Navigator>
   );
 };

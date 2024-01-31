@@ -72,7 +72,7 @@ const Finance = () => {
                                 title="Next"
                                 color="green"
                                 style={{ borderRadius: 50, borderWidth: 1 }}
-                                onPress={() => navigation.navigate('')}
+                                onPress={() => navigation.navigate('ApplyFinance')}
                             />
                         </View>
                     </View>
