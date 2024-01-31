@@ -3,6 +3,7 @@ import React from 'react'
 import style from '../../assets/styles/basic';
 import FormInput from '../../components/FormInput';
 import notifee from '@notifee/react-native';
+import { RequestButton } from '../../components/Buttons';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const AllowNotification = ({onPress}) => {
@@ -10,33 +11,47 @@ const AllowNotification = ({onPress}) => {
         // Request permissions (required for iOS)
         await notifee.requestPermission()
       }
+      const { width, height } = Dimensions.get('window')
+
   return (
  
-    <View style={styles.container}>
-    <View style ={{display:'flex',alignItems:'center',flexDirection:'column',justifyContent:'space-around',height:"60%"}}>
-    <Image
+    <>
+    <View style={{
+        ...style.basic_container,
+        height: height,
+        backgroundColor: "white",
+    }}>
+        <View style={{
+            ...style.basic_container,
+            height: height*0.95,
+            paddingRight: 20,
+            paddingLeft: 20,
+            position: "relative"
+        }}>
+            <View style={{
+                marginTop: 80,
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center"
+            }}>
+  <Image
     style={styles.mapicon}
     source={require('../../assets/SignUp/notification.png')} // replace with your image path
-    />
+    />            
+    </View>
     <View style={{padding:17}}>
     <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Receive push notifications</Text>
     <Text style={styles.text2}>Get instant updates on your spending, rewards, and activity with SSSCO</Text>
     </View>
-    </View>
+   
 
-<View>
-<Button
-title="Let's Continue"
-color="green"
-onPress={() => {
-  onDisplayNotification();
-  if (typeof onPress === 'function') {
-    onPress();
-  }
-}}
-/>
-</View>
-</View>
+
+            <RequestButton text={"Let's Continue"} onPress={onPress}
+                btnStyle={{ position: "absolute", bottom: 50 }}
+            />
+        </View>
+    </View>
+</>
 
 )
 }

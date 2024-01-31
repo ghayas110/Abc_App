@@ -75,6 +75,7 @@ const Terms = ({ onPress }) => {
             style={{
               fontSize: 17,
               padding: 20,
+              paddingTop: 10,
               color: '#808080',
               fontFamily: 'Poppins-Regular',
             }}>
@@ -221,8 +222,8 @@ const Terms = ({ onPress }) => {
           text="Contact Customer Support"
           onPress={toggleBottomSheet}
         />
-        <RequestButton text={'Confirm'} onPress={onPress} />
-        </View>
+        <RequestButton btnStyle={{paddingBottom:20}} text={'Confirm'} onPress={onPress} />
+      </View>
       <Modal
         isVisible={isBottomSheetVisible}
         style={{ margin: 0 }}

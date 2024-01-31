@@ -1,5 +1,3 @@
-// ./navigation/StackNavigator.js
-
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
@@ -160,7 +158,7 @@ const MoreNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-   
+
     </Stack.Navigator>
   );
 };
@@ -179,7 +177,26 @@ const AccountNavigator = () => {
       <Stack.Screen name="Accounts" component={Accounts} screenOptions={{
         headerShown: false
       }} />
+
       <Stack.Screen name="AccountDeposit" component={AccountDeposit} screenOptions={{
+        headerShown: false
+      }} />
+
+    </Stack.Navigator>
+  );
+};
+
+const FinanceNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerShown: false
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      <Stack.Screen name="FinanceScreen" component={Finance} screenOptions={{
         headerShown: false
       }} />
 
@@ -187,7 +204,7 @@ const AccountNavigator = () => {
     </Stack.Navigator>
   );
 };
-S
+
 
 
 const TransferNavigator = () => {
@@ -208,7 +225,7 @@ const TransferNavigator = () => {
         headerShown: false
 
       }} />
-        <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
+      <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
         headerShown: false
       }} />
       <Stack.Screen name="AccountType" component={AccountType} screenOptions={{
@@ -217,8 +234,6 @@ const TransferNavigator = () => {
     </Stack.Navigator>
   );
 };
-
-
 const SignUpStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
@@ -237,4 +252,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator };
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator , FinanceNavigator };
