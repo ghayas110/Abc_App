@@ -51,6 +51,7 @@ import PayTransfer from "../screens/Transfer-Payment/PayTransfer";
 import ManageDuitNowQR from "../screens/Settings/ManageDuitNowQR";
 
 import Accounts from "../screens/AccountCenter/Accounts";
+import AccountDeposit from "../screens/AccountCenter/AccountDeposit";
 
 const Stack = createStackNavigator();
 
@@ -178,14 +179,15 @@ const AccountNavigator = () => {
       <Stack.Screen name="Accounts" component={Accounts} screenOptions={{
         headerShown: false
       }} />
+      <Stack.Screen name="AccountDeposit" component={AccountDeposit} screenOptions={{
+        headerShown: false
+      }} />
 
 
     </Stack.Navigator>
   );
 };
-
-
-
+S
 
 
 const TransferNavigator = () => {
@@ -215,6 +217,8 @@ const TransferNavigator = () => {
     </Stack.Navigator>
   );
 };
+
+
 const SignUpStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
