@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Image, StyleSheet, Text, View, Dimensions, KeyboardAvoidingView, ScrollView } from 'react-native'
+import { Image, StyleSheet, Text, View,TouchableOpacity, Dimensions, KeyboardAvoidingView, ScrollView } from 'react-native'
 import style from "../../assets/styles/basic"
 import { CheckBoxInput, List, SimpleInput } from '../../components/Inputs';
 import { RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
 import FormInput from '../../components/FormInput';
 import ThemeSty from "../../assets/styles/basic"
+
 
 
 const PersonalDetails = ({onPress}) => {
@@ -92,55 +93,81 @@ const PersonalDetails = ({onPress}) => {
                     marginTop: 20,
                     paddingLeft: 30,
                     paddingRight: 30,
+               
+                }}>
+                <Text style={{fontFamily:'Poppins-Bold',color:'black'}}>
+  Mailing Address
+    </Text>
+                </View>
+    <View        style={{
+                    ...style.basic_container,
+                    marginTop: 20,
+                    paddingLeft: 30,
+                    paddingRight: 30,
                     backgroundColor:'whitesmoke'
                 }}>
         <View style={{padding:7}}>
         <Text>
-            Full Name
+        Address (Line One)
         </Text>
         <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        Razak Bin Osman
+        99, Jalan Prince 4
         </Text>
         </View>
         
         <View style={{padding:7}}>
         <Text>
-            IQAMA No
+        Address (Line Two)
         </Text>
         <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        4356578-768-5678
+        Azan Garden
         </Text>
         </View>
         <View style={{padding:7}}>
         <Text>
-            Date of Birth
+        Postal Code
         </Text>
         <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        7/09/1997
+        49810
         </Text>
         </View>
         <View style={{padding:7}}>
         <Text>
-            Email
+            City
         </Text>
         <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        razakbinosman@gmail.co
+        Petaling Jaya
         </Text>
         </View>
         <View style={{padding:7}}>
         <Text>
-            Martial Status
+        State
         </Text>
         <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        Single
+        Selangor
         </Text>
         </View>
     </View>
 </View>
+<View        style={{
+                    ...style.basic_container,
+                    marginVertical: 20,
+                    paddingLeft: 30,
+                    paddingRight: 30,
+               
+                }}>
                 <View style={{...styles.Notify , ...ThemeSty.bg_light_green_color}}>
-                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, fontWeight: "700", ...ThemeSty.Font_family }}>
-                    You can change this later in Settings.
+                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 12, fontWeight: "700", ...ThemeSty.Font_family }}>
+                Request change of mailing address.
                 </Text>
+                <TouchableOpacity>
+
+             
+                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 15, fontWeight: "bold", fontFamily:'Popins-Bold' }}>
+                Update now {'>'}
+                </Text>
+                </TouchableOpacity>
+            </View>
             </View>
                 </ScrollView>
     )
