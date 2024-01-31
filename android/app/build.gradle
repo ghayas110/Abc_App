@@ -74,9 +74,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.SmartBank"
+    namespace "com.SmartDigitalBank"
     defaultConfig {
-        applicationId "com.SmartBank"
+        applicationId "com.SmartDigitalBank"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -109,7 +109,7 @@ android {
     }
 }
 project.ext.vectoricons = [
-    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf','Ionicons.ttf','Entypo.ttf','FoundationI.ttf','AntDesign.ttf','FontAwesome6.ttf','MaterialCommunityIcons.ttf','FontAwesome5.ttf' ] // Specify font files
+    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf','Ionicons.ttf','Entypo.ttf','FoundationI.ttf','AntDesign.ttf','FontAwesome6.ttf','MaterialCommunityIcons.ttf','FontAwesome5.ttf' ,'Octicons.ttf' ] // Specify font files
 ]
 apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
 dependencies {

@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import { View, TextInput, Button, StyleSheet, Text, TouchableOpacity, Alert, Dimensions, KeyboardAvoidingView } from 'react-native';
 import ButtonInput from '../../components/ButtonInput';
 import { useDispatch } from 'react-redux';
+import { RequestButton } from '../../components/Buttons';
 import { loginSuccess } from '../../redux/reducers/authReducer';
 import style from '../../assets/styles/basic';
 const windowWidth = Dimensions.get('window').width;
@@ -11,6 +12,7 @@ const windowHeight = Dimensions.get('window').height;
 const Otp = ({ onPress,route }) => {
   const [otp, setOtp] = useState(['', '', '', '']);
   const dispatch=useDispatch()
+  const { width, height } = Dimensions.get('window');
 
   const [email, setEmail] = useState(route?.params?.bodys?.email);
   const [user_type, setuser_type] = useState(route?.params?.bodys?.user_type)
@@ -66,12 +68,24 @@ const Otp = ({ onPress,route }) => {
   };
 
   return (
-    <KeyboardAvoidingView 
+    <KeyboardAvoidingView
     behavior={Platform.OS === "ios" ? "padding" : "height"} 
-    style={styles.container}
+    style={{
+      ...style.basic_container,
+      height: height*0.95,
+      position: "relative",
+      backgroundColor: "white"
+  }}
   >
-    <View style={styles.container}>
-    <View>
+        
+              {/* INPUT BOX ============================= */}
+              <View style={{
+                  ...style.basic_container,
+                  marginTop: 20,
+                  paddingLeft: 30,
+                  paddingRight: 30
+              }}>
+          <View>
     <Text 
     style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}
     >Enter your One-Time Password (OTP)</Text>
@@ -97,17 +111,12 @@ const Otp = ({ onPress,route }) => {
         ))}
       </View>
       </View>
-      <View>
-      <Button
-title="Next"
-color="green"
-style={{borderRadius:50,borderWidth:1}}
-onPress={onPress}
-/>
-</View>
-      
-    </View>
-    </KeyboardAvoidingView>
+              </View>
+              <RequestButton text={"Confirm"} onPress={onPress}
+                  btnStyle={{ position: "absolute", bottom: 50 }}
+              />
+     
+          </KeyboardAvoidingView>
   );
 };
 
