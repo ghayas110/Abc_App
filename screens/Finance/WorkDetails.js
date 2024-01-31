@@ -9,7 +9,7 @@ import ThemeSty from "../../assets/styles/basic"
 
 
 
-const PersonalDetails = ({onPress}) => {
+const WorkDetails = ({onPress}) => {
     const { width, height } = Dimensions.get('window');
     const navigation = useNavigation()
     const nextPage = async () => {
@@ -29,11 +29,9 @@ const PersonalDetails = ({onPress}) => {
                 >
                <View>
 
-<Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Let’s get started</Text>
-<Text style={{lineHeight:30,color:'black'}}>Please confirm your details and tell us a little bit more about yourself</Text>
-<Text style={{fontFamily:'Poppins-Bold',color:'black'}}>
-    Personal details
-    </Text>
+<Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Tell us more about your work</Text>
+<Text style={{lineHeight:30,color:'black'}}>Please also fill in the details about your work.</Text>
+
 </View>
 
                 </View>
@@ -48,106 +46,41 @@ const PersonalDetails = ({onPress}) => {
                 }}>
         <View style={{padding:7}}>
         <Text style={{color:'black'}}>
-            Full Name
+        Employment type
         </Text>
         <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        Razak Bin Osman
+        Private employee
         </Text>
         </View>
         
         <View style={{padding:7}}>
         <Text style={{color:'black'}}>
-            IQAMA No
+        Name of employer/company
         </Text>
         <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        4356578-768-5678
+        Oliver Wyman
         </Text>
         </View>
         <View style={{padding:7}}>
         <Text style={{color:'black'}}>
-            Date of Birth
+        Occupation
         </Text>
         <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        7/09/1997
+        Consultant
         </Text>
         </View>
         <View style={{padding:7}}>
         <Text style={{color:'black'}}>
-            Email
+        Employment sector
         </Text>
         <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        razakbinosman@gmail.com
+        Financial services
         </Text>
         </View>
-        <View style={{padding:7}}>
-        <Text style={{color:'black'}}>
-            Martial Status
-        </Text>
-        <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        Single
-        </Text>
-        </View>
+    
     </View>
-    <View        style={{
-                    ...style.basic_container,
-                    marginTop: 20,
-                    paddingLeft: 30,
-                    paddingRight: 30,
-               
-                }}>
-                <Text style={{fontFamily:'Poppins-Bold',color:'black'}}>
-  Mailing Address
-    </Text>
-                </View>
-    <View        style={{
-                    ...style.basic_container,
-                    marginTop: 20,
-                    paddingLeft: 30,
-                    paddingRight: 30,
-                    backgroundColor:'whitesmoke'
-                }}>
-        <View style={{padding:7}}>
-        <Text style={{color:'black'}}>
-        Address (Line One)
-        </Text>
-        <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        99, Jalan Prince 4
-        </Text>
-        </View>
-        
-        <View style={{padding:7}}>
-        <Text style={{color:'black'}}>
-        Address (Line Two)
-        </Text>
-        <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        Azan Garden
-        </Text>
-        </View>
-        <View style={{padding:7}}>
-        <Text style={{color:'black'}}>
-        Postal Code
-        </Text>
-        <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        49810
-        </Text>
-        </View>
-        <View style={{padding:7}}>
-        <Text style={{color:'black'}}>
-            City
-        </Text>
-        <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        Petaling Jaya
-        </Text>
-        </View>
-        <View style={{padding:7}}>
-        <Text style={{color:'black'}}>
-        State
-        </Text>
-        <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        Selangor
-        </Text>
-        </View>
-    </View>
+   
+  
 </View>
 <View        style={{
                     ...style.basic_container,
@@ -156,42 +89,57 @@ const PersonalDetails = ({onPress}) => {
                     paddingRight: 30,
                
                 }}>
-                <View style={{...styles.Notify , ...ThemeSty.bg_light_green_color}}>
-                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 12, fontWeight: "700", ...ThemeSty.Font_family }}>
-                Request change of mailing address.
-                </Text>
-                <TouchableOpacity>
-
-             
-                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 15, fontWeight: "bold", fontFamily:'Popins-Bold' }}>
-                Update now {'>'}
-                </Text>
-                </TouchableOpacity>
-            </View>
+              
             <View>
                 <TouchableOpacity onPress={()=>console.log("")}>
                 <FormInput
-placeholder={'Select Highest Education Level'}
+placeholder={'Enter your industrial sector'}
 placeholderColor={'grey'}
-title={`Highest Education Level`}
+title={`Industrial sector`}
 fontsize={12}
 icon={"right"}
 />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>console.log("")}>
                 <FormInput
-placeholder={'Select residential status'}
+placeholder={'Select your date joined'}
 placeholderColor={'grey'}
-title={`Residential ownership status`}
+title={`Date joined`}
 fontsize={12}
 icon={"right"}
 />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>console.log("")}>
                 <FormInput
-placeholder={'What would you use the funds for?'}
+placeholder={'Enter your office address'}
 placeholderColor={'grey'}
-title={`Purpose of financing`}
+title={`Office address (Line one)`}
+fontsize={12}
+icon={"right"}
+/>
+<FormInput
+placeholder={'Enter your office address'}
+placeholderColor={'grey'}
+title={`Office address (Line two)`}
+fontsize={12}
+icon={"right"}
+/>
+<FormInput
+placeholder={'Enter your office postal code'}
+placeholderColor={'grey'}
+title={`Office postal code`}
+fontsize={12}
+icon={"right"}
+/><FormInput
+placeholder={'Enter your office address'}
+placeholderColor={'grey'}
+title={`Office address (Line two)`}
+fontsize={12}
+icon={"right"}
+/><FormInput
+placeholder={'Enter your office address'}
+placeholderColor={'grey'}
+title={`Office address (Line two)`}
 fontsize={12}
 icon={"right"}
 />
@@ -213,7 +161,7 @@ icon={"right"}
     )
 }
 
-export default PersonalDetails 
+export default WorkDetails 
 const styles = StyleSheet.create({
 
     container: {

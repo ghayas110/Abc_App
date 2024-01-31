@@ -23,11 +23,12 @@ import {
     edit,
     title,
     keyboardType,
-    charecter
+    charecter,
+    fontsize
   }) => {
     return (
       <View style={{marginTop: 5}}>
-        <Text style={{color: placeholderColor}}>{title}</Text>
+        <Text style={{color: placeholderColor,fontSize:fontsize}}>{title}</Text>
         <View style={styles.searchContainer}>
           <TextInput
             style={styles.input}
