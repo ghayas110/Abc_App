@@ -124,7 +124,7 @@ const PersonalDetails = ({onPress}) => {
             Email
         </Text>
         <Text style={{paddingVertical:15,fontWeight:'500',fontSize:16,color:'black',lineHeight:24,fontFamily:'Poppins'}}>
-        razakbinosman@gmail.com
+        razakbinosman@gmail.co
         </Text>
         </View>
         <View style={{padding:7}}>
