@@ -1,5 +1,3 @@
-// ./navigation/StackNavigator.js
-
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
@@ -51,6 +49,7 @@ import PayTransfer from "../screens/Transfer-Payment/PayTransfer";
 import ManageDuitNowQR from "../screens/Settings/ManageDuitNowQR";
 
 import Accounts from "../screens/AccountCenter/Accounts";
+import AccountDeposit from "../screens/AccountCenter/AccountDeposit";
 
 const Stack = createStackNavigator();
 
@@ -159,7 +158,7 @@ const MoreNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-   
+
     </Stack.Navigator>
   );
 };
@@ -226,7 +225,7 @@ const TransferNavigator = () => {
         headerShown: false
 
       }} />
-        <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
+      <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
         headerShown: false
       }} />
       <Stack.Screen name="AccountType" component={AccountType} screenOptions={{
@@ -253,4 +252,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator ,FinanceNavigator};
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator , FinanceNavigator };
