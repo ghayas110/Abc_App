@@ -32,8 +32,10 @@ const Header = ({
                 </TouchableOpacity> : null
             }
             <Text style={{
-                fontFamily: "Poppins-Bold",
+                fontFamily: "Poppins",
                 fontSize: 20,
+                lineHeight:30,
+                paddingBottom:10,
                 color: "black"
             }}>{title}</Text>
         </View>

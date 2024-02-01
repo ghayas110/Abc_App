@@ -16,10 +16,10 @@ function RequestButton({ text, onPress, btnStyle, buttonsty, textbtnsty }) {
     )
 }
 
-function OutlineButton({ text, onPress, textoutbtnsty, outbuttonsty }) {
+function OutlineButton({ text, onPress, textoutbtnsty, outbuttonsty,...btnStyle }) {
     return (
         <>
-            <View style={styles.btnContainer}>
+            <View style={{ ...styles.btnContainer, ...btnStyle }}>
                 <TouchableOpacity style={{ ...styles.btnStyleOutline, ...outbuttonsty }} onPress={() => { onPress() }}>
                     <Text style={{ ...styles.textBtnOutline, fontFamily: "Poppins-Regular", ...textoutbtnsty }}>{text}</Text>
                 </TouchableOpacity>

@@ -1,5 +1,3 @@
-// ./navigation/StackNavigator.js
-
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
@@ -27,6 +25,19 @@ import DuetitNowOnWay from "../screens/Transfer-Payment/DuetitNowOnWay";
 import DuetNowSent from "../screens/Transfer-Payment/DuetNowSent";
 import SendAmount from "../screens/QRPayments/InsertAmount";
 import Recipt from "../screens/Transfer-Payment/Recipt";
+import SavingPots from "../screens/SavingsPot/SavingPots";
+import PickCategoryCard from "../screens/SavingsPot/PickCategoryCard";
+import CreateSavingPots from "../screens/SavingsPot/CreateSavingPots";
+import Contribution from "../screens/SavingsPot/Contribution";
+import ReviewDetails from "../screens/SavingsPot/ReviewDetails";
+import SuccessfullyCreated from "../screens/SavingsPot/SuccessfullyCreated";
+import AddFundsHome from "../screens/SavingsPot/AddFundsHome";
+import AddFunds from "../screens/SavingsPot/AddFunds";
+import AddFundReviewDetails from "../screens/SavingsPot/AddFundReviewDetails";
+import FundSuccessFullyCreated from "../screens/SavingsPot/FundSuccessFullyCreated";
+import WithdrawFund from "../screens/SavingsPot/WithdrawFund";
+import WithdrawFundReview from '../screens/SavingsPot/WithdrawFundReview'
+import WithdrawSuccessfully from "../screens/SavingsPot/WithdrawSuccessfully"
 
 import Transfer from "../screens/Transfer-Payment/Transfer";
 import CardMangementOne from "../screens/card/CardMangementOne";
@@ -41,6 +52,12 @@ import Privacy from "../screens/Settings/Privacy";
 import Profile from "../screens/Settings/Profile";
 import UpdateMallingAddress from "../screens/Settings/UpdateMallingAddress";
 import FAQs from "../screens/Settings/FAQs";
+import Accounts from "../screens/AccountCenter/Accounts";
+import AccountDeposit from "../screens/AccountCenter/AccountDeposit";
+import Finance from "../screens/Finance/Finance";
+import ApplyFinance from "../screens/Finance/ApplyFinance";
+import ApplyPF from "../screens/Finance/ApplyPF";
+
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -88,6 +105,20 @@ const MainStackNavigator = () => {
       <Stack.Screen name='Profile' component={Profile} />
       <Stack.Screen name='UpdateMallingAddress' component={UpdateMallingAddress} />
       <Stack.Screen name='FAQs' component={FAQs} />
+      <Stack.Screen name="SavingPots" component={SavingPots} />
+      <Stack.Screen name="PickCategoryCard" component={PickCategoryCard} />
+      <Stack.Screen name="CreateSavingPots" component={CreateSavingPots} />
+      <Stack.Screen name="Contribution" component={Contribution} />
+      <Stack.Screen name="ReviewDetails" component={ReviewDetails} />
+      <Stack.Screen name="SuccessfullyCreated" component={SuccessfullyCreated} />
+      <Stack.Screen name="AddFundsHome" component={AddFundsHome} />
+      <Stack.Screen name="AddFunds" component={AddFunds} />
+      <Stack.Screen name="AddFundReviewDetails" component={AddFundReviewDetails} />
+      <Stack.Screen name="FundSuccessFullyCreated" component={FundSuccessFullyCreated} />
+      <Stack.Screen name="WithdrawFund" component={WithdrawFund} />
+      <Stack.Screen name="WithdrawFundReview" component={WithdrawFundReview} />
+      <Stack.Screen name="WithdrawSuccessfully" component={WithdrawSuccessfully} />
+
 
     </Stack.Navigator>
   );
@@ -103,10 +134,60 @@ const MoreNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-   
+
     </Stack.Navigator>
   );
 };
+
+
+const AccountNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerShown: false
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      <Stack.Screen name="Accounts" component={Accounts} screenOptions={{
+        headerShown: false
+      }} />
+
+   <Stack.Screen name="AccountDeposit" component={AccountDeposit} screenOptions={{
+        headerShown: false
+      }} />
+
+    </Stack.Navigator>
+  );
+};
+
+const FinanceNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerShown: false
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      <Stack.Screen name="FinanceScreen" component={Finance} screenOptions={{
+        headerShown: false
+      }} />
+   
+   <Stack.Screen name="ApplyFinance" component={ApplyFinance} screenOptions={{
+        headerShown: false
+      }} />
+        <Stack.Screen name="ApplyPF" component={ApplyPF} screenOptions={{
+        headerShown: false
+      }} />
+    </Stack.Navigator>
+  );
+};
+
+
+
 const TransferNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
@@ -117,11 +198,15 @@ const TransferNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="Transfer" component={TransferTO} screenOptions={{
+      <Stack.Screen name="Transfer" component={Transfer} screenOptions={{
         headerShown: false
 
       }} />
-        <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
+      <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
+        headerShown: false
+
+      }} />
+      <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
         headerShown: false
       }} />
       <Stack.Screen name="AccountType" component={AccountType} screenOptions={{
@@ -148,4 +233,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator,TransferNavigator };
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator , FinanceNavigator };

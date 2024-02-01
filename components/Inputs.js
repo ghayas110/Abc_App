@@ -171,6 +171,45 @@ const List = ({
     )
 }
 
+const DropDown = ({
+    defaultValue,
+    label,
+    textStyle,
+    dropDownStyle,
+    placeholder,
+    items,
+    value
+}) => {
+    const [isOpen, setOpen] = useState(false)
+    const [currentValue, setCurrentValue] = useState()
+
+
+    return (
+        <>
+            <View style={{}}>
+                {/* <Text style={{ ...textStyle, fontFamily: "Poppins-Regular" }}>{label}</Text> */}
+                <DropDownPicker
+                    placeholder={placeholder}
+                    items={items}
+                    defaultValue={defaultValue}
+                    value={currentValue}
+                    setOpen={() => setOpen(!isOpen)}
+                    open={isOpen}
+                    textStyle={dropDownStyle}
+                    style={{
+                        zIndex: 1000,
+                        borderTopWidth: 0,
+                        borderLeftWidth: 0,
+                        borderRightWidth: 0,
+                        fontFamily: "Poppins-Regular",
+                    }}                    
+                    setValue={(val) => setCurrentValue(val)}
+                />
+            </View>
+        </>
+    )
+}
+
 
 const SearchInput = ({placeholder , label, type}) => {
     const [searchText, setSearchText] = useState('');
@@ -196,7 +235,7 @@ const SearchInput = ({placeholder , label, type}) => {
 };
 
 
-const ExampleInput = ({ placeholder, label, type }) => {
+const ExampleInput = ({ placeholder, label, type, InStyle, keyboardType , value }) => {
     const [searchText, setSearchText] = useState('');
 
     const handleSearchChange = (text) => {
@@ -206,17 +245,22 @@ const ExampleInput = ({ placeholder, label, type }) => {
     return (
         <View style={styles.Examcontainer}>
             <TextInput
-                style={styles.input}
+                style={{...styles.input , ...InStyle }}
                 placeholder={placeholder}
                 placeholderTextColor="#CCCCCC"
-                placeholderStyle={{ fontSize: 24 }}
-                value={searchText}
+                placeholderStyle={styles.placeholderstyle}
+                value={value}
                 onChangeText={handleSearchChange}
                 type={type}
+                keyboardType={keyboardType}
             />
         </View>
     );
 };
+
+
+
+
 
 const styles = StyleSheet.create({
     otpInput: {
@@ -256,8 +300,11 @@ const styles = StyleSheet.create({
         fontWeight:"600",
         ...Theme.Font_family
         
-        
+    }, 
+    placeholder:{
+        fontSize:24,
+        ...Theme.black_color_f
     }
 });
 
-export { SimpleInput, OtpInput, CheckBoxInput, List, SearchInput, ExampleInput }
+export { SimpleInput, OtpInput, CheckBoxInput, List, SearchInput, ExampleInput, DropDown }

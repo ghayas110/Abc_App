@@ -12,6 +12,7 @@ const ActivationSteps = ({
     text_c,
     image_d,
     text_d,
+    cards
 }) => {
     return (
         <>
@@ -43,7 +44,8 @@ const ActivationSteps = ({
                     alignItems: "center",
                 }}>
                     <Image source={image_c} />
-                    <Image style={{ position: "relative", top: -15, left: 45 }} source={verticalLineImage} />
+                    {cards!=3?
+                    <Image style={{ position: "relative", top: -15, left: 45 }} source={verticalLineImage} />:null}
                     <Text style={{ color: "black", fontFamily: "Poppins-Regular", textAlign: "center", fontSize: 12 }}>{text_c}</Text>
                 </View>
                 <View style={{

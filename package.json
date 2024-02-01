@@ -1,5 +1,5 @@
 {
-  "name": "smartbank",
+  "name": "smartdigitalbank",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,16 +11,19 @@
     "test": "jest"
   },
   "dependencies": {
+    "@eva-design/eva": "^2.2.0",
     "@notifee/react-native": "^7.8.2",
     "@react-native-async-storage/async-storage": "^1.21.0",
     "@react-native-community/datetimepicker": "^7.6.2",
     "@react-native-masked-view/masked-view": "^0.3.1",
+    "@react-native-picker/picker": "^2.6.1",
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/drawer": "^6.6.6",
     "@react-navigation/material-top-tabs": "^6.6.5",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/stack": "^6.3.20",
     "@reduxjs/toolkit": "^2.0.1",
+    "@ui-kitten/components": "^5.3.1",
     "axios": "^1.6.5",
     "deprecated-react-native-prop-types": "^5.0.0",
     "link": "^2.1.0",
@@ -36,6 +39,7 @@
     "react-native-gesture-handler": "^2.14.0",
     "react-native-image-crop-picker": "^0.40.2",
     "react-native-image-picker": "^7.1.0",
+    "react-native-linear-gradient": "^2.8.3",
     "react-native-maps": "^1.9.1",
     "react-native-modal": "^13.0.1",
     "react-native-pager-view": "^6.2.3",
@@ -48,6 +52,7 @@
     "react-native-rename": "^3.2.14",
     "react-native-safe-area-context": "^4.8.2",
     "react-native-screens": "^3.29.0",
+    "react-native-sound-player": "^0.13.2",
     "react-native-star-rating-widget": "^1.7.3",
     "react-native-step-indicator": "^1.0.3",
     "react-native-svg": "^12.5.1",

@@ -120,32 +120,7 @@ const SignUp = () => {
   return (
     <ScrollView style={{ backgroundColor: 'white' }}>
 
-      {/*
-    {!isDecimal(currentPosition) ?
-  
-   <View style={{display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'row',paddingTop:10}}>
-    <View style={{display:'flex',alignItems:'center',justifyContent:'flex-end',height:30}}>
     
-   <Image source={require('../../assets/SignUp/docsIcon.png')}/>
-    </View>
-   
-
-   <View style={{display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column'}}>
-   
-    <Text>
-    {currentPosition+1} of 8
-    </Text>
-
-    <Progress.Bar progress={parseFloat(`0.${currentPosition+1}`)} width={100} />
-    </View>
-
-  <View style={{display:'flex',alignItems:'center',justifyContent:'flex-end'}}>
-  <Icons.AntDesign name="user" size={20} />
-  </View>
-    </View>
- 
-    :null}
-     */}
       {!isDecimal(currentPosition) ?
         <Steps
           backtoPage={false}

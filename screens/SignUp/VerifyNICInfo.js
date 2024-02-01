@@ -1,22 +1,37 @@
 import { StyleSheet, Text, View,Dimensions,Button, KeyboardAvoidingView,Image } from 'react-native'
 import React from 'react'
 import FormInput from '../../components/FormInput';
+import { RequestButton } from '../../components/Buttons';
+import style from '../../assets/styles/basic';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const VerifyNICInfo = ({onPress}) => {
- 
-  return (
-    <KeyboardAvoidingView 
-      behavior={Platform.OS === "ios" ? "padding" : "height"} 
-      style={styles.container}
-    >
-    <View style={styles.container}>
-    <View>
-    <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>Verify your identity</Text>
+  const { width, height } = Dimensions.get('window')
 
-    </View>
-<View style={styles.container1}>
+  return (
+    <KeyboardAvoidingView
+    behavior={Platform.OS === "ios" ? "padding" : "height"} 
+    style={{
+      ...style.basic_container,
+      height: height,
+      position: "relative",
+      backgroundColor: "white"
+  }}
+  >
+        
+              {/* INPUT BOX ============================= */}
+              <View style={{
+                  ...style.basic_container,
+                  marginTop: 20,
+                  paddingLeft: 30,
+                  paddingRight: 30
+              }}>
+          <View>
+    
+    <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Verify your identity</Text>
+    <View style={{display:'flex',justifyContent:'center',height:height*0.7}}>
+    <View style={styles.container1}>
 <View >
 <Text style={styles.numberText}>1</Text>
 </View>
@@ -34,15 +49,14 @@ const VerifyNICInfo = ({onPress}) => {
 <Text style={styles.text2}>Take a Selfie</Text>
 </View>
 </View>
-<View>
-<Button
-title="Continue"
-color="green"
-onPress={onPress}
-/>
-</View>
-</View>
-</KeyboardAvoidingView>
+    </View>
+    </View>
+              </View>
+              <RequestButton text={"Confirm"} onPress={onPress}
+                  btnStyle={{ position: "absolute", bottom: 50 }}
+              />
+     
+          </KeyboardAvoidingView>
 )
 }
 

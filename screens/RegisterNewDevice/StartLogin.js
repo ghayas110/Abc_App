@@ -49,7 +49,7 @@ const StartLogin = ({ disabled }) => {
                 placeholder={'Enter Username'}
                 placeholderTextColor={ "grey" }
              
-          
+
                 inputstyle={{ fontSize: 20, fontWeight: "600", color:'black', ...ThemeSty.Font_family }}
             />
                 </View>
