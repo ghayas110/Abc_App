@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions, TextInput } from 'react-native'
+import { StyleSheet, Image,Text, View, TouchableOpacity, Dimensions, TextInput } from 'react-native'
 import Checkbox from 'react-native-check-box';
 import DropDownPicker from 'react-native-dropdown-picker';
 import Theme from '../assets/styles/basic'
 import Icons from './Icons';
+import DocumentPicker from 'react-native-document-picker';
 
 const { width, height } = Dimensions.get('window');
-
-
-
 const SimpleInput = ({
     placeholderTextColor,
     inputstyle,
@@ -210,7 +208,6 @@ const DropDown = ({
     )
 }
 
-
 const SearchInput = ({placeholder , label, type}) => {
     const [searchText, setSearchText] = useState('');
 
@@ -234,7 +231,6 @@ const SearchInput = ({placeholder , label, type}) => {
     );
 };
 
-
 const ExampleInput = ({ placeholder, label, type, InStyle, keyboardType , value }) => {
     const [searchText, setSearchText] = useState('');
 
@@ -254,6 +250,50 @@ const ExampleInput = ({ placeholder, label, type, InStyle, keyboardType , value 
                 type={type}
                 keyboardType={keyboardType}
             />
+        </View>
+    );
+};
+
+const FilePicker = ({text,fileStyleView,fileStyle,icon}) => {
+    const [pickedDocument, setPickedDocument] = useState(null);
+    const pickDocument = async () => {
+        try {
+          const result = await DocumentPicker.pick({
+            type: [DocumentPicker.types.allFiles],
+          });
+          console.log(result);
+          setPickedDocument(result);
+        } catch (err) {
+          if (DocumentPicker.isCancel(err)) {
+            // User cancelled the picker
+            console.log('User cancelled the picker');
+          } else {
+            throw err;
+          }
+        }
+    };
+    return (
+        <View style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            ...fileStyleView
+        }}>
+            <TouchableOpacity style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                borderWidth: 2,
+                borderColor: "#00A200",
+                borderRadius: 20,
+                padding: 10,
+                width: 250,
+                ...fileStyle
+            }} onPress={pickDocument}>
+                <Image source={icon} style={{marginRight: 10,height:30,width:30}}/>
+                <Text style={{...Theme.Font_family_Bold,...Theme.Green_color_h,fontSize: 20}}>{text}</Text>
+            </TouchableOpacity>
         </View>
     );
 };
@@ -307,4 +347,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export { SimpleInput, OtpInput, CheckBoxInput, List, SearchInput, ExampleInput, DropDown }
+export { SimpleInput, OtpInput, CheckBoxInput, List, SearchInput, ExampleInput, DropDown,FilePicker }

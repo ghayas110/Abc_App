@@ -43,6 +43,9 @@ import StartLoginStep5 from '../screens/RegisterNewDevice/StartLoginStep5';
 import StartLoginStep6 from '../screens/RegisterNewDevice/StartLoginStep6';
 import UpdateTermAndCondition from '../screens/RegisterNewDevice/UpdateTermAndCondition';
 import Profile from '../screens/Settings/Profile';
+import ApplyFinanceScd from '../screens/Finance/UploadPdf/ApplyFinanceScd';
+import DocsInfo from '../screens/Finance/UploadPdf/DocsInfo';
+import UploadPdf from '../screens/Finance/UploadPdf/UploadPdf';
 
 // import SavingPots from '../screens/SavingsPot/SavingPots';
 const AuthStack = createStackNavigator();
@@ -69,7 +72,9 @@ const MainStackNavigator = () => {
           headerShown: false
         }}>
          
-          {/* <AuthStack.Screen name='Profile' component={Profile} /> */}
+          <AuthStack.Screen name='ApplyFinanceScd' component={ApplyFinanceScd} />
+          <AuthStack.Screen name='DocsInfo' component={DocsInfo} />
+          <AuthStack.Screen name='UploadPdf' component={UploadPdf} />
           <AuthStack.Screen name="Splash">
             {(props) => <SplashScreen />}
           </AuthStack.Screen>

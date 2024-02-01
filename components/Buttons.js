@@ -16,7 +16,7 @@ function RequestButton({ text, onPress, btnStyle, buttonsty, textbtnsty }) {
     )
 }
 
-function OutlineButton({ text, onPress, textoutbtnsty, outbuttonsty,...btnStyle }) {
+function OutlineButton({ text, onPress, textoutbtnsty, outbuttonsty,btnStyle }) {
     return (
         <>
             <View style={{ ...styles.btnContainer, ...btnStyle }}>

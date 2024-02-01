@@ -175,8 +175,7 @@ const FinanceNavigator = () => {
       <Stack.Screen name="FinanceScreen" component={Finance} screenOptions={{
         headerShown: false
       }} />
-   
-   <Stack.Screen name="ApplyFinance" component={ApplyFinance} screenOptions={{
+      <Stack.Screen name="ApplyFinance" component={ApplyFinance} screenOptions={{
         headerShown: false
       }} />
         <Stack.Screen name="ApplyPF" component={ApplyPF} screenOptions={{
