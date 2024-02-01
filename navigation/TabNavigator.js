@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/dist/Ionicons';
-import { MainStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator } from "./StackNavigator";
+import { MainStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator  , FinanceNavigator } from "./StackNavigator";
 // import AccountScreen from "../screens/AccountScreen";
 import FinanceScreen from "../screens/FinanceScreen";
 import TransferScreen from "../screens/Transfer-Payment/Transfer";
@@ -44,7 +44,7 @@ const BottomTabNavigator = () => {
           
           ),
         }}/>
-      <Tab.Screen name="Finance" component={Finance} options={{
+      <Tab.Screen name="Finance" component={FinanceNavigator} options={{
           tabBarIcon: ({ color, size,focused }) => (
             <Image source={!focused ? require('../assets/tabicons/finance.png') : require('../assets/tabicons/FinanceOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
             

@@ -30,7 +30,7 @@ const SimpleInput = ({
                 ...viewStyle
             }}>
                 <Text style={{
-                    fontSize: 17,
+                    fontSize: 12,
                     color: "#808080",
                     fontFamily: "Poppins-Regular"
                 }}>{label}</Text>

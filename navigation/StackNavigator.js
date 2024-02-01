@@ -51,6 +51,11 @@ import ManageDuitNowQR from "../screens/Settings/ManageDuitNowQR";
 import Accounts from "../screens/AccountCenter/Accounts";
 import AccountDeposit from "../screens/AccountCenter/AccountDeposit";
 
+import Finance from "../screens/Finance/Finance";
+import Checknote from "../screens/Finance/Checknote";
+import DesireDuration from "../screens/Finance/DesireDuration";
+import BeforeWeBegin from "../screens/Finance/BeforeWeBegin";
+
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -196,7 +201,16 @@ const FinanceNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="FinanceScreen" component={Finance} screenOptions={{
+      <Stack.Screen name="Finance" component={Finance} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="Checknote" component={Checknote} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="DesireDuration" component={DesireDuration} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="BeforeWeBegin" component={BeforeWeBegin} screenOptions={{
         headerShown: false
       }} />
 
@@ -252,4 +266,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator , FinanceNavigator };
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator, FinanceNavigator };
