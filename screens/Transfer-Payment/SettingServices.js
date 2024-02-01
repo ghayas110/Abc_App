@@ -103,7 +103,9 @@ const SettingServices = () => {
     const handleItemClick = (text) => {
         if (text == "Pay & Transfer Settings") {
             navigation.navigate('PayTransfer')
-        }
+        }else if(text == "Privacy & Security"){navigation.navigate('Privacy')}
+        else if(text == "Profile"){navigation.navigate('Profile')}
+        else if(text == "Account & Card"){navigation.navigate('CardMangementOne')}
     }
 
     const renderItemTwo = ({ item }) => (
@@ -130,7 +132,8 @@ const SettingServices = () => {
     const gotNextPage = (text) => {
         if (text == "Contact Us") {
             setBottomSheetVisible(true)
-        }
+        }else if(text == "Important Documents"){navigation.navigate('ImportantDocs')}
+        else if(text == "FAQ"){navigation.navigate('FAQs')}
     }
     return (
         <>

@@ -42,6 +42,7 @@ import StartLoginStep4 from '../screens/RegisterNewDevice/StartLoginStep4';
 import StartLoginStep5 from '../screens/RegisterNewDevice/StartLoginStep5';
 import StartLoginStep6 from '../screens/RegisterNewDevice/StartLoginStep6';
 import UpdateTermAndCondition from '../screens/RegisterNewDevice/UpdateTermAndCondition';
+import Profile from '../screens/Settings/Profile';
 
 const AuthStack = createStackNavigator();
 const MainStackNavigator = () => {
@@ -67,6 +68,7 @@ const MainStackNavigator = () => {
           headerShown: false
         }}>
          
+          {/* <AuthStack.Screen name='Profile' component={Profile} /> */}
           <AuthStack.Screen name="Splash">
             {(props) => <SplashScreen />}
           </AuthStack.Screen>
