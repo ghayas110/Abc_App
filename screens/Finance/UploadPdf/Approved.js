@@ -2,8 +2,10 @@ import React from 'react'
 import { Image, SafeAreaView, Text, FlatList, TouchableOpacity, StyleSheet, View, Switch, ScrollView, Button } from 'react-native'
 import style from '../../../assets/styles/basic';
 import { RequestButton } from '../../../components/Buttons';
+import { useNavigation } from '@react-navigation/native';
 
 const Approved = () => {
+    const navigation = useNavigation()
     return (
         <>
             <SafeAreaView style={{
@@ -24,12 +26,9 @@ const Approved = () => {
                     <Image source={require("../../../assets/Finance/9243.png")} />
                 </View>
                 <View style={{ flex: 1, marginTop: 20 }}>
-                    <Text style={{ ...style.Font_family_Bold, ...style.Green_color_h, fontSize: 25 }}>Congratulations! Your application has been approved</Text>
-                    <Text style={{ ...style.Font_family, ...style.gray_color_h }}>These are the confirmed details of your bank Personal Financing-i</Text>
+                    <Text style={{ ...style.Font_family_Bold, ...style.Green_color_h, fontSize: 20 }}>Congratulations! Your application has been approved</Text>
                 </View>
-                <View style={{
-                    flex:1
-                }}>
+                <View>
                     <View style={{
                         backgroundColor: "#f9f9f9",
                         padding: 20,
@@ -93,7 +92,7 @@ const Approved = () => {
                 <View style={{ flex: 1, justifyContent: "flex-end", marginBottom: 20 }}>
                     <RequestButton btnStyle={{
                         width: "auto"
-                    }} text={"Continue"} onPress={() => { console.log("first") }}/>
+                    }} text={"Continue"} onPress={() => {navigation.navigate('FinanceScreen') }}/>
                 </View>
             </SafeAreaView>
         </>

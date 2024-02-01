@@ -79,7 +79,7 @@ const UploadPdf = () => {
             </TouchableOpacity>
             <RequestButton btnStyle={{
                 width: "auto"
-            }} text={"Continue"} onPress={() => { navigation.navigate("DocsInfo") }} />
+            }} text={"Continue"} onPress={() => { navigation.navigate("Reviewing") }} />
         </View> 
     </SafeAreaView>
 </>
