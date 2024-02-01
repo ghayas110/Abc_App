@@ -1,29 +1,11 @@
-import React, { useState } from 'react';
 import { Image, SafeAreaView, Text, TouchableOpacity, StyleSheet, View, Switch, ScrollView, Button } from 'react-native'
-import style from '../../../assets/styles/basic';
-import { useNavigation } from '@react-navigation/native';
-import ActivationSteps from '../../../components/steps/ActivationSteps';
-import { OutlineButton, RequestButton } from '../../../components/Buttons';
-import Steps from '../../../components/steps/Steps';
-import { TextInput } from 'react-native-paper';
-import DocumentPicker from 'react-native-document-picker';
-import { FilePicker } from '../../../components/Inputs';
-
-// const UploadPdf = () => {
-//     const navigation = useNavigation()
-
-//     return (
-
-//     )
-// }
-
-// export default UploadPdf
-
-const UploadPdf = () => {
-    const navigation = useNavigation()
+import React from 'react'
+import { RequestButton } from '../../components/Buttons'
+import Steps from '../../components/steps/Steps'
+import style from '../../assets/styles/basic';
+import { FilePicker } from '../../components/Inputs';
+const UploadDoc = () => {
   return (
- 
-    <>
     <SafeAreaView style={{
         flex: 1,
         backgroundColor: "white",
@@ -32,15 +14,7 @@ const UploadPdf = () => {
         paddingBottom: 20,
         paddingTop: 30
     }}>
-         <Steps
-            backtoPage={false}
-            totalSteps={"1"}
-            activeStep={"1"}
-            backIcon={require('../../verify-personal/images/Icons.png')}
-            leftIcon={require('../../../assets/Finance/activeStep2.png')}
-            rightIcon={require('../../../assets/Finance/aproval.png')}
-            ProgressBarIcon={require('../../verify-personal/images/steps.png')}
-        />
+   
         <View style={{ flex: 1,marginTop:20 }}>
             <Text style={{ ...style.Font_family_Bold, ...style.Green_color_h, fontSize: 30 }}>We need some documents from you</Text>
             <Text style={{ ...style.Font_family, ...style.gray_color_h }}>Please only upload .pdf files</Text>
@@ -49,8 +23,8 @@ const UploadPdf = () => {
                 <Text style={{ ...style.Font_family, ...style.gray_color_h }}>Showing at least the last 12 months of {'\n'} contribution history</Text>
             </View>
 
-            <FilePicker 
-                icon={require("../../../assets/Finance/upload.png")} 
+            <FilePicker
+                icon={require("../../assets/Finance/upload.png")} 
                 text={"Upload"}
                 fileStyleView={{
                     marginTop: 40
@@ -76,7 +50,7 @@ const UploadPdf = () => {
                 justifyContent: "center",
                 marginBottom: 20
             }}>
-                <Image source={require("../../../assets/Finance/info.png")} style={{marginRight: 10,height: 30,width: 30}}/>
+                <Image source={require("../../assets/Finance/info.png")} style={{marginRight: 10,height: 30,width: 30}}/>
                 <Text style={{...style.Font_family_Bold,...style.Green_color_h,fontSize: 20}}>How to upload?</Text>
             </TouchableOpacity>
             <RequestButton btnStyle={{
@@ -84,10 +58,9 @@ const UploadPdf = () => {
             }} text={"Continue"} onPress={() => { navigation.navigate("DocsInfo") }} />
         </View> 
     </SafeAreaView>
-</>
   )
 }
 
-export default UploadPdf
+export default UploadDoc
 
 const styles = StyleSheet.create({})

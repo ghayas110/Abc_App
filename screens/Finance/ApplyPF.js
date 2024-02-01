@@ -7,6 +7,7 @@ import Steps from '../../components/steps/Steps';
 import EligibleScreen from '../SignUp/EligibleScreen';
 import PersonalDetails from './PersonalDetails';
 import WorkDetails from './WorkDetails';
+import ChangeAddress from './UploadPdf/ChangeAddress';
 const labels = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
 const customStyles = {
   stepIndicatorSize: 25,
@@ -35,12 +36,12 @@ const ApplyPF = () => {
         // Render step 1
         case 0.2:
           return (
-            <EligibleScreen onPress={() => setCurrentPosition(currentPosition + 1)} />
+            <ChangeAddress onPress={() => setCurrentPosition(currentPosition + 1)} />
           )
         break;
         case 1:
             return (
-              <WorkDetails onPress={() => setCurrentPosition(currentPosition + 1)} />
+              <WorkDetails onPress={() => navigation.navigate('ApplyFinanceScd')} />
             )
             // Render step 1
     

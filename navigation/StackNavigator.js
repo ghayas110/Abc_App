@@ -57,6 +57,10 @@ import AccountDeposit from "../screens/AccountCenter/AccountDeposit";
 import Finance from "../screens/Finance/Finance";
 import ApplyFinance from "../screens/Finance/ApplyFinance";
 import ApplyPF from "../screens/Finance/ApplyPF";
+import ApplyFinanceScd from "../screens/Finance/UploadPdf/ApplyFinanceScd";
+import DocsInfo from "../screens/Finance/UploadPdf/DocsInfo";
+import UploadPdf from "../screens/Finance/UploadPdf/UploadPdf";
+import UploadDoc from "../screens/Finance/UploadDoc";
 
 const Stack = createStackNavigator();
 
@@ -181,6 +185,11 @@ const FinanceNavigator = () => {
         <Stack.Screen name="ApplyPF" component={ApplyPF} screenOptions={{
         headerShown: false
       }} />
+       <Stack.Screen name='ApplyFinanceScd' component={ApplyFinanceScd} />
+          <Stack.Screen name='DocsInfo' component={DocsInfo} />
+          <Stack.Screen name='UploadPdf' component={UploadPdf} />
+          <Stack.Screen name='UploadDocs' component={UploadDoc} />
+
     </Stack.Navigator>
   );
 };

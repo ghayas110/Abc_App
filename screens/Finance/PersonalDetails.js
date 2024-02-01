@@ -9,7 +9,7 @@ import ThemeSty from "../../assets/styles/basic"
 
 
 
-const PersonalDetails = ({onPress}) => {
+const PersonalDetails = ({onPress,AddressPress}) => {
     const { width, height } = Dimensions.get('window');
     const navigation = useNavigation()
     const nextPage = async () => {
@@ -160,7 +160,7 @@ const PersonalDetails = ({onPress}) => {
                 <Text style={{ ...ThemeSty.Green_color_f, fontSize: 12, fontWeight: "700", ...ThemeSty.Font_family }}>
                 Request change of mailing address.
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={AddressPress}>
 
              
                 <Text style={{ ...ThemeSty.Green_color_f, fontSize: 15, fontWeight: "bold", fontFamily:'Popins-Bold' }}>
