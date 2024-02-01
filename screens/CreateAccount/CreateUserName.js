@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   inputContainer: {
-    borderBottomWidth: 2,
+    borderBottomWidth: 1,
     borderColor: '#00A200',
     marginTop: 10,
   },

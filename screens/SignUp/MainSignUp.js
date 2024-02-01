@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { RequestButton } from '../../components/Buttons';
 import ActivationSteps from '../../components/steps/ActivationSteps';
 import LottieView from 'lottie-react-native';
+import ActivationSteps2 from '../../components/steps/ActivationSteps2';
 
 
 const MainSignUp = () => {
@@ -50,7 +51,7 @@ const MainSignUp = () => {
                         fontFamily: "Poppins-Regular",
                         ...style.gray_color_h
                     }}>This won’t take long. Please have your CNIC ready</Text>
-                    <ActivationSteps
+                    <ActivationSteps2
                     verticalLineImage={require('../../assets/SignUp/line.png')}
                     image_a={require('../../assets/SignUp/paper.png')}
                     text_a={`Sign up & ID ${'\n'} verification`}

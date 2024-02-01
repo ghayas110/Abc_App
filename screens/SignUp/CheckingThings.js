@@ -4,6 +4,7 @@ import style from "../../assets/styles/basic"
 import { useNavigation } from '@react-navigation/native';
 import { RequestButton } from '../../components/Buttons';
 import ActivationSteps from '../../components/steps/ActivationSteps';
+import ActivationSteps2 from '../../components/steps/ActivationSteps2';
 
 
 const CheckingThings = ({onPress}) => {
@@ -43,7 +44,7 @@ const CheckingThings = ({onPress}) => {
                         fontSize: 28,
                         fontFamily: "Poppins-Bold"
                     }}>We're checking on a {'\n'}few things </Text>
-                    <ActivationSteps
+                    <ActivationSteps2
                     verticalLineImage={require('../../assets/SignUp/line.png')}
                     image_a={require('../../assets/SignUp/Tick1.png')}
                     text_a={`Sign up & ID ${'\n'} verification`}
@@ -53,6 +54,7 @@ const CheckingThings = ({onPress}) => {
                     text_c={`Create ${'\n'} an accounts`}
                     image_d={require('../../assets/SignUp/wallet.png')}
                     text_d={`Top up ${'\n'} account`}
+                    
                 />
                
                 
