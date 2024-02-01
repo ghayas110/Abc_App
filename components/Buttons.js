@@ -9,7 +9,7 @@ function RequestButton({ text, onPress, btnStyle, buttonsty, textbtnsty }) {
         <>
             <View style={{ ...styles.btnContainer, ...btnStyle }}>
                 <TouchableOpacity style={{...styles.btnStyleReq ,  ...buttonsty}} onPress={() => { onPress() }}>
-                    <Text style={{ ...styles.textBtnReq, fontFamily: "Poppins-Regular", ...textbtnsty }}>{text}</Text>
+                    <Text style={{ ...styles.textBtnReq, fontFamily: "Poppins-Bold", ...textbtnsty }}>{text}</Text>
                 </TouchableOpacity>
             </View>
         </>
@@ -21,7 +21,7 @@ function OutlineButton({ text, onPress, textoutbtnsty, outbuttonsty }) {
         <>
             <View style={styles.btnContainer}>
                 <TouchableOpacity style={{ ...styles.btnStyleOutline, ...outbuttonsty }} onPress={() => { onPress() }}>
-                    <Text style={{ ...styles.textBtnOutline, fontFamily: "Poppins-Regular", ...textoutbtnsty }}>{text}</Text>
+                    <Text style={{ ...styles.textBtnOutline, fontFamily: "Poppins-Bold", ...textoutbtnsty }}>{text}</Text>
                 </TouchableOpacity>
             </View>
         </>

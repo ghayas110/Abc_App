@@ -27,14 +27,6 @@ import DuetitNowOnWay from "../screens/Transfer-Payment/DuetitNowOnWay";
 import DuetNowSent from "../screens/Transfer-Payment/DuetNowSent";
 import SendAmount from "../screens/QRPayments/InsertAmount";
 import Recipt from "../screens/Transfer-Payment/Recipt";
-import Transfer from "../screens/Transfer-Payment/Transfer";
-import CardMangementOne from "../screens/card/CardMangementOne";
-import ChangePin from "../screens/card/ChangePin";
-import SpendLimit from "../screens/card/components/SpendLimit";
-import CardPreferences from "../screens/card/CardPreferences";
-import SettingServices from "../screens/Transfer-Payment/SettingServices";
-import PayTransfer from "../screens/Transfer-Payment/PayTransfer";
-import ManageDuitNowQR from "../screens/Settings/ManageDuitNowQR";
 import SavingPots from "../screens/SavingsPot/SavingPots";
 import PickCategoryCard from "../screens/SavingsPot/PickCategoryCard";
 import CreateSavingPots from "../screens/SavingsPot/CreateSavingPots";
@@ -48,6 +40,17 @@ import FundSuccessFullyCreated from "../screens/SavingsPot/FundSuccessFullyCreat
 import WithdrawFund from "../screens/SavingsPot/WithdrawFund";
 import WithdrawFundReview from '../screens/SavingsPot/WithdrawFundReview'
 import WithdrawSuccessfully from "../screens/SavingsPot/WithdrawSuccessfully"
+
+import Transfer from "../screens/Transfer-Payment/Transfer";
+import CardMangementOne from "../screens/card/CardMangementOne";
+import ChangePin from "../screens/card/ChangePin";
+import SpendLimit from "../screens/card/components/SpendLimit";
+import CardPreferences from "../screens/card/CardPreferences";
+import SettingServices from "../screens/Transfer-Payment/SettingServices";
+import PayTransfer from "../screens/Transfer-Payment/PayTransfer";
+import ManageDuitNowQR from "../screens/Settings/ManageDuitNowQR";
+
+import Accounts from "../screens/AccountCenter/Accounts";
 
 const Stack = createStackNavigator();
 
@@ -160,6 +163,31 @@ const MoreNavigator = () => {
     </Stack.Navigator>
   );
 };
+
+
+const AccountNavigator = () => {
+  return (
+    <Stack.Navigator screenOptions={{
+      headerShown: false
+    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      <Stack.Screen name="Accounts" component={Accounts} screenOptions={{
+        headerShown: false
+      }} />
+
+
+    </Stack.Navigator>
+  );
+};
+
+
+
+
+
 const TransferNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
@@ -170,7 +198,11 @@ const TransferNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="Transfer" component={TransferTO} screenOptions={{
+      <Stack.Screen name="Transfer" component={Transfer} screenOptions={{
+        headerShown: false
+
+      }} />
+      <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
         headerShown: false
 
       }} />
@@ -201,4 +233,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator,TransferNavigator };
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator };

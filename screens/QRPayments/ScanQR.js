@@ -32,7 +32,7 @@ const ScanQR = ({onPress,onCodeScanned}) => {
   const codeScanner = useCodeScanner({
     codeTypes: ['qr', 'ean-13'],
     onCodeScanned: (codes) => {
-      console.log(`Scanned ${codes} codes!`)
+      console.log(`Scanned ${JSON.parse(JSON.stringify(codes)).length>0?JSON.parse(JSON.stringify(codes))[0].value:""} codes!`)
       navigation.navigate('SendAmount')
     }
   })

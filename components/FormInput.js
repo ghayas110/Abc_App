@@ -56,13 +56,11 @@ import {
       borderBottomWidth: 1, // This adds a bottom border
       borderBottomColor: 'green', // This sets the bottom border color to black
       paddingHorizontal: 5,
-      marginBottom: 10,
-      width:300
+      width:320,
       
     },
     input: {
       flex: 1,
-      marginLeft: 0,
       color: 'black',
     },
   });

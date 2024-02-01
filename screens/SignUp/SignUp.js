@@ -154,6 +154,8 @@ const SignUp = () => {
           leftIcon={require('../../assets/SignUp/docsIcon.png')}
           rightIcon={require('../../assets/SignUp/Profile.png')}
           ProgressBarIcon={require('../../assets/SignUp/steps.png')}
+          backIcon={require('../../assets/SignUp/Icons.png')}
+
         />
         : null}
       {renderStep()}
