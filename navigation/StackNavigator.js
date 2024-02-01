@@ -66,6 +66,11 @@ import Reviewing from "../screens/Finance/UploadPdf/Reviewing";
 import Approved from "../screens/Finance/UploadPdf/Approved";
 import UploadDoc from "../screens/Finance/UploadDoc";
 
+import Finance from "../screens/Finance/Finance";
+import Checknote from "../screens/Finance/Checknote";
+import DesireDuration from "../screens/Finance/DesireDuration";
+import BeforeWeBegin from "../screens/Finance/BeforeWeBegin";
+
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -178,7 +183,16 @@ const FinanceNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="FinanceScreen" component={Finance} screenOptions={{
+      <Stack.Screen name="Finance" component={Finance} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="Checknote" component={Checknote} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="DesireDuration" component={DesireDuration} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="BeforeWeBegin" component={BeforeWeBegin} screenOptions={{
         headerShown: false
       }} />
       <Stack.Screen name="ApplyFinance" component={ApplyFinance} screenOptions={{
@@ -246,4 +260,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator , FinanceNavigator };
+export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator, FinanceNavigator };
