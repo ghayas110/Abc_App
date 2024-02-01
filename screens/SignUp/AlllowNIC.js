@@ -8,6 +8,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const AlloeNIC = ({ onPress }) => {
   const [cameraPermission, setCameraPermission] = useState(null);
+  
 
   useEffect(() => {
     (async () => {

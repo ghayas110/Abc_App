@@ -1,45 +1,55 @@
 import { StyleSheet, Text, View,Dimensions,Button, KeyboardAvoidingView,Image } from 'react-native'
 import React from 'react'
+import style from '../../assets/styles/basic';
 import FormInput from '../../components/FormInput';
+import { RequestButton } from '../../components/Buttons';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const VerifyCNIC2 = ({onPress}) => {
- 
+  const { width, height } = Dimensions.get('window')
+
+
   return (
     <KeyboardAvoidingView 
       behavior={Platform.OS === "ios" ? "padding" : "height"} 
-      style={styles.container}
     >
-    <View style={styles.container}>
+
+<View style={{
+        ...style.basic_container,
+        height: height,
+        backgroundColor: "white",
+    }}>
+        <View style={{
+            ...style.basic_container,
+            height: height*0.85,
+            paddingRight: 20,
+            paddingLeft: 20,
+            position: "relative"
+        }}>
+            <View style={{
+                marginTop: 80,
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center"
+            }}>
+  <Image source={require('../../assets/SignUp/cnicback.png')} style={{resizeMode:'contain',height:windowHeight*0.15}}/>
+          
+    </View>
+    <View style={{padding:17}}>
+    <Text style={styles.text2}>Are all details fully visible, glare-free and readable?</Text>
+    </View>
+   
 
 
-<View style={styles.container2}>
-<View >
-<Image source={require('../../assets/SignUp/cnicback.png')} style={{resizeMode:'contain',height:windowHeight*0.15}}/>
-</View>
-
-</View>
-
-<Text style={styles.text2}>Are all details fully visible, glare-free and readable?</Text>
-
-<View>
-<Button
-title="Take Again"
-color="green"
-onPress={onPress}
-/>
-
-<View style={{paddingVertical:20}}>
-<Button
-title="Yes Let's continue"
-color="green"
-onPress={onPress}
-/>
-</View>
-</View>
-</View>
-
+            <RequestButton text={"Take Again"} onPress={onPress}
+                btnStyle={{ position: "absolute", bottom:100  }}
+            />
+            <RequestButton text={"Yes Let's continue"} onPress={onPress}
+                btnStyle={{ position: "absolute", bottom: 50 }}
+            />
+        </View>
+    </View>
 </KeyboardAvoidingView>
 )
 }
@@ -76,7 +86,7 @@ const styles = StyleSheet.create({
         alignItems:'center',justifyContent:'space-between',
         flexDirection:'column',
         width:windowWidth*0.8,
-
+   
         padding:20
           },
       cardText:{
@@ -90,7 +100,10 @@ const styles = StyleSheet.create({
       text2:{
         fontSize: 17,        
         color: "#808080",
-        fontFamily: "Poppins-Regular"
+        fontFamily: "Poppins-Regular",
+        textAlign:'center',
+        color:'black',
+        fontWeight:"600"
       },
       bottomView: {
         width: '100%',

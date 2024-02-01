@@ -6,7 +6,7 @@ import { CheckBoxInput, List, SimpleInput } from '../../components/Inputs';
 import { OutlineButton, RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
 import Modal from 'react-native-modal';
-import { RadioButton } from 'react-native-paper';
+import {  Checkbox } from 'react-native-paper';
 const { width, height } = Dimensions.get('window');
 const EligibleScreen = ({onPress}) => {
   const [checked, setChecked] = React.useState(false);
@@ -44,40 +44,42 @@ const toggleBottomSheet = () => {
             ...style.basic_container,
             marginTop: 20,
             paddingLeft: 30,
-            
-            paddingRight: 30
+           paddingRight: 30
         }}>
             <Text style={{ ...style.main_headings, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Yes, I’m eligible!</Text>
             <View style={styles.acordion}>
             <Text style={styles.text2}>{'\u2022'}</Text>
-            <Text style={styles.text2}> I’m 18 years old and above </Text>
+            <Text style={styles.text4}> I’m 18 years old and above </Text>
             </View>
             <View style={styles.acordion1}>
             <Text style={styles.text2}>{'\u2022'}</Text>
-            <Text style={styles.text2}> I have an existing online banking account with another bank in Malaysia </Text>
+            <Text style={styles.text4}>I have an existing online banking account with another bank in UAE </Text>
             </View>
             <View style={styles.acordion3}>
               </View>
               <View style={{ flexDirection: 'row', paddingRight:10 }}>
-              <RadioButton
+              <Checkbox
+                color='green'
                 status={checked ? 'checked' : 'unchecked'}
                 onPress={() => setChecked(!checked)}
               />
               <Text style={styles.text4}>
-                I’m a UAE citizen with a CNIC, living in UAE
+                I’m a UAE citizen with a CNIC,{`\n`}living in UAE
               </Text>
             </View>
             <View style={{ display: 'flex', flexDirection: 'row' }}>
-            <RadioButton
+            <Checkbox
+            color='green'
             status={checkedd ? 'checked' : 'unchecked'}
             onPress={() => setCheckedd(!checkedd)}
             />
             <Text style={styles.text4}>
-            I‘m<Text style={{fontWeight:'bold',color:'black'}}> NOT</Text>  a US person
+            I‘m<Text style={{fontWeight:'bold',color:'black'}}> NOT</Text> a US person
             </Text>
             </View>
             <View style={{ flexDirection: 'row' }}>
-            <RadioButton
+            <Checkbox
+            color='green'
             style={{  borderColor: "#006400"}}
             status={checkeddd ? 'checked' : 'unchecked'}
             onPress={() => setCheckeddd(!checkeddd)}
@@ -94,7 +96,7 @@ const toggleBottomSheet = () => {
                           color: "#006400",
                           fontFamily: "Poppins-Regular"
                       }}
-                         >Note: You are a US person if you are either a US citizen, a US resident or a Green Card holder.</Text>
+                         ><Text style={{ fontWeight: 'bold' }}>Note:</Text> You are a US person if you are either a US citizen, a US resident or a Green Card holder.</Text>
                          </View>
             </View>
       

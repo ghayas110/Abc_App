@@ -110,6 +110,7 @@ const CheckBoxInput = ({
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
+                marginTop:10,
              
                 padding: 0,
             }}>
@@ -160,7 +161,52 @@ const List = ({
                         borderLeftWidth: 0,
                         borderRightWidth: 0,
                         fontFamily: "Poppins-Regular",
-                        // color: "red"
+                        // color: "green"
+                    }}
+                    setValue={(val) => setCurrentValue(val)}
+                />
+            </View>
+        </>
+    )
+}
+const SelectInput = ({
+    defaultValue,
+    label,
+    textStyle,
+    dropDownStyle,
+    placeholder,
+    items,
+    value
+}) => {
+    const [isOpen, setOpen] = useState(false)
+    const [currentValue, setCurrentValue] = useState()
+
+
+    return (
+        <>
+            <View style={{
+                paddingLeft: 15,
+                paddingRight: 15,
+                width: width,
+                marginTop: 15
+            }}>
+                <Text style={{ ...textStyle, fontFamily: "Poppins-Regular" }}>{label}</Text>
+                <DropDownPicker
+                    placeholder={placeholder}
+                    items={items}
+                    defaultValue={defaultValue}
+                    value={currentValue}
+                    setOpen={() => setOpen(!isOpen)}
+                    open={isOpen}
+                    textStyle={dropDownStyle}
+                    style={{
+                        zIndex: 1000,
+                        borderTopWidth: 0,
+                        borderLeftWidth: 0,
+                        borderRightWidth: 0,
+                        fontFamily: "Poppins-Regular",
+                        
+                        // color: "green"
                     }}
                     setValue={(val) => setCurrentValue(val)}
                 />
@@ -180,6 +226,7 @@ const DropDown = ({
 }) => {
     const [isOpen, setOpen] = useState(false)
     const [currentValue, setCurrentValue] = useState()
+    
 
 
     return (
@@ -347,4 +394,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export { SimpleInput, OtpInput, CheckBoxInput, List, SearchInput, ExampleInput, DropDown,FilePicker }
+export { SimpleInput, OtpInput, CheckBoxInput, List, SearchInput, ExampleInput, DropDown,SelectInput }
