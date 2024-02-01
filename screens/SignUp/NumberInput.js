@@ -32,7 +32,7 @@ const NumberInput = ({onPress}) => {
     
     <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold",marginTop:15 }}>What is your mobile number?</Text>
     <View style={{flexDirection: 'row', alignItems: 'center',justifyContent:'center'}}>
-<Text style={{fontSize:16,fontWeight:'bold' ,marginBottom:7,color:'black'}}>+96</Text>
+<Text style={{fontSize:16,fontWeight:'bold' ,marginBottom:7,color:'black',marginTop:12}}>+96</Text>
 <FormInput
 placeholder={'Enter mobile number'}
 placeholderColor={'grey'}

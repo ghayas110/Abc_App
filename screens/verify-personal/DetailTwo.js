@@ -59,7 +59,7 @@ const DetailTwo = () => {
                     paddingTop: 20
                 }}>
                     <FormInput
-                       
+                       placeholderColor={"#808080"}
                         title={"Name of employer"}
                         type={"text"}
                         placeholder={"Enter Name of employer"}
