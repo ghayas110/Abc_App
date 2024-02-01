@@ -15,6 +15,7 @@ const PersonalDetails = ({onPress,AddressPress}) => {
     const nextPage = async () => {
         navigation.navigate('ReviewDetails')
     }
+    
     return (
         
  <ScrollView>

@@ -4,9 +4,10 @@ import style from '../../../assets/styles/basic';
 import { useNavigation } from '@react-navigation/native';
 import ActivationSteps from '../../../components/steps/ActivationSteps';
 import { OutlineButton, RequestButton } from '../../../components/Buttons';
+import FormInput from '../../../components/FormInput';
+import ThemeSty from "../../../assets/styles/basic"
 
-
-const ChangeAddress = () => {
+const ChangeAddress = ({onPress,BackPress}) => {
     const navigation = useNavigation()
     return (
         <>
@@ -19,23 +20,66 @@ const ChangeAddress = () => {
                 paddingTop: 30
             }}>
                 <View style={{ flex: 1 }}>
-                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <TouchableOpacity onPress={BackPress}>
                         <View style={{width:50}}>
                             <Image source={require("../../../assets/transferPaymentImages/Back_press_area.png")} />
                         </View>
                     </TouchableOpacity>
-                    <Text style={{ ...style.Font_family_Bold, ...style.Green_color_h, fontSize: 30 }}>We need some documents from you</Text>
-                    <Text style={{ ...style.Font_family, ...style.gray_color_h }}>We require your document as below to proceed with your application</Text>
+                    <Text style={{ ...style.Font_family_Bold, ...style.Green_color_h, fontSize: 30 }}>Request change of address</Text>
                 </View>
-                <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-                    <Image source={require("../../../assets/Finance/docs.png")} style={{ height: 100, width: 100, resizeMode: "contain" }} />
-                    <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, fontSize: 20, marginTop: 10, textAlign: "center" }}>Latest 2 year EPF full statements</Text>
-                    <Text style={{ textAlign: "center", ...style.Font_family, ...style.gray_color_h }}>Showing at least the last 12 months of {'\n'} contribution history</Text>
+                <View        style={{
+                    ...style.basic_container,
+                    marginTop: 20,
+                    paddingLeft: 5,
+                    paddingRight: 5,
+               
+                }}>
+                <Text style={{fontFamily:'Poppins-Bold',color:'black'}}>
+  Mailing Address
+    </Text>
                 </View>
+                <View>
+                <FormInput
+placeholder={'Select Address (Line One)'}
+placeholderColor={'grey'}
+title={`Address (Line One)`}
+fontsize={12}
+icon={"right"}
+/>
+                <FormInput
+placeholder={'Select Address (Line Two)'}
+placeholderColor={'grey'}
+title={`Address (Line Two)`}
+fontsize={12}
+icon={"right"}
+/>
+                <FormInput
+placeholder={'Select Postal Code'}
+placeholderColor={'grey'}
+title={`Postal Code`}
+fontsize={12}
+icon={"right"}
+/>
+<FormInput
+placeholder={'Select City'}
+placeholderColor={'grey'}
+title={`City`}
+fontsize={12}
+icon={"right"}
+/>
+<FormInput
+placeholder={'Select State'}
+placeholderColor={'grey'}
+title={`State`}
+fontsize={12}
+icon={"right"}
+/>
+                
+            </View>
                 <View style={{ flex: 1,justifyContent: "flex-end" }}>
                     <RequestButton btnStyle={{
                         width: "auto"
-                    }} text={"Continue"} onPress={() => { navigation.navigate("UploadPdf") }} />
+                    }} text={"Continue"} onPress={onPress} />
                 </View>
             </SafeAreaView>
         </>
@@ -43,3 +87,38 @@ const ChangeAddress = () => {
 }
 
 export default ChangeAddress
+const styles = StyleSheet.create({
+
+  container: {
+      flex: 1,
+      padding: 16,
+      justifyContent:"space-evenly"
+  },
+  Progress: {
+      padding: 15,
+      justifyContent: 'center',
+      flexDirection: "row",
+  },
+  Image: {
+      width: "100%",
+      justifyContent: 'center',
+      flexDirection: "row",
+      alignItems: 'center',
+
+  },
+  headerText: {
+      padding: 10,
+      marginTop: 15,
+  },
+  Notify: {
+      padding: 20,
+      // backgroundColor: "#DCF2FC",
+  },
+  btn2: {
+      alignItems: "center"
+  },
+  btn1: {
+      alignItems: "center"
+  }
+
+})
