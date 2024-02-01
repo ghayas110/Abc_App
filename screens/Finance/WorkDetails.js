@@ -131,25 +131,23 @@ title={`Office postal code`}
 fontsize={12}
 icon={"right"}
 /><FormInput
-placeholder={'Enter your office address'}
+placeholder={'Select your office state'}
 placeholderColor={'grey'}
-title={`Office address (Line two)`}
-fontsize={12}
-icon={"right"}
-/><FormInput
-placeholder={'Enter your office address'}
-placeholderColor={'grey'}
-title={`Office address (Line two)`}
+title={`Office state`}
 fontsize={12}
 icon={"right"}
 />
+<FormInput
+placeholder={'Enter your office phone number'}
+placeholderColor={'grey'}
+title={`Office phone number`}
+fontsize={12}
+icon={"right"}
+keyboardType={"numeric"}
+/>
+
                 </TouchableOpacity>
-                <View style={{...styles.Notify , ...ThemeSty.bg_light_green_color}}>
-                <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, fontWeight: "700", ...ThemeSty.Font_family,lineHeight:24 }}>
-                We will use the above details to perform verification checks and communicate important information, such as your application document.
-                </Text>
-               
-            </View>
+            
             </View>
             
             </View>

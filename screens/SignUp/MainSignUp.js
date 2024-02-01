@@ -4,6 +4,7 @@ import style from "../../assets/styles/basic"
 import { useNavigation } from '@react-navigation/native';
 import { RequestButton } from '../../components/Buttons';
 import ActivationSteps from '../../components/steps/ActivationSteps';
+import LottieView from 'lottie-react-native';
 
 
 const MainSignUp = () => {
@@ -33,9 +34,8 @@ const MainSignUp = () => {
                         flexDirection: "row",
                         justifyContent: "center"
                     }}>
-                        <Image 
-   source={require('../../assets/SignUp/signupimage1.png')} // replace with your image path
- />
+                 <LottieView source={require('../../assets/lotiefiles/hand_animation.json')} autoPlay style={{width:"100%",height:200}} />
+
                     </View>
                     <Text style={{
                         ...style.Green_color_h,

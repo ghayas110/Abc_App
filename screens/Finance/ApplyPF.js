@@ -30,22 +30,22 @@ const ApplyPF = () => {
     switch (currentPosition) {
       case 0:
         return (
-          <PersonalDetails onPress={() => setCurrentPosition(currentPosition + 0.2)} />
+          <PersonalDetails onPress={() => setCurrentPosition(currentPosition + 1) } AddressPress ={()=>setCurrentPosition(currentPosition + 0.2)}/>
         )
         // Render step 1
-
-        break;
         case 0.2:
+          return (
+            <EligibleScreen onPress={() => setCurrentPosition(currentPosition + 1)} />
+          )
+        break;
+        case 1:
             return (
               <WorkDetails onPress={() => setCurrentPosition(currentPosition + 1)} />
             )
             // Render step 1
     
             break;
-      case 1:
-        return (
-          <EligibleScreen onPress={() => setCurrentPosition(currentPosition + 1)} />
-        )
+    
       
     
     

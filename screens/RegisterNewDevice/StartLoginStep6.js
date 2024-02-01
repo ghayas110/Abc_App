@@ -8,7 +8,7 @@ import CongratesImage from '../../assets/StartLoginImages/CongratsImage.png'
 import Modal from 'react-native-modal';
 import ThemeSty from '../../assets/styles/basic'
 import ProgressBar from 'react-native-progress/Bar';
-
+import LottieView from 'lottie-react-native';
 
 const StartLoginStep6 = ({ disabled }) => {
     const [progress, setProgress] = useState(0);
@@ -35,10 +35,10 @@ const StartLoginStep6 = ({ disabled }) => {
         <>
             <View style={styles.container}>
                 <View>
-                    <Image source={CongratesImage} />
                 </View>
-                <View style={{ padding: 5, marginTop: 25, }}>
-                    <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>
+        <LottieView source={require('../../assets/lotiefiles/success.json')} autoPlay style={{width:"100%",height:300}} />
+                <View style={{ padding: 5 }}>
+                    <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family,lineHeight:34 }}>
                         Congratulations! Your SSSSCO account is now registered on this device
                     </Text>
                 </View>
