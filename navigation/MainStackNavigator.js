@@ -3,8 +3,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer';
-import { SignUpStackNavigator } from './StackNavigator';
-import { useNavigation } from '@react-navigation/native'
+
 import BottomTabNavigator from "./TabNavigator";
 import Otp from '../screens/SignUp/Otp';
 import SignUp from '../screens/SignUp/SignUp';
@@ -42,14 +41,6 @@ import StartLoginStep4 from '../screens/RegisterNewDevice/StartLoginStep4';
 import StartLoginStep5 from '../screens/RegisterNewDevice/StartLoginStep5';
 import StartLoginStep6 from '../screens/RegisterNewDevice/StartLoginStep6';
 import UpdateTermAndCondition from '../screens/RegisterNewDevice/UpdateTermAndCondition';
-import Profile from '../screens/Settings/Profile';
-import ApplyFinanceScd from '../screens/Finance/UploadPdf/ApplyFinanceScd';
-import DocsInfo from '../screens/Finance/UploadPdf/DocsInfo';
-import UploadPdf from '../screens/Finance/UploadPdf/UploadPdf';
-import UploadInstructions from '../screens/Finance/UploadPdf/UploadInstructions';
-import UploadPdfInfo from '../screens/Finance/UploadPdf/UploadPdfInfo';
-import Reviewing from '../screens/Finance/UploadPdf/Reviewing';
-import Approved from '../screens/Finance/UploadPdf/Approved';
 
 // import SavingPots from '../screens/SavingsPot/SavingPots';
 const AuthStack = createStackNavigator();
@@ -103,7 +94,6 @@ const MainStackNavigator = () => {
             <AuthStack.Screen name="Mailing" component={MailingAddress} />
 
 
-          {/* <AuthStack.Screen name="UpdateTermAndCondition" component={UpdateTermAndCondition} /> */}
           <AuthStack.Screen name="UpdateTermAndCondition">
             {(props) => <UpdateTermAndCondition {...props} onLogin={() => setIsLoggedIn(true)} />}
           </AuthStack.Screen>
