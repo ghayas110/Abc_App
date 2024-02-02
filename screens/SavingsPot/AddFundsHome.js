@@ -64,7 +64,7 @@ const AddFundsHome = () => {
                         <View style={styles.box1}>
                             <Icons.AntDesign name="minus" style={styles.plusIcons} />
                         </View>
-                        <Text style={styles.boxText}>Withdraw   Funds</Text>
+                        <Text style={styles.boxText}>{`Withdraw\nFunds`}</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.boxes}>
@@ -72,7 +72,7 @@ const AddFundsHome = () => {
                         <View style={styles.box}>
                             <Icons.AntDesign name="plus" style={styles.plusIcons} />
                         </View>
-                        <Text style={styles.boxText}>Add   Funds</Text>
+                        <Text style={styles.boxText}>{`Add\nFunds`}</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.boxes}>
@@ -80,7 +80,7 @@ const AddFundsHome = () => {
                         <View style={styles.box}>
                             <Icons.AntDesign name="upload" style={styles.Icons} />
                         </View>
-                        <Text style={styles.boxText}>Contribute to My Goal</Text>
+                        <Text style={styles.boxText}>{`Contribute\nto My Goal`}</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -107,11 +107,11 @@ export default AddFundsHome
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // backgroundColor: "#FFFFFF"
+        
     },
     Header: {
         flex: 1.8,
-        padding: 10
+        // padding: 10
 
     },
     gradient: {
@@ -122,14 +122,15 @@ const styles = StyleSheet.create({
         flex: 2,
         padding: 10,
         paddingLeft: 18,
-
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
         justifyContent: "center"
     },
     headerIcon: {
         flex: 1,
         justifyContent: "space-between",
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
         flexDirection: "row",
-        padding: 10
+        padding:20
     },
     rightIcon: {
         flexDirection: "row",
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
     },
     Icons: {
         fontSize: 24,
-        marginHorizontal: 5,
+        margin:10,
         ...Theme.White_color_h
 
     },
@@ -146,12 +147,9 @@ const styles = StyleSheet.create({
         flex: 0.7,
         flexDirection: "row",
         justifyContent: "center",
+        alignItems:"Flex-end",
         padding: 20,
-        // backgroundGradient: {
-        //     colors: ['#313131', '#2E2E2E'],
-        //     start: { x: 0, y: 56 },
-        //     end: { x: 8, y: 0 },
-        // },
+        
     },
     headingIcons: {
         fontSize: 24,
@@ -184,10 +182,10 @@ const styles = StyleSheet.create({
         position: "absolute",
         backgroundColor: "#FFFFFF",
         borderRadius: 15,
-        top: 380,
+        top: 390,
         bottom: 0,
         right: 0,
-        left: 25,
+        left: 40,
         zIndex: 50,
         width: 300,
         height: 160,
@@ -199,7 +197,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
         marginVertical: 5,
         marginHorizontal: 5,
-        elevation: 4
+        elevation: 4,
+        justifyContent:"center"
     },
     CardHeading: {
         fontWeight: "600",
@@ -263,7 +262,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        width: 70,
+        // width: 70,
         margin: 10
 
     },
