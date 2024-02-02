@@ -57,6 +57,13 @@ import AccountDeposit from "../screens/AccountCenter/AccountDeposit";
 import Finance from "../screens/Finance/Finance";
 import ApplyFinance from "../screens/Finance/ApplyFinance";
 import ApplyPF from "../screens/Finance/ApplyPF";
+import ApplyFinanceScd from "../screens/Finance/UploadPdf/ApplyFinanceScd";
+import DocsInfo from "../screens/Finance/UploadPdf/DocsInfo";
+import UploadPdf from "../screens/Finance/UploadPdf/UploadPdf";
+import UploadInstructions from "../screens/Finance/UploadPdf/UploadInstructions";
+import UploadPdfInfo from "../screens/Finance/UploadPdf/UploadPdfInfo";
+import Reviewing from "../screens/Finance/UploadPdf/Reviewing";
+import Approved from "../screens/Finance/UploadPdf/Approved";
 
 const Stack = createStackNavigator();
 
@@ -181,6 +188,13 @@ const FinanceNavigator = () => {
         <Stack.Screen name="ApplyPF" component={ApplyPF} screenOptions={{
         headerShown: false
       }} />
+      <Stack.Screen name='ApplyFinanceScd' component={ApplyFinanceScd} />
+      <Stack.Screen name='DocsInfo' component={DocsInfo} />
+      <Stack.Screen name='UploadPdf' component={UploadPdf} />
+      <Stack.Screen name='UploadInstructions' component={UploadInstructions} />
+      <Stack.Screen name='UploadPdfInfo' component={UploadPdfInfo} />
+      <Stack.Screen name='Reviewing' component={Reviewing} />
+      <Stack.Screen name='Approved' component={Approved} />
     </Stack.Navigator>
   );
 };

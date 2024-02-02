@@ -46,6 +46,10 @@ import Profile from '../screens/Settings/Profile';
 import ApplyFinanceScd from '../screens/Finance/UploadPdf/ApplyFinanceScd';
 import DocsInfo from '../screens/Finance/UploadPdf/DocsInfo';
 import UploadPdf from '../screens/Finance/UploadPdf/UploadPdf';
+import UploadInstructions from '../screens/Finance/UploadPdf/UploadInstructions';
+import UploadPdfInfo from '../screens/Finance/UploadPdf/UploadPdfInfo';
+import Reviewing from '../screens/Finance/UploadPdf/Reviewing';
+import Approved from '../screens/Finance/UploadPdf/Approved';
 
 // import SavingPots from '../screens/SavingsPot/SavingPots';
 const AuthStack = createStackNavigator();
@@ -72,9 +76,13 @@ const MainStackNavigator = () => {
           headerShown: false
         }}>
          
-          <AuthStack.Screen name='ApplyFinanceScd' component={ApplyFinanceScd} />
+          {/* <AuthStack.Screen name='ApplyFinanceScd' component={ApplyFinanceScd} />
           <AuthStack.Screen name='DocsInfo' component={DocsInfo} />
           <AuthStack.Screen name='UploadPdf' component={UploadPdf} />
+          <AuthStack.Screen name='UploadInstructions' component={UploadInstructions} />
+          <AuthStack.Screen name='UploadPdfInfo' component={UploadPdfInfo} />
+          <AuthStack.Screen name='Reviewing' component={Reviewing} />
+          <AuthStack.Screen name='Reviewing' component={Approved} /> */}
           <AuthStack.Screen name="Splash">
             {(props) => <SplashScreen />}
           </AuthStack.Screen>

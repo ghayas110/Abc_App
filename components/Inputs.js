@@ -254,7 +254,7 @@ const ExampleInput = ({ placeholder, label, type, InStyle, keyboardType , value 
     );
 };
 
-const FilePicker = ({text,fileStyleView,fileStyle,icon}) => {
+const FilePicker = ({text,fileStyleView,fileStyle,icon,textStyle}) => {
     const [pickedDocument, setPickedDocument] = useState(null);
     const pickDocument = async () => {
         try {
@@ -292,7 +292,7 @@ const FilePicker = ({text,fileStyleView,fileStyle,icon}) => {
                 ...fileStyle
             }} onPress={pickDocument}>
                 <Image source={icon} style={{marginRight: 10,height:30,width:30}}/>
-                <Text style={{...Theme.Font_family_Bold,...Theme.Green_color_h,fontSize: 20}}>{text}</Text>
+                <Text style={{...Theme.Font_family_Bold,...Theme.Green_color_h,fontSize: 20,...textStyle}}>{text}</Text>
             </TouchableOpacity>
         </View>
     );
