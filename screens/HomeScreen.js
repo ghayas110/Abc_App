@@ -18,7 +18,7 @@ import Modal from 'react-native-modal';
 import Visa from '../assets/HomeScreenImages/download-removebg-preview.png'
 import Header from '../components/header/header'
 import Theme from '../assets/styles/basic'
-
+import ThemeSty from '../assets/styles/basic'
 const HomeScreen = ({ onLogin }) => {
   const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
   const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false);
@@ -88,7 +88,7 @@ const HomeScreen = ({ onLogin }) => {
     <>
       <ScrollView style={styles.container}>
         <View style={styles.Progress}>
-          <Header onPress={onLogin}/>
+          <Header onPress={toggleBottomSheet}/>
         </View>
         <View 
           style={{
@@ -330,7 +330,50 @@ const HomeScreen = ({ onLogin }) => {
             </View>
           </View>
         </View>
-
+        <Modal
+        isVisible={isBottomSheetVisible}
+        style={{ margin: 0 }}
+        onBackdropPress={toggleBottomSheet}>
+        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+          <View
+            style={{
+              backgroundColor: 'white',
+              padding: 24,
+              borderTopRightRadius: 20,
+              borderTopLeftRadius: 20,
+            }}>
+            <View>
+              <Text
+                style={{
+                  fontSize: 28,
+                  fontWeight: '700',
+                  ...ThemeSty.Green_color_f,
+                  ...ThemeSty.Font_family,
+                }}>
+               Confirm Logout?
+              </Text>
+            </View>
+            <View style={{ paddingVertical: 10 }}>
+              <Text
+                style={{
+                  ...ThemeSty.gray_color_f,
+                  ...ThemeSty.Font_family,
+                  fontSize: 16,
+                }}>
+          Are you sure you want to log out of Smart Digital Mobile Bank App?
+              </Text>
+            </View>
+          
+            <View style={{ padding: 10, alignItems: 'center' }}>
+              <OutlineButton text="Logout" onPress={onLogin} />
+            </View>
+            <View style={{ alignItems: 'center' }}>
+              <RequestButton text="Cancel" onPress={toggleBottomSheet} />
+            </View>
+          </View>
+        </View>
+      </Modal>
+    
 
         {/* <Modal
           isVisible={isBottomSheetVisible}
