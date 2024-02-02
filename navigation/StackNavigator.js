@@ -66,7 +66,6 @@ import Reviewing from "../screens/Finance/UploadPdf/Reviewing";
 import Approved from "../screens/Finance/UploadPdf/Approved";
 import UploadDoc from "../screens/Finance/UploadDoc";
 
-import Finance from "../screens/Finance/Finance";
 import Checknote from "../screens/Finance/Checknote";
 import DesireDuration from "../screens/Finance/DesireDuration";
 import BeforeWeBegin from "../screens/Finance/BeforeWeBegin";
@@ -114,9 +113,7 @@ const MainStackNavigator = () => {
       <Stack.Screen name='PayTransfer' component={PayTransfer} />
       <Stack.Screen name='ManageDuitNowQR' component={ManageDuitNowQR} />
       <Stack.Screen name='ImportantDocs' component={ImportantDocs} />
-      <Stack.Screen name='Privacy' component={Privacy} />
-      <Stack.Screen name='Profile' component={Profile} />
-      <Stack.Screen name='UpdateMallingAddress' component={UpdateMallingAddress} />
+      <Stack.Screen name='Privacy' component={Privacy} />  
       <Stack.Screen name='FAQs' component={FAQs} />
       <Stack.Screen name="SavingPots" component={SavingPots} />
       <Stack.Screen name="PickCategoryCard" component={PickCategoryCard} />
@@ -145,7 +142,11 @@ const MoreNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-
+     <Stack.Screen name="Settings" component={SettingServices} screenOptions={{
+        headerShown: false
+      }} />
+   <Stack.Screen name='Profile' component={Profile} />
+      <Stack.Screen name='UpdateMallingAddress' component={UpdateMallingAddress} />
     </Stack.Navigator>
   );
 };

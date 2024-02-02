@@ -76,11 +76,9 @@ const BeforeWeBegin = ({ onLogin }) => {
                         </View>
                     </View>
                 </ScrollView>
-                <View style={{ alignItems: "center", marginBottom: 2, }}>
-                    <OutlineButton text='Contact Customer Support' onPress={() => onLogin()} />
-                </View>
+              
                 <View style={{ alignItems: "center", marginBottom: 20, }}>
-                    <RequestButton text='Continue' onPress={() => onLogin()} />
+                    <RequestButton text='Continue' onPress={() => navigation.navigate('ApplyFinance')} />
                 </View>
             </SafeAreaView>
         </>

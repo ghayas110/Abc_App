@@ -92,7 +92,7 @@ const Approved = () => {
                 <View style={{ flex: 1, justifyContent: "flex-end", marginBottom: 20 }}>
                     <RequestButton btnStyle={{
                         width: "auto"
-                    }} text={"Continue"} onPress={() => {navigation.navigate('FinanceScreen') }}/>
+                    }} text={"Continue"} onPress={() => {navigation.navigate('Finance') }}/>
                 </View>
             </SafeAreaView>
         </>

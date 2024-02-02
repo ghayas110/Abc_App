@@ -50,7 +50,7 @@ const BottomTabNavigator = () => {
             
             ),
           }}/>
-        <Tab.Screen   name="More" component={SettingServices} options={{
+        <Tab.Screen   name="More" component={MoreNavigator} options={{
           tabBarIcon: ({ color, size,focused }) => (
             <Image source={!focused ? require('../assets/tabicons/More.png') : require('../assets/tabicons/MoreOutline.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
             
