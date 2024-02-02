@@ -65,7 +65,6 @@ import UploadPdfInfo from "../screens/Finance/UploadPdf/UploadPdfInfo";
 import Reviewing from "../screens/Finance/UploadPdf/Reviewing";
 import Approved from "../screens/Finance/UploadPdf/Approved";
 import UploadDoc from "../screens/Finance/UploadDoc";
-
 import Checknote from "../screens/Finance/Checknote";
 import DesireDuration from "../screens/Finance/DesireDuration";
 import BeforeWeBegin from "../screens/Finance/BeforeWeBegin";
@@ -73,7 +72,6 @@ import EditNikeName from "../screens/Settings/EditNikeName";
 import EditEmail from "../screens/Settings/EditEmail";
 import EditMaritalStatus from "../screens/Settings/EditMaritalStatus";
 import EmpDetails from "../screens/Settings/EmpDetails";
-
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -109,16 +107,10 @@ const MainStackNavigator = () => {
       <Stack.Screen name="DuetNowSent" component={DuetNowSent} screenOptions={{ headerShown: false }} />
       <Stack.Screen name="Recipt" component={Recipt} screenOptions={{ headerShown: false }} />
       <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{ headerShown: false }} />
-      <Stack.Screen name='CardMangementOne' component={CardMangementOne} />
-      <Stack.Screen name='ChangePin' component={ChangePin} />
       <Stack.Screen name='SpendLimit' component={SpendLimit} />
       <Stack.Screen name='CardPreferences' component={CardPreferences} />
       <Stack.Screen name='SettingServices' component={SettingServices} />
-      <Stack.Screen name='PayTransfer' component={PayTransfer} />
       <Stack.Screen name='ManageDuitNowQR' component={ManageDuitNowQR} />
-      <Stack.Screen name='ImportantDocs' component={ImportantDocs} />
-      <Stack.Screen name='Privacy' component={Privacy} />
-      <Stack.Screen name='FAQs' component={FAQs} />
       <Stack.Screen name="SavingPots" component={SavingPots} />
       <Stack.Screen name="PickCategoryCard" component={PickCategoryCard} />
       <Stack.Screen name="CreateSavingPots" component={CreateSavingPots} />
@@ -146,13 +138,21 @@ const MoreNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="Settings" component={SettingServices} />
+      <Stack.Screen name="Settings" component={SettingServices} screenOptions={{
+        headerShown: false
+      }} />
       <Stack.Screen name='Profile' component={Profile} />
       <Stack.Screen name='UpdateMallingAddress' component={UpdateMallingAddress} />
       <Stack.Screen name='EditNikeName' component={EditNikeName} />
       <Stack.Screen name='EditEmail' component={EditEmail} />
       <Stack.Screen name='EditMaritalStatus' component={EditMaritalStatus} />
       <Stack.Screen name='EmpDetails' component={EmpDetails} />
+      <Stack.Screen name='Privacy' component={Privacy} />
+      <Stack.Screen name='FAQs' component={FAQs} />
+      <Stack.Screen name='ImportantDocs' component={ImportantDocs} />
+      <Stack.Screen name='PayTransfer' component={PayTransfer} />
+      <Stack.Screen name='CardMangement' component={CardMangementOne} />
+      <Stack.Screen name='ChangePin' component={ChangePin} />
     </Stack.Navigator>
   );
 };
@@ -234,11 +234,9 @@ const TransferNavigator = () => {
     >
       <Stack.Screen name="Transfer" component={Transfer} screenOptions={{
         headerShown: false
-
       }} />
       <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
         headerShown: false
-
       }} />
       <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
         headerShown: false

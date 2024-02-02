@@ -105,7 +105,7 @@ const SettingServices = () => {
             navigation.navigate('PayTransfer')
         }else if(text == "Privacy & Security"){navigation.navigate('Privacy')}
         else if(text == "Profile"){navigation.navigate('Profile')}
-        else if(text == "Account & Card"){navigation.navigate('CardMangementOne')}
+        else if(text == "Account & Card"){navigation.navigate('CardMangement')}
     }
 
     const renderItemTwo = ({ item }) => (
