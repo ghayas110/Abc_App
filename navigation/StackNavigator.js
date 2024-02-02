@@ -105,8 +105,6 @@ const MainStackNavigator = () => {
       <Stack.Screen name="DuetNowSent" component={DuetNowSent} screenOptions={{ headerShown: false}}/>
       <Stack.Screen name="Recipt" component={Recipt} screenOptions={{ headerShown: false}} />
       <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name='CardMangementOne' component={CardMangementOne} />
-      <Stack.Screen name='ChangePin' component={ChangePin} />
       <Stack.Screen name='SpendLimit' component={SpendLimit} />
       <Stack.Screen name='CardPreferences' component={CardPreferences} />
       <Stack.Screen name='SettingServices' component={SettingServices} />
@@ -133,13 +131,13 @@ const MoreNavigator = () => {
     <Stack.Navigator screenOptions={{
       headerShown: false
     }}
-      tabBarOptions={{
-        activeTintColor: 'green',
-        inactiveTintColor: 'gray',
-      }}
+    tabBarOptions={{
+      activeTintColor: 'green',
+      inactiveTintColor: 'gray',
+    }}
     >
      <Stack.Screen name="Settings" component={SettingServices} screenOptions={{
-        headerShown: false
+       headerShown: false
       }} />
    <Stack.Screen name='Profile' component={Profile} />
       <Stack.Screen name='UpdateMallingAddress' component={UpdateMallingAddress} />
@@ -147,6 +145,8 @@ const MoreNavigator = () => {
       <Stack.Screen name='FAQs' component={FAQs} />
       <Stack.Screen name='ImportantDocs' component={ImportantDocs} />   
       <Stack.Screen name='PayTransfer' component={PayTransfer} />
+      <Stack.Screen name='CardMangement' component={CardMangementOne} />
+      <Stack.Screen name='ChangePin' component={ChangePin} />
 
     </Stack.Navigator>
   );
