@@ -90,7 +90,7 @@ const HomeScreen = ({ onLogin }) => {
               fontSize: 12,
               ...Theme.Green_color_f,
             }}
-            onPress={toggleBottomSheet}
+            onPress={toggleBottomSheet2}
           />
         </View>
         <Text style={{ fontSize: 24, fontWeight: '700', ...Theme.black_color_f, ...Theme.Font_family, textAlign: 'center', }}>
@@ -103,7 +103,7 @@ const HomeScreen = ({ onLogin }) => {
               <View style={styles.savingCardheaderHome}>
                 <View style={styles.DebitCard}>
                   
-                  <Icons.Entypo name="wallet" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={() => navigation.navigate('CardMangements')} />
+                <Icons.Entypo name="wallet" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={() => navigation.navigate('CardMangements')} />
                 {isCardNumber ?
                 <Icons.MaterialCommunityIcons name="eye-off-outline" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={HandleShow} />
                 :
@@ -147,10 +147,9 @@ const HomeScreen = ({ onLogin }) => {
               </View>
             </View>
           </View>
-        {/* </TouchableOpacity> */}
 
 
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <View style={{ flexDirection: "row", alignItems: "center" , justifyContent:"center" }}>
           <TouchableOpacity style={{ width: 85, paddingVertical: 10 }}>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
@@ -206,7 +205,7 @@ const HomeScreen = ({ onLogin }) => {
 
         </View>
 
-        <View style={{ padding: 5, marginBottom:15, flexDirection: "row", alignItems: "center", }}>
+        <View style={{ padding: 5, marginBottom:15, flexDirection: "row", alignItems: "center", justifyContent:"center" }}>
           {/* <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} /> */}
           <View style={styles.savingCard}>
             <View style={styles.savingCardheader}>
@@ -240,7 +239,7 @@ const HomeScreen = ({ onLogin }) => {
                   <Text style={styles.savingPercent}>80% completed</Text>
                 </View>
               </View>
-       
+            
               <View style={styles.savingpotcard}>
                 <View style={styles.ImageContainer}>
                   <Image source={Image4} style={styles.savingCardImage} />
@@ -309,9 +308,9 @@ const HomeScreen = ({ onLogin }) => {
     
 
         <Modal
-          isVisible={isBottomSheetVisible}
+          isVisible={isBottomSheetVisible2}
           style={{margin: 0}}
-          onBackdropPress={toggleBottomSheet}>
+          onBackdropPress={toggleBottomSheet2}>
           <View style={{flex: 1, justifyContent: 'flex-end'}}>
             <View
               style={{
