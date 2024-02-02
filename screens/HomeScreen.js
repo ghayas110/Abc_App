@@ -150,21 +150,21 @@ const HomeScreen = ({ onLogin }) => {
 
 
         <View style={{ flexDirection: "row", alignItems: "center" , justifyContent:"center" }}>
-          <TouchableOpacity style={{ width: 85, paddingVertical: 10 }}>
+          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }}>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={HomeDuet} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>DuitNow Transfer</Text>
+              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>{`Ssssco\nTransfer`}</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={{ width: 85, paddingVertical: 10 }} onPress={() => navigation.navigate('AllowQR')}>
+          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }} onPress={() => navigation.navigate('AllowQR')}>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={DuetQr} style={styles.boxImage} />
               </View>
               <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>
-                {`DuitNow\nQR`}
+                {`Ssssco\nQR`}
               </Text>
             </View>
           </TouchableOpacity>
@@ -215,7 +215,7 @@ const HomeScreen = ({ onLogin }) => {
               </View>
               <View style={styles.savingCardHeadertext2}>
                 <Text style={styles.textSavingtext2}>Savings pot balance:</Text>
-                <Text style={styles.textNumber}>RM 32,140.00</Text>
+                <Text style={styles.textNumber}>AED 32,140.00</Text>
               </View>
 
             </View>
@@ -332,7 +332,7 @@ const HomeScreen = ({ onLogin }) => {
               </View>
               <View style={{ padding: 15 }}>
                 <Text style={{ ...Theme.gray_color_f, ...Theme.Font_family, fontSize: 14 }}>
-                  {`Spending balance excludes:\nMinimum balance of RM 10 required to maintain the account\nAny funds stored in savings pots`}
+                  {`Spending balance excludes:\nMinimum balance of AED 10 required to maintain the account\nAny funds stored in savings pots`}
                   </Text>
               </View>
             </View>

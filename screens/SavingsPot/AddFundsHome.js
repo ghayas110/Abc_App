@@ -41,11 +41,7 @@ const AddFundsHome = () => {
             <ImageBackground resizeMode='cover' style={styles.Header} source={BackgroundImage} >
                 <View style={styles.headerIcon}>
                     <Icons.MaterialIcons name="arrow-back-ios" style={styles.Icons} onPress={back} />
-                    <View style={styles.rightIcon}>
-                        <Icons.AntDesign name="delete" style={styles.Icons} />
-                        <Icons.AntDesign name="edit" style={styles.Icons} />
-
-                    </View>
+                   
                 </View>
                 <View style={styles.Heading}>
                     <Text style={styles.headingText}>My Umrah</Text>
