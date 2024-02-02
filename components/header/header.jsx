@@ -3,8 +3,9 @@ import React from 'react'
 import NotificationIcon from '../../assets/TopUp/TopUpFaqLogout.png'
 import LogoutIcon from '../../assets/TopUp/TopUpNotification.png'
 import { useNavigation } from '@react-navigation/native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
-const Header = () => {
+const Header = ({onPress}) => {
     const naivgation = useNavigation()
     return (
         <>
@@ -17,7 +18,10 @@ const Header = () => {
                 </View>
                 <View style={{flexDirection:'row',alignItems:'center'}}>
                     <Image source={LogoutIcon}></Image>
+                    <TouchableOpacity onPress={onPress}>
+                        
                     <Image style={{marginLeft:15}} source={NotificationIcon}></Image>
+                    </TouchableOpacity>
                 </View>
             </View>
         </>

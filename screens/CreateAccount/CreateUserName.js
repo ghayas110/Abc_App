@@ -67,8 +67,9 @@ const CreateUserName = ({disabled}) => {
           }}>
           <Text
             style={{
-              fontSize: 28,
+              fontSize: 30,
               fontWeight: '700',
+              textTransform:'none',
               ...ThemeSty.Green_color_f,
               ...ThemeSty.Font_family,
             }}>
@@ -92,9 +93,9 @@ const CreateUserName = ({disabled}) => {
         </View>
         <View style={styles.inputContainer}>
           <SimpleInput
-            placeholder={'Enter UserName'}
+            placeholder={'Enter username'}
             inputstyle={{
-              fontSize: 20,
+              fontSize: 18,
               color: 'black',
               fontWeight: '600',
               ...ThemeSty.Font_family,
@@ -167,7 +168,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   inputContainer: {
-    borderBottomWidth: 2,
+    borderBottomWidth: 1,
     borderColor: '#00A200',
     marginTop: 10,
   },

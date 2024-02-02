@@ -43,7 +43,7 @@ const CreatePassword = () => {
             ProgressBarIcon={require('../../assets/CreateAccoutImages/progress.png')}
           />
                 <View style={{
-                    padding: 5, marginTop: 35,
+                    padding: 5, marginTop: 30,
                 }}>
                     <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f,...ThemeSty.Font_family }}>Create your Password</Text>
                 </View>
@@ -55,7 +55,7 @@ const CreatePassword = () => {
                             placeholderTextColor={"grey"}
                             type={'password'}
                             name="password"
-                            inputstyle={{ fontSize: 20, fontWeight: "600",color: "black" , ...ThemeSty.Font_family  }}
+                            inputstyle={{ fontSize: 18, fontWeight: "600",color: "black" , ...ThemeSty.Font_family  }}
                             pass={true}
                         />
                     </View>
@@ -66,7 +66,7 @@ const CreatePassword = () => {
                             type={'password'}
                             placeholderTextColor={"grey"}
                             placeholder={'Confirm New Password'}
-                            inputstyle={{ fontSize: 20, fontWeight: "600",color: "black" , ...ThemeSty.Font_family  }}
+                            inputstyle={{ fontSize: 18, fontWeight: "600",color: "black" , ...ThemeSty.Font_family  }}
                             pass={true}
                             />
                     </View>
@@ -95,7 +95,7 @@ const CreatePassword = () => {
                     </View>
                     <View style={styles.Instruction}>
                         <Icons.AntDesign name='check' style={styles.CheckIcon} />
-                        <Text style={{ ...styles.textInstruct, ...ThemeSty.Font_family, ...ThemeSty.gray_color_f }}>Must contain one of the following special character:{`! @ # $ ^ & _ + = ( ) <>`}</Text>
+                        <Text style={{ ...styles.textInstruct, ...ThemeSty.Font_family, ...ThemeSty.gray_color_f }}>Must contain one of the following special character:{`\n`}{`! @ # $ ^ & _ + = ( ) <>`}</Text>
                     </View>
 
                 </View>
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     },
 
     InputContainer: {
-        borderBottomWidth: 2,
+        borderBottomWidth: 1,
         borderColor: "#CCCCCC",
         marginTop: 5,
 

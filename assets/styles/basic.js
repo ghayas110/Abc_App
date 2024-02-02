@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
     red_color_h: { color: "red" },
     golden_color_h: { color: "#FFB340" },
     White_color_h: { color: "#FFFFFF" },
+    dark_green_h: { color: "#006400" },
 
     // BG COLORS =================================
     bg_blue_color: { backgroundColor: "#309fed", },
@@ -72,8 +73,8 @@ const styles = StyleSheet.create({
 
     // BORDERS ========================
     borderBot_gray:{
-        borderBottomColor: "#808080",
-        borderBottomWidth: 2,
+        borderBottomColor: "#CCCCCC",
+        borderBottomWidth: 1,
     },
     orenge_color_f: { color: "#ff5800" }, 
     Light_gray_color_f: { color: "#CCCCCC" },

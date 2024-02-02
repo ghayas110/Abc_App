@@ -18,8 +18,8 @@ import Modal from 'react-native-modal';
 import Visa from '../assets/HomeScreenImages/download-removebg-preview.png'
 import Header from '../components/header/header'
 import Theme from '../assets/styles/basic'
-
-const HomeScreen = () => {
+import ThemeSty from '../assets/styles/basic'
+const HomeScreen = ({ onLogin }) => {
   const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
   const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false);
   const [isCardNumber, setCardNumber] = useState(false);
@@ -63,9 +63,9 @@ const HomeScreen = () => {
     <>
       <ScrollView style={styles.container}>
         <View style={styles.Progress}>
-          <Header />
+          <Header onPress={toggleBottomSheet}/>
         </View>
-        <View
+        <View 
           style={{
             // padding: 5,
             // marginTop: 10,
@@ -90,20 +90,19 @@ const HomeScreen = () => {
               fontSize: 12,
               ...Theme.Green_color_f,
             }}
-            onPress={toggleBottomSheet}
+            onPress={toggleBottomSheet2}
           />
         </View>
         <Text style={{ fontSize: 24, fontWeight: '700', ...Theme.black_color_f, ...Theme.Font_family, textAlign: 'center', }}>
           AED 10,000.00
         </Text>
-        {/* <TouchableOpacity > */}
           <View style={{ padding: 5, marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
             {/* <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} /> */}
             <View style={styles.savingCardAccont}>
               <View style={styles.savingCardheaderHome}>
                 <View style={styles.DebitCard}>
                   
-                  <Icons.Entypo name="wallet" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={() => navigation.navigate('CardMangementOne')} />
+                <Icons.Entypo name="wallet" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={() => navigation.navigate('CardMangements')} />
                 {isCardNumber ?
                 <Icons.MaterialCommunityIcons name="eye-off-outline" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={HandleShow} />
                 :
@@ -147,10 +146,9 @@ const HomeScreen = () => {
               </View>
             </View>
           </View>
-        {/* </TouchableOpacity> */}
 
 
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <View style={{ flexDirection: "row", alignItems: "center" , justifyContent:"center" }}>
           <TouchableOpacity style={{ width: 85, paddingVertical: 10 }}>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
@@ -206,7 +204,7 @@ const HomeScreen = () => {
 
         </View>
 
-        <View style={{ padding: 5, marginBottom:15, flexDirection: "row", alignItems: "center", }}>
+        <View style={{ padding: 5, marginBottom:15, flexDirection: "row", alignItems: "center", justifyContent:"center" }}>
           {/* <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} /> */}
           <View style={styles.savingCard}>
             <View style={styles.savingCardheader}>
@@ -240,44 +238,7 @@ const HomeScreen = () => {
                   <Text style={styles.savingPercent}>80% completed</Text>
                 </View>
               </View>
-              {/* <View style={styles.savingpotcard}>
-                <View style={styles.ImageContainer}>
-                  <Image source={Image2} style={styles.savingCardImage} />
-                </View>
-                <View style={styles.savingpottextcontianer}>
-                  <Text style={styles.savingpottext}>Trip to Kyoto</Text>
-                  <View style={{ width: 200, }}>
-                    <ProgressBarAndroid
-                      styleAttr="Horizontal"
-                      indeterminate={false}
-                      progress={progress}
-                      color="#00a200"
-
-                    />
-                  </View>
-
-                  <Text style={styles.savingPercent}>80% completed</Text>
-                </View>
-              </View>
-              <View style={styles.savingpotcard}>
-                <View style={styles.ImageContainer}>
-                  <Image source={Image3} style={styles.savingCardImage} />
-                </View>
-                <View style={styles.savingpottextcontianer}>
-                  <Text style={styles.savingpottext}>New Phone</Text>
-                  <View style={{ width: 200, }}>
-                    <ProgressBarAndroid
-                      styleAttr="Horizontal"
-                      indeterminate={false}
-                      progress={progress}
-                      color="#00a200"
-
-                    />
-                  </View>
-
-                  <Text style={styles.savingPercent}>80% completed</Text>
-                </View>
-              </View> */}
+            
               <View style={styles.savingpotcard}>
                 <View style={styles.ImageContainer}>
                   <Image source={Image4} style={styles.savingCardImage} />
@@ -300,12 +261,55 @@ const HomeScreen = () => {
             </View>
           </View>
         </View>
-
+        <Modal
+        isVisible={isBottomSheetVisible}
+        style={{ margin: 0 }}
+        onBackdropPress={toggleBottomSheet}>
+        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+          <View
+            style={{
+              backgroundColor: 'white',
+              padding: 24,
+              borderTopRightRadius: 20,
+              borderTopLeftRadius: 20,
+            }}>
+            <View>
+              <Text
+                style={{
+                  fontSize: 28,
+                  fontWeight: '700',
+                  ...ThemeSty.Green_color_f,
+                  ...ThemeSty.Font_family,
+                }}>
+               Confirm Logout?
+              </Text>
+            </View>
+            <View style={{ paddingVertical: 10 }}>
+              <Text
+                style={{
+                  ...ThemeSty.gray_color_f,
+                  ...ThemeSty.Font_family,
+                  fontSize: 16,
+                }}>
+          Are you sure you want to log out of Smart Digital Mobile Bank App?
+              </Text>
+            </View>
+          
+            <View style={{ padding: 10, alignItems: 'center' }}>
+              <OutlineButton text="Logout" onPress={onLogin} />
+            </View>
+            <View style={{ alignItems: 'center' }}>
+              <RequestButton text="Cancel" onPress={toggleBottomSheet} />
+            </View>
+          </View>
+        </View>
+      </Modal>
+    
 
         <Modal
-          isVisible={isBottomSheetVisible}
+          isVisible={isBottomSheetVisible2}
           style={{margin: 0}}
-          onBackdropPress={toggleBottomSheet}>
+          onBackdropPress={toggleBottomSheet2}>
           <View style={{flex: 1, justifyContent: 'flex-end'}}>
             <View
               style={{

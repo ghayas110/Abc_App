@@ -1,34 +1,57 @@
 import { StyleSheet, Text, View,Dimensions,Button,Image, KeyboardAvoidingView } from 'react-native'
 import React from 'react'
-
+import style from '../../assets/styles/basic';
 import FormInput from '../../components/FormInput';
 import notifee from '@notifee/react-native';
+import { RequestButton } from '../../components/Buttons';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const AllowSelfie = ({onPress}) => {
-   
+    const onDisplayNotification= async()=> {
+        // Request permissions (required for iOS)
+        await notifee.requestPermission()
+      }
+      const { width, height } = Dimensions.get('window')
+
   return (
  
-    <View style={styles.container}>
-    <View style ={{display:'flex',alignItems:'center',flexDirection:'column',justifyContent:'space-around',height:"60%"}}>
-    <Image
+    <>
+    <View style={{
+        ...style.basic_container,
+        height: height,
+        backgroundColor: "white",
+    }}>
+        <View style={{
+            ...style.basic_container,
+            height: height*0.95,
+            paddingRight: 20,
+            paddingLeft: 20,
+            position: "relative"
+        }}>
+            <View style={{
+                marginTop: 80,
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center"
+            }}>
+  <Image
     style={styles.mapicon}
     source={require('../../assets/SignUp/selfie.png')} // replace with your image path
-    />
+    />            
+    </View>
     <View style={{padding:5}}>
-    <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>Now, let’s take a selfie</Text>
-    <Text style={styles.text2}>Get instant updates on your spending, rewards, and activity with </Text>
+    <Text style={{fontSize: 25, fontWeight:'bold',color:'green',marginBottom:15}}>Now, let’s take a selfie</Text>
+    <Text style={styles.text2}>Before proceeding, ensure there’s good lighting</Text>
     </View>
-    </View>
+   
 
-<View>
-<Button
-title="Take Sefie"
-color="green"
-onPress={onPress}
-/>
-</View>
-</View>
+
+            <RequestButton text={"Take Sefie"} onPress={onPress}
+                btnStyle={{ position: "absolute", bottom: 50 }}
+            />
+        </View>
+    </View>
+</>
 
 )
 }
@@ -40,7 +63,7 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop:80,
         padding:30,
-        height:windowHeight*0.9,
+        height:windowHeight*0.95,
         
        justifyContent:'space-between'
       },

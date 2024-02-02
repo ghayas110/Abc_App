@@ -4,6 +4,7 @@ import style from "../../assets/styles/basic"
 import { useNavigation } from '@react-navigation/native';
 import { RequestButton } from '../../components/Buttons';
 import ActivationSteps from '../../components/steps/ActivationSteps';
+import ActivationSteps2 from '../components/steps/ActivationSteps2';
 
 
 const MainSignUp = () => {
@@ -88,7 +89,7 @@ const MainSignUp = () => {
                             <Text style={{color: "gray",fontFamily: "Poppins-Regular",textAlign: "center",fontSize: 12}}>Top up {'\n'} account</Text>
                         </View>
                     </View> */}
-                    <ActivationSteps 
+                    <ActivationSteps2 
                         verticalLineImage={require('./images/line.png')}
                         image_a={require('./images/checkbox.png')}
                         text_a={`Sign up & ID ${'\n'} verification`}
@@ -98,6 +99,7 @@ const MainSignUp = () => {
                         text_c={`Create ${'\n'} an accounts`}
                         image_d={require('./images/Wallet.png')}
                         text_d={`Top up ${'\n'} account`}
+                       
                     />
                     <RequestButton text={"Create my account"} onPress={() => nextPage()}
                         btnStyle={{ position: "absolute", bottom: 50 }}
@@ -109,3 +111,5 @@ const MainSignUp = () => {
 }
 
 export default MainSignUp
+
+

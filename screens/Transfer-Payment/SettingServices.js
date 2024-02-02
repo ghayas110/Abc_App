@@ -103,7 +103,10 @@ const SettingServices = () => {
     const handleItemClick = (text) => {
         if (text == "Pay & Transfer Settings") {
             navigation.navigate('PayTransfer')
-        }
+        }else if(text == "Privacy & Security"){navigation.navigate('Privacy')}
+        else if(text == "Profile"){navigation.navigate('Profile')}
+        else if(text == "Account & Card"){navigation.navigate('CardMangement')}
+        else{navigation.navigate('ComingSoon')}
     }
 
     const renderItemTwo = ({ item }) => (
@@ -130,7 +133,9 @@ const SettingServices = () => {
     const gotNextPage = (text) => {
         if (text == "Contact Us") {
             setBottomSheetVisible(true)
-        }
+        }else if(text == "Important Documents"){navigation.navigate('ImportantDocs')}
+        else if(text == "FAQ"){navigation.navigate('FAQs')}
+        else{navigation.navigate('ComingSoon')}
     }
     return (
         <>
@@ -189,7 +194,7 @@ const SettingServices = () => {
                                     <Text style={{ fontSize: 28, fontWeight: '700', ...style.Green_color_f, ...style.Font_family }} >How can we help?</Text>
                                 </View>
                                 <View style={{ padding: 15 }}>
-                                    <Text style={{ ...style.gray_color_f, ...style.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
+                                    <Text style={{ ...style.gray_color_f, ...style.Font_family, fontSize: 16 }}>Please reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
                                         Alternatively you may email us at:
                                         bank@ssssco.com
                                         We’ll get this sorted!</Text>
