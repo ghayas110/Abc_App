@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View , ScrollView } from 'react-native'
-import Header from './components/Header';
+import Header from './components/Header2';
 import { ExampleInput , CheckBoxInput } from '../../components/Inputs';
 import { RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
@@ -18,7 +18,6 @@ const AddFunds = () => {
               <Header
               title={"Add"}
                   backtoPage={true}
-                  backtoPage2={true}
                   backIcon={require('../../assets/SavingPotsImages/ArrowLeft.png')}
               />
           </View>
