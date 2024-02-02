@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     borderBottomWidth: 1, // This adds a bottom border
-    borderBottomColor: 'green', // This sets the bottom border color to black
+    borderBottomColor: 'grey', // This sets the bottom border color to black
     margin: 5,
     textAlign: 'center',
     color: 'green',
