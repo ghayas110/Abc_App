@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View , FlatList, TouchableOpacity } from 'react-native'
-import Header from './components/Header' 
+import Header from './components/Header2' 
 import Theme from '../../assets/styles/basic'
 import React,{useState , useEffect} from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
@@ -46,35 +46,34 @@ const PickCategoryCard = () => {
     ];
     const renderItem = ({ item }) => (
         <>
-            <TouchableOpacity style={[styles.cards, styles.elevation]} onPress={handleNavigate}>
-                <View >
-                    <Text style={styles.cardText}>{item.name}</Text>
-                    <Text style={styles.cardText1}>{item.subname}</Text>
-               </View>
-            </TouchableOpacity>
+            <ScrollView  >
+                <TouchableOpacity style={[styles.cards, styles.elevation]} onPress={handleNavigate}>
+                    <View >
+                        <Text style={styles.cardText}>{item.name}</Text>
+                        <Text style={styles.cardText1}>{item.subname}</Text>
+                </View>
+                </TouchableOpacity>
+            </ScrollView>
 
         </>
     );
   return (
     <View style={styles.container}>
         <View style={{ flex:1.5 }}>
-          <Header 
+          <Header
           backtoPage={true} 
-          backtoPage2={true} 
           backIcon={require('../../assets/SavingPotsImages/ArrowLeft.png')} />
           <Text style={styles.Heading}>
              Pick a category to start saving
           </Text>
         </View>
           <View style={{ flex: 5 }}>
-              <ScrollView style={{ padding:10}} >
                   <FlatList
                       data={Flatlist}
                       renderItem={renderItem}
                       keyExtractor={item => item.id}
                   />
         
-          </ScrollView>
          </View>
 
     </View>

@@ -13,6 +13,9 @@ const AddFundsHome = () => {
     const navigateAddfunds = () =>{
         navigation.navigate('AddFunds')
     }
+    const back = () => {
+        navigation.navigate('SavingPots')
+    }
     const navigateWithdrawFund = () => {
         navigation.navigate('WithdrawFund')
     }
@@ -29,10 +32,15 @@ const AddFundsHome = () => {
         return () => clearInterval(interval);
     }, []);
     return (
-        <View style={styles.container}>
-            <ImageBackground style={styles.Header} source={BackgroundImage} >
+        <LinearGradient colors={['#000000', '#313131', '#FFFFFF']}
+            locations={[0, 0.5, 0.8]}  style={styles.container}>
+                {/* <LinearGradient
+
+                    style={styles.gradient}
+                /> */}
+            <ImageBackground resizeMode='cover' style={styles.Header} source={BackgroundImage} >
                 <View style={styles.headerIcon}>
-                    <Icons.MaterialIcons name="arrow-back-ios" style={styles.Icons} />
+                    <Icons.MaterialIcons name="arrow-back-ios" style={styles.Icons} onPress={back} />
                     <View style={styles.rightIcon}>
                         <Icons.AntDesign name="delete" style={styles.Icons} />
                         <Icons.AntDesign name="edit" style={styles.Icons} />
@@ -48,6 +56,7 @@ const AddFundsHome = () => {
                     </View>
                 </View>
             </ImageBackground>
+
 
             <View style={styles.Bottom}>
                 <View style={styles.boxes}>
@@ -89,7 +98,7 @@ const AddFundsHome = () => {
                     <Text style={styles.Cardtext}>AED 30,000.00</Text>
                 </View>
             </View>
-        </View>
+        </LinearGradient>
     )
 }
 
@@ -98,14 +107,16 @@ export default AddFundsHome
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#FFFFFF",
-        // padding: 10,
+        // backgroundColor: "#FFFFFF"
     },
     Header: {
         flex: 1.8,
-        resizeMode: "cover",
         padding: 10
 
+    },
+    gradient: {
+        width: '100%', // Set the width of the gradient as needed
+        height: '100%', // Set the height of the gradient as needed
     },
     Heading: {
         flex: 2,
@@ -132,15 +143,15 @@ const styles = StyleSheet.create({
     },
     Bottom: {
         // backgroundColor: "yellow",
-        flex: 0.8,
+        flex: 0.7,
         flexDirection: "row",
         justifyContent: "center",
         padding: 20,
-        backgroundGradient: {
-            colors: ['#313131', '#2E2E2E'],
-            start: { x: 0, y: 56 },
-            end: { x: 8, y: 0 },
-        },
+        // backgroundGradient: {
+        //     colors: ['#313131', '#2E2E2E'],
+        //     start: { x: 0, y: 56 },
+        //     end: { x: 8, y: 0 },
+        // },
     },
     headingIcons: {
         fontSize: 24,
