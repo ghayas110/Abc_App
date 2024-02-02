@@ -150,7 +150,7 @@ const HomeScreen = ({ onLogin }) => {
 
 
         <View style={{ flexDirection: "row", alignItems: "center" , justifyContent:"center" }}>
-          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }}>
+          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }}  onPress={() => navigation.navigate('Transfer', { screen: 'Transfer' })}>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={HomeDuet} style={styles.boxImage} />

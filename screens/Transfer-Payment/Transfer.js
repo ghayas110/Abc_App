@@ -44,26 +44,26 @@ const Transfer = () => {
     ];
     const data = [
         {
-            name: 'DuitNow Transfer',
+            name: 'SSSCO Transfer',
             Image: <Image source={DuetImg} style={styles.inmages} />,
             key: "1",
             Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={toggleBottomSheet} style={styles.IConfor} />
 
         },
         {
-            name: 'DuitNow QR',
+            name: 'SSSCO QR',
             Image: <Image source={QrDuetImg} style={styles.inmages} />,
             key: "1",
-            Forward: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.IConfor} />
+            Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={() => navigation.navigate('Home', { screen: 'AllowQR' })} style={styles.IConfor} />
 
         },
-        {
-            name: 'Transfer to another SSSCO account',
-            Image: <Image source={DuetImg} style={styles.inmages} />,
-            key: "1",
-            Forward: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.IConfor} />
+        // {
+        //     name: 'Transfer to another SSSCO account',
+        //     Image: <Image source={DuetImg} style={styles.inmages} />,
+        //     key: "1",
+        //     Forward: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.IConfor} />
 
-        },
+        // },
     ];
 
 
