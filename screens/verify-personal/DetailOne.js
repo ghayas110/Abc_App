@@ -53,6 +53,7 @@ const DetailOne = () => {
 
           <FormInput  
             placeholderTextColor="#808080"
+            placeholderColor={"#808080"}
             title={'Email'}
             type={'email'}
             placeholder={'Enter Email'}   
@@ -67,7 +68,7 @@ const DetailOne = () => {
           }}>
           <SelectInput
             textStyle={{
-              
+              color:"#808080",
               textAlign: 'left',
               fontSize: 16,
               marginBottom: 10,
@@ -96,6 +97,7 @@ const DetailOne = () => {
           }}>
           <SelectInput
             textStyle={{
+              color:"#808080",
               textAlign: 'left',
               fontSize: 16,
               marginBottom: 10,

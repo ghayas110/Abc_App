@@ -132,7 +132,8 @@ const List = ({
     dropDownStyle,
     placeholder,
     items,
-    value
+    value,
+    viewStyle
 }) => {
     const [isOpen, setOpen] = useState(false)
     const [currentValue, setCurrentValue] = useState()
@@ -144,7 +145,8 @@ const List = ({
                 paddingLeft: 15,
                 paddingRight: 15,
                 width: width,
-                marginTop: 15
+                marginTop: 15,
+                ...viewStyle
             }}>
                 <Text style={{ ...textStyle, fontFamily: "Poppins-Regular" }}>{label}</Text>
                 <DropDownPicker
@@ -301,15 +303,16 @@ const ExampleInput = ({ placeholder, label, type, InStyle, keyboardType , value 
     );
 };
 
-const FilePicker = ({text,fileStyleView,fileStyle,icon}) => {
+const FilePicker = ({text,fileStyleView,fileStyle,icon,textStyle}) => {
     const [pickedDocument, setPickedDocument] = useState(null);
     const pickDocument = async () => {
         try {
           const result = await DocumentPicker.pick({
-            type: [DocumentPicker.types.allFiles],
+            type: [DocumentPicker.types.pdf],
           });
-          console.log(result);
-          setPickedDocument(result);
+          console.log(result[0].name);
+          
+          setPickedDocument(result[0]?.name);
         } catch (err) {
           if (DocumentPicker.isCancel(err)) {
             // User cancelled the picker
@@ -320,12 +323,19 @@ const FilePicker = ({text,fileStyleView,fileStyle,icon}) => {
         }
     };
     return (
+        <>
         <View style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             ...fileStyleView
         }}>
+            {pickedDocument?
+            <View style={{padding:20,display:'flex',alignItems:'center',justifyContent:'space-between',flexDirection:'row'}}>
+            <Image source={require('../assets/Finance/Document.png')} style={{marginRight: 10,height:20,width:30,resizeMode:'contain'}}/>
+            <Text style={{color:'black'}}>{pickedDocument}</Text>
+            </View>:null}
+          
             <TouchableOpacity style={{
                 display: "flex",
                 flexDirection: "row",
@@ -339,9 +349,10 @@ const FilePicker = ({text,fileStyleView,fileStyle,icon}) => {
                 ...fileStyle
             }} onPress={pickDocument}>
                 <Image source={icon} style={{marginRight: 10,height:30,width:30}}/>
-                <Text style={{...Theme.Font_family_Bold,...Theme.Green_color_h,fontSize: 20}}>{text}</Text>
+                <Text style={{...Theme.Font_family_Bold,...Theme.Green_color_h,fontSize: 20,...textStyle}}>{text}</Text>
             </TouchableOpacity>
         </View>
+        </>
     );
 };
 

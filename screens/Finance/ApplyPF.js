@@ -8,6 +8,7 @@ import EligibleScreen from '../SignUp/EligibleScreen';
 import PersonalDetails from './PersonalDetails';
 import WorkDetails from './WorkDetails';
 import ChangeAddress from './UploadPdf/ChangeAddress';
+import UploadDoc from './UploadDoc';
 const labels = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
 const customStyles = {
   stepIndicatorSize: 25,
@@ -36,7 +37,12 @@ const ApplyPF = () => {
         // Render step 1
         case 0.2:
           return (
-            <ChangeAddress onPress={() => setCurrentPosition(currentPosition + 1)} />
+            <ChangeAddress onPress={() => setCurrentPosition(currentPosition + 0.6)} BackPress={() => setCurrentPosition(currentPosition - 0.2)}/>
+          )
+        break;
+        case 0.8:
+          return (
+            <UploadDoc onPress={() => setCurrentPosition(currentPosition - 0.8)} BackPress={() => setCurrentPosition(currentPosition - 0.2)}/>
           )
         break;
         case 1:

@@ -105,7 +105,8 @@ const SettingServices = () => {
             navigation.navigate('PayTransfer')
         }else if(text == "Privacy & Security"){navigation.navigate('Privacy')}
         else if(text == "Profile"){navigation.navigate('Profile')}
-        else if(text == "Account & Card"){navigation.navigate('CardMangementOne')}
+        else if(text == "Account & Card"){navigation.navigate('CardMangement')}
+        else{navigation.navigate('ComingSoon')}
     }
 
     const renderItemTwo = ({ item }) => (
@@ -134,6 +135,7 @@ const SettingServices = () => {
             setBottomSheetVisible(true)
         }else if(text == "Important Documents"){navigation.navigate('ImportantDocs')}
         else if(text == "FAQ"){navigation.navigate('FAQs')}
+        else{navigation.navigate('ComingSoon')}
     }
     return (
         <>

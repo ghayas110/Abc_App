@@ -5,8 +5,6 @@ import { useNavigation } from '@react-navigation/native';
 import ActivationSteps from '../../../components/steps/ActivationSteps';
 import { OutlineButton, RequestButton } from '../../../components/Buttons';
 import Steps from '../../../components/steps/Steps';
-import { TextInput } from 'react-native-paper';
-import DocumentPicker from 'react-native-document-picker';
 import { FilePicker } from '../../../components/Inputs';
 
 // const UploadPdf = () => {
@@ -81,7 +79,7 @@ const UploadPdf = () => {
             </TouchableOpacity>
             <RequestButton btnStyle={{
                 width: "auto"
-            }} text={"Continue"} onPress={() => { navigation.navigate("DocsInfo") }} />
+            }} text={"Continue"} onPress={() => { navigation.navigate("Reviewing") }} />
         </View> 
     </SafeAreaView>
 </>

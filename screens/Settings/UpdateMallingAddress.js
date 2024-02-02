@@ -128,7 +128,7 @@ const UpdateMallingAddress = () => {
                             marginTop: 20
                         }}
                         label={"State"}
-                        placeholder={"Select State"}
+                        placeholder={"Select Status"}
                         defaultValue={"Selangor"}
                         items={[
                             { label: 'Option 1', value: 'option1' },
@@ -143,7 +143,7 @@ const UpdateMallingAddress = () => {
                     justifyContent: "flex-end",
                     marginTop: 20
                 }}>
-                    <RequestButton btnStyle={{ width: "auto" }} text={"Confirm"} onPress={() => onPress()} />
+                    <RequestButton btnStyle={{ width: "auto" }} text={"Confirm"} onPress={() => {navigation.navigate("Profile")}} />
                 </View>
                 </ScrollView>
             </SafeAreaView>

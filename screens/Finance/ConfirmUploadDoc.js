@@ -6,7 +6,7 @@ import style from '../../assets/styles/basic';
 import { FilePicker } from '../../components/Inputs';
 const { width, height } = Dimensions.get('window');
 
-const UploadDoc = ({onPress}) => {
+const ConfirmUploadDoc = () => {
   return (
     <SafeAreaView style={{
         flex: 1,
@@ -53,12 +53,12 @@ const UploadDoc = ({onPress}) => {
             btnStyle={{
                 width: "auto"
             }} 
-            text={"Continue"} onPress={onPress} />
+            text={"Continue"} onPress={() => { navigation.navigate("DocsInfo") }} />
         </View> 
     </SafeAreaView>
   )
 }
 
-export default UploadDoc
+export default ConfirmUploadDoc
 
 const styles = StyleSheet.create({})

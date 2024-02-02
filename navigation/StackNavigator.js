@@ -60,8 +60,20 @@ import ApplyPF from "../screens/Finance/ApplyPF";
 import ApplyFinanceScd from "../screens/Finance/UploadPdf/ApplyFinanceScd";
 import DocsInfo from "../screens/Finance/UploadPdf/DocsInfo";
 import UploadPdf from "../screens/Finance/UploadPdf/UploadPdf";
+import UploadInstructions from "../screens/Finance/UploadPdf/UploadInstructions";
+import UploadPdfInfo from "../screens/Finance/UploadPdf/UploadPdfInfo";
+import Reviewing from "../screens/Finance/UploadPdf/Reviewing";
+import Approved from "../screens/Finance/UploadPdf/Approved";
 import UploadDoc from "../screens/Finance/UploadDoc";
-
+import Checknote from "../screens/Finance/Checknote";
+import DesireDuration from "../screens/Finance/DesireDuration";
+import BeforeWeBegin from "../screens/Finance/BeforeWeBegin";
+import EditNikeName from "../screens/Settings/EditNikeName";
+import EditEmail from "../screens/Settings/EditEmail";
+import EditMaritalStatus from "../screens/Settings/EditMaritalStatus";
+import EmpDetails from "../screens/Settings/EmpDetails";
+import ComingSoon from "../screens/Coming-Soon/ComingSoon";
+import CardManage from "../screens/card/CardManage";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -72,43 +84,37 @@ const screenOptionStyle = {
   headerBackTitle: "Back",
 };
 
-const MainStackNavigator = () => {
+const MainNavigator = ({onLogin}) => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false}}
+    <Stack.Navigator screenOptions={{ headerShown: false }}
       tabBarOptions={{
         activeTintColor: 'green',
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="Home" component={HomeScreen} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="Statements" component={StatementScreen} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="TransactionHistory" component={History} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="PendingTran" component={PendingTran} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="AllowQR" component={AllowQR} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="SetupQR" component={SetUpQR} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="AllowBiometric" component={AllowBiometric} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="OtpQR" component={OtpQR} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="QRAccountSuccess" component={QRAccountSuccess} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="QRScan" component={QRScan} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="InsertAmount" component={InsertAmount} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="Review" component={Review} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="DigitalSecure" component={DigitalSecure} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="DuetitNowOnWay" component={DuetitNowOnWay} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="DuetNowSent" component={DuetNowSent} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="Recipt" component={Recipt} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name='CardMangementOne' component={CardMangementOne} />
-      <Stack.Screen name='ChangePin' component={ChangePin} />
+      <Stack.Screen name="Home" screenOptions={{ headerShown: false }}  >
+      {() => <HomeScreen onLogin={onLogin} />}
+      </Stack.Screen>
+      <Stack.Screen name="Statements" component={StatementScreen} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="TransactionHistory" component={History} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="PendingTran" component={PendingTran} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="AllowQR" component={AllowQR} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="SetupQR" component={SetUpQR} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="AllowBiometric" component={AllowBiometric} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="OtpQR" component={OtpQR} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="QRAccountSuccess" component={QRAccountSuccess} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="QRScan" component={QRScan} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="InsertAmount" component={InsertAmount} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="Review" component={Review} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="DigitalSecure" component={DigitalSecure} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="DuetitNowOnWay" component={DuetitNowOnWay} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="DuetNowSent" component={DuetNowSent} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="Recipt" component={Recipt} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{ headerShown: false }} />
       <Stack.Screen name='SpendLimit' component={SpendLimit} />
       <Stack.Screen name='CardPreferences' component={CardPreferences} />
       <Stack.Screen name='SettingServices' component={SettingServices} />
-      <Stack.Screen name='PayTransfer' component={PayTransfer} />
       <Stack.Screen name='ManageDuitNowQR' component={ManageDuitNowQR} />
-      <Stack.Screen name='ImportantDocs' component={ImportantDocs} />
-      <Stack.Screen name='Privacy' component={Privacy} />
-      <Stack.Screen name='Profile' component={Profile} />
-      <Stack.Screen name='UpdateMallingAddress' component={UpdateMallingAddress} />
-      <Stack.Screen name='FAQs' component={FAQs} />
       <Stack.Screen name="SavingPots" component={SavingPots} />
       <Stack.Screen name="PickCategoryCard" component={PickCategoryCard} />
       <Stack.Screen name="CreateSavingPots" component={CreateSavingPots} />
@@ -122,8 +128,7 @@ const MainStackNavigator = () => {
       <Stack.Screen name="WithdrawFund" component={WithdrawFund} />
       <Stack.Screen name="WithdrawFundReview" component={WithdrawFundReview} />
       <Stack.Screen name="WithdrawSuccessfully" component={WithdrawSuccessfully} />
-
-
+      <Stack.Screen name='CardMangements' component={CardManage} />
     </Stack.Navigator>
   );
 };
@@ -138,7 +143,22 @@ const MoreNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-
+      <Stack.Screen name="Settings" component={SettingServices} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name='Profile' component={Profile} />
+      <Stack.Screen name='UpdateMallingAddress' component={UpdateMallingAddress} />
+      <Stack.Screen name='EditNikeName' component={EditNikeName} />
+      <Stack.Screen name='EditEmail' component={EditEmail} />
+      <Stack.Screen name='EditMaritalStatus' component={EditMaritalStatus} />
+      <Stack.Screen name='EmpDetails' component={EmpDetails} />
+      <Stack.Screen name='Privacy' component={Privacy} />
+      <Stack.Screen name='FAQs' component={FAQs} />
+      <Stack.Screen name='ImportantDocs' component={ImportantDocs} />
+      <Stack.Screen name='PayTransfer' component={PayTransfer} />
+      <Stack.Screen name='CardMangement' component={CardMangementOne} />
+      <Stack.Screen name='ChangePin' component={ChangePin} />
+      <Stack.Screen name='ComingSoon' component={ComingSoon} />
     </Stack.Navigator>
   );
 };
@@ -158,7 +178,7 @@ const AccountNavigator = () => {
         headerShown: false
       }} />
 
-   <Stack.Screen name="AccountDeposit" component={AccountDeposit} screenOptions={{
+      <Stack.Screen name="AccountDeposit" component={AccountDeposit} screenOptions={{
         headerShown: false
       }} />
 
@@ -176,20 +196,32 @@ const FinanceNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="FinanceScreen" component={Finance} screenOptions={{
+      <Stack.Screen name="Finance" component={Finance} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="Checknote" component={Checknote} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="DesireDuration" component={DesireDuration} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="BeforeWeBegin" component={BeforeWeBegin} screenOptions={{
         headerShown: false
       }} />
       <Stack.Screen name="ApplyFinance" component={ApplyFinance} screenOptions={{
         headerShown: false
       }} />
-        <Stack.Screen name="ApplyPF" component={ApplyPF} screenOptions={{
+      <Stack.Screen name="ApplyPF" component={ApplyPF} screenOptions={{
         headerShown: false
       }} />
-       <Stack.Screen name='ApplyFinanceScd' component={ApplyFinanceScd} />
-          <Stack.Screen name='DocsInfo' component={DocsInfo} />
-          <Stack.Screen name='UploadPdf' component={UploadPdf} />
-          <Stack.Screen name='UploadDocs' component={UploadDoc} />
-
+      <Stack.Screen name='ApplyFinanceScd' component={ApplyFinanceScd} />
+      <Stack.Screen name='DocsInfo' component={DocsInfo} />
+      <Stack.Screen name='UploadPdf' component={UploadPdf} />
+      <Stack.Screen name='UploadInstructions' component={UploadInstructions} />
+      <Stack.Screen name='UploadPdfInfo' component={UploadPdfInfo} />
+      <Stack.Screen name='Reviewing' component={Reviewing} />
+      <Stack.Screen name='Approved' component={Approved} />
+      <Stack.Screen name='UploadDocs' component={UploadDoc} />
     </Stack.Navigator>
   );
 };
@@ -208,11 +240,9 @@ const TransferNavigator = () => {
     >
       <Stack.Screen name="Transfer" component={Transfer} screenOptions={{
         headerShown: false
-
       }} />
       <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
         headerShown: false
-
       }} />
       <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
         headerShown: false
@@ -241,4 +271,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator , FinanceNavigator };
+export { MainNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator, FinanceNavigator };
