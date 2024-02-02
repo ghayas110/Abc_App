@@ -132,7 +132,8 @@ const List = ({
     dropDownStyle,
     placeholder,
     items,
-    value
+    value,
+    viewStyle
 }) => {
     const [isOpen, setOpen] = useState(false)
     const [currentValue, setCurrentValue] = useState()
@@ -144,7 +145,8 @@ const List = ({
                 paddingLeft: 15,
                 paddingRight: 15,
                 width: width,
-                marginTop: 15
+                marginTop: 15,
+                ...viewStyle
             }}>
                 <Text style={{ ...textStyle, fontFamily: "Poppins-Regular" }}>{label}</Text>
                 <DropDownPicker
