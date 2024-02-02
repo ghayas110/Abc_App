@@ -110,11 +110,7 @@ const MainStackNavigator = () => {
       <Stack.Screen name='SpendLimit' component={SpendLimit} />
       <Stack.Screen name='CardPreferences' component={CardPreferences} />
       <Stack.Screen name='SettingServices' component={SettingServices} />
-      <Stack.Screen name='PayTransfer' component={PayTransfer} />
       <Stack.Screen name='ManageDuitNowQR' component={ManageDuitNowQR} />
-      <Stack.Screen name='ImportantDocs' component={ImportantDocs} />
-      <Stack.Screen name='Privacy' component={Privacy} />  
-      <Stack.Screen name='FAQs' component={FAQs} />
       <Stack.Screen name="SavingPots" component={SavingPots} />
       <Stack.Screen name="PickCategoryCard" component={PickCategoryCard} />
       <Stack.Screen name="CreateSavingPots" component={CreateSavingPots} />
@@ -147,6 +143,11 @@ const MoreNavigator = () => {
       }} />
    <Stack.Screen name='Profile' component={Profile} />
       <Stack.Screen name='UpdateMallingAddress' component={UpdateMallingAddress} />
+      <Stack.Screen name='Privacy' component={Privacy} />  
+      <Stack.Screen name='FAQs' component={FAQs} />
+      <Stack.Screen name='ImportantDocs' component={ImportantDocs} />   
+      <Stack.Screen name='PayTransfer' component={PayTransfer} />
+
     </Stack.Navigator>
   );
 };
