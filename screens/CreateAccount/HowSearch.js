@@ -46,39 +46,39 @@ const HowSearch = () => {
         ProgressBarIcon={require('../../assets/CreateAccoutImages/progress.png')}
       />          
             <View>
-                <Text style={{  fontSize: 28, fontWeight: "700", ...ThemeSty.Font_family ,...ThemeSty.Green_color_f }}>How should we reach you? </Text>
+                <Text style={{  fontSize: 28, fontWeight: "700", lineHeight:33.6,...ThemeSty.Font_family ,...ThemeSty.Green_color_f }}>How should we reach you? </Text>
             </View>
             <View>
-                <Text style={{ ...ThemeSty.gray_color_f, fontSize: 14, ...ThemeSty.Font_family }}>We’re always excited to announce our new products and offers. Let us know how you’d like to be updated </Text>
+                <Text style={{ ...ThemeSty.gray_color_f, fontSize: 16,lineHeight:25, ...ThemeSty.Font_family ,fontWeight:500}}>We’re always excited to announce our new products and offers. Let us know how you’d like to be updated </Text>
             </View>
             
             <View style={styles.Switches}>
                 <View style={{flexDirection:"row", alignItems:"center", justifyContent:"space-between"}}>
                     <View style={{flexDirection:"row", alignItems:"center",}}>
                         <Icons.MaterialCommunityIcons name="email-minus-outline" style={{ fontSize: 16, ...ThemeSty.Green_color_f }} />
-                        <Text style={{ marginLeft: 10, fontSize: 16, color:"black" ,  ...ThemeSty.Font_family }}>Email</Text>
+                        <Text style={{ marginLeft: 10, fontSize: 16, color:"black" , lineHeight:24 , ...ThemeSty.Font_family }}>Email</Text>
                     </View>
                     <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={'white'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch} style={{alignItems:"flex-end"}} value={isEnabled} />
                 </View>
                 <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                     <View style={{ flexDirection: "row", alignItems: "center", }}>
                         <Icons.MaterialCommunityIcons name="phone" style={{ fontSize: 16, ...ThemeSty.Green_color_f }} />
-                        <Text style={{ marginLeft: 10, fontSize: 16, color:"black", ...ThemeSty.Font_family }}>Phone</Text>
+                        <Text style={{ marginLeft: 10, fontSize: 16, color:"black",lineHeight:24, ...ThemeSty.Font_family }}>Phone</Text>
                     </View>
                     <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={'white'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch1} style={{ alignItems: "flex-end" }} value={isEnabled1} />
                 </View>
                 <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                     <View style={{ flexDirection: "row", alignItems: "center", }}>
-                        <Icons.AntDesign name="message1" style={{ fontSize: 16, ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }} />
-                        <Text style={{ marginLeft: 10, fontSize: 16, color:"black", ...ThemeSty.Font_family }}>Text messages</Text>
+                        <Icons.AntDesign name="message1" style={{ fontSize: 16, ...ThemeSty.Green_color_f ,...ThemeSty.Font_family }} />
+                        <Text style={{ marginLeft: 10, fontSize: 16, color:"black", ...ThemeSty.Font_family,lineHeight:24 }}>Text messages</Text>
                     </View>
                     <Switch trackColor={{ false: '#808080', true: '#00A200' }} thumbColor={'white'} ios_backgroundColor="#3e3e3e" onValueChange={toggleSwitch2} style={{ alignItems: "flex-end" }} value={isEnabled2} />
                 </View>
             </View>
             
             <View style={{...styles.Notify , ...ThemeSty.bg_light_green_color}}>
-                <Text style={{ fontSize: 14, fontWeight: "700", ...ThemeSty.Green_color_primary, ...ThemeSty.Font_family,lineHeight:30 }}>
-                    Normal communications (non-marketing related) will be email by default. By tapping “Confirm”, I agree that SSSCO may process my personal data to promote the Bank’s products and services.
+                <Text style={{ fontSize: 13, fontWeight: "500", ...ThemeSty.Green_color_primary, ...ThemeSty.Font_family,lineHeight:21 }}>
+                Normal communications(non-marketing related) will be email by default. By tapping “Confirm”, I agree that Smart Digital Bank may process my personal data to promote the Bank’s products and services.
                 </Text>
             </View>
             <View >

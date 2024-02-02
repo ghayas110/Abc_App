@@ -76,13 +76,7 @@ const MainStackNavigator = () => {
           headerShown: false
         }}>
          
-          {/* <AuthStack.Screen name='ApplyFinanceScd' component={ApplyFinanceScd} />
-          <AuthStack.Screen name='DocsInfo' component={DocsInfo} />
-          <AuthStack.Screen name='UploadPdf' component={UploadPdf} />
-          <AuthStack.Screen name='UploadInstructions' component={UploadInstructions} />
-          <AuthStack.Screen name='UploadPdfInfo' component={UploadPdfInfo} />
-          <AuthStack.Screen name='Reviewing' component={Reviewing} />
-          <AuthStack.Screen name='Reviewing' component={Approved} /> */}
+         
           <AuthStack.Screen name="Splash">
             {(props) => <SplashScreen />}
           </AuthStack.Screen>

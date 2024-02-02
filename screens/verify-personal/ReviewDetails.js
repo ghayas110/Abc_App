@@ -64,7 +64,7 @@ const ReviewDetails = () => {
                                     <Image
                                         source={require('./images/uparrow.png')}
                                     />
-                                    <Text style={{ marginLeft: 20, fontSize: 15, fontWeight: "600", ...style.black_color_f, fontFamily: "Poppins-Bold" }}>Personal</Text>
+                                    <Text style={{ marginLeft: 20, fontSize: 17, fontWeight: "600", ...style.black_color_f, fontFamily: "Poppins-Bold" }}>Personal</Text>
                                 </View>
                                 <TouchableOpacity onPress={toggleBottomSheet}>
                                     <Image
@@ -73,16 +73,16 @@ const ReviewDetails = () => {
                                 </TouchableOpacity>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Email</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>razak@gmail.com</Text>
+                                <Text style={{ fontSize: 16, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Email</Text>
+                                <Text style={{ fontSize: 14, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>razak@gmail.com</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Marital status</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Single</Text>
+                                <Text style={{ fontSize: 16, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Marital status</Text>
+                                <Text style={{ fontSize: 14, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Single</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Ethnicity</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Arab</Text>
+                                <Text style={{ fontSize: 16, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Ethnicity</Text>
+                                <Text style={{ fontSize: 14, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Arab</Text>
                             </View>
                         </View>
 
@@ -96,7 +96,7 @@ const ReviewDetails = () => {
                                     <Image
                                         source={require('./images/uparrow.png')}
                                     />
-                                    <Text style={{ marginLeft: 20, fontSize: 15, fontWeight: "600", color: "#000", fontFamily: "Poppins-Bold" }}>Employment details</Text>
+                                    <Text style={{ marginLeft: 20, fontSize: 17, fontWeight: "600", color: "#000", fontFamily: "Poppins-Bold" }}>Employment details</Text>
                                 </View>
                                 <TouchableOpacity onPress={toggleBottomSheet}>
                                     <Image
@@ -105,24 +105,24 @@ const ReviewDetails = () => {
                                 </TouchableOpacity>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Employment type</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Full time</Text>
+                                <Text style={{ fontSize: 16, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Employment type</Text>
+                                <Text style={{ fontSize: 14, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Full time</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Name of employer</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Oliver Wyman</Text>
+                                <Text style={{ fontSize: 16, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Name of employer</Text>
+                                <Text style={{ fontSize: 14, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Oliver Wyman</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Occupation</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Consultant</Text>
+                                <Text style={{ fontSize: 16, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Occupation</Text>
+                                <Text style={{ fontSize: 14, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Consultant</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Sector</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Financial services</Text>
+                                <Text style={{ fontSize: 16, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Sector</Text>
+                                <Text style={{ fontSize: 14, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>Financial services</Text>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Annual income bracket</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>RM 72,000 to RM 88,000</Text>
+                                <Text style={{ fontSize: 16, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Annual income bracket</Text>
+                                <Text style={{ fontSize: 14, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>RM 72,000 to RM 88,000</Text>
                             </View>
                         </View>
 
@@ -136,7 +136,7 @@ const ReviewDetails = () => {
                                     <Image
                                         source={require('./images/uparrow.png')}
                                     />
-                                    <Text style={{ marginLeft: 20, fontSize: 15, fontWeight: "600", ...style.black_color_h, fontFamily: "Poppins-Bold" }}>Account</Text>
+                                    <Text style={{ marginLeft: 20, fontSize: 17, fontWeight: "600", ...style.black_color_h, fontFamily: "Poppins-Bold" }}>Account</Text>
                                 </View>
                                 <TouchableOpacity onPress={toggleBottomSheet}>
                                     <Image
@@ -145,8 +145,8 @@ const ReviewDetails = () => {
                                 </TouchableOpacity>
                             </View>
                             <View style={{ marginTop: 20 }}>
-                                <Text style={{ fontSize: 17, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Account purpose</Text>
-                                <Text style={{ fontSize: 16, marginTop: 15, ...style.gray_color_h, fontFamily: "Poppins-Bold" }}>Saving</Text>
+                                <Text style={{ fontSize: 16, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Account purpose</Text>
+                                <Text style={{ fontSize: 14, marginTop: 15, ...style.black_color_h, fontFamily: "Poppins-Bold" }}>Saving</Text>
                             </View>
                         </View>
                     </View>

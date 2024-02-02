@@ -73,8 +73,8 @@ const styles = StyleSheet.create({
 
     // BORDERS ========================
     borderBot_gray:{
-        borderBottomColor: "#808080",
-        borderBottomWidth: 2,
+        borderBottomColor: "#CCCCCC",
+        borderBottomWidth: 1,
     },
     orenge_color_f: { color: "#ff5800" }, 
     Light_gray_color_f: { color: "#CCCCCC" },

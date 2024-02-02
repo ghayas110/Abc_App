@@ -87,9 +87,9 @@ const Otp = ({ onPress,route }) => {
               }}>
           <View>
     <Text 
-    style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}
+    style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" ,textTransform:'none',marginTop:15 }}
     >Enter your One-Time Password (OTP)</Text>
-    <Text style={styles.text2}>We have sent your one time password to ‘+96XXXXX1234’</Text>
+    <Text style={styles.text3}>We have sent your one time password to ‘+96XXXXX1234’</Text>
 
       <View style={styles.inputContainer}>
         {otp.map((digit, index) => (
@@ -112,8 +112,8 @@ const Otp = ({ onPress,route }) => {
       </View>
       </View>
               </View>
-              <RequestButton text={"Confirm"} onPress={onPress}
-                  btnStyle={{ position: "absolute", bottom: 50 }}
+              <RequestButton text={"Next"} onPress={onPress}
+                  btnStyle={{ position: "absolute", bottom: 50}}
               />
      
           </KeyboardAvoidingView>
@@ -130,6 +130,11 @@ const styles = StyleSheet.create({
   },
   text2:{
     fontSize: 17,        
+    color: "#808080",
+    fontFamily: "Poppins-Regular"
+  },
+  text3:{
+    fontSize: 15,        
     color: "#808080",
     fontFamily: "Poppins-Regular"
   },

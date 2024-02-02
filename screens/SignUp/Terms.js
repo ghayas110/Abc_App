@@ -76,6 +76,7 @@ const Terms = ({ onPress }) => {
               fontSize: 17,
               padding: 20,
               paddingTop: 10,
+              textAlign:'left',
               color: '#808080',
               fontFamily: 'Poppins-Regular',
             }}>
@@ -89,7 +90,7 @@ const Terms = ({ onPress }) => {
             }}>
             <Accordion title="Declaration and Authorisation">
               <View style={styles.acordion1}>
-                <Text style={styles.text2}>{'\u2022'}</Text>
+                <Text style={{color:'black', fontSize:18,fontWeight:'800'}}>{'\u2022'}</Text>
                 <Text style={styles.text2}>
                   {' '}
                   Deposit Account-i and Debit Card-i Declaration and
@@ -97,7 +98,7 @@ const Terms = ({ onPress }) => {
                 </Text>
               </View>
               <View style={styles.acordion1}>
-                <Text style={styles.text2}>{'\u2022'}</Text>
+                <Text style={{color:'black', fontSize:18,fontWeight:'800'}}>{'\u2022'}</Text>
                 <Text style={styles.text2}>
                   {' '}
                   Personal Financing-i Declaration and Authorisation
@@ -140,14 +141,14 @@ const Terms = ({ onPress }) => {
             }}>
             <Accordion title="Product Disclosure Sheet">
               <View style={styles.acordion1}>
-                <Text style={styles.text2}>{'\u2022'}</Text>
+                <Text style={{color:'black', fontSize:18,fontWeight:'800'}}>{'\u2022'}</Text>
                 <Text style={styles.text2}>
                   {' '}
                   Commodity Murabahah Savings Account-i Product Disclosure Sheet
                 </Text>
               </View>
               <View style={styles.acordion1}>
-                <Text style={styles.text2}>{'\u2022'}</Text>
+                <Text style={{color:'black', fontSize:18,fontWeight:'800'}}>{'\u2022'}</Text>
                 <Text style={styles.text2}>
                   {' '}
                   Debit Card-i Product Disclosure Sheet
@@ -162,7 +163,7 @@ const Terms = ({ onPress }) => {
             }}>
             <Accordion title="Terms & Conditions">
               <View style={styles.acordion1}>
-                <Text style={styles.text2}>{'\u2022'}</Text>
+                <Text style={{color:'black', fontSize:18,fontWeight:'800'}}>{'\u2022'}</Text>
                 <Text style={styles.text2}>
                   {' '}
                   Deposit Account-i and Debit Card-i Declaration and
@@ -170,7 +171,7 @@ const Terms = ({ onPress }) => {
                 </Text>
               </View>
               <View style={styles.acordion1}>
-                <Text style={styles.text2}>{'\u2022'}</Text>
+                <Text style={{color:'black', fontSize:18,fontWeight:'800'}}>{'\u2022'}</Text>
                 <Text style={styles.text2}>
                   {' '}
                   Deposit Account-i and Debit Card-i Declaration and
@@ -186,11 +187,11 @@ const Terms = ({ onPress }) => {
             }}>
             <Accordion title="General">
               <View style={styles.acordion1}>
-                <Text style={styles.text2}>{'\u2022'}</Text>
+                <Text style={{color:'black', fontSize:18,fontWeight:'800'}}>{'\u2022'}</Text>
                 <Text style={styles.text2}> General Terms & Conditions</Text>
               </View>
               <View style={styles.acordion1}>
-                <Text style={styles.text2}>{'\u2022'}</Text>
+                <Text style={{color:'black', fontSize:18,fontWeight:'800'}}>{'\u2022'}</Text>
                 <Text style={styles.text2}> Specific Terms & Conditions</Text>
               </View>
             </Accordion>
@@ -347,5 +348,7 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     fontWeight: '700',
     color: 'black',
+    textAlign:'left'
+  
   },
 });

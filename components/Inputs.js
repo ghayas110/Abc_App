@@ -28,7 +28,7 @@ const SimpleInput = ({
                 ...viewStyle
             }}>
                 <Text style={{
-                    fontSize: 17,
+                    fontSize: 12,
                     color: "#808080",
                     fontFamily: "Poppins-Regular"
                 }}>{label}</Text>
@@ -110,6 +110,7 @@ const CheckBoxInput = ({
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
+                marginTop:10,
              
                 padding: 0,
             }}>
@@ -160,7 +161,52 @@ const List = ({
                         borderLeftWidth: 0,
                         borderRightWidth: 0,
                         fontFamily: "Poppins-Regular",
-                        // color: "red"
+                        // color: "green"
+                    }}
+                    setValue={(val) => setCurrentValue(val)}
+                />
+            </View>
+        </>
+    )
+}
+const SelectInput = ({
+    defaultValue,
+    label,
+    textStyle,
+    dropDownStyle,
+    placeholder,
+    items,
+    value
+}) => {
+    const [isOpen, setOpen] = useState(false)
+    const [currentValue, setCurrentValue] = useState()
+
+
+    return (
+        <>
+            <View style={{
+                paddingLeft: 15,
+                paddingRight: 15,
+                width: width,
+                marginTop: 15
+            }}>
+                <Text style={{ ...textStyle, fontFamily: "Poppins-Regular" }}>{label}</Text>
+                <DropDownPicker
+                    placeholder={placeholder}
+                    items={items}
+                    defaultValue={defaultValue}
+                    value={currentValue}
+                    setOpen={() => setOpen(!isOpen)}
+                    open={isOpen}
+                    textStyle={dropDownStyle}
+                    style={{
+                        zIndex: 1000,
+                        borderTopWidth: 0,
+                        borderLeftWidth: 0,
+                        borderRightWidth: 0,
+                        fontFamily: "Poppins-Regular",
+                        
+                        // color: "green"
                     }}
                     setValue={(val) => setCurrentValue(val)}
                 />
@@ -180,6 +226,7 @@ const DropDown = ({
 }) => {
     const [isOpen, setOpen] = useState(false)
     const [currentValue, setCurrentValue] = useState()
+    
 
 
     return (
@@ -259,10 +306,11 @@ const FilePicker = ({text,fileStyleView,fileStyle,icon,textStyle}) => {
     const pickDocument = async () => {
         try {
           const result = await DocumentPicker.pick({
-            type: [DocumentPicker.types.allFiles],
+            type: [DocumentPicker.types.pdf],
           });
-          console.log(result);
-          setPickedDocument(result);
+          console.log(result[0].name);
+          
+          setPickedDocument(result[0]?.name);
         } catch (err) {
           if (DocumentPicker.isCancel(err)) {
             // User cancelled the picker
@@ -273,12 +321,19 @@ const FilePicker = ({text,fileStyleView,fileStyle,icon,textStyle}) => {
         }
     };
     return (
+        <>
         <View style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             ...fileStyleView
         }}>
+            {pickedDocument?
+            <View style={{padding:20,display:'flex',alignItems:'center',justifyContent:'space-between',flexDirection:'row'}}>
+            <Image source={require('../assets/Finance/Document.png')} style={{marginRight: 10,height:20,width:30,resizeMode:'contain'}}/>
+            <Text style={{color:'black'}}>{pickedDocument}</Text>
+            </View>:null}
+          
             <TouchableOpacity style={{
                 display: "flex",
                 flexDirection: "row",
@@ -295,6 +350,7 @@ const FilePicker = ({text,fileStyleView,fileStyle,icon,textStyle}) => {
                 <Text style={{...Theme.Font_family_Bold,...Theme.Green_color_h,fontSize: 20,...textStyle}}>{text}</Text>
             </TouchableOpacity>
         </View>
+        </>
     );
 };
 
@@ -347,4 +403,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export { SimpleInput, OtpInput, CheckBoxInput, List, SearchInput, ExampleInput, DropDown,FilePicker }
+export { SimpleInput, OtpInput, CheckBoxInput, List, SearchInput, ExampleInput, DropDown,SelectInput,FilePicker }

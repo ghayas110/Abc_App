@@ -64,6 +64,7 @@ import UploadInstructions from "../screens/Finance/UploadPdf/UploadInstructions"
 import UploadPdfInfo from "../screens/Finance/UploadPdf/UploadPdfInfo";
 import Reviewing from "../screens/Finance/UploadPdf/Reviewing";
 import Approved from "../screens/Finance/UploadPdf/Approved";
+import UploadDoc from "../screens/Finance/UploadDoc";
 
 const Stack = createStackNavigator();
 
@@ -125,8 +126,6 @@ const MainStackNavigator = () => {
       <Stack.Screen name="WithdrawFund" component={WithdrawFund} />
       <Stack.Screen name="WithdrawFundReview" component={WithdrawFundReview} />
       <Stack.Screen name="WithdrawSuccessfully" component={WithdrawSuccessfully} />
-
-
     </Stack.Navigator>
   );
 };
@@ -195,6 +194,7 @@ const FinanceNavigator = () => {
       <Stack.Screen name='UploadPdfInfo' component={UploadPdfInfo} />
       <Stack.Screen name='Reviewing' component={Reviewing} />
       <Stack.Screen name='Approved' component={Approved} />
+      <Stack.Screen name='UploadDocs' component={UploadDoc} />
     </Stack.Navigator>
   );
 };

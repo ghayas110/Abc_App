@@ -23,11 +23,12 @@ import {
     edit,
     title,
     keyboardType,
-    charecter
+    charecter,
+    fontsize
   }) => {
     return (
       <View style={{marginTop: 5}}>
-        <Text style={{color: placeholderColor}}>{title}</Text>
+        <Text style={{color: placeholderColor,fontSize:fontsize}}>{title}</Text>
         <View style={styles.searchContainer}>
           <TextInput
             style={styles.input}
@@ -56,13 +57,11 @@ import {
       borderBottomWidth: 1, // This adds a bottom border
       borderBottomColor: 'green', // This sets the bottom border color to black
       paddingHorizontal: 5,
-      marginBottom: 10,
-      width:300
+      width:320,
       
     },
     input: {
       flex: 1,
-      marginLeft: 0,
       color: 'black',
     },
   });

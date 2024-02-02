@@ -9,6 +9,7 @@ import { RequestButton, OutlineButton } from '../../components/Buttons'
 import ThemeSty from "../../assets/styles/basic"
 import Steps from '../../components/steps/Steps'
 import ActivationSteps from '../../components/steps/ActivationSteps'
+import LottieView from 'lottie-react-native'
 const { width, height } = Dimensions.get('window');
 const ApplyFinance = () => {
     const [progress, setProgress] = useState(0);
@@ -32,9 +33,8 @@ const ApplyFinance = () => {
         <View style={styles.container}>
     
             <View style={styles.Image}>
-                <View>
-                    <Image source={require("../../assets/Finance/finance1.png")} style={{width:width*0.6,height:height*0.3,resizeMode:'contain' }}/>
-                </View>
+                <LottieView source={require('../../assets/lotiefiles/financing_application.json')} autoPlay style={{width:"100%",height:200}} />
+               
             </View>
             <View style={styles.headerText}>
                 <Text style={{  fontSize: 28, fontWeight: "700",paddingBottom:10,  ...ThemeSty.Font_family , ...ThemeSty.Green_color_f }}>

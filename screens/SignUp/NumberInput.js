@@ -5,6 +5,7 @@ import { CheckBoxInput, List, SimpleInput } from '../../components/Inputs';
 import { RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
 import FormInput from '../../components/FormInput';
+import { black } from 'react-native-paper/lib/typescript/styles/colors';
 
 
 const NumberInput = ({onPress}) => {
@@ -29,11 +30,11 @@ const NumberInput = ({onPress}) => {
               }}>
           <View>
     
-    <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>What is your mobile number?</Text>
+    <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold",marginTop:15 }}>What is your mobile number?</Text>
     <View style={{flexDirection: 'row', alignItems: 'center',justifyContent:'center'}}>
-<Text style={style.text2}>+96</Text>
+<Text style={{fontSize:16,fontWeight:'bold' ,marginBottom:7,color:'black',marginTop:12}}>+96</Text>
 <FormInput
-placeholder={'Enter Phone No'}
+placeholder={'Enter mobile number'}
 placeholderColor={'grey'}
 
 keyboardType={'numeric'}

@@ -44,13 +44,13 @@ const BioActivation = () => {
                 </View>
             </View>
             <View style={styles.headerText}>
-                <Text style={{  fontSize: 28, fontWeight: "700",  ...ThemeSty.Font_family , ...ThemeSty.Green_color_f }}>
+                <Text style={{  fontSize: 30, fontWeight: "700",  ...ThemeSty.Font_family , ...ThemeSty.Green_color_f }}>
                     Activate biometric login
                 </Text>
             </View>
             <View style={styles.headerText}>
                 <Text style={{ fontSize: 16, fontWeight: "700", ...ThemeSty.gray_color_f , ...ThemeSty.Font_family }}>
-                    Log in to Ssssco securely with facial / fingerprint recognition
+                    Log in to Smart Digital Bank securely with facial / fingerprint recognition
                 </Text>
             </View>
             <View style={{...styles.Notify , ...ThemeSty.bg_light_green_color}}>
