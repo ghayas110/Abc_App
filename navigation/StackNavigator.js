@@ -72,6 +72,7 @@ import EditNikeName from "../screens/Settings/EditNikeName";
 import EditEmail from "../screens/Settings/EditEmail";
 import EditMaritalStatus from "../screens/Settings/EditMaritalStatus";
 import EmpDetails from "../screens/Settings/EmpDetails";
+import ComingSoon from "../screens/Coming-Soon/ComingSoon";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -153,6 +154,7 @@ const MoreNavigator = () => {
       <Stack.Screen name='PayTransfer' component={PayTransfer} />
       <Stack.Screen name='CardMangement' component={CardMangementOne} />
       <Stack.Screen name='ChangePin' component={ChangePin} />
+      <Stack.Screen name='ComingSoon' component={ComingSoon} />
     </Stack.Navigator>
   );
 };
