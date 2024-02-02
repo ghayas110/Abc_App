@@ -6,57 +6,9 @@ import { useNavigation } from '@react-navigation/native';
 
 const Profile = () => {
     const navigation = useNavigation();
-    const dataOne = [
-        {
-            id: '1',
-            UpArrow: require('../../assets/generalImages/UpArrow.png'),
-            Head: "Personal",
-            children: {
-                label: "Username",
-                description: "RazakOsman123",
-                image: false,
-            },
-            children: {
-                label: "Nickname (preferred name) ",
-                description: "Razak",
-                image: require('../../assets/generalImages/move.png'),
-            },
-            children: {
-                label: "Mailing address",
-                description: "62, Jalan Camar 5, Residensi 28, 47810, Petaling Jaya, Selangor",
-                image: require('../../assets/generalImages/move.png'),
-            },
-            children: {
-                label: "Email address",
-                description: "razak@gmail.com",
-                image: require('../../assets/generalImages/move.png'),
-            },
-            children: {
-                label: "Mobile number",
-                description: "(+60) •• ••• 5953",
-                image: require('../../assets/generalImages/move.png'),
-            },
-            children: {
-                label: "Marital status",
-                description: "Single",
-                image: require('../../assets/generalImages/move.png'),
-            }
-        },
-        {
-            id: '2',
-            UpArrow: require('../../assets/generalImages/UpArrow.png'),
-            Head: "Employment details",
-            children: {
-                label: "Annual income bracket",
-                description: "RM 72,000 to RM 88,000",
-                image: require('../../assets/generalImages/move.png'),
-            },
-        },
-    ];
 
     return (
         <>
-
             <SafeAreaView style={{
                 flex: 1,
                 backgroundColor: "white",
@@ -93,10 +45,10 @@ const Profile = () => {
                                     <Text style={{ ...style.Font_family_Bold, ...style.black_color_h }}>Personal</Text>
                                 </View>
                                 <View style={{ marginTop: 15 }}>
-                                    <View>
+                                    <TouchableOpacity>
                                         <Text style={{ ...style.Font_family, ...style.gray_color_h, fontSize: 15 }}>Username</Text>
                                         <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, fontSize: 18 }}>RazakOsman123</Text>
-                                    </View>
+                                    </TouchableOpacity>
                                 </View>
                                 <View style={{
                                     marginTop: 15,
@@ -109,7 +61,7 @@ const Profile = () => {
                                         alignItems: "center"
                                     }}>
                                         <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, fontSize: 18 }}>Razak</Text>
-                                        <TouchableOpacity onPress={() => navigation.navigate("UpdateMallingAddress")}><Image source={require("../../assets/generalImages/Edit.png")} /></TouchableOpacity>
+                                        <TouchableOpacity onPress={() => navigation.navigate("EditNikeName")}><Image source={require("../../assets/generalImages/Edit.png")} /></TouchableOpacity>
                                     </View>
                                 </View>
                                 <View style={{
@@ -137,7 +89,7 @@ const Profile = () => {
                                         alignItems: "center"
                                     }}>
                                         <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, fontSize: 18 }}>razak@gmail.com</Text>
-                                        <TouchableOpacity onPress={() => navigation.navigate("UpdateMallingAddress")}><Image source={require("../../assets/generalImages/Edit.png")} /></TouchableOpacity>
+                                        <TouchableOpacity onPress={() => navigation.navigate("EditEmail")}><Image source={require("../../assets/generalImages/Edit.png")} /></TouchableOpacity>
                                     </View>
                                 </View>
                                 <View style={{
@@ -151,7 +103,7 @@ const Profile = () => {
                                         alignItems: "center"
                                     }}>
                                         <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, fontSize: 18 }}>Single</Text>
-                                        <TouchableOpacity onPress={() => navigation.navigate("UpdateMallingAddress")}><Image source={require("../../assets/generalImages/Edit.png")} /></TouchableOpacity>
+                                        <TouchableOpacity onPress={() => navigation.navigate("EditMaritalStatus")}><Image source={require("../../assets/generalImages/Edit.png")} /></TouchableOpacity>
                                     </View>
                                 </View>
                             </View>
@@ -181,7 +133,7 @@ const Profile = () => {
                                         alignItems: "center"
                                     }}>
                                         <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, fontSize: 18 }}>RM 72,000 to RM 88,000</Text>
-                                        <TouchableOpacity onPress={() => navigation.navigate("UpdateMallingAddress")}><Image source={require("../../assets/generalImages/Edit.png")} /></TouchableOpacity>
+                                        <TouchableOpacity onPress={() => navigation.navigate("EmpDetails")}><Image source={require("../../assets/generalImages/Edit.png")} /></TouchableOpacity>
                                     </View>
                                 </View>
                             </View>

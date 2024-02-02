@@ -65,11 +65,14 @@ import UploadPdfInfo from "../screens/Finance/UploadPdf/UploadPdfInfo";
 import Reviewing from "../screens/Finance/UploadPdf/Reviewing";
 import Approved from "../screens/Finance/UploadPdf/Approved";
 import UploadDoc from "../screens/Finance/UploadDoc";
-
 import Checknote from "../screens/Finance/Checknote";
 import DesireDuration from "../screens/Finance/DesireDuration";
 import BeforeWeBegin from "../screens/Finance/BeforeWeBegin";
-
+import EditNikeName from "../screens/Settings/EditNikeName";
+import EditEmail from "../screens/Settings/EditEmail";
+import EditMaritalStatus from "../screens/Settings/EditMaritalStatus";
+import EmpDetails from "../screens/Settings/EmpDetails";
+import ComingSoon from "../screens/Coming-Soon/ComingSoon";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -82,29 +85,29 @@ const screenOptionStyle = {
 
 const MainStackNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false}}
+    <Stack.Navigator screenOptions={{ headerShown: false }}
       tabBarOptions={{
         activeTintColor: 'green',
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="Home" component={HomeScreen} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="Statements" component={StatementScreen} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="TransactionHistory" component={History} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="PendingTran" component={PendingTran} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="AllowQR" component={AllowQR} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="SetupQR" component={SetUpQR} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="AllowBiometric" component={AllowBiometric} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="OtpQR" component={OtpQR} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="QRAccountSuccess" component={QRAccountSuccess} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="QRScan" component={QRScan} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="InsertAmount" component={InsertAmount} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="Review" component={Review} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="DigitalSecure" component={DigitalSecure} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="DuetitNowOnWay" component={DuetitNowOnWay} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="DuetNowSent" component={DuetNowSent} screenOptions={{ headerShown: false}}/>
-      <Stack.Screen name="Recipt" component={Recipt} screenOptions={{ headerShown: false}} />
-      <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{ headerShown: false}} />
+      <Stack.Screen name="Home" component={HomeScreen} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="Statements" component={StatementScreen} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="TransactionHistory" component={History} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="PendingTran" component={PendingTran} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="AllowQR" component={AllowQR} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="SetupQR" component={SetUpQR} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="AllowBiometric" component={AllowBiometric} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="OtpQR" component={OtpQR} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="QRAccountSuccess" component={QRAccountSuccess} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="QRScan" component={QRScan} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="InsertAmount" component={InsertAmount} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="Review" component={Review} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="DigitalSecure" component={DigitalSecure} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="DuetitNowOnWay" component={DuetitNowOnWay} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="DuetNowSent" component={DuetNowSent} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="Recipt" component={Recipt} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{ headerShown: false }} />
       <Stack.Screen name='SpendLimit' component={SpendLimit} />
       <Stack.Screen name='CardPreferences' component={CardPreferences} />
       <Stack.Screen name='SettingServices' component={SettingServices} />
@@ -131,23 +134,27 @@ const MoreNavigator = () => {
     <Stack.Navigator screenOptions={{
       headerShown: false
     }}
-    tabBarOptions={{
-      activeTintColor: 'green',
-      inactiveTintColor: 'gray',
-    }}
+      tabBarOptions={{
+        activeTintColor: 'green',
+        inactiveTintColor: 'gray',
+      }}
     >
-     <Stack.Screen name="Settings" component={SettingServices} screenOptions={{
-       headerShown: false
+      <Stack.Screen name="Settings" component={SettingServices} screenOptions={{
+        headerShown: false
       }} />
-   <Stack.Screen name='Profile' component={Profile} />
+      <Stack.Screen name='Profile' component={Profile} />
       <Stack.Screen name='UpdateMallingAddress' component={UpdateMallingAddress} />
-      <Stack.Screen name='Privacy' component={Privacy} />  
+      <Stack.Screen name='EditNikeName' component={EditNikeName} />
+      <Stack.Screen name='EditEmail' component={EditEmail} />
+      <Stack.Screen name='EditMaritalStatus' component={EditMaritalStatus} />
+      <Stack.Screen name='EmpDetails' component={EmpDetails} />
+      <Stack.Screen name='Privacy' component={Privacy} />
       <Stack.Screen name='FAQs' component={FAQs} />
-      <Stack.Screen name='ImportantDocs' component={ImportantDocs} />   
+      <Stack.Screen name='ImportantDocs' component={ImportantDocs} />
       <Stack.Screen name='PayTransfer' component={PayTransfer} />
       <Stack.Screen name='CardMangement' component={CardMangementOne} />
       <Stack.Screen name='ChangePin' component={ChangePin} />
-
+      <Stack.Screen name='ComingSoon' component={ComingSoon} />
     </Stack.Navigator>
   );
 };
@@ -167,7 +174,7 @@ const AccountNavigator = () => {
         headerShown: false
       }} />
 
-   <Stack.Screen name="AccountDeposit" component={AccountDeposit} screenOptions={{
+      <Stack.Screen name="AccountDeposit" component={AccountDeposit} screenOptions={{
         headerShown: false
       }} />
 
@@ -200,7 +207,7 @@ const FinanceNavigator = () => {
       <Stack.Screen name="ApplyFinance" component={ApplyFinance} screenOptions={{
         headerShown: false
       }} />
-        <Stack.Screen name="ApplyPF" component={ApplyPF} screenOptions={{
+      <Stack.Screen name="ApplyPF" component={ApplyPF} screenOptions={{
         headerShown: false
       }} />
       <Stack.Screen name='ApplyFinanceScd' component={ApplyFinanceScd} />
@@ -229,11 +236,9 @@ const TransferNavigator = () => {
     >
       <Stack.Screen name="Transfer" component={Transfer} screenOptions={{
         headerShown: false
-
       }} />
       <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
         headerShown: false
-
       }} />
       <Stack.Screen name="RecipientBank" component={RecipientBank} screenOptions={{
         headerShown: false
