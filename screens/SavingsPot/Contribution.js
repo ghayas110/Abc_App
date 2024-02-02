@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View, ScrollView, Switch, ProgressBarAndroid } from 'react-native'
 import React, { useState } from 'react'
 import Theme from '../../assets/styles/basic'
-import { ExampleInput, DropDown } from '../../components/Inputs'
+import { ExampleInput, DropDown , SimpleInput } from '../../components/Inputs'
 import { useNavigation } from '@react-navigation/native'
 import Icons from '../../components/Icons'
-import Header from './components/Header'
+import Header from './components/Header2'
 import { IndexPath, Layout, Select, SelectItem } from '@ui-kitten/components';
 import {RequestButton} from '../../components/Buttons'
  
@@ -22,13 +22,12 @@ const Contribution = () => {
 
 
     return (
-        <ScrollView style={{flex:5}}>
+        <ScrollView >
         <View style={styles.Container}>
             <View style={styles.header}>
                 <Header
                     title={"Contribution"}
                     backtoPage={true}
-                    backtoPage2={true}
                     backIcon={require('../../assets/SavingPotsImages/ArrowLeft.png')}
                 />
             </View>
@@ -36,9 +35,7 @@ const Contribution = () => {
                 <Text style={styles.HeadingText} > Targeted savings goal </Text>
                 <View style={styles.HeadingInput}>
                     <Text style={styles.HeadingInputText}>AED</Text>
-                    <ScrollView style={{marginLeft:10}} >
-                        <ExampleInput style={styles.Input} placeholder='Enter amount' keyboardType="numeric" />
-                    </ScrollView>
+                        <SimpleInput inputstyle={styles.Input} placeholder='Enter amount' keyboardType="numeric" />
                 </View>
             </View>
             <View style={styles.switcher}>
@@ -50,13 +47,12 @@ const Contribution = () => {
                 <Text style={styles.HeadingText} > Targeted Monthly Contribution  </Text>
                 <View style={styles.HeadingInput}>
                     <Text style={styles.HeadingInputText}>AED</Text>
-                    <ScrollView style={{ marginLeft: 10 }} >
-                        <ExampleInput style={styles.Input} placeholder='Enter amount' keyboardType="numeric" />
-                    </ScrollView>
+                    
+                        <SimpleInput inputstyle={styles.Input}  placeholder='Enter amount' keyboardType="numeric" />
                 </View>
             </View>
             <View style={styles.ProgessBar}>
-                    <ProgressBarAndroid styleAttr="Horizontal" indeterminate={false} progress={1}   />
+                    <ProgressBarAndroid styleAttr="Horizontal" indeterminate={false} progress={1}   color={"#00a200"} />
                 <View style={styles.ProgressAmout}>
                     <Text style={styles.progresstext}>AED 1.00</Text>
                     <Text style={styles.progresstext}>Targeted amount</Text>
@@ -181,9 +177,8 @@ const styles = StyleSheet.create({
         paddingRight: 5,
     },
     ProgessBar: {
-        flex: 0.5,
-        height:70,
-        padding:10,
+        flex: 0.7,
+        padding:15,
     },
     ProgressAmout:{
         flexDirection:"row",

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, ProgressBarAndroid } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, ProgressBarAndroid, FlatList } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import Icons from '../components/Icons'
 import { useNavigation } from '@react-navigation/native'
@@ -18,10 +18,15 @@ import Modal from 'react-native-modal';
 import Visa from '../assets/HomeScreenImages/download-removebg-preview.png'
 import Header from '../components/header/header'
 import Theme from '../assets/styles/basic'
-
+import ThemeSty from '../assets/styles/basic'
 const HomeScreen = ({ onLogin }) => {
   const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
   const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false);
+  const [isCardNumber, setCardNumber] = useState(false);
+
+  const HandleShow = () => {
+    setCardNumber(!isCardNumber)
+  }
 
   const toggleBottomSheet = () => {
     setBottomSheetVisible(!isBottomSheetVisible);
@@ -51,49 +56,19 @@ const HomeScreen = ({ onLogin }) => {
   }, []);
 
 
-  const data2 = [
-    {
-      name: 'Bank Account',
-      Icon: <Icons.MaterialCommunityIcons name="bank-outline" />,
-      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
-    },
-    {
-      name: 'Mobile Number',
-      Icon: <Icons.AntDesign name="contacts" />,
-      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
-    },
-    {
-      name: 'CNIC',
-      Icon: <Icons.AntDesign name="contacts" />,
-      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
-    },
-    {
-      name: 'MyPolis/MyTentera',
-      Icon: <Icons.AntDesign name="contacts" />,
-      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
-    },
-    {
-      name: 'Business Registration Number',
-      Icon: <Icons.AntDesign name="contacts" />,
-      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
-    },
-    {
-      name: 'Passport Number',
-      Icon: <Icons.AntDesign name="contacts" />,
-      Icon2: <Icons.MaterialIcons name="arrow-forward-ios" />,
-    },
-  ];
+
+
 
   return (
     <>
       <ScrollView style={styles.container}>
         <View style={styles.Progress}>
-          <Header onPress={onLogin}/>
+          <Header onPress={toggleBottomSheet}/>
         </View>
         <View 
           style={{
-            padding: 5,
-            marginTop: 25,
+            // padding: 5,
+            // marginTop: 10,
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'center',
@@ -115,108 +90,102 @@ const HomeScreen = ({ onLogin }) => {
               fontSize: 12,
               ...Theme.Green_color_f,
             }}
+            onPress={toggleBottomSheet2}
           />
         </View>
-        <Text
-          style={{
-            fontSize: 24,
-            fontWeight: '700',
-            ...Theme.black_color_f,
-            ...Theme.Font_family,
-            textAlign: 'center',
-          }}>
+        <Text style={{ fontSize: 24, fontWeight: '700', ...Theme.black_color_f, ...Theme.Font_family, textAlign: 'center', }}>
           AED 10,000.00
         </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('CardMangements')}>
+        {/* <TouchableOpacity > */}
           <View style={{ padding: 5, marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
             {/* <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} /> */}
             <View style={styles.savingCardAccont}>
               <View style={styles.savingCardheaderHome}>
                 <View style={styles.DebitCard}>
-                  <Icons.Entypo name="wallet" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} />
-                  <Icons.MaterialCommunityIcons name="eye-off-outline" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} />
+                  
+                <Icons.Entypo name="wallet" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={() => navigation.navigate('CardMangements')} />
+                {isCardNumber ?
+                <Icons.MaterialCommunityIcons name="eye-off-outline" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={HandleShow} />
+                :
+                <Icons.MaterialCommunityIcons name="eye-outline" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={HandleShow} />
+                }
                 </View>
                 <View style={styles.HolderName}>
-                  <Text style={styles.holdertext}>CardHolder Name</Text>
+                  <Text style={styles.holdertext}>Card Holder Name</Text>
                   <Text style={styles.holderName}>Razak Bin Osman</Text>
                 </View>
                 <View style={styles.HolderName}>
                   <Text style={styles.holdertext}>Card Number</Text>
-                  <Text style={styles.holderName}>.... .... .... 3282</Text>
+                  {isCardNumber ?
+                    <Text style={styles.holderName}>1234 5678 9101 3282</Text>
+                    :
+                    <Text style={styles.holderName}>.... .... .... 3282</Text>
+                  }
                 </View>
-                <View style={{padding:10, flexDirection:"row", alignItems:"center"}}>
+                <View style={{ padding: 10, flexDirection: "row", alignItems: "center" }}>
                   <View>
-                    <Text style={styles.holdertextCCV}>Epires</Text>
+                    <Text style={styles.holdertextCCV}>Expire</Text>
                     <Text style={styles.holderNameCVV}>12/26</Text>
                   </View>
                   <View>
-                    <Text style={{...styles.holdertextCCV , marginLeft:30}}>CCV</Text>
-                    <Text style={{...styles.holderNameCVV , marginLeft:30}}>...</Text>
+                    <Text style={{ ...styles.holdertextCCV, marginLeft: 30 }}>CCV</Text>
+                    {
+                      isCardNumber
+                      ?
+                      <Text style={{ ...styles.holderNameCVV, marginLeft: 30 }}>889</Text>
+                      :
+                      <Text style={{ ...styles.holderNameCVV, marginLeft: 30 }}>...</Text>
+                    }
+                    
                   </View>
                 </View>
-                <View style={{flexDirection:"row" , justifyContent:"flex-end"}}>
-                  <Image source={Visa} style={{resizeMode:"contain" , width:100 , height:50}} /> 
+                <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
+                  <Image source={Visa} style={{ resizeMode: "contain", width: 60, height: 60 }} />
                 </View>
 
 
               </View>
             </View>
           </View>
-        </TouchableOpacity>
-        <View style={{ flexDirection: "row", marginTop: 10, justifyContent: 'space-evenly', alignItems: 'center' }}>
-          <TouchableOpacity>
-            <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
+
+
+        <View style={{ flexDirection: "row", alignItems: "center" , justifyContent:"center" }}>
+          <TouchableOpacity style={{ width: 85, paddingVertical: 10 }}>
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={HomeDuet} style={styles.boxImage} />
               </View>
-
-              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", marginTop: 5 }}>DuitNow  Transfer</Text>
+              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>DuitNow Transfer</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('AllowQR')}>
-
-            <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
+          <TouchableOpacity style={{ width: 85, paddingVertical: 10 }} onPress={() => navigation.navigate('AllowQR')}>
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={DuetQr} style={styles.boxImage} />
               </View>
-              <Text
-                style={{
-                  fontSize: 12,
-                  ...Theme.black_color_f,
-                  fontWeight: '500',
-                  marginTop: 5,
-                  textAlign: 'center',
-                }}>
-                DuitNow QR
+              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>
+                {`DuitNow\nQR`}
               </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('TransactionHistory')}>
-            <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
+          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }} onPress={() => navigation.navigate('TransactionHistory')} >
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={Transfer} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", marginTop: 5 }}>Transaction History</Text>
+              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>Transaction History</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Statements')} style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
-            <View style={{ width: 80, justifyContent: "center", alignItems: "center" }}>
+          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }} onPress={() => navigation.navigate('Statements')}>
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={Statement} style={styles.boxImage} />
               </View>
-              <Text
-                style={{
-                  fontSize: 12,
-                  ...Theme.black_color_f,
-                  fontWeight: '500',
-                  marginTop: 5,
-                  textAlign: 'center',
-                }}>
-                Latest Statements
-              </Text>
+              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>Latest Statements</Text>
             </View>
           </TouchableOpacity>
         </View>
+
 
         <View style={styles.containerMenu}>
           <TouchableOpacity style={styles.card} onPress={goSavingpots}>
@@ -236,13 +205,13 @@ const HomeScreen = ({ onLogin }) => {
 
         </View>
 
-        <View style={{ padding: 5, marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+        <View style={{ padding: 5, marginBottom:15, flexDirection: "row", alignItems: "center", justifyContent:"center" }}>
           {/* <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} /> */}
           <View style={styles.savingCard}>
             <View style={styles.savingCardheader}>
               <View style={styles.savingCardHeadertext}>
                 <Text style={styles.textSaving}>Savings Pot</Text>
-                <Text style={styles.textViewAll} >View all  <Icons.MaterialIcons name="arrow-forward-ios" style={styles.textIcon} /></Text>
+                <Text style={styles.textViewAll} onPress={goSavingpots} >View all  <Icons.MaterialIcons name="arrow-forward-ios" style={styles.textIcon} /></Text>
               </View>
               <View style={styles.savingCardHeadertext2}>
                 <Text style={styles.textSavingtext2}>Savings pot balance:</Text>
@@ -257,12 +226,12 @@ const HomeScreen = ({ onLogin }) => {
                 </View>
                 <View style={styles.savingpottextcontianer}>
                   <Text style={styles.savingpottext}>My Umrah</Text>
-                  <View style={{ width: 200, }}>
+                  <View style={{ width: 200 }}>
                     <ProgressBarAndroid
                       styleAttr="Horizontal"
                       indeterminate={false}
                       progress={progress}
-                      color="green"
+                      color="#00a200"
 
                     />
                   </View>
@@ -270,44 +239,7 @@ const HomeScreen = ({ onLogin }) => {
                   <Text style={styles.savingPercent}>80% completed</Text>
                 </View>
               </View>
-              <View style={styles.savingpotcard}>
-                <View style={styles.ImageContainer}>
-                  <Image source={Image2} style={styles.savingCardImage} />
-                </View>
-                <View style={styles.savingpottextcontianer}>
-                  <Text style={styles.savingpottext}>Trip to Kyoto</Text>
-                  <View style={{ width: 200, }}>
-                    <ProgressBarAndroid
-                      styleAttr="Horizontal"
-                      indeterminate={false}
-                      progress={progress}
-                      color="green"
-
-                    />
-                  </View>
-
-                  <Text style={styles.savingPercent}>80% completed</Text>
-                </View>
-              </View>
-              <View style={styles.savingpotcard}>
-                <View style={styles.ImageContainer}>
-                  <Image source={Image3} style={styles.savingCardImage} />
-                </View>
-                <View style={styles.savingpottextcontianer}>
-                  <Text style={styles.savingpottext}>New Phone</Text>
-                  <View style={{ width: 200, }}>
-                    <ProgressBarAndroid
-                      styleAttr="Horizontal"
-                      indeterminate={false}
-                      progress={progress}
-                      color="green"
-
-                    />
-                  </View>
-
-                  <Text style={styles.savingPercent}>80% completed</Text>
-                </View>
-              </View>
+            
               <View style={styles.savingpotcard}>
                 <View style={styles.ImageContainer}>
                   <Image source={Image4} style={styles.savingCardImage} />
@@ -319,7 +251,7 @@ const HomeScreen = ({ onLogin }) => {
                       styleAttr="Horizontal"
                       indeterminate={false}
                       progress={progress}
-                      color="green"
+                      color="#00a200"
 
                     />
                   </View>
@@ -330,19 +262,62 @@ const HomeScreen = ({ onLogin }) => {
             </View>
           </View>
         </View>
+        <Modal
+        isVisible={isBottomSheetVisible}
+        style={{ margin: 0 }}
+        onBackdropPress={toggleBottomSheet}>
+        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+          <View
+            style={{
+              backgroundColor: 'white',
+              padding: 24,
+              borderTopRightRadius: 20,
+              borderTopLeftRadius: 20,
+            }}>
+            <View>
+              <Text
+                style={{
+                  fontSize: 28,
+                  fontWeight: '700',
+                  ...ThemeSty.Green_color_f,
+                  ...ThemeSty.Font_family,
+                }}>
+               Confirm Logout?
+              </Text>
+            </View>
+            <View style={{ paddingVertical: 10 }}>
+              <Text
+                style={{
+                  ...ThemeSty.gray_color_f,
+                  ...ThemeSty.Font_family,
+                  fontSize: 16,
+                }}>
+          Are you sure you want to log out of Smart Digital Mobile Bank App?
+              </Text>
+            </View>
+          
+            <View style={{ padding: 10, alignItems: 'center' }}>
+              <OutlineButton text="Logout" onPress={onLogin} />
+            </View>
+            <View style={{ alignItems: 'center' }}>
+              <RequestButton text="Cancel" onPress={toggleBottomSheet} />
+            </View>
+          </View>
+        </View>
+      </Modal>
+    
 
-
-        {/* <Modal
-          isVisible={isBottomSheetVisible}
+        <Modal
+          isVisible={isBottomSheetVisible2}
           style={{margin: 0}}
-          onBackdropPress={toggleBottomSheet}>
+          onBackdropPress={toggleBottomSheet2}>
           <View style={{flex: 1, justifyContent: 'flex-end'}}>
             <View
               style={{
                 backgroundColor: 'white',
                 padding: 24,
-                borderTopRightRadius: 20,
-                borderTopLeftRadius: 20,
+                borderTopRightRadius: 30,
+                borderTopLeftRadius: 30,
               }}>
               <View>
                 <Text
@@ -352,49 +327,18 @@ const HomeScreen = ({ onLogin }) => {
                     ...Theme.Green_color_f,
                     ...Theme.Font_family,
                   }}>
-                  Select your transfer type
+                  Info
                 </Text>
               </View>
               <View style={{ padding: 15 }}>
-                <Text style={{ ...Theme.gray_color_f, ...Theme.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
-                  Alternatively you may email us at:
-                  bank@ssssco.com
-                  We’ll get this sorted!</Text>
+                <Text style={{ ...Theme.gray_color_f, ...Theme.Font_family, fontSize: 14 }}>
+                  {`Spending balance excludes:\nMinimum balance of RM 10 required to maintain the account\nAny funds stored in savings pots`}
+                  </Text>
               </View>
-              <View style={{ padding: 20, ...Theme.bg_light_green_color }}>
-                <Text style={{ ...Theme.Green_color_f, fontSize: 14, ...Theme.Font_family, fontWeight: '500', }}>Customer Support: +6016 299 5333 (fraud support line 24/7) or email to us at:  bank@ssssco.com</Text>
-              </View>
-              <View style={{ padding: 10, alignItems: "center" }}>
-                <OutlineButton text='Report Fraud' onPress={toggleBottomSheet2} />
-              </View>
-              <View style={{ alignItems: "center" }}>
-                <RequestButton text='Give us call' onPress={toggleBottomSheet2} />
-              </View>
-
             </View>
           </View>
         </Modal>
-        <Modal
-          isVisible={isBottomSheetVisible2}
-          style={{margin: 0}}
-          onBackdropPress={toggleBottomSheet2}>
-          <View style={{flex: 1, justifyContent: 'flex-end'}}>
-            <View
-              style={{
-                backgroundColor: 'transparent',
-                padding: 24,
-                borderTopRightRadius: 20,
-                borderTopLeftRadius: 20,
-              }}>
-              <View style={{padding: 10, alignItems: 'center'}}>
-                <OutlineButton text="call +165464661" />
-              </View>
-              <View style={{alignItems: 'center'}}>
-                <RequestButton text="Cancel" />
-              </View>
-            </View>
-          </View>
-        </Modal> */}
+        
       </ScrollView>
     </>
   );
@@ -452,20 +396,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 15,
-    borderRadius: 25,
+    padding: 10,
+    borderRadius: 15,
     backgroundColor: '#fff', // Replace with your desired background color
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 2,
     elevation: 3,
-    marginTop: 5,
+    // marginTop: 5,
   },
   image: {
     resizeMode: 'contain',
     width: 40,
-    height: 50,
+    height: 40,
   },
   textContainer: {
     width: 220,
@@ -494,18 +438,17 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: "#FFFFFF",
+    ...Theme.ligth_gray_border_Color,
     shadowColor: '#FFFFFF',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.18,
-    shadowRadius: 1.0,
-
-    elevation: 1,
+    marginVertical: 5,
+    marginHorizontal: 5,
+    elevation: 4
   },
   boxImage: {
     resizeMode: 'contain',
+    width: 20,
+    height: 20,
   },
   tableContainer: {
     padding: 10,
@@ -546,7 +489,8 @@ const styles = StyleSheet.create({
     ...Theme.ligth_gray_border_Color,
     shadowColor: '#000000',
     marginVertical: 5,
-    marginHorizontal: 5,
+    // marginHorizontal: 5,
+    width: 320,
     elevation: 4
   },
   savingCardAccont: {
@@ -631,32 +575,46 @@ const styles = StyleSheet.create({
     ...Theme.Light_gray_color_f,
   },
   HolderName: {
-    padding: 10
+    padding: 10,
+    marginTop: 15,
+    
   },
   holdertext: {
     ...Theme.gray_color_h,
-    fontSize: 14,
+    fontSize: 12,
     ...Theme.Font_family,
     fontWeight: "500",
   },
 
   holderName: {
     ...Theme.black_color_h,
-    fontSize: 24,
+    fontSize: 14,
     ...Theme.Font_family,
     fontWeight: "700",
   },
-  holdertextCCV:{
+  holdertextCCV: {
     ...Theme.gray_color_h,
-    fontSize: 14,
+    fontSize: 12,
     ...Theme.Font_family,
     fontWeight: "500",
   },
-  holderNameCVV:{
+  holderNameCVV: {
     ...Theme.black_color_h,
-    fontSize: 20,
+    fontSize: 14,
     ...Theme.Font_family,
     fontWeight: "700",
-  }
+  },
+  textDeposit: {
+    fontWeight: '600',
+    fontSize: 16,
+    ...Theme.black_color_h,
+    ...Theme.Font_family
+  },
+  textViewAll: {
+    fontWeight: '600',
+    fontSize: 16,
+    ...Theme.Green_color_h,
+    ...Theme.Font_family
+  },
 
 });
