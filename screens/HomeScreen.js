@@ -19,7 +19,7 @@ import Visa from '../assets/HomeScreenImages/download-removebg-preview.png'
 import Header from '../components/header/header'
 import Theme from '../assets/styles/basic'
 
-const HomeScreen = ({ disabled }) => {
+const HomeScreen = ({ onLogin }) => {
   const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
   const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false);
 
@@ -88,9 +88,9 @@ const HomeScreen = ({ disabled }) => {
     <>
       <ScrollView style={styles.container}>
         <View style={styles.Progress}>
-          <Header />
+          <Header onPress={onLogin}/>
         </View>
-        <View
+        <View 
           style={{
             padding: 5,
             marginTop: 25,
@@ -127,7 +127,7 @@ const HomeScreen = ({ disabled }) => {
           }}>
           AED 10,000.00
         </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('CardMangementOne')}>
+        <TouchableOpacity onPress={() => navigation.navigate('CardMangements')}>
           <View style={{ padding: 5, marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
             {/* <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} /> */}
             <View style={styles.savingCardAccont}>
