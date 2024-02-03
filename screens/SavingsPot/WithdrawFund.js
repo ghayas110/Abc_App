@@ -31,7 +31,6 @@ const WithdrawFund = () => {
                             
                         <View style={styles.ammountexampleboxs}>
                             <View style={styles.ExampleAmount}>
-                                {/* <Text style={styles.ExampleAmounttext}>AED</Text> */}
                                 <Text style={styles.ExampleAmounttext}>Max</Text>
                             </View>
                             <View style={styles.ExampleAmount}>
@@ -53,7 +52,7 @@ const WithdrawFund = () => {
                 </View>
                 <View style={styles.savingAccountcheckbox}>
                     <View>
-                        <Text style={styles.transfertext}>Rize Savings Account-i</Text>
+                        <Text style={styles.transfertext}>Smart Savings Account-i</Text>
                         <Text style={styles.transferNum}>700007123456789</Text>
                     </View>
                     <View style={{ alignItems: "flex-end" }}>
@@ -113,7 +112,7 @@ const styles = StyleSheet.create({
         // marginTop: 35
     },
     ExampleAmount: {
-        width: 90,
+        width: 85,
         borderWidth: 0.5,
         padding: 10,
         flexDirection: "row",
@@ -132,6 +131,8 @@ const styles = StyleSheet.create({
     ammountexampleboxs: {
         flexDirection: "row",
         justifyContent: "center",
+        marginTop: 5,
+        
     },
     viewStyle: {
         padding: 20,

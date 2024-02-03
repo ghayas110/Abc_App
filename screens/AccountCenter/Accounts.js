@@ -70,7 +70,7 @@ const Accounts = () => {
                         </View>
                         <View style={styles.savingCardHeadertext2}>
                             <Text style={styles.textSavingtext2}>Savings pot balance:</Text>
-                            <Text style={styles.textNumber}>RM 32,140.00</Text>
+                            <Text style={styles.textNumber}>AED 32,140.00</Text>
                         </View>
 
                     </View>
@@ -94,7 +94,7 @@ const Accounts = () => {
                                 <Text style={styles.savingPercent}>80% completed</Text>
                             </View>
                         </View>
-                        <View style={styles.savingpotcard}>
+                        {/* <View style={styles.savingpotcard}>
                             <View style={styles.ImageContainer}>
                                 <Image source={Image2} style={styles.savingCardImage} />
                             </View>
@@ -131,7 +131,7 @@ const Accounts = () => {
 
                                 <Text style={styles.savingPercent}>80% completed</Text>
                             </View>
-                        </View>
+                        </View> */}
                         <View style={styles.savingpotcard}>
                             <View style={styles.ImageContainer}>
                                 <Image source={Image4} style={styles.savingCardImage} />

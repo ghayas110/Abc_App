@@ -186,7 +186,7 @@ const HomeScreen = ({ onLogin }) => {
         </View>
 
 
-        <View style={styles.containerMenu}>
+        <View style={styles.containeAEDenu}>
           <TouchableOpacity style={styles.card} onPress={goSavingpots}>
             <Image source={Market} style={styles.image} />
             <View style={styles.textContainer}>
@@ -214,7 +214,7 @@ const HomeScreen = ({ onLogin }) => {
               </View>
               <View style={styles.savingCardHeadertext2}>
                 <Text style={styles.textSavingtext2}>Savings pot balance:</Text>
-                <Text style={styles.textNumber}>RM 32,140.00</Text>
+                <Text style={styles.textNumber}>AED 32,140.00</Text>
               </View>
 
             </View>
@@ -228,7 +228,7 @@ const HomeScreen = ({ onLogin }) => {
                   <View style={{ width: 200 }}>
                     <ProgressBarAndroid
                       styleAttr="Horizontal"
-                      indeterminate={false}
+                      indeteAEDinate={false}
                       progress={progress}
                       color="#00a200"
 
@@ -248,7 +248,7 @@ const HomeScreen = ({ onLogin }) => {
                   <View style={{ width: 200, }}>
                     <ProgressBarAndroid
                       styleAttr="Horizontal"
-                      indeterminate={false}
+                      indeteAEDinate={false}
                       progress={progress}
                       color="#00a200"
 
@@ -331,7 +331,7 @@ const HomeScreen = ({ onLogin }) => {
               </View>
               <View style={{ padding: 15 }}>
                 <Text style={{ ...Theme.gray_color_f, ...Theme.Font_family, fontSize: 14 }}>
-                  {`Spending balance excludes:\nMinimum balance of RM 10 required to maintain the account\nAny funds stored in savings pots`}
+                  {`Spending balance excludes:\nMinimum balance of AED 10 required to maintain the account\nAny funds stored in savings pots`}
                   </Text>
               </View>
             </View>
@@ -384,7 +384,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  containerMenu: {
+  containeAEDenu: {
     paddingTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
