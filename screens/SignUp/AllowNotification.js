@@ -41,7 +41,7 @@ const AllowNotification = ({onPress}) => {
     </View>
     <View style={{padding:17}}>
     <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Receive push notifications</Text>
-    <Text style={styles.text2}>Get instant updates on your spending, rewards, and activity with SSSCO</Text>
+    <Text style={styles.text2}>Get instant updates on your spending, rewards, and activity with Smart Digital Bank</Text>
     </View>
    
 

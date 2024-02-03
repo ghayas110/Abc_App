@@ -2,19 +2,11 @@ import 'react-native-gesture-handler';
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer';
-import { SignUpStackNavigator } from './StackNavigator';
-import { useNavigation } from '@react-navigation/native'
-import BottomTabNavigator from "./TabNavigator";
 import Otp from '../screens/SignUp/Otp';
 import SignUp from '../screens/SignUp/SignUp';
 import SplashScreen from '../screens/SplashScreen/SplashScreen';
-import CustomDrawer from './DrawerNavigation';
-import SignOut from '../screens/SignOut';
 import ForgotPassScreen from '../screens/ForgotPassScreen';
 import NewPassword from '../screens/NewPassword';
-import ChangePassword from '../screens/ChangePassword';
-import EditProfileScreen from '../screens/EditProfileScreen';
 import LoginScreen from '../screens/LoginScreen';
 import DetailOne from '../screens/verify-personal/DetailOne';
 import DetailTwo from '../screens/verify-personal/DetailTwo';
@@ -42,35 +34,71 @@ import StartLoginStep4 from '../screens/RegisterNewDevice/StartLoginStep4';
 import StartLoginStep5 from '../screens/RegisterNewDevice/StartLoginStep5';
 import StartLoginStep6 from '../screens/RegisterNewDevice/StartLoginStep6';
 import UpdateTermAndCondition from '../screens/RegisterNewDevice/UpdateTermAndCondition';
-import Profile from '../screens/Settings/Profile';
-import ApplyFinanceScd from '../screens/Finance/UploadPdf/ApplyFinanceScd';
-import DocsInfo from '../screens/Finance/UploadPdf/DocsInfo';
-import UploadPdf from '../screens/Finance/UploadPdf/UploadPdf';
-import UploadInstructions from '../screens/Finance/UploadPdf/UploadInstructions';
-import UploadPdfInfo from '../screens/Finance/UploadPdf/UploadPdfInfo';
-import Reviewing from '../screens/Finance/UploadPdf/Reviewing';
-import Approved from '../screens/Finance/UploadPdf/Approved';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { AccountNavigator, FinanceNavigator, MainNavigator, MoreNavigator, TransferNavigator } from './StackNavigator';
+import { Image } from 'react-native';
 
 // import SavingPots from '../screens/SavingsPot/SavingPots';
 const AuthStack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
-  const Drawer = createDrawerNavigator();
 
   return (
     <NavigationContainer>
       {isLoggedIn ? (
+  <Tab.Navigator
+  tabBarOptions={{
+    activeTintColor: 'green',
+    inactiveTintColor: 'gray',
+  }}
+  screenOptions={{
+    headerShown: false,
+    showIcon: true
+  }}>
 
-        <Drawer.Navigator screenOptions={{ headerShown: false }}
-          drawerContent={props => <CustomDrawer {...props} />}>
-          <Drawer.Screen name="HomeScreen" component={BottomTabNavigator} />
-          <Drawer.Screen name="SignOut" >
-            {(props) => <SignOut {...props} onLogin={() => setIsLoggedIn(false)} />}
-          </Drawer.Screen>
-          <Drawer.Screen name='ChangePassword' component={ChangePassword} />
-          <Drawer.Screen name='EditProfile' component={EditProfileScreen} />
-        </Drawer.Navigator>
+ 
+  <Tab.Screen name="Home" options={{
+    tabBarIcon: ({ color, size,focused }) => (
+      <Image source={!focused ? require('../assets/tabicons/Home.png') : require('../assets/tabicons/HomeOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
+      
+      ),
+    }}>
+ {() => (
+              <MainNavigator onLogin={() => setIsLoggedIn(false)} />
+            )}
+    </Tab.Screen>
+
+  <Tab.Screen name="Account" component={AccountNavigator} options={{
+    tabBarIcon: ({ color, size,focused }) => (
+      <Image source={!focused ? require('../assets/tabicons/account.png') : require('../assets/tabicons/WalletOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
+      
+      ),
+    }}/>
+
+  <Tab.Screen  name="Transfer" component={TransferNavigator} options={{
+    tabBarIcon: ({ color, size,focused }) => (
+      <Image source={!focused ? require('../assets/tabicons/transfer.png') : require('../assets/tabicons/TransferOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
+      
+      ),
+    }}/>
+  <Tab.Screen name="Finance" component={FinanceNavigator} options={{
+      tabBarIcon: ({ color, size,focused }) => (
+        <Image source={!focused ? require('../assets/tabicons/finance.png') : require('../assets/tabicons/FinanceOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
+        
+        ),
+      }}/>
+    <Tab.Screen   name="More" component={MoreNavigator} options={{
+      tabBarIcon: ({ color, size,focused }) => (
+        <Image source={!focused ? require('../assets/tabicons/More.png') : require('../assets/tabicons/MoreOutline.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
+        
+        ),
+      }}/>
+
+</Tab.Navigator>
+      
       ) : (
         <AuthStack.Navigator screenOptions={{
           headerShown: false
@@ -103,7 +131,6 @@ const MainStackNavigator = () => {
             <AuthStack.Screen name="Mailing" component={MailingAddress} />
 
 
-          {/* <AuthStack.Screen name="UpdateTermAndCondition" component={UpdateTermAndCondition} /> */}
           <AuthStack.Screen name="UpdateTermAndCondition">
             {(props) => <UpdateTermAndCondition {...props} onLogin={() => setIsLoggedIn(true)} />}
           </AuthStack.Screen>

@@ -40,7 +40,7 @@ const AllowSelfie = ({onPress}) => {
     />            
     </View>
     <View style={{padding:5}}>
-    <Text style={{fontSize: 24, fontWeight: '900',color:'green',marginBottom:15}}>Now, let’s take a selfie</Text>
+    <Text style={{fontSize: 25, fontWeight:'bold',color:'green',marginBottom:15}}>Now, let’s take a selfie</Text>
     <Text style={styles.text2}>Before proceeding, ensure there’s good lighting</Text>
     </View>
    

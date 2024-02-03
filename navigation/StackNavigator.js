@@ -73,6 +73,7 @@ import EditEmail from "../screens/Settings/EditEmail";
 import EditMaritalStatus from "../screens/Settings/EditMaritalStatus";
 import EmpDetails from "../screens/Settings/EmpDetails";
 import ComingSoon from "../screens/Coming-Soon/ComingSoon";
+import CardManage from "../screens/card/CardManage";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -83,7 +84,7 @@ const screenOptionStyle = {
   headerBackTitle: "Back",
 };
 
-const MainStackNavigator = () => {
+const MainNavigator = ({onLogin}) => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}
       tabBarOptions={{
@@ -91,7 +92,9 @@ const MainStackNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="Home" component={HomeScreen} screenOptions={{ headerShown: false }} />
+      <Stack.Screen name="Home" screenOptions={{ headerShown: false }}  >
+      {() => <HomeScreen onLogin={onLogin} />}
+      </Stack.Screen>
       <Stack.Screen name="Statements" component={StatementScreen} screenOptions={{ headerShown: false }} />
       <Stack.Screen name="TransactionHistory" component={History} screenOptions={{ headerShown: false }} />
       <Stack.Screen name="PendingTran" component={PendingTran} screenOptions={{ headerShown: false }} />
@@ -125,6 +128,7 @@ const MainStackNavigator = () => {
       <Stack.Screen name="WithdrawFund" component={WithdrawFund} />
       <Stack.Screen name="WithdrawFundReview" component={WithdrawFundReview} />
       <Stack.Screen name="WithdrawSuccessfully" component={WithdrawSuccessfully} />
+      <Stack.Screen name='CardMangements' component={CardManage} />
     </Stack.Navigator>
   );
 };
@@ -267,4 +271,4 @@ const SignUpStackNavigator = () => {
   );
 };
 
-export { MainStackNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator, FinanceNavigator };
+export { MainNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator, FinanceNavigator };
