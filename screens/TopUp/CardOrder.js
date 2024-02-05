@@ -6,6 +6,7 @@ import { RadioButton } from 'react-native-paper'; // Import RadioButton from rea
 import Modal from 'react-native-modal';
 import style from "../../assets/styles/basic"
 import { useNavigation } from '@react-navigation/native';
+import { RequestButton } from '../../components/Buttons';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
@@ -77,11 +78,9 @@ const navigation =useNavigation()
       </View>
 
       <View>
-        <Button
-          title="Continue"
-          color="green"
-          onPress={toggleBottomSheet}
-        />
+      <RequestButton text={"Continue"}     onPress={toggleBottomSheet} btnStyle={{width:'auto'}}/>
+
+      
       </View>
   
     </View>
@@ -127,11 +126,9 @@ const navigation =useNavigation()
                 </View>
             
             <View>
-            <Button
-            title="Continue"
-            color="green"
-            onPress={()=>onLogin()}
-            />
+            <RequestButton text={"Continue"} onPress={()=>onLogin()} btnStyle={{width:'auto'}}/>
+
+          
             </View>
             </View>
             </View>

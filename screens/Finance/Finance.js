@@ -6,6 +6,7 @@ import { RequestButton } from '../../components/Buttons'
 import Swiper from 'react-native-swiper';
 import { useNavigation } from '@react-navigation/native'
 import React, { useState, useEffect } from 'react'
+import LottieView from 'lottie-react-native'
 
 const Finance = () => {
     const navigation = useNavigation();
@@ -57,7 +58,7 @@ const Finance = () => {
                 <View style={styles.savingCard}>
                     <View style={styles.savingCardheader}>
                         <View style={styles.savingCardHeadertext}>
-                            <Image source={Image1} style={styles.ImagePFCard} />
+                        <LottieView source={require('../../assets/lotiefiles/achieve_your_financial_goals_animation.json')} autoPlay style={{width:"100%",height:120}} />
                         </View>
                         <View style={styles.savingCardHeadertext2}>
                             <Text style={styles.textSavingtext2}>ssssco Personal Financing-i</Text>

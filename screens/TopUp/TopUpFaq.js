@@ -4,6 +4,7 @@ import Header from '../../components/header/header'
 import TopUpFaqMainIcon from '../../assets/TopUp/TopUpFaqMainIcon.png'
 import { RequestButton } from '../../components/Buttons'
 import TopUpC from './popUp'
+import LottieView from 'lottie-react-native'
 
 
 const TopUpFaq = () => {
@@ -80,7 +81,7 @@ const { width, height } = Dimensions.get('window');
 
 
           <View style={{...styles.TopUpCard}}>
-            <Image source={TopUpFaqMainIcon}></Image>
+          <LottieView source={require('../../assets/lotiefiles/application_manual_review_animation.json')} autoPlay style={{width:"100%",height:200}} />
             <Text style={styles.FaqHeading}>Thank you for topping up, it is currently under review. Please sit back and relax!</Text>
             <Text style={styles.FaqPara}>We will inform you of your review results. If you have any inquiries, please visit our FAQ page.</Text>
             <RequestButton text={'Confirm'} 
