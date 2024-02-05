@@ -4,6 +4,7 @@ import style from '../../assets/styles/basic';
 import FormInput from '../../components/FormInput';
 import notifee from '@notifee/react-native';
 import { RequestButton } from '../../components/Buttons';
+import LottieView from 'lottie-react-native';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const AllowNotification = ({onPress}) => {
@@ -34,10 +35,8 @@ const AllowNotification = ({onPress}) => {
                 flexDirection: "row",
                 justifyContent: "center"
             }}>
-  <Image
-    style={styles.mapicon}
-    source={require('../../assets/SignUp/notification.png')} // replace with your image path
-    />            
+  <LottieView source={require('../../assets/lotiefiles/receive_push_notifications_animation.json')} autoPlay style={{width:"100%",height:200}} />
+           
     </View>
     <View style={{padding:17}}>
     <Text style={{ ...style.main_heading, textAlign: "left", fontSize: 25, fontFamily: "Poppins-Bold" }}>Receive push notifications</Text>

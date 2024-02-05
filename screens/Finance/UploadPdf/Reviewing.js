@@ -5,6 +5,7 @@ import { OutlineButton, RequestButton } from '../../../components/Buttons';
 import Steps from '../../../components/steps/Steps';
 import Header from '../components/Header';
 import { useNavigation } from '@react-navigation/native';
+import LottieView from 'lottie-react-native';
 
 const Reviewing = () => {
     const navigation = useNavigation()
@@ -35,7 +36,7 @@ const Reviewing = () => {
                     alignContent: "center",
                     marginTop: 20,
                 }}>
-                    <Image source={require("../../../assets/Finance/9285.png")} />
+                <LottieView source={require('../../../assets/lotiefiles/financing_application.json')} autoPlay style={{width:"100%",height:200}} />
                 </View>
                 <View style={{ flex: 1 }}>
                     <Text style={{...style.Font_family_Bold,...style.Green_color_h,fontSize: 25}}>We’re reviewing your application</Text>

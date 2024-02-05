@@ -4,6 +4,7 @@ import style from '../../assets/styles/basic';
 import FormInput from '../../components/FormInput';
 import notifee from '@notifee/react-native';
 import { RequestButton } from '../../components/Buttons';
+import LottieView from 'lottie-react-native';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const AllowSelfie = ({onPress}) => {
@@ -34,10 +35,9 @@ const AllowSelfie = ({onPress}) => {
                 flexDirection: "row",
                 justifyContent: "center"
             }}>
-  <Image
-    style={styles.mapicon}
-    source={require('../../assets/SignUp/selfie.png')} // replace with your image path
-    />            
+        
+  <LottieView source={require('../../assets/lotiefiles/take_selfie_animation.json')} autoPlay style={{width:"100%",height:200}} />
+
     </View>
     <View style={{padding:5}}>
     <Text style={{fontSize: 25, fontWeight:'bold',color:'green',marginBottom:15}}>Now, let’s take a selfie</Text>

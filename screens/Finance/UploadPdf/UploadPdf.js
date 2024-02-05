@@ -67,16 +67,16 @@ const UploadPdf = () => {
             </View>
         </View>
         <View style={{ flex: 1, justifyContent: "flex-end" }}>
-            <TouchableOpacity style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                marginBottom: 20
-            }}>
-                <Image source={require("../../../assets/Finance/info.png")} style={{marginRight: 10,height: 30,width: 30}}/>
-                <Text style={{...style.Font_family_Bold,...style.Green_color_h,fontSize: 20}}>How to upload?</Text>
-            </TouchableOpacity>
+        <TouchableOpacity style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginBottom: 20
+                    }} onPress={() => { navigation.navigate('UploadInstructions')}}>
+                        <Image source={require("../../../assets/Finance/info.png")} style={{marginRight: 10,height: 30,width: 30}}/>
+                        <Text style={{...style.Font_family_Bold,...style.Green_color_h,fontSize: 20}}>How to upload?</Text>
+                    </TouchableOpacity>
             <RequestButton btnStyle={{
                 width: "auto"
             }} text={"Continue"} onPress={() => { navigation.navigate("Reviewing") }} />

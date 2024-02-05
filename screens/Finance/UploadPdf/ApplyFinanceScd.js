@@ -4,6 +4,7 @@ import style from '../../../assets/styles/basic';
 import { useNavigation } from '@react-navigation/native';
 import ActivationSteps from '../../../components/steps/ActivationSteps';
 import { OutlineButton, RequestButton } from '../../../components/Buttons';
+import LottieView from 'lottie-react-native';
 
 const ApplyFinanceScd = () => {
     const navigation = useNavigation();
@@ -21,7 +22,7 @@ const ApplyFinanceScd = () => {
                     flexDirection: "row",
                     justifyContent: "center",
                 }}>
-                    <Image source={require("../../../assets/Finance/finance1.png")} style={{ height: 200, width: 200, resizeMode: "contain" }} />
+                <LottieView source={require('../../../assets/lotiefiles/financing_application.json')} autoPlay style={{width:"100%",height:200}} />
                 </View>
                 <View style={{
                     flex: 1,

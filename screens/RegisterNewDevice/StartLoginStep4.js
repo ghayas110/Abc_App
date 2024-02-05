@@ -9,6 +9,7 @@ import Modal from 'react-native-modal';
 import ThemeSty from '../../assets/styles/basic'
 import ProgressBar from 'react-native-progress/Bar';
 import LoginImage from '../../assets/StartLoginImages/loginImage.png'
+import LottieView from 'lottie-react-native'
 
 const StartLoginStep4 = ({ disabled }) => {
     const [progress, setProgress] = useState(0);
@@ -39,12 +40,12 @@ const StartLoginStep4 = ({ disabled }) => {
                         <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} />
                     </View>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
-                        <Image source={Logo} style={styles.Image} />
+
                     </View>
                     <View></View>
+                        <LottieView source={require('../../assets/lotiefiles/switching_devices_animation.json')} autoPlay style={{width:"100%",height:200}} />
                 </View>
                 <View style={{padding: 5, marginTop: 25, }}>
-                    <Image source={LoginImage} />
                 </View>
                 <View style={{ padding: 5, marginTop: 25, }}>
                     <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family,lineHeight:34 }}>

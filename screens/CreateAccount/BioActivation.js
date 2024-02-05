@@ -8,6 +8,7 @@ import Biomatric from '../../assets/CreateAccoutImages/Illustration.png'
 import { RequestButton, OutlineButton } from '../../components/Buttons'
 import ThemeSty from "../../assets/styles/basic"
 import Steps from '../../components/steps/Steps'
+import LottieView from 'lottie-react-native'
 
 const BioActivation = () => {
     const [progress, setProgress] = useState(0);
@@ -39,9 +40,9 @@ const BioActivation = () => {
         ProgressBarIcon={require('../../assets/CreateAccoutImages/progress.png')}
       />
             <View style={styles.Image}>
-                <View>
-                    <Image source={Biomatric} />
-                </View>
+             
+                <LottieView source={require('../../assets/lotiefiles/activate_biometric_animation.json')} autoPlay style={{width:"100%",height:300}} />
+              
             </View>
             <View style={styles.headerText}>
                 <Text style={{  fontSize: 30, fontWeight: "700",  ...ThemeSty.Font_family , ...ThemeSty.Green_color_f }}>

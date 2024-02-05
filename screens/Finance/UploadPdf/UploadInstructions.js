@@ -6,6 +6,7 @@ import ActivationSteps from '../../../components/steps/ActivationSteps';
 import { OutlineButton, RequestButton } from '../../../components/Buttons';
 import Steps from '../../../components/steps/Steps';
 import Header from '../components/Header';
+import LottieView from 'lottie-react-native';
 
 const UploadInstructions = () => {
     const navigation = useNavigation()
@@ -75,7 +76,7 @@ const UploadInstructions = () => {
                         alignContent: "center",
                         marginTop: 20
                     }}>
-                        <Image source={require("../../../assets/Finance/msg.png")} />
+                <LottieView source={require('../../../assets/lotiefiles/upload_documents_animation.json')} autoPlay style={{width:"100%",height:200}} />
                     </View>
                     <View>
                         <FlatList
