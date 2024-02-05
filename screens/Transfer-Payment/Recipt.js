@@ -61,17 +61,15 @@ const Review = () => {
 
     const renderItem = ({ item }) => (
         <>
-            <View>
-                <View style={styles.flatlistrow}>
-                    <View>
-                        <Text style={styles.nameHead}>{item.name}</Text>
-                    </View>
-                    <View>
-                        <Text style={styles.nameValue}>{item.value}</Text>
-                    </View>
+            <View style={styles.flatlistrow}>
+                <View>
+                    <Text style={styles.nameHead}>{item.name}</Text>
                 </View>
-
+                <View>
+                    <Text style={styles.nameValue}>{item.value}</Text>
+                </View>
             </View>
+
 
         </>
     );
@@ -139,8 +137,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         // backgroundColor:"#CCC",
-        paddingTop: 10,
-        paddingBottom: 10,
+        padding:10,
     },
     header: {
         flexDirection: "row",
@@ -185,10 +182,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingLeft: 10,
-        paddingRight: 10,
-        padding: 5,
-        marginTop: 15,
+        padding: 10,
     },
     nameHead: {
         fontSize: 16,

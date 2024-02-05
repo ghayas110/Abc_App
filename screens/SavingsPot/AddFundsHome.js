@@ -80,6 +80,8 @@ const AddFundsHome = () => {
                     </TouchableOpacity>
                 </View>
             </View>
+
+        <View style={styles.cardcont}>
             <View style={styles.Cards}>
                 <Text style={styles.CardHeading}>Total saved</Text>
                 <Text style={styles.CardHeadingPrice}>AED 0.00</Text>
@@ -94,6 +96,7 @@ const AddFundsHome = () => {
                     <Text style={styles.Cardtext}>AED 30,000.00</Text>
                 </View>
             </View>
+        </View>
         </LinearGradient>
     )
 }
@@ -174,14 +177,17 @@ const styles = StyleSheet.create({
         marginLeft: 5,
 
     },
-    Cards: {
+    cardcont:{
         position: "absolute",
+        width: "100%",
+        top: 385,
+        justifyContent:"center",
+        alignItems: "center",
+
+    },
+    Cards: {
         backgroundColor: "#FFFFFF",
         borderRadius: 15,
-        top: 390,
-        bottom: 0,
-        right: 0,
-        left: 40,
         zIndex: 50,
         width: 300,
         height: 160,

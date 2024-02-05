@@ -70,13 +70,14 @@ const UpdateTermAndCondition = ({ onLogin }) => {
                 </View>
 
             </View>
-            <View style={{ padding: 16 }}>
-                <View style={{ padding: 20, ...ThemeSty.bg_light_green_color, borderRadius: 10 }}>
+            <View style={{ padding: 16, flex: 0.5 , backgroundColor:"#FFFFFF" , justifyContent:"flex-end" }}>
+                <View style={{ padding: 20, ...ThemeSty.bg_light_green_color, borderRadius: 10 ,
+                 }}>
                     <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>Please call our Customer Support if you have any questions at 1800 81 9149.</Text>
                 </View>
-            </View>
-            <View style={{ alignItems: "center", marginBottom: 20, }}>
-                <RequestButton text='Confirm' onPress={() => onLogin()} />
+                <View style={{ alignItems: "center", marginTop: 10,  }}>
+                    <RequestButton text='Confirm' onPress={() => onLogin()} />
+                </View>
             </View>
         </>
 
@@ -88,8 +89,9 @@ export default UpdateTermAndCondition
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 24,
+        padding: 16,
         justifyContent: "Space-evently",
+        backgroundColor: "#FFFFFF",
     },
     Progress: {
         justifyContent: 'center',

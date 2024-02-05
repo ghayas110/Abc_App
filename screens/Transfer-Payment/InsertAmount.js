@@ -79,12 +79,12 @@ const InsertAmount = () => {
                         </View>
                         <View style={{alignItems: "flex-end"}}>
                             <Text style={styles.transferCheck}>
-                                <CheckBoxInput style={styles.checkedbox} />
+                                <CheckBoxInput style={styles.checkedbox} color={"#00a200"} />
                             </Text>
                             <Text style={styles.transferNum}>AED 80,000.00</Text>
                         </View>
                      </View>
-                     <View style={{alignItems:"center"}}>
+                     <View style={{alignItems:"center" , padding:16}}>
                         <RequestButton text={'Continue'} onPress={Navigate} />
                      </View>
                 </View>
@@ -101,8 +101,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#FFFFFF",
-        paddingTop: 10,
-        paddingBottom: 10,
+        padding:5,
     },
     subheaderstyle: {
         flex: 1,
@@ -128,7 +127,6 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     amount: {
-        marginTop:0,
         padding: 10,
         flexDirection: "row",
         alignItems: "center",
@@ -143,17 +141,16 @@ const styles = StyleSheet.create({
         ...Theme.black_color_f,
         ...Theme.Font_family,
         fontSize: 16,
-        marginTop: 35
+        marginTop: 30
     },
     ExampleAmount: {
-        width: 90,
         borderWidth: 0.5,
         padding: 10,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: 10,
-        margin: 2,
+        borderRadius: 10,        
+        marginHorizontal:5,
         ...Theme.green_border_Color
     },
     ExampleAmounttext: {
@@ -164,7 +161,8 @@ const styles = StyleSheet.create({
     },
     ammountexampleboxs: {
         flexDirection: "row",
-        justifyContent: "center",
+        justifyContent: "center",        
+
     },
     recipient: {
         flex: 1,

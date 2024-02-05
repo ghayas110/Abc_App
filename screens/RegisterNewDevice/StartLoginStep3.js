@@ -27,6 +27,10 @@ const StartLoginStep3 = ({ disabled }) => {
     const ForWordnavigation = () => {
         navigation.navigate('StartLoginStep4');
     };
+    const backnavigation = () => {
+        navigation.navigate('StartLoginStep2');
+    };
+
 
 
 
@@ -36,7 +40,7 @@ const StartLoginStep3 = ({ disabled }) => {
             <View style={styles.container}>
                 <View style={styles.Progress}>
                     <View style={styles.BackArrow}>
-                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} />
+                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} onPress={backnavigation} />
                     </View>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
                         <Image source={Logo} style={styles.Image} />
@@ -124,7 +128,7 @@ const StartLoginStep3 = ({ disabled }) => {
             
             </View>
             
-            <View style={{ alignItems: "center", marginBottom: 20, }}>
+            <View style={{ alignItems: "center", flex:1, justifyContent:"flex-end" , padding:10 , backgroundColor:"#FFFFFF" }}>
                 <RequestButton text='Login' onPress={ForWordnavigation} />
             </View>
         </>
@@ -139,6 +143,7 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 24,
         justifyContent: "Space-evently",
+        backgroundColor:"#FFFFFF",
 
     },
     Progress: {

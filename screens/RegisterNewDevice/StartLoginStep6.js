@@ -43,7 +43,7 @@ const StartLoginStep6 = ({ disabled }) => {
                     </Text>
                 </View>
             </View>
-            <View style={{ alignItems: "center", marginBottom: 20, }}>
+            <View style={{ alignItems: "center", flex:0.5 , justifyContent:"flex-end" , padding:16, backgroundColor:"#FFFFFF" }}>
                 <RequestButton text='Go to Home' onPress={ForWordnavigation} />
             </View>
         </>
@@ -56,10 +56,11 @@ export default StartLoginStep6
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 24,
+        padding: 16,
         justifyContent: "Space-evently",
         justifyContent:"center",
         alignItems: "center",
+        backgroundColor: "#FFFFFF"
 
     },
     Progress: {
