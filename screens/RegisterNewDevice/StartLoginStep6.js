@@ -39,7 +39,7 @@ const StartLoginStep6 = ({ disabled }) => {
         <LottieView source={require('../../assets/lotiefiles/success.json')} autoPlay style={{width:"100%",height:300}} />
                 <View style={{ padding: 5 }}>
                     <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family,lineHeight:34 }}>
-                        Congratulations! Your SSSSCO account is now registered on this device
+                        Congratulations! Your Smart Digital Bank account is now registered on this device
                     </Text>
                 </View>
             </View>

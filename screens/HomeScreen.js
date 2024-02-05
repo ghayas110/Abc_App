@@ -96,6 +96,7 @@ const HomeScreen = ({ onLogin }) => {
         <Text style={{ fontSize: 24, fontWeight: '700', ...Theme.black_color_f, ...Theme.Font_family, textAlign: 'center', }}>
           AED 10,000.00
         </Text>
+        {/* <TouchableOpacity > */}
           <View style={{ padding: 5, marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
             {/* <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} /> */}
             <View style={styles.savingCardAccont}>
@@ -149,21 +150,21 @@ const HomeScreen = ({ onLogin }) => {
 
 
         <View style={{ flexDirection: "row", alignItems: "center" , justifyContent:"center" }}>
-          <TouchableOpacity style={{ width: 85, paddingVertical: 10 }}>
+          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }}>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={HomeDuet} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>DuitNow Transfer</Text>
+              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>{`Ssssco\nTransfer`}</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={{ width: 85, paddingVertical: 10 }} onPress={() => navigation.navigate('AllowQR')}>
+          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }} onPress={() => navigation.navigate('AllowQR')}>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={DuetQr} style={styles.boxImage} />
               </View>
               <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>
-                {`DuitNow\nQR`}
+                {`Ssssco\nQR`}
               </Text>
             </View>
           </TouchableOpacity>
