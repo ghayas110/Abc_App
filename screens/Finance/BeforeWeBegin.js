@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react'
 import Icons from '../../components/Icons'
 import { useNavigation } from '@react-navigation/native'
 import { OtpInput, SimpleInput, CheckBoxInput } from '../../components/Inputs'
-import { RequestButton, OutlineButton } from '../../components/Buttons'
+import { RequestButton, OutlineButton } from '../../components/Buttons';
+import ImageIcon from '../../assets/registerNewDeviceImage/Icons.png'
 import Modal from 'react-native-modal';
 import ThemeSty from '../../assets/styles/basic'
 import ProgressBar from 'react-native-progress/Bar';
@@ -46,32 +47,32 @@ const BeforeWeBegin = ({ onLogin }) => {
                         </View>
                         <View style={{ marginTop: 15 }}>
                             <View style={{ ...ThemeSty.ligth_gray_border_Color, flexDirection: "row", alignItems: "center", borderBottomWidth: 0.5, padding: 15, }}>
-                                <Icons.Entypo name="text-document" style={{ ...ThemeSty.Green_color_f, fontSize: 16 }} />
-                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 16, marginLeft: 5, ...ThemeSty.Font_family }}>Personal Financing-i Product Disclosure Sheet</Text>
+                                <Image source={ImageIcon} />
+                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 14, marginLeft: 5, ...ThemeSty.Font_family }}>Personal Financing-i Product Disclosure Sheet</Text>
                             </View>
                             <View style={{ ...ThemeSty.ligth_gray_border_Color, flexDirection: "row", alignItems: "center", borderBottomWidth: 1, padding: 15, }}>
-                                <Icons.Entypo name="text-document" style={{ ...ThemeSty.Green_color_f, fontSize: 16 }} />
-                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 16, marginLeft: 5, ...ThemeSty.Font_family }}>Personal Financing-i Terms & Conditions</Text>
+                                <Image source={ImageIcon} />
+                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 14, marginLeft: 5, ...ThemeSty.Font_family }}>Personal Financing-i Terms & Conditions</Text>
                             </View>
                             <View style={{ ...ThemeSty.ligth_gray_border_Color, flexDirection: "row", alignItems: "center", borderBottomWidth: 1, padding: 15, }}>
-                                <Icons.Entypo name="text-document" style={{ ...ThemeSty.Green_color_f, fontSize: 16 }} />
-                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 16, marginLeft: 5, ...ThemeSty.Font_family }}>Personal Financing-i Personal Data Protection</Text>
+                                <Image source={ImageIcon} />
+                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 14, marginLeft: 5, ...ThemeSty.Font_family }}>Personal Financing-i Personal Data Protection</Text>
                             </View>
                             <View style={{ ...ThemeSty.ligth_gray_border_Color, flexDirection: "row", alignItems: "center", borderBottomWidth: 1, padding: 15, }}>
-                                <Icons.Entypo name="text-document" style={{ ...ThemeSty.Green_color_f, fontSize: 16 }} />
-                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 16, marginLeft: 5, ...ThemeSty.Font_family }}>Personal Financing-i Declaration & Authorisation</Text>
+                                <Image source={ImageIcon} />
+                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 14, marginLeft: 5, ...ThemeSty.Font_family }}>Personal Financing-i Declaration & Authorisation</Text>
                             </View>
                             <View style={{ flexDirection: "row", alignItems: "center", padding: 15, }}>
-                                <CheckBoxInput name="text-document" textStyle={{ ...ThemeSty.Light_gray_color_f, fontSize: 16 }} />
-                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 16, marginLeft: 5, ...ThemeSty.Font_family }}>I have read and accepted ALL the documents above.</Text>
+                                <CheckBoxInput name="text-document" textStyle={{ ...ThemeSty.Light_gray_color_f, fontSize: 16 }} color={"#00a200"} />
+                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 14, marginLeft: 5, ...ThemeSty.Font_family }}>I have read and accepted ALL the documents above.</Text>
                             </View>
                             <View style={{ flexDirection: "row", alignItems: "center", padding: 15, }}>
-                                <CheckBoxInput name="text-document" textStyle={{ ...ThemeSty.Light_gray_color_f, fontSize: 16 }} />
-                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 16, marginLeft: 5, ...ThemeSty.Font_family }}>I also give my consent to undertake credit and background checks.</Text>
+                                <CheckBoxInput name="text-document" textStyle={{ ...ThemeSty.Light_gray_color_f, fontSize: 16 }} color={"#00a200"} />
+                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 14, marginLeft: 5, ...ThemeSty.Font_family }}>I also give my consent to undertake credit and background checks.</Text>
                             </View>
                             <View style={{ flexDirection: "row", alignItems: "center", padding: 15,  }}>
-                                <CheckBoxInput name="text-document" textStyle={{ ...ThemeSty.Light_gray_color_f, fontSize: 16 }} />
-                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 16, marginLeft: 5, ...ThemeSty.Font_family }}>I understand that the amount I declared in my application may differ at payout due to fluctuation of current outstanding balances.</Text>
+                                <CheckBoxInput name="text-document" textStyle={{ ...ThemeSty.Light_gray_color_f, fontSize: 16 }} color={"#00a200"} />
+                                <Text style={{ ...ThemeSty.black_color_h, fontSize: 14, marginLeft: 5, ...ThemeSty.Font_family }}>I understand that the amount I declared in my application may differ at payout due to fluctuation of current outstanding balances.</Text>
                             </View>
                         </View>
                     </View>

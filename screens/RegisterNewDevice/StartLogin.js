@@ -25,13 +25,16 @@ const StartLogin = ({ disabled }) => {
     const ForWordnavigation = () => {
         navigation.navigate('StartLoginStep2');
     };
+    const Backnavigation = () => {
+        navigation.navigate('LandingPage');
+    };
 
     return (
         <>
             <View style={styles.container}>
                 <View style={styles.Progress}>
                     <View style={styles.BackArrow}>
-                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon}  />
+                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} onPress={Backnavigation} />
                     </View>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
                          <Image source={Logo} style={styles.Image} />
@@ -105,7 +108,7 @@ const StartLogin = ({ disabled }) => {
                     </View>
                 </Modal>
             </View>
-            <View style={{ alignItems: "center", marginBottom: 20, }}>
+            <View style={{ alignItems: "center", backgroundColor:"#FFFFFF" , flex:1 , justifyContent:"flex-end" , padding:16 }}>
                 <RequestButton text='Next' onPress={ForWordnavigation} />
             </View>
         </>
@@ -118,8 +121,9 @@ export default StartLogin
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 24,
+        padding: 16,
         justifyContent: "Space-evently",
+        backgroundColor:"#FFFFFF",
 
     },
     Progress: {

@@ -28,6 +28,9 @@ const StartLoginStep4 = ({ disabled }) => {
     const ForWordnavigation = () => {
         navigation.navigate('StartLoginStep5');
     };
+    const backnavigation = () => {
+        navigation.navigate('StartLoginStep4');
+    };
 
 
 
@@ -37,7 +40,7 @@ const StartLoginStep4 = ({ disabled }) => {
             <View style={styles.container}>
                 <View style={styles.Progress}>
                     <View style={styles.BackArrow}>
-                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} />
+                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} onPress={backnavigation} />
                     </View>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
 
@@ -45,10 +48,11 @@ const StartLoginStep4 = ({ disabled }) => {
                     <View></View>
                         <LottieView source={require('../../assets/lotiefiles/switching_devices_animation.json')} autoPlay style={{width:"100%",height:200}} />
                 </View>
-                <View style={{padding: 5, marginTop: 25, }}>
+                <View style={{ padding: 5, marginTop: 25, }}>
+                    <Image source={LoginImage} />
                 </View>
                 <View style={{ padding: 5, marginTop: 25, }}>
-                    <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family,lineHeight:34 }}>
+                    <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family, lineHeight: 34 }}>
                         Switching devices? Please confirm
                     </Text>
                 </View>
@@ -57,20 +61,15 @@ const StartLoginStep4 = ({ disabled }) => {
                         You are currently registered to ‘Device Name’
                     </Text>
                 </View>
-                
-
-               
-         
-
-            
             </View>
-            <View style={{ padding: 16 }}>
-                <View style={{ padding: 20, ...ThemeSty.bg_light_green_color, }}>
+            <View style={{ padding: 16,  justifyContent: "flex-end", backgroundColor: "#FFFFFF" }}>
+                <View style={{ padding: 20, ...ThemeSty.bg_light_green_color, borderRadius:10 }}>
                     <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>You may only link your SSSCO account to one device at any given time. Tap ‘Confirm’ to de-register your previous device.</Text>
                 </View>
-            </View>
-            <View style={{ alignItems: "center", marginBottom: 20, }}>
-                <RequestButton text='Confirm' onPress={ForWordnavigation} />
+                <View style={{ alignItems: "center", marginTop: 10,
+                 }}>
+                    <RequestButton text='Confirm' onPress={ForWordnavigation} />
+                </View>
             </View>
         </>
 
@@ -86,6 +85,7 @@ const styles = StyleSheet.create({
         justifyContent: "Space-evently",
         // justifyContent:"center",
         alignItems: "center",
+        backgroundColor: "#FFFFFF",
 
     },
     Progress: {

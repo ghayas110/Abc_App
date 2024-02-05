@@ -37,7 +37,6 @@ const Review = () => {
 
     const renderItem = ({ item }) => (
         <>
-            <View>
                 <View style={styles.flatlistrow}>
                     <View>
                         <Text style={styles.nameHead}>{item.name}</Text>
@@ -46,8 +45,6 @@ const Review = () => {
                         <Text style={styles.nameValue}>{item.value}</Text>
                     </View>
                 </View>
-
-            </View>
 
         </>
     );
@@ -91,7 +88,7 @@ const Review = () => {
                         </View>
                         <View style={{ alignItems: "flex-end" }}>
                             <Text style={styles.transferCheck}>
-                                <CheckBoxInput style={styles.checkedbox} />
+                                <CheckBoxInput style={styles.checkedbox} color={'#00a200'} />
                             </Text>
                             <Text style={styles.transferNum}>AED 80,000.00</Text>
                         </View>
@@ -102,7 +99,7 @@ const Review = () => {
                         </Text>
                     </View>
                     <View style={{flexDirection:"row", alignItems:"center" , padding:10,}}>
-                        <CheckBoxInput style={{ ...Theme.Green_color_h }} color={'green'} /> 
+                        <CheckBoxInput style={{ ...Theme.Green_color_h }} color={'#00a200'} /> 
                         <Text style={{...Theme.black_color_f , ...Theme.Font_family ,marginLeft:5}}>
                                I have read and agreed to the  <Text style={{...Theme.Green_color_f}}>DuitNow Transfer Terms and Conditions.</Text> 
                         </Text>
@@ -124,8 +121,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#FFFFFF",
-        paddingTop: 10,
-        paddingBottom: 10,
+        padding: 10
     },
     flatlistrow: {
         flex: 1,

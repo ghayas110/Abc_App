@@ -4,6 +4,7 @@ const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
     basic_container: {
         width: width,
+        padding:16
     },
     main_heading: {
         fontSize: 25,

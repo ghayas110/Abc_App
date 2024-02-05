@@ -41,7 +41,7 @@ const ApplyFinance = () => {
                     Let's Get Started
                 </Text>
                 <Text style={{ fontSize: 16,lineHeight:24, fontWeight: "700", ...ThemeSty.gray_color_f , ...ThemeSty.Font_family }}>
-                Please complete the 3 steps below to get your Rize Personal Financing-i
+                Please complete the 3 steps below to get your Smart Bank Personal Financing-i
                 </Text>
             </View>
             <View style={styles.headerText1}>
@@ -58,7 +58,7 @@ const ApplyFinance = () => {
                
             </View>
      
-            <View >
+            <View style={{flex:0.6, justifyContent:"flex-end"}}>
                 <View style={styles.btn1}>
                     <OutlineButton text={'Go to Financing Center'} onPress={()=>navigation.goBack()}/>
                 </View>
@@ -76,9 +76,9 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        padding: 26,
-        paddingTop: 46,
-        justifyContent:"space-between"
+        padding:16,
+        justifyContent:"space-between",
+        backgroundColor:"#FFFFFF",
     },
     Progress: {
         padding: 15,
@@ -93,7 +93,12 @@ const styles = StyleSheet.create({
 
     },
     headerText1: {
-marginLeft:30
+        // alignItems:"center",
+        justifyContent: 'center',
+        flexDirection:"row"
+
+
+
     },
     Notify: {
         padding: 20,

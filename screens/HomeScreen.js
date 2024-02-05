@@ -187,7 +187,7 @@ const HomeScreen = ({ onLogin }) => {
         </View>
 
 
-        <View style={styles.containerMenu}>
+        <View style={styles.containeAEDenu}>
           <TouchableOpacity style={styles.card} onPress={goSavingpots}>
             <Image source={Market} style={styles.image} />
             <View style={styles.textContainer}>
@@ -229,7 +229,7 @@ const HomeScreen = ({ onLogin }) => {
                   <View style={{ width: 200 }}>
                     <ProgressBarAndroid
                       styleAttr="Horizontal"
-                      indeterminate={false}
+                      indeteAEDinate={false}
                       progress={progress}
                       color="#00a200"
 
@@ -249,7 +249,7 @@ const HomeScreen = ({ onLogin }) => {
                   <View style={{ width: 200, }}>
                     <ProgressBarAndroid
                       styleAttr="Horizontal"
-                      indeterminate={false}
+                      indeteAEDinate={false}
                       progress={progress}
                       color="#00a200"
 
@@ -385,7 +385,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  containerMenu: {
+  containeAEDenu: {
     paddingTop: 10,
     justifyContent: 'center',
     alignItems: 'center',

@@ -49,7 +49,8 @@ const Checknote = () => {
 
     const renderItem = ({ item }) => (
         <>
-            <View style={styles.flatlistrow}>
+        
+         <View style={styles.flatlistrow}>
                 <View style={{ flex: 1 }}>
                     <SimpleInput style={styles.Input} label="Desire Duration" placeholder='Enter amount' />
                 </View>

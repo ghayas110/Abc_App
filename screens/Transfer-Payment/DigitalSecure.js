@@ -98,8 +98,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#000000",
-        paddingTop: 10,
-        paddingBottom: 10,
+        padding:10
     },
     flatlistrow: {
         flex: 1,
@@ -200,6 +199,10 @@ const styles = StyleSheet.create({
     
     btn:{
         flex: 1,
+        alignItems:"center",
+        justifyContent:"flex-end",
+        borderWidth:1,
+        borderColor:"white"
     },
     btnsty:{
     backgroundColor:"#FFFFFF",

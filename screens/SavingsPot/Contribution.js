@@ -35,7 +35,7 @@ const Contribution = () => {
                 <Text style={styles.HeadingText} > Targeted savings goal </Text>
                 <View style={styles.HeadingInput}>
                     <Text style={styles.HeadingInputText}>AED</Text>
-                        <SimpleInput inputstyle={styles.Input} placeholder='Enter amount' keyboardType="numeric" />
+                        <ExampleInput inputstyle={styles.Input} placeholder='Enter amount' keyboardType="numeric" />
                 </View>
             </View>
             <View style={styles.switcher}>
@@ -48,7 +48,7 @@ const Contribution = () => {
                 <View style={styles.HeadingInput}>
                     <Text style={styles.HeadingInputText}>AED</Text>
                     
-                        <SimpleInput inputstyle={styles.Input}  placeholder='Enter amount' keyboardType="numeric" />
+                        <ExampleInput inputstyle={styles.Input}  placeholder='Enter amount' keyboardType="numeric" />
                 </View>
             </View>
             <View style={styles.ProgessBar}>
