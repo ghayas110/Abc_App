@@ -43,7 +43,7 @@ const StartLoginStep4 = ({ disabled }) => {
                         <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} onPress={backnavigation} />
                     </View>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
-
+                    <Image source={Logo} />
                     </View>
                     <View></View>
                         <LottieView source={require('../../assets/lotiefiles/switching_devices_animation.json')} autoPlay style={{width:"100%",height:200}} />
