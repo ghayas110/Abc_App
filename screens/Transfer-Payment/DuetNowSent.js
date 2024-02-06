@@ -7,6 +7,7 @@ import { RequestButton } from '../../components/Buttons'
 import image from '../../assets/transferPaymentImages/duetNowOnWay.png'
 import React from 'react'
 import Header from './components/Header'
+import LottieView from 'lottie-react-native'
 
 const DuetNowSent = () => {
 
@@ -70,7 +71,7 @@ const DuetNowSent = () => {
             <ScrollView>
 
                 <View style={styles.subheaderstyle}>
-                    <Image source={image} />
+                <LottieView source={require('../../assets/lotiefiles/transfer_inprogress_animation.json')} autoPlay style={{width:"100%",height:200}} />
                     <Text style={styles.accountName}>Yay, DuitNow sent</Text>
 
                 </View>

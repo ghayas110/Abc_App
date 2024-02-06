@@ -34,7 +34,7 @@ const StartLogin = ({ disabled }) => {
             <View style={styles.container}>
                 <View style={styles.Progress}>
                     <View style={styles.BackArrow}>
-                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} onPress={Backnavigation} />
+                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} onPress={()=>navigation.goBack()} />
                     </View>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
                          <Image source={Logo} style={styles.Image} />

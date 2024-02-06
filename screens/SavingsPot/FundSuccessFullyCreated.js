@@ -5,6 +5,7 @@ import SuccessImage from "../../assets/SavingPotsImages/FundSuccessfycreate.png"
 import { useNavigation } from '@react-navigation/native';
 import Theme from '../../assets/styles/basic'
 import { RequestButton, OutlineButton } from '../../components/Buttons';
+import LottieView from 'lottie-react-native';
 
 const FundSuccessFullyCreated = () => {
     const navigation = useNavigation()
@@ -23,7 +24,7 @@ const FundSuccessFullyCreated = () => {
                 />
             </View>
             <View style={styles.Image}>
-                <Image source={SuccessImage} />
+            <LottieView source={require('../../assets/lotiefiles/savings_pot_transaction_success_animation.json')} autoPlay style={{width:"100%",height:200}} />
             </View>
             <View style={styles.Heading}>
                 <Text style={styles.HeadingText}>Yay! Your Savings Pot has been successfully created!</Text>

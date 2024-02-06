@@ -4,6 +4,7 @@ import FormInput from '../../components/FormInput';
 import notifee from '@notifee/react-native';
 import { RadioButton } from 'react-native-paper'; // Import RadioButton from react-native-paper
 import { useNavigation } from '@react-navigation/native';
+import { RequestButton } from '../../components/Buttons';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -64,11 +65,16 @@ const MailingAddress = ({ onPress }) => {
       </View>
 
       <View>
-        <Button
+     
+
+      <RequestButton text={"Continue"}  onPress={()=>navigation.navigate('CardOrder')} btnStyle={{width:'auto'}}/>
+       
+
+        {/* <Button
           title="Continue"
           color="green"
           onPress={()=>navigation.navigate('CardOrder')}
-        />
+        /> */}
       </View>
     </View>
   )
