@@ -8,6 +8,7 @@ import Logo from '../../assets/LandingScreen/SssscoLandingLgo-01.png'
 import Modal from 'react-native-modal';
 import ThemeSty from '../../assets/styles/basic'
 import ProgressBar from 'react-native-progress/Bar';
+import PasswordInput from '../../components/PasswordInput'
 
 
 const StartLoginStep3 = ({ disabled }) => {
@@ -64,7 +65,7 @@ const StartLoginStep3 = ({ disabled }) => {
                     <Text style={{ ...ThemeSty.orenge_color_f, fontSize: 24, ...ThemeSty.Font_family, fontWeight: '700' }}>MEER712</Text>
                 </View>
                 <View style={styles.inputContainer}>
-                    <SimpleInput
+                    <PasswordInput
                         label={'Password'}
                         placeholder={'Enter Password'}
                         placeholderTextColor={ "grey" }
