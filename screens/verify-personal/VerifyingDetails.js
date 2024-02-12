@@ -12,6 +12,7 @@ import {useNavigation} from '@react-navigation/native';
 import {RequestButton} from '../../components/Buttons';
 import ActivationSteps from '../../components/steps/ActivationSteps';
 import ActivationSteps2 from '../../components/steps/ActivationSteps2';
+import LottieView from 'lottie-react-native';
 
 const VerifyingDetails = ({onPress}) => {
   const {width, height} = Dimensions.get('window');
@@ -43,7 +44,7 @@ const VerifyingDetails = ({onPress}) => {
               flexDirection: 'row',
               justifyContent: 'center',
             }}>
-            <Image source={require('./images/person.png')} />
+                <LottieView source={require('../../assets/lotiefiles/verifying_your_details_animation.json')} autoPlay style={{width:"100%",height:200}} />
           </View>
           <Text
             style={{

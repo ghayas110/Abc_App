@@ -74,6 +74,7 @@ import EditMaritalStatus from "../screens/Settings/EditMaritalStatus";
 import EmpDetails from "../screens/Settings/EmpDetails";
 import ComingSoon from "../screens/Coming-Soon/ComingSoon";
 import CardManage from "../screens/card/CardManage";
+import Reject from "../screens/Transfer-Payment/Reject";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -248,6 +249,12 @@ const TransferNavigator = () => {
         headerShown: false
       }} />
       <Stack.Screen name="AccountType" component={AccountType} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="Reject" component={Reject} screenOptions={{
+        headerShown: false
+      }} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} screenOptions={{
         headerShown: false
       }} />
     </Stack.Navigator>

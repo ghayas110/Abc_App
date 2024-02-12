@@ -16,7 +16,8 @@ const SimpleInput = ({
     type,
     placeholder,
     viewStyle,
-    pass
+    pass,
+    onChangeText
 }) => {
     return (
         <>
@@ -40,6 +41,7 @@ const SimpleInput = ({
                     value={value}
                     defaultValue={defaultValue}
                     placeholderTextColor={"grey"}
+                    onChangeText={onChangeText}
                 />
             </View>
         </>

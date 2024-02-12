@@ -38,19 +38,16 @@ const StartLoginStep4 = ({ disabled }) => {
     return (
         <>
             <View style={styles.container}>
-                <View style={styles.Progress}>
+            <View style={styles.Progress}>
                     <View style={styles.BackArrow}>
                         <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} onPress={backnavigation} />
                     </View>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
-                    <Image source={Logo} />
+                        <Image source={Logo} style={styles.Image} />
                     </View>
-                    <View></View>
+                </View>
                         <LottieView source={require('../../assets/lotiefiles/switching_devices_animation.json')} autoPlay style={{width:"100%",height:200}} />
-                </View>
-                <View style={{ padding: 5, marginTop: 25, }}>
-                    <Image source={LoginImage} />
-                </View>
+             
                 <View style={{ padding: 5, marginTop: 25, }}>
                     <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family, lineHeight: 34 }}>
                         Switching devices? Please confirm

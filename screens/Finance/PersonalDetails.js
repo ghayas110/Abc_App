@@ -41,7 +41,7 @@ const PersonalDetails = ({ onPress, AddressPress }) => {
             </View>
             <View>
 
-                <View style={{ ...style.basic_container,}}>
+                <View style={{ ...style.basic_container,padding:16}}>
                     <Text style={{
                         ...Theme.black_color_h, ...Theme.Font_family, fontSize: 16, fontWeight: '700',
                     }}>
@@ -92,7 +92,8 @@ const PersonalDetails = ({ onPress, AddressPress }) => {
                 
                 <View style={{
                     ...style.basic_container,
-                    // backgroundColor: 'whitesmoke'
+                     backgroundColor: 'whitesmoke',
+                     padding:16
                 }}>
                         <Text style={{ ...Theme.black_color_h , ...Theme.Font_family , fontSize: 16, fontWeight: "700", }}>
                             Mailing Address
@@ -141,6 +142,7 @@ const PersonalDetails = ({ onPress, AddressPress }) => {
             </View>
             <View style={{
                 ...style.basic_container,
+                padding:16
             }}>
                 <View style={{ ...styles.Notify, ...ThemeSty.bg_light_green_color }}>
                     <Text style={{ ...Theme.Green_color_f, fontSize: 12, fontWeight: "500", ...Theme.Font_family }}>

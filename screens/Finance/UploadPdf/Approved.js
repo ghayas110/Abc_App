@@ -3,6 +3,7 @@ import { Image, SafeAreaView, Text, FlatList, TouchableOpacity, StyleSheet, View
 import style from '../../../assets/styles/basic';
 import { RequestButton } from '../../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
+import LottieView from 'lottie-react-native';
 
 const Approved = () => {
     const navigation = useNavigation()
@@ -23,7 +24,7 @@ const Approved = () => {
                     alignContent: "center",
                     marginTop: 50,
                 }}>
-                    <Image source={require("../../../assets/Finance/9243.png")} />
+                <LottieView source={require('../../../assets/lotiefiles/application_approved_animation.json')} autoPlay style={{width:"100%",height:200}} />
                 </View>
                 <View style={{ flex: 1, marginTop: 20 }}>
                     <Text style={{ ...style.Font_family_Bold, ...style.Green_color_h, fontSize: 20 }}>Congratulations! Your application has been approved</Text>

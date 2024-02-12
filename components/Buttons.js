@@ -1,20 +1,21 @@
-import { Button, StyleSheet, Text, View, TouchableOpacity, Dimensions, Image } from 'react-native'
+import { Button, StyleSheet, Text, View, TouchableOpacity, Dimensions, Image  } from 'react-native'
 import react, {useState} from 'react'
 import ImageFiler from '../assets/HomeScreenImages/FilterIcon.png'
 // import { RadioButton } from 'react-native-paper';
 const { width, height } = Dimensions.get('window');
 
-function RequestButton({ text, onPress, btnStyle, buttonsty, textbtnsty }) {
+function RequestButton({ text, onPress, btnStyle, buttonsty, textbtnsty, disabled }) {
     return (
         <>
             <View style={{ ...styles.btnContainer, ...btnStyle }}>
-                <TouchableOpacity style={{...styles.btnStyleReq ,  ...buttonsty}} onPress={() => { onPress() }}>
+                <TouchableOpacity style={{...styles.btnStyleReq ,  ...buttonsty}} onPress={() => { onPress() }} disabled={disabled}>
                     <Text style={{ ...styles.textBtnReq, fontFamily: "Poppins-Bold", ...textbtnsty }}>{text}</Text>
                 </TouchableOpacity>
             </View>
         </>
     )
 }
+
 
 function OutlineButton({ text, onPress, textoutbtnsty, outbuttonsty,btnStyle }) {
     return (

@@ -9,9 +9,15 @@ import QrDuetImg from '../../../assets/transferPaymentImages/qrduetIcon.png'
 import Icons from '../../../components/Icons';
 import { CheckBoxInput } from '../../components/Inputs';
 import { Icon } from 'react-native-paper/lib/typescript/components/Avatar/Avatar';
+import ContactList from './ContactList'
+import * as Contacts from 'react-native-contacts';
+import Modal from 'react-native-modal';
 
-const NewRecipient = () => {
+
+
+const MobileNumber = () => {
     const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
+
 
     const toggleBottomSheet = () => {
         setBottomSheetVisible(!isBottomSheetVisible);
@@ -23,7 +29,7 @@ const NewRecipient = () => {
         navigation.navigate('RecipientBank')
     }
     const GoAccountType = () => {
-        navigation.navigate('AccountType')
+        navigation.navigate('NameScreen')
 
     }
     const insertAmount = () => {
@@ -31,16 +37,18 @@ const NewRecipient = () => {
 
     }
 
+
+
     const Flatlist = [
         {
-            name: 'Recipient bank ',
-            text: "Select recipient bank",
+            name: 'DuitNow ID',
+            text: "Mobile Number",
             Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={ForWordnavigation} />
         },
         {
-            name: 'Account type',
+            name: 'Mobile Number',
             text: "Select account type",
-            Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={GoAccountType} />
+            Icon2: <Icons.AntDesign name="contacts" style={styles.icon2} onPress={toggleBottomSheet} />
         },
 
     ];
@@ -64,11 +72,15 @@ const NewRecipient = () => {
         </>
     );
 
+
+
+    
+
     return (
         <>
 
             <View style={styles.container}>
-                <View style={{ flex: 0.5,  }}>
+                <View style={{ flex: 1, }}>
                     <FlatList
                         data={Flatlist}
                         renderItem={renderItem}
@@ -77,26 +89,37 @@ const NewRecipient = () => {
 
                 </View>
 
-                <View style={{ borderBottomWidth: 0.5,  }}>
-                    <SimpleInput
-                        label="Account number"
-                        type="number"
-                        placeholder={"Enter account number"}
-                        placeholderTextColor={{ ...Theme.Light_gray_color_f }}
-                        inputstyle={styles.Input}
-
-                    />
-                </View>
-
 
                 <View style={{ ...styles.Notify, }}>
                     <Text style={{ ...Theme.Green_color_f, fontSize: 14, fontWeight: "500", ...Theme.Font_family, ...Theme.bg_light_green_color, padding: 16, borderRadius: 10 }}>
                         FRAUD ALERT: Beware of phishing scams. Never click on links in unsolicited SMS and WhatsApp messages, emails or social media posts. DO NOT reveal your banking security information such as your PIN to unknown callers or personnel.
                     </Text>
-                    <View style={{ alignSelf: "center", marginTop: 10,}}>
+                    <View style={{ alignSelf: "center", marginTop: 10, }}>
                         <RequestButton text={'Continue'} onPress={insertAmount} />
                     </View>
                 </View>
+                <Modal
+                    isVisible={isBottomSheetVisible}
+                    style={{ margin: 0 }}
+                    onBackdropPress={toggleBottomSheet}>
+                    <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+                        <View
+                            style={{
+                                backgroundColor: 'white',
+                                padding: 24,
+                                borderTopRightRadius: 30,
+                                borderTopLeftRadius: 30,
+                            }}>
+                            <View>
+                                <Text style={{fontSize: 28, fontWeight: '700', ...Theme.Green_color_f, ...Theme.Font_family, }}> Info
+                                </Text>
+                            </View>
+                            <View style={{ padding: 15 }}>
+                                <ContactList />
+                            </View>
+                        </View>
+                    </View>
+                </Modal>
 
 
 
@@ -105,7 +128,7 @@ const NewRecipient = () => {
     )
 }
 
-export default NewRecipient
+export default MobileNumber
 
 const styles = StyleSheet.create({
     container: {
@@ -119,10 +142,10 @@ const styles = StyleSheet.create({
         fontSize: 12,
         fontWeight: "500",
         ...Theme.black_color_f,
-        padding:10
+        padding: 10
     },
     Notify: {
-        flex: 0.8,
+        flex: 1,
         backgroundColor: "#FFFFFF",
         justifyContent: "center",
 
@@ -142,13 +165,16 @@ const styles = StyleSheet.create({
         ...Theme.Green_color_f
     },
     name: {
-        fontSize: 16,
-        ...Theme.black_color_f,
+        fontSize: 12,
+        ...Theme.gray_color_h,
         ...Theme.Font_family,
-        fontWeight: "700"
+        fontWeight: "500"
     },
-    selection: {
-
+    Select: {
+        fontSize: 16,
+        ...Theme.black_color_h,
+        ...Theme.Font_family,
+        fontWeight: "500"
     },
     text: {
         fontSize: 16,

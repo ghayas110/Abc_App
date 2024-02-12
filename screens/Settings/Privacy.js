@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Image, SafeAreaView, Text, TouchableOpacity, View, FlatList, ScrollView } from 'react-native'
 import style from '../../assets/styles/basic';
 import Header from './components/Header';
+import { useNavigation } from '@react-navigation/native';
 
 const Privacy = () => {
+    const navigation =useNavigation()
     const dataOne = [
         {
             id: '1',
@@ -37,7 +39,7 @@ const Privacy = () => {
         },
     ];
     const renderItemOne = ({ item }) => (
-        <TouchableOpacity onPress={() => handleItemClick(item?.text)}>
+        <TouchableOpacity onPress={() => navigation.navigate('ComingSoon')}>
             <View style={{
                 flex: 1,
                 flexDirection: "row",
