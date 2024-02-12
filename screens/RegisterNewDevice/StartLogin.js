@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View , Image, Linking } from 'react-native'
+import { StyleSheet, Text, View, Image, Linking, Alert } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import Icons from '../../components/Icons'
 import { useNavigation } from '@react-navigation/native'
 import { SimpleInput } from '../../components/Inputs'
-import { RequestButton , OutlineButton } from '../../components/Buttons'
+import { RequestButton, OutlineButton, SimpleButton } from '../../components/Buttons'
 import Logo from '../../assets/LandingScreen/SssscoLandingLgo-01.png'
 import Modal from 'react-native-modal';
 import ThemeSty from '../../assets/styles/basic'
@@ -14,6 +14,7 @@ const StartLogin = ({ disabled }) => {
     const [progress, setProgress] = useState(0);
     const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
     const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false)
+    const [isUserName , setUserName] = useState('')
 
     const toggleBottomSheet = () => {
         setBottomSheetVisible(!isBottomSheetVisible);
@@ -28,6 +29,15 @@ const StartLogin = ({ disabled }) => {
     const Backnavigation = () => {
         navigation.navigate('LandingPage');
     };
+
+
+const HandleUserName = () =>{
+    if (isUserName) {
+        navigation.navigate('StartLoginStep2');
+    }
+} 
+
+
 
     return (
         <>
@@ -51,10 +61,11 @@ const StartLogin = ({ disabled }) => {
                 label={'Username'}
                 placeholder={'Enter Username'}
                 placeholderTextColor={ "grey" }
-             
-
+                value={isUserName}
+                onChangeText={setUserName}
+                type={"text"}
                 inputstyle={{ fontSize: 20, fontWeight: "600", color:'black', ...ThemeSty.Font_family }}
-            />
+                  />
                 </View>
                 <View style={styles.ForgotPassword}>
                     <Text style={{...ThemeSty.Green_color_f ,...ThemeSty.Font_family, fontWeight:"700" , fontSize:16}}>Forgot username?</Text>
@@ -109,7 +120,7 @@ const StartLogin = ({ disabled }) => {
                 </Modal>
             </View>
             <View style={{ alignItems: "center", backgroundColor:"#FFFFFF" , flex:1 , justifyContent:"flex-end" , padding:16 }}>
-                <RequestButton text='Next' onPress={ForWordnavigation} />
+                <RequestButton text='Next' buttonsty={isUserName == '' ? { ...ThemeSty.bg_gray_color } : { ...ThemeSty.bg_green_color }} onPress={HandleUserName} />
             </View>
         </>
 

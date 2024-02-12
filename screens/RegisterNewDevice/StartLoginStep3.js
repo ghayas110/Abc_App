@@ -15,6 +15,7 @@ const StartLoginStep3 = ({ disabled }) => {
     const [progress, setProgress] = useState(0);
     const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
     const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false)
+    const [isPassword , setPassword] = useState(false)
 
     const toggleBottomSheet = () => {
         setBottomSheetVisible(!isBottomSheetVisible);
@@ -31,6 +32,12 @@ const StartLoginStep3 = ({ disabled }) => {
     const backnavigation = () => {
         navigation.navigate('StartLoginStep2');
     };
+
+    const handlePassword = () => {
+        if(isPassword){
+            navigation.navigate('StartLoginStep4');
+        }
+     }
 
 
 
@@ -70,6 +77,8 @@ const StartLoginStep3 = ({ disabled }) => {
                         placeholder={'Enter Password'}
                         placeholderTextColor={ "grey" }
                         type={'password'}
+                        value={isPassword}
+                        onChangeText={setPassword}
                        pass={true}
                         inputstyle={{ fontSize: 20, fontWeight: "600", color:'black', ...ThemeSty.Font_family }}
                     />
@@ -114,7 +123,7 @@ const StartLoginStep3 = ({ disabled }) => {
                     style={{ margin: 0 }}
                     onBackdropPress={toggleBottomSheet2}
                 >
-                    <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+                    <View style={{ flex: 1, justifyContent: 'flex-end'  }}>
                         <View style={{ backgroundColor: 'transparent', padding: 24, borderTopRightRadius: 20, borderTopLeftRadius: 20, }}>
                             <View style={{ padding: 10, alignItems: "center" }}>
                             <OutlineButton onPress={() => Linking.openURL(`tel:${'+73365596220'}`)} text='call +7336 559 6220' />
@@ -129,8 +138,8 @@ const StartLoginStep3 = ({ disabled }) => {
             
             </View>
             
-            <View style={{ alignItems: "center", flex:1, justifyContent:"flex-end" , padding:10 , backgroundColor:"#FFFFFF" }}>
-                <RequestButton text='Login' onPress={ForWordnavigation} />
+            <View style={{ alignItems: "center", flex: 0.5, justifyContent: "flex-end", padding: 10, backgroundColor: "#FFFFFF",}}>
+                <RequestButton buttonsty={isPassword == '' ? { ...ThemeSty.bg_gray_color } : { ...ThemeSty.bg_green_color }}  text='Login' onPress={handlePassword} />
             </View>
         </>
 

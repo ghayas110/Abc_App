@@ -14,6 +14,8 @@ import { Icon } from 'react-native-paper/lib/typescript/components/Avatar/Avatar
 
 const Transfer = () => {
     const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
+    const [isAccount , setAccount ] = useState("Accounts");
+    const [isMobile, setMobile] = useState("Mobile");
 
     const toggleBottomSheet = () => {
         setBottomSheetVisible(!isBottomSheetVisible);
@@ -22,7 +24,10 @@ const Transfer = () => {
     const navigation = useNavigation()
 
     const ForWordnavigation = () => {
-        navigation.navigate('TransferTO')
+        navigation.navigate('TransferTO', { data: isAccount })
+    }
+    const MobileNumber = () => {
+        navigation.navigate('TransferTO', { data2: isMobile })
     }
 
     const gotoComingSoon = () => {
@@ -34,7 +39,7 @@ const Transfer = () => {
         {
             name: 'Bank Account', Icon: <Icons.MaterialCommunityIcons name="bank-outline" style={styles.icon} onPress={ForWordnavigation} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={ForWordnavigation} />
         },
-        { name: 'Mobile Number', Icon: <Icons.AntDesign name="contacts" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" onPress={gotoComingSoon} style={styles.icon2} /> },
+        { name: 'Mobile Number', Icon: <Icons.AntDesign name="contacts" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" onPress={MobileNumber} style={styles.icon2}  /> },
         {
         name: 'CNIC', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
         { name: 'MyPolis/MyTentera', Icon: <Icons.MaterialIcons name="local-police" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2}  onPress={gotoComingSoon}/> },

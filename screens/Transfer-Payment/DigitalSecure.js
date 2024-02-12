@@ -13,6 +13,10 @@ const DigitalSecure = () => {
     const Navigate = () => {
         navigation.navigate('DuetNowSent')
     }
+
+    const RejectScreen = () => {
+        navigation.navigate('Reject')
+    }
     const Flatlist = [
         {
             name: 'Transfer from',
@@ -80,11 +84,11 @@ const DigitalSecure = () => {
                     <Text style={styles.price}>AED 3,400.00</Text>
                 </View>
 
+            
                 <View style={styles.btn}>
-                    <OutlineButton text={'Reject'} textoutbtnsty={styles.outlinebtntext} outbuttonsty={styles.outlinebtn} />                    
+                    <OutlineButton text={'Reject'} textoutbtnsty={styles.outlinebtntext} outbuttonsty={styles.outlinebtn} onPress={RejectScreen} />                    
                     <RequestButton text={'Approve'} buttonsty={styles.btnsty} textbtnsty={styles.btntext} onPress={Navigate} />
                 </View>
-            
 
             </ScrollView>
 
@@ -201,8 +205,10 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems:"center",
         justifyContent:"flex-end",
-        borderWidth:1,
-        borderColor:"white"
+        borderColor:"white",
+        marginTop: 20,
+        
+        
     },
     btnsty:{
     backgroundColor:"#FFFFFF",

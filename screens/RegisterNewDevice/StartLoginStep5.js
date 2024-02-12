@@ -4,6 +4,7 @@ import { View, TextInput, Button, StyleSheet, Text, TouchableOpacity, Alert, Dim
 import ButtonInput from '../../components/ButtonInput';
 import { useDispatch } from 'react-redux';
 import { RequestButton } from '../../components/Buttons';
+// import ThemeSty from '../../assets/styles/basic';
 import { loginSuccess } from '../../redux/reducers/authReducer';
 import style from '../../assets/styles/basic';
 import { useNavigation } from '@react-navigation/native';
@@ -16,15 +17,13 @@ const StartLoginStep5 = ({ onPress, route }) => {
   const { width, height } = Dimensions.get('window');
   const navigation = useNavigation()
 
-  const [email, setEmail] = useState(route?.params?.bodys?.email);
-  const [user_type, setuser_type] = useState(route?.params?.bodys?.user_type)
+
   const inputRefs = useRef(Array(4).fill(0).map((_, i) => i));
-  console.log(route?.params?.bodys?.user_type, "sss")
+
   const handleInputChange = (index, value) => {
     const newOtp = [...otp];
     newOtp[index] = value;
 
-    // Move to the next input if a digit is entered
     if (value !== '') {
       const nextIndex = index + 1;
       if (nextIndex < 4) {
@@ -38,7 +37,6 @@ const StartLoginStep5 = ({ onPress, route }) => {
   const handleBackspace = (index) => {
     const newOtp = [...otp];
 
-    // Move to the previous input on backspace
     if (index > 0) {
       const prevIndex = index - 1;
       inputRefs.current[prevIndex].focus();
@@ -49,26 +47,15 @@ const StartLoginStep5 = ({ onPress, route }) => {
     setOtp(newOtp);
   };
 
-  const handleSubmit = async ({ route }) => {
-
-    const enteredOtp = otp.join('');
-    console.log('Entered OTP:', parseInt(enteredOtp));
-
-    try {
-      if (otp) {
-
-
-      } else {
-        Alert.alert('An error occurred while processing your request.')
-      }
-
-    } catch (error) {
-      console.log('An error occurred while processing your request.');
+  const handleSubmit = async () => {
+    if (otp.join('') !== '') {
+      navigation.navigate('StartLoginStep6');
+      console.log(otp);
+    } else {
+      Alert.alert('An error occurred while processing your request.');
     }
-
-
   };
-
+  
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -115,9 +102,10 @@ const StartLoginStep5 = ({ onPress, route }) => {
           </View>
         </View>
       </View>
-      <RequestButton text={"Next"} onPress={() => navigation.navigate('StartLoginStep6')}
-
-        btnStyle={{ position: "absolute", bottom: 50 }}
+      
+      <RequestButton text={"Next"} onPress={handleSubmit}
+        buttonsty={otp.join('') === '' ? { ...style.bg_gray_color } : { ...style.bg_green_color }}
+        btnStyle={{ position: "absolute", bottom: 40 }}
       />
 
     </KeyboardAvoidingView>

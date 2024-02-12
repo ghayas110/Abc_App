@@ -9,11 +9,17 @@ import FormInput from '../../components/FormInput';
 
 
 const NameScreen = ({ onPress }) => {
+    const [isName , setName] = useState(false)
     const { width, height } = Dimensions.get('window');
     const navigation = useNavigation()
+
+
     const nextPage = async () => {
-        navigation.navigate('ReviewDetails')
+        if (isName) {
+            navigation.navigate('ReviewDetails')
+        }
     }
+
     return (
 
         <KeyboardAvoidingView
@@ -41,10 +47,13 @@ const NameScreen = ({ onPress }) => {
                         placeholder={"Enter Prefered Name"}
                         placeholderColor={'#CCCCCC'}
                         charecter={"10 characters remaining"}
+                        value={isName}
+                        onChangeText={setName}
                     />
                 </View>
             </View>
             <RequestButton text={"Confirm"} onPress={onPress}
+
                 btnStyle={{ position: "absolute", bottom: 50 }}
             />
 
