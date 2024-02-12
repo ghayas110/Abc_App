@@ -88,7 +88,7 @@ const NewRecipient = () => {
 
 
                 <View style={{ ...styles.Notify, }}>
-                    <Text style={{ ...Theme.Green_color_f, fontSize: 14, fontWeight: "500", ...Theme.Font_family, ...Theme.bg_light_green_color, padding: 16, borderRadius: 10 }}>
+                    <Text style={{ ...Theme.Green_color_primary,lineHeight:18, fontSize: 12, fontWeight: "500", ...Theme.Font_family, ...Theme.bg_light_green_color, padding: 16, borderRadius: 10 }}>
                         FRAUD ALERT: Beware of phishing scams. Never click on links in unsolicited SMS and WhatsApp messages, emails or social media posts. DO NOT reveal your banking security information such as your PIN to unknown callers or personnel.
                     </Text>
                     <View style={{ alignSelf: "center", marginTop: 10,}}>

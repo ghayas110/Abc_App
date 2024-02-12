@@ -59,7 +59,7 @@ const EmpDetails = () => {
                         placeholderTextColor="#808080"
                         label={"Annual income bracket"}
                         type={"text"}
-                        defaultValue={"RM 72,000 to RM 88,000"}
+                        defaultValue={"AED 72,000 to AED 88,000"}
                         placeholder={"Annual income bracket"}
                     />
                 </View>

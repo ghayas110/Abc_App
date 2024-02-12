@@ -35,11 +35,11 @@ const Ongoings = () => {
             <View style={{ padding: 15 }}>
             <Text style={styles.RupeeText}>AED 9,000.00</Text>
             <View>
-              <ProgressBarAndroid styleAttr="Horizontal" indeterminate={false} progress={progress} color="#00a200" />
+              <ProgressBarAndroid styleAttr="Horizontal" indeteAEDinate={false} progress={progress} color="#00a200" />
             </View>
             <View style={{flexDirection:"row" , justifyContent:"space-between"}}>
               <Text style={styles.percenText}>30%</Text>
-                <Text style={styles.percenText}>RM 30,000.00</Text>
+                <Text style={styles.percenText}>AED 30,000.00</Text>
             </View>
           </View>
         </ImageBackground>
@@ -57,11 +57,11 @@ const Ongoings = () => {
             <View style={{ padding: 15 }}>
               <Text style={styles.RupeeText}>AED 9,000.00</Text>
               <View>
-                <ProgressBarAndroid styleAttr="Horizontal" indeterminate={false} progress={progress} color="#00a200" style={styles.progessBar} />
+                <ProgressBarAndroid styleAttr="Horizontal" indeteAEDinate={false} progress={progress} color="#00a200" style={styles.progessBar} />
               </View>
               <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                 <Text style={styles.percenText}>30%</Text>
-                <Text style={styles.percenText}>RM 30,000.00</Text>
+                <Text style={styles.percenText}>AED 30,000.00</Text>
               </View>
             </View>
           </ImageBackground>

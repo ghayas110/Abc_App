@@ -132,7 +132,7 @@ const Profile = () => {
                                         justifyContent: "space-between",
                                         alignItems: "center"
                                     }}>
-                                        <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, fontSize: 18 }}>RM 72,000 to RM 88,000</Text>
+                                        <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, fontSize: 18 }}>AED 72,000 to AED 88,000</Text>
                                         <TouchableOpacity onPress={() => navigation.navigate("EmpDetails")}><Image source={require("../../assets/generalImages/Edit.png")} /></TouchableOpacity>
                                     </View>
                                 </View>

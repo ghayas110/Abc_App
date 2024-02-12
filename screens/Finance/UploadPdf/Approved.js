@@ -43,7 +43,7 @@ const Approved = () => {
                             justifyContent: "space-between"
                         }}>
                             <Text style={{...style.Font_family_Bold,...style.black_color_h}}>Amount</Text>
-                            <Text style={{...style.Font_family,...style.gray_color_h}}>RM 50,000.00</Text>
+                            <Text style={{...style.Font_family,...style.gray_color_h}}>AED 50,000.00</Text>
                         </View>
                         <View style={{
                             display: "flex",
@@ -75,7 +75,7 @@ const Approved = () => {
                             justifyContent: "space-between"
                         }}>
                             <Text style={{...style.Font_family_Bold,...style.black_color_h}}>Monthly instalment</Text>
-                            <Text style={{...style.Font_family,...style.gray_color_h}}>RM 1,627.00</Text>
+                            <Text style={{...style.Font_family,...style.gray_color_h}}>AED 1,627.00</Text>
                         </View>
                     </View>
                     <View style={{

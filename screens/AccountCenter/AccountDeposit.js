@@ -44,7 +44,7 @@ const AccountDeposit = () => {
                     </View>
                     <View style={styles.informationtextContainer}>
                         <Text style={styles.informationtext}>Account type</Text>
-                        <Text style={styles.informationtext2}>Rize Savings Account-i</Text>
+                        <Text style={styles.informationtext2}>SSSCO Savings Account-i</Text>
                     </View>
                 </View>
             </View>
@@ -53,7 +53,7 @@ const AccountDeposit = () => {
                     <View style={styles.VisaCont}>
                        <Image source={Vise} style={styles.VisaImage} />
                     </View>
-                    <Text style={styles.bottomText}>Linked to Rize Debit Card-i</Text>
+                    <Text style={styles.bottomText}>Linked to SSSCO Debit Card-i</Text>
                 </View>
                 
             </View>

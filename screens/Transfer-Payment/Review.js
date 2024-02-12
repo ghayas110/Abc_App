@@ -83,7 +83,7 @@ const Review = () => {
                     </View>
                     <View style={styles.savingAccountcheckbox}>
                         <View>
-                            <Text style={styles.transfertext}>Rize Savings Account-i</Text>
+                            <Text style={styles.transfertext}>SSSCO Savings Account-i</Text>
                             <Text style={styles.transferNum}>700007123456789</Text>
                         </View>
                         <View style={{ alignItems: "flex-end" }}>

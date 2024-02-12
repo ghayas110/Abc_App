@@ -29,7 +29,7 @@ const ApplyFinanceScd = () => {
                     marginTop: 30
                 }}>
                     <Text style={{ ...style.Font_family_Bold, ...style.Green_color_h, fontSize: 30 }}>Great! Moving on to the next step</Text>
-                    <Text style={{ ...style.Font_family, ...style.gray_color_h, fontSize: 15 }}>Please complete the remaining 2 steps below to get your Rize Personal Financing-i</Text>
+                    <Text style={{ ...style.Font_family, ...style.gray_color_h, fontSize: 15 }}>Please complete the remaining 2 steps below to get your SSSCO Personal Financing-i</Text>
                 </View>
                 <ActivationSteps
                     verticalLineImage={require('../../../assets/Finance/lines.png')}

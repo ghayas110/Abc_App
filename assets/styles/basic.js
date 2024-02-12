@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     Green_color_f: { color: "#00a200" },
     Green_color_primary:{color:"#006400"},
     orenge_color_f: { color: "#ff5800" },
+    Light_gray_color_f: { color: "#CCCCCC" },
 
     // BORDERS ========================
     borderBot_gray:{

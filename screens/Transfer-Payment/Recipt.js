@@ -21,7 +21,7 @@ const Review = () => {
     const Flatlist = [
         {
             name: 'Transfer from',
-            value: "Rize Savings Account-i \n 700007123456789",
+            value: "SSSCO Savings Account-i \n 700007123456789",
             key: "1"
 
         },
