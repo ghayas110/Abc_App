@@ -7,24 +7,24 @@ import { useNavigation } from '@react-navigation/native';
 const PayTransfer = () => {
     const navigation = useNavigation()
     const dataOne = [
-        {
-            id: '1',
-            imageLeft: require('../../assets/transferPaymentImages/duitNow.png'),
-            text: 'Manage DuitNow ID',
-            imageRight: require('../../assets/transferPaymentImages/right.png'),
-        },
+        // {
+        //     id: '1',
+        //     imageLeft: require('../../assets/transferPaymentImages/duitNow.png'),
+        //     text: 'Manage DuitNow ID',
+        //     imageRight: require('../../assets/transferPaymentImages/right.png'),
+        // },
         {
             id: '2',
             imageLeft: require('../../assets/transferPaymentImages/duitNow.png'),
             text: 'Manage DuitNow QR',
             imageRight: require('../../assets/transferPaymentImages/right.png'),
         },
-        {
-            id: '3',
-            imageLeft: require('../../assets/transferPaymentImages/direction2.png'),
-            text: 'Manage daily limits',
-            imageRight: require('../../assets/transferPaymentImages/right.png'),
-        },
+        // {
+        //     id: '3',
+        //     imageLeft: require('../../assets/transferPaymentImages/direction2.png'),
+        //     text: 'Manage daily limits',
+        //     imageRight: require('../../assets/transferPaymentImages/right.png'),
+        // },
     ];
 
     const renderItemOne = ({ item }) => (
@@ -34,7 +34,7 @@ const PayTransfer = () => {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 alignItems: "center",
-                marginTop: 20
+                // marginTop: 20
             }}>
                 <View style={{
                     display: "flex",

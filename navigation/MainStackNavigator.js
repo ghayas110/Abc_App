@@ -49,62 +49,64 @@ const MainStackNavigator = () => {
   return (
     <NavigationContainer>
       {isLoggedIn ? (
-  <Tab.Navigator
-  tabBarOptions={{
-    activeTintColor: 'green',
-    inactiveTintColor: 'gray',
-  }}
-  screenOptions={{
-    headerShown: false,
-    showIcon: true
-  }}>
+        <Tab.Navigator
+          tabBarOptions={{
+            activeTintColor: 'green',
+            inactiveTintColor: 'gray',
+          }}
+          screenOptions={{
+            headerShown: false,
+            showIcon: true
+          }}>
 
- 
-  <Tab.Screen name="Home" options={{
-    tabBarIcon: ({ color, size,focused }) => (
-      <Image source={!focused ? require('../assets/tabicons/Home.png') : require('../assets/tabicons/HomeOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
-      
-      ),
-    }}>
- {() => (
+
+          <Tab.Screen name="Home" options={{
+            tabBarIcon: ({ color, size, focused }) => (
+              <Image source={!focused ? require('../assets/tabicons/Home.png') : require('../assets/tabicons/HomeOutlined.png')} style={{ width: 25, height: 20, objectFit: 'contain' }} />
+
+            ),
+          }}>
+            {() => (
               <MainNavigator onLogin={() => setIsLoggedIn(false)} />
             )}
-    </Tab.Screen>
+          </Tab.Screen>
 
-  <Tab.Screen name="Account" component={AccountNavigator} options={{
-    tabBarIcon: ({ color, size,focused }) => (
-      <Image source={!focused ? require('../assets/tabicons/account.png') : require('../assets/tabicons/WalletOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
-      
-      ),
-    }}/>
+          <Tab.Screen name="Account" component={AccountNavigator} options={{
+            tabBarIcon: ({ color, size, focused }) => (
+              <Image source={!focused ? require('../assets/tabicons/account.png') : require('../assets/tabicons/WalletOutlined.png')} style={{ width: 25, height: 20, objectFit: 'contain' }} />
 
-  <Tab.Screen  name="Transfer" component={TransferNavigator} options={{
-    tabBarIcon: ({ color, size,focused }) => (
-      <Image source={!focused ? require('../assets/tabicons/transfer.png') : require('../assets/tabicons/TransferOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
-      
-      ),
-    }}/>
-  <Tab.Screen name="Finance" component={FinanceNavigator} options={{
-      tabBarIcon: ({ color, size,focused }) => (
-        <Image source={!focused ? require('../assets/tabicons/finance.png') : require('../assets/tabicons/FinanceOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
-        
-        ),
-      }}/>
-    <Tab.Screen   name="More" component={MoreNavigator} options={{
-      tabBarIcon: ({ color, size,focused }) => (
-        <Image source={!focused ? require('../assets/tabicons/More.png') : require('../assets/tabicons/MoreOutline.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
-        
-        ),
-      }}/>
+            ),
+          }} />
 
-</Tab.Navigator>
-      
+          <Tab.Screen name="Transfer" component={TransferNavigator} options={{
+            tabBarIcon: ({ color, size, focused }) => (
+              <Image source={!focused ? require('../assets/tabicons/transfer.png') : require('../assets/tabicons/TransferOutlined.png')} style={{ width: 25, height: 20, objectFit: 'contain' }} />
+
+            ),
+          }} />
+          <Tab.Screen name="Finance" component={FinanceNavigator} options={{
+            tabBarIcon: ({ color, size, focused }) => (
+              <Image source={!focused ? require('../assets/tabicons/finance.png') : require('../assets/tabicons/FinanceOutlined.png')} style={{ width: 25, height: 20, objectFit: 'contain' }} />
+
+            ),
+          }} />
+          <Tab.Screen name="More" options={{
+            tabBarIcon: ({ color, size, focused }) => (
+              <Image source={!focused ? require('../assets/tabicons/More.png') : require('../assets/tabicons/MoreOutline.png')} style={{ width: 25, height: 20, objectFit: 'contain' }} />
+            ),
+          }}>
+            {() => (
+              <MoreNavigator onLogin={() => setIsLoggedIn(false)} />
+            )}
+          </Tab.Screen>
+        </Tab.Navigator>
+
       ) : (
         <AuthStack.Navigator screenOptions={{
           headerShown: false
         }}>
-         
-         
+
+
           <AuthStack.Screen name="Splash">
             {(props) => <SplashScreen />}
           </AuthStack.Screen>
@@ -128,7 +130,7 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="StartLoginStep6" component={StartLoginStep6} />
           <AuthStack.Screen name="TopUp" component={TopUp} />
           <AuthStack.Screen name="TopUpFaq" component={TopUpFaq} />
-            <AuthStack.Screen name="Mailing" component={MailingAddress} />
+          <AuthStack.Screen name="Mailing" component={MailingAddress} />
 
 
           <AuthStack.Screen name="UpdateTermAndCondition">

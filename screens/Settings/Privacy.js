@@ -39,7 +39,7 @@ const Privacy = () => {
         },
     ];
     const renderItemOne = ({ item }) => (
-        <TouchableOpacity onPress={() => navigation.navigate('ComingSoon')}>
+        <TouchableOpacity onPress={() => handleItemClick(item.text)}>
             <View style={{
                 flex: 1,
                 flexDirection: "row",
@@ -59,6 +59,19 @@ const Privacy = () => {
             </View>
         </TouchableOpacity>
     );
+    const handleItemClick = (text) => {
+        if (text == "Change app passcode") {
+            navigation.navigate('ExistingPassCode')
+        } else if (text == "Log in authentication preference") {
+            navigation.navigate('LoginPreference')
+        }else if (text == "Change secure word") {
+            navigation.navigate('NewSecureWord')
+        }else if (text == "Manage mobile device") {
+            navigation.navigate('DeRegister')
+        }else if (text == "Change password") {
+            navigation.navigate('NewPassword')
+        }
+    }
     return (
         <>
             <SafeAreaView style={{
