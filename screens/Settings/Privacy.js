@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Image, SafeAreaView, Text, TouchableOpacity, View, FlatList, ScrollView } from 'react-native'
 import style from '../../assets/styles/basic';
 import Header from './components/Header';
+import { useNavigation } from '@react-navigation/native';
 
 const Privacy = () => {
+    const navigation = useNavigation()
     const dataOne = [
         {
             id: '1',
@@ -37,7 +39,7 @@ const Privacy = () => {
         },
     ];
     const renderItemOne = ({ item }) => (
-        <TouchableOpacity onPress={() => handleItemClick(item?.text)}>
+        <TouchableOpacity onPress={() => handleItemClick(item.text)}>
             <View style={{
                 flex: 1,
                 flexDirection: "row",
@@ -57,6 +59,19 @@ const Privacy = () => {
             </View>
         </TouchableOpacity>
     );
+    const handleItemClick = (text) => {
+        if (text == "Change app passcode") {
+            navigation.navigate('ExistingPassCode')
+        } else if (text == "Log in authentication preference") {
+            navigation.navigate('LoginPreference')
+        }else if (text == "Change secure word") {
+            navigation.navigate('NewSecureWord')
+        }else if (text == "Manage mobile device") {
+            navigation.navigate('DeRegister')
+        }else if (text == "Change password") {
+            navigation.navigate('NewPassword')
+        }
+    }
     return (
         <>
             <SafeAreaView style={{

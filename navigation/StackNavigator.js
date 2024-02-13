@@ -74,6 +74,15 @@ import EditMaritalStatus from "../screens/Settings/EditMaritalStatus";
 import EmpDetails from "../screens/Settings/EmpDetails";
 import ComingSoon from "../screens/Coming-Soon/ComingSoon";
 import CardManage from "../screens/card/CardManage";
+import ExistingPassCode from "../screens/PassCode/ExistingPassCode";
+import NewPassCode from "../screens/PassCode/NewPassCode";
+import ReEnterPassCode from "../screens/PassCode/ReEnterPassCode";
+import OneTimePwd from "../screens/PassCode/OneTimePwd";
+import SuccessPassCode from "../screens/PassCode/SuccessPassCode";
+import LoginPreference from "../screens/Authentication-Preference/LoginPreference";
+import NewSecureWord from "../screens/Secure-Word/NewSecureWord";
+import DeRegister from "../screens/Mobile-device/DeRegister";
+import NewPassword from "../screens/PassCode/NewPassword";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -113,7 +122,6 @@ const MainNavigator = ({onLogin}) => {
       <Stack.Screen name="SendAmount" component={SendAmount} screenOptions={{ headerShown: false }} />
       <Stack.Screen name='SpendLimit' component={SpendLimit} />
       <Stack.Screen name='CardPreferences' component={CardPreferences} />
-      <Stack.Screen name='SettingServices' component={SettingServices} />
       <Stack.Screen name='ManageDuitNowQR' component={ManageDuitNowQR} />
       <Stack.Screen name="SavingPots" component={SavingPots} />
       <Stack.Screen name="PickCategoryCard" component={PickCategoryCard} />
@@ -133,7 +141,7 @@ const MainNavigator = ({onLogin}) => {
   );
 };
 
-const MoreNavigator = () => {
+const MoreNavigator = ({onLogin}) => {
   return (
     <Stack.Navigator screenOptions={{
       headerShown: false
@@ -158,6 +166,17 @@ const MoreNavigator = () => {
       <Stack.Screen name='PayTransfer' component={PayTransfer} />
       <Stack.Screen name='CardMangement' component={CardMangementOne} />
       <Stack.Screen name='ChangePin' component={ChangePin} />
+      <Stack.Screen name='ExistingPassCode' component={ExistingPassCode} />
+      <Stack.Screen name='NewPassCode' component={NewPassCode} />
+      <Stack.Screen name='ReEnterPassCode' component={ReEnterPassCode} />
+      <Stack.Screen name='OneTimePwd' component={OneTimePwd} />
+      <Stack.Screen name='SuccessPassCode' component={SuccessPassCode} />
+      <Stack.Screen name='LoginPreference' component={LoginPreference} />
+      <Stack.Screen name='NewSecureWord' component={NewSecureWord} />
+      <Stack.Screen name="DeRegister" screenOptions={{ headerShown: false }}  >
+      {() => <DeRegister onLogin={onLogin} />}
+      </Stack.Screen>
+      <Stack.Screen name='NewPassword' component={NewPassword} />
       <Stack.Screen name='ComingSoon' component={ComingSoon} />
     </Stack.Navigator>
   );

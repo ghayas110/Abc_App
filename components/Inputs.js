@@ -46,7 +46,7 @@ const SimpleInput = ({
     )
 }
 
-const OtpInput = () => {
+const OtpInput = ({inputStyle}) => {
     return (
         <>
             <View style={{
@@ -56,7 +56,8 @@ const OtpInput = () => {
                 marginTop: 10,
                 display: "flex",
                 flexDirection: "row",
-                justifyContent: 'space-around'
+                justifyContent: 'space-around',
+                ...inputStyle
             }}>
                 <TextInput
                     style={{ ...styles.otpInput, fontFamily: "Poppins-Regular" }}
@@ -355,8 +356,6 @@ const FilePicker = ({text,fileStyleView,fileStyle,icon,textStyle}) => {
         </>
     );
 };
-
-
 
 
 
