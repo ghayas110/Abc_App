@@ -29,6 +29,9 @@ const Transfer = () => {
     const MobileNumber = () => {
         navigation.navigate('TransferTO', { data2: isMobile })
     }
+    const CnicNumber = () => {
+        navigation.navigate('TransferTO', { data3: isMobile })
+    }
 
     const gotoComingSoon = () => {
         navigation.navigate('ComingSoon')
@@ -41,10 +44,10 @@ const Transfer = () => {
         },
         { name: 'Mobile Number', Icon: <Icons.AntDesign name="contacts" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" onPress={MobileNumber} style={styles.icon2}  /> },
         {
-        name: 'CNIC', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
-        { name: 'MyPolis/MyTentera', Icon: <Icons.MaterialIcons name="local-police" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2}  onPress={gotoComingSoon}/> },
-        { name: 'Business Registration Number', Icon: <Icons.MaterialIcons name="business-center" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
-        { name: 'Passport Number', Icon: <Icons.MaterialCommunityIcons name="passport" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
+            name: 'CNIC', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={CnicNumber} /> },
+        // { name: 'MyPolis/MyTentera', Icon: <Icons.MaterialIcons name="local-police" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2}  onPress={gotoComingSoon}/> },
+        // { name: 'Business Registration Number', Icon: <Icons.MaterialIcons name="business-center" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
+        // { name: 'Passport Number', Icon: <Icons.MaterialCommunityIcons name="passport" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
         // Add more items as needed
     ];
     const data = [
@@ -79,7 +82,7 @@ const Transfer = () => {
                     <Text>{item.Icon}</Text>
                     <Text style={styles.name}>{item.name}</Text>
                 </View>
-                <Text >{item.Icon2}</Text>
+                <Text style={{  width:20, height:20 , borderRadius:50 , justifyContent:"center" , alignItems:"center"}}>{item.Icon2}</Text>
             </View>
         </View>
     );

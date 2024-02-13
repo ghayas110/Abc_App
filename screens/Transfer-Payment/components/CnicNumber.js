@@ -15,7 +15,7 @@ import Modal from 'react-native-modal';
 
 
 
-const MobileNumber = () => {
+const CnicNumber = () => {
     const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
 
 
@@ -42,13 +42,13 @@ const MobileNumber = () => {
     const Flatlist = [
         {
             name: 'DuitNow ID',
-            text: "Mobile Number",
+            text: "Cnic Number",
             Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={ForWordnavigation} />
         },
         {
-            name: 'Mobile Number',
-            text: "Select account type",
-            Icon2: <Icons.AntDesign name="contacts" style={styles.icon2} onPress={toggleBottomSheet} />
+            name: 'Cnic Number',
+            text: "42201-6548862-8",
+            // Icon2: <Icons.AntDesign name="contacts" style={styles.icon2} onPress={toggleBottomSheet} />
         },
 
     ];
@@ -74,7 +74,7 @@ const MobileNumber = () => {
 
 
 
-    
+
 
     return (
         <>
@@ -100,22 +100,23 @@ const MobileNumber = () => {
                 </View>
                 <Modal
                     isVisible={isBottomSheetVisible}
-                    style={{ margin: 0  , marginTop:50 }}
+                    style={{ margin: 0, marginTop: 50 }}
                     onBackdropPress={toggleBottomSheet}>
-                    <View style={{flex:1}}>
-                        <View style={{ backgroundColor: 'white',
-                                padding: 16,
-                                // height: 100,
-                                borderTopRightRadius: 30,
-                                borderTopLeftRadius: 30,
-                            }}>
+                    <View style={{ flex: 1 }}>
+                        <View style={{
+                            backgroundColor: 'white',
+                            padding: 16,
+                            // height: 100,
+                            borderTopRightRadius: 30,
+                            borderTopLeftRadius: 30,
+                        }}>
                             <View>
-                                <Text style={{fontSize: 28, fontWeight: '700', ...Theme.Green_color_f, ...Theme.Font_family, textAlign:"center" }}> Contacts  </Text>
+                                <Text style={{ fontSize: 28, fontWeight: '700', ...Theme.Green_color_f, ...Theme.Font_family, textAlign: "center" }}> Contacts  </Text>
                             </View>
                             <View style={styles.Search}>
                                 <Icons.AntDesign name="search1" style={styles.SearchIcon} />
                                 <TextInput style={styles.input} placeholder="Search..." />
-                           </View>
+                            </View>
                             <View >
                                 <ContactList />
                             </View>
@@ -130,7 +131,7 @@ const MobileNumber = () => {
     )
 }
 
-export default MobileNumber
+export default CnicNumber
 
 const styles = StyleSheet.create({
     container: {
@@ -190,16 +191,16 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         paddingHorizontal: 10,
     },
-    Search:{
-        flexDirection:"row",
-        alignItems:"center",
-        paddingHorizontal:10,
+    Search: {
+        flexDirection: "row",
+        alignItems: "center",
+        paddingHorizontal: 10,
         ...Theme.bg_light_gray,
-        borderRadius:16,
+        borderRadius: 16,
 
     },
-    SearchIcon:{
-        fontSize: 20,   
+    SearchIcon: {
+        fontSize: 20,
     }
 
 
