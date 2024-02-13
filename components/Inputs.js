@@ -7,7 +7,8 @@ import Icons from './Icons';
 import DocumentPicker from 'react-native-document-picker';
 
 const { width, height } = Dimensions.get('window');
-const SimpleInput = ({
+const 
+SimpleInput = ({
     placeholderTextColor,
     inputstyle,
     label,
@@ -43,6 +44,7 @@ const SimpleInput = ({
                     placeholderTextColor={"grey"}
                     onChangeText={onChangeText}
                 />
+                
             </View>
         </>
     )
