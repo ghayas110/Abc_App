@@ -65,8 +65,8 @@ const EligibleScreen = ({onPress}) => {
             <Text style={styles.text4}>{'\u2022'} I’m 18 years old and above </Text>
           </View>
           <View style={styles.acordion1}>
-            <Text style={styles.text4}>{'\u2022'} I have an existing online banking account {`\n`}  {''}with another bank in UAE{' '}
-            </Text>
+              <Text>{'\u2022'}</Text> 
+               <Text style={styles.text4}> I have an existing online banking account with another bank in UAE</Text>
           </View>
           <View style={styles.acordion3}></View>
           <View style={{flexDirection: 'row', paddingRight: 10}}>
@@ -99,22 +99,24 @@ const EligibleScreen = ({onPress}) => {
               onPress={() => setCheckeddd(!checkeddd)}
             />
             <Text style={styles.text4}>
-              I don't pay income tax in any other country besides UAE
+              I don't pay income tax in any{`\n`}other country besides UAE
             </Text>
           </View>
           <View
             style={{
               width: '100%',
               backgroundColor: '#DCF2FC',
-              padding: 20,
+              padding: 16,
               marginTop: 20,
+              borderRadius:3,
             }}>
             <Text
               style={{
                 fontSize: 14,
-
                 color: '#006400',
                 fontFamily: 'Poppins-Regular',
+                lineHeight:21,
+                
               }}>
               <Text style={{fontWeight: 'bold'}}>Note:</Text> You are a US
               person if you are either a US citizen, a US resident or a Green
@@ -223,13 +225,13 @@ const styles = StyleSheet.create({
   },
   acordion1: {
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    // justifyContent: 'space-between',
     flexDirection: 'row',
     borderBottomWidth: 1,
     width: width * 0.8,
-    height: 50,
-    borderBottomColor: 'whitesmoke',
+    height: height * 0.1,
+    borderBottomColor: '#CCCCCC',
   },
   container: {
     flex: 1,
@@ -251,11 +253,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Regular',
   },
   text4: {
-    fontSize: 15,
+    fontSize: 16,
     color: '#333333',
     fontFamily: 'Poppins-Regular',
     marginTop: 10,
-    lineHeight: 18,
+    // lineHeight: 24,
   },
   bottomView: {
     width: '100%',

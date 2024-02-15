@@ -61,6 +61,7 @@ const StartLoginStep4 = ({disabled}) => {
               fontWeight: '700',
               ...ThemeSty.Green_color_f,
               ...ThemeSty.Font_family,
+              lineHeight:33.6
             }}>
             Switching devices? Please confirm
           </Text>
@@ -85,9 +86,11 @@ const StartLoginStep4 = ({disabled}) => {
         }}>
         <View
           style={{
-            padding: 20,
+            padding: 16,
             ...ThemeSty.bg_light_green_color,
-            borderRadius: 10,
+            borderRadius: 3,
+            gap:8,
+
           }}>
           <Text
             style={{
@@ -95,6 +98,8 @@ const StartLoginStep4 = ({disabled}) => {
               fontSize: 14,
               ...ThemeSty.Font_family,
               fontWeight: '500',
+              lineHeight:21,
+              fontWeight:500
             }}>
             You may only link your Smart Digital Bank account to one device at any given
             time. Tap ‘Confirm’ to de-register your previous device.

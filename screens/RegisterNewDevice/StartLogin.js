@@ -118,9 +118,9 @@ const HandleUserName = () =>{
                         </View>
                     </View>
                 </Modal>
-            </View>
-            <View style={{ alignItems: "center", backgroundColor:"#FFFFFF" , flex:1 , justifyContent:"flex-end" , padding:16 }}>
+            <View style={{ alignItems: "center", backgroundColor:"#FFFFFF" , flex:1 , justifyContent:"flex-end" , }}>
                 <RequestButton text='Next' buttonsty={isUserName == '' ? { ...ThemeSty.bg_gray_color } : { ...ThemeSty.bg_green_color }} onPress={HandleUserName} />
+            </View>
             </View>
         </>
 

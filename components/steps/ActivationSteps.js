@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, StyleSheet, Text, View, Dimensions, TouchableOpacity } from 'react-native'
+import { Image, StyleSheet, Text, View, sions, TouchableOpacity } from 'react-native'
 import style from "../../assets/styles/basic"
 
 const ActivationSteps = ({

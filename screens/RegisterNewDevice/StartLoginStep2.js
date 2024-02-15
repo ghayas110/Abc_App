@@ -64,8 +64,8 @@ const StartLoginStep2 = ({ disabled }) => {
 
             </View>
             <View style={{ padding: 16, backgroundColor: "#FFFFFF", flex: 1, justifyContent: "flex-end" }}>
-                <View style={{ padding: 20, ...ThemeSty.bg_light_green_color, borderRadius:10 }}>
-                    <Text style={{ ...ThemeSty.Green_color_primary, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>If your secure word is correct, tap ‘Confirm’.</Text>
+                <View style={{ padding: 16, ...ThemeSty.bg_light_green_color, borderRadius:3 }}>
+                    <Text style={{ ...ThemeSty.Green_color_primary, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500',lineHeight:21, fontWeight:500 }}>If your secure word is correct, tap ‘Confirm’.</Text>
                 </View>
                 <View style={{ alignItems: "center", backgroundColor: "#FFFFFF" , marginTop: 10,
                  }}>

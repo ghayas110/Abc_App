@@ -8,6 +8,7 @@ import { RequestButton } from '../../components/Buttons';
 import { loginSuccess } from '../../redux/reducers/authReducer';
 import style from '../../assets/styles/basic';
 import { useNavigation } from '@react-navigation/native';
+import Icons from '../../components/Icons';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
@@ -55,6 +56,7 @@ const StartLoginStep5 = ({ onPress, route }) => {
       Alert.alert('An error occurred while processing your request.');
     }
   };
+ 
   
   return (
     <KeyboardAvoidingView
@@ -67,7 +69,19 @@ const StartLoginStep5 = ({ onPress, route }) => {
         flex:1,
       }}
     >
-
+<View style={styles.Progress}>
+          <View style={styles.BackArrow}>
+            <Icons.MaterialIcons
+              name="arrow-back-ios-new"
+              style={styles.BackArrowIcon}
+              onPress={() =>{navigation.goBack()}}
+            />
+          </View>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            {/* <Image source={Logo} style={styles.Image} /> */}
+          </View>
+          <View></View>
+        </View>
       {/* INPUT BOX ============================= */}
       <View style={{
         ...style.basic_container,
@@ -169,7 +183,20 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
   },
+  Progress: {
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flexDirection: 'row',
+    margin:25,
+   
+  },
+  BackArrowIcon: {
+    color: '#00A200',
+    fontSize: 16,
+   
+  },
 });
+
 
 export default StartLoginStep5;
 
