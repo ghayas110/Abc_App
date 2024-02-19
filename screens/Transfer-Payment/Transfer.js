@@ -6,8 +6,8 @@ import Modal from 'react-native-modal';
 import Header from './components/Header';
 import { useNavigation } from '@react-navigation/native'
 import { FilterButton, RequestButton } from '../../components/Buttons';
-import DuetImg from '../../assets/transferPaymentImages/DuetIcons.png'
-import QrDuetImg from '../../assets/transferPaymentImages/qrduetIcon.png'
+import DuetImg from '../../assets/HomeScreenImages/FundTranfer.png'
+import QrDuetImg from '../../assets/HomeScreenImages/UniversalQR.png'
 import Icons from '../../components/Icons';
 import { CheckBoxInput } from '../../components/Inputs';
 import { Icon } from 'react-native-paper/lib/typescript/components/Avatar/Avatar';
@@ -62,7 +62,7 @@ const Transfer = () => {
             name: 'SSSCO QR',
             Image: <Image source={QrDuetImg} style={styles.inmages} />,
             key: "1",
-            Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={() => navigation.navigate('Home', { screen: 'AllowQR' })} style={styles.IConfor} />
+            Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={() => navigation.navigate('Home', { screen: 'ScanQR' })} style={styles.IConfor} />
 
         },
         // {
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
         margin: 0,
         borderBottomWidth: 0.5,
         ...Theme.ligth_gray_border_Color,
-        padding: 10,
+        padding: 5,
     },
     headerCell: {
         flex: 1,
@@ -199,8 +199,9 @@ const styles = StyleSheet.create({
     },
     inmages: {
         resizeMode: 'contain',
-
-
+        width:11,
+        height:11,
+        
     },
     flatlistrow: {
         flex: 1,
