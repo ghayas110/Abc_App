@@ -55,7 +55,7 @@ const CardPreferences = () => {
                                         <Image style={{ marginRight: 10 }} source={require("../../assets/cardImages/wifi.png")} />
                                         <Text style={{ ...style.Font_family_Bold, ...style.black_color_h }}>Enable internet payments</Text>
                                     </View>
-                                    <Switch trackColor={{ false: '#cccccc', true: '#00a200' }} thumbColor={isEnabledOne ? '#00a200' : '#cccccc'} onValueChange={toggleSwitchOne} value={isEnabledOne} />
+                                    <Switch trackColor={{ false: '#cccccc', true: '#00a200' }} thumbColor={isEnabledOne ? '#00a200' : '#FAF9F6'} onValueChange={toggleSwitchOne} value={isEnabledOne} />
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity>
@@ -74,7 +74,7 @@ const CardPreferences = () => {
                                         <Image style={{ marginRight: 10 }} source={require("../../assets/cardImages/airo.png")} />
                                         <Text style={{ ...style.Font_family_Bold, ...style.black_color_h }}>Enable international payments</Text>
                                     </View>
-                                    <Switch trackColor={{ false: '#cccccc', true: '#00a200' }} thumbColor={isEnabledTwo ? '#00a200' : '#cccccc'} onValueChange={toggleSwitchTwo} value={isEnabledTwo} />
+                                    <Switch trackColor={{ false: '#cccccc', true: '#00a200' }} thumbColor={isEnabledTwo ? '#00a200' : '#FAF9F6'} onValueChange={toggleSwitchTwo} value={isEnabledTwo} />
                                 </View>
                             </TouchableOpacity>
                         </View>
@@ -82,7 +82,8 @@ const CardPreferences = () => {
                 </ScrollView>
                 <View style={{
                     flex: 1,
-                    justifyContent: "flex-end"
+                    justifyContent: "flex-end",
+                    marginBottom:10
                 }}>
                     <RequestButton btnStyle={{
                         width: "auto"

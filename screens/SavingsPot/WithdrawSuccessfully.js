@@ -5,6 +5,7 @@ import SuccessImage from "../../assets/SavingPotsImages/FundSuccessfycreate.png"
 import { useNavigation } from '@react-navigation/native';
 import Theme from '../../assets/styles/basic'
 import { RequestButton, OutlineButton } from '../../components/Buttons';
+import LottieView from 'lottie-react-native';
 
 const WithdrawSuccessfully = () => {
     const navigation = useNavigation()
@@ -23,7 +24,7 @@ const WithdrawSuccessfully = () => {
                 />
             </View>
             <View style={styles.Image}>
-                <Image source={SuccessImage} />
+            <LottieView source={require('../../assets/lotiefiles/transfer_success_animation.json')} autoPlay style={{width:"100%",height:300}} />
             </View>
             <View style={styles.Heading}>
                 <Text style={styles.HeadingText}>Your transaction is successful!</Text>

@@ -50,7 +50,7 @@ const MainSignUp = () => {
                         padding: 0,
                         fontFamily: "Poppins-Regular",
                         ...style.gray_color_h
-                    }}>This won’t take long. Please have your CNIC ready</Text>
+                    }}>This won’t take long. Please have your Emirates ID ready</Text>
                     <ActivationSteps2
                     verticalLineImage={require('../../assets/SignUp/line.png')}
                     image_a={require('../../assets/SignUp/paper.png')}

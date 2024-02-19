@@ -50,7 +50,7 @@ const StartLoginStep6 = ({disabled}) => {
               lineHeight: 33.6,
               height:windowHeight*0.22,
               width:windowWidth*0.8            }}>
-            Congratulations! Your Smart Digital Bank account is now registered on this device
+            Congratulations! Your Digital Bank account is now registered on this device
           </Text>
         </View>
       </View>

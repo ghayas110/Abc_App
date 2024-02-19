@@ -78,7 +78,7 @@ const HowSearch = () => {
             
             <View style={{...styles.Notify , ...ThemeSty.bg_light_green_color}}>
                 <Text style={{ fontSize: 13, fontWeight: "500", ...ThemeSty.Green_color_primary, ...ThemeSty.Font_family,lineHeight:21 }}>
-                Normal communications(non-marketing related) will be email by default. By tapping “Confirm”, I agree that Smart Digital Bank may process my personal data to promote the Bank’s products and services.
+                Normal communications(non-marketing related) will be email by default. By tapping “Confirm”, I agree that Digital Bank may process my personal data to promote the Bank’s products and services.
                 </Text>
             </View>
             <View >

@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import { SimpleInput } from '../components/Inputs'
 import { RequestButton, OutlineButton } from '../components/Buttons'
 import CardInage from '../assets/HomeScreenImages/bankCard.png'
-import HomeDuet from '../assets/HomeScreenImages/duit-now-01.png'
+import HomeDuet from '../assets/HomeScreenImages/FundTranfer.png'
 import DuetQr from '../assets/HomeScreenImages/DuitNowQR1.png'
 import Transfer from '../assets/HomeScreenImages/Icons.png'
 import Statement from '../assets/HomeScreenImages/Icons1.png'
@@ -155,7 +155,7 @@ const HomeScreen = ({ onLogin }) => {
               <View style={styles.boxes}>
                 <Image source={HomeDuet} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>{`Ssssco\nTransfer`}</Text>
+              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>{`Payment\nTransfer`}</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={{ width: 80, paddingVertical: 10 }} onPress={() => navigation.navigate('AllowQR')}>
@@ -432,9 +432,10 @@ const styles = StyleSheet.create({
     ...Theme.Green_color_f,
   },
   boxes: {
+
     borderWidth: 1,
     ...Theme.ligth_gray_border_Color,
-    padding: 25,
+    padding: 10,
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -447,8 +448,8 @@ const styles = StyleSheet.create({
   },
   boxImage: {
     resizeMode: 'contain',
-    width: 20,
-    height: 20,
+    width: 50,
+    height: 50,
   },
   tableContainer: {
     padding: 10,

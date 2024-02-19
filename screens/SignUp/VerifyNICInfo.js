@@ -37,7 +37,7 @@ const VerifyNICInfo = ({onPress}) => {
 </View>
 <View style={styles.cardView}>
 <Image source={require('../../assets/SignUp/nic1.png')}/>
-<Text style={styles.text2}>Scan the front and back of your NIC</Text>
+<Text style={styles.text2}>Scan the front and back of your Emirates ID</Text>
 </View>
 </View>
 <View style={styles.container2}>

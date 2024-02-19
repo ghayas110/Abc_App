@@ -52,7 +52,7 @@ const StartLoginStep2 = ({ disabled }) => {
                 </View>
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Text style={{ ...ThemeSty.black_color_f, fontSize: 24, ...ThemeSty.Font_family, fontWeight: '700' }}>Hi</Text>
-                    <Text style={{ ...ThemeSty.Green_color_f, fontSize: 24, ...ThemeSty.Font_family, fontWeight: '700', marginLeft: 5 }}>Abdur Rehman,</Text>
+                    <Text style={{ ...ThemeSty.Green_color_f, fontSize: 24, ...ThemeSty.Font_family, fontWeight: '700', marginLeft: 5 }}>Razak,</Text>
                 </View>
 
                 <View style={{ marginTop: 5 }}>

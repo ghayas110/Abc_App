@@ -38,7 +38,7 @@ const AlloeNIC = ({ onPress }) => {
      <View style={{padding:20,marginTop:25}}>
 
       <View>
-        <Text style={{ fontSize: 24, fontWeight: '700', color: 'green', }}>Scan your CNIC</Text>
+        <Text style={{ fontSize: 24, fontWeight: '700', color: 'green', }}>Scan your Emirates ID</Text>
         <View style={styles.acordion}>
           <Text style={styles.text2}>{'\u2022'} Remove the IC cover, if you have one </Text>
         </View>
@@ -48,7 +48,7 @@ const AlloeNIC = ({ onPress }) => {
         </View>
 
         <View style={styles.acordion}> 
-          <Text style={styles.text2}>{'\u2022'} Align your CNIC until all 4 black/white lines appear </Text>
+          <Text style={styles.text2}>{'\u2022'} Align your Emirates ID until all 4 black/white lines appear </Text>
         </View>
       </View>
 

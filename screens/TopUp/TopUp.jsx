@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, ScrollView,Dimensions } from 'react-nati
 import BackBtn from '../../assets/TopUp/TopUpBack.png'
 import TopUpCopy from '../../assets/TopUp/TopUpCopy.png'
 import Description1 from '../../assets/TopUp/TopUpProfile.png'
-import Description2 from '../../assets/TopUp/TopUpDuitNow.png'
+import FundTranfer from '../../assets/TopUp/FundTranfer.png'
 import Description3 from '../../assets/TopUp/TopUpDoller.png'
 import { useNavigation } from "@react-navigation/native";
 const windowWidth = Dimensions.get('window').width;
@@ -132,8 +132,8 @@ const TopUp = () => {
 
 
           <View style={styles.DescriptionBox}>
-            <Image style={styles.DescriptionImage} source={Description2}></Image>
-            <Text style={styles.TextAreaPara2}>Send via DuitNow to your Smart Star account. Select Smart Star BANKING & INVESTMENT CORP (M) BERHAD as recipient bank</Text>
+            <Image style={{width:30, height:40, position:'relative' , right:8}} source={FundTranfer}></Image>
+            <Text style={styles.TextAreaPara2}>Send via Fund-transfer to your Smart Star account. Select Digital BANKING & INVESTMENT CORP (M) BERHAD as recipient bank</Text>
           </View>
 
 

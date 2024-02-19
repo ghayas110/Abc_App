@@ -76,7 +76,7 @@ const EligibleScreen = ({onPress}) => {
               onPress={() => setChecked(!checked)}
             />
             <Text style={styles.text4}>
-              I’m a UAE citizen with a CNIC,{`\n`}living in UAE
+              I’m a UAE citizen with a Emirates ID,{`\n`}living in UAE
             </Text>
           </View>
           <View style={{display: 'flex', flexDirection: 'row'}}>

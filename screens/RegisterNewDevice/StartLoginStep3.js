@@ -73,7 +73,7 @@ const StartLoginStep3 = ({disabled}) => {
               fontWeight: '700',
               marginLeft: 5,
             }}>
-            Abdur Rehman,
+            Razak,
           </Text>
         </View>
 
