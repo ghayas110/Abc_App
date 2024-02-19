@@ -6,9 +6,9 @@ import { SimpleInput } from '../components/Inputs'
 import { RequestButton, OutlineButton } from '../components/Buttons'
 import CardInage from '../assets/HomeScreenImages/bankCard.png'
 import HomeDuet from '../assets/HomeScreenImages/FundTranfer.png'
-import DuetQr from '../assets/HomeScreenImages/DuitNowQR1.png'
-import Transfer from '../assets/HomeScreenImages/Icons.png'
-import Statement from '../assets/HomeScreenImages/Icons1.png'
+import DuetQr from '../assets/HomeScreenImages/UniversalQR.png'
+import Transfer from '../assets/HomeScreenImages/account_statement.png'
+import Statement from '../assets/HomeScreenImages/transaction_History.png'
 import Image1 from '../assets/accountCenterImage/createSavingPot1.png'
 import Image2 from '../assets/accountCenterImage/createSavingPot2.png'
 import Image3 from '../assets/accountCenterImage/createSavingPot3.png'
@@ -18,11 +18,14 @@ import Modal from 'react-native-modal';
 import Visa from '../assets/HomeScreenImages/download-removebg-preview.png'
 import Header from '../components/header/header'
 import Theme from '../assets/styles/basic'
-import ThemeSty from '../assets/styles/basic'
+import ThemeSty from '../assets/styles/basic';
+import Chart from './Chart/Chart'
+import ChartInsight from './Chart/ChartInsight'
 const HomeScreen = ({ onLogin }) => {
   const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
   const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false);
   const [isCardNumber, setCardNumber] = useState(false);
+  const [isAccount, setAccount] = useState("Accounts");
 
   const HandleShow = () => {
     setCardNumber(!isCardNumber)
@@ -41,6 +44,8 @@ const HomeScreen = ({ onLogin }) => {
     navigation.navigate('SavingPots');
   };
 
+
+
   const [progress, setProgress] = useState(5)
   useEffect(() => {
     // Simulating progress increase over time
@@ -56,16 +61,18 @@ const HomeScreen = ({ onLogin }) => {
   }, []);
 
 
-
+  const ForWordnavigation = () => {
+    navigation.navigate('TransferTo', { data: isAccount })
+  }
 
 
   return (
     <>
       <ScrollView style={styles.container}>
         <View style={styles.Progress}>
-          <Header onPress={toggleBottomSheet}/>
+          <Header onPress={toggleBottomSheet} />
         </View>
-        <View 
+        <View
           style={{
             // padding: 5,
             // marginTop: 10,
@@ -97,74 +104,74 @@ const HomeScreen = ({ onLogin }) => {
           AED 10,000.00
         </Text>
         {/* <TouchableOpacity > */}
-          <View style={{ padding: 5, marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-            {/* <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} /> */}
-            <View style={styles.savingCardAccont}>
-              <View style={styles.savingCardheaderHome}>
-                <View style={styles.DebitCard}>
-                  
-                <Icons.Entypo name="wallet" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={() => navigation.navigate('CardMangements')} />
+        <View style={{ padding: 5, marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+          {/* <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} /> */}
+          <View style={styles.savingCardAccont}>
+            <View style={styles.savingCardheaderHome}>
+              <View style={styles.DebitCard}>
+
+                <Icons.Entypo name="wallet" style={{ margin: 5, fontSize: 20, ...Theme.White_color_h }} onPress={() => navigation.navigate('CardMangements')} />
                 {isCardNumber ?
-                <Icons.MaterialCommunityIcons name="eye-off-outline" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={HandleShow} />
-                :
-                <Icons.MaterialCommunityIcons name="eye-outline" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={HandleShow} />
+                  <Icons.MaterialCommunityIcons name="eye-off-outline" style={{ margin: 5, fontSize: 20, ...Theme.White_color_h }} onPress={HandleShow} />
+                  :
+                  <Icons.MaterialCommunityIcons name="eye-outline" style={{ margin: 5, fontSize: 20, ...Theme.White_color_h }} onPress={HandleShow} />
                 }
+              </View>
+              <View style={styles.HolderName}>
+                <Text style={styles.holdertext}>Card Holder Name</Text>
+                <Text style={styles.holderName}>ABDUR REHMAN</Text>
+              </View>
+              <View style={styles.HolderName}>
+                <Text style={styles.holdertext}>Card Number</Text>
+                {isCardNumber ?
+                  <Text style={styles.holderName}>1234 5678 9101 3282</Text>
+                  :
+                  <Text style={styles.holderName}>.... .... .... 3282</Text>
+                }
+              </View>
+              <View style={{ padding: 10, flexDirection: "row", alignItems: "center" }}>
+                <View>
+                  <Text style={styles.holdertextCCV}>Expire</Text>
+                  <Text style={styles.holderNameCVV}>12/26</Text>
                 </View>
-                <View style={styles.HolderName}>
-                  <Text style={styles.holdertext}>Card Holder Name</Text>
-                  <Text style={styles.holderName}>Razak Bin Osman</Text>
-                </View>
-                <View style={styles.HolderName}>
-                  <Text style={styles.holdertext}>Card Number</Text>
-                  {isCardNumber ?
-                    <Text style={styles.holderName}>1234 5678 9101 3282</Text>
-                    :
-                    <Text style={styles.holderName}>.... .... .... 3282</Text>
-                  }
-                </View>
-                <View style={{ padding: 10, flexDirection: "row", alignItems: "center" }}>
-                  <View>
-                    <Text style={styles.holdertextCCV}>Expire</Text>
-                    <Text style={styles.holderNameCVV}>12/26</Text>
-                  </View>
-                  <View>
-                    <Text style={{ ...styles.holdertextCCV, marginLeft: 30 }}>CCV</Text>
-                    {
-                      isCardNumber
+                <View>
+                  <Text style={{ ...styles.holdertextCCV, marginLeft: 30 }}>CCV</Text>
+                  {
+                    isCardNumber
                       ?
                       <Text style={{ ...styles.holderNameCVV, marginLeft: 30 }}>889</Text>
                       :
                       <Text style={{ ...styles.holderNameCVV, marginLeft: 30 }}>...</Text>
-                    }
-                    
-                  </View>
-                </View>
-                <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-                  <Image source={Visa} style={{ resizeMode: "contain", width: 60, height: 60 }} />
-                </View>
+                  }
 
-
+                </View>
               </View>
+              <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
+                <Image source={Visa} style={{ resizeMode: "contain", width: 60, height: 60 }} />
+              </View>
+
+
             </View>
           </View>
+        </View>
 
 
-        <View style={{ flexDirection: "row", alignItems: "center" , justifyContent:"center" }}>
-          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }}  onPress={() => navigation.navigate('Transfer', { screen: 'Transfer' })}>
+        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }} onPress={ForWordnavigation}>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={HomeDuet} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>{`Payment\nTransfer`}</Text>
+              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>{`Fund\nTransfer`}</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }} onPress={() => navigation.navigate('AllowQR')}>
+          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }} onPress={() => navigation.navigate('QRScan')}>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={DuetQr} style={styles.boxImage} />
               </View>
               <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>
-                {`Ssssco\nQR`}
+                {`Universal\nQR`}
               </Text>
             </View>
           </TouchableOpacity>
@@ -205,7 +212,7 @@ const HomeScreen = ({ onLogin }) => {
 
         </View>
 
-        <View style={{ padding: 5, marginBottom:15, flexDirection: "row", alignItems: "center", justifyContent:"center" }}>
+        <View style={{ padding: 5, marginBottom: 15, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
           {/* <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} /> */}
           <View style={styles.savingCard}>
             <View style={styles.savingCardheader}>
@@ -239,7 +246,7 @@ const HomeScreen = ({ onLogin }) => {
                   <Text style={styles.savingPercent}>80% completed</Text>
                 </View>
               </View>
-            
+
               <View style={styles.savingpotcard}>
                 <View style={styles.ImageContainer}>
                   <Image source={Image4} style={styles.savingCardImage} />
@@ -262,56 +269,83 @@ const HomeScreen = ({ onLogin }) => {
             </View>
           </View>
         </View>
-        <Modal
-        isVisible={isBottomSheetVisible}
-        style={{ margin: 0 }}
-        onBackdropPress={toggleBottomSheet}>
-        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-          <View
-            style={{
-              backgroundColor: 'white',
-              padding: 24,
-              borderTopRightRadius: 20,
-              borderTopLeftRadius: 20,
-            }}>
-            <View>
-              <Text
-                style={{
-                  fontSize: 28,
-                  fontWeight: '700',
-                  ...ThemeSty.Green_color_f,
-                  ...ThemeSty.Font_family,
-                }}>
-               Confirm Logout?
-              </Text>
+        <View style={{ padding: 5, marginBottom: 15, flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
+          {/* <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} /> */}
+          <View style={styles.savingCard}>
+            <View style={styles.savingCardheader2}>
+              <View style={styles.savingCardHeadertext}>
+                <Text style={styles.textSaving}>Financial Insights</Text>
+                <Text style={styles.textViewAll} onPress={goSavingpots} >More  <Icons.MaterialIcons name="arrow-forward-ios" style={styles.textIcon} /></Text>
+              </View>
             </View>
-            <View style={{ paddingVertical: 10 }}>
-              <Text
-                style={{
-                  ...ThemeSty.gray_color_f,
-                  ...ThemeSty.Font_family,
-                  fontSize: 16,
-                }}>
-          Are you sure you want to log out of Smart Digital Mobile Bank App?
-              </Text>
+            <View style={styles.Chart }>
+              <View style={styles.savingpotcard}>
+                  <Chart />
+              </View>
+              <View style={styles.savingpotcard}>
+                <View style={styles.savingpotcard}>
+                  <ChartInsight />
+                </View>
+              </View>
             </View>
-          
-            <View style={{ padding: 10, alignItems: 'center' }}>
-              <OutlineButton text="Logout" onPress={onLogin} />
-            </View>
-            <View style={{ alignItems: 'center' }}>
-              <RequestButton text="Cancel" onPress={toggleBottomSheet} />
+            <View style={styles.chartbottom}>
+              <Text style={{fontSize: 12, ...Theme.Light_gray_color_f , ...Theme.Font_family , fontWeight: '500',}}>Net Cash Flow</Text>
+              <Text style={{ fontSize: 14, ...Theme.black_color_h, ...Theme.Font_family, fontWeight: '700', }}>+AED 1,5323.00</Text>
             </View>
           </View>
         </View>
-      </Modal>
-    
+
+
+
 
         <Modal
+          isVisible={isBottomSheetVisible}
+          style={{ margin: 0 }}
+          onBackdropPress={toggleBottomSheet}>
+          <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+            <View
+              style={{
+                backgroundColor: 'white',
+                padding: 24,
+                borderTopRightRadius: 20,
+                borderTopLeftRadius: 20,
+              }}>
+              <View>
+                <Text
+                  style={{
+                    fontSize: 28,
+                    fontWeight: '700',
+                    ...ThemeSty.Green_color_f,
+                    ...ThemeSty.Font_family,
+                  }}>
+                  Confirm Logout?
+                </Text>
+              </View>
+              <View style={{ paddingVertical: 10 }}>
+                <Text
+                  style={{
+                    ...ThemeSty.gray_color_f,
+                    ...ThemeSty.Font_family,
+                    fontSize: 16,
+                  }}>
+                  Are you sure you want to log out of Smart Digital Mobile Bank App?
+                </Text>
+              </View>
+
+              <View style={{ padding: 10, alignItems: 'center' }}>
+                <OutlineButton text="Logout" onPress={onLogin} />
+              </View>
+              <View style={{ alignItems: 'center' }}>
+                <RequestButton text="Cancel" onPress={toggleBottomSheet} />
+              </View>
+            </View>
+          </View>
+        </Modal>
+        <Modal
           isVisible={isBottomSheetVisible2}
-          style={{margin: 0}}
+          style={{ margin: 0 }}
           onBackdropPress={toggleBottomSheet2}>
-          <View style={{flex: 1, justifyContent: 'flex-end'}}>
+          <View style={{ flex: 1, justifyContent: 'flex-end' }}>
             <View
               style={{
                 backgroundColor: 'white',
@@ -333,12 +367,12 @@ const HomeScreen = ({ onLogin }) => {
               <View style={{ padding: 15 }}>
                 <Text style={{ ...Theme.gray_color_f, ...Theme.Font_family, fontSize: 14 }}>
                   {`Spending balance excludes:\nMinimum balance of AED 10 required to maintain the account\nAny funds stored in savings pots`}
-                  </Text>
+                </Text>
               </View>
             </View>
           </View>
         </Modal>
-        
+
       </ScrollView>
     </>
   );
@@ -354,6 +388,11 @@ const styles = StyleSheet.create({
     // justifyContent: "Space-evently",
   },
 
+  chartbottom :{
+    justifyContent:"center",
+    alignItems:"center",
+    padding:10
+  },
   Image: {
     width: 180,
     height: 50,
@@ -386,7 +425,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   containeAEDenu: {
-    paddingTop: 10,
+    // paddingTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -435,7 +474,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 1,
     ...Theme.ligth_gray_border_Color,
-    padding: 10,
+    // padding: 10,
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -448,8 +487,8 @@ const styles = StyleSheet.create({
   },
   boxImage: {
     resizeMode: 'contain',
-    width: 50,
-    height: 50,
+    width: 70,
+    height: 70,
   },
   tableContainer: {
     padding: 10,
@@ -497,9 +536,9 @@ const styles = StyleSheet.create({
   savingCardAccont: {
     borderRadius: 20,
     borderWidth: 0.5,
-    width: 250,
+    width: 225,
     // padding: 15,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#FF8C19",
     ...Theme.ligth_gray_border_Color,
     shadowColor: '#000000',
     marginVertical: 5,
@@ -509,6 +548,7 @@ const styles = StyleSheet.create({
   savingCardHeadertext: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems:"center",
     // marginTop:10 ,
 
   },
@@ -525,6 +565,11 @@ const styles = StyleSheet.create({
   },
   savingCardheader: {
     borderBottomWidth: 0.5,
+    ...Theme.ligth_gray_border_Color,
+    padding: 15
+  },
+  savingCardheader2: {
+    // borderBottomWidth: 0.5,
     ...Theme.ligth_gray_border_Color,
     padding: 15
   },
@@ -553,7 +598,7 @@ const styles = StyleSheet.create({
   savingpotcard: {
     flexDirection: "row",
     alignContent: "center",
-    padding: 15
+    padding: 10
   },
   savingCardImage: {
     resizeMode: "contain",
@@ -577,30 +622,30 @@ const styles = StyleSheet.create({
   },
   HolderName: {
     padding: 10,
-    marginTop: 15,
-    
+    // marginTop: 15,
+
   },
   holdertext: {
-    ...Theme.gray_color_h,
+    ...Theme.White_color_h,
     fontSize: 12,
     ...Theme.Font_family,
     fontWeight: "500",
   },
 
   holderName: {
-    ...Theme.black_color_h,
+    ...Theme.White_color_h,
     fontSize: 14,
     ...Theme.Font_family,
     fontWeight: "700",
   },
   holdertextCCV: {
-    ...Theme.gray_color_h,
+    ...Theme.White_color_h,
     fontSize: 12,
     ...Theme.Font_family,
     fontWeight: "500",
   },
   holderNameCVV: {
-    ...Theme.black_color_h,
+    ...Theme.White_color_h,
     fontSize: 14,
     ...Theme.Font_family,
     fontWeight: "700",
@@ -617,5 +662,14 @@ const styles = StyleSheet.create({
     ...Theme.Green_color_h,
     ...Theme.Font_family
   },
+  Chart:{
+    flexDirection:"row",
+    alignItems: 'center',
+    justifyContent:"center",
+  },
+  textIcon:{
+    fontSize: 16,
+    // marginLeft:10
+  }
 
 });

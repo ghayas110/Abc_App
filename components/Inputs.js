@@ -168,7 +168,7 @@ const List = ({
                         borderLeftWidth: 0,
                         borderRightWidth: 0,
                         fontFamily: "Poppins-Regular",
-                        // color: "green"
+                        
                     }}
                     setValue={(val) => setCurrentValue(val)}
                 />

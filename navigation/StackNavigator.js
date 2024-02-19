@@ -84,6 +84,7 @@ import LoginPreference from "../screens/Authentication-Preference/LoginPreferenc
 import NewSecureWord from "../screens/Secure-Word/NewSecureWord";
 import DeRegister from "../screens/Mobile-device/DeRegister";
 import NewPassword from "../screens/PassCode/NewPassword";
+import TransferTo from "../screens/Transfer-Payment/TransferTo";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -138,6 +139,8 @@ const MainNavigator = ({onLogin}) => {
       <Stack.Screen name="WithdrawFundReview" component={WithdrawFundReview} />
       <Stack.Screen name="WithdrawSuccessfully" component={WithdrawSuccessfully} />
       <Stack.Screen name='CardMangements' component={CardManage} />
+      <Stack.Screen name='TransferTo' component={TransferTo} />
+
     </Stack.Navigator>
   );
 };

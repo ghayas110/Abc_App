@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View,Image } from 'react-native'
+import QR from '../../assets/HomeScreenImages/UniversalQR.png'
 import React from 'react'
 
 const RecieveQR = () => {
   return (
-    <View style={{display:'flex',alignItems:'center',justifyContent:'center',height:'100%'}}>
- <Image source={require('../../assets/QRPayment/Recieve.png')}/>
+    <View style={{display:'flex',alignItems:'center',justifyContent:'center',height:'100%' , backgroundColor:"#FFFFFF"}}>
+      <Image source={QR}/>
     </View>
   )
 }

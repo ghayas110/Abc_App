@@ -61,7 +61,7 @@ const Review = () => {
 
                 <View style={styles.subheaderstyle}>
                     <Text style={styles.accountName}>Hussien Lee</Text>
-                    <Text style={styles.accountDetaik}>Al Saudi Bank Saudi / Saudi by Al Saudi - •••••••••••5431
+                    <Text style={styles.accountDetaik}>Dubai Islamic Bank - •••••••••••5431
                         Savings Account-i</Text>
                 </View>
 
@@ -83,7 +83,7 @@ const Review = () => {
                     </View>
                     <View style={styles.savingAccountcheckbox}>
                         <View>
-                            <Text style={styles.transfertext}>SSSCO Savings Account-i</Text>
+                            <Text style={styles.transfertext}>Savings Account-i</Text>
                             <Text style={styles.transferNum}>700007123456789</Text>
                         </View>
                         <View style={{ alignItems: "flex-end" }}>

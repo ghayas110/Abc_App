@@ -46,9 +46,9 @@ const DetailTwo = () => {
                         label={"Employment type"}
                         placeholder={"Select Employment type"}
                         items={[
-                            { label: 'Option 1', value: 'option1' },
-                            { label: 'Option 2', value: 'option2' },
-                            { label: 'Option 3', value: 'option3' },
+                            { label: 'Permanent', value: 'option1' },
+                            { label: 'Intern', value: 'option2' },
+                            { label: 'Probation', value: 'option3' },
                         ]}
                     />
                 </View>
@@ -77,9 +77,9 @@ const DetailTwo = () => {
                         label={"Occupation"}
                         placeholder={"Select Occupation"}
                         items={[
-                            { label: 'Option 1', value: 'option1' },
-                            { label: 'Option 2', value: 'option2' },
-                            { label: 'Option 3', value: 'option3' },
+                            { label: 'Engineer', value: 'option1' },
+                            { label: 'Manager', value: 'option2' },
+                            { label: 'Contractor', value: 'option3' },
                         ]}
                     />
                 </View>
@@ -93,9 +93,9 @@ const DetailTwo = () => {
                         label={"Employment sector"}
                         placeholder={"Select Employment sector"}
                         items={[
-                            { label: 'Option 1', value: 'option1' },
-                            { label: 'Option 2', value: 'option2' },
-                            { label: 'Option 3', value: 'option3' },
+                            { label: 'IT Industry', value: 'option1' },
+                            { label: 'Food Industry', value: 'option2' },
+                            { label: 'Textile Industry', value: 'option3' },
                         ]}
                     />
                 </View>
@@ -109,9 +109,9 @@ const DetailTwo = () => {
                         label={"Annual income bracket"}
                         placeholder={"Select Annual income bracket"}
                         items={[
-                            { label: 'Option 1', value: 'option1' },
-                            { label: 'Option 2', value: 'option2' },
-                            { label: 'Option 3', value: 'option3' },
+                            { label: '5000 - 10000', value: 'option1' },
+                            { label: '10000 - 20000', value: 'option2' },
+                            { label: '20000 - 30000', value: 'option3' },
                         ]}
                     />
                 </View>

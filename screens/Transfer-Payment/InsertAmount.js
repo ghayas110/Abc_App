@@ -24,7 +24,7 @@ const InsertAmount = () => {
 
                 <View style={styles.subheaderstyle}>
                     <Text style={styles.accountName}>Hussien Lee</Text>
-                    <Text style={styles.accountDetaik}>Al Saudi Bank Saudi / Saudi by Al Saudi - •••••••••••5431
+                    <Text style={styles.accountDetaik}>Dubai Islamic Bank - •••••••••••5431
                         Savings Account-i</Text>
                 </View>
                 <View style={styles.ammouncontianer}>

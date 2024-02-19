@@ -41,11 +41,11 @@ const CardManage = () => {
               <View style={styles.savingCardheaderHome}>
                 <View style={styles.DebitCard}>
 
-                  <Icons.Entypo name="wallet" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={() => navigation.navigate('CardMangements')} />
+                <Icons.Entypo name="wallet" style={{ margin: 5, fontSize: 20, ...Theme.White_color_h }} onPress={() => navigation.navigate('CardMangements')} />
                   {isCardNumber ?
-                    <Icons.MaterialCommunityIcons name="eye-off-outline" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={HandleShow} />
+                  <Icons.MaterialCommunityIcons name="eye-off-outline" style={{ margin: 5, fontSize: 20, ...Theme.White_color_h }} onPress={HandleShow} />
                     :
-                    <Icons.MaterialCommunityIcons name="eye-outline" style={{ margin: 5, fontSize: 20, ...Theme.Green_color_h }} onPress={HandleShow} />
+                  <Icons.MaterialCommunityIcons name="eye-outline" style={{ margin: 5, fontSize: 20, ...Theme.White_color_h }} onPress={HandleShow} />
                   }
                 </View>
                 <View style={styles.HolderName}>
@@ -265,9 +265,9 @@ const styles = StyleSheet.create({
   savingCardAccont: {
     borderRadius: 20,
     borderWidth: 0.5,
-    width: 250,
+    width: 225,
     // padding: 15,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#FF8C19",
     ...Theme.ligth_gray_border_Color,
     shadowColor: '#000000',
     marginVertical: 5,
@@ -294,11 +294,11 @@ const styles = StyleSheet.create({
   savingCardheader: {
     borderBottomWidth: 0.5,
     ...Theme.ligth_gray_border_Color,
-    padding: 15
+    // padding: 15
   },
   savingCardheaderHome: {
     ...Theme.ligth_gray_border_Color,
-    padding: 15
+    padding: 10
   },
   textSaving: {
     fontWeight: '600',
@@ -349,26 +349,26 @@ const styles = StyleSheet.create({
 
   },
   holdertext: {
-    ...Theme.gray_color_h,
+    ...Theme.White_color_h,
     fontSize: 12,
     ...Theme.Font_family,
     fontWeight: "500",
   },
 
   holderName: {
-    ...Theme.black_color_h,
+    ...Theme.White_color_h,
     fontSize: 14,
     ...Theme.Font_family,
     fontWeight: "700",
   },
   holdertextCCV: {
-    ...Theme.gray_color_h,
+    ...Theme.White_color_h,
     fontSize: 12,
     ...Theme.Font_family,
     fontWeight: "500",
   },
   holderNameCVV: {
-    ...Theme.black_color_h,
+    ...Theme.White_color_h,
     fontSize: 14,
     ...Theme.Font_family,
     fontWeight: "700",

@@ -214,9 +214,9 @@ const ReviewDetails = () => {
                                         placeholder={"Select Marital status"}
                                         defaultValue={"Single"}
                                         items={[
-                                            { label: 'Option 1', value: 'option1' },
-                                            { label: 'Option 2', value: 'option2' },
-                                            { label: 'Option 3', value: 'option3' },
+                                            { label: 'Single', value: 'option1' },
+                                            { label: 'Married', value: 'option2' },
+                                            { label: 'Widow', value: 'option3' },
                                         ]}
                                     />
 
@@ -227,9 +227,11 @@ const ReviewDetails = () => {
                                         placeholder={"Select Arab"}
                                         defaultValue={"Arab"}
                                         items={[
-                                            { label: 'Option 1', value: 'option1' },
-                                            { label: 'Option 2', value: 'option2' },
-                                            { label: 'Option 3', value: 'option3' },
+                                            { label: 'African', value: 'option1' },
+                                            { label: 'Asian', value: 'option2' },
+                                            { label: 'European', value: 'option3' },
+                                            { label: 'Indigenous', value: 'option3' },
+                                            { label: 'Arab', value: 'option3' },
                                         ]}
                                     />
                                     <RequestButton text={"Save"} onPress={() => nextPage()}
