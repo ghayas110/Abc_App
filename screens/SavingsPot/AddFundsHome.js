@@ -13,6 +13,9 @@ const AddFundsHome = () => {
     const navigateAddfunds = () =>{
         navigation.navigate('AddFunds')
     }
+    const back = () => {
+        navigation.navigate('SavingPots')
+    }
     const navigateWithdrawFund = () => {
         navigation.navigate('WithdrawFund')
     }
@@ -29,15 +32,16 @@ const AddFundsHome = () => {
         return () => clearInterval(interval);
     }, []);
     return (
-        <View style={styles.container}>
-            <ImageBackground style={styles.Header} source={BackgroundImage} >
-                <View style={styles.headerIcon}>
-                    <Icons.MaterialIcons name="arrow-back-ios" style={styles.Icons} />
-                    <View style={styles.rightIcon}>
-                        <Icons.AntDesign name="delete" style={styles.Icons} />
-                        <Icons.AntDesign name="edit" style={styles.Icons} />
+        <LinearGradient colors={['#000000', '#313131', '#FFFFFF']}
+            locations={[0, 0.5, 0.8]}  style={styles.container}>
+                {/* <LinearGradient
 
-                    </View>
+                    style={styles.gradient}
+                /> */}
+            <ImageBackground resizeMode='cover' style={styles.Header} source={BackgroundImage} >
+                <View style={styles.headerIcon}>
+                    <Icons.MaterialIcons name="arrow-back-ios" style={styles.Icons} onPress={back} />
+                   
                 </View>
                 <View style={styles.Heading}>
                     <Text style={styles.headingText}>My Umrah</Text>
@@ -49,13 +53,14 @@ const AddFundsHome = () => {
                 </View>
             </ImageBackground>
 
+
             <View style={styles.Bottom}>
                 <View style={styles.boxes}>
                     <TouchableOpacity onPress={navigateWithdrawFund}>
                         <View style={styles.box1}>
                             <Icons.AntDesign name="minus" style={styles.plusIcons} />
                         </View>
-                        <Text style={styles.boxText}>Withdraw   Funds</Text>
+                        <Text style={styles.boxText}>{`Withdraw\nFunds`}</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.boxes}>
@@ -63,7 +68,7 @@ const AddFundsHome = () => {
                         <View style={styles.box}>
                             <Icons.AntDesign name="plus" style={styles.plusIcons} />
                         </View>
-                        <Text style={styles.boxText}>Add   Funds</Text>
+                        <Text style={styles.boxText}>{`Add\nFunds`}</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.boxes}>
@@ -71,10 +76,12 @@ const AddFundsHome = () => {
                         <View style={styles.box}>
                             <Icons.AntDesign name="upload" style={styles.Icons} />
                         </View>
-                        <Text style={styles.boxText}>Contribute to My Goal</Text>
+                        <Text style={styles.boxText}>{`Contribute\nto My Goal`}</Text>
                     </TouchableOpacity>
                 </View>
             </View>
+
+        <View style={styles.cardcont}>
             <View style={styles.Cards}>
                 <Text style={styles.CardHeading}>Total saved</Text>
                 <Text style={styles.CardHeadingPrice}>AED 0.00</Text>
@@ -90,6 +97,7 @@ const AddFundsHome = () => {
                 </View>
             </View>
         </View>
+        </LinearGradient>
     )
 }
 
@@ -98,27 +106,30 @@ export default AddFundsHome
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#FFFFFF",
-        // padding: 10,
+        
     },
     Header: {
         flex: 1.8,
-        resizeMode: "cover",
-        padding: 10
+        // padding: 10
 
+    },
+    gradient: {
+        width: '100%', // Set the width of the gradient as needed
+        height: '100%', // Set the height of the gradient as needed
     },
     Heading: {
         flex: 2,
         padding: 10,
         paddingLeft: 18,
-
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
         justifyContent: "center"
     },
     headerIcon: {
         flex: 1,
         justifyContent: "space-between",
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
         flexDirection: "row",
-        padding: 10
+        padding:20
     },
     rightIcon: {
         flexDirection: "row",
@@ -126,21 +137,18 @@ const styles = StyleSheet.create({
     },
     Icons: {
         fontSize: 24,
-        marginHorizontal: 5,
+        margin:10,
         ...Theme.White_color_h
 
     },
     Bottom: {
         // backgroundColor: "yellow",
-        flex: 0.8,
+        flex: 0.7,
         flexDirection: "row",
         justifyContent: "center",
+        alignItems:"Flex-end",
         padding: 20,
-        backgroundGradient: {
-            colors: ['#313131', '#2E2E2E'],
-            start: { x: 0, y: 56 },
-            end: { x: 8, y: 0 },
-        },
+        
     },
     headingIcons: {
         fontSize: 24,
@@ -169,14 +177,17 @@ const styles = StyleSheet.create({
         marginLeft: 5,
 
     },
-    Cards: {
+    cardcont:{
         position: "absolute",
+        width: "100%",
+        top: 385,
+        justifyContent:"center",
+        alignItems: "center",
+
+    },
+    Cards: {
         backgroundColor: "#FFFFFF",
         borderRadius: 15,
-        top: 380,
-        bottom: 0,
-        right: 0,
-        left: 25,
         zIndex: 50,
         width: 300,
         height: 160,
@@ -188,7 +199,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
         marginVertical: 5,
         marginHorizontal: 5,
-        elevation: 4
+        elevation: 4,
+        justifyContent:"center"
     },
     CardHeading: {
         fontWeight: "600",
@@ -252,7 +264,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        width: 70,
+        // width: 70,
         margin: 10
 
     },

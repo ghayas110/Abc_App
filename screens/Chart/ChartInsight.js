@@ -33,7 +33,7 @@ const ChartInsight = () => {
                 //     dashGap: 1,
                 // }}
             />
-            <Text style={{ ...Theme.chart_green_color, ...Theme.Font_family, fontSize: 10, fontWeight: '500', textAlign: "center" }}>Total MoneyOut</Text>
+            <Text style={{ ...Theme.chart_green_color, ...Theme.Font_family, fontSize: 10, fontWeight: '500', textAlign: "center" }}>Total MoneyIn</Text>
             <Text style={{ ...Theme.black_color_h, ...Theme.Font_family, fontSize: 14, fontWeight: '700', textAlign: "center" }}>AED 1,5556.00</Text>
         </View>
     );

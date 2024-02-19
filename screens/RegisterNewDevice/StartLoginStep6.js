@@ -8,7 +8,7 @@ import CongratesImage from '../../assets/StartLoginImages/CongratsImage.png'
 import Modal from 'react-native-modal';
 import ThemeSty from '../../assets/styles/basic'
 import ProgressBar from 'react-native-progress/Bar';
-
+import LottieView from 'lottie-react-native';
 
 const StartLoginStep6 = ({ disabled }) => {
     const [progress, setProgress] = useState(0);
@@ -35,15 +35,15 @@ const StartLoginStep6 = ({ disabled }) => {
         <>
             <View style={styles.container}>
                 <View>
-                    <Image source={CongratesImage} />
                 </View>
-                <View style={{ padding: 5, marginTop: 25, }}>
-                    <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family }}>
-                        Congratulations! Your SSSSCO account is now registered on this device
+        <LottieView source={require('../../assets/lotiefiles/success.json')} autoPlay style={{width:"100%",height:300}} />
+                <View style={{ padding: 5 }}>
+                    <Text style={{ fontSize: 28, fontWeight: "700", ...ThemeSty.Green_color_f, ...ThemeSty.Font_family,lineHeight:34 }}>
+                        Congratulations! Your Smart Digital Bank account is now registered on this device
                     </Text>
                 </View>
             </View>
-            <View style={{ alignItems: "center", marginBottom: 20, }}>
+            <View style={{ alignItems: "center", flex:0.5 , justifyContent:"flex-end" , padding:16, backgroundColor:"#FFFFFF" }}>
                 <RequestButton text='Go to Home' onPress={ForWordnavigation} />
             </View>
         </>
@@ -56,10 +56,11 @@ export default StartLoginStep6
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 24,
+        padding: 16,
         justifyContent: "Space-evently",
         justifyContent:"center",
         alignItems: "center",
+        backgroundColor: "#FFFFFF"
 
     },
     Progress: {

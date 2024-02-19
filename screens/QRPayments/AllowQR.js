@@ -4,6 +4,7 @@ import style from "../../assets/styles/basic"
 import { useNavigation } from '@react-navigation/native';
 import { OutlineButton, RequestButton } from '../../components/Buttons';
 import ActivationSteps from '../../components/steps/ActivationSteps';
+import LottieView from 'lottie-react-native';
 
 
 const AllowQR = () => {
@@ -33,7 +34,7 @@ const AllowQR = () => {
                         flexDirection: "row",
                         justifyContent: "center"
                     }}>
-                        <Image source={require('../../assets/QRPayment/QR.png')} />
+  <LottieView source={require('../../assets/lotiefiles/activate_qr_payment_animation.json')} autoPlay style={{width:"100%",height:200}} />
                     </View>
                     <Text style={{
                         ...style.Green_color_h,

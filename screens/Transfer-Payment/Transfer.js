@@ -14,6 +14,8 @@ import { Icon } from 'react-native-paper/lib/typescript/components/Avatar/Avatar
 
 const Transfer = () => {
     const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
+    const [isAccount , setAccount ] = useState("Accounts");
+    const [isMobile, setMobile] = useState("Mobile");
 
     const toggleBottomSheet = () => {
         setBottomSheetVisible(!isBottomSheetVisible);
@@ -22,43 +24,54 @@ const Transfer = () => {
     const navigation = useNavigation()
 
     const ForWordnavigation = () => {
-        navigation.navigate('TransferTO')
+        navigation.navigate('TransferTO', { data: isAccount })
+    }
+    const MobileNumber = () => {
+        navigation.navigate('TransferTO', { data2: isMobile })
+    }
+    const CnicNumber = () => {
+        navigation.navigate('TransferTO', { data3: isMobile })
+    }
+
+    const gotoComingSoon = () => {
+        navigation.navigate('ComingSoon')
+
     }
 
     const Flatlist = [
         {
             name: 'Bank Account', Icon: <Icons.MaterialCommunityIcons name="bank-outline" style={styles.icon} onPress={ForWordnavigation} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={ForWordnavigation} />
         },
-        { name: 'Mobile Number', Icon: <Icons.AntDesign name="contacts" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} /> },
+        { name: 'Mobile Number', Icon: <Icons.AntDesign name="contacts" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" onPress={MobileNumber} style={styles.icon2}  /> },
         {
-            name: 'CNIC', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} /> },
-        { name: 'MyPolis/MyTentera', Icon: <Icons.MaterialIcons name="local-police" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} /> },
-        { name: 'Business Registration Number', Icon: <Icons.MaterialIcons name="business-center" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} /> },
-        { name: 'Passport Number', Icon: <Icons.MaterialCommunityIcons name="passport" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} /> },
+            name: 'CNIC', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={CnicNumber} /> },
+        // { name: 'MyPolis/MyTentera', Icon: <Icons.MaterialIcons name="local-police" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2}  onPress={gotoComingSoon}/> },
+        // { name: 'Business Registration Number', Icon: <Icons.MaterialIcons name="business-center" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
+        // { name: 'Passport Number', Icon: <Icons.MaterialCommunityIcons name="passport" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
         // Add more items as needed
     ];
     const data = [
         {
-            name: 'DuitNow Transfer',
+            name: 'SSSCO Transfer',
             Image: <Image source={DuetImg} style={styles.inmages} />,
             key: "1",
             Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={toggleBottomSheet} style={styles.IConfor} />
 
         },
         {
-            name: 'DuitNow QR',
+            name: 'SSSCO QR',
             Image: <Image source={QrDuetImg} style={styles.inmages} />,
             key: "1",
-            Forward: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.IConfor} />
+            Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={() => navigation.navigate('Home', { screen: 'AllowQR' })} style={styles.IConfor} />
 
         },
-        {
-            name: 'Transfer to another SSSCO account',
-            Image: <Image source={DuetImg} style={styles.inmages} />,
-            key: "1",
-            Forward: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.IConfor} />
+        // {
+        //     name: 'Transfer to another SSSCO account',
+        //     Image: <Image source={DuetImg} style={styles.inmages} />,
+        //     key: "1",
+        //     Forward: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.IConfor} />
 
-        },
+        // },
     ];
 
 
@@ -69,7 +82,7 @@ const Transfer = () => {
                     <Text>{item.Icon}</Text>
                     <Text style={styles.name}>{item.name}</Text>
                 </View>
-                <Text >{item.Icon2}</Text>
+                <Text style={{  width:20, height:20 , borderRadius:50 , justifyContent:"center" , alignItems:"center"}}>{item.Icon2}</Text>
             </View>
         </View>
     );

@@ -5,6 +5,7 @@ import { List, SimpleInput } from '../../components/Inputs';
 import { RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
 import Steps from '../../components/steps/Steps';
+import FormInput from '../../components/FormInput';
 
 
 
@@ -36,36 +37,34 @@ const DetailTwo = () => {
                 {/* INPUT BOX ============================= */}
                 <View style={{
                     ...style.basic_container,
-                    marginTop: 10,
+                    marginTop: 30,
                 }}>
-                    <Text style={{ ...style.main_heading, textAlign: "left", paddingLeft: 10, fontSize: 25, fontFamily: "Poppins-Bold" }}>What do you do for a  {'\n'} living?</Text>
+                    <Text style={{ ...style.main_heading, textAlign: "left", paddingLeft: 15, fontSize: 25, fontFamily: "Poppins-Bold" }}> What do you do for a  {'\n'} living?</Text>
                     <List
-                        textStyle={{ color:'#808080', textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
+                        textStyle={{ color:'#808080', textAlign: "left", fontSize: 14, marginBottom: 0, fontFamily: "Poppins-Regular" }}
                         dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
                         label={"Employment type"}
                         placeholder={"Select Employment type"}
                         items={[
-                            { label: 'Option 1', value: 'option1' },
-                            { label: 'Option 2', value: 'option2' },
-                            { label: 'Option 3', value: 'option3' },
+                            { label: 'Permanent', value: 'option1' },
+                            { label: 'Intern', value: 'option2' },
+                            { label: 'Probation', value: 'option3' },
                         ]}
                     />
                 </View>
                 <View style={{
                     ...style.basic_container,
                     marginTop: 5,
+                    paddingLeft: 20,
+                    paddingTop: 20
                 }}>
-                    <SimpleInput
-                        inputstyle={{
-                            fontSize: 15,
-                            borderBottomWidth: 1,
-                            borderBottomColor: '#808080',
-                            fontFamily: "Poppins-Regular"
-                        }}
-                        placeholderTextColor="#808080"
-                        label={"Name of employer"}
+                    <FormInput
+                       placeholderColor={"#808080"}
+                        title={"Name of employer"}
                         type={"text"}
                         placeholder={"Enter Name of employer"}
+                        
+                        
                     />
                 </View>
                 <View style={{
@@ -73,14 +72,14 @@ const DetailTwo = () => {
                     marginTop: 5,
                 }}>
                     <List
-                    textStyle={{ color:'#808080', textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
+                    textStyle={{ color:'#808080', textAlign: "left", fontSize: 14, fontFamily: "Poppins-Regular" }}
                     dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
                         label={"Occupation"}
                         placeholder={"Select Occupation"}
                         items={[
-                            { label: 'Option 1', value: 'option1' },
-                            { label: 'Option 2', value: 'option2' },
-                            { label: 'Option 3', value: 'option3' },
+                            { label: 'Engineer', value: 'option1' },
+                            { label: 'Manager', value: 'option2' },
+                            { label: 'Contractor', value: 'option3' },
                         ]}
                     />
                 </View>
@@ -89,14 +88,14 @@ const DetailTwo = () => {
                     marginTop: 5,
                 }}>
                     <List
-                    textStyle={{ color:'#808080', textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
+                    textStyle={{ color:'#808080', textAlign: "left", fontSize: 14, fontFamily: "Poppins-Regular" }}
                     dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
                         label={"Employment sector"}
                         placeholder={"Select Employment sector"}
                         items={[
-                            { label: 'Option 1', value: 'option1' },
-                            { label: 'Option 2', value: 'option2' },
-                            { label: 'Option 3', value: 'option3' },
+                            { label: 'IT Industry', value: 'option1' },
+                            { label: 'Food Industry', value: 'option2' },
+                            { label: 'Textile Industry', value: 'option3' },
                         ]}
                     />
                 </View>
@@ -105,14 +104,14 @@ const DetailTwo = () => {
                     marginTop: 5,
                 }}>
                     <List
-                    textStyle={{ color:'#808080', textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
+                    textStyle={{ color:'#808080', textAlign: "left", fontSize: 14,fontFamily: "Poppins-Regular" }}
                     dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
                         label={"Annual income bracket"}
                         placeholder={"Select Annual income bracket"}
                         items={[
-                            { label: 'Option 1', value: 'option1' },
-                            { label: 'Option 2', value: 'option2' },
-                            { label: 'Option 3', value: 'option3' },
+                            { label: '5000 - 10000', value: 'option1' },
+                            { label: '10000 - 20000', value: 'option2' },
+                            { label: '20000 - 30000', value: 'option3' },
                         ]}
                     />
                 </View>

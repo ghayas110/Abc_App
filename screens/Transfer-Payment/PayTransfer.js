@@ -52,7 +52,7 @@ const PayTransfer = () => {
     const handleItemClick = (text) => {
         if(text == "Manage DuitNow QR"){
             navigation.navigate('ManageDuitNowQR')
-        }
+        }else{navigation.navigate('ComingSoon')}
     }
     return (
         <>

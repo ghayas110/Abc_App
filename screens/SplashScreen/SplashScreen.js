@@ -10,9 +10,6 @@ const SplashScreen = () => {
   const [isSplashScreen, setSplashScreen] = useState(false)
   const navigation = useNavigation()
    useEffect(() => {
-
-  
-   
       try {
         // play the file tone.mp3
         SoundPlayer.playSoundFile('tone', 'mp3')
@@ -24,7 +21,6 @@ const SplashScreen = () => {
       
   }, []);
   useEffect(() => {
-
     Animated.timing(fadeAnim, {
       toValue: 1,
       duration: 1000, // Adjust the duration as needed

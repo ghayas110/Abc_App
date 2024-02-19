@@ -8,6 +8,7 @@ import Biomatric from '../../assets/CreateAccoutImages/SuccessFully.png'
 import CheckSucess from '../../assets/CreateAccoutImages/ProgressBarCom.png'
 import ThemeSty from '../../assets/styles/basic'
 import { RequestButton, OutlineButton } from '../../components/Buttons'
+import LottieView from 'lottie-react-native'
 
 const Successfully = () => {
     const [progress, setProgress] = useState(0);
@@ -33,9 +34,8 @@ const Successfully = () => {
     return (
         <>
         <View style={styles.container}>
-           <View>
-                <Image source={Biomatric} />
-           </View>
+        <LottieView source={require('../../assets/lotiefiles/account_has_been_created_animation.json')} autoPlay style={{width:"100%",height:300}} />
+
             <View>
                 <Text style={{ ...ThemeSty.Green_color_f, ...ThemeSty.Font_family , fontSize: 28, fontWeight: "700", marginTop:50 }}>Your Account has been Created</Text>
             </View>

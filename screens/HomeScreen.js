@@ -5,14 +5,14 @@ import { useNavigation } from '@react-navigation/native'
 import { SimpleInput } from '../components/Inputs'
 import { RequestButton, OutlineButton } from '../components/Buttons'
 import CardInage from '../assets/HomeScreenImages/bankCard.png'
-import HomeDuet from '../assets/HomeScreenImages/duit-now-01.png'
-import DuetQr from '../assets/HomeScreenImages/DuitNowQR1.png'
-import Transfer from '../assets/HomeScreenImages/Icons.png'
-import Statement from '../assets/HomeScreenImages/Icons1.png'
-// import Image1 from '../assets/accountCenterImage/createSavingPot1.png'
-// import Image2 from '../assets/accountCenterImage/createSavingPot2.png'
-// import Image3 from '../assets/accountCenterImage/createSavingPot3.png'
-// import Image4 from '../assets/accountCenterImage/createSavingPot4.png'
+import HomeDuet from '../assets/HomeScreenImages/FundTranfer.png'
+import DuetQr from '../assets/HomeScreenImages/UniversalQR.png'
+import Transfer from '../assets/HomeScreenImages/account_statement.png'
+import Statement from '../assets/HomeScreenImages/transaction_History.png'
+import Image1 from '../assets/accountCenterImage/createSavingPot1.png'
+import Image2 from '../assets/accountCenterImage/createSavingPot2.png'
+import Image3 from '../assets/accountCenterImage/createSavingPot3.png'
+import Image4 from '../assets/accountCenterImage/createSavingPot4.png'
 import Market from '../assets/HomeScreenImages/market.png'
 import Modal from 'react-native-modal';
 import Visa from '../assets/HomeScreenImages/download-removebg-preview.png'
@@ -25,6 +25,7 @@ const HomeScreen = ({ onLogin }) => {
   const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
   const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false);
   const [isCardNumber, setCardNumber] = useState(false);
+  const [isAccount, setAccount] = useState("Accounts");
 
   const HandleShow = () => {
     setCardNumber(!isCardNumber)
@@ -43,6 +44,8 @@ const HomeScreen = ({ onLogin }) => {
     navigation.navigate('SavingPots');
   };
 
+
+
   const [progress, setProgress] = useState(5)
   useEffect(() => {
     // Simulating progress increase over time
@@ -58,7 +61,9 @@ const HomeScreen = ({ onLogin }) => {
   }, []);
 
 
-
+  const ForWordnavigation = () => {
+    navigation.navigate('TransferTo', { data: isAccount })
+  }
 
 
   return (
@@ -114,7 +119,7 @@ const HomeScreen = ({ onLogin }) => {
               </View>
               <View style={styles.HolderName}>
                 <Text style={styles.holdertext}>Card Holder Name</Text>
-                <Text style={styles.holderName}>Razak Bin Osman</Text>
+                <Text style={styles.holderName}>ABDUR REHMAN</Text>
               </View>
               <View style={styles.HolderName}>
                 <Text style={styles.holdertext}>Card Number</Text>
@@ -152,21 +157,21 @@ const HomeScreen = ({ onLogin }) => {
 
 
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }} onPress={() => navigation.navigate('Transfer', { screen: 'Transfer' })}>
+          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }} onPress={ForWordnavigation}>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={HomeDuet} style={styles.boxImage} />
               </View>
-              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>{`Ssssco\nTransfer`}</Text>
+              <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>{`Fund\nTransfer`}</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }} onPress={() => navigation.navigate('AllowQR')}>
+          <TouchableOpacity style={{ width: 80, paddingVertical: 10 }} onPress={() => navigation.navigate('QRScan')}>
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               <View style={styles.boxes}>
                 <Image source={DuetQr} style={styles.boxImage} />
               </View>
               <Text style={{ fontSize: 12, ...Theme.black_color_f, fontWeight: "500", textAlign: "center" }}>
-                {`Ssssco\nQR`}
+                {`Universal\nQR`}
               </Text>
             </View>
           </TouchableOpacity>
@@ -224,7 +229,7 @@ const HomeScreen = ({ onLogin }) => {
             <View style={styles.SavingsPots}>
               <View style={styles.savingpotcard}>
                 <View style={styles.ImageContainer}>
-                  {/* <Image source={Image1} style={styles.savingCardImage} /> */}
+                  <Image source={Image1} style={styles.savingCardImage} />
                 </View>
                 <View style={styles.savingpottextcontianer}>
                   <Text style={styles.savingpottext}>My Umrah</Text>
@@ -273,9 +278,9 @@ const HomeScreen = ({ onLogin }) => {
                 <Text style={styles.textViewAll} onPress={goSavingpots} >More  <Icons.MaterialIcons name="arrow-forward-ios" style={styles.textIcon} /></Text>
               </View>
             </View>
-            <View style={styles.Chart}>
+            <View style={styles.Chart }>
               <View style={styles.savingpotcard}>
-                <Chart />
+                  <Chart />
               </View>
               <View style={styles.savingpotcard}>
                 <View style={styles.savingpotcard}>
@@ -284,7 +289,7 @@ const HomeScreen = ({ onLogin }) => {
               </View>
             </View>
             <View style={styles.chartbottom}>
-              <Text style={{ fontSize: 12, ...Theme.Light_gray_color_f, ...Theme.Font_family, fontWeight: '500', }}>Net Cash Flow</Text>
+              <Text style={{fontSize: 12, ...Theme.Light_gray_color_f , ...Theme.Font_family , fontWeight: '500',}}>Net Cash Flow</Text>
               <Text style={{ fontSize: 14, ...Theme.black_color_h, ...Theme.Font_family, fontWeight: '700', }}>+AED 1,5323.00</Text>
             </View>
           </View>
@@ -383,10 +388,10 @@ const styles = StyleSheet.create({
     // justifyContent: "Space-evently",
   },
 
-  chartbottom: {
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10
+  chartbottom :{
+    justifyContent:"center",
+    alignItems:"center",
+    padding:10
   },
   Image: {
     width: 180,
@@ -468,7 +473,7 @@ const styles = StyleSheet.create({
   boxes: {
     borderWidth: 1,
     ...Theme.ligth_gray_border_Color,
-    padding: 25,
+    // padding: 10,
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -481,8 +486,8 @@ const styles = StyleSheet.create({
   },
   boxImage: {
     resizeMode: 'contain',
-    width: 20,
-    height: 20,
+    width: 70,
+    height: 70,
   },
   tableContainer: {
     padding: 10,
@@ -542,7 +547,7 @@ const styles = StyleSheet.create({
   savingCardHeadertext: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems:"center",
     // marginTop:10 ,
 
   },
@@ -656,12 +661,12 @@ const styles = StyleSheet.create({
     ...Theme.Green_color_h,
     ...Theme.Font_family
   },
-  Chart: {
-    flexDirection: "row",
+  Chart:{
+    flexDirection:"row",
     alignItems: 'center',
-    justifyContent: "center",
+    justifyContent:"center",
   },
-  textIcon: {
+  textIcon:{
     fontSize: 16,
     // marginLeft:10
   }

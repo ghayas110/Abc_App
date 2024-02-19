@@ -64,8 +64,9 @@ const PersonalDetails = () => {
             ...ThemeSty.gray_color_f,
             fontSize: 16,
             ...ThemeSty.Font_family,
-            marginLeft: 7,
-            fontWeight: '500',
+            marginLeft: 8,
+            marginTop: 10,
+            fontWeight: '400',
           }}
           >
           Same as registered address
@@ -147,16 +148,16 @@ const PersonalDetails = () => {
         
         <View
           style={{borderBottomWidth: 1, ...ThemeSty.ligth_gray_border_Color}}>
-          <List
-          textStyle={{ color:'#808080', textAlign: "left", fontSize: 18, marginBottom: 10, fontFamily: "Poppins-Regular" }}
-          dropDownStyle={{ fontFamily: "Poppins-Regular", ...style.gray_color_f }}
-              label={"State"}
-              placeholder={"Select State"}
-              items={[
-                  { label: 'Option 1', value: 'option1' },
-                  { label: 'Option 2', value: 'option2' },
-                  { label: 'Option 3', value: 'option3' },
-              ]}
+         <SimpleInput
+            label={'State'}
+            placeholder={'Enter  State'}
+            placeholderTextColor={"grey"}
+            inputstyle={{
+              color: 'black',
+              ...ThemeSty.Font_family,
+              fontWeight: '500',
+              fontSize: 16,
+            }}
           />
         </View>
       </ScrollView>

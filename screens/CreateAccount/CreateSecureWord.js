@@ -47,20 +47,20 @@ const CreateSecureWord = () => {
           }}>
           <Text
             style={{
-              fontSize: 28,
+              fontSize: 30,
               ...ThemeSty.Green_color_f,
               fontWeight: '700',
               ...ThemeSty.Font_family,
             }}>
-            Create your Secure Word
+            Create your secure word
           </Text>
         </View>
 
-        <View style={{...styles.inputContainer, ...ThemeSty.gray_border_Color}}>
+        <View style={{...styles.inputContainer, ...ThemeSty.green_border_Color}}>
           <SimpleInput
-            placeholder={'Enter Your Secure Word'}
+            placeholder={'Enter your secure word'}
             inputstyle={{
-              fontSize: 20,
+              fontSize: 18,
               color: 'black',
               fontWeight: '600',
               ...ThemeSty.Font_family,
@@ -138,8 +138,8 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   inputContainer: {
-    borderBottomWidth: 2,
-    // borderColor: "#00A200",
+    borderBottomWidth: 1,
+    borderColor: "#00A200",
     marginTop: 10,
   },
   Instruction: {

@@ -3,21 +3,25 @@ import React from 'react'
 import NotificationIcon from '../../assets/TopUp/TopUpFaqLogout.png'
 import LogoutIcon from '../../assets/TopUp/TopUpNotification.png'
 import { useNavigation } from '@react-navigation/native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
-const Header = () => {
+const Header = ({onPress}) => {
     const naivgation = useNavigation()
     return (
         <>
             <View style={styles.MainHeader}>
                 <View style={{ flexDirection: 'row',alignItems:'center' }}>
                     <View style={styles.RoundProfile}>
-                        <Text style={styles.RoundProfileText} onPress={() => {naivgation.navigate("SettingServices")}}>Ro</Text>
+                        <Text style={styles.RoundProfileText} onPress={() => {naivgation.navigate("SettingServices")}}>AR</Text>
                     </View>
-                    <Text style={styles.HeaderName} onPress={() => {naivgation.navigate("SettingServices")}}>Hi Razak!</Text>
+                    <Text style={styles.HeaderName} onPress={() => {naivgation.navigate("SettingServices")}}>Hi REHMAN</Text>
                 </View>
                 <View style={{flexDirection:'row',alignItems:'center'}}>
                     <Image source={LogoutIcon}></Image>
+                    <TouchableOpacity onPress={onPress}>
+                        
                     <Image style={{marginLeft:15}} source={NotificationIcon}></Image>
+                    </TouchableOpacity>
                 </View>
             </View>
         </>

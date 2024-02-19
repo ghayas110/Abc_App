@@ -5,10 +5,17 @@ import Header from './components/Header'
 import style from "../../assets/styles/basic"
 import Favourite from './components/Favourite';
 import NewRecipient from './components/NewRecipient';
+import MobileNumber from './components/MobileNumber';
+import CnicNumber from './components/CnicNumber';
 
 const Tab = createMaterialTopTabNavigator();
 const { width, height } = Dimensions.get('window');
-const TransferTo = () => {
+
+
+
+const TransferTo = ({ route }) => {
+    const { data, data2 , data3 } = route.params;
+ 
     return (
         <>
             <View style={{
@@ -39,7 +46,12 @@ const TransferTo = () => {
                             borderBottomColor: 'green',
                         },
                     }}>
-                    <Tab.Screen name="New Recipient" component={NewRecipient} />
+
+                        {data && <Tab.Screen name="New Recipient" component={NewRecipient} /> }
+                        {data2 && <Tab.Screen name="New Recipient" component={MobileNumber} /> }
+                         {data3 && <Tab.Screen name="New Recipient" component={CnicNumber} /> }
+                        
+                    {/* <Tab.Screen name="New Recipient" component={NewRecipient} /> */}
                     <Tab.Screen name="Favourite" component={Favourite} />
                 </Tab.Navigator>
             </View>

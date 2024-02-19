@@ -23,7 +23,7 @@ const VerifyNICInfo = ({onPress}) => {
               {/* INPUT BOX ============================= */}
               <View style={{
                   ...style.basic_container,
-                  marginTop: 20,
+                  marginTop: 50,
                   paddingLeft: 30,
                   paddingRight: 30
               }}>
@@ -41,7 +41,7 @@ const VerifyNICInfo = ({onPress}) => {
 </View>
 </View>
 <View style={styles.container2}>
-<View >
+<View style={{marginTop:20}} >
 <Text style={styles.numberText}>2</Text>
 </View>
 <View style={styles.cardView}>

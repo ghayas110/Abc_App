@@ -4,6 +4,7 @@ const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
     basic_container: {
         width: width,
+     
     },
     main_heading: {
         fontSize: 25,
@@ -52,6 +53,9 @@ const styles = StyleSheet.create({
     red_color_h: { color: "red" },
     golden_color_h: { color: "#FFB340" },
     White_color_h: { color: "#FFFFFF" },
+    dark_green_h: { color: "#006400" },
+    chart_red_color: { color: "#F04438" },
+    chart_green_color: { color: "#12B76A" },
 
     // BG COLORS =================================
     bg_blue_color: { backgroundColor: "#309fed", },
@@ -72,8 +76,8 @@ const styles = StyleSheet.create({
 
     // BORDERS ========================
     borderBot_gray:{
-        borderBottomColor: "#808080",
-        borderBottomWidth: 2,
+        borderBottomColor: "#CCCCCC",
+        borderBottomWidth: 1,
     },
     orenge_color_f: { color: "#ff5800" }, 
     Light_gray_color_f: { color: "#CCCCCC" },

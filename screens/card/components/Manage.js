@@ -159,11 +159,11 @@ const Manage = () => {
                                 <View style={{ padding: 15 }}>
                                     <Text style={{ ...style.gray_color_f, ...style.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
                                         Alternatively you may email us at:
-                                        bank@ssssco.com
+                                        SmartDigital@gmail.com
                                         We’ll get this sorted!</Text>
                                 </View>
                                 <View style={{ padding: 20, ...style.bg_light_green_color }}>
-                                    <Text style={{ ...style.Green_color_f, fontSize: 14, ...style.Font_family, fontWeight: '500', }}>Customer Support: +6016 299 5333 (fraud support line 24/7) or email to us at:  bank@ssssco.com</Text>
+                                    <Text style={{ ...style.Green_color_f, fontSize: 14, ...style.Font_family, fontWeight: '500', }}>Customer Support: +6016 299 5333 (fraud support line 24/7) or email to us at:  SmartDigital@gmail.com</Text>
                                 </View>
                                 <View style={{ padding: 10, alignItems: "center" }}>
                                     <OutlineButton text='Report Fraud' onPress={toggleBottomSheet2} />

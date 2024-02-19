@@ -39,7 +39,7 @@ const SavingsAccount = () => {
         <>
             <SafeAreaView style={{
                 backgroundColor: "white",
-                height: height,
+                height: height
             }}>
 
                 <ScrollView style={{ marginBottom: 200 }}>
