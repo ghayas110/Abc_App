@@ -43,6 +43,9 @@ const HomeScreen = ({ onLogin }) => {
   const goSavingpots = () => {
     navigation.navigate('SavingPots');
   };
+  const goInsights = () => {
+    navigation.navigate('Insights');
+  };
 
 
 
@@ -275,7 +278,7 @@ const HomeScreen = ({ onLogin }) => {
             <View style={styles.savingCardheader2}>
               <View style={styles.savingCardHeadertext}>
                 <Text style={styles.textSaving}>Financial Insights</Text>
-                <Text style={styles.textViewAll} onPress={goSavingpots} >More  <Icons.MaterialIcons name="arrow-forward-ios" style={styles.textIcon} /></Text>
+                <Text style={styles.textViewAll} onPress={goInsights} >More  <Icons.MaterialIcons name="arrow-forward-ios" style={styles.textIcon} /></Text>
               </View>
             </View>
             <View style={styles.Chart }>

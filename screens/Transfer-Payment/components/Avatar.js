@@ -16,7 +16,7 @@ const Avatar = ({
                 marginTop: 30
             }}>
                 <View style={{
-                    backgroundColor: "blue",
+                    backgroundColor: "#00a200",
                     height: 100,
                     width: 100,
                     borderRadius: 50,
