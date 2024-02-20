@@ -10,56 +10,56 @@ const MoneyOut = () => {
     const Flatlist = [
         {
             image: <Image source={MoneyIn} />,
-            name: 'Transfer Fund To\nID - Adli Ahmad',
+            name: 'Transfer Fund To\nID - Adil Ahmad',
             type: 'Miscellaneous',
             date: "28 Jan 2024",
             Amount: "-AED 21.90"
         },
         {
             image: <Image source={MoneyIn} />,
-            name: 'Transfer Fund To\nID - Adli Ahmad',
+            name: 'Transfer Fund To\nID - Adil Ahmad',
             type: 'Miscellaneous',
             date: "28 Jan 2024",
             Amount: "-AED 21.90"
         },
         {
             image: <Image source={MoneyIn} />,
-            name: 'Transfer Fund To\nID - Adli Ahmad',
+            name: 'Transfer Fund To\nID - Adil Ahmad',
             type: 'Miscellaneous',
             date: "28 Jan 2024",
             Amount: "-AED 21.90"
         },
         {
             image: <Image source={MoneyIn} />,
-            name: 'Transfer Fund To\nID - Adli Ahmad',
+            name: 'Transfer Fund To\nID - Adil Ahmad',
             type: 'Miscellaneous',
             date: "28 Jan 2024",
             Amount: "-AED 21.90"
         },
         {
             image: <Image source={MoneyIn} />,
-            name: 'Transfer Fund To\nID - Adli Ahmad',
+            name: 'Transfer Fund To\nID - Adil Ahmad',
             type: 'Miscellaneous',
             date: "28 Jan 2024",
             Amount: "-AED 21.90"
         },
         {
             image: <Image source={MoneyIn} />,
-            name: 'Transfer Fund To\nID - Adli Ahmad',
+            name: 'Transfer Fund To\nID - Adil Ahmad',
             type: 'Miscellaneous',
             date: "28 Jan 2024",
             Amount: "-AED 21.90"
         },
         {
             image: <Image source={MoneyIn} />,
-            name: 'Transfer Fund To\nID - Adli Ahmad',
+            name: 'Transfer Fund To\nID - Adil Ahmad',
             type: 'Miscellaneous',
             date: "28 Jan 2024",
             Amount: "-AED 21.90"
         },
         {
             image: <Image source={MoneyIn} />,
-            name: 'Transfer Fund To\nID - Adli Ahmad',
+            name: 'Transfer Fund To\nID - Adil Ahmad',
             type: 'Miscellaneous',
             date: "28 Jan 2024",
             Amount: "-AED 21.90"
