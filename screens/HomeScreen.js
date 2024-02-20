@@ -119,7 +119,7 @@ const HomeScreen = ({ onLogin }) => {
               </View>
               <View style={styles.HolderName}>
                 <Text style={styles.holdertext}>Card Holder Name</Text>
-                <Text style={styles.holderName}>ABDUR REHMAN</Text>
+                <Text style={styles.holderName}>Razak</Text>
               </View>
               <View style={styles.HolderName}>
                 <Text style={styles.holdertext}>Card Number</Text>

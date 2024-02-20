@@ -14,7 +14,7 @@ const Header = ({onPress}) => {
                     <View style={styles.RoundProfile}>
                         <Text style={styles.RoundProfileText} onPress={() => {naivgation.navigate("SettingServices")}}>AR</Text>
                     </View>
-                    <Text style={styles.HeaderName} onPress={() => {naivgation.navigate("SettingServices")}}>Hi REHMAN</Text>
+                    <Text style={styles.HeaderName} onPress={() => {naivgation.navigate("SettingServices")}}>Razak</Text>
                 </View>
                 <View style={{flexDirection:'row',alignItems:'center'}}>
                     <Image source={LogoutIcon}></Image>
