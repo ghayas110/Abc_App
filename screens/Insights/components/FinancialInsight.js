@@ -17,8 +17,8 @@ const FinancialInsight = () => {
     return (
         <View style={styles.container}>
             <ScrollView>
+                    <Text style={{fontSize: 14, fontWeight: '700', ...Theme.black_color_h , textAlign:"center" }}>Money Out vs Money In</Text>
                 <View style={{ padding: 5, marginBottom: 15, flexDirection: "row", alignItems: "center", justifyContent: "center", borderBottomWidth: 0.5 }}>
-                    {/* <Image source={CardInage} style={{ width: 300, height: 300, resizeMode: "contain", }} /> */}
                     <View style={styles.savingCard}>
                         <View style={styles.savingCardheader2}>
                             <View style={styles.savingCardHeadertext}>
