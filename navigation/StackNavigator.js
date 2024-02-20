@@ -76,6 +76,7 @@ import ComingSoon from "../screens/Coming-Soon/ComingSoon";
 import CardManage from "../screens/card/CardManage";
 import Reject from "../screens/Transfer-Payment/Reject";
 import TransferTo from "../screens/Transfer-Payment/TransferTo";
+import Insights from "../screens/Insights/Insights";
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -132,6 +133,7 @@ const MainNavigator = ({onLogin}) => {
       <Stack.Screen name="WithdrawSuccessfully" component={WithdrawSuccessfully} />
       <Stack.Screen name='CardMangements' component={CardManage} />
       <Stack.Screen name='TransferTo' component={TransferTo} />
+      <Stack.Screen name='Insights' component={Insights} />
 
     </Stack.Navigator>
   );
