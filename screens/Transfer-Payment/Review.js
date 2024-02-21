@@ -95,13 +95,13 @@ const Review = () => {
                     </View>
                     <View>
                         <Text style={styles.tranferInstruc}>
-                            I have read and agreed to the  DuitNow Transfer Terms and Conditions.
+                            I have read and agreed to the  Fund Transfer Terms and Conditions.
                         </Text>
                     </View>
                     <View style={{flexDirection:"row", alignItems:"center" , padding:10,}}>
                         <CheckBoxInput style={{ ...Theme.Green_color_h }} color={'#00a200'} /> 
                         <Text style={{...Theme.black_color_f , ...Theme.Font_family ,marginLeft:5}}>
-                               I have read and agreed to the  <Text style={{...Theme.Green_color_f}}>DuitNow Transfer Terms and Conditions.</Text> 
+                               I have read and agreed to the  <Text style={{...Theme.Green_color_f}}>Fund Transfer Terms and Conditions.</Text> 
                         </Text>
                     </View>
                     <View style={{ alignItems: "center" }}>

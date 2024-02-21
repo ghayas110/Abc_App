@@ -28,7 +28,7 @@ const SuccessfullyCreated = () => {
 
         </View>
           <View style={styles.Heading}>
-              <Text style={styles.HeadingText}>Yay! Your Savings Pot has been successfully created!</Text>
+              <Text style={styles.HeadingText}>Your Savings Pot has been successfully created!</Text>
               <Text style={styles.HeadingPara}>Keep saving to achieve more of your goals</Text>
           </View>
           <View style={styles.Bottom}>
@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
         ...Theme.Green_color_f,
     fontSize: 28,
         fontWeight: '700',
+        lineHeight:33.6
     },
     HeadingPara:{
         

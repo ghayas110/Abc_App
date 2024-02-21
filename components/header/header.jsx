@@ -6,18 +6,17 @@ import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const Header = ({onPress}) => {
-    const naivgation = useNavigation()
+    const navigation = useNavigation()
     return (
         <>
             <View style={styles.MainHeader}>
                 <View style={{ flexDirection: 'row',alignItems:'center' }}>
                     <View style={styles.RoundProfile}>
-                        <Text style={styles.RoundProfileText} onPress={() => {naivgation.navigate("SettingServices")}}>AR</Text>
+                        <Text style={styles.RoundProfileText} onPress={() => navigation.navigate('More')}>AR</Text>
                     </View>
-                    <Text style={styles.HeaderName} onPress={() => {naivgation.navigate("SettingServices")}}>Razak</Text>
+                    <Text style={styles.HeaderName} onPress={() => navigation.navigate('More')}>Razak</Text>
                 </View>
                 <View style={{flexDirection:'row',alignItems:'center'}}>
-                    <Image source={LogoutIcon}></Image>
                     <TouchableOpacity onPress={onPress}>
                         
                     <Image style={{marginLeft:15}} source={NotificationIcon}></Image>

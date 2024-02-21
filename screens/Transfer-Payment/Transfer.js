@@ -44,7 +44,7 @@ const Transfer = () => {
         },
         { name: 'Mobile Number', Icon: <Icons.AntDesign name="contacts" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" onPress={MobileNumber} style={styles.icon2}  /> },
         {
-            name: 'CNIC', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={CnicNumber} /> },
+            name: 'Emirates ID', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={CnicNumber} /> },
         // { name: 'MyPolis/MyTentera', Icon: <Icons.MaterialIcons name="local-police" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2}  onPress={gotoComingSoon}/> },
         // { name: 'Business Registration Number', Icon: <Icons.MaterialIcons name="business-center" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
         // { name: 'Passport Number', Icon: <Icons.MaterialCommunityIcons name="passport" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
@@ -91,11 +91,9 @@ const Transfer = () => {
     return (
         <>
             <View style={{ backgroundColor: "#FFFFFF", borderBottomWidth: 0.5, ...Theme.ligth_gray_border_Color }}>
-                <Header
-                    backtoPage={true}
-                    title="Transfer"
-                    backIcon={require('../../assets/TransactionHistoryImages/ArrowLeft.png')}
-                />
+            <View style={styles.header}>
+                <Text style={styles.headerText}>Transfer</Text>
+            </View>
             </View>
             <ScrollView style={{ padding: 5, backgroundColor: "#FFFFFF" }}>
 
@@ -227,7 +225,22 @@ const styles = StyleSheet.create({
         ...Theme.black_color_f,
         ...Theme.Font_family,
         
-    }
+    },
+    header: {
+        // height:100,
+        // backgroundColor:"red",
+        padding: 20,
+        borderBottomWidth: 0.5,
+        ...Theme.gray_border_Color,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    headerText: {
+        textAlign: "center",
+        ...Theme.black_color_h,
+        fontWeight: "700",
+        fontSize: 20,
+    },
 
 
 });

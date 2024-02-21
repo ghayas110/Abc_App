@@ -45,7 +45,7 @@ const AddFundsHome = () => {
                 </View>
                 <View style={styles.Heading}>
                     <Text style={styles.headingText}>My Umrah</Text>
-                    <Text style={styles.headingPara}>Yay! Start saving by adding funds to your pot.</Text>
+                    <Text style={styles.headingPara}>Start saving by adding funds to your pot.</Text>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
                         <Icons.MaterialCommunityIcons name="calendar-month-outline" style={styles.headingIcons} />
                         <Text style={styles.headingsss}>Expected completion date 1 Apr 2024</Text>
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     cardcont:{
         position: "absolute",
         width: "100%",
-        top: 385,
+        top: 435,
         justifyContent:"center",
         alignItems: "center",
 

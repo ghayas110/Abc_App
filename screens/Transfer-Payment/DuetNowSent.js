@@ -120,7 +120,7 @@ const DuetNowSent = () => {
 
                 <View style={styles.subheaderstyle}>
                 <LottieView source={require('../../assets/lotiefiles/transfer_inprogress_animation.json')} autoPlay style={{width:"100%",height:200}} />
-                    <Text style={styles.accountName}>Yay, DuitNow sent</Text>
+                    <Text style={styles.accountName}>Fund Transfer sent</Text>
 
                 </View>
 

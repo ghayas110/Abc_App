@@ -39,7 +39,7 @@ const QRAccountSuccess = () => {
                         marginTop: 20,
                         fontSize: 25,
                         fontFamily: "Poppins-Bold"
-                    }}>Yay! DuitNow QR set up is successful</Text>
+                    }}>Universal QR set up is successful</Text>
                     <View style={{display:'flex',alignItems:'center',justifyContent:'space-between',flexDirection:'row'}}>
                     <Text style={{
                         marginTop: 15,

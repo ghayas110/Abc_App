@@ -255,7 +255,7 @@ const HomeScreen = ({ onLogin }) => {
                   <Image source={Image4} style={styles.savingCardImage} />
                 </View>
                 <View style={styles.savingpottextcontianer}>
-                  <Text style={styles.savingpottext}>Makka</Text>
+                  <Text style={styles.savingpottext}>Makkah</Text>
                   <View style={{ width: 200, }}>
                     <ProgressBarAndroid
                       styleAttr="Horizontal"

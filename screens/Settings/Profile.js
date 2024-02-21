@@ -41,7 +41,7 @@ const Profile = () => {
                                     borderBottomWidth: 1,
                                     paddingBottom: 5
                                 }}>
-                                    <Image source={require("../../assets/generalImages/UpArrow.png")} style={{ marginRight: 20 }} />
+                                    {/* <Image source={require("../../assets/generalImages/UpArrow.png")} style={{ marginRight: 20 }} /> */}
                                     <Text style={{ ...style.Font_family_Bold, ...style.black_color_h }}>Personal</Text>
                                 </View>
                                 <View style={{ marginTop: 15 }}>
@@ -74,7 +74,7 @@ const Profile = () => {
                                         justifyContent: "space-between",
                                         alignItems: "center"
                                     }}>
-                                        <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, fontSize: 18 }}>62, Jalan Camar 5, Residensi 28, 47810, Petaling Jaya, Selangor</Text>
+                                        <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, fontSize: 18 }}>Box No. 40017, Ras al-Khaimah,Emirates</Text>
                                         <TouchableOpacity onPress={() => navigation.navigate("UpdateMallingAddress")}><Image source={require("../../assets/generalImages/Edit.png")} /></TouchableOpacity>
                                     </View>
                                 </View>
@@ -119,7 +119,7 @@ const Profile = () => {
                                     borderBottomWidth: 1,
                                     paddingBottom: 5
                                 }}>
-                                    <Image source={require("../../assets/generalImages/UpArrow.png")} style={{ marginRight: 20 }} />
+                                    {/* <Image source={require("../../assets/generalImages/UpArrow.png")} style={{ marginRight: 20 }} /> */}
                                     <Text style={{ ...style.Font_family_Bold, ...style.black_color_h }}>Employment details</Text>
                                 </View>
                                 <View style={{

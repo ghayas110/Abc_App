@@ -25,11 +25,11 @@ const DigitalSecure = () => {
         },
         {
             name: 'Transfer to',
-            value: "Hussien Lee  \n  Al-Rajhi Bank  \n  •••••••••••5431"
+            value: "Hussien Lee  \n  Dubai islamic Bank  \n  •••••••••••5431"
         },
         {
             name: 'Transfer type',
-            value: " DuitNow Pay to Account"
+            value: " Fund Transfer Pay to Account"
         },
         {
             name: 'Date & time',
