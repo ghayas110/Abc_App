@@ -52,17 +52,18 @@ const Transfer = () => {
     ];
     const data = [
         {
-            name: 'SSSCO Transfer',
-            Image: <Image source={DuetImg} style={styles.inmages} />,
+            name: 'Fund Transfer',
+            Image: require('../../assets/HomeScreenImages/FundTranfer.png'),
+            
             key: "1",
             Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={toggleBottomSheet} style={styles.IConfor} />
 
         },
         {
-            name: 'SSSCO QR',
-            Image: <Image source={QrDuetImg} style={styles.inmages} />,
+            name: 'Universal QR',
+            Image: require('../../assets/HomeScreenImages/UniversalQR.png'),
             key: "1",
-            Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={() => navigation.navigate('Home', { screen: 'ScanQR' })} style={styles.IConfor} />
+            Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={() => navigation.navigate('Home', { screen: 'QRScan' })} style={styles.IConfor} />
 
         },
         // {
@@ -103,7 +104,7 @@ const Transfer = () => {
                     {data.map(item => (
                         <>
                             <View key={item.id} style={styles.tableRow}>
-                                <Text style={styles.cell}>{item.Image}</Text>
+                            <Image source={item.Image} style={{ marginRight: 20,width:20,height:40 }} />
                                 <Text style={{ ...styles.cell2 }}>{item.name}</Text>
                                 <Text style={{ ...styles.cell, marginLeft: 50 }}>{item.Forward}</Text>
                             </View>
@@ -199,7 +200,7 @@ const styles = StyleSheet.create({
     },
     inmages: {
         resizeMode: 'contain',
-        width:11,
+        width:50,
         height:11,
         
     },

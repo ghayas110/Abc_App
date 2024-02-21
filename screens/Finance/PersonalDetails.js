@@ -58,7 +58,7 @@ const PersonalDetails = ({ onPress, AddressPress }) => {
 
                     <View style={{ marginTop: 10, }}>
                         <Text style={{ ...Theme.gray_color_h, ...Theme.Font_family, fontWeight: "500", fontSize: 12, }}>
-                            IQAMA No
+                            Emirates ID
                         </Text>
                         <Text style={{ fontWeight: '500', fontSize: 16, ...Theme.black_color_h, ...Theme.Font_family }}>
                             4356578-768-5678
@@ -103,7 +103,7 @@ const PersonalDetails = ({ onPress, AddressPress }) => {
                             Address (Line One)
                         </Text>
                         <Text style={{ fontWeight: '500', fontSize: 16, ...Theme.black_color_h, ...Theme.Font_family }}>
-                            99, Jalan Prince 4
+                        Street : Suite # – 1202
                         </Text>
                     </View>
                     <View style={{ marginTop: 10 }}>
@@ -127,7 +127,7 @@ const PersonalDetails = ({ onPress, AddressPress }) => {
                             City
                         </Text>
                         <Text style={{ fontWeight: '500', fontSize: 16, ...Theme.black_color_h, ...Theme.Font_family }}>
-                            Petaling Jaya
+                        Ras Al Khaimah
                         </Text>
                     </View>
                     <View style={{ marginTop: 10 }}>
@@ -135,7 +135,7 @@ const PersonalDetails = ({ onPress, AddressPress }) => {
                             State
                         </Text>
                         <Text style={{ fontWeight: '500', fontSize: 16, ...Theme.black_color_h, ...Theme.Font_family }}>
-                            Selangor
+                            United Arab Emirates
                         </Text>
                     </View>
                 </View>

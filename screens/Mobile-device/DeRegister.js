@@ -36,7 +36,7 @@ const DeRegister = ({onLogin}) => {
                 <View style={{ flex: 1 }}>
                     <View style={{ marginTop: 20 }}>
                         <Text style={{ ...style.Green_color_h, ...style.Font_family_Bold, fontSize: 30 }}>Manage your device</Text>
-                        <Text style={{ ...style.gray_color_h, ...style.Font_family, fontSize: 18 }}>Your Smart Bank account is linked to the following device</Text>
+                        <Text style={{ ...style.gray_color_h, ...style.Font_family, fontSize: 18 }}>Your Digital Bank account is linked to the following device</Text>
                     </View>
                     <View style={{ marginTop: 20 }}>
                         <View style={{
@@ -69,7 +69,7 @@ const DeRegister = ({onLogin}) => {
                         padding: 20,
                         marginBottom: 20
                     }}>
-                        <Text style={{ ...style.Font_family, ...style.Green_color_primary, fontSize: 15 }}>You may only link your Smart Bank account to one device at any given time.</Text>
+                        <Text style={{ ...style.Font_family, ...style.Green_color_primary, fontSize: 15 }}>You may only link your Digital Bank account to one device at any given time.</Text>
                         <Text style={{ ...style.Font_family, ...style.Green_color_primary, marginTop: 20, fontSize: 15 }}>If you wish to switch devices, you may de-register this device first.</Text>
                     </View>
                     <RequestButton btnStyle={{
@@ -86,7 +86,7 @@ const DeRegister = ({onLogin}) => {
                         <View style={{ backgroundColor: 'white', padding: 24, borderRadius: 20, margin: 20 }}>
                             <View>
                                 <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, textAlign: "center", fontSize: 25 }}>Are you sure you want to de-register your device?</Text>
-                                <Text style={{ ...style.Font_family, ...style.gray_color_h, textAlign: "center", fontSize: 17, marginTop: 15 }}>You will be logged out of your Smart Bank account on this device if you wish to de-register.</Text>
+                                <Text style={{ ...style.Font_family, ...style.gray_color_h, textAlign: "center", fontSize: 17, marginTop: 15 }}>You will be logged out of your Digital Bank account on this device if you wish to de-register.</Text>
                                 <View style={{marginTop: 20}}>
                                     <OutlineButton btnStyle={{ width: "auto" }} text='Cancel' onPress={()=> {setBottomSheetVisible(false)}}/>
                                     <RequestButton btnStyle={{ width: "auto",marginTop:15 }} onPress={onLogin} text='Confirm' />

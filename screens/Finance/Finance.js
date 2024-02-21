@@ -61,7 +61,7 @@ const Finance = () => {
                         <LottieView source={require('../../assets/lotiefiles/achieve_your_financial_goals_animation.json')} autoPlay style={{width:"100%",height:120}} />
                         </View>
                         <View style={styles.savingCardHeadertext2}>
-                            <Text style={styles.textSavingtext2}>ssssco Personal Financing-i</Text>
+                            <Text style={styles.textSavingtext2}>SSSCO Personal Financing-i</Text>
                             <Text style={styles.textNumber}>Get financing for your most important life events - without the hassle.</Text>
                         </View>
 
@@ -91,7 +91,7 @@ const Finance = () => {
                             <Image source={Image1} style={styles.ImagePFCard} />
                         </View>
                         <View style={styles.savingCardHeadertext2}>
-                            <Text style={styles.textSavingtext2}>ssssco Personal Financing-i</Text>
+                            <Text style={styles.textSavingtext2}>SSSCO Personal Financing-i</Text>
                             <Text style={styles.textNumber}>Get financing for your most important life events - without the hassle.</Text>
                         </View>
 
@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
         ...Theme.Green_color_h,
         ...Theme.Font_family,
         fontWeight: "700",
+        lineHeight:33.6
     },
 
     cardContainer: {

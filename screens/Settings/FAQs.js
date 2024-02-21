@@ -78,7 +78,7 @@ const FAQs = () => {
               <Accordion leftIcon={true} title="What is the difference between Bank 
               and AI SmartBank smartphone banking app (smartbank@gmail.com)"></Accordion>
               <Accordion leftIcon={true} title="How can I open SmartBank account?"></Accordion>
-              <Accordion leftIcon={true} title="Can I open SamrtBank account in any Malaysia branch?"></Accordion>
+              <Accordion leftIcon={true} title="Can I open Digital Bank account in any UAE branch?"></Accordion>
               <Accordion leftIcon={true} title={`What happens after I have successfully submitted my account ${'\n'} opening application?`}></Accordion>
               <Accordion leftIcon={true} title={`Do I need to walk into a branch for physical verification after my application?`}></Accordion>
               <Accordion leftIcon={true} title={`Can i re-apply or onboard again if any application was not successful on the first time application?`}></Accordion>

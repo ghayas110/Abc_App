@@ -18,7 +18,7 @@ const ManageDuitNowQR = () => {
       }}>
         <Header
           backtoPage={true}
-          title={"Manage DuitNow QR"}
+          title={"Manage Universal QR"}
           backIcon={require('../../assets/TransactionHistoryImages/ArrowLeft.png')}
         />
         <View style={{
@@ -42,7 +42,7 @@ const ManageDuitNowQR = () => {
                   alignItems: "center",
                 }}>
                   <Text style={{ ...style.Font_family_Bold, ...style.black_color_h }}>Biometric for QR payments</Text>
-                  <Switch style={{ paddingRight: 0 }} trackColor={{ false: '#cccccc', true: '#00a200' }} thumbColor={isEnabledOne ? '#00a200' : '#cccccc'} onValueChange={toggleSwitchOne} value={isEnabledOne} />
+                  <Switch style={{ paddingRight: 0 }} trackColor={{ false: '#FAF9F6', true: '#00a200' }} thumbColor={isEnabledOne ? '#00a200' : '#FAF9F6'} onValueChange={toggleSwitchOne} value={isEnabledOne} />
                 </View>
               </TouchableOpacity>
               <TouchableOpacity style={{ marginTop: 20 }}>
@@ -53,7 +53,7 @@ const ManageDuitNowQR = () => {
                   alignItems: "center",
                 }}>
                   <Text style={{ ...style.Font_family_Bold, ...style.black_color_h }}>Activate QR payment</Text>
-                  <Switch style={{ paddingRight: 0 }} trackColor={{ false: '#cccccc', true: '#00a200' }} thumbColor={isEnabledOne ? '#00a200' : '#cccccc'} onValueChange={toggleSwitchOne} value={isEnabledOne} />
+                  <Switch style={{ paddingRight: 0 }} trackColor={{ false: '#FAF9F6', true: '#00a200' }} thumbColor={isEnabledTwo ? '#00a200' : '#FAF9F6'} onValueChange={toggleSwitchTwo} value={isEnabledTwo} />
                 </View>
               </TouchableOpacity>
             </View>

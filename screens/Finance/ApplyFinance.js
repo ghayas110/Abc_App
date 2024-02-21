@@ -41,7 +41,7 @@ const ApplyFinance = () => {
                     Let's Get Started
                 </Text>
                 <Text style={{ fontSize: 16,lineHeight:24, fontWeight: "700", ...ThemeSty.gray_color_f , ...ThemeSty.Font_family }}>
-                Please complete the 3 steps below to get your Smart Bank Personal Financing-i
+                Please complete the 3 steps below to get your Digital Bank Personal Financing-i
                 </Text>
             </View>
             <View style={styles.headerText1}>

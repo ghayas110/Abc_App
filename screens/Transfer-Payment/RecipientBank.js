@@ -23,7 +23,7 @@ const RecipientBank = () => {
 
     const Flatlist = [
         {
-            name: 'Agrobank (Bank Pertanian Malaysia Saudia) ',
+            name: 'Agrobank (Bank Pertanian UAE Saudia) ',
         },
         {
             name: 'Alliance Bank (M) Saudia',

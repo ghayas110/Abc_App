@@ -37,18 +37,18 @@ const SettingServices = () => {
             text: 'Pay & Transfer Settings',
             imageRight: require('../../assets/transferPaymentImages/right.png'),
         },
-        {
-            id: '5',
-            imageLeft: require('../../assets/transferPaymentImages/messge.png'),
-            text: 'Communications preference',
-            imageRight: require('../../assets/transferPaymentImages/right.png'),
-        },
-        {
-            id: '6',
-            imageLeft: require('../../assets/transferPaymentImages/wallet.png'),
-            text: 'General Preference',
-            imageRight: require('../../assets/transferPaymentImages/right.png'),
-        },
+        // {
+        //     id: '5',
+        //     imageLeft: require('../../assets/transferPaymentImages/messge.png'),
+        //     text: 'Communications preference',
+        //     imageRight: require('../../assets/transferPaymentImages/right.png'),
+        // },
+        // {
+        //     id: '6',
+        //     imageLeft: require('../../assets/transferPaymentImages/wallet.png'),
+        //     text: 'General Preference',
+        //     imageRight: require('../../assets/transferPaymentImages/right.png'),
+        // },
     ];
     const dataTwo = [
         {

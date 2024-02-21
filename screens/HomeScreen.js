@@ -388,6 +388,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     backgroundColor: '#FFFFFF',
+    
     // justifyContent: "Space-evently",
   },
 
@@ -399,6 +400,7 @@ const styles = StyleSheet.create({
   Image: {
     width: 180,
     height: 50,
+    
   },
   inputContainer: {
     borderBottomWidth: 2,
@@ -492,6 +494,9 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     width: 70,
     height: 70,
+    shadowOpacity: 0.2,
+    shadowRadius:4,
+    elevation: 5,
   },
   tableContainer: {
     padding: 10,
