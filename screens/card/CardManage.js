@@ -41,7 +41,7 @@ const CardManage = () => {
               <View style={styles.savingCardheaderHome}>
                 <View style={styles.DebitCard}>
 
-                <Icons.Entypo name="wallet" style={{ margin: 5, fontSize: 20, ...Theme.White_color_h }} onPress={() => navigation.navigate('CardMangements')} />
+                {/* <Icons.Entypo name="wallet" style={{ margin: 5, fontSize: 20, ...Theme.White_color_h }} onPress={() => navigation.navigate('CardMangements')} /> */}
                   {isCardNumber ?
                   <Icons.MaterialCommunityIcons name="eye-off-outline" style={{ margin: 5, fontSize: 20, ...Theme.White_color_h }} onPress={HandleShow} />
                     :

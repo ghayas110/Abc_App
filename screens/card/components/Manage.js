@@ -124,7 +124,7 @@ const Manage = () => {
                                 <Image style={{ marginRight: 10 }} source={require("../../../assets/cardImages/cool.png")} />
                                 <Text style={{ ...style.Font_family_Bold, ...style.black_color_h }}>Temporarily freeze card</Text>
                             </View>
-                            <Switch trackColor={{ false: '#cccccc', true: '#00a200' }} thumbColor={isEnabledOne ? '#00a200' : '#cccccc'} onValueChange={toggleSwitchOne} style={{ alignItems: "flex-end" }} value={isEnabledOne} />
+                            <Switch trackColor={{ false: '#FAF4F9', true: '#00a200' }} thumbColor={isEnabledOne ? '#00a200' : '#FAF4F9'} onValueChange={toggleSwitchOne} style={{ alignItems: "flex-end" }} value={isEnabledOne} />
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity>
@@ -143,7 +143,7 @@ const Manage = () => {
                                 <Image style={{ marginRight: 10 }} source={require("../../../assets/cardImages/block.png")} />
                                 <Text style={{ ...style.Font_family_Bold, ...style.black_color_h }}>Kill Switch</Text>
                             </View>
-                            <Switch trackColor={{ false: '#cccccc', true: '#00a200' }} thumbColor={isEnabledTwo ? '#00a200' : '#cccccc'} onValueChange={toggleSwitchTwo} value={isEnabledTwo} />
+                            <Switch trackColor={{ false: '#FAF4F9', true: '#00a200' }} thumbColor={isEnabledTwo ? '#00a200' : '#FAF4F9'} onValueChange={toggleSwitchTwo} value={isEnabledTwo} />
                         </View>
                     </TouchableOpacity>
                     <Modal
