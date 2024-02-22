@@ -264,10 +264,11 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
 
-  Image: {
+  Image:{
     width: 180,
-    height: 50,
-  },
+    height:50,
+    resizeMode:'contain'
+ },
   inputContainer: {
     borderBottomWidth: 2,
     borderColor: '#00A200',

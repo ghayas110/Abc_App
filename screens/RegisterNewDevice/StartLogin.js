@@ -146,7 +146,8 @@ const styles = StyleSheet.create({
  
     Image:{
        width: 180,
-       height:50
+       height:50,
+       resizeMode:'contain'
     },
     inputContainer: {
         borderBottomWidth: 1,
