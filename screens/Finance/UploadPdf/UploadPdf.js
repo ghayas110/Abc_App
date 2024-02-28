@@ -19,71 +19,68 @@ import { FilePicker } from '../../../components/Inputs';
 
 const UploadPdf = () => {
     const navigation = useNavigation()
-  return (
- 
-    <>
-    <SafeAreaView style={{
-        flex: 1,
-        backgroundColor: "white",
-        paddingLeft: 30,
-        paddingRight: 30,
-        paddingBottom: 20,
-        paddingTop: 30
-    }}>
-         <Steps
-            backtoPage={false}
-            totalSteps={"1"}
-            activeStep={"1"}
-            backIcon={require('../../verify-personal/images/Icons.png')}
-            leftIcon={require('../../../assets/Finance/activeStep2.png')}
-            rightIcon={require('../../../assets/Finance/aproval.png')}
-            ProgressBarIcon={require('../../verify-personal/images/steps.png')}
-        />
-        <View style={{ flex: 1,marginTop:20 }}>
-            <Text style={{ ...style.Font_family_Bold, ...style.Green_color_h, fontSize: 30 }}>We need some documents from you</Text>
-            <Text style={{ ...style.Font_family, ...style.gray_color_h }}>Please only upload .pdf files</Text>
-            <View style={{marginTop:20}}>
-                <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, fontSize: 20}}>Latest 2 year EPF full statements</Text>
-                <Text style={{ ...style.Font_family, ...style.gray_color_h }}>Showing at least the last 12 months of {'\n'} contribution history</Text>
-            </View>
+    return (
 
-            <FilePicker 
-                icon={require("../../../assets/Finance/upload.png")} 
-                text={"Upload"}
-                fileStyleView={{
-                    marginTop: 40
-                }}
-            />
-            <View style={{
-                ...style.bg_light_green_color,
-                padding: 20,
-                marginTop: 20
+        <>
+            <SafeAreaView style={{
+                flex: 1,
+                backgroundColor: "white",
+                padding:20
             }}>
-                <Text style={{
-                    ...style.Font_family,
-                    color: "#006400",
-                    fontSize: 15
-                }}>Note: You will need to provide the digital PDF statements downloaded directly from your bank portal or LHDN or KWSP website. Scanned statements are not accepted.</Text>
-            </View>
-        </View>
-        <View style={{ flex: 1, justifyContent: "flex-end" }}>
-        <TouchableOpacity style={{
+                <Steps
+                    backtoPage={false}
+                    totalSteps={"1"}
+                    activeStep={"1"}
+                    backIcon={require('../../verify-personal/images/Icons.png')}
+                    leftIcon={require('../../../assets/Finance/activeStep2.png')}
+                    rightIcon={require('../../../assets/Finance/aproval.png')}
+                    ProgressBarIcon={require('../../verify-personal/images/steps.png')}
+                />
+                <View style={{ flex: 1, marginTop: 10 }}>
+                    <Text style={{ ...style.Font_family_Bold, ...style.Green_color_h, fontSize: 24 }}>We need some documents from you</Text>
+                    <Text style={{ ...style.Font_family, ...style.gray_color_h }}>Please only upload .pdf files</Text>
+                    <View style={{ marginTop: 10}}>
+                        <Text style={{ ...style.Font_family_Bold, ...style.black_color_h, fontSize: 16 }}>Latest 2 year EPF full statements</Text>
+                        <Text style={{ ...style.Font_family, ...style.gray_color_h }}>Showing at least the last 12 months of {'\n'} contribution history</Text>
+                    </View>
+
+                    <FilePicker
+                        icon={require("../../../assets/Finance/upload.png")}
+                        text={"Upload"}
+                        fileStyleView={{
+                            marginTop: 50
+                        }}
+                    />
+                    <TouchableOpacity style={{
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "center",
                         justifyContent: "center",
-                        marginBottom: 20
-                    }} onPress={() => { navigation.navigate('UploadInstructions')}}>
-                        <Image source={require("../../../assets/Finance/info.png")} style={{marginRight: 10,height: 30,width: 30}}/>
-                        <Text style={{...style.Font_family_Bold,...style.Green_color_h,fontSize: 20}}>How to upload?</Text>
+                        marginTop: 40
+                    }} onPress={() => { navigation.navigate('UploadInstructions') }}>
+                        <Image source={require("../../../assets/Finance/info.png")} style={{ marginRight: 10, height: 30, width: 30 }} />
+                        <Text style={{ ...style.Font_family_Bold, ...style.Green_color_h, fontSize: 20 }}>How to upload?</Text>
                     </TouchableOpacity>
-            <RequestButton btnStyle={{
-                width: "auto"
-            }} text={"Continue"} onPress={() => { navigation.navigate("Reviewing") }} />
-        </View> 
-    </SafeAreaView>
-</>
-  )
+                    <View style={{
+                        ...style.bg_light_green_color,
+                        padding: 20,
+                        marginTop: 40,
+                        borderRadius: 10
+                    }}>
+                        <Text style={{
+                            ...style.Font_family,
+                            color: "#006400",
+                            fontSize: 15
+                        }}>Note: You will need to provide the digital PDF statements downloaded directly from your bank portal or LHDN or KWSP website. Scanned statements are not accepted.</Text>
+                    </View>
+                </View>
+
+                <View style={{ alignItems: "center" }}>
+                    <RequestButton text={"Continue"} onPress={() => { navigation.navigate("Reviewing") }} />
+                </View>
+            </SafeAreaView>
+        </>
+    )
 }
 
 export default UploadPdf

@@ -122,7 +122,7 @@ const ReviewDetails = () => {
                             </View>
                             <View style={{ marginTop: 20 }}>
                                 <Text style={{ fontSize: 16, fontWeight: "500", fontFamily: "Poppins-Regular", ...style.gray_color_h }}>Annual income bracket</Text>
-                                <Text style={{ fontSize: 14, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>RM 72,000 to RM 88,000</Text>
+                                <Text style={{ fontSize: 14, marginTop: 15, color:'black', fontFamily: "Poppins-Bold" }}>AED 72,000 to AED 88,000</Text>
                             </View>
                         </View>
 

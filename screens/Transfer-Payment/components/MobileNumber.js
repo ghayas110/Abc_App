@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Button, FlatList, Image, TextInput } from 'react-native'
 import React, { useState } from 'react'
 import Theme from '../../../assets/styles/basic'
-import { SimpleInput } from '../../../components/Inputs'
+import { SimpleInput, ExampleInput, List } from '../../../components/Inputs'
 import { useNavigation } from '@react-navigation/native'
 import { FilterButton, RequestButton } from '../../../components/Buttons';
 import DuetImg from '../../../assets/transferPaymentImages/DuetIcons.png'
@@ -40,14 +40,10 @@ const MobileNumber = () => {
 
 
     const Flatlist = [
-        {
-            name: 'DuitNow ID',
-            text: "Mobile Number",
-            Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={ForWordnavigation} />
-        },
+
         {
             name: 'Mobile Number',
-            text: "Select account type",
+            text: <TextInput placeholder='Endter' style={styles.TextInput} />,
             Icon2: <Icons.AntDesign name="contacts" style={styles.icon2} onPress={toggleBottomSheet} />
         },
 
@@ -74,18 +70,40 @@ const MobileNumber = () => {
 
 
 
-    
+
 
     return (
         <>
 
             <View style={styles.container}>
                 <View style={{ flex: 1, }}>
-                    <FlatList
-                        data={Flatlist}
-                        renderItem={renderItem}
-                        keyExtractor={item => item.id}
-                    />
+
+                    <View style={styles.selection}>
+                        <List
+                            label="Transfer ID"
+                            textStyle={{ ...Theme.Font_family, ...Theme.gray_color_h, textAlign: "left", fontSize: 12, marginBottom: 0 }}
+                            dropDownStyle={{ fontFamily: "Poppins-Bold", ...Theme.gray_color_f }}
+                            viewStyle={{ width: "100%", zIndex: 999, paddingLeft: 0, paddingRight: 0 }}
+                            placeholder={"Transfer"}
+                            defaultValue={"Selangor"}
+                            items={[
+                                { label: 'Number', value: 'Dubai Islamic Bank' },
+                                // { label: 'Emrates ID', value: 'Dubai Islamic Bank' },
+                            ]}
+                        />
+                    </View>
+                    <View style={{marginTop:12}}>
+                <Text style={styles.name}>Number</Text>
+                        <View style={styles.EnterAmount}>
+                            <Text style={styles.Amount}>+971</Text>
+                            <View style={styles.TextinputAmount} >
+                                <TextInput placeholder="Enter Number" style={styles.TextEditor} />
+                                <Icons.AntDesign name="contacts" style={styles.icon2} onPress={toggleBottomSheet} />
+                            </View>
+                        </View>
+                    </View>
+
+
 
                 </View>
 
@@ -100,22 +118,23 @@ const MobileNumber = () => {
                 </View>
                 <Modal
                     isVisible={isBottomSheetVisible}
-                    style={{ margin: 0  , marginTop:50 }}
+                    style={{ margin: 0, marginTop: 50 }}
                     onBackdropPress={toggleBottomSheet}>
-                    <View style={{flex:1}}>
-                        <View style={{ backgroundColor: 'white',
-                                padding: 16,
-                                // height: 100,
-                                borderTopRightRadius: 30,
-                                borderTopLeftRadius: 30,
-                            }}>
+                    <View style={{ flex: 1 }}>
+                        <View style={{
+                            backgroundColor: 'white',
+                            padding: 16,
+                            // height: 100,
+                            borderTopRightRadius: 30,
+                            borderTopLeftRadius: 30,
+                        }}>
                             <View>
-                                <Text style={{fontSize: 28, fontWeight: '700', ...Theme.Green_color_f, ...Theme.Font_family, textAlign:"center" }}> Contacts  </Text>
+                                <Text style={{ fontSize: 28, fontWeight: '700', ...Theme.Green_color_f, ...Theme.Font_family, textAlign: "center" }}> Contacts  </Text>
                             </View>
                             <View style={styles.Search}>
                                 <Icons.AntDesign name="search1" style={styles.SearchIcon} />
                                 <TextInput style={styles.input} placeholder="Search..." />
-                           </View>
+                            </View>
                             <View >
                                 <ContactList />
                             </View>
@@ -190,17 +209,45 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         paddingHorizontal: 10,
     },
-    Search:{
-        flexDirection:"row",
-        alignItems:"center",
-        paddingHorizontal:10,
+    Search: {
+        flexDirection: "row",
+        alignItems: "center",
+        paddingHorizontal: 10,
         ...Theme.bg_light_gray,
-        borderRadius:16,
+        borderRadius: 16,
 
     },
-    SearchIcon:{
-        fontSize: 20,   
+    SearchIcon: {
+        fontSize: 20,
+    },
+    selection: {
+        // flexDirection: "row",
+    },
+    EnterAmount: {
+
+        flexDirection: "row",
+        // justifyContent: "space-between"s,
+        alignItems: "center",
+    },
+    TextinputAmount: {
+        flexDirection:"row",
+        alignItems:"center",
+
+        // width: 242,
+        borderBottomWidth: 1,
+        ...Theme.Light_gray_color_f
+    },
+    Amount: {
+        fontSize: 16,
+        ...Theme.Font_family,
+        ...Theme.black_color_h,
+        fontWeight: "700"
+    },
+    TextEditor:{
+        width:242
     }
+
+
 
 
 });

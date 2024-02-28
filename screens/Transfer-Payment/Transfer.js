@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Button, FlatList, Image } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import Theme from '../../assets/styles/basic'
 import { ScrollView } from 'react-native-gesture-handler';
 import Modal from 'react-native-modal';
@@ -13,13 +13,15 @@ import { CheckBoxInput } from '../../components/Inputs';
 import { Icon } from 'react-native-paper/lib/typescript/components/Avatar/Avatar';
 
 const Transfer = () => {
-    const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
+    const [isBottomSheetVisible, setBottomSheetVisible] = useState(true);
     const [isAccount , setAccount ] = useState("Accounts");
     const [isMobile, setMobile] = useState("Mobile");
 
     const toggleBottomSheet = () => {
-        setBottomSheetVisible(!isBottomSheetVisible);
+        setBottomSheetVisible(false);
     };
+
+    
 
     const navigation = useNavigation()
 
@@ -44,35 +46,35 @@ const Transfer = () => {
         },
         { name: 'Mobile Number', Icon: <Icons.AntDesign name="contacts" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" onPress={MobileNumber} style={styles.icon2}  /> },
         {
-            name: 'CNIC', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={CnicNumber} /> },
+            name: 'Emrates ID', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={CnicNumber} /> },
         // { name: 'MyPolis/MyTentera', Icon: <Icons.MaterialIcons name="local-police" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2}  onPress={gotoComingSoon}/> },
         // { name: 'Business Registration Number', Icon: <Icons.MaterialIcons name="business-center" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
         // { name: 'Passport Number', Icon: <Icons.MaterialCommunityIcons name="passport" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
         // Add more items as needed
     ];
-    const data = [
-        {
-            name: 'SSSCO Transfer',
-            Image: <Image source={DuetImg} style={styles.inmages} />,
-            key: "1",
-            Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={toggleBottomSheet} style={styles.IConfor} />
+    // const data = [
+    //     {
+    //         name: 'SSSCO Transfer',
+    //         Image: <Image source={DuetImg} style={styles.inmages} />,
+    //         key: "1",
+    //         Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={toggleBottomSheet} style={styles.IConfor} />
 
-        },
-        {
-            name: 'SSSCO QR',
-            Image: <Image source={QrDuetImg} style={styles.inmages} />,
-            key: "1",
-            Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={() => navigation.navigate('Home', { screen: 'ScanQR' })} style={styles.IConfor} />
+    //     },
+    //     {
+    //         name: 'SSSCO QR',
+    //         Image: <Image source={QrDuetImg} style={styles.inmages} />,
+    //         key: "1",
+    //         Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={() => navigation.navigate('Home', { screen: 'ScanQR' })} style={styles.IConfor} />
 
-        },
-        // {
-        //     name: 'Transfer to another SSSCO account',
-        //     Image: <Image source={DuetImg} style={styles.inmages} />,
-        //     key: "1",
-        //     Forward: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.IConfor} />
+    //     },
+    //     // {
+    //     //     name: 'Transfer to another SSSCO account',
+    //     //     Image: <Image source={DuetImg} style={styles.inmages} />,
+    //     //     key: "1",
+    //     //     Forward: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.IConfor} />
 
-        // },
-    ];
+    //     // },
+    // ];
 
 
     const renderItem = ({ item }) => (
@@ -89,16 +91,14 @@ const Transfer = () => {
 
     return (
         <>
-            <View style={{ backgroundColor: "#FFFFFF", borderBottomWidth: 0.5, ...Theme.ligth_gray_border_Color }}>
+            <View style={{ backgroundColor: "#FFFFFF", borderBottomWidth: 0.5, ...Theme.ligth_gray_border_Color , flex:1 }}>
                 <Header
                     backtoPage={true}
                     title="Transfer"
                     backIcon={require('../../assets/TransactionHistoryImages/ArrowLeft.png')}
                 />
-            </View>
-            <ScrollView style={{ padding: 5, backgroundColor: "#FFFFFF" }}>
 
-                <View style={styles.tableContainer}>
+                {/* <View style={styles.tableContainer}>
 
                     {data.map(item => (
                         <>
@@ -110,7 +110,7 @@ const Transfer = () => {
                         </>
                     ))}
 
-                </View>
+                </View> */}
 
                 <Modal
                     isVisible={isBottomSheetVisible}
@@ -125,15 +125,16 @@ const Transfer = () => {
                             <FlatList
                                 data={Flatlist}
                                 renderItem={renderItem}
-                                keyExtractor={item => item.id}
-                            />
+                                keyExtractor={item => item.name} // Change item.id to item.name
+                                />
 
 
 
                         </View>
                     </View>
                 </Modal>
-            </ScrollView>
+            </View>
+
         </>
     )
 }

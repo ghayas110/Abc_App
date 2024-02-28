@@ -1,7 +1,11 @@
 import 'react-native-gesture-handler';
-import React from "react";
+import React, {useState} from "react";
+import { StyleSheet , View , Text , FlatList } from 'react-native';
+import Theme from '../assets/styles/basic'
+import Modal from 'react-native-modal';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
+import Icons from '../components/Icons';
 import Otp from '../screens/SignUp/Otp';
 import SignUp from '../screens/SignUp/SignUp';
 import SplashScreen from '../screens/SplashScreen/SplashScreen';
@@ -42,11 +46,15 @@ import { Image } from 'react-native';
 const AuthStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+
+
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+ 
 
 
   return (
+    <>
     <NavigationContainer>
       {isLoggedIn ? (
   <Tab.Navigator
@@ -80,7 +88,7 @@ const MainStackNavigator = () => {
 
   <Tab.Screen  name="Transfer" component={TransferNavigator} options={{
     tabBarIcon: ({ color, size,focused }) => (
-      <Image source={!focused ? require('../assets/tabicons/transfer.png') : require('../assets/tabicons/TransferOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
+      <Image source={!focused ? require('../assets/tabicons/transfer.png') : require('../assets/tabicons/TransferOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }}  />
       
       ),
     }}/>
@@ -155,6 +163,10 @@ const MainStackNavigator = () => {
         </AuthStack.Navigator>
       )}
     </NavigationContainer>
+
+         
+
+  </>
   );
 };
 export default MainStackNavigator
