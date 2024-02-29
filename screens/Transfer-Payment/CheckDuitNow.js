@@ -55,7 +55,7 @@ const CheckDuitNow = () => {
                         <Text style={{
                             ...style.Font_family_Bold,
                             ...style.black_color_f,
-                        }}>DuitNow ID</Text>
+                        }}>Fund-Transfer ID</Text>
                         <View style={{
                             display: "flex",
                             alignItems: "flex-end"
@@ -114,7 +114,7 @@ const CheckDuitNow = () => {
                             ...style.Green_color_h,
                             ...style.Font_family_Bold,
                         }}>
-                            DuitNow terms and conditions & privacy notice.
+                            Fund-Transfer terms and conditions & privacy notice.
                         </Text>
                     </Text>
                     </View>

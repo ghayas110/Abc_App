@@ -40,7 +40,7 @@ const AllowBiometric = () => {
                         marginTop: 20,
                         fontSize: 25,
                         fontFamily: "Poppins-Bold"
-                    }}>Let’s set up your DuitNow Biometric pay!</Text>
+                    }}>Let’s set up your Fund-Transfer Biometric pay!</Text>
           
                 </View>
                 <OutlineButton text={"Maybe Later"} onPress={() => navigation.goBack()}

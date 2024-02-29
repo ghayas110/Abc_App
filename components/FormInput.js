@@ -3,8 +3,7 @@ import {
     Text,
     View,
     TextInput,
-    TouchableOpacity,
-    Dimensions,
+    TouchableOpacisions,
   } from 'react-native';
   import React, {useState} from 'react';
   
