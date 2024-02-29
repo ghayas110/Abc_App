@@ -42,7 +42,6 @@ const CnicNumber = () => {
     const Flatlist = [
 
         {
-<<<<<<< HEAD
             name: 'Fund Transfer ID',
             text: "Emirates ID",
             Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={ForWordnavigation} />
@@ -51,11 +50,9 @@ const CnicNumber = () => {
             name: 'Emirates ID',
             text: "42201-6548862-8",
             // Icon2: <Icons.AntDesign name="contacts" style={styles.icon2} onPress={toggleBottomSheet} />
-=======
             name: 'Mobile Number',
             text: <TextInput placeholder='Endter' style={styles.TextInput} />,
             Icon2: <Icons.AntDesign name="contacts" style={styles.icon2} onPress={toggleBottomSheet} />
->>>>>>> a6610832ed5c0598704309612c3d77badd252d57
         },
 
     ];
