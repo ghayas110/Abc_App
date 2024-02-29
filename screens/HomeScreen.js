@@ -24,12 +24,17 @@ import ChartInsight from './Chart/ChartInsight'
 const HomeScreen = ({ onLogin }) => {
   const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
   const [isBottomSheetVisible2, setBottomSheetVisible2] = useState(false);
+  const [isBottomSheetVisible3, setBottomSheetVisible3] = useState(false);
   const [isCardNumber, setCardNumber] = useState(false);
   const [isAccount, setAccount] = useState("Accounts");
 
   const HandleShow = () => {
     setCardNumber(!isCardNumber)
   }
+
+  const toggleBottomSheet3 = () => {
+    setBottomSheetVisible3(!isBottomSheetVisible3);
+};
 
   const toggleBottomSheet = () => {
     setBottomSheetVisible(!isBottomSheetVisible);
@@ -46,6 +51,10 @@ const HomeScreen = ({ onLogin }) => {
   const goInsights = () => {
     navigation.navigate('Insights');
   };
+  
+  const ForWordnavigation = () => {
+    navigation.navigate('TransferTO', { data: isAccount })
+}
 
 
 
@@ -64,9 +73,8 @@ const HomeScreen = ({ onLogin }) => {
   }, []);
 
 
-  const ForWordnavigation = () => {
-    navigation.navigate('TransferTo', { data: isAccount })
-  }
+
+
 
 
   return (
@@ -375,6 +383,7 @@ const HomeScreen = ({ onLogin }) => {
             </View>
           </View>
         </Modal>
+   
 
       </ScrollView>
     </>

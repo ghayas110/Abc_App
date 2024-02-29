@@ -68,7 +68,7 @@ const EmpDetails = () => {
                     justifyContent: "flex-end",
                     marginTop: 20,
                 }}>
-                    <RequestButton btnStyle={{ width: "auto" }} text={"Confirm"} onPress={() => {navigation.navigate("Profile")}} />
+                    <RequestButton btnStyle={{ width: "auto" }} text={"ConfiAED"} onPress={() => {navigation.navigate("Profile")}} />
                 </View>
             </SafeAreaView>
         </>

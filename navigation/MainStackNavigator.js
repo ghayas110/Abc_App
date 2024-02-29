@@ -1,7 +1,11 @@
 import 'react-native-gesture-handler';
-import React from "react";
+import React, {useState , useEffect} from "react";
+import { useNavigation } from '@react-navigation/native'
+import Modal from 'react-native-modal';
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
+import Icons from '../components/Icons';
 import Otp from '../screens/SignUp/Otp';
 import SignUp from '../screens/SignUp/SignUp';
 import SplashScreen from '../screens/SplashScreen/SplashScreen';
@@ -36,17 +40,31 @@ import StartLoginStep6 from '../screens/RegisterNewDevice/StartLoginStep6';
 import UpdateTermAndCondition from '../screens/RegisterNewDevice/UpdateTermAndCondition';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AccountNavigator, FinanceNavigator, MainNavigator, MoreNavigator, TransferNavigator } from './StackNavigator';
-import { Image } from 'react-native';
-
+import { Image , StyleSheet , View , Text , FlatList } from 'react-native';
+import Theme from '../assets/styles/basic'
 // import SavingPots from '../screens/SavingsPot/SavingPots';
 const AuthStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+
+
 const MainStackNavigator = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
+
+  const toggleBottomSheet = () => {
+    setBottomSheetVisible(!isBottomSheetVisible);
+  };
+
+  const handleTransferTabPress = ({ navigation }) => {
+    // Open bottom sheet modal when Transfer tab is pressed
+    toggleBottomSheet();
+  };
+ 
 
 
   return (
+    <>
     <NavigationContainer>
       {isLoggedIn ? (
         <Tab.Navigator
@@ -75,6 +93,7 @@ const MainStackNavigator = () => {
             tabBarIcon: ({ color, size, focused }) => (
               <Image source={!focused ? require('../assets/tabicons/account.png') : require('../assets/tabicons/WalletOutlined.png')} style={{ width: 25, height: 20, objectFit: 'contain' }} />
 
+<<<<<<< HEAD
             ),
           }} />
 
@@ -100,6 +119,37 @@ const MainStackNavigator = () => {
             )}
           </Tab.Screen>
         </Tab.Navigator>
+=======
+<Tab.Screen
+            name="Transfer"
+            component={TransferNavigator}
+            options={{
+              tabBarIcon: ({ color, size, focused }) => (
+                <Image
+                  source={
+                    !focused
+                      ? require("../assets/tabicons/transfer.png")
+                      : require("../assets/tabicons/TransferOutlined.png")
+                  }
+                  style={{ width: 25, height: 20, objectFit: "contain" }}
+                />
+              ),
+            }}
+          />
+  <Tab.Screen name="Finance" component={FinanceNavigator} options={{
+      tabBarIcon: ({ color, size,focused }) => (
+        <Image source={!focused ? require('../assets/tabicons/finance.png') : require('../assets/tabicons/FinanceOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
+        
+        ),
+      }}/>
+    <Tab.Screen   name="More" component={MoreNavigator} options={{
+      tabBarIcon: ({ color, size,focused }) => (
+        <Image source={!focused ? require('../assets/tabicons/More.png') : require('../assets/tabicons/MoreOutline.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
+        
+        ),
+      }}/>
+      
+>>>>>>> a6610832ed5c0598704309612c3d77badd252d57
 
       ) : (
         <AuthStack.Navigator screenOptions={{
@@ -156,10 +206,27 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="VerifyingDetails" component={VerifyingDetails} />
         </AuthStack.Navigator>
       )}
+
+
+      
     </NavigationContainer>
+
+         
+
+  </>
   );
 };
-export default MainStackNavigator
+
+
+
+export default MainStackNavigator 
+
+
+
+
+
+
+
 
 
 

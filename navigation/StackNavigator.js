@@ -1,4 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
+import { StyleSheet, Text, View, FlatList, } from 'react-native'
+import Theme from '../assets/styles/basic'
+import Icons from "../components/Icons";
+import { useNavigation } from '@react-navigation/native'
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
 import StatementScreen from "../screens/Statement/StatementList";
@@ -86,6 +90,8 @@ import DeRegister from "../screens/Mobile-device/DeRegister";
 import NewPassword from "../screens/PassCode/NewPassword";
 import TransferTo from "../screens/Transfer-Payment/TransferTo";
 import Insights from "../screens/Insights/Insights";
+import Modal from 'react-native-modal';
+
 const Stack = createStackNavigator();
 
 const screenOptionStyle = {
@@ -97,6 +103,7 @@ const screenOptionStyle = {
 };
 
 const MainNavigator = ({onLogin}) => {
+
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}
       tabBarOptions={{
@@ -189,6 +196,7 @@ const MoreNavigator = ({onLogin}) => {
 };
 
 
+
 const AccountNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
@@ -254,6 +262,12 @@ const FinanceNavigator = () => {
 
 
 const TransferNavigator = () => {
+  const [isBottomSheetVisible, setBottomSheetVisible] = useState(true);
+  const toggleBottomSheet = () => {
+    setBottomSheetVisible(false);
+};
+
+
   return (
     <Stack.Navigator screenOptions={{
       headerShown: false
@@ -263,9 +277,8 @@ const TransferNavigator = () => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Stack.Screen name="Transfer" component={Transfer} screenOptions={{
-        headerShown: false
-      }} />
+     <Stack.Screen name="Transfer"  component={Transfer}  screenOptions={{ headerShown: false }} />
+         
       <Stack.Screen name="TransferTO" component={TransferTO} screenOptions={{
         headerShown: false
       }} />
@@ -301,5 +314,6 @@ const SignUpStackNavigator = () => {
     </Stack.Navigator>
   );
 };
+
 
 export { MainNavigator, SignUpStackNavigator, MoreNavigator, TransferNavigator, AccountNavigator, FinanceNavigator };

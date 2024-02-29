@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Button, FlatList, Image, TextInput } from 'react-native'
 import React, { useState } from 'react'
 import Theme from '../../../assets/styles/basic'
-import { SimpleInput } from '../../../components/Inputs'
+import { SimpleInput, ExampleInput, List } from '../../../components/Inputs'
 import { useNavigation } from '@react-navigation/native'
 import { FilterButton, RequestButton } from '../../../components/Buttons';
 import DuetImg from '../../../assets/transferPaymentImages/DuetIcons.png'
@@ -40,7 +40,9 @@ const CnicNumber = () => {
 
 
     const Flatlist = [
+
         {
+<<<<<<< HEAD
             name: 'Fund Transfer ID',
             text: "Emirates ID",
             Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={ForWordnavigation} />
@@ -49,6 +51,11 @@ const CnicNumber = () => {
             name: 'Emirates ID',
             text: "42201-6548862-8",
             // Icon2: <Icons.AntDesign name="contacts" style={styles.icon2} onPress={toggleBottomSheet} />
+=======
+            name: 'Mobile Number',
+            text: <TextInput placeholder='Endter' style={styles.TextInput} />,
+            Icon2: <Icons.AntDesign name="contacts" style={styles.icon2} onPress={toggleBottomSheet} />
+>>>>>>> a6610832ed5c0598704309612c3d77badd252d57
         },
 
     ];
@@ -81,11 +88,33 @@ const CnicNumber = () => {
 
             <View style={styles.container}>
                 <View style={{ flex: 1, }}>
-                    <FlatList
-                        data={Flatlist}
-                        renderItem={renderItem}
-                        keyExtractor={item => item.id}
-                    />
+
+                    <View style={styles.selection}>
+                        <List
+                            label="Transfer ID"
+                            textStyle={{ ...Theme.Font_family, ...Theme.gray_color_h, textAlign: "left", fontSize: 12, marginBottom: 0 }}
+                            dropDownStyle={{ fontFamily: "Poppins-Bold", ...Theme.gray_color_f }}
+                            viewStyle={{ width: "100%", zIndex: 999, paddingLeft: 0, paddingRight: 0 }}
+                            placeholder={"Transfer"}
+                            defaultValue={"Selangor"}
+                            items={[
+                                { label: 'Emrates ID', value: 'Dubai Islamic Bank' },
+                                // { label: 'Number', value: 'Dubai Islamic Bank' },
+                            ]}
+                        />
+                    </View>
+                    <View style={{marginTop:12}}>
+                       <Text style={styles.name}>Emrates ID</Text>
+                        <View style={styles.EnterAmount}>
+                            <Text style={styles.Amount}>ID</Text>
+                            <View style={styles.TextinputAmount} >
+                                <TextInput placeholder="Enter Emrates ID" style={styles.TextEditor}  keyboardType='phone-pad' />
+                                {/* <Icons.AntDesign name="contacts" style={styles.icon2} onPress={toggleBottomSheet} /> */}
+                            </View>
+                        </View>
+                    </View>
+
+
 
                 </View>
 
@@ -201,7 +230,35 @@ const styles = StyleSheet.create({
     },
     SearchIcon: {
         fontSize: 20,
+    },
+    selection: {
+        // flexDirection: "row",
+    },
+    EnterAmount: {
+
+        flexDirection: "row",
+        // justifyContent: "space-between"s,
+        alignItems: "center",
+    },
+    TextinputAmount: {
+        flexDirection:"row",
+        alignItems:"center",
+
+        // width: 242,
+        borderBottomWidth: 1,
+        ...Theme.Light_gray_color_f
+    },
+    Amount: {
+        fontSize: 16,
+        ...Theme.Font_family,
+        ...Theme.black_color_h,
+        fontWeight: "700"
+    },
+    TextEditor:{
+        width:285
     }
+
+
 
 
 });
