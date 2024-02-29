@@ -133,7 +133,7 @@ const TopUp = () => {
 
           <View style={styles.DescriptionBox}>
             <Image style={{width:30, height:40, position:'relative' , right:8}} source={FundTranfer}></Image>
-            <Text style={styles.TextAreaPara2}>Send via Fund-transfer to your Smart Star account. Select Digital BANKING & INVESTMENT CORP (M) BERHAD as recipient bank</Text>
+            <Text style={styles.TextAreaPara2}>Send via Fund-transfer to your Fintechify account. Select Digital BANKING & INVESTMENT CORP (M) BERHAD as recipient bank</Text>
           </View>
 
 

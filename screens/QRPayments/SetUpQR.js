@@ -36,7 +36,7 @@ const SetUpQR = () => {
                     ...style.basic_container,
                     marginTop: 60,
                 }}>
-                    <Text style={{ ...style.main_headings, textAlign: "left", paddingLeft: 10, fontSize: 25, fontFamily: "Poppins-Bold" }}>Set up DuitNow QR  {'\n'} Account</Text>
+                    <Text style={{ ...style.main_headings, textAlign: "left", paddingLeft: 10, fontSize: 25, fontFamily: "Poppins-Bold" }}>Set up Universal QR  {'\n'} Account</Text>
                     <Text style={{  textAlign: "left", paddingLeft: 10, fontSize: 25, fontSize: 16,lineHeight:24 }}>
                     Select account and set your preferred daily limit for seamless payments
                                         </Text>

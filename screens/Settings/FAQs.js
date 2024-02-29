@@ -74,15 +74,15 @@ const FAQs = () => {
             borderWidth: 1,
             borderColor: '#cccccc',
           }}>
-              <Accordion leftIcon={true} title="What is SmartBank?"></Accordion>
+              <Accordion leftIcon={true} title="What is DigitalBank?"></Accordion>
               <Accordion leftIcon={true} title="What is the difference between Bank 
-              and AI SmartBank smartphone banking app (smartbank@gmail.com)"></Accordion>
-              <Accordion leftIcon={true} title="How can I open SmartBank account?"></Accordion>
+              and AI DigitalBank smartphone banking app (DigitalBank@gmail.com)"></Accordion>
+              <Accordion leftIcon={true} title="How can I open DigitalBank account?"></Accordion>
               <Accordion leftIcon={true} title="Can I open Digital Bank account in any UAE branch?"></Accordion>
               <Accordion leftIcon={true} title={`What happens after I have successfully submitted my account ${'\n'} opening application?`}></Accordion>
               <Accordion leftIcon={true} title={`Do I need to walk into a branch for physical verification after my application?`}></Accordion>
               <Accordion leftIcon={true} title={`Can i re-apply or onboard again if any application was not successful on the first time application?`}></Accordion>
-              <Accordion leftIcon={true} title={`What is the minimum smartphone operating software version required to use smartbank?`}></Accordion>
+              <Accordion leftIcon={true} title={`What is the minimum smartphone operating software version required to use DigitalBank?`}></Accordion>
             </View>
         </ScrollView>
       </SafeAreaView>

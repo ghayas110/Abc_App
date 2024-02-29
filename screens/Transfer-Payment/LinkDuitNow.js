@@ -42,16 +42,16 @@ const LinkDuitNow = () => {
                         ...style.Font_family_Bold,
                         ...style.Green_color_h,
                         fontSize: 30
-                    }}>Link SSSSCO with {'\n'} DuitNow?</Text>
+                    }}>Link SSSSCO with {'\n'} Fund-Transfer?</Text>
                     <Text style={{
                         ...style.gray_color_h,
                         ...style.Font_family,
                         fontSize: 19
-                    }}>Connect your DuitNow ID with your Bank {'\n'} account to enjoy easy payment {'\n'} transfers</Text>
+                    }}>Connect your Fund-Transfer ID with your Bank {'\n'} account to enjoy easy payment {'\n'} transfers</Text>
                 </View>
                 <View style={{ flex: 1, justifyContent: 'flex-end', }}>
                     <OutlineButton text={"Skip"} btnStyle={{width: "auto"}}/>
-                    <RequestButton text={"View available DuitNow IDs"} btnStyle={{width: "auto"}}onPress={() => onPress()} />
+                    <RequestButton text={"View available Fund-Transfer IDs"} btnStyle={{width: "auto"}}onPress={() => onPress()} />
                 </View>
             </SafeAreaView>
         </>

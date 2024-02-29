@@ -113,11 +113,11 @@ const ImportantDocs = () => {
                                 </View>
                                 <View style={styles.acordion1}>
                                     <Text style={{ ...styles.text2, paddingRight: 10, ...style.black_color_h }}>{'\u2022'}</Text>
-                                    <Text style={styles.text2}>DuitNow Transfer Terms & Conditions</Text>
+                                    <Text style={styles.text2}>Fund-Transfer Terms & Conditions</Text>
                                 </View>
                                 <View style={styles.acordion1}>
                                     <Text style={{ ...styles.text2, paddingRight: 10, ...style.black_color_h }}>{'\u2022'}</Text>
-                                    <Text style={styles.text2}>DuitNow QR Terms & Conditions</Text>
+                                    <Text style={styles.text2}>Universal QR Terms & Conditions</Text>
                                 </View>
                                 <View style={styles.acordion1}>
                                     <Text style={{ ...styles.text2, paddingRight: 10, ...style.black_color_h }}>{'\u2022'}</Text>

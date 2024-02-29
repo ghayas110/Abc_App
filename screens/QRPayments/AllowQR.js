@@ -60,7 +60,7 @@ const AllowQR = () => {
               fontSize: 25,
               fontFamily: 'Poppins-Bold',
             }}>
-            Let’s set up your DuitNow QR pay!
+            Let’s set up your Universal QR pay!
           </Text>
         </View>
      
