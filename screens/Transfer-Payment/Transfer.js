@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Button, FlatList, Image } from 'react-native'
-import React, { useState , useEffect } from 'react'
+import React, { useState } from 'react'
 import Theme from '../../assets/styles/basic'
 import { ScrollView } from 'react-native-gesture-handler';
 import Modal from 'react-native-modal';
@@ -13,15 +13,13 @@ import { CheckBoxInput } from '../../components/Inputs';
 import { Icon } from 'react-native-paper/lib/typescript/components/Avatar/Avatar';
 
 const Transfer = () => {
-    const [isBottomSheetVisible, setBottomSheetVisible] = useState(true);
+    const [isBottomSheetVisible, setBottomSheetVisible] = useState(false);
     const [isAccount , setAccount ] = useState("Accounts");
     const [isMobile, setMobile] = useState("Mobile");
 
     const toggleBottomSheet = () => {
-        setBottomSheetVisible(false);
+        setBottomSheetVisible(!isBottomSheetVisible);
     };
-
-    
 
     const navigation = useNavigation()
 
@@ -46,35 +44,36 @@ const Transfer = () => {
         },
         { name: 'Mobile Number', Icon: <Icons.AntDesign name="contacts" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" onPress={MobileNumber} style={styles.icon2}  /> },
         {
-            name: 'Emrates ID', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={CnicNumber} /> },
+            name: 'Emirates ID', Icon: <Icons.MaterialCommunityIcons name="card-bulleted-outline" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={CnicNumber} /> },
         // { name: 'MyPolis/MyTentera', Icon: <Icons.MaterialIcons name="local-police" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2}  onPress={gotoComingSoon}/> },
         // { name: 'Business Registration Number', Icon: <Icons.MaterialIcons name="business-center" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
         // { name: 'Passport Number', Icon: <Icons.MaterialCommunityIcons name="passport" style={styles.icon} />, Icon2: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.icon2} onPress={gotoComingSoon} /> },
         // Add more items as needed
     ];
-    // const data = [
-    //     {
-    //         name: 'SSSCO Transfer',
-    //         Image: <Image source={DuetImg} style={styles.inmages} />,
-    //         key: "1",
-    //         Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={toggleBottomSheet} style={styles.IConfor} />
+    const data = [
+        {
+            name: 'Fund Transfer',
+            Image: require('../../assets/HomeScreenImages/FundTranfer.png'),
+            
+            key: "1",
+            Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={toggleBottomSheet} style={styles.IConfor} />
 
-    //     },
-    //     {
-    //         name: 'SSSCO QR',
-    //         Image: <Image source={QrDuetImg} style={styles.inmages} />,
-    //         key: "1",
-    //         Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={() => navigation.navigate('Home', { screen: 'ScanQR' })} style={styles.IConfor} />
+        },
+        {
+            name: 'Universal QR',
+            Image: require('../../assets/HomeScreenImages/UniversalQR.png'),
+            key: "1",
+            Forward: <Icons.MaterialIcons name="arrow-forward-ios" onPress={() => navigation.navigate('Home', { screen: 'QRScan' })} style={styles.IConfor} />
 
-    //     },
-    //     // {
-    //     //     name: 'Transfer to another SSSCO account',
-    //     //     Image: <Image source={DuetImg} style={styles.inmages} />,
-    //     //     key: "1",
-    //     //     Forward: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.IConfor} />
+        },
+        // {
+        //     name: 'Transfer to another SSSCO account',
+        //     Image: <Image source={DuetImg} style={styles.inmages} />,
+        //     key: "1",
+        //     Forward: <Icons.MaterialIcons name="arrow-forward-ios" style={styles.IConfor} />
 
-    //     // },
-    // ];
+        // },
+    ];
 
 
     const renderItem = ({ item }) => (
@@ -91,26 +90,26 @@ const Transfer = () => {
 
     return (
         <>
-            <View style={{ backgroundColor: "#FFFFFF", borderBottomWidth: 0.5, ...Theme.ligth_gray_border_Color , flex:1 }}>
-                <Header
-                    backtoPage={true}
-                    title="Transfer"
-                    backIcon={require('../../assets/TransactionHistoryImages/ArrowLeft.png')}
-                />
+            <View style={{ backgroundColor: "#FFFFFF", borderBottomWidth: 0.5, ...Theme.ligth_gray_border_Color }}>
+            <View style={styles.header}>
+                <Text style={styles.headerText}>Transfer</Text>
+            </View>
+            </View>
+            <ScrollView style={{ padding: 5, backgroundColor: "#FFFFFF" }}>
 
-                {/* <View style={styles.tableContainer}>
+                <View style={styles.tableContainer}>
 
                     {data.map(item => (
                         <>
                             <View key={item.id} style={styles.tableRow}>
-                                <Text style={styles.cell}>{item.Image}</Text>
+                            <Image source={item.Image} style={{ marginRight: 20,width:20,height:40 }} />
                                 <Text style={{ ...styles.cell2 }}>{item.name}</Text>
                                 <Text style={{ ...styles.cell, marginLeft: 50 }}>{item.Forward}</Text>
                             </View>
                         </>
                     ))}
 
-                </View> */}
+                </View>
 
                 <Modal
                     isVisible={isBottomSheetVisible}
@@ -125,16 +124,15 @@ const Transfer = () => {
                             <FlatList
                                 data={Flatlist}
                                 renderItem={renderItem}
-                                keyExtractor={item => item.name} // Change item.id to item.name
-                                />
+                                keyExtractor={item => item.id}
+                            />
 
 
 
                         </View>
                     </View>
                 </Modal>
-            </View>
-
+            </ScrollView>
         </>
     )
 }
@@ -200,7 +198,7 @@ const styles = StyleSheet.create({
     },
     inmages: {
         resizeMode: 'contain',
-        width:11,
+        width:50,
         height:11,
         
     },
@@ -227,7 +225,22 @@ const styles = StyleSheet.create({
         ...Theme.black_color_f,
         ...Theme.Font_family,
         
-    }
+    },
+    header: {
+        // height:100,
+        // backgroundColor:"red",
+        padding: 20,
+        borderBottomWidth: 0.5,
+        ...Theme.gray_border_Color,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    headerText: {
+        textAlign: "center",
+        ...Theme.black_color_h,
+        fontWeight: "700",
+        fontSize: 20,
+    },
 
 
 });
