@@ -93,7 +93,6 @@ const MainStackNavigator = () => {
             tabBarIcon: ({ color, size, focused }) => (
               <Image source={!focused ? require('../assets/tabicons/account.png') : require('../assets/tabicons/WalletOutlined.png')} style={{ width: 25, height: 20, objectFit: 'contain' }} />
 
-<<<<<<< HEAD
             ),
           }} />
 
@@ -119,37 +118,6 @@ const MainStackNavigator = () => {
             )}
           </Tab.Screen>
         </Tab.Navigator>
-=======
-<Tab.Screen
-            name="Transfer"
-            component={TransferNavigator}
-            options={{
-              tabBarIcon: ({ color, size, focused }) => (
-                <Image
-                  source={
-                    !focused
-                      ? require("../assets/tabicons/transfer.png")
-                      : require("../assets/tabicons/TransferOutlined.png")
-                  }
-                  style={{ width: 25, height: 20, objectFit: "contain" }}
-                />
-              ),
-            }}
-          />
-  <Tab.Screen name="Finance" component={FinanceNavigator} options={{
-      tabBarIcon: ({ color, size,focused }) => (
-        <Image source={!focused ? require('../assets/tabicons/finance.png') : require('../assets/tabicons/FinanceOutlined.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
-        
-        ),
-      }}/>
-    <Tab.Screen   name="More" component={MoreNavigator} options={{
-      tabBarIcon: ({ color, size,focused }) => (
-        <Image source={!focused ? require('../assets/tabicons/More.png') : require('../assets/tabicons/MoreOutline.png')} style={{ width: 25, height: 20 ,objectFit:'contain' }} />
-        
-        ),
-      }}/>
-      
->>>>>>> a6610832ed5c0598704309612c3d77badd252d57
 
       ) : (
         <AuthStack.Navigator screenOptions={{

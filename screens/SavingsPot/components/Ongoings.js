@@ -61,11 +61,7 @@ const Ongoings = () => {
               </View>
               <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                 <Text style={styles.percenText}>30%</Text>
-<<<<<<< HEAD
                 <Text style={styles.percenText}>AED 30,000.00</Text>
-=======
-                <Text style={styles.percenText}>30,000.00</Text>
->>>>>>> a6610832ed5c0598704309612c3d77badd252d57
               </View>
             </View>
           </ImageBackground>
