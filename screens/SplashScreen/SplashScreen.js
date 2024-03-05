@@ -10,9 +10,6 @@ const SplashScreen = () => {
   const [isSplashScreen, setSplashScreen] = useState(false)
   const navigation = useNavigation()
    useEffect(() => {
-
-  
-   
       try {
         // play the file tone.mp3
         SoundPlayer.playSoundFile('tone', 'mp3')
@@ -24,7 +21,6 @@ const SplashScreen = () => {
       
   }, []);
   useEffect(() => {
-
     Animated.timing(fadeAnim, {
       toValue: 1,
       duration: 1000, // Adjust the duration as needed
@@ -58,7 +54,7 @@ const SplashScreen = () => {
           <View style={styles.Container}>
             <Animated.View style={{ ...styles.Logos, opacity: fadeAnim }}>
               <Image source={SplashLogos} style={styles.image1} />
-              <Text style={{fontSize:16, color:"white" , fontFamily:"Poppins"}}>Powered By Ssssco</Text>
+              <Text style={{fontSize:16, color:"white" , fontFamily:"Poppins"}}>Powered By SSSCO</Text>
             </Animated.View>
           </View>
           : <View style={styles.Container}>

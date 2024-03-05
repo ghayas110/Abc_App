@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View , ScrollView } from 'react-native'
-import Header from './components/Header';
-import { ExampleInput , CheckBoxInput } from '../../components/Inputs';
+import Header from './components/Header2';
+import { ExampleInput , CheckBoxInput , SimpleInput } from '../../components/Inputs';
 import { RequestButton } from '../../components/Buttons';
 import { useNavigation } from '@react-navigation/native';
 import Icons from '../../components/Icons';
@@ -18,7 +18,6 @@ const AddFunds = () => {
               <Header
               title={"Add"}
                   backtoPage={true}
-                  backtoPage2={true}
                   backIcon={require('../../assets/SavingPotsImages/ArrowLeft.png')}
               />
           </View>
@@ -53,7 +52,7 @@ const AddFunds = () => {
                   </View>
                   <View style={styles.savingAccountcheckbox}>
                       <View>
-                          <Text style={styles.transfertext}>Rize Savings Account-i</Text>
+                          <Text style={styles.transfertext}>Smart Savings Account-i</Text>
                           <Text style={styles.transferNum}>700007123456789</Text>
                       </View>
                       <View style={{ alignItems: "flex-end" }}>
@@ -76,7 +75,7 @@ export default AddFunds
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        padding:10,
+        padding:16,
         backgroundColor:"#FFFFFF",
 
     },
@@ -113,7 +112,7 @@ const styles = StyleSheet.create({
         // marginTop: 35
     },
     ExampleAmount: {
-        width: 90,
+        width: 80,
         borderWidth: 0.5,
         padding: 10,
         flexDirection: "row",
@@ -132,6 +131,8 @@ const styles = StyleSheet.create({
     ammountexampleboxs: {
         flexDirection: "row",
         justifyContent: "center",
+        marginTop: 5,
+        
     },
     viewStyle: {
         padding: 20,
@@ -173,5 +174,10 @@ const styles = StyleSheet.create({
         height: 50,
         justifyContent:"center",
         alignItems: "center",
+    },
+    inputamount:{
+        borderBottomWidth:0.5,
+        ...Theme.gray_border_Color,
+        
     }
 })

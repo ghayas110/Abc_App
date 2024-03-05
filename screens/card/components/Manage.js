@@ -124,7 +124,7 @@ const Manage = () => {
                                 <Image style={{ marginRight: 10 }} source={require("../../../assets/cardImages/cool.png")} />
                                 <Text style={{ ...style.Font_family_Bold, ...style.black_color_h }}>Temporarily freeze card</Text>
                             </View>
-                            <Switch trackColor={{ false: '#cccccc', true: '#00a200' }} thumbColor={isEnabledOne ? '#00a200' : '#cccccc'} onValueChange={toggleSwitchOne} style={{ alignItems: "flex-end" }} value={isEnabledOne} />
+                            <Switch trackColor={{ false: '#FAF4F9', true: '#00a200' }} thumbColor={isEnabledOne ? '#00a200' : '#FAF4F9'} onValueChange={toggleSwitchOne} style={{ alignItems: "flex-end" }} value={isEnabledOne} />
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity>
@@ -143,7 +143,7 @@ const Manage = () => {
                                 <Image style={{ marginRight: 10 }} source={require("../../../assets/cardImages/block.png")} />
                                 <Text style={{ ...style.Font_family_Bold, ...style.black_color_h }}>Kill Switch</Text>
                             </View>
-                            <Switch trackColor={{ false: '#cccccc', true: '#00a200' }} thumbColor={isEnabledTwo ? '#00a200' : '#cccccc'} onValueChange={toggleSwitchTwo} value={isEnabledTwo} />
+                            <Switch trackColor={{ false: '#FAF4F9', true: '#00a200' }} thumbColor={isEnabledTwo ? '#00a200' : '#FAF4F9'} onValueChange={toggleSwitchTwo} value={isEnabledTwo} />
                         </View>
                     </TouchableOpacity>
                     <Modal
@@ -159,11 +159,11 @@ const Manage = () => {
                                 <View style={{ padding: 15 }}>
                                     <Text style={{ ...style.gray_color_f, ...style.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
                                         Alternatively you may email us at:
-                                        bank@ssssco.com
+                                        SmartDigital@gmail.com
                                         We’ll get this sorted!</Text>
                                 </View>
                                 <View style={{ padding: 20, ...style.bg_light_green_color }}>
-                                    <Text style={{ ...style.Green_color_f, fontSize: 14, ...style.Font_family, fontWeight: '500', }}>Customer Support: +6016 299 5333 (fraud support line 24/7) or email to us at:  bank@ssssco.com</Text>
+                                    <Text style={{ ...style.Green_color_f, fontSize: 14, ...style.Font_family, fontWeight: '500', }}>Customer Support: +6016 299 5333 (fraud support line 24/7) or email to us at:  SmartDigital@gmail.com</Text>
                                 </View>
                                 <View style={{ padding: 10, alignItems: "center" }}>
                                     <OutlineButton text='Report Fraud' onPress={toggleBottomSheet2} />

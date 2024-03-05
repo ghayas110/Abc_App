@@ -4,7 +4,7 @@ import Theme from '../../assets/styles/basic'
 import { ExampleInput, DropDown } from '../../components/Inputs'
 import { useNavigation } from '@react-navigation/native'
 import Icons from '../../components/Icons'
-import Header from './components/Header'
+import Header from './components/Header2'
 import { RequestButton } from '../../components/Buttons'
 
 
@@ -57,12 +57,14 @@ const ReviewDetails = () => {
     ];
     const renderItem = ({ item }) => (
         <>
+           <ScrollView style={{padding:10}}>
             <TouchableOpacity style={styles.List} >
                 <View >
                     <Text style={styles.cardText1}>{item.subname}</Text>
                     <Text style={styles.cardText}>{item.name}</Text>
                 </View>
             </TouchableOpacity>
+           </ScrollView>
 
         </>
     );
@@ -72,7 +74,6 @@ const ReviewDetails = () => {
                 <View style={styles.header}>
                     <Header
                         backtoPage={true}
-                        backtoPage2={true}
                         backIcon={require('../../assets/SavingPotsImages/ArrowLeft.png')}
                     />
                 </View>
@@ -100,14 +101,13 @@ const ReviewDetails = () => {
                 </View>
 
                  <View style={styles.FlatList}>
-                <ScrollView style={{ padding: 10 }} >
+                
                     <FlatList
                         data={Flatlist}
                         renderItem={renderItem}
                         keyExtractor={item => item.id}
                     />
 
-                </ScrollView>
                  </View>
              
            

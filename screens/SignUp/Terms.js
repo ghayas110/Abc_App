@@ -198,7 +198,7 @@ const Terms = ({ onPress }) => {
           <View style={{ flexDirection: 'row', width: width * 0.9, padding: 5 }}>
             <View style={{ marginTop: -5 }}>
               <Checkbox
-
+              color='green'
                 status={checked ? 'checked' : 'unchecked'}
                 onPress={() => setChecked(!checked)}
               />

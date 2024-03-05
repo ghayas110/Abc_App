@@ -8,6 +8,7 @@ import SavingPots from './components/SavingPots';
 
 const Tab = createMaterialTopTabNavigator();
 const { width, height } = Dimensions.get('window');
+
 const History = () => {
     return (
         <>
@@ -27,17 +28,18 @@ const History = () => {
                             fontWeight: "900",
                             textTransform: "capitalize",
                             fontFamily: "Poppins-Regular",
-                            marginTop: 30
+                            marginTop: 20,
                         },
                         tabStyle: {
+                            backgroundColor:"green",
                             elevation: 0
                         },
                         tabBarIndicatorStyle: {
-                            borderBottomWidth: 50,
+                            borderBottomWidth: 2,
                             borderBottomColor: 'green',
                         },
                     }}>
-                    <Tab.Screen name="Saving Account" component={SavingAccount} />
+                    <Tab.Screen name="Saving Account" component={SavingAccount}  />
                     <Tab.Screen name="Saving Pot" component={SavingPots} />
                 </Tab.Navigator>
             </View>

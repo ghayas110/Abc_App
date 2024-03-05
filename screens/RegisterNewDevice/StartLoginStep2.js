@@ -27,6 +27,9 @@ const StartLoginStep2 = ({ disabled }) => {
     const ForWordnavigation = () => {
         navigation.navigate('StartLoginStep3');
     };
+    const blacknavigation = () => {
+        navigation.navigate('StartLogin');
+    };
 
 
 
@@ -36,7 +39,7 @@ const StartLoginStep2 = ({ disabled }) => {
             <View style={styles.container}>
                 <View style={styles.Progress}>
                     <View style={styles.BackArrow}>
-                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} />
+                        <Icons.MaterialIcons name="arrow-back-ios-new" style={styles.BackArrowIcon} onPress={blacknavigation} />
                     </View>
                     <View style={{ flexDirection: "row", alignItems: "center" }}>
                         <Image source={Logo} style={styles.Image} />
@@ -47,26 +50,27 @@ const StartLoginStep2 = ({ disabled }) => {
                     padding: 5, marginTop: 25,
                 }}>
                 </View>
-                <View style={{flexDirection:"row" , alignItems:"center"}}>
-                   <Text style={{...ThemeSty.black_color_f , fontSize:24, ...ThemeSty.Font_family , fontWeight:'700'}}>Hi</Text>
-                    <Text style={{ ...ThemeSty.Green_color_f, fontSize: 24, ...ThemeSty.Font_family, fontWeight: '700',marginLeft:5 }}>Abdur Rehman,</Text>
-                  </View>
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                    <Text style={{ ...ThemeSty.black_color_f, fontSize: 24, ...ThemeSty.Font_family, fontWeight: '700' }}>Hi</Text>
+                    <Text style={{ ...ThemeSty.Green_color_f, fontSize: 24, ...ThemeSty.Font_family, fontWeight: '700', marginLeft: 5 }}>Razak,</Text>
+                </View>
 
-                <View style={{marginTop:5}}>
+                <View style={{ marginTop: 5 }}>
                     <Text style={{ ...ThemeSty.black_color_f, fontSize: 24, ...ThemeSty.Font_family, fontWeight: '700' }}>your secure word is </Text>
                 </View>
                 <View style={{ marginTop: 5 }}>
                     <Text style={{ ...ThemeSty.orenge_color_f, fontSize: 24, ...ThemeSty.Font_family, fontWeight: '700' }}>MEER712</Text>
                 </View>
-            
+
             </View>
-            <View style={{padding:16}}>
-                <View style={{ padding: 20, ...ThemeSty.bg_light_green_color, }}>
-                    <Text style={{ ...ThemeSty.Green_color_f, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500', }}>If your secure word is correct, tap ‘Confirm’.</Text>
+            <View style={{ padding: 16, backgroundColor: "#FFFFFF", flex: 1, justifyContent: "flex-end" }}>
+                <View style={{ padding: 16, ...ThemeSty.bg_light_green_color, borderRadius:3 }}>
+                    <Text style={{ ...ThemeSty.Green_color_primary, fontSize: 14, ...ThemeSty.Font_family, fontWeight: '500',lineHeight:21, fontWeight:500 }}>If your secure word is correct, tap ‘Confirm’.</Text>
                 </View>
-            </View>
-            <View style={{ alignItems: "center", marginBottom: 20, }}>
-                <RequestButton text='Confirm' onPress={ForWordnavigation} />
+                <View style={{ alignItems: "center", backgroundColor: "#FFFFFF" , marginTop: 10,
+                 }}>
+                    <RequestButton text='Confirm' onPress={ForWordnavigation} />
+                </View>
             </View>
         </>
 
@@ -80,6 +84,7 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 24,
         justifyContent: "Space-evently",
+        backgroundColor: "#FFFFFF"
 
     },
     Progress: {
@@ -89,10 +94,11 @@ const styles = StyleSheet.create({
         marginTop: 5,
     },
 
-    Image: {
+    Image:{
         width: 180,
-        height: 50
-    },
+        height:50,
+        resizeMode:'contain'
+     },
     inputContainer: {
         borderBottomWidth: 2,
         borderColor: "#00A200",

@@ -54,7 +54,7 @@ const SpendLimit = () => {
                                         ...style.Font_family_Bold,
                                         ...style.black_color_h,
                                         fontSize: 18
-                                    }}>RM</Text>
+                                    }}>AED</Text>
                                     <SimpleInput
                                         viewStyle={{
                                             width: "auto",
@@ -96,7 +96,7 @@ const SpendLimit = () => {
                                         ...style.Font_family_Bold,
                                         ...style.black_color_h,
                                         fontSize: 18
-                                    }}>RM</Text>
+                                    }}>AED</Text>
                                     <SimpleInput
                                         viewStyle={{
                                             width: "auto",
@@ -138,7 +138,7 @@ const SpendLimit = () => {
                                         ...style.Font_family_Bold,
                                         ...style.black_color_h,
                                         fontSize: 18
-                                    }}>RM</Text>
+                                    }}>AED</Text>
                                     <SimpleInput
                                         viewStyle={{
                                             width: "auto",
@@ -180,7 +180,7 @@ const SpendLimit = () => {
                                         ...style.Font_family_Bold,
                                         ...style.black_color_h,
                                         fontSize: 18
-                                    }}>RM</Text>
+                                    }}>AED</Text>
                                     <SimpleInput
                                         viewStyle={{
                                             width: "auto",
@@ -210,7 +210,8 @@ const SpendLimit = () => {
                 </ScrollView>
                 <View style={{
                     flex: 1,
-                    justifyContent: "flex-end"
+                    justifyContent: "flex-end",
+                    marginBottom:10
                 }}>
                     <RequestButton btnStyle={{
                         width: "auto"

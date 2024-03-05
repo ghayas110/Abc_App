@@ -7,24 +7,24 @@ import { useNavigation } from '@react-navigation/native';
 const PayTransfer = () => {
     const navigation = useNavigation()
     const dataOne = [
-        {
-            id: '1',
-            imageLeft: require('../../assets/transferPaymentImages/duitNow.png'),
-            text: 'Manage DuitNow ID',
-            imageRight: require('../../assets/transferPaymentImages/right.png'),
-        },
+        // {
+        //     id: '1',
+        //     imageLeft: require('../../assets/transferPaymentImages/duitNow.png'),
+        //     text: 'Manage DuitNow ID',
+        //     imageRight: require('../../assets/transferPaymentImages/right.png'),
+        // },
         {
             id: '2',
-            imageLeft: require('../../assets/transferPaymentImages/duitNow.png'),
-            text: 'Manage DuitNow QR',
+            imageLeft: require('../../assets/HomeScreenImages/UniversalQR.png'),
+            text: 'Manage Universal QR',
             imageRight: require('../../assets/transferPaymentImages/right.png'),
         },
-        {
-            id: '3',
-            imageLeft: require('../../assets/transferPaymentImages/direction2.png'),
-            text: 'Manage daily limits',
-            imageRight: require('../../assets/transferPaymentImages/right.png'),
-        },
+        // {
+        //     id: '3',
+        //     imageLeft: require('../../assets/transferPaymentImages/direction2.png'),
+        //     text: 'Manage daily limits',
+        //     imageRight: require('../../assets/transferPaymentImages/right.png'),
+        // },
     ];
 
     const renderItemOne = ({ item }) => (
@@ -34,14 +34,14 @@ const PayTransfer = () => {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 alignItems: "center",
-                marginTop: 20
+                // marginTop: 20
             }}>
                 <View style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center"
                 }}>
-                    <Image source={item.imageLeft} style={{ marginRight: 20 }} />
+                    <Image source={item.imageLeft} style={{ marginRight: 20,width:20,height:40 }} />
                     <Text style={{ ...style.Font_family, ...style.black_color_h }}>{item.text}</Text>
                 </View>
                 <Image source={item.imageRight} />
@@ -49,10 +49,9 @@ const PayTransfer = () => {
         </TouchableOpacity>
     );
 
-    const handleItemClick = (text) => {
-        if(text == "Manage DuitNow QR"){
-            navigation.navigate('ManageDuitNowQR')
-        }
+    const handleItemClick = () => {
+        navigation.navigate('ManageDuitNowQR')
+
     }
     return (
         <>

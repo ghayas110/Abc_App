@@ -8,6 +8,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const AlloeNIC = ({ onPress }) => {
   const [cameraPermission, setCameraPermission] = useState(null);
+  
 
   useEffect(() => {
     (async () => {
@@ -34,23 +35,20 @@ const AlloeNIC = ({ onPress }) => {
           backgroundColor: 'white',
         }} /> */}
 
-     <View style={{padding:15}}>
+     <View style={{padding:20,marginTop:25}}>
 
       <View>
-        <Text style={{ fontSize: 24, fontWeight: '900', color: 'green', marginBottom: 15 }}>Scan your CNIC</Text>
+        <Text style={{ fontSize: 24, fontWeight: '700', color: 'green', }}>Scan your Emirates ID</Text>
         <View style={styles.acordion}>
-          <Text style={styles.text2}>{'\u2022'}</Text>
-          <Text style={styles.text2}> Remove the IC cover, if you have one </Text>
+          <Text style={styles.text2}>{'\u2022'} Remove the IC cover, if you have one </Text>
         </View>
 
         <View style={styles.acordion}>
-          <Text style={styles.text2}>{'\u2022'}</Text>
-          <Text style={styles.text2}> Find a suitable surface (avoid digital screens/bright or dark surfaces) </Text>
+          <Text style={styles.text2}>{'\u2022'} Find a suitable surface (avoid digital screens/ {`\n`}  brighter dark surfaces) </Text>
         </View>
 
-        <View style={styles.acordion}>
-          <Text style={styles.text2}>{'\u2022'}</Text>
-          <Text style={styles.text2}> Align your CNIC until all 4 black/white lines appear </Text>
+        <View style={styles.acordion}> 
+          <Text style={styles.text2}>{'\u2022'} Align your Emirates ID until all 4 black/white lines appear </Text>
         </View>
       </View>
 
@@ -63,17 +61,18 @@ const AlloeNIC = ({ onPress }) => {
 
         </View>
       </View>
-      <View style={{ width: "100%", backgroundColor: '#DCF2FC', padding: 20, marginVertical: 15 }}>
+  
+      <View style={{alignItems:"center" , marginTop:40}}>
+      <View style={{ width: "100%", backgroundColor: '#DCF2FC', padding: 20, marginVertical: 20,borderRadius:10  }}>
         <Text
           style={{
-            fontSize: 14,
+            fontSize: 15,
 
             color: "#006400",
-            fontFamily: "Poppins-Regular"
+            fontFamily: "Poppins-Regular",
           }}
-        >Note: Unclear Image prevent account opening.</Text>
+        ><Text style={{fontWeight:700}}>Note:</Text> Unclear Image prevent account opening.</Text>
       </View>
-      <View style={{alignItems:"center" , marginTop:45}}>
         <RequestButton btnStyle={{ paddingBottom: 20 }} text={'Confirm'} onPress={requestPermission} />
       </View>
      </View>
@@ -120,7 +119,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     // width: windowWidth * 0.8,
     backgroundColor: 'whitesmoke',
-    padding: 20
+    padding: 20,
+    marginTop:10,
+    borderRadius:10
   },
   cardText: {
     padding: 30
@@ -134,7 +135,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "500",
     padding: 3,
-
     lineHeight: 22,
   },
   text2: {

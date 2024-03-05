@@ -26,12 +26,12 @@ const DuitNowIDs = () => {
                         ...style.Font_family_Bold,
                         ...style.Green_color_h,
                         fontSize: 30
-                    }}>Select your DuitNow ID</Text>
+                    }}>Select your Fund-Transfer ID</Text>
                     <Text style={{
                         ...style.Font_family,
                         ...style.gray_color_h,
                         fontSize: 18
-                    }}>Link your DuitNow ID with Bank account</Text>
+                    }}>Link your Fund-Transfer ID with Bank account</Text>
                 </View>
 
                 <View style={{ flex: 1 }}>

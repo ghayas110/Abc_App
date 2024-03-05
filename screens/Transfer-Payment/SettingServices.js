@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { Image, SafeAreaView, Text, TouchableOpacity, View, FlatList, ScrollView } from 'react-native'
+import { Image, SafeAreaView, Text, TouchableOpacity, View, FlatList, ScrollView, StyleSheet} from 'react-native'
 import style from "../../assets/styles/basic"
 import Header from './components/Header'
 import Avatar from './components/Avatar'
 import { useNavigation } from '@react-navigation/native'
 import Modal from 'react-native-modal';
 import { OutlineButton, RequestButton } from '../../components/Buttons'
+import Theme from '../../assets/styles/basic'
+import { styles } from 'react-native-gifted-charts/src/LineChart/styles'
 
 
 const SettingServices = () => {
@@ -37,26 +39,26 @@ const SettingServices = () => {
             text: 'Pay & Transfer Settings',
             imageRight: require('../../assets/transferPaymentImages/right.png'),
         },
-        {
-            id: '5',
-            imageLeft: require('../../assets/transferPaymentImages/messge.png'),
-            text: 'Communications preference',
-            imageRight: require('../../assets/transferPaymentImages/right.png'),
-        },
-        {
-            id: '6',
-            imageLeft: require('../../assets/transferPaymentImages/wallet.png'),
-            text: 'General Preference',
-            imageRight: require('../../assets/transferPaymentImages/right.png'),
-        },
+        // {
+        //     id: '5',
+        //     imageLeft: require('../../assets/transferPaymentImages/messge.png'),
+        //     text: 'Communications preference',
+        //     imageRight: require('../../assets/transferPaymentImages/right.png'),
+        // },
+        // {
+        //     id: '6',
+        //     imageLeft: require('../../assets/transferPaymentImages/wallet.png'),
+        //     text: 'General Preference',
+        //     imageRight: require('../../assets/transferPaymentImages/right.png'),
+        // },
     ];
     const dataTwo = [
-        {
-            id: '1',
-            imageLeft: require('../../assets/transferPaymentImages/marked.png'),
-            text: 'FAQ',
-            imageRight: require('../../assets/transferPaymentImages/right.png'),
-        },
+        // {
+        //     id: '1',
+        //     imageLeft: require('../../assets/transferPaymentImages/marked.png'),
+        //     text: 'FAQ',
+        //     imageRight: require('../../assets/transferPaymentImages/right.png'),
+        // },
         {
             id: '2',
             imageLeft: require('../../assets/transferPaymentImages/phone.png'),
@@ -103,7 +105,10 @@ const SettingServices = () => {
     const handleItemClick = (text) => {
         if (text == "Pay & Transfer Settings") {
             navigation.navigate('PayTransfer')
-        }
+        }else if(text == "Privacy & Security"){navigation.navigate('Privacy')}
+        else if(text == "Profile"){navigation.navigate('Profile')}
+        else if(text == "Account & Card"){navigation.navigate('CardMangement')}
+        else{navigation.navigate('ComingSoon')}
     }
 
     const renderItemTwo = ({ item }) => (
@@ -130,7 +135,9 @@ const SettingServices = () => {
     const gotNextPage = (text) => {
         if (text == "Contact Us") {
             setBottomSheetVisible(true)
-        }
+        }else if(text == "Important Documents"){navigation.navigate('ImportantDocs')}
+        else if(text == "FAQ"){navigation.navigate('FAQs')}
+        else{navigation.navigate('ComingSoon')}
     }
     return (
         <>
@@ -139,16 +146,10 @@ const SettingServices = () => {
                 backgroundColor: "white",
             }}>
                 <ScrollView>
-                    <Header
-                        backtoPage={true}
-                        title={"Settings & Services"}
-                        backIcon={require('../../assets/TransactionHistoryImages/ArrowLeft.png')}
-                    />
-                    <View style={{
-                        borderBottomWidth: 1,
-                        borderBottomColor: '#cccccc',
-                        marginVertical: 10,
-                    }} />
+                <View style={styless.header}>
+                <Text style={styless.headerText}>Setting & Services</Text>
+            </View>
+                    
                     <SafeAreaView style={{
                         paddingLeft: 15,
                         paddingRight: 15,
@@ -189,7 +190,7 @@ const SettingServices = () => {
                                     <Text style={{ fontSize: 28, fontWeight: '700', ...style.Green_color_f, ...style.Font_family }} >How can we help?</Text>
                                 </View>
                                 <View style={{ padding: 15 }}>
-                                    <Text style={{ ...style.gray_color_f, ...style.Font_family, fontSize: 16 }}>lease reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
+                                    <Text style={{ ...style.gray_color_f, ...style.Font_family, fontSize: 16 }}>Please reach out to our 24 hours Customer Support team 1800 81 9149 (local) or +6016 299 6610 (overseas).
                                         Alternatively you may email us at:
                                         bank@ssssco.com
                                         We’ll get this sorted!</Text>
@@ -229,3 +230,23 @@ const SettingServices = () => {
 }
 
 export default SettingServices
+
+const styless = StyleSheet.create({
+    header: {
+        // height:100,
+        // backgroundColor:"red",
+        padding: 20,
+        borderBottomWidth: 0.5,
+        ...Theme.gray_border_Color,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    headerText: {
+        textAlign: "center",
+        ...Theme.black_color_h,
+        fontWeight: "700",
+        fontSize: 20,
+    },
+
+
+});

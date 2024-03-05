@@ -1,10 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View , Image } from 'react-native'
-import Header from './components/Header';
+import Header from './components/Header2';
 import SuccessImage from "../../assets/SavingPotsImages/SuccessImage.png"
 import { useNavigation } from '@react-navigation/native';
 import Theme from '../../assets/styles/basic'
 import { RequestButton , OutlineButton } from '../../components/Buttons';
+import LottieView from 'lottie-react-native';
 
 const SuccessfullyCreated = () => {
     const navigation = useNavigation()
@@ -19,15 +20,15 @@ const SuccessfullyCreated = () => {
         <View style={styles.header}>
               <Header
                   backtoPage={true}
-                  backtoPage2={true}
                   backIcon={require('../../assets/SavingPotsImages/ArrowLeft.png')}
               />
         </View>
         <View style={styles.Image}>
-              <Image source={SuccessImage} />
+        <LottieView source={require('../../assets/lotiefiles/savings_pot_transaction_success_animation.json')} autoPlay style={{width:"100%",height:200}} />
+
         </View>
           <View style={styles.Heading}>
-              <Text style={styles.HeadingText}>Yay! Your Savings Pot has been successfully created!</Text>
+              <Text style={styles.HeadingText}>Your Savings Pot has been successfully created!</Text>
               <Text style={styles.HeadingPara}>Keep saving to achieve more of your goals</Text>
           </View>
           <View style={styles.Bottom}>
@@ -72,6 +73,7 @@ const styles = StyleSheet.create({
         ...Theme.Green_color_f,
     fontSize: 28,
         fontWeight: '700',
+        lineHeight:33.6
     },
     HeadingPara:{
         

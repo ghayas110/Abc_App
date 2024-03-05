@@ -1,10 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
-import Header from './components/Header';
+import Header from './components/Header2';
 import SuccessImage from "../../assets/SavingPotsImages/FundSuccessfycreate.png"
 import { useNavigation } from '@react-navigation/native';
 import Theme from '../../assets/styles/basic'
 import { RequestButton, OutlineButton } from '../../components/Buttons';
+import LottieView from 'lottie-react-native';
 
 const WithdrawSuccessfully = () => {
     const navigation = useNavigation()
@@ -19,12 +20,11 @@ const WithdrawSuccessfully = () => {
             <View style={styles.header}>
                 <Header
                     backtoPage={true}
-                    backtoPage2={true}
                     backIcon={require('../../assets/SavingPotsImages/ArrowLeft.png')}
                 />
             </View>
             <View style={styles.Image}>
-                <Image source={SuccessImage} />
+            <LottieView source={require('../../assets/lotiefiles/transfer_success_animation.json')} autoPlay style={{width:"100%",height:300}} />
             </View>
             <View style={styles.Heading}>
                 <Text style={styles.HeadingText}>Your transaction is successful!</Text>

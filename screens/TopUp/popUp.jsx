@@ -64,17 +64,16 @@ const TopUp = ({ open, CloseBtn }) => {
                                 <View style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'space-around', height: "60%" }}>
                                     <Image source={Acountready} />
                                     <View style={{ padding: 5, flexDirection: 'column', alignItems: 'center' }}>
-                                        <Text style={{ fontSize: 24, fontWeight: '900', color: 'green', marginBottom: 15 }}>Your account is ready!</Text>
+                                        <Text style={{ fontSize: 30, fontWeight: '700', color: 'green', marginBottom: 15,lineHeight:33.6 }}>Your account is ready!</Text>
                                         <Text style={styless.text2}>Welcome to a new way of banking. You can now order physical card </Text>
                                     </View>
                                 </View>
 
                                 <View>
-                                    <Button
-                                        title="Continue"
-                                        color="green"
-                                        onPress={() => navigation.navigate('Mailing')}
-                                    />
+                                    
+                                      <RequestButton text={"Order Card"} onPress={() =>navigation.navigate('Mailing')}
+                                       btnStyle={{ width: "auto"}}
+              />
                                 </View>
                             </View>
                         </View>
@@ -96,11 +95,10 @@ const styless = StyleSheet.create({
         justifyContent: 'space-between'
     },
     text2: {
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: "500",
-        textAlign: 'center',
-        lineHeight: 20,
-        color:'black'
+        lineHeight: 25,
+        color:'#808080'
     },
     bottomView: {
         width: '100%',

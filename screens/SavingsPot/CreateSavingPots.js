@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
-import Header from './components/Header'
+import Header from './components/Header2'
 import Theme from '../../assets/styles/basic'
 import React , {useState} from 'react'
 import ThemeSty from '../../assets/styles/basic'
@@ -36,9 +36,7 @@ const CreateSavingPots = () => {
                 <Header
                     title={"Create Savings Pots"}
                     backtoPage={true}
-                    backtoPage2={true}
                     backIcon={require('../../assets/SavingPotsImages/ArrowLeft.png')}
-                // backIcon2={require('../../assets/SavingPotsImages/ArrowLeft.png')}
                 />
 
             </View>

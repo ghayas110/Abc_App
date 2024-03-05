@@ -109,7 +109,6 @@ const Favourite = () => {
             <Text style={styles.Bank}>{item.bank}</Text>
             <Text style={styles.number}>{item.number}</Text>
           </View>
-          <Text style={styles.listIcon}>{item.icon}</Text>
         </View>
 
       </View>

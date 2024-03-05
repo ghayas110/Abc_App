@@ -63,7 +63,7 @@ const DuitNowSuccess = () => {
                             ...style.Green_color_h,
                             fontSize: 25,
                             marginTop: 30
-                        }}>Nice! Your DuitNow is successfully linked with your Bank account</Text>
+                        }}>Nice! Your Fund-Transfer is successfully linked with your Bank account</Text>
                     </View>
                     <FlatList
                         style={{ marginTop: 20,flex:1 }}

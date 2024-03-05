@@ -21,7 +21,7 @@ const Review = () => {
     const Flatlist = [
         {
             name: 'Transfer from',
-            value: "Rize Savings Account-i \n 700007123456789",
+            value: "SSSCO Savings Account-i \n 700007123456789",
             key: "1"
 
         },
@@ -61,17 +61,15 @@ const Review = () => {
 
     const renderItem = ({ item }) => (
         <>
-            <View>
-                <View style={styles.flatlistrow}>
-                    <View>
-                        <Text style={styles.nameHead}>{item.name}</Text>
-                    </View>
-                    <View>
-                        <Text style={styles.nameValue}>{item.value}</Text>
-                    </View>
+            <View style={styles.flatlistrow}>
+                <View>
+                    <Text style={styles.nameHead}>{item.name}</Text>
                 </View>
-
+                <View>
+                    <Text style={styles.nameValue}>{item.value}</Text>
+                </View>
             </View>
+
 
         </>
     );
@@ -89,7 +87,7 @@ const Review = () => {
             <ScrollView>
                 <View style={styles.subheaderstyle}>
                     <Text style={styles.accountName}>Hussien Lee</Text>
-                    <Text style={styles.accountDetaik}>Al Saudi Bank Saudi / Saudi by Al Saudi - •••••••••••5431
+                    <Text style={styles.accountDetaik}>Dubai Islamic Bank - •••••••••••5431
                         Savings Account-i</Text>
                     <FlatList
                         data={data}
@@ -139,8 +137,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         // backgroundColor:"#CCC",
-        paddingTop: 10,
-        paddingBottom: 10,
+        padding:10,
     },
     header: {
         flexDirection: "row",
@@ -185,10 +182,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingLeft: 10,
-        paddingRight: 10,
-        padding: 5,
-        marginTop: 15,
+        padding: 10,
     },
     nameHead: {
         fontSize: 16,

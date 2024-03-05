@@ -23,7 +23,7 @@ const VerifyNICInfo = ({onPress}) => {
               {/* INPUT BOX ============================= */}
               <View style={{
                   ...style.basic_container,
-                  marginTop: 20,
+                  marginTop: 50,
                   paddingLeft: 30,
                   paddingRight: 30
               }}>
@@ -37,11 +37,11 @@ const VerifyNICInfo = ({onPress}) => {
 </View>
 <View style={styles.cardView}>
 <Image source={require('../../assets/SignUp/nic1.png')}/>
-<Text style={styles.text2}>Scan the front and back of your NIC</Text>
+<Text style={styles.text2}>Scan the front and back of your Emirates ID</Text>
 </View>
 </View>
 <View style={styles.container2}>
-<View >
+<View style={{marginTop:20}} >
 <Text style={styles.numberText}>2</Text>
 </View>
 <View style={styles.cardView}>

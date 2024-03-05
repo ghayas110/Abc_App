@@ -4,6 +4,8 @@ import style from "../../assets/styles/basic"
 import { useNavigation } from '@react-navigation/native';
 import { RequestButton } from '../../components/Buttons';
 import ActivationSteps from '../../components/steps/ActivationSteps';
+import LottieView from 'lottie-react-native';
+import ActivationSteps2 from '../../components/steps/ActivationSteps2';
 
 
 const MainSignUp = () => {
@@ -33,9 +35,8 @@ const MainSignUp = () => {
                         flexDirection: "row",
                         justifyContent: "center"
                     }}>
-                        <Image 
-   source={require('../../assets/SignUp/signupimage1.png')} // replace with your image path
- />
+                 <LottieView source={require('../../assets/lotiefiles/hand_animation.json')} autoPlay style={{width:"100%",height:200}} />
+
                     </View>
                     <Text style={{
                         ...style.Green_color_h,
@@ -49,8 +50,8 @@ const MainSignUp = () => {
                         padding: 0,
                         fontFamily: "Poppins-Regular",
                         ...style.gray_color_h
-                    }}>This won’t take long. Please have your CNIC ready</Text>
-                    <ActivationSteps
+                    }}>This won’t take long. Please have your Emirates ID ready</Text>
+                    <ActivationSteps2
                     verticalLineImage={require('../../assets/SignUp/line.png')}
                     image_a={require('../../assets/SignUp/paper.png')}
                     text_a={`Sign up & ID ${'\n'} verification`}

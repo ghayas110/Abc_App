@@ -37,7 +37,6 @@ const Review = () => {
 
     const renderItem = ({ item }) => (
         <>
-            <View>
                 <View style={styles.flatlistrow}>
                     <View>
                         <Text style={styles.nameHead}>{item.name}</Text>
@@ -46,8 +45,6 @@ const Review = () => {
                         <Text style={styles.nameValue}>{item.value}</Text>
                     </View>
                 </View>
-
-            </View>
 
         </>
     );
@@ -64,7 +61,7 @@ const Review = () => {
 
                 <View style={styles.subheaderstyle}>
                     <Text style={styles.accountName}>Hussien Lee</Text>
-                    <Text style={styles.accountDetaik}>Al Saudi Bank Saudi / Saudi by Al Saudi - •••••••••••5431
+                    <Text style={styles.accountDetaik}>Dubai Islamic Bank - •••••••••••5431
                         Savings Account-i</Text>
                 </View>
 
@@ -86,25 +83,25 @@ const Review = () => {
                     </View>
                     <View style={styles.savingAccountcheckbox}>
                         <View>
-                            <Text style={styles.transfertext}>Rize Savings Account-i</Text>
+                            <Text style={styles.transfertext}>Savings Account-i</Text>
                             <Text style={styles.transferNum}>700007123456789</Text>
                         </View>
                         <View style={{ alignItems: "flex-end" }}>
                             <Text style={styles.transferCheck}>
-                                <CheckBoxInput style={styles.checkedbox} />
+                                <CheckBoxInput style={styles.checkedbox} color={'#00a200'} />
                             </Text>
                             <Text style={styles.transferNum}>AED 80,000.00</Text>
                         </View>
                     </View>
                     <View>
                         <Text style={styles.tranferInstruc}>
-                            I have read and agreed to the  DuitNow Transfer Terms and Conditions.
+                            I have read and agreed to the  Fund Transfer Terms and Conditions.
                         </Text>
                     </View>
                     <View style={{flexDirection:"row", alignItems:"center" , padding:10,}}>
-                        <CheckBoxInput style={{ ...Theme.Green_color_h }} color={'green'} /> 
+                        <CheckBoxInput style={{ ...Theme.Green_color_h }} color={'#00a200'} /> 
                         <Text style={{...Theme.black_color_f , ...Theme.Font_family ,marginLeft:5}}>
-                               I have read and agreed to the  <Text style={{...Theme.Green_color_f}}>DuitNow Transfer Terms and Conditions.</Text> 
+                               I have read and agreed to the  <Text style={{...Theme.Green_color_f}}>Fund Transfer Terms and Conditions.</Text> 
                         </Text>
                     </View>
                     <View style={{ alignItems: "center" }}>
@@ -124,8 +121,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#FFFFFF",
-        paddingTop: 10,
-        paddingBottom: 10,
+        padding: 10
     },
     flatlistrow: {
         flex: 1,

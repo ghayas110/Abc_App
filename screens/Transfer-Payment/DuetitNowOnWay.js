@@ -22,7 +22,7 @@ const DuetitNowOnWay = () => {
             
                 <View style={styles.subheaderstyle}>
                 <Image source={image} />
-                    <Text style={styles.accountName}>Aha! DuitNow is on its way</Text>
+                    <Text style={styles.accountName}>Aha! Fund-Transfer is on its way</Text>
                 </View>
 
         </View>

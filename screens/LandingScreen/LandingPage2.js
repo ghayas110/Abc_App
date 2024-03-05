@@ -46,10 +46,10 @@ const LandingPage2 = () => {
     ];
     const Modallistem = [
         'I’m 18 years old and above',
-        'I’m a Arab citizen with a CNIC, living in Malaysia',
-        'I have an existing online banking account with another bank in Malaysia',
+        'I’m a Arab citizen with a Emirates ID, living in UAE',
+        'I have an existing online banking account with another bank in UAE',
         'I’m NOT a US person ',
-        'I dont pay income tax in any other country besides Malaysia',
+        'I dont pay income tax in any other country besides UAE',
     ];
 
     return (
