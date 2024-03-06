@@ -4,6 +4,7 @@ import {
     View,
     TextInput,
     TouchableOpacisions,
+    Dimensions,
   } from 'react-native';
   import React, {useState} from 'react';
   

@@ -62,12 +62,22 @@ const EligibleScreen = ({onPress}) => {
             Yes, I’m eligible!
           </Text>
           <View style={styles.acordion}>
-            <Text style={styles.text4}>{'\u2022'} I’m 18 years old and above </Text>
+            <Text style={styles.text4}>
+              {'\u2022'} I’m 18 years old and above{' '}
+            </Text>
           </View>
           <View style={styles.acordion1}>
-              <Text>{'\u2022'}</Text> 
-               <Text style={styles.text4}> I have an existing online banking account with another bank in UAE</Text>
+            <Text style={styles.text4}>
+              {'\u2022'} I have an existing online banking {`\n`}  account with another bank in UAE{' '}
+            </Text>
           </View>
+          {/* <View style={styles.acordion1}>
+            <Text>{'\u2022'}</Text>
+            <Text style={styles.text4}>
+              {' '}
+              I have an existing online banking account with another bank in UAE
+            </Text>
+          </View> */}
           <View style={styles.acordion3}></View>
           <View style={{flexDirection: 'row', paddingRight: 10}}>
             <Checkbox
@@ -108,15 +118,14 @@ const EligibleScreen = ({onPress}) => {
               backgroundColor: '#DCF2FC',
               padding: 16,
               marginTop: 20,
-              borderRadius:3,
+              borderRadius: 3,
             }}>
             <Text
               style={{
                 fontSize: 14,
                 color: '#006400',
                 fontFamily: 'Poppins-Regular',
-                lineHeight:21,
-                
+                lineHeight: 21,
               }}>
               <Text style={{fontWeight: 'bold'}}>Note:</Text> You are a US
               person if you are either a US citizen, a US resident or a Green
@@ -186,10 +195,10 @@ const EligibleScreen = ({onPress}) => {
                 </View>
 
                 <View>
-                  <Button
-                    title="i'll exit now"
-                    color="green"
+                  <RequestButton
+                    text={"i'll exit now"}
                     onPress={() => navigation.navigate('Landing')}
+                    btnStyle={{width: 'auto'}}
                   />
                 </View>
               </View>
@@ -256,7 +265,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333333',
     fontFamily: 'Poppins-Regular',
-    marginTop: 10,
+    marginTop: 5,
     // lineHeight: 24,
   },
   bottomView: {

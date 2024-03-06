@@ -1,116 +1,110 @@
-import { StyleSheet, Text, View,Dimensions,Button, KeyboardAvoidingView,Image } from 'react-native'
-import React from 'react'
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  Button,
+  KeyboardAvoidingView,
+  Image,
+} from 'react-native';
+import React from 'react';
 import style from '../../assets/styles/basic';
 import FormInput from '../../components/FormInput';
-import { RequestButton } from '../../components/Buttons';
+import {RequestButton, OutlineButton} from '../../components/Buttons';
+import ThemeSty from '../../assets/styles/basic';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const VerifyCNIC2 = ({onPress}) => {
-  const { width, height } = Dimensions.get('window')
-
+  const {width, height} = Dimensions.get('window');
 
   return (
-    <KeyboardAvoidingView 
-      behavior={Platform.OS === "ios" ? "padding" : "height"} 
-    >
+    <View style={styles.container}>
+      <View style={styles.container2}>
+        <Image
+          source={require('../../assets/SignUp/cnicback.png')}
+          style={{
+            resizeMode: 'contain',
+            height: windowHeight * 0.15,
+            width: windowWidth * 0.7,
+          }}
+        />
+      </View>
+      <View style={{padding: 27}}>
+        <Text style={styles.text2}>
+          Are all details fully visible, glare-free and readable?
+        </Text>
+      </View>
 
-<View style={{
-        ...style.basic_container,
-        height: height,
-        backgroundColor: "white",
-    }}>
-        <View style={{
-            ...style.basic_container,
-            height: height*0.85,
-            paddingRight: 20,
-            paddingLeft: 20,
-            position: "relative"
-        }}>
-            <View style={{
-                marginTop: 80,
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center"
-            }}>
-  <Image source={require('../../assets/SignUp/cnicback.png')} style={{resizeMode:'contain',height:windowHeight*0.15}}/>
-          
-    </View>
-    <View style={{padding:17}}>
-    <Text style={styles.text2}>Are all details fully visible, glare-free and readable?</Text>
-    </View>
-   
-
-
-            <RequestButton text={"Take Again"} onPress={onPress}
-                btnStyle={{ position: "absolute", bottom:100  }}
-            />
-            <RequestButton text={"Yes Let's continue"} onPress={onPress}
-                btnStyle={{ position: "absolute", bottom: 50 }}
-            />
+      <View style={{marginTop: 27}}>
+        <View style={styles.btn1}>
+          <OutlineButton text={'Take Again'} onPress={onPress} />
         </View>
+        <View style={styles.btn2}>
+          <RequestButton text={"Yes Let's continue"} onPress={onPress} />
+        </View>
+      </View>
     </View>
-</KeyboardAvoidingView>
-)
-}
+  );
+};
 
-export default VerifyCNIC2
+export default VerifyCNIC2;
 
 const styles = StyleSheet.create({
-    acordion: {
-        display: 'flex',
-        alignItems: 'center',
-        width:windowWidth*0.9,
-        flexDirection: 'row',
- 
-    
-      },
-    container: {
-        flex: 1,
-        padding:20,
-        paddingTop:60,
-        height:windowHeight*0.9,
-        
-       justifyContent:'space-around'
-      },
-      numberText:{
-        fontSize:28,color:"green",fontWeight:"700",lineHeight:33.6
-      },
-      container1: {
-    display:'flex',
-    alignItems:'center',justifyContent:'space-between',
-    flexDirection:'row'
-      },
-      container2: {
-        display:'flex',
-        alignItems:'center',justifyContent:'space-between',
-        flexDirection:'column',
-        width:windowWidth*0.8,
-   
-        padding:20
-          },
-      cardText:{
-        padding:30
-      },
-      cardView:{
-        display:'flex',
-        alignItems:'center',justifyContent:'center',
-        padding:10
-      },
-      text2:{
-        fontSize: 17,        
-        color: "#808080",
-        fontFamily: "Poppins-Regular",
-        textAlign:'center',
-        color:'black',
-        fontWeight:"600"
-      },
-      bottomView: {
-        width: '100%',
-        height: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'absolute',
-        bottom: 0,
-      },
-})
+  container: {
+    height: windowHeight,
+    padding: 16,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+  },
+  Progress: {
+    padding: 15,
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  Image: {
+    width: '100%',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  headerText: {
+    padding: 10,
+    marginTop: 15,
+  },
+  Notify: {
+    padding: 20,
+    // backgroundColor: "#DCF2FC",
+  },
+  btn2: {
+    alignItems: 'center',
+  },
+  btn1: {
+    alignItems: 'center',
+  },
+  text2: {
+    fontSize: 17,
+    color: '#808080',
+    fontFamily: 'Poppins-Regular',
+    textAlign: 'center',
+    color: 'black',
+    fontWeight: '600',
+  },
+  container2: {
+    // width: windowWidth * 0.8,
+    backgroundColor: 'whitesmoke',
+    paddingVertical: 20,
+
+    borderRadius: 10,
+  },
+  cardText: {
+    padding: 30,
+  },
+  cardView: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 10,
+  },
+});
