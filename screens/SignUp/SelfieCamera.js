@@ -1,18 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Camera, useFrameProcessor, useCameraDevices } from 'react-native-vision-camera';
+import { Camera, useFrameProcessor, useCameraDevices, getCameraDevice } from 'react-native-vision-camera';
 import { View, StyleSheet, Button, Dimensions, Text } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const SelfieCamera = ({onPress}) => {
-  const devices = useCameraDevices('back');
-  const device = devices[0];
+const SelfieCamera = ({ onPress }) => {
+  const devices = Camera.getAvailableCameraDevices()
+  const device = getCameraDevice(devices, 'front', {
+    physicalDevices: ['wide-angle-camera']
+  })
   const camera = useRef(null);
   const frameProcessor = useFrameProcessor((frame) => {
     'worklet';
     // do something with the frame, e.g. run AI object detection
   }, []);
+
   const handleTakePhoto = async () => {
     if (camera.current) {
       const photo = await camera.current.takePhoto({
@@ -20,14 +24,15 @@ const SelfieCamera = ({onPress}) => {
         flash: 'off',
         enableShutterSound: false,
       });
-   console.log(photo)
-   if(photo){
-    if (typeof onPress === 'function') {
-      onPress();
-    }
-   }
+      console.log(photo)
+      if (photo) {
+        if (typeof onPress === 'function') {
+          onPress();
+        }
+      }
     }
   };
+
   const [cameraPermission, setCameraPermission] = useState(null);
 
   useEffect(() => {
@@ -35,11 +40,6 @@ const SelfieCamera = ({onPress}) => {
       const status = await Camera.getCameraPermissionStatus();
       setCameraPermission(status);
     })();
-    const timeoutId = setTimeout(() => {
-      handleTakePhoto()
-    }, 1500); // 15 seconds
-
-    return () => clearTimeout(timeoutId);
   }, []);
 
   const requestPermission = async () => {
@@ -52,25 +52,29 @@ const SelfieCamera = ({onPress}) => {
       {cameraPermission === 'granted' && device ? (
         <View style={styles.fullscreen}>
           <Camera
-          ref={camera}
+            ref={camera}
             style={styles.camera}
             device={device}
             photo={true}
             isActive={true}
             frameProcessor={frameProcessor}
           />
-          <View style={styles.overlayTop} />
-          <View style={styles.overlayBottom} />
-          <View style={styles.overlayLeft} />
-          <View style={styles.overlayRight} />
-          <View style={styles.scanArea} />
-          <View >
-          <Text style={styles.textStyle}> Instructions</Text>
-          <Text style={styles.textStyle3}>{'\u2022'}</Text>
-          <Text style={styles.textStyle1}>Align your face inside the frame and look straight into the camera.</Text>
-          <Text style={styles.textStyle4} >{'\u2022'}</Text>
-          <Text style={styles.textStyle2}>Your face must be evenly stand out from the background</Text>
-        </View>
+          <View style={styles.overlay} pointerEvents="none">
+            <View style={styles.transparentBackground} />
+            <View style={styles.transparentCircle} />
+          </View>
+          <View style={styles.instructionContainer}>
+            <Text style={styles.textStyle}> Instructions</Text>
+            <Text style={styles.textStyleItem}>{'\u2022'} Align your face inside the frame and look straight into the camera.</Text>
+            <Text style={styles.textStyleItem}>{'\u2022'} Your face must be evenly stand out from the background</Text>
+          </View>
+          <View style={styles.buttonContainer}>
+          <TouchableOpacity
+              onPress={handleTakePhoto}
+              style={styles.circularButton}
+            >
+            </TouchableOpacity>
+          </View>
         </View>
       ) : (
         <View style={styles.buttonContainer}>
@@ -87,114 +91,73 @@ const SelfieCamera = ({onPress}) => {
 
 export default SelfieCamera;
 
-const overlayStyle = {
-  position: 'absolute',
-  backgroundColor: 'grey',
-  opacity: 0.7,
-};
-
+const circleSize = 300;
 
 const styles = StyleSheet.create({
- 
   container: {
     flex: 1,
   },
   fullscreen: {
     width: windowWidth,
     height: windowHeight,
+    position: 'relative',
   },
   camera: {
     flex: 1,
-    position: 'absolute',
     width: windowWidth,
     height: windowHeight,
   },
-  overlayTop: {
-    ...overlayStyle,
-    height: (windowHeight - 280) / 2,
-    width: windowWidth,
-    top: 0,
-  },
-  overlayBottom: {
-    ...overlayStyle,
-    height: (windowHeight - 115) / 2,
-    width: windowWidth,
-    bottom: 0,
-  },
-  overlayLeft: {
-    ...overlayStyle,
-    width: (windowWidth - 300) / 2,
-    height: 197.5,
-    top: (windowHeight - 280) / 2,
-    left: 0,
-  },
-  overlayRight: {
-    ...overlayStyle,
-    width: (windowWidth - 300) / 2,
-    height: 197.5,
-    top: (windowHeight - 280) / 2,
-    right: 0,
-  },
-  scanArea: {
-    position: 'absolute',
-    top: '45%',
-    left: '50%',
-    marginTop: -100,
-    marginLeft: -150,
-    width: 300,
-    height: 200,
-    borderColor: 'white',
-    borderWidth: 2,
-    zIndex: 1,
-  },
-  textStyle: {
-    position: 'absolute',
-    color: 'white',
-    fontSize: 20,
-    paddingHorizontal:35,
-    top: windowHeight / 2 + 90, // Just below the scan area
-    // Center text horizontally
-  },
-  textStyle1: {
-    position: 'absolute',
-    color: 'white',
-    fontSize: 14,
-    padding:25,
-    lineHeight:24,
-    top: windowHeight / 2 + 110, // Just below the scan area
-    alignSelf: 'center', // Center text horizontally
-  },
-  textStyle3: {
-    position: 'absolute',
-    color: 'white',
-    fontSize: 14,
-    
-    left:20,
-    
-    top: windowHeight / 2 + 138, // Just below the scan area
-    alignSelf: 'center', // Center text horizontally
-  },
-  textStyle4: {
-    position: 'absolute',
-    color: 'white',
-    fontSize: 14,
-    left:20,
-    
-    top: windowHeight / 2 + 196, // Just below the scan area
-    alignSelf: 'center', // Center text horizontally
-  },
-  textStyle2: {
-    position: 'absolute',
-    color: 'white',
-    fontSize: 14,
-    padding:24.7,
-    lineHeight:24,
-    top: windowHeight / 2 + 170, // Just below the scan area
-    alignSelf: 'center', // Center text horizontally
-  },
-  buttonContainer: {
-    flex: 1,
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
     justifyContent: 'center',
     alignItems: 'center',
-  },
+  },
+  transparentBackground: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black
+  },
+  transparentCircle: {
+    width: circleSize,
+    height: circleSize,
+    borderRadius: circleSize / 2,
+    borderColor: 'white',
+    borderWidth: 2,
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    top: (windowHeight - circleSize) / 2,
+    left: (windowWidth - circleSize) / 2,
+  },
+  instructionContainer: {
+    position: 'absolute',
+    bottom: 80,
+    left: 20,
+    right: 20,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black
+    padding: 10,
+    borderRadius: 10,
+  },
+  textStyle: {
+    color: 'white',
+    fontSize: 20,
+    marginBottom: 10,
+  },
+  textStyleItem: {
+    color: 'white',
+    fontSize: 14,
+    lineHeight: 20,
+  },
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 10,
+    left: 170,
+    right: 20,
+  },
+  circularButton: {
+    width: circleSize*0.20,
+    height: circleSize*0.20,
+    borderRadius: circleSize / 2,
+    backgroundColor: '#ffff',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
