@@ -7,6 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
 import Icons from '../components/Icons';
 import Otp from '../screens/SignUp/Otp';
+import AllowNIC from '../screens/SignUp/AlllowNIC';
 import SignUp from '../screens/SignUp/SignUp';
 import SplashScreen from '../screens/SplashScreen/SplashScreen';
 import ForgotPassScreen from '../screens/ForgotPassScreen';
@@ -42,6 +43,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AccountNavigator, FinanceNavigator, MainNavigator, MoreNavigator, TransferNavigator } from './StackNavigator';
 import { Image , StyleSheet , View , Text , FlatList } from 'react-native';
 import Theme from '../assets/styles/basic'
+import SelfiePreview from '../screens/SignUp/SelfiePreview';
+import CheckingThings from '../screens/SignUp/CheckingThings';
+import FrontCamera from '../screens/SignUp/FrontCamera';
+import VerifyCNIC1 from '../screens/SignUp/VerifyCNIC1';
+import BackCamera from '../screens/SignUp/BackCamera';
+import VerifyCNIC2 from '../screens/SignUp/VerifyCNIC2';
+import AllowSelfie from '../screens/SignUp/AllowSelfie';
+import SelfieCamera from '../screens/SignUp/SelfieCamera';
 // import SavingPots from '../screens/SavingsPot/SavingPots';
 const AuthStack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -149,6 +158,15 @@ const MainStackNavigator = () => {
           <AuthStack.Screen name="TopUp" component={TopUp} />
           <AuthStack.Screen name="TopUpFaq" component={TopUpFaq} />
           <AuthStack.Screen name="Mailing" component={MailingAddress} />
+          <AuthStack.Screen name="FrontCamera" component={FrontCamera} />
+          <AuthStack.Screen name="VerifyCNIC1" component={VerifyCNIC1} />
+          <AuthStack.Screen name="BackCamera" component={BackCamera} />
+          <AuthStack.Screen name="VerifyCNIC2" component={VerifyCNIC2} />
+          <AuthStack.Screen name="AllowSelfie" component={AllowSelfie} />
+          <AuthStack.Screen name="SelfieCamera" component={SelfieCamera} />
+
+          <AuthStack.Screen name="AllowNIC" component={AllowNIC} />
+
 
 
           <AuthStack.Screen name="UpdateTermAndCondition">
@@ -167,6 +185,8 @@ const MainStackNavigator = () => {
             {(props) => <CardOrder {...props} onLogin={() => setIsLoggedIn(true)} />}
           </AuthStack.Screen>
           <AuthStack.Screen name="SignUp" component={SignUp} />
+          <AuthStack.Screen name="SelfiePreview" component={SelfiePreview} />
+          <AuthStack.Screen name="CheckingThings" component={CheckingThings} />
           <AuthStack.Screen name="DetailOne" component={DetailOne} />
           <AuthStack.Screen name="DetailTwo" component={DetailTwo} />
           <AuthStack.Screen name="DetailThree" component={DetailThree} />

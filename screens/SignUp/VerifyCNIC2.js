@@ -12,21 +12,28 @@ import style from '../../assets/styles/basic';
 import FormInput from '../../components/FormInput';
 import {RequestButton, OutlineButton} from '../../components/Buttons';
 import ThemeSty from '../../assets/styles/basic';
+import { useNavigation } from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-const VerifyCNIC2 = ({onPress}) => {
+const VerifyCNIC2 = ({route}) => {
   const {width, height} = Dimensions.get('window');
+  const navigation = useNavigation()
+  console.log(route.params.photo,'photo')
+ const Images=route.params.photo
+ const imag=""
+
+ const imagePath =  `file://${Images.path}` // Extract the image path from route params
 
   return (
     <View style={styles.container}>
       <View style={styles.container2}>
         <Image
-          source={require('../../assets/SignUp/cnicback.png')}
+         source={{ uri: imagePath }}
           style={{
-            resizeMode: 'contain',
-            height: windowHeight * 0.15,
-            width: windowWidth * 0.7,
+            resizeMode: 'cover',
+            height: windowHeight * 0.25,
+            width: windowWidth * 0.8,
           }}
         />
       </View>
@@ -38,10 +45,10 @@ const VerifyCNIC2 = ({onPress}) => {
 
       <View style={{marginTop: 27}}>
         <View style={styles.btn1}>
-          <OutlineButton text={'Take Again'} onPress={onPress} />
+        <OutlineButton text={'Take Again'} onPress={()=> navigation.navigate('BackCamera',imag)} />
         </View>
         <View style={styles.btn2}>
-          <RequestButton text={"Yes Let's continue"} onPress={onPress} />
+        <RequestButton text={"Yes Let's continue"} onPress={()=>navigation.navigate('AllowSelfie')} />
         </View>
       </View>
     </View>

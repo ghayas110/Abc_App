@@ -58,7 +58,7 @@ const CheckingThings = ({onPress}) => {
                 />
                
                 
-                    <RequestButton text={"Let's Continue"} onPress={onPress}
+                    <RequestButton text={"Let's Continue"} onPress={()=>navigation.navigate('DetailOne')}
                         btnStyle={{ position: "absolute", bottom: 50 }}
                     />
                 </View>

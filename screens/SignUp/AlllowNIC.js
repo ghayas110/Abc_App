@@ -3,12 +3,13 @@ import React, { useState, useEffect } from 'react'
 import FormInput from '../../components/FormInput';
 import { Camera } from 'react-native-vision-camera';
 import { RequestButton } from '../../components/Buttons';
+import { useNavigation } from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const AlloeNIC = ({ onPress }) => {
   const [cameraPermission, setCameraPermission] = useState(null);
-  
+  const navigation = useNavigation()
 
   useEffect(() => {
     (async () => {
@@ -21,7 +22,7 @@ const AlloeNIC = ({ onPress }) => {
   const requestPermission = async () => {
     const status = await Camera.requestCameraPermission()
     setCameraPermission(status);
-    onPress()
+    navigation.navigate(`FrontCamera`)
   };
   return (
     <KeyboardAvoidingView

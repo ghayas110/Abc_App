@@ -22,6 +22,7 @@ import SelfieCamera from './SelfieCamera';
 import CheckingThings from './CheckingThings';
 import { useNavigation } from '@react-navigation/native';
 import Steps from '../../components/steps/Steps';
+import SelfiePreview from './SelfiePreview';
 const labels = ["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"];
 const customStyles = {
   stepIndicatorSize: 25,
@@ -76,42 +77,46 @@ const SignUp = () => {
         return (
           <VerifyNICInfo onPress={() => setCurrentPosition(currentPosition + 0.5)} />
         )
-      case 6:
-        return (
-           <AllowNIC onPress={()=>setCurrentPosition(currentPosition+0.2)}/>
-          // 0.2
-          // <AllowNIC onPress={() => setCurrentPosition(currentPosition + 1.4)} />
+      // case 6:
+      //   return (
+      //      <AllowNIC onPress={()=>setCurrentPosition(currentPosition+0.2)}/>
+      //     // 0.2
+      //     // <AllowNIC onPress={() => setCurrentPosition(currentPosition + 1.4)} />
 
-        )
-      case 6.2:
-        return (
-          <FrontCamera onPress={() => setCurrentPosition(currentPosition + 0.2)} />
-        )
-      case 6.4:
-        return (
-          <VerifyCNIC1 onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))} />
-        )
-      case 6.6:
-        return (
-          <BackCamera onPress={() => setCurrentPosition(currentPosition + 0.2)} />
-        )
-      case 6.8:
-        return (
-          <VerifyCNIC2 onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))} />
-        )
+      //   )
+      // case 6.2:
+      //   return (
+      //     <FrontCamera onPress={() => setCurrentPosition(currentPosition + 0.2)} />
+      //   )
+      // case 6.4:
+      //   return (
+      //     <VerifyCNIC1 onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))} />
+      //   )
+      // case 6.6:
+      //   return (
+      //     <BackCamera onPress={() => setCurrentPosition(currentPosition + 0.2)} />
+      //   )
+      // case 6.8:
+      //   return (
+      //     <VerifyCNIC2 onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))} />
+      //   )
 
-      case 7:
-        return (
-          <AllowSelfie onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))} />
-        )
-      case 7.2:
-        return (
-          <SelfieCamera onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))} />
-        )
-      case 7.4:
-        return (
-          <CheckingThings onPress={() => navigation.navigate('DetailOne')} />
-        )
+      // case 7:
+      //   return (
+      //     <AllowSelfie onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))} />
+      //   )
+      // case 7.2:
+      //   return (
+      //     <SelfieCamera onPress={() => setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))} />
+      //   )
+      //   case 7.4:
+      //     return (
+      //       <SelfiePreview onPress={() => { setCurrentPosition(Number((currentPosition + 0.2).toFixed(1)))}  } />
+      //     )
+      // case 7.6:
+      //   return (
+      //     <CheckingThings onPress={() => navigation.navigate('DetailOne')} />
+      //   )
       default:
         return null;
     }

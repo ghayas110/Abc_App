@@ -3,12 +3,13 @@ import React from 'react'
 import FormInput from '../../components/FormInput';
 import { RequestButton } from '../../components/Buttons';
 import style from '../../assets/styles/basic';
+import { useNavigation } from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const VerifyNICInfo = ({onPress}) => {
   const { width, height } = Dimensions.get('window')
-
+const navigation = useNavigation()
   return (
     <KeyboardAvoidingView
     behavior={Platform.OS === "ios" ? "padding" : "height"} 
@@ -52,7 +53,7 @@ const VerifyNICInfo = ({onPress}) => {
     </View>
     </View>
               </View>
-              <RequestButton text={"Confirm"} onPress={onPress}
+              <RequestButton text={"Confirm"} onPress={()=>navigation.navigate("AllowNIC")}
                   btnStyle={{ position: "absolute", bottom: 50 }}
               />
      

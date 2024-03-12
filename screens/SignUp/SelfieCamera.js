@@ -1,18 +1,23 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Camera, useFrameProcessor, useCameraDevices, getCameraDevice } from 'react-native-vision-camera';
-import { View, StyleSheet, Button, Dimensions, Text } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React, {useState, useEffect, useRef} from 'react';
+import {
+  Camera,
+  useFrameProcessor,
+  useCameraDevices,
+  getCameraDevice,
+} from 'react-native-vision-camera';
+import {View, StyleSheet, Button, Dimensions, Text} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const SelfieCamera = ({ onPress }) => {
-  const devices = Camera.getAvailableCameraDevices()
-  const device = getCameraDevice(devices, 'front', {
-    physicalDevices: ['wide-angle-camera']
-  })
+const SelfieCamera = ({onPress}) => {
+  const navigation = useNavigation();
+  const devices = Camera.getAvailableCameraDevices();
+  const device = getCameraDevice(devices, 'front');
   const camera = useRef(null);
-  const frameProcessor = useFrameProcessor((frame) => {
+  const frameProcessor = useFrameProcessor(frame => {
     'worklet';
     // do something with the frame, e.g. run AI object detection
   }, []);
@@ -24,11 +29,11 @@ const SelfieCamera = ({ onPress }) => {
         flash: 'off',
         enableShutterSound: false,
       });
-      console.log(photo)
+      console.log(photo);
       if (photo) {
-        if (typeof onPress === 'function') {
-          onPress();
-        }
+     
+          navigation.navigate('SelfiePreview', {photo: photo});
+
       }
     }
   };
@@ -43,7 +48,7 @@ const SelfieCamera = ({ onPress }) => {
   }, []);
 
   const requestPermission = async () => {
-    const status = await Camera.requestCameraPermission()
+    const status = await Camera.requestCameraPermission();
     setCameraPermission(status);
   };
 
@@ -58,6 +63,7 @@ const SelfieCamera = ({ onPress }) => {
             photo={true}
             isActive={true}
             frameProcessor={frameProcessor}
+            orientation='potrait'
           />
           <View style={styles.overlay} pointerEvents="none">
             <View style={styles.transparentBackground} />
@@ -65,15 +71,18 @@ const SelfieCamera = ({ onPress }) => {
           </View>
           <View style={styles.instructionContainer}>
             <Text style={styles.textStyle}> Instructions</Text>
-            <Text style={styles.textStyleItem}>{'\u2022'} Align your face inside the frame and look straight into the camera.</Text>
-            <Text style={styles.textStyleItem}>{'\u2022'} Your face must be evenly stand out from the background</Text>
+            <Text style={styles.textStyleItem}>
+              {'\u2022'} Align your face inside the frame and look straight into
+              the camera.
+            </Text>
+            <Text style={styles.textStyleItem}>
+              {'\u2022'} Your face must be evenly stand out from the background
+            </Text>
           </View>
           <View style={styles.buttonContainer}>
-          <TouchableOpacity
+            <TouchableOpacity
               onPress={handleTakePhoto}
-              style={styles.circularButton}
-            >
-            </TouchableOpacity>
+              style={styles.circularButton}></TouchableOpacity>
           </View>
         </View>
       ) : (
@@ -124,12 +133,12 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     backgroundColor: 'transparent',
     position: 'absolute',
-    top: (windowHeight - circleSize) / 2,
+    top: (windowHeight - circleSize) / 3,
     left: (windowWidth - circleSize) / 2,
   },
   instructionContainer: {
     position: 'absolute',
-    bottom: 80,
+    bottom: 130,
     left: 20,
     right: 20,
     backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black
@@ -148,13 +157,13 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: 'absolute',
-    bottom: 10,
+    bottom: 40,
     left: 170,
     right: 20,
   },
   circularButton: {
-    width: circleSize*0.20,
-    height: circleSize*0.20,
+    width: circleSize * 0.2,
+    height: circleSize * 0.2,
     borderRadius: circleSize / 2,
     backgroundColor: '#ffff',
     justifyContent: 'center',
