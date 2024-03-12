@@ -5,6 +5,8 @@ import FormInput from '../../components/FormInput';
 import notifee from '@notifee/react-native';
 import { RequestButton } from '../../components/Buttons';
 import LottieView from 'lottie-react-native';
+import { useNavigation } from '@react-navigation/native';
+
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const AllowSelfie = ({onPress}) => {
@@ -12,6 +14,7 @@ const AllowSelfie = ({onPress}) => {
         // Request permissions (required for iOS)
         await notifee.requestPermission()
       }
+      const navigation = useNavigation()
       const { width, height } = Dimensions.get('window')
 
   return (
@@ -46,7 +49,7 @@ const AllowSelfie = ({onPress}) => {
    
 
 
-            <RequestButton text={"Take Sefie"} onPress={onPress}
+            <RequestButton text={"Take Sefie"} onPress={()=>navigation.navigate('SelfieCamera')}
                 btnStyle={{ position: "absolute", bottom: 50 }}
             />
         </View>
@@ -79,5 +82,5 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         position: 'absolute',
         bottom: 0,
-      },
+      }
 })

@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Camera, useFrameProcessor, useCameraDevices } from 'react-native-vision-camera';
 import { View, StyleSheet, Button, Dimensions, Text } from 'react-native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const BackCamera = ({onPress}) => {
+const BackCamera = () => {
   const devices = useCameraDevices('back');
   const device = devices[0];
   const camera = useRef(null);
+  const navigation = useNavigation()
   const frameProcessor = useFrameProcessor((frame) => {
     'worklet';
     // do something with the frame, e.g. run AI object detection
@@ -22,22 +24,23 @@ const BackCamera = ({onPress}) => {
       });
    console.log(photo)
    if(photo){
-    if (typeof onPress === 'function') {
-      onPress();
-    }
+
+    navigation.navigate(`VerifyCNIC2`, {photo: photo})
+
+ 
    }
     }
   };
   const [cameraPermission, setCameraPermission] = useState(null);
 
-  useEffect(() => {
+  useFocusEffect(() => {
     (async () => {
       const status = await Camera.getCameraPermissionStatus();
       setCameraPermission(status);
     })();
     const timeoutId = setTimeout(() => {
       handleTakePhoto()
-    }, 1500); // 15 seconds
+    }, 4000); // 15 seconds
 
     return () => clearTimeout(timeoutId);
   }, []);
@@ -58,6 +61,7 @@ const BackCamera = ({onPress}) => {
             photo={true}
             isActive={true}
             frameProcessor={frameProcessor}
+            orientation='landscape'
           />
           <View style={styles.overlayTop} />
           <View style={styles.overlayBottom} />
