@@ -45,7 +45,7 @@ const FrontCamera = () => {
 
       const timeoutId = setTimeout(() => {
         handleTakePhoto();
-      }, 40000); // 15 seconds
+      }, 4000); // 15 seconds
 
       return () => clearTimeout(timeoutId);
     }, [])

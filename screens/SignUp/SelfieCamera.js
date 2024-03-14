@@ -1,22 +1,19 @@
-import React, {useState, useEffect, useRef} from 'react';
-import {
-  Camera,
-  useFrameProcessor,
-  useCameraDevices,
-  getCameraDevice,
-} from 'react-native-vision-camera';
-import {View, StyleSheet, Button, Dimensions, Text} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {useNavigation} from '@react-navigation/native';
+import React, { useState, useEffect, useRef } from 'react';
+import { Camera, useFrameProcessor, useCameraDevices } from 'react-native-vision-camera';
+import { View, StyleSheet, Button, Dimensions, Text, TouchableOpacity } from 'react-native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const SelfieCamera = ({onPress}) => {
+const SelfieCamera = ({ onPress }) => {
+  const [cameraPosition, setCameraPosition] = useState('back');
+  const [cameraPos, setCameraPos] = useState('portrait');
   const navigation = useNavigation();
-  const devices = Camera.getAvailableCameraDevices();
-  const device = getCameraDevice(devices, 'front');
+  const devices = useCameraDevices();
+  const device = devices.find(device => device.position === cameraPosition);
   const camera = useRef(null);
+
   const frameProcessor = useFrameProcessor(frame => {
     'worklet';
     // do something with the frame, e.g. run AI object detection
@@ -24,32 +21,46 @@ const SelfieCamera = ({onPress}) => {
 
   const handleTakePhoto = async () => {
     if (camera.current) {
+      setCameraPos('portrait'); // Set camera orientation to portrait when taking photo
       const photo = await camera.current.takePhoto({
         qualityPrioritization: 'speed',
         flash: 'off',
         enableShutterSound: false,
+      
       });
       console.log(photo);
       if (photo) {
-     
-          navigation.navigate('SelfiePreview', {photo: photo});
-
+        setCameraPosition('back');
+        navigation.navigate('SelfiePreview', { photo: photo });
       }
     }
   };
 
   const [cameraPermission, setCameraPermission] = useState(null);
 
-  useEffect(() => {
-    (async () => {
-      const status = await Camera.getCameraPermissionStatus();
-      setCameraPermission(status);
-    })();
-  }, []);
+  useFocusEffect(
+    React.useCallback(() => {
+      const fetchCameraPermission = async () => {
+        const status = await Camera.getCameraPermissionStatus();
+        setCameraPermission(status);
+      };
+      fetchCameraPermission();
+
+      const timeoutId = setTimeout(() => {
+        setCameraPosition('front');
+      }, 5); // 15 seconds
+
+      return () => clearTimeout(timeoutId);
+    }, [])
+  );
 
   const requestPermission = async () => {
     const status = await Camera.requestCameraPermission();
     setCameraPermission(status);
+  };
+
+  const switchCamera = () => {
+    setCameraPosition('front');
   };
 
   return (
@@ -63,7 +74,7 @@ const SelfieCamera = ({onPress}) => {
             photo={true}
             isActive={true}
             frameProcessor={frameProcessor}
-            orientation='potrait'
+            orientation= {'portrait'}
           />
           <View style={styles.overlay} pointerEvents="none">
             <View style={styles.transparentBackground} />
@@ -71,27 +82,16 @@ const SelfieCamera = ({onPress}) => {
           </View>
           <View style={styles.instructionContainer}>
             <Text style={styles.textStyle}> Instructions</Text>
-            <Text style={styles.textStyleItem}>
-              {'\u2022'} Align your face inside the frame and look straight into
-              the camera.
-            </Text>
-            <Text style={styles.textStyleItem}>
-              {'\u2022'} Your face must be evenly stand out from the background
-            </Text>
+            <Text style={styles.textStyleItem}>{'\u2022'} Align your face inside the frame and look straight into the camera.</Text>
+            <Text style={styles.textStyleItem}>{'\u2022'} Your face must be evenly stand out from the background</Text>
           </View>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              onPress={handleTakePhoto}
-              style={styles.circularButton}></TouchableOpacity>
+            <TouchableOpacity onPress={handleTakePhoto} style={styles.circularButton}></TouchableOpacity>
           </View>
         </View>
       ) : (
         <View style={styles.buttonContainer}>
-          <Button
-            title="Allow camera access"
-            onPress={requestPermission}
-            color="#f194ff"
-          />
+          <Button title="Allow camera access" onPress={requestPermission} color="#f194ff" />
         </View>
       )}
     </View>
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     position: 'absolute',
     bottom: 40,
-    left: 170,
+    left: 150,
     right: 20,
   },
   circularButton: {
